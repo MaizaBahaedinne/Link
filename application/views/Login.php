@@ -30,7 +30,7 @@
 	<div class="www-layout">
         <section>
         	<div class="gap no-gap signin whitish medium-opacity">
-                <div class="bg-image" style="background-image:url(<?php echo base_url() ?>assets/images/resources/theme-bg.jpg)"></div>
+                <div class="bg-image" style="background-image:url(<?php echo base_url() ?>assets/images/resources/theme-bg2.jpg)"></div>
                 <div class="container">
                 	<div class="row">
                         <div class="col-lg-8">
