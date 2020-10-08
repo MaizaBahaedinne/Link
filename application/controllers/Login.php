@@ -35,9 +35,7 @@ class Login extends CI_Controller
         
         if(!isset($isLoggedIn) || $isLoggedIn != TRUE)
         {       
-            $this->load->model('actualite_model');
-           
-            $data['ActuRecords'] = $this->actualite_model->actuListing();
+                     
              $this->load->view('Login',$data);
 
         }
