@@ -13,7 +13,7 @@ class Passation extends BaseController {
         $this->load->model('passation_model');
         $this->load->model('club_model');
 
-        $this->isLoggedInPub();   
+        $this->isLoggedIn();   
     }
     
 
@@ -21,7 +21,7 @@ class Passation extends BaseController {
             {
              
 
-             $data  ['userRecords'] = $this->club_model->clubListing(); 
+             $data  ['userRecords'] = $this->club_model->clubListing($this->clubID,$this->SA); 
 
              foreach ($data  ['userRecords'] as $key ) {
         
