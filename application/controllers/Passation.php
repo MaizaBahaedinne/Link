@@ -10,10 +10,6 @@ class Passation extends BaseController {
     {
         parent::__construct();
         $this->load->model('user_model');
-        $this->load->model('academy_formation_model');
-        $this->load->model('user_cariere_model');
-        $this->load->model('user_diplome_model');
-        $this->load->model('ressource_model');
         $this->load->model('passation_model');
         $this->load->model('club_model');
 
@@ -21,6 +17,29 @@ class Passation extends BaseController {
     }
     
 
+  public function index()
+            {
+             
+
+             $data  ['userRecords'] = $this->club_model->clubListing(); 
+
+             foreach ($data  ['userRecords'] as $key ) {
+        
+              $key->NP =  count($this->passation_model->passationListingClub($key->clubID , 1 , '' )) ;
+              $key->NVPAF =  count($this->passation_model->passationListingClub($key->clubID , 3 , 'Administration et finance' )) ;
+              $key->NAAF =  count($this->passation_model->passationListingClub($key->clubID , 6 , 'Administration et finance' )) ;
+              $key->NVPRH =  count($this->passation_model->passationListingClub($key->clubID , 3 , 'Gestion des talents' )) ;
+              $key->NARH =  count($this->passation_model->passationListingClub($key->clubID , 6 , 'Gestion des talents' )) ;
+              $key->NVPM =  count($this->passation_model->passationListingClub($key->clubID , 3 , 'Marketing' )) ;
+              $key->NAM =  count($this->passation_model->passationListingClub($key->clubID , 6 , 'Marketing' )) ;
+              $key->NVPE =  count($this->passation_model->passationListingClub($key->clubID , 3 , 'Evenementiel' )) ;
+              $key->NAE =  count($this->passation_model->passationListingClub($key->clubID , 6 , 'Evenementiel' )) ;
+              $key->ND =  $key->NP + $key->NVPAF +   $key->NAAF +  $key->NVPRH + $key->NARH + $key->NVPM + $key->NAM + $key->NARH + $key->NVPE  + $key->NAE  ; 
+              }
+             $this->global['pageTitle'] = 'Passation' ;
+              $this->loadViews("club/passation/listClub", $this->global, $data, NULL);   
+        } 
+        
 
 
 	     public function NewPassation()
@@ -175,29 +194,6 @@ class Passation extends BaseController {
 
 
 
-  public function index()
-            {
-             
-
-             $data  ['userRecords'] = $this->club_model->clubListing(); 
-
-             foreach ($data  ['userRecords'] as $key ) {
-        
-              $key->NP =  count($this->passation_model->passationListingClub($key->clubID , 1 , '' )) ;
-              $key->NVPAF =  count($this->passation_model->passationListingClub($key->clubID , 3 , 'Administration et finance' )) ;
-              $key->NAAF =  count($this->passation_model->passationListingClub($key->clubID , 6 , 'Administration et finance' )) ;
-              $key->NVPRH =  count($this->passation_model->passationListingClub($key->clubID , 3 , 'Gestion des talents' )) ;
-              $key->NARH =  count($this->passation_model->passationListingClub($key->clubID , 6 , 'Gestion des talents' )) ;
-              $key->NVPM =  count($this->passation_model->passationListingClub($key->clubID , 3 , 'Marketing' )) ;
-              $key->NAM =  count($this->passation_model->passationListingClub($key->clubID , 6 , 'Marketing' )) ;
-              $key->NVPE =  count($this->passation_model->passationListingClub($key->clubID , 3 , 'Evenementiel' )) ;
-              $key->NAE =  count($this->passation_model->passationListingClub($key->clubID , 6 , 'Evenementiel' )) ;
-              $key->ND =  $key->NP + $key->NVPAF +   $key->NAAF +  $key->NVPRH + $key->NARH + $key->NVPM + $key->NAM + $key->NARH + $key->NVPE  + $key->NAE  ; 
-              }
-             $this->global['pageTitle'] = 'Passation' ;
-              $this->loadViews("club/passation/listClub", $this->global, $data, NULL);   
-        } 
-        
 
           public function PassationByClub ($clubId)
             {
