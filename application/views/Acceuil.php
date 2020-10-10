@@ -127,7 +127,7 @@
                             <ul>
                               
                               <li>
-                                <div class="likes heart" title="Like/Dislike">❤ <span><?php echo count($post->likeRecords) ?></span></div>
+                                <div class="likes heart" id="<?php echo $post->postId ?>" title="Like/Dislike">❤ <span><?php echo count($post->likeRecords) ?></span></div>
                               </li>
                               <li>
                                 <span class="comment" title="Comments">
@@ -188,7 +188,7 @@
                             </li>
                             <li class="post-comment">
                               <div class="comet-avatar">
-                                <img src="<?php echo base_url() ?>uplaods/avatar/<?php echo $avatar ?>" class="alligator-profile" alt="">
+                                <img src="<?php echo base_url() ?>uploads/avatar/<?php echo $post->avatar ?>" class="alligator-profile" alt="">
                               </div>
                               <div class="post-comt-box">
                                 <form method="post">

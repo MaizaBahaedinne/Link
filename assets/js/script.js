@@ -206,6 +206,12 @@ $('.audio-call, .video-call').on('click', function () {
 	var animated = false;
 		$('.heart').click(function(){
 		  if(!animated){
+
+		  	$.ajax({
+		        url: "Like/" + this.id ,
+		        type: "post"
+		    	});
+
 			$(this).addClass('happy').removeClass('broken');
 			animated = true;
 			counter++;
