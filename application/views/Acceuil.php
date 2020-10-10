@@ -183,12 +183,10 @@
                             </li>
                             <?php } ?>
 
-                            <li>
-                              <a href="#" title="" class="showmore underline">more comments+</a>
-                            </li>
+                            
                             <li class="post-comment">
                               <div class="comet-avatar">
-                                <img src="<?php echo base_url() ?>uploads/avatar/<?php echo $post->avatar ?>" class="alligator-profile-likes" alt="">
+                                <img src="<?php echo base_url() ?>uploads/avatar/<?php echo $post->avatar ?>" class="alligator-profile" alt="">
                               </div>
                               <div class="post-comt-box">
                                 <form method="post" action="<?php echo base_url() ?>Posts/addNewComment/<?php echo $post->postId ?>">
@@ -197,7 +195,7 @@
                                     <div class="uploadimage">
                                       <i class="fa fa-image"></i>
                                       <label class="fileContainer">
-                                        <input type="fileC">
+                                        <input type="file" name="fileC">
                                       </label>
                                     </div>
                                     <span class="em em-expressionless" title="add icon"></span>
