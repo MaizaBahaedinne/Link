@@ -6,7 +6,7 @@
 <div class="col-lg-12">
 <div class="row merged20" id="page-contents">
               <!-- sidebar -->
-              <div class="col-lg-7">
+              <div class="col-lg-8">
                 <div class="central-meta postbox">
                   <span class="create-post">Créer un post</span>
                   <form method="post" action="<?php echo base_url() ?>Posts/addNewP">
@@ -230,8 +230,8 @@
                 <?php }?>
 
                 </div>
-             
-              <div class="col-lg-5">
+             </div><!-- centerl meta -->
+              <div class="col-lg-4">
                 <aside class="sidebar static right">
                   <div class="widget">
                     <h4 class="widget-title">Mon Club</h4> 
