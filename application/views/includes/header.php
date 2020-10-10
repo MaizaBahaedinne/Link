@@ -30,20 +30,20 @@
     .alligator-profile {
         object-fit: cover;
         object-position: 0% 50%;
-        width: auto;
-        height: 45;
+        width: 40px;
+        height: 40px;
     }
         .alligator-profile-member {
         object-fit: cover;
         object-position: 0% 50%;
-        width: auto;
+        width: 80px;
         height: 80px;
     }
             .alligator-profile-likes {
         object-fit: cover;
         object-position: 0% 50%;
-        width: auto;
-        height: 30px;
+        width: 40px;
+        height: 40px;
     }
 </style>
 
