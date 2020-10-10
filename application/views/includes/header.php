@@ -42,8 +42,8 @@
             .alligator-profile-likes {
         object-fit: cover;
         object-position: 50% 50%;
-        width: 20px;
-        height: 20px;
+        width: 30px;
+        height: 30px;
     }
 </style>
 
