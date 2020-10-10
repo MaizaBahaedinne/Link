@@ -127,7 +127,7 @@
                             <ul>
                               
                               <li>
-                                <div class="likes heart" id="<?php echo $post->postId ?>" title="Like/Dislike">❤ <span><?php echo count($post->likeRecords) ?></span></div>
+                                <div class="likes heart <?php if(count($post->likeCheck) > 0 ){echo "happy" ;} ?>" id="<?php echo $post->postId ?>" title="Like/Dislike">❤ <span><?php echo count($post->likeRecords) ?></span></div>
                               </li>
                               <li>
                                 <span class="comment" title="Comments">
@@ -191,13 +191,13 @@
                                 <img src="<?php echo base_url() ?>uploads/avatar/<?php echo $post->avatar ?>" class="alligator-profile" alt="">
                               </div>
                               <div class="post-comt-box">
-                                <form method="post">
-                                  <textarea placeholder="Post your comment"></textarea>
+                                <form method="post" action="<?php echo base_url() ?>Posts/addNewComment/<?php echo $post->postId ?>">
+                                  <textarea  placeholder="Post your comment"></textarea>
                                   <div class="add-smiles">
                                     <div class="uploadimage">
                                       <i class="fa fa-image"></i>
                                       <label class="fileContainer">
-                                        <input type="file">
+                                        <input type="fileC">
                                       </label>
                                     </div>
                                     <span class="em em-expressionless" title="add icon"></span>

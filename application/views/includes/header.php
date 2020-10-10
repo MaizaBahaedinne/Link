@@ -71,6 +71,7 @@
 
 	<nav id="shoppingbag" class="mm-menu mm-offcanvas mm-right" aria-hidden="true"><div class="mm-panels"><div class="mm-panel mm-hasnavbar mm-opened" id="mm-13"><div class="mm-navbar"><a class="mm-title">General Setting</a></div>
 				<div class="">
+					<!--
 					<form method="post">
 						<div class="setting-row">
 							<span>use night mode</span>
@@ -131,6 +132,7 @@
 							<label for="switch11" data-on-label="ON" data-off-label="OFF"></label>
 						</div>
 					</form>
+					-->
 				</div>
 			</div></div>
 			
@@ -192,11 +194,7 @@
 			<a title="" href="<?php echo base_url() ?>"><img src="<?php echo base_url()?>assets/images/logo.svg" width="45%" alt=""></a>
 		</div>
 		<div class="top-area">
-			<div class="main-menu">
-				<span>
-			    	<i class="fa fa-braille"></i>
-			    </span>
-			</div>
+			
 			<div class="top-search">
 				<form method="post" class="">
 					<input type="text" placeholder="Search People, Pages, Groups etc">
@@ -213,7 +211,7 @@
 						<i class="fa fa-bell"></i><em class="bg-purple">7</em>
 					</a>
 					<div class="dropdowns ps-container ps-theme-default ps-active-y" data-ps-id="ffcc5b9a-91d7-35c0-e615-eed1e002b8c0">
-						<span>4 New Notifications <a href="#" title="">Mark all as read</a></span>
+						<span>Notifications </span>
 						<ul class="drops-menu">
 							<!-- Notification
 							<li>
@@ -231,14 +229,17 @@
 							</li>
 						-->
 						</ul>
-						<a href="notifications.html" title="" class="more-mesg">View All</a>
+						<a href="notifications.html" title="" class="more-mesg">afficher tous</a>
 					<div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 0px;"><div class="ps-scrollbar-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps-scrollbar-y-rail" style="top: 0px; height: 340px; right: 0px;"><div class="ps-scrollbar-y" tabindex="0" style="top: 0px; height: 266px;"></div></div></div>
 				</li>
 				<li>
-					<a href="#" title="Messages" data-ripple=""><i class="fa fa-commenting"></i><em class="bg-blue">9</em></a>
+					<a href="#" title="Messages" data-ripple=""><i class="fa fa-commenting"></i>
+						<em class="bg-blue">9</em>
+					</a>
 					<div class="dropdowns ps-container ps-theme-default ps-active-y" data-ps-id="7ee2fd1f-956e-f926-f7f7-8212f43bd51d">
-						<span>5 New Messages <a href="#" title="">Mark all as read</a></span>
+						<span>New Messages </span>
 						<ul class="drops-menu">
+							<!--
 							<li>
 								<a class="show-mesg" href="#" title="">
 									<figure>
@@ -252,60 +253,7 @@
 									</div>
 								</a>
 							</li>
-							<li>
-								<a class="show-mesg" href="#" title="">
-									<figure>
-										<img src="images/resources/thumb-2.jpg" alt="">
-										<span class="status f-offline"></span>
-									</figure>
-									<div class="mesg-meta">
-										<h6>Jhon doe</h6>
-										<span><i class="ti-check"></i> We’ll have to check that at the office and see if the client is on board with</span>
-										<i>2 min ago</i>
-									</div>
-								</a>
-							</li>
-							<li>
-								<a class="show-mesg" href="#" title="">
-									<figure>
-										<img src="images/resources/thumb-3.jpg" alt="">
-										<span class="status f-online"></span>
-									</figure>
-									<div class="mesg-meta">
-										<h6>Andrew</h6>
-										<span> <i class="fa fa-paperclip"></i>Hi Jack's! It’s Diana, I just wanted to let you know that we have to reschedule..</span>
-										<i>2 min ago</i>
-									</div>
-								</a>
-							</li>
-							<li>
-								<a class="show-mesg" href="#" title="">
-									<figure>
-										<img src="images/resources/thumb-4.jpg" alt="">
-										<span class="status f-offline"></span>
-									</figure>
-									<div class="mesg-meta">
-										<h6>Tom cruse</h6>
-										<span><i class="ti-check"></i> Great, I’ll see you tomorrow!.</span>
-										<i>2 min ago</i>
-									</div>
-								</a>
-								<span class="tag">New</span>
-							</li>
-							<li>
-								<a class="show-mesg" href="#" title="">
-									<figure>
-										<img src="images/resources/thumb-5.jpg" alt="">
-										<span class="status f-away"></span>
-									</figure>
-									<div class="mesg-meta">
-										<h6>Amy</h6>
-										<span><i class="fa fa-paperclip"></i> Sed ut perspiciatis unde omnis iste natus error sit </span>
-										<i>2 min ago</i>
-									</div>
-								</a>
-								<span class="tag">New</span>
-							</li>
+							-->
 						</ul>
 						<a href="chat-messenger.html" title="" class="more-mesg">View All</a>
 					<div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 0px;"><div class="ps-scrollbar-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps-scrollbar-y-rail" style="top: 0px; height: 340px; right: 0px;"><div class="ps-scrollbar-y" tabindex="0" style="top: 0px; height: 323px;"></div></div></div>
@@ -313,6 +261,7 @@
 				
 				<li><a href="#" title="Help" data-ripple=""><i class="fa fa-question-circle"></i></a>
 					<div class="dropdowns helps ps-container ps-theme-default" data-ps-id="878c7c9b-24f9-5906-80c0-6b685dd4e566">
+						<!--
 						<span>Quick Help</span>
 						<form method="post">
 							<input type="text" placeholder="How can we help you?">
@@ -326,6 +275,7 @@
 							<li><a href="#" title=""><i class="fa fa-map-marker"></i>Contact</a></li>
 							<li><a href="#" title=""><i class="fa fa-exclamation-triangle"></i>Report a Problem</a></li>
 						</ul>
+					-->
 					<div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 0px;"><div class="ps-scrollbar-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps-scrollbar-y-rail" style="top: 0px; right: 0px;"><div class="ps-scrollbar-y" tabindex="0" style="top: 0px; height: 0px;"></div></div></div>
 				</li>
 			</ul>
