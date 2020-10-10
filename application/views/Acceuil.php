@@ -167,7 +167,7 @@
                             <?php foreach ($post->commentsRecords as $comment ) { ?>
                             <li>
                               <div class="comet-avatar">
-                                <img src="<?php echo base_url() ?>uploads/avatar/<?php echo $comment->avatar ?>" alt="">
+                                <img src="<?php echo base_url() ?>uploads/avatar/<?php echo $comment->avatar ?>" class="alligator-profile" alt="">
                               </div>
                               <div class="we-comment">
                                 <h5><a href="time-line.html" title=""><?php echo $comment->name ?></a></h5>
