@@ -78,10 +78,10 @@
                     <div class="col-lg-10">
                       <ul class="profile-menu">
                         <li>
-                          <a class="active" href="<?php echo base_url() ?>Club/clubInfo/<?php echo $cl ?>">Projets</a>
+                          <a class="" href="<?php echo base_url() ?>Club/clubInfo/<?php echo $cl ?>">Projets</a>
                         </li>
                         <li>
-                          <a class="" href="<?php echo base_url() ?>Club/clubInfo/<?php echo $cl ?>">Membes</a>
+                          <a class="active" href="<?php echo base_url() ?>Club/clubInfo/<?php echo $cl ?>">Membes</a>
                         </li>
 
                         
