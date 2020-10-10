@@ -60,7 +60,7 @@
                     <div class="col-lg-2">
                       <div class="profile-author">
                         <a class="profile-author-thumb" href="about.html">
-                          <img alt="author" src="<?php echo base_url()?>assets/images/resources/profile.jpg">
+                          <img alt="author" src="<?php echo base_url()?>assets/images/resources/profile.png">
                           <div class="edit-dp">
                             <label class="fileContainer">
                               <i class="fa fa-camera"></i>
