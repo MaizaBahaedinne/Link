@@ -12,7 +12,7 @@
                   <form method="post" action="<?php echo base_url() ?>Posts/addNewP">
                   <div class="new-postbox">
                     <figure>
-                      <img src="<?php echo base_url() ?>uplaods/avatar/<?php echo $avatar ?>"  class="alligator-profile" alt="">
+                      <img src="<?php echo base_url() ?>uploads/avatar/<?php echo $avatar ?>"  class="alligator-profile" alt="">
                     </figure>
                     <div class="newpst-input">
                       
@@ -192,7 +192,7 @@
                               </div>
                               <div class="post-comt-box">
                                 <form method="post" action="<?php echo base_url() ?>Posts/addNewComment/<?php echo $post->postId ?>">
-                                  <textarea  placeholder="Commentaire"></textarea>
+                                  <textarea  placeholder="Commentaire .."></textarea>
                                   <div class="add-smiles">
                                     <div class="uploadimage">
                                       <i class="fa fa-image"></i>
