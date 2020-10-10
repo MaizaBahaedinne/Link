@@ -29,19 +29,19 @@
     <style type="text/css">
     .alligator-profile {
         object-fit: cover;
-        object-position: 0% 50%;
+        object-position: 20% 50%;
         width: 40px;
         height: 40px;
     }
         .alligator-profile-member {
         object-fit: cover;
-        object-position: 0% 50%;
+        object-position: 20% 50%;
         width: 80px;
         height: 80px;
     }
             .alligator-profile-likes {
         object-fit: cover;
-        object-position: 0% 50%;
+        object-position: 20% 50%;
         width: 40px;
         height: 40px;
     }
