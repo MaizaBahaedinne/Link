@@ -12,7 +12,7 @@
                   <form method="post" action="<?php echo base_url() ?>Posts/addNewP">
                   <div class="new-postbox">
                     <figure>
-                      <img src="<?php echo base_url() ?>uplaods/avatar/<?php echo $avatar ?>"  alt="">
+                      <img src="<?php echo base_url() ?>uplaods/avatar/<?php echo $avatar ?>"  class="alligator-profile" alt="">
                     </figure>
                     <div class="newpst-input">
                       
@@ -73,7 +73,7 @@
                     <div class="user-post">
                       <div class="friend-info">
                         <figure>
-                          <img src="<?php echo base_url() ?>uploads/avatar/<?php echo $post->avatar ?>" alt="">
+                          <img src="<?php echo base_url() ?>uploads/avatar/<?php echo $post->avatar ?>" class="alligator-profile" alt="">
                         </figure>
                         <div class="friend-name">
                           <div class="more">
@@ -188,7 +188,7 @@
                             </li>
                             <li class="post-comment">
                               <div class="comet-avatar">
-                                <img src="images/resources/nearly1.jpg" alt="">
+                                <img src="<?php echo base_url() ?>uplaods/avatar/<?php echo $avatar ?>" class="alligator-profile" alt="">
                               </div>
                               <div class="post-comt-box">
                                 <form method="post">
