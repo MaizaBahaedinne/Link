@@ -59,7 +59,7 @@ class Posts extends BaseController {
     public function addNewP()
     {
         $postText = $this->input->post('postText');
-        $photo = $this->input->post('postText');
+        $photo = $this->input->post('fileT');
 
 
                 $file_name = 'Post__'.$name.'_'.$_FILES['file']['name'];
