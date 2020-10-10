@@ -176,8 +176,10 @@
                                 </p>
                                 <div class="inline-itms">
                                   <span>  il y a <?php echo xTimeAgo ($comment->createdDTM,  date('Y-m-d H:i:s') )  ?> </span>
+                                  <!--
                                   <a class="we-reply" href="#" title="Reply"><i class="fa fa-reply"></i></a>
                                   <a href="#" title=""><i class="fa fa-heart"></i><span>20</span></a>
+                                  -->
                                 </div>
                               </div>
                             </li>
@@ -190,7 +192,7 @@
                               </div>
                               <div class="post-comt-box">
                                 <form method="post" action="<?php echo base_url() ?>Posts/addNewComment/<?php echo $post->postId ?>">
-                                  <textarea  placeholder="Post your comment"></textarea>
+                                  <textarea  placeholder="Commentaire"></textarea>
                                   <div class="add-smiles">
                                     <div class="uploadimage">
                                       <i class="fa fa-image"></i>
