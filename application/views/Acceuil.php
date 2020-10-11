@@ -216,8 +216,9 @@
                                       <i class="em em-stuck_out_tongue"></i>
                                     </div>
                                   </div>
-
-                                  <button type="submit"></button>
+                                  <div class="text-right">
+                                  <input  class="btn btn-primary " type="submit">
+                                  </div>
                                 </form> 
                               </div>
                             </li>

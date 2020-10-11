@@ -2,8 +2,8 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <span class="copyright">© Pitnik 2020. All rights reserved.</span>
-          <i><img src="images/credit-cards.png" alt=""></i>
+          <span class="copyright">© Tunivisions.link 2020. All rights reserved.</span>
+          <i><img src="<?php echo base_url() ?>assets/images/logo.svg" width="80" alt=""></i>
         </div>
       </div>
     </div>

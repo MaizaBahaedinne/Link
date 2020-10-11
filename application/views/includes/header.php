@@ -388,10 +388,10 @@
 				</li>
 				<li class="menu-item-has-children"><a class="" href="#" title=""><i class="fa fa-calendar"></i> Projets</a>
 					<ul class="submenu">
-						<li><a href="pittube.html" title="">Calendrier</a></li>
-						<li><a href="pittube-detail.html" title="">Nos projet</a></li>
-						<li><a href="pittube-category.html" title="">Taches</a></li>
-						<li><a href="pittube-channel.html" title="">Historiques</a></li>
+						<li><a  title="">Calendrier</a></li>
+						<li><a  title="">Nos projet</a></li>
+						<li><a  title="">Taches</a></li>
+						<li><a title="">Historiques</a></li>
 					</ul>
 				</li>
 				<li class="menu-item-has-children"><a class="" href="#" title=""><i class="fa fa-line-chart"></i>Statestique</a>
@@ -406,7 +406,8 @@
 	</div><!-- left sidebar menu -->
 		
 	
+	<!--
 
 	<a title="" href="shop-cart.html" class="shopping-cart" data-toggle="tooltip" data-original-title="Your Cart Items">Cart <i class="fa fa-shopping-bag"></i><span>02</span></a>
 
-	
+	-->
