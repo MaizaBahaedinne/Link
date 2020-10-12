@@ -17,13 +17,13 @@
                                                 </div>
                                                 <div class="col-lg-6">
                                                     <div class="row">
-                                                        <div class="col-lg-7 col-md-7 col-sm-7">
+                                                        <div class="col-lg-5 col-md-7 col-sm-7">
                                                             <form method="post">
                                                                 <input type="text" placeholder="Search..">
                                                                 <button type="submit"><i class="fa fa-search"></i></button>
                                                             </form>
                                                         </div>
-                                                        <div class="col-lg-4 col-md-4 col-sm-4">
+                                                        <div class="col-lg-6 col-md-4 col-sm-4">
                                                             <div class="select-options">
                                                                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Ajouter un projet</button>
                                                             </div>
@@ -86,6 +86,7 @@
                                     </div>
                             </div><!-- centerl meta -->
                             <div class="col-lg-3">
+                                <!--
                                 <aside class="sidebar static right">
                                                                       
                                     <div class="widget">
@@ -148,8 +149,8 @@
                                                 </ul>
                                             </div>
                                             
-                                        </div><!-- Weather Widget -->
-                                    </div><!-- weather-->
+                                        </div>
+                                    </div>
                                     
                                     <div class="widget stick-widget">
                                         <div class="banner medium-opacity purple">
@@ -168,6 +169,7 @@
                                         </div>                                          
                                     </div>
                                 </aside>
+                            -->
                             </div>
                         </div>  
                     </div>
@@ -180,7 +182,7 @@
 
 
     <div class="modal fade" id="myModal">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-lg">
           <div class="modal-content">
 
             <!-- Modal Header -->
@@ -196,7 +198,7 @@
                         
                            
                                     <label for="fname">Banner</label>
-                                    <input type="file" name="file" id="file" class="dropify" required/>                                                                          
+                                    <input type="file" name="file" id="file" class="dropify" required accept="image/*"  />                                                                          
                                     <p >le format de fichier doit etre JPG ou JPEG avec une taile maximale de 500 ko </p>
                                     <p id="error1" style="display:none; color:#FF0000;">
                                           Format d'image invalide! Le format d'image doit être JPG, JPEG.
@@ -237,7 +239,7 @@
                                     </script>
                                     
 
-                           
+                                    <br>
                                     <label for="fname">Cible  &nbsp; &nbsp; <br> </label>
                                         
                                     <input type="radio" name="cible" id="Publique" value="Publique" required> Publique
@@ -257,6 +259,7 @@
                                             });
                                         </script>
 
+                                    <br>
 
                                     <label for="fname">Lien d'évenement facebook : </label>
                                     <input type="url" name="facebook" id="facebook" class="form-control" >
@@ -275,7 +278,7 @@
                                     </select>
                           
 
-
+                                    <hr>
                                
                                     <label for="fname">Titre</label>
                                     <input type="text" class="form-control required" id="Titre" name="Titre" maxlength="255" required >
@@ -300,7 +303,7 @@
                                     <input type="datetime-local" class="form-control"  min="<?php echo date('Y-m-d').'T00:00' ?>"   id="fin" name="fin"  required >
 
                             
-
+                                    <hr>
                              
                                     <label for="fname">Local</label>
                                     <input type="text" class="form-control " id="local" name="local" maxlength="255" required >      
