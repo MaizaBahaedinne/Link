@@ -14,7 +14,6 @@
                   <table class="table">
                     <thead>
                       <th>ID</th>
-                      <th>Taches</th>
                       <th>Deadline</th>
                       <th>Par</th>
                       <th>affecté à</th>
@@ -22,17 +21,28 @@
                     </thead>
                     <tbody>
                       <?php foreach ($taches as $tache ) { ?>
-                        <td><?php echo $taches->tacheId?></td>
-                        <td><?php echo $taches->deadline?></td>
-                        <td><?php echo $taches->par?></td>
+                        <td><?php echo $tache->tacheId?></td>
+                        <td><?php echo $tache->deadline?></td>                                     <td><?php echo $tache->par?></td>
+
                         <td><?php foreach ($tache->affections as $affection ) { ?>
                               <ul>
-                              <?php echo  "<li>".$affection->name."</li>" ?> &nbsp; 
-                                  <?php if($affection->statut == 0 || $taches->deadline  <= NOW() ) { ?>
+
+                                   
+
+                            
+                              <?php echo  "<li>".$affection->name."</li>"
+                               
+                              ?> &nbsp;
+                             
+                                <?php 
+                                 $end = $tache->deadline ;
+                                 
+                                if($affection->status == 0 &&  (time()-(60*60*24)) < strtotime($tache->deadline) )  { ?>
                                   <button class="btn" style="background-color:green" > <i class="fas fa-check-circle"></i> </button>
-                                  <?php }else {  ?>
-                                    <button class="btn" disabled style="background-color:red"> <i class="fas fa-check-circle"></i> </button>
-                                  <?php } ?>  
+                                  <?php }elseif ($affection->status== 1 )  {  ?>
+                                    <button class="btn" disabled style="background-color:gray"> <i class="fas fa-check-circle"></i> </button>
+                                  <?php } ?> 
+                                
                               </ul>
                             <?php }?>
                         </td>
