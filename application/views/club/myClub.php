@@ -99,27 +99,62 @@
 
              <!-- sidebar -->
               <div class="col-lg-9">
-                
-                
-                
-                <div >
-                  
-
-                  <?php foreach ($projectRecords as $projet ) { ?>
+                                    <div class="central-meta">
+                                        <div class="title-block">
+                                            <div class="row">
+                                                <div class="col-lg-6">
+                                                    <div class="align-left">
+                                                        <h5>Projets</h5>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <div class="row">
+                                                        <div class="col-lg-5 ">
+                                                            <form method="post">
+                                                                <input type="text" placeholder="chercher ..">
+                                                                <button type="submit"><i class="fa fa-search"></i></button>
+                                                            </form>
+                                                        </div>
+                                                        <div class="col-lg-6 col-md-4 col-sm-4">
+                                                            <div class="select-options">
+                                                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Ajouter un projet</button>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-1 col-md-1 col-sm-1">
+                                                            <div class="option-list">
+                                                                <i class="fa fa-ellipsis-v"></i>
+                                                                <ul>
+                                                                    <!--
+                                                                    <li><a title="" href="#">Show Friends Public</a></li>
+                                                                    -->
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><!-- title block -->
+                                    <div class="central-meta">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <?php foreach ($projectRecords as $projet ) { ?>
 
                                                 <div class="event-box">
                                                     <div class="row merged20">
 
                                                         <div class="col-lg-4 col-md-4 col-sm-5">
-                                                            <figure class="event-thumb"><img src="<?php echo base_url() ?>uploads/projet/<?php echo $projet->banner ?>" alt="">
-                                                                <span class="yellow"><?php echo $projet->type ?></span></figure>
+                                                            <img src="<?php echo base_url() ?>uploads/projet/<?php echo $projet->banner ?>" class="alligator-projects " alt="">
+                                                                
                                                         </div>
-                                                        <div class="col-lg-6 col-md-6 col-sm-5">
+                                                        <div class="col-lg-5 col-md-6 col-sm-5">
                                                             <div class="event-title">
                                                                 <span class="ba"></span>
-                                                                <h4><a href="#" title=""><?php echo $projet->titre ?></a></h4>
-                                                                <span><i class="fa fa-clock-o"></i> <?php echo $projet->startDate ?></span>
-                                                                <span><i class="fa fa-map-marker" aria-hidden="true"></i> <?php echo $projet->startDate ?></span>
+                                                                <h4><a href="<?php echo base_url() ?>Project/projectDetails/<?php echo $projet->projectId ?>" title=""><?php echo $projet->titre ?></a></h4>
+                                                                <label class="text-mute" >by <a href="<?php echo base_url() ?>club/clubInfo/<?php echo $projet->ClubID  ?>"> <?php if ($projet->ClubID > 5 ) {echo "club ";}  echo "Tunivisions ".$projet->ClubName; ?></a></label>
+                                                                <span>de <i class="fa fa-clock-o" style="color: green"></i> <?php echo $projet->startDate ?></span>
+                                                                <span>à <i class="fa fa-clock-o" aria-hidden="true"></i> <?php echo $projet->endDate ?></span>
+                                                                <span><i class="fa fa-map-marker" aria-hidden="true"></i> <?php echo $projet->local ?></span>
                                                                 <span><i class="fa fa-money" aria-hidden="true"></i> <?php echo $projet->prix ?> DT</span>
                                                                 <ul class="sociaz-media">
                                                                     <li><a title="" href="<?php echo $projet->eventFB ?>" class="facebook"><i class="fa fa-facebook"></i></a></li>
@@ -128,25 +163,24 @@
                                                                                                                                 
                                                             </div>
                                                         </div>
-                                                        <div class="col-lg-2 col-md-2 col-sm-2">
+                                                        <div class="col-lg-3 col-md-2 col-sm-2">
                                                             <div class="event-time">
-                                                                <span class="event-date"><?php echo $projet->startDate ?></span>
+                                                                <span class="event-date"><?php echo $projet->type ?></span>
                                                             </div>  
                                                         </div>
                                                     </div>
                                                 </div>
                                                 
                                                <?php  } ?>
+                                                
+                                                
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                            </div><!-- centerl meta -->
 
-                  
-                  
-                  
-                  
-                  
-                </div>
 
-
-             </div><!-- centerl meta -->
               <div class="col-lg-3">
                 <aside class="sidebar static right">
                   <div class="widget">
