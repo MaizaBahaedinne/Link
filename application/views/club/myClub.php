@@ -99,42 +99,7 @@
 
              <!-- sidebar -->
               <div class="col-lg-9">
-                                    <div class="central-meta">
-                                        <div class="title-block">
-                                            <div class="row">
-                                                <div class="col-lg-6">
-                                                    <div class="align-left">
-                                                        <h5>Projets</h5>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-6">
-                                                    <div class="row">
-                                                        <div class="col-lg-5 ">
-                                                            <form method="post">
-                                                                <input type="text" placeholder="chercher ..">
-                                                                <button type="submit"><i class="fa fa-search"></i></button>
-                                                            </form>
-                                                        </div>
-                                                        <div class="col-lg-6 col-md-4 col-sm-4">
-                                                            <div class="select-options">
-                                                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Ajouter un projet</button>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-1 col-md-1 col-sm-1">
-                                                            <div class="option-list">
-                                                                <i class="fa fa-ellipsis-v"></i>
-                                                                <ul>
-                                                                    <!--
-                                                                    <li><a title="" href="#">Show Friends Public</a></li>
-                                                                    -->
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div><!-- title block -->
+                                    
                                     <div class="central-meta">
                                         <div class="row">
                                             <div class="col-lg-12">
@@ -178,7 +143,7 @@
                                         </div>
                                         
                                     </div>
-                            </div><!-- centerl meta -->
+              </div><!-- centerl meta -->
 
 
               <div class="col-lg-3">
