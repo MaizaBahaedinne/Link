@@ -21,7 +21,7 @@ class Project extends BaseController {
 		                $searchText='' ;
 		                $data['projectRecords'] = $this->project_model->projectListing();
                           $this->global['pageTitle'] = 'Projets ';
-		                  $this->global['active'] = 'projects';
+		                  $this->global['active'] = 'Projets';
 		                $this->loadViews("project/list", $this->global, $data, NULL);   
 		        }
 
@@ -31,12 +31,9 @@ class Project extends BaseController {
 
 		                $this->load->model('project_model');
 		                $searchText='' ;
-		                $data["projectInfo"] = $this->project_model->getProjectInfo($projectID);
-                        $data["evaluations"] = $this->evaluation_model->evaluationInfoprojectId($projectID);
-
-                        $data['resource'] = $this->ressource_model->ressourceListingByProject($projectID);
-                        
-                        $this->global['pageTitle'] = $data["projectInfo"]->titre ;
+		                $data["projet"] = $this->project_model->getProjectInfo($projectID);
+                                              
+                        $this->global['pageTitle'] = "Projet" ;
 		                $this->loadViews("project/view", $this->global, $data, NULL);   
 		        }
 				

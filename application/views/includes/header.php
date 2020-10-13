@@ -39,12 +39,25 @@
         width: 80px;
         height: 80px;
     }
-            .alligator-profile-likes {
+    .alligator-profile-likes {
         object-fit: cover;
         object-position: 20% 50%;
         width: 40px;
         height: 40px;
     }
+    .alligator-projects {
+        object-fit: cover;
+        object-position: 50% 50%;
+        width: 250px;
+        height: 250px;
+    }
+    .alligator-projects-banner {
+        object-fit: cover;
+        object-position: 50% 50%;
+        width: 250px;
+        height: 350px;
+    }
+
 </style>
 
   <script src="<?php echo base_url() ?>assets/js/main.min.js"></script>
