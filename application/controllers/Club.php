@@ -22,7 +22,22 @@ class Club extends BaseController {
 
 		                $this->load->model('club_model');
 		                $searchText='' ;
-		                $data['clubRecords'] = $this->club_model->clubListing($this->HUA,$this->SA);
+		                $clubs = $this->club_model->clubListing($this->HUA,$this->SA);
+
+		                foreach ($clubs as $key ) {
+		                	$key->NP =  $this->user_model->getMemberByRoleAndCelulle($key->clubID , 1 , '' ) ;
+							$key->NVPAF =  $this->user_model->getMemberByRoleAndCelulle($key->clubID , 3 , 'Administration et finance' ) ;
+							$key->NAAF =  $this->user_model->getMemberByRoleAndCelulle($key->clubID , 6 , 'Administration et finance' ) ;
+							$key->NVPRH =  $this->user_model->getMemberByRoleAndCelulle($key->clubID , 3 , 'Ressource Humaine' ) ;
+							$key->NARH =  $this->user_model->getMemberByRoleAndCelulle($key->clubID , 6 , 'Ressource Humaine' ) ;
+							$key->NVPM =  $this->user_model->getMemberByRoleAndCelulle($key->clubID , 3 , 'Marketing' ) ;
+							$key->NAM =  $this->user_model->getMemberByRoleAndCelulle($key->clubID , 6 , 'Marketing' ) ;
+							$key->NVPE =  $this->user_model->getMemberByRoleAndCelulle($key->clubID , 3 , 'Evenementiel' ) ;
+							$key->NAE =  $this->user_model->getMemberByRoleAndCelulle($key->clubID , 6 , 'Evenementiel' ) ;
+							$key->members =  $this->user_model->userListingByclub($key->clubID);
+		                }
+
+		                $data["clubs"] =  $clubs ;
 
 		                $this->global['pageTitle'] = 'Clubs';
 		             	$this->global['active'] = 'Clubs';
@@ -116,7 +131,7 @@ class Club extends BaseController {
 				        $email = $this->input->post('email');
 				        $facebook = $this->input->post('facebook');
 				        $is_Actif = $this->input->post('is_Actif');
-				      
+				      	$HUA = $this->input->post('HUA');
 
 				            
 				            $clubInfo = array('name'=> $name ,
@@ -125,7 +140,7 @@ class Club extends BaseController {
 				                               'email'=>  $email  ,
 				                               'facebook'=>  $facebook ,
 				                               'is_Actif'=> 0 ,
-				                               'SenJun'=>$this->HUA
+				                               'SenJun'=>$HUA
 
 				                             );
 				            

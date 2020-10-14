@@ -95,7 +95,7 @@
             <!-- Modal Header -->
             <div class="modal-header">
               <h4 class="modal-title">Ajouter un club 
-                        <select <?php if($SA!=1 ){ echo "Disable"; } ;?> >
+                        <select <?php if($SA!=1 ){ echo "Disable"; } ;?> name="HUA" >
                           <option <?php if($clubID==0 ) {echo "Selected" ; } ?> value="3" >University</option>
                           <option <?php if($clubID==1 ) {echo "Selected" ; } ?> value="4" >High School</option>
                           <option  >Kids</option>

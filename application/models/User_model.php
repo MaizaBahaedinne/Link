@@ -266,7 +266,7 @@ class User_model extends CI_Model
             return $query->result();
         }
 
-     function getMemberByRoleAndCelulle($clubID,$cellule,$roleId)
+     function getMemberByRoleAndCelulle($clubID,$roleId,$cellule)
         {
             $this->db->select('*');
             $this->db->from('tbl_users');
@@ -551,33 +551,10 @@ class User_model extends CI_Model
         return $query->row();
     }
 
-function bonus (){
-        
-        $this->db->select('BaseTbl.userId , BaseTbl.roleId');
-        $this->db->from('tbl_users as BaseTbl');
-        $this->db->where('BaseTbl.createdDtm < ','2019-11-01' );
-                
-        $query = $this->db->get();
-        
-        return $query->row();
-}
 
 
-function auto ($cin){
-        
-        $this->db->select(' BaseTbl.nom , BaseTbl.cin , BaseTbl.adresse , BaseTbl.region , BaseTbl.gov  , BaseTbl.datecin  , BaseTbl.moto ');
-        $this->db->from('tbl_auto as BaseTbl');
-
-        $w = '%'.$cin.'%' ; 
-
-        $this->db->where('BaseTbl.cin Like ' , $cin );
-
-        $query = $this->db->get();
-        
-        return $query->row();
 
 
-}
 
 }
 

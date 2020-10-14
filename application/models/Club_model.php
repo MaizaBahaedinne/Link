@@ -31,13 +31,11 @@ class Club_model extends CI_Model
      */
     function clubListing($clubId,$SA)
     {
-        $this->db->select('BaseTbl.clubID , BaseTbl.name , BaseTbl.birthday , BaseTbl.city ,BaseTbl.email , BaseTbl.is_Actif , Users.name P , Users.avatar , Users.userId , Users.isDeleted  ,count(Users1.userId) members  , BaseTbl.charte, BaseTbl.facebook , BaseTbl.SenJun  ');
-        $this->db->from('tbl_club as BaseTbl');
-   
-       $this->db->join('tbl_users as Users', 'Users.ClubID = BaseTbl.clubID', 'LEFT');
-       $this->db->join('tbl_users as Users1', 'Users1.ClubID = BaseTbl.clubID', 'LEFT') ; 
-        $this->db->where('Users.roleId = 1 OR Users.roleId = ','2') ;
-        $this->db->where('Users1.isDeleted = ','0') ;
+        $this->db->select('BaseTbl.clubID  ,  Club.name  , Club.is_Actif , Club.SenJun   , Club.city   ');
+        $this->db->from('tbl_users as BaseTbl');
+        $this->db->join('tbl_club as Club', 'BaseTbl.ClubID = Club.clubID', 'LEFT');
+        $this->db->where('BaseTbl.roleId = 1 OR BaseTbl.roleId = ','2') ;
+        $this->db->where('BaseTbl.isDeleted = ','0') ;
 
         if($SA!=1){
 
@@ -55,7 +53,7 @@ class Club_model extends CI_Model
         }
 
 
-       $this->db->group_by('BaseTbl.clubId') ;
+       $this->db->group_by('BaseTbl.clubID') ;
         $query = $this->db->get();
         
 
