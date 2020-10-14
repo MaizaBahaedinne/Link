@@ -102,7 +102,7 @@
                             </div>
                             <div class="col-md-2">
                               <div class="users-thumb-list">
-                                <?php if($AE) { ?>
+                                <?php if($VPE) { ?>
                               <a href="<?php echo base_url() ?>User/ProfileShow/<?php echo $VPE->userId ?>" target="_blank">
                                 <img alt="" class="alligator-profile-likes" src="<?php echo base_url() ?>uploads/avatar/<?php echo $VPE->avatar ?>"> 
                               </a>
