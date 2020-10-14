@@ -48,7 +48,10 @@
                           <?php $VPE = $record->VPE ; ?>
    
                           <div class="row">
-                            <div class="col-md-12">
+                            <div class="col-md-4">
+                              Président
+                            </div>
+                            <div class="col-md-8">
                               <div class="users-thumb-list">
                               <?php if($P) { ?>
                               <a href="<?php echo base_url() ?>User/ProfileShow/<?php echo $P->userId ?>" target="_blank">
@@ -59,8 +62,10 @@
                             </div>
                             
                             <hr>
-                            
-                            <div class="col-md-3">
+                            <div class="col-md-4">
+                              VP
+                            </div>
+                            <div class="col-md-2">
                               <div class="users-thumb-list">
                                 <?php if($VPAF) { ?>
                               <a href="<?php echo base_url() ?>User/ProfileShow/<?php echo $VPAF->userId ?>" target="_blank">
@@ -69,7 +74,7 @@
                                <?php } ?>
                               </div>
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-md-2">
                               <div class="users-thumb-list">
                                 <?php if($VPRH) { ?>
                               <a href="<?php echo base_url() ?>User/ProfileShow/<?php echo $VPRH->userId ?>" target="_blank">
@@ -78,7 +83,7 @@
                                <?php } ?>
                               </div>
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-md-2">
                               <div class="users-thumb-list">
                                 <?php if($VPM) { ?>
                               <a href="<?php echo base_url() ?>User/ProfileShow/<?php echo $VPM->userId ?>" target="_blank">
@@ -87,7 +92,7 @@
                                <?php } ?>
                               </div>
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-md-2">
                               <div class="users-thumb-list">
                                 <?php if($VPE) { ?>
                               <a href="<?php echo base_url() ?>User/ProfileShow/<?php echo $VPE->userId ?>" target="_blank">
