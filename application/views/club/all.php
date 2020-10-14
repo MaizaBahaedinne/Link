@@ -95,12 +95,12 @@
             <!-- Modal Header -->
             <div class="modal-header">
               <h4 class="modal-title">Ajouter un club 
-                <?php if($clubID == 0 ){ ?>
-                   University
-                 <?php } ?> 
-                 <?php if($clubID == 1 ){ ?>
-                   High school
-                 <?php } ?> 
+                        <select <?php if($SA!=1 ){ echo "Disable"; } ;?> >
+                          <option <?php if($clubID==0 ) {echo "Selected" ; } ?> value="3" >University</option>
+                          <option <?php if($clubID==1 ) {echo "Selected" ; } ?> value="4" >High School</option>
+                          <option  >Kids</option>
+                          <option <?php if($clubID==2 ) {echo "Selected" ; } ?> >Alumni</option>
+                        </select>
                 </h4>
               <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
@@ -110,6 +110,9 @@
                 <?php $this->load->helper("form"); ?>
                 <form role="form"  id="addproject" action="<?php echo base_url() ?>Club/addNew" method="post" role="form"  enctype="multipart/form-data">
                       
+
+                        <label>type</label>
+                        
 
                         <label>Nom</label>
                         <input type="text" name="name" class="form-control" required>
