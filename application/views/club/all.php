@@ -56,7 +56,7 @@
    
                           <div class="row">
                             <div class="col-md-4">
-                              Président
+                              <small>Président</small>
                             </div>
                             <div class="col-md-8">
                               <div class="users-thumb-list">
@@ -71,7 +71,7 @@
                             <hr>
                             <div class="row">
                             <div class="col-md-4">
-                              Vice Président
+                              <small> Vice Président</small>
                             </div>
                             <div class="col-md-2">
                               <div class="users-thumb-list">
@@ -115,7 +115,7 @@
 
                             <div class="row">
                             <div class="col-md-4">
-                              Assistants
+                               <small>Assistants</small>
                             </div>
                             <div class="col-md-2">
                               <?php if($AAF) { ?>
