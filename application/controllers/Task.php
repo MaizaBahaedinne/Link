@@ -28,7 +28,7 @@ class Task extends BaseController {
                    
        $data["projet"] = $this->project_model->getProjectInfo($projectId);
       foreach ($taches as $tache ) {
-        $tache->affections= $this->Task_model->AffectationsListing($tache->projectId);
+        $tache->affections= $this->Task_model->AffectationsListing($tache->tacheId);
       }
      
        $data["taches"] = $taches;
