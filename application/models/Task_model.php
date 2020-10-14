@@ -26,14 +26,10 @@ class Task_model extends CI_Model
     function taskListing($projectId)
     {
 
-
-
-
-
-       $this->db->select('BaseTbl.tacheId , BaseTbl.deadline , BaseTbl.par   , BaseTbl.titre , proj.titre, proj.projectId ');
+       $this->db->select('BaseTbl.tacheId , BaseTbl.deadline , BaseTbl.par   , BaseTbl.titre , BaseTbl.description, proj.titre projtitre, proj.projectId , user.name parname , user.avatar ');
        $this->db->from('tbl_task as BaseTbl');
               $this->db->join('tbl_project as proj', 'proj.projectId = BaseTbl.projectId', 'LEFT');
-
+              $this->db->join('tbl_Users as user', 'user.userId = BaseTbl.par', 'LEFT');
       $this->db->where('BaseTbl.projectId = ', $projectId);
 
        $query = $this->db->get();
@@ -45,7 +41,7 @@ class Task_model extends CI_Model
     {
 
 
-       $this->db->select('user.name ,BaseTbl.status  ');
+       $this->db->select('user.name ,BaseTbl.status , user.name parname , user.avatar ');
        $this->db->from('tbl_affectation as BaseTbl');
               $this->db->join('tbl_Users as user', 'user.userId = BaseTbl.userAffectatedID', 'LEFT');
 

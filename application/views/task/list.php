@@ -4,55 +4,91 @@
 				<div class="row" id="page-contents">
 					<div class=" col-lg-12">
 						<div class="central-meta">
+              <div class="row">
               <div class="col-md-8">
-							<span><h4> Gestion des tache :  </h4> <?php echo $projet->titre ?></span>
+							<h4> Gestion des tache : <?php echo $projet->titre ?>  </h4> 
 							</div>
               <div class="col-md-4">
-              <button class="btn btn-primary" data-toggle="modal" data-target="#myModal" >Ajouter une tache</button> 
+
+              <a class="align-right main-btn" data-toggle="modal" data-target="#myModal" >Ajouter une tache</a> 
+              </div>
               </div>
 							<div>
-                  <table class="table">
+                <br>
+                  <table class="table" style="width: 100%">
                     <thead>
-                      <th>ID</th>
-                      <th>Deadline</th>
-                      <th>Par</th>
+                      <th width="30%" >titre</th>
+                      <th width="20%" >Deadline</th>
+                      <th width="5%">Par</th>
                       <th>affecté à</th>
-                      <th>Action</th>
+                      <th width="10%" >Action</th>
                     </thead>
                     <tbody>
                       <?php foreach ($taches as $tache ) { ?>
-                        <td><?php echo $tache->tacheId?></td>
-                        <td><?php echo $tache->deadline?></td>                                     <td><?php echo $tache->par?></td>
-
-                        <td><?php foreach ($tache->affections as $affection ) { ?>
-                              <ul>
+                        <td>
+                          <h4><?php echo $tache->titre ?></h4>
+                         
+                          <span>
+                            <?php echo $tache->description ?>
+                          </span>
+                        </td> 
+                        <td><?php echo $tache->deadline ?></td>                                     
+                        <td> 
+                          <a data-toggle="tooltip" title="" href="#" data-original-title="<?php echo $tache->parname?>">
+                                <img alt="" class="alligator-profile-likes" src="<?php echo base_url() ?>uploads/avatar/<?php echo $tache->avatar ?>">  
+                           </a> 
+                        </td>
+                        <td>
+                           <ul>
+                        <?php foreach ($tache->affections as $affection ) { ?>
+                             
 
                                    
 
                             
-                              <?php echo  "<li>".$affection->name."</li>"
-                               
-                              ?> &nbsp;
-                             
-                                <?php 
-                                 $end = $tache->deadline ;
-                                 
-                                if($affection->status == 0 &&  (time()-(60*60*24)) < strtotime($tache->deadline) )  { ?>
-                                  <button class="btn" style="background-color:green" > <i class="fas fa-check-circle"></i> </button>
-                                  <?php }elseif ($affection->status== 1 )  {  ?>
-                                    <button class="btn" disabled style="background-color:gray"> <i class="fas fa-check-circle"></i> </button>
-                                  <?php } ?> 
-                                
-                              </ul>
-                            <?php }?>
-                        </td>
-                        <td></td>
-                        <td></td>
+                                <li> 
+                                  <div class="row ">
+                                    <div class="col-md-3">
+                                      <img alt="" class="alligator-profile-likes" src="<?php echo base_url() ?>uploads/avatar/<?php echo $affection->avatar ?>"> 
+                                  </div>
 
-                      <?php }?>
+                                  <div class="col-md-3">
+                                    <?php  echo $affection->name  ; ?>
+                                  </div>
+                                  <div class="col-md-6">
+                                <?php 
+
+                               
+                                if($affection->status == 0 &&  (time()-(60*60*24)) < strtotime($tache->deadline) )  { ?>
+                                  <button class="btn" style="color:orange" > <i class="fa fa-check-square"></i> Valider </button>
+                                  <?php }elseif ($affection->status== 1 )  {  ?>
+                                  <button class="btn" disabled style="color:green"> <i class="fa fa-check-square"></i> Cloturé </button>
+                                  <?php }elseif ($affection->status== 0 &&  (time()-(60*60*24)) > strtotime($tache->deadline) ) {  ?>
+                                  <button class="btn" disabled style="color:gray"> <i class="fa fa-check-square"></i> Dépassé </button>
+                                  <?php } ?> 
+                                  <br>
+                                 <button class="btn" disabled style="color:red"> <i class="fa fa-minus-square"></i> Supprimer </button>
+                                </div>
+                                </div>
+                               </li>
+                               <hr>                                                         
+                           
+
+                            <?php }?>      
+                            </ul>                            
+                            <a  class="align-right main-btn" href=""><i class="fa fa-user-plus"></i> ajouter des membres </a>
+                        </td>
+                        <td>
+                          <a href=""><i class="fa fa-pencil"></i></a>
+                          <a href=""><i class="fa fa-eye"></i></a>
+                          
+                          
+                        </td>
+                        
+                      <?php } ?>
                       
                     </tbody>
-                    <tfoot></tfoot>
+                   
                   </table>       
               </div>
 						</div>
@@ -84,8 +120,8 @@
 
 
            
-                      <input type="submit" class="btn btn-primary" value="Envoyer" />
-                      <input type="reset" class="btn btn-secondary" value="Reset" />
+                      <input type="submit" class="align-right btn" value="Envoyer" />
+
  
                        
                     </form>

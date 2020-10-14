@@ -18,9 +18,15 @@ class Task extends BaseController {
 
     function index()
     {
-        $taches = $this->Task_model->taskListing(1);
+        
+    }
+
+
+    function tasksListing ($projectId) 
+    {
+      $taches = $this->Task_model->taskListing($projectId);
                    
-       $data["projet"] = $this->project_model->getProjectInfo(1);
+       $data["projet"] = $this->project_model->getProjectInfo($projectId);
       foreach ($taches as $tache ) {
         $tache->affections= $this->Task_model->AffectationsListing($tache->projectId);
       }

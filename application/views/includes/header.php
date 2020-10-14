@@ -48,7 +48,7 @@
     .alligator-projects {
         object-fit: cover;
         object-position: 50% 50%;
-        width: 250px;
+        width: 100%;
         height: 250px;
     }
     .alligator-projects-banner {

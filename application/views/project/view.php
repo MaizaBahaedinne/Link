@@ -7,23 +7,7 @@
                             <div class="user-profile">
                                 <figure>
                                    <img src="<?php echo base_url() ?>uploads/projet/<?php echo $projet->banner ?>" class="alligator-projects-banner" alt="">                                 
-                                    <ul class="profile-controls">
-                                        <li><a href="#" title="" data-toggle="tooltip" data-original-title="Like"><i class="fa fa-thumbs-up"></i></a></li>
-                                        <li><a href="#" title="" data-toggle="tooltip" data-original-title="Follow"><i class="fa fa-star"></i></a></li>
-                                        <li><a class="send-mesg" href="#" title="" data-toggle="tooltip" data-original-title="Send Message"><i class="fa fa-comment"></i></a></li>
-                                        <li>
-                                            <div class="edit-seting" title="Edit Profile image"><i class="fa fa-sliders"></i>
-                                                <ul class="more-dropdown">
-                                                    <li><a href="setting.html" title="">Update Profile Photo</a></li>
-                                                    <li><a href="setting.html" title="">Update Header Photo</a></li>
-                                                    <li><a href="setting.html" title="">Account Settings</a></li>
-                                                    <li><a href="support-and-help.html" title="">Find Support</a></li>
-                                                    <li><a class="bad-report" href="#" title="">Report Profile</a></li>
-                                                    <li><a href="#" title="">Block Profile</a></li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                    </ul>
+                                    
                                 </figure>
                                 <div class="profile-section">
                                     <br>
@@ -33,37 +17,28 @@
                                         </div>
                                         <div class="col-lg-5">
                                             <ul class="align-right user-ben">
-                                            <li class="search-for">
-                                                <a href="#" title="" class="circle-btn search-data" data-ripple=""><i class="ti-search"></i></a>
-                                                <form method="post" class="searchees">
-                                                    <span class="cancel-search"><i class="ti-close"></i></span>
-                                                    <input type="text" placeholder="Search in Posts">
-                                                    <button type="submit"></button>
-                                                </form>
-                                            </li>
+                                        
                                             <li class="more">
-                                                <a href="#" title="" class="circle-btn" data-ripple=""><i class="fa fa-ellipsis-h"></i>
+                                                <a href="#" title="" class="btn" data-ripple="">Participation
                                                 </a>
                                                 <ul class="more-dropdown">
                                                     <li>
-                                                        <a href="#">Statics</a>
+                                                        <a href="#">J'y vais</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Events</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">Report Profile</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">Block Profile</a>
+                                                        <a href="#">Peut ètre</a>
                                                     </li>
                                                 </ul>
                                             </li>
                                             <li>
-                                                <a href="#" title="Folow us" class="circle-btn" data-ripple=""><i class="fa fa-star"></i></a>
+                                                <a href="#" title="Folow us" class="main-btn" data-ripple=""  data-toggle="modal" data-target="#myModal" >Modifier</a>
                                             </li>
-                                            <li><a href="#" title="" class="main-btn create-pst" data-ripple="">Add New Post</a></li>
+                                            <li>
+                                                <a href="<?php echo base_url() ?>Task/tasksListing/<?php echo $projet->projectId ?>"  class="align-right user-ben main-btn " >Liste des taches</a>
+                                            </li>
+                                            
                                         </ul>
+                                        
                                         </div>
                                     </div>
                                     <br>
@@ -182,3 +157,129 @@
             </div>
         </div>  
     </section>
+
+
+
+
+
+    <div class="modal fade" id="myModal">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title">Modifier le projet <?php echo $projet->titre ?></h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <?php $this->load->helper("form"); ?>
+                <form role="form"  id="addproject" action="<?php echo base_url() ?>Project/addNewP" method="post" role="form"  enctype="multipart/form-data">
+                        
+                           
+   
+                                    
+
+                                 
+                                    <label for="fname">Cible  &nbsp; &nbsp; <br> </label>
+                                        
+                                    <input type="radio" name="cible" id="Publique" value="Publique" required> Publique
+                                    <input type="radio" name="cible" id="prive" value="Privé"> Privé
+                                    <input type="radio" name="cible" id="Only" value="Only tunimateur" > Only tunimateur
+                           
+
+                                        <script type="text/javascript">
+                                          $( "#Publique" ).click(function() {
+                                              $("#facebook").prop("required", true);
+                                            });
+                                          $( "#Only" ).click(function() {
+                                              $("#facebook").prop("required", true);
+                                            });
+                                          $( "#prive" ).click(function() {
+                                              $("#facebook").prop("required", false);
+                                            });
+                                        </script>
+
+                                    <br>
+
+                                    <label for="fname">Lien d'évenement facebook : </label>
+                                    <input type="url" name="facebook" id="facebook" class="form-control" >
+                            
+                                    
+
+                                    <label for="fname">Type</label>
+                                    <select class="form-control" id="type" name="type" >
+                                            <option value="Evenement">Evenement</option>
+                                            <option value="Formation">Formation</option>
+                                            <option value="Conférence">Conférence</option>
+                                            <option value="Action">Action</option>
+                                            <option value="Couverture Mediatique">Couverture Mediatique</option>
+                                            <option value="Compétition">Compétition</option>
+                                            <option value="Soirée">Soirée</option>
+                                    </select>
+                          
+
+                                    <hr>
+                               
+                                    <label for="fname">Titre</label>
+                                    <input type="text" class="form-control required" id="Titre" name="Titre" maxlength="255" required >
+                              
+                                    
+                                                            
+                                   
+                                    <label for="fname">Description</label>
+                                    <textarea class="form-control" name="description" id="tinymceExample" rows="20" required></textarea>
+
+                               
+                                    
+
+                                    <label for="fname">Date debut</label>
+                                        <!-- min="<?php echo date('Y-m-d').'T00:00' ?>" -->
+                                    <input type="datetime-local" class="form-control "  min="<?php echo date('Y-m-d').'T00:00' ?>"   id="debut" name="debut"  required >
+ 
+
+                              
+                                    <label for="fname">Date fin</label>
+                                        <!-- min="<?php echo date('Y-m-d').'T00:00' ?>" -->
+                                    <input type="datetime-local" class="form-control"  min="<?php echo date('Y-m-d').'T00:00' ?>"   id="fin" name="fin"  required >
+
+                            
+                                    <hr>
+                             
+                                    <label for="fname">Local</label>
+                                    <input type="text" class="form-control " id="local" name="local" maxlength="255" required >      
+
+                             
+                                    <label for="fname">Capacité</label>
+                                    <input type="number" class="form-control " id="capacite" name="capacite"  required >      
+
+                                    <label for="fname">Prix</label>
+                                    <input type="number" class="form-control" id="prix" name="prix"  required >      
+
+
+
+
+
+
+                        </div>
+                       
+                            <input type="submit" class="btn btn-primary" value="Envoyer" />
+                            <input type="reset" class="btn btn-secondary" value="Reset" />
+ 
+                       
+                    </form>
+
+
+
+
+
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+    </div><!-- fade Modal -->
