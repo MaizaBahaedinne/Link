@@ -29,38 +29,30 @@ class Club_model extends CI_Model
      * @param number $segment : This is pagination limit
      * @return array $result : This is result
      */
-    function clubListing($clubId,$SA)
+    function clubListing($SA)
     {
-        $this->db->select('BaseTbl.ClubID , Club.name , Club.is_Actif , Club.SenJun , Club.city ');
-        $this->db->from('tbl_users as BaseTbl');
-        $this->db->join('tbl_club as Club', 'BaseTbl.ClubID = Club.clubID', 'LEFT');
+        $this->db->select('BaseTbl.clubID , BaseTbl.name , BaseTbl.is_Actif , BaseTbl.SenJun , BaseTbl.city ');
+        $this->db->from('tbl_club as BaseTbl');
 
         if($SA!=1){
-
                 $this->db->where('BaseTbl.clubID > ', 5 ) ;
-
                 $this->db->where('BaseTbl.clubID != ', -1 ) ; 
-
                 if($clubId == 0 ){
                     $this->db->where('BaseTbl.SenJun = ', 3 ) ;      
                 }
-
                 if($clubId == 1 ){
                     $this->db->where('BaseTbl.SenJun = ', 4 ) ;      
                 }
         }
-        
-       $this->db->group_by('BaseTbl.ClubID') ;
-        $query = $this->db->get();
-        
 
+        $query = $this->db->get();
         $result = $query->result();        
         return $result;
     }
 
 
 
-/**
+    /**
      * This function used to get user information by id with role
      * @param number $userId : This is user id
      * @return aray $result : This is user information

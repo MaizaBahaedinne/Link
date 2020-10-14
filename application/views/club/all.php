@@ -15,7 +15,7 @@
                     <tr>
                         <th>Ecole</th>
                         <th>Secteur</th>
-                        <th>Président</th>
+                        <th>Bureau</th>
                         <th>Membres</th>
                         <th>Contact</th>
                         <th>Action</th>
@@ -23,14 +23,14 @@
                     </thead>
                     <tbody>
                     <?php
-                    if(!empty($clubRecords))
+                    if(!empty($clubs))
                     {
-                        foreach($clubRecords as $record)
+                        foreach($clubs as $record)
                         {
                     ?>
                     <tr>
                         <td>
-                          <a href="<?php echo base_url() ?>club/clubInfo/<?php echo $record->ClubID ?>" target="_blank"   >
+                          <a href="<?php echo base_url() ?>club/clubInfo/<?php echo $record->clubID ?>" target="_blank"   >
                            <small><?php echo $record->name ?> </small> 
                            <?php if ($record->is_Actif=="0"){  ?>
                                <i class="fa fa-ban" aria-hidden="true"></i>
@@ -41,12 +41,61 @@
                             <small><?php echo $record->city ?></small>
                         </td>
                         <td>
-                          <a href="<?php echo base_url() ?>User/ProfileShow/<?php echo $record->userId ?>" target="_blank"   >
-                          <small> <?php echo $record->P ?></small>
-                         </a>
+                          <?php $P = $record->NP ;  ?>
+                          <?php $VPAF = $record->NVPAF ; ?>
+                          <?php $VPRH = $record->NVPRH ; ?>
+                          <?php $VPM = $record->NVPM ; ?>
+                          <?php $VPE = $record->NVPE ; ?>
+   
+                          <div class="row">
+                            <div class="col-md-12">
+                              <a href="<?php echo base_url() ?>User/ProfileShow/<?php echo $P->userId ?>" target="_blank">
+                              </a>
+                            </div>
+                            
+                            <hr>
+                            
+                            <div class="col-md-3">
+                              <a href="<?php echo base_url() ?>User/ProfileShow/<?php echo $VPAF->userId ?>" target="_blank">
+                              </a>
+                            </div>
+                            <div class="col-md-3">
+                              <a href="<?php echo base_url() ?>User/ProfileShow/<?php echo $VPRH->userId ?>" target="_blank">
+                              </a>
+                            </div>
+                            <div class="col-md-3">
+                              <a href="<?php echo base_url() ?>User/ProfileShow/<?php echo $VPM->userId ?>" target="_blank">
+                              </a>
+                            </div>
+                            <div class="col-md-3">
+                              <a href="<?php echo base_url() ?>User/ProfileShow/<?php echo $VPE->userId ?>" target="_blank">
+                              </a>
+                            </div>
+                            
+                            <hr>
+<!--
+                            <div class="col-md-3">
+                              <a href="<?php echo base_url() ?>User/ProfileShow/<?php echo $record->userId ?>" target="_blank">
+                              </a>
+                            </div>
+                            <div class="col-md-3">
+                              <a href="<?php echo base_url() ?>User/ProfileShow/<?php echo $record->userId ?>" target="_blank">
+                              </a>
+                            </div>
+                            <div class="col-md-3">
+                              <a href="<?php echo base_url() ?>User/ProfileShow/<?php echo $record->userId ?>" target="_blank">
+                              </a>
+                            </div>
+                            <div class="col-md-3">
+                              <a href="<?php echo base_url() ?>User/ProfileShow/<?php echo $record->userId ?>" target="_blank">
+                              </a>
+-->
+                            </div>
+                          </div>
                         </td>
                         <td>
-                            <small><?php echo $record->members ; ?> </small>
+                          <?php $members = count($record->members) ?>
+                            <small><?php echo $members ; ?> </small>
                         </td>
                         <td>
                             <?php if ($record->SenJun == 3 ){ echo 'University' ; }?>
