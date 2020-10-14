@@ -349,8 +349,10 @@
 				<?php foreach ($ConnrectedUser as $userCon ) {?>
 				<li>
 					<div class="author-thmb">
-						<img src="<?php echo base_url() ?>uploads/avatar/<?php echo $userCon->avatar ?>" class="alligator-profile" alt="">
-						<span class="status f-online"></span>
+						<a title="<?php echo $userCon->name ?>" data-toggle="tooltip" data-placement="left" data-original-title="<?php echo $userCon->name ?>">
+							<img src="<?php echo base_url() ?>uploads/avatar/<?php echo $userCon->avatar ?>" class="alligator-profile" alt="">
+							<span class="status f-online"></span>
+						</a>
 					</div>
 				</li>
 				<?php } ?>
