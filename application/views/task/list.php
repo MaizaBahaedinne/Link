@@ -15,19 +15,20 @@
               </div>
 							<div>
                 <br>
-                  <table class="table" style="width: 100%">
+                  <table class="table" style="width: auto">
                     <thead>
                       <th width="30%" >titre</th>
-                      <th width="20%" >Deadline</th>
+                      <th width="12%" >Deadline</th>
                       <th width="5%">Par</th>
                       <th>affecté à</th>
-                      <th width="10%" >Action</th>
+                      <th width="5%" >Action</th>
                     </thead>
                     <tbody>
                       <?php foreach ($taches as $tache ) { ?>
                         <td>
-                          <h4><?php echo $tache->titre ?></h4>
-                         
+                          <h4>
+                            <?php echo $tache->titre ?>
+                          </h4>
                           <span>
                             <?php echo $tache->description ?>
                           </span>
@@ -76,13 +77,13 @@
 
                             <?php }?>      
                             </ul>                            
-                            <a  class="align-right main-btn" href=""><i class="fa fa-user-plus"></i> ajouter des membres </a>
+                            <a  class="align-center main-btn" href="">
+                              <i class="fa fa-user-plus"></i> ajouter des membres 
+                            </a>
                         </td>
                         <td>
                           <a href=""><i class="fa fa-pencil"></i></a>
                           <a href=""><i class="fa fa-eye"></i></a>
-                          
-                          
                         </td>
                         
                       <?php } ?>
