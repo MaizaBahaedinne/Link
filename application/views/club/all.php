@@ -61,7 +61,7 @@
                             <div class="col-md-8">
                               <div class="users-thumb-list">
                               <?php if($P) { ?>
-                              <a href="<?php echo base_url() ?>User/ProfileShow/<?php echo $P->userId ?>" target="_blank">
+                              <a href="<?php echo base_url() ?>User/ProfileShow/<?php echo $P->userId ?>" target="_blank"  title="<?php echo $P->name ?>" data-toggle="tooltip" data-placement="left" data-original-title="<?php echo $P->name ?>">
                                 <img alt="" class="alligator-profile-likes" src="<?php echo base_url() ?>uploads/avatar/<?php echo $P->avatar ?>">  
                               </a>
                               <?php } ?>
@@ -76,7 +76,8 @@
                             <div class="col-md-2">
                               <div class="users-thumb-list">
                                 <?php if($VPAF) { ?>
-                              <a href="<?php echo base_url() ?>User/ProfileShow/<?php echo $VPAF->userId ?>" target="_blank">
+
+                              <a href="<?php echo base_url() ?>User/ProfileShow/<?php echo $VPAF->userId ?>" target="_blank"  title="<?php echo $VPAF->name ?>" data-toggle="tooltip" data-placement="left" data-original-title="<?php echo $VPAF->name ?>">
                                 <img alt="" class="alligator-profile-likes" src="<?php echo base_url() ?>uploads/avatar/<?php echo $VPAF->avatar ?>"> 
                               </a>
                                <?php } ?>
@@ -85,7 +86,7 @@
                             <div class="col-md-2">
                               <div class="users-thumb-list">
                                 <?php if($VPRH) { ?>
-                              <a href="<?php echo base_url() ?>User/ProfileShow/<?php echo $VPRH->userId ?>" target="_blank">
+                              <a href="<?php echo base_url() ?>User/ProfileShow/<?php echo $VPRH->userId ?>" target="_blank"  title="<?php echo $VPRH->name ?>" data-toggle="tooltip" data-placement="left" data-original-title="<?php echo $VPRH->name ?>">
                                 <img alt="" class="alligator-profile-likes" src="<?php echo base_url() ?>uploads/avatar/<?php echo $VPRH->avatar ?>"> 
                               </a>
                                <?php } ?>
@@ -94,7 +95,7 @@
                             <div class="col-md-2">
                               <div class="users-thumb-list">
                                 <?php if($VPM) { ?>
-                              <a href="<?php echo base_url() ?>User/ProfileShow/<?php echo $VPM->userId ?>" target="_blank">
+                              <a href="<?php echo base_url() ?>User/ProfileShow/<?php echo $VPM->userId ?>" target="_blank" title="<?php echo $VPM->name ?>" data-toggle="tooltip" data-placement="left" data-original-title="<?php echo $VPM->name ?>">
                                 <img alt="" class="alligator-profile-likes" src="<?php echo base_url() ?>uploads/avatar/<?php echo $VPM->avatar ?>"> 
                               </a>
                                <?php } ?>
@@ -103,7 +104,7 @@
                             <div class="col-md-2">
                               <div class="users-thumb-list">
                                 <?php if($VPE) { ?>
-                              <a href="<?php echo base_url() ?>User/ProfileShow/<?php echo $VPE->userId ?>" target="_blank">
+                              <a href="<?php echo base_url() ?>User/ProfileShow/<?php echo $VPE->userId ?>" target="_blank"  title="<?php echo $VPE->name ?>" data-toggle="tooltip" data-placement="left" data-original-title="<?php echo $VPE->name ?>">
                                 <img alt="" class="alligator-profile-likes" src="<?php echo base_url() ?>uploads/avatar/<?php echo $VPE->avatar ?>"> 
                               </a>
                                <?php } ?>
