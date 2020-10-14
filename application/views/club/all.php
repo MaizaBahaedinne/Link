@@ -41,15 +41,16 @@
                             <small><?php echo $record->city ?></small>
                         </td>
                         <td>
-                          <?php $P = $record->NP ;  ?>
-                          <?php $VPAF = $record->NVPAF ; ?>
-                          <?php $VPRH = $record->NVPRH ; ?>
-                          <?php $VPM = $record->NVPM ; ?>
-                          <?php $VPE = $record->NVPE ; ?>
+                          <?php $P = $record->P ;  ?>
+                          <?php $VPAF = $record->VPAF ; ?>
+                          <?php $VPRH = $record->VPRH ; ?>
+                          <?php $VPM = $record->VPM ; ?>
+                          <?php $VPE = $record->VPE ; ?>
    
                           <div class="row">
                             <div class="col-md-12">
                               <a href="<?php echo base_url() ?>User/ProfileShow/<?php echo $P->userId ?>" target="_blank">
+                                <img alt="" class="alligator-profile-likes" src="<?php echo base_url() ?>uploads/avatar/<?php echo $P->avatar ?>">  
                               </a>
                             </div>
                             
@@ -57,18 +58,22 @@
                             
                             <div class="col-md-3">
                               <a href="<?php echo base_url() ?>User/ProfileShow/<?php echo $VPAF->userId ?>" target="_blank">
+                                <img alt="" class="alligator-profile-likes" src="<?php echo base_url() ?>uploads/avatar/<?php echo $VPAF->avatar ?>"> 
                               </a>
                             </div>
                             <div class="col-md-3">
                               <a href="<?php echo base_url() ?>User/ProfileShow/<?php echo $VPRH->userId ?>" target="_blank">
+                                <img alt="" class="alligator-profile-likes" src="<?php echo base_url() ?>uploads/avatar/<?php echo $VPRH->avatar ?>"> 
                               </a>
                             </div>
                             <div class="col-md-3">
                               <a href="<?php echo base_url() ?>User/ProfileShow/<?php echo $VPM->userId ?>" target="_blank">
+                                <img alt="" class="alligator-profile-likes" src="<?php echo base_url() ?>uploads/avatar/<?php echo $VPM->avatar ?>"> 
                               </a>
                             </div>
                             <div class="col-md-3">
                               <a href="<?php echo base_url() ?>User/ProfileShow/<?php echo $VPE->userId ?>" target="_blank">
+                                <img alt="" class="alligator-profile-likes" src="<?php echo base_url() ?>uploads/avatar/<?php echo $VPE->avatar ?>"> 
                               </a>
                             </div>
                             
