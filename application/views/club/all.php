@@ -94,7 +94,14 @@
 
             <!-- Modal Header -->
             <div class="modal-header">
-              <h4 class="modal-title">Ajouter un club</h4>
+              <h4 class="modal-title">Ajouter un club 
+                <?php if($clubID == 0 ){ ?>
+                   University
+                 <?php } ?> 
+                 <?php if($clubID == 1 ){ ?>
+                   High school
+                 <?php } ?> 
+                </h4>
               <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
 
@@ -105,19 +112,19 @@
                       
 
                         <label>Nom</label>
-                        <input type="text" name="name" class="form-control" >
+                        <input type="text" name="name" class="form-control" required>
                        
                         <label>Region</label>
-                        <input type="text" name="city"  class="form-control" >
+                        <input type="text" name="city"  class="form-control" required>
                        
                         <label>Date création</label>
-                        <input type="date" name="birthday" class="form-control" >
+                        <input type="date" name="birthday" class="form-control" required>
                         
                         <label>facebook</label>
-                        <input type="url" name="email" class="form-control" >
+                        <input type="url" name="email" class="form-control" required>
                         
                         <label>email</label>
-                        <input type="email" name="facebook"  class="form-control" >
+                        <input type="email" name="facebook"  class="form-control" required>
                         
                         <label>Actif</label>
                         <select name="is_Actif" class="form-control" >
