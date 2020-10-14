@@ -100,6 +100,46 @@ class Club extends BaseController {
 				          
 				          redirect('/Club/editClub/'.$clubId)  ;
 				    }
+
+
+
+				  /**
+				     * This function is used to delete the user using userId
+				     * @return boolean $result : TRUE / FALSE
+				     */
+				    function addNew()
+				    {
+
+				        $name = $this->input->post('name');
+				        $city = $this->input->post('city');
+				        $birthday = $this->input->post('birthday');
+				        $email = $this->input->post('email');
+				        $facebook = $this->input->post('facebook');
+				        $is_Actif = $this->input->post('is_Actif');
+				      
+
+				            
+				            $clubInfo = array('name'=> $name ,
+				                              'city'=>$city,
+				                               'birthday'=>$birthday,
+				                               'email'=>  $email  ,
+				                               'facebook'=>  $facebook ,
+				                               'is_Actif'=> 0 ,
+				                               'SenJun'=>$this->HUA
+
+				                             );
+				            
+				           if( $this->club_model->addClub($clubInfo) ){
+
+				           		$this->session->set_flashdata('success', 'club tunivisions '.$name.'a été ajouter avec succées');
+				           }
+				            else
+				            {
+				                $this->session->set_flashdata('error', 'Mise à jour erronée ');
+				            }
+				          
+				          redirect('/Club')  ;
+				    }
 		       
 					
 					function Members($clubID)

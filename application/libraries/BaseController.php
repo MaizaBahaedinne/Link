@@ -10,6 +10,7 @@
 class BaseController extends CI_Controller {
 	protected $role = '';
 	protected $vendorId = '';
+	protected $HUA = '';
 	protected $name = '';
 	protected $avatar = '';
 	protected $roleText = '';
@@ -94,7 +95,7 @@ class BaseController extends CI_Controller {
 			$this->global ['role'] = $this->role;
 			$this->global ['role_text'] = $this->roleText;
 			$this->global ['last_login'] = $this->lastLogin;
-
+			$this->global ['HUA'] = $this->HUA;
 			$this->global ['isBlocked'] = $this->isBlocked;
 			$this->global ['SA'] = $this->SA;
 

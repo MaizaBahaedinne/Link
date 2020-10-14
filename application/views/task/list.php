@@ -9,15 +9,15 @@
 						<div class="central-meta">
               <div class="row">
               <div class="col-md-8">
-							<h4> Gestion des tache : <?php echo $projet->titre ?>  </h4> 
+							<h6 class="widget-title" > Gestion des tache : <?php echo $projet->titre ?>  </h6> 
 							</div>
               <div class="col-md-4">
-
               <a class="align-right main-btn" data-toggle="modal" data-target="#myModal" >Ajouter une tache</a> 
               </div>
               </div>
 							<div>
-                <br>
+                <hr>
+
                   <table class="table table-striped table-responsive-xl" style="width: cover">
                     <thead>
                       <th  width="2%" >ID</th>
@@ -82,18 +82,19 @@
 
                             <?php }?>      
                             </ul>                            
-                            <a  class="align-center main-btn" data-toggle="modal" data-target="#addMembersToTask" >
+                            <a  class="align-center main-btn" data-toggle="modal" data-target="#addMembersToTask<?php echo $tache->tacheId?>" >
                               <i class="fa fa-user-plus"></i> Ajouter des membres 
                             </a>
-                                <div class="modal fade" id="addMembersToTask">
+                                <div class="modal fade" id="addMembersToTask<?php echo $tache->tacheId?>">
                                     <div class="modal-dialog ">
                                       <div class="modal-content">
 
                                         <!-- Modal Header -->
                                         <div class="modal-header">
-                                          <h4 class="modal-title">Ajouter des membres</h4>
-                                          <button type="button" class="btn-secondary" data-container="body" data-toggle="popover" data-placement="left" data-content="un membre peut avoir seulement une tache dans une periode bien déterminer." data-original-title="" title="">
-                                               ?
+                                          <h4 class="modal-title">Ajouter des membres   </h4>
+
+                                          <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="un membre peut avoir seulement une tache dans une periode bien déterminer."> 
+                                            ?
                                           </button>
                                           <button type="button" class="close" data-dismiss="modal">&times;</button>
                                         </div>
@@ -180,7 +181,10 @@
                     <label>Titre</label>
                     <input type="text"  class="form-control " name="titre" >
                     <label>Description</label>
-                    <textarea row="10"  class="form-control "  name="description"></textarea>
+                    <select>
+                      
+                    </select>
+                    <br>
                     <div class="row">
                       <div class="col-md-6">
                         <label>debut</label>
@@ -188,21 +192,12 @@
                       </div>
                       <div class="col-md-6">
                         <label>Fin</label>
-                        <input type="datetime-local" class="form-control "  min="<?php echo date('Y-m-d').'T00:00' ?>"  name="deadline">     
+                        <input type="datetime-local" class="form-control "  min="<?php echo date('Y-m-d').'T00:00' ?>"  name="deadline">
                       </div>
                     </div>                
 
-
-
-
-
-
                     <br>
-           
                       <input type="submit" class="btn align-right btn-primary" value="Envoyer" />
-
- 
-                       
                     </form>
 
 

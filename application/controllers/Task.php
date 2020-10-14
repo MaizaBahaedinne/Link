@@ -29,7 +29,7 @@ class Task extends BaseController {
        $data["projet"] = $this->project_model->getProjectInfo($projectId);
       foreach ($taches as $tache ) {
         $tache->affections= $this->Task_model->AffectationsListing($tache->tacheId);
-        $tache->membresDispo = $this->Task_model->DisponibleMembreListing($this->clubID,$this->cellule,$tache->startedDate,$tache->deadline   );
+        $tache->membresDispo = $this->Task_model->DisponibleMembreListing();
 
       }
 

@@ -49,13 +49,11 @@ class Task_model extends CI_Model
        return $result;
    }
 
-     function DisponibleMembreListing($clubId,$cellule,$debut,$fin)
+     function DisponibleMembreListing()
     {
         $this->db->select('BaseTbl.userId , BaseTbl.name  ');
         $this->db->from('tbl_users as BaseTbl');
-              
 
-        $this->db->where('BaseTbl.clubID = ', $clubId);
 
 
        $query = $this->db->get();
