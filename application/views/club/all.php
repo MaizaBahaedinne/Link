@@ -49,7 +49,7 @@
    
                           <div class="row">
                             <div class="col-md-12">
-                              <div class="user-img">
+                              <div class="users-thumb-list">
                               <?php if($P) { ?>
                               <a href="<?php echo base_url() ?>User/ProfileShow/<?php echo $P->userId ?>" target="_blank">
                                 <img alt="" class="alligator-profile-likes" src="<?php echo base_url() ?>uploads/avatar/<?php echo $P->avatar ?>">  
@@ -61,7 +61,7 @@
                             <hr>
                             
                             <div class="col-md-3">
-                              <div class="user-img">
+                              <div class="users-thumb-list">
                                 <?php if($VPAF) { ?>
                               <a href="<?php echo base_url() ?>User/ProfileShow/<?php echo $VPAF->userId ?>" target="_blank">
                                 <img alt="" class="alligator-profile-likes" src="<?php echo base_url() ?>uploads/avatar/<?php echo $VPAF->avatar ?>"> 
@@ -70,7 +70,7 @@
                               </div>
                             </div>
                             <div class="col-md-3">
-                              <div class="user-img">
+                              <div class="users-thumb-list">
                                 <?php if($VPRH) { ?>
                               <a href="<?php echo base_url() ?>User/ProfileShow/<?php echo $VPRH->userId ?>" target="_blank">
                                 <img alt="" class="alligator-profile-likes" src="<?php echo base_url() ?>uploads/avatar/<?php echo $VPRH->avatar ?>"> 
@@ -79,7 +79,7 @@
                               </div>
                             </div>
                             <div class="col-md-3">
-                              <div class="user-img">
+                              <div class="users-thumb-list">
                                 <?php if($VPM) { ?>
                               <a href="<?php echo base_url() ?>User/ProfileShow/<?php echo $VPM->userId ?>" target="_blank">
                                 <img alt="" class="alligator-profile-likes" src="<?php echo base_url() ?>uploads/avatar/<?php echo $VPM->avatar ?>"> 
@@ -88,7 +88,7 @@
                               </div>
                             </div>
                             <div class="col-md-3">
-                              <div class="user-img">
+                              <div class="users-thumb-list">
                                 <?php if($VPE) { ?>
                               <a href="<?php echo base_url() ?>User/ProfileShow/<?php echo $VPE->userId ?>" target="_blank">
                                 <img alt="" class="alligator-profile-likes" src="<?php echo base_url() ?>uploads/avatar/<?php echo $VPE->avatar ?>"> 
