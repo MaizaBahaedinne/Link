@@ -155,21 +155,19 @@
                             <span><?php echo $member->role ?></span>
                           </div>
                           <ul class="frnd-info">
-                            <li><span>Departement:</span><?php echo $member->cellule ?></li>
-                            <li><span>Anniversaire :</span> <?php echo $member->birthday ?></li>
+                            <li><span>Cellule:</span><?php echo $member->cellule ?></li>
+                            <li><span>née le:</span> <?php echo $member->birthday ?></li>
                             <li><span>Sexe :</span> <?php echo $member->sexe ?></li>
                             <li><span>E-Mail:</span><?php echo $member->email ?></li>
-                            <li><span>Photos:</span><?php echo $member->mobile ?></li>
+                            <li><span>mobile:</span><?php if($SA == 1 ){echo $member->mobile ; } ?></li>
                             
                           </ul>
+                          <a class="btn-main align-left" href="#" title="">Vister</a>
                           <a class="send-mesg" href="#" title="">Message</a>
                           <div class="more-opotnz">
                             <i class="fa fa-ellipsis-h"></i>
                             <ul>
-                              <li><a href="#" title="">Block</a></li>
-                              <li><a href="#" title="">UnBlock</a></li>
-                              <li><a href="#" title="">Mute Notifications</a></li>
-                              <li><a href="#" title="">hide from friend list</a></li>
+                              <li><a href="#" title="">Bloquer</a></li>
                             </ul>
                           </div>
                         </div>
@@ -178,10 +176,7 @@
                     
                      <?php }  ?>
                   </div>
-                  <div class="lodmore">
-                    <span>Viewing 1-8 of 44 friends</span>
-                    <button class="btn-view btn-load-more"></button>
-                  </div>
+   
                 </div>
               </div>  
             </div>  
