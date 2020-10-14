@@ -266,15 +266,16 @@ class User_model extends CI_Model
             return $query->result();
         }
 
-     function getMemberByRoleAndCelulle($clubID,$roleId,$cellule)
+     function getMemberByRoleAndCelulle($ClubID,$roleId,$cellule)
         {
             $this->db->select('*');
             $this->db->from('tbl_users');
             $this->db->where('roleId =', $roleId );
             $this->db->where('cellule =', $cellule );
-            $this->db->where('ClubID =', $clubID );
+            $this->db->where('ClubID =', $ClubID );
             $query = $this->db->get();         
             return $query->row();
+            
         }
 
 
