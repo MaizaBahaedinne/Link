@@ -42,10 +42,17 @@
                         </td>
                         <td>
                           <?php $P = $record->P ;  ?>
+
                           <?php $VPAF = $record->VPAF ; ?>
                           <?php $VPRH = $record->VPRH ; ?>
                           <?php $VPM = $record->VPM ; ?>
                           <?php $VPE = $record->VPE ; ?>
+
+
+                          <?php $AAF = $record->AAF ; ?>
+                          <?php $ARH = $record->ARH ; ?>
+                          <?php $AM = $record->AM ; ?>
+                          <?php $AE = $record->AE ; ?>
    
                           <div class="row">
                             <div class="col-md-4">
@@ -94,7 +101,7 @@
                             </div>
                             <div class="col-md-2">
                               <div class="users-thumb-list">
-                                <?php if($VPE) { ?>
+                                <?php if($AE) { ?>
                               <a href="<?php echo base_url() ?>User/ProfileShow/<?php echo $VPE->userId ?>" target="_blank">
                                 <img alt="" class="alligator-profile-likes" src="<?php echo base_url() ?>uploads/avatar/<?php echo $VPE->avatar ?>"> 
                               </a>
@@ -103,23 +110,35 @@
                             </div>
                             
                             <hr>
-<!--
-                            <div class="col-md-3">
-                              <a href="<?php echo base_url() ?>User/ProfileShow/<?php echo $record->userId ?>" target="_blank">
+                            <div class="col-md-4">
+                              Assistants
+                            </div>
+                            <div class="col-md-2">
+                              <?php if($AAF) { ?>
+                              <a href="<?php echo base_url() ?>User/ProfileShow/<?php echo $AAF->userId ?>" target="_blank">
+                               <img alt="" class="alligator-profile-likes" src="<?php echo base_url() ?>uploads/avatar/<?php echo $AAF->avatar ?>">                                 
                               </a>
                             </div>
-                            <div class="col-md-3">
-                              <a href="<?php echo base_url() ?>User/ProfileShow/<?php echo $record->userId ?>" target="_blank">
+                            <div class="col-md-2">
+                              <?php if($ARH) { ?>
+                              <a href="<?php echo base_url() ?>User/ProfileShow/<?php echo $ARH->userId ?>" target="_blank">
+                               <img alt="" class="alligator-profile-likes" src="<?php echo base_url() ?>uploads/avatar/<?php echo $ARH->avatar ?>"> 
                               </a>
+                              <?php } ?>
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-md-2">
+                              ?php if($AM) { ?>
                               <a href="<?php echo base_url() ?>User/ProfileShow/<?php echo $record->userId ?>" target="_blank">
+                               <img alt="" class="alligator-profile-likes" src="<?php echo base_url() ?>uploads/avatar/<?php echo $AM->avatar ?>"> 
                               </a>
+                              <?php } ?>
                             </div>
-                            <div class="col-md-3">
-                              <a href="<?php echo base_url() ?>User/ProfileShow/<?php echo $record->userId ?>" target="_blank">
+                            <div class="col-md-2">
+                              <?php if($AE) { ?>
+                              <a href="<?php echo base_url() ?>User/ProfileShow/<?php echo $AE->userId ?>" target="_blank">
+                               <img alt="" class="alligator-profile-likes" src="<?php echo base_url() ?>uploads/avatar/<?php echo $AE->avatar ?>"> 
                               </a>
--->
+                              <?php } ?>
                             </div>
                           </div>
                         </td>
