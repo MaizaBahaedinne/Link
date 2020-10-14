@@ -22,7 +22,7 @@ class Club extends BaseController {
 		                $clubs = $this->club_model->clubListing($this->SA);
 		            
 		                foreach ($clubs as $key ) {
-		                	echo($this->user_model->getMemberByRoleAndCelulle($key->clubID , 1 , '' ) ) ;
+
 
 		                	$key->P 	=  	$this->user_model->getMemberByRoleAndCelulle($key->clubID , 1 , '' ) ;
 							$key->VPAF  = 	$this->user_model->getMemberByRoleAndCelulle($key->clubID , 3 , 'Administration et finance' ) ;
@@ -39,13 +39,13 @@ class Club extends BaseController {
 		               header('Content-Type: application/json');
             			echo json_encode( $clubs , JSON_PRETTY_PRINT);
 
-						/*	
+						
 		                $data["clubs"] =  $clubs ;
 
  		                $this->global['pageTitle'] = 'Clubs';
 		             	$this->global['active'] = 'Clubs';
 		                $this->loadViews("club/all", $this->global, $data, NULL);   
-						*/
+						
 		        }
 
 
