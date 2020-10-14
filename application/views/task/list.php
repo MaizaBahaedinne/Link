@@ -15,7 +15,7 @@
               </div>
 							<div>
                 <br>
-                  <table class="table" style="width: auto">
+                  <table class="table" style="width: cover">
                     <thead>
                       <th width="30%" >titre</th>
                       <th width="12%" >Deadline</th>
@@ -25,6 +25,7 @@
                     </thead>
                     <tbody>
                       <?php foreach ($taches as $tache ) { ?>
+                        <tr>
                         <td>
                           <h4>
                             <?php echo $tache->titre ?>
@@ -85,7 +86,7 @@
                           <a href=""><i class="fa fa-pencil"></i></a>
                           <a href=""><i class="fa fa-eye"></i></a>
                         </td>
-                        
+                        </tr>
                       <?php } ?>
                       
                     </tbody>
