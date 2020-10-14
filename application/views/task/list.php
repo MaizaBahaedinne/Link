@@ -20,6 +20,7 @@
                 <br>
                   <table class="table table-striped table-responsive-xl" style="width: cover">
                     <thead>
+                      <th  width="2%" >ID</th>
                       <th  >titre</th>
                       <th width="25%" >Deadline</th>
                       <th width="5%">Par</th>
@@ -29,6 +30,9 @@
                     <tbody>
                       <?php foreach ($taches as $tache ) { ?>
                         <tr>
+                          <td>
+                            <?php echo $tache->tacheId?>
+                        </td> 
                         <td>
                           <h4>
                             <?php echo $tache->titre ?>
@@ -105,8 +109,10 @@
                                                 <br>
                                                 <br>
                                                 <div >
-                                                    <select multiple="multiple" id='lists' class="form-control">
-
+                                                    <select id='lists' class="form-control">
+                                                      <?php foreach ($membresDispo as $membre) { ?>
+                                                       <option value="<?php echo $membre->userId ?>" ><?php echo $membre->name ?> </option>
+                                                      <?php } ?>
                                                     </select>
                                                   </div>
                                                   
@@ -161,14 +167,14 @@
 
             <!-- Modal Header -->
             <div class="modal-header">
-              <h4 class="modal-title">Ajouter une tacbe</h4>
+              <h4 class="modal-title">Ajouter une tache</h4>
               <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
 
             <!-- Modal body -->
             <div class="modal-body">
                 <?php $this->load->helper("form"); ?>
-                <form role="form"  id="addproject" action="<?php echo base_url() ?>Task/addNew" method="post" role="form"  enctype="multipart/form-data">
+                <form role="form"  id="addproject" action="<?php echo base_url() ?>Task/addNew/<?php echo $projet->projectId ?>" method="post" role="form"  enctype="multipart/form-data">
                       
 
                     <label>Titre</label>
