@@ -94,8 +94,8 @@
                           </div>
                         </td>
                         <td>
-                          <?php $members = count($record->members) ?>
-                            <small><?php echo $members ; ?> </small>
+                         
+                            <small><?php echo $record->members ; ?> </small>
                         </td>
                         <td>
                             <?php if ($record->SenJun == 3 ){ echo 'University' ; }?>
