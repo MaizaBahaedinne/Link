@@ -43,7 +43,7 @@ class Task_model extends CI_Model
 
        $this->db->select('user.name ,BaseTbl.status , user.name parname , user.avatar ');
        $this->db->from('tbl_affectation as BaseTbl');
-              $this->db->join('tbl_Users as user', 'user.userId = BaseTbl.userAffectatedID', 'LEFT');
+              $this->db->join('tbl_users as user', 'user.userId = BaseTbl.userAffectatedID', 'LEFT');
 
       $this->db->where('BaseTbl.tacheId = ', $tacheId);
 
