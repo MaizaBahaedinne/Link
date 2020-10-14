@@ -36,9 +36,6 @@ class Club extends BaseController {
 							$key->members = count($this->user_model->userListingByclub($key->clubID));
 		                }
 
-		               header('Content-Type: application/json');
-            			echo json_encode( $clubs , JSON_PRETTY_PRINT);
-
 						
 		                $data["clubs"] =  $clubs ;
 
