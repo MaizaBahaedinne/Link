@@ -67,8 +67,9 @@
                               <?php } ?>
                               </div>
                             </div>
-                            
+                            </div>
                             <hr>
+                            <div class="row">
                             <div class="col-md-4">
                               VP
                             </div>
@@ -108,8 +109,11 @@
                                <?php } ?>
                               </div>
                             </div>
+                            </div>
                             
                             <hr>
+
+                            <div class="row">
                             <div class="col-md-4">
                               Assistants
                             </div>
@@ -140,6 +144,7 @@
                               </a>
                               <?php } ?>
                             </div>
+                          </div>
                           </div>
                         </td>
                         <td>
