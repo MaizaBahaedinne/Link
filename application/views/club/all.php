@@ -10,10 +10,10 @@
                     <h4 class="widget-title">Liste des clubs <a class="align-right main-btn" data-toggle="modal" data-target="#myModal" >Ajouter un club</a> </h4>
 
                     <ul class="faved-page">
-                         <table  class="table" id="tableid" style="width: cover" >
+                         <table  class="table table-striped table-responsive-xl" id="tableid" style="width: cover" >
                     <thead>
                     <tr>
-                        <th>Faculté</th>
+                        <th>Ecole</th>
                         <th>Secteur</th>
                         <th>Président</th>
                         <th>Membres</th>
@@ -29,9 +29,8 @@
                         {
                     ?>
                     <tr>
-
                         <td>
-                          <a href="<?php echo base_url() ?>club/clubInfo/<?php echo $record->clubID ?>" target="_blank"   >
+                          <a href="<?php echo base_url() ?>club/clubInfo/<?php echo $record->ClubID ?>" target="_blank"   >
                            <small><?php echo $record->name ?> </small> 
                            <?php if ($record->is_Actif=="0"){  ?>
                                <i class="fa fa-ban" aria-hidden="true"></i>
@@ -50,23 +49,14 @@
                             <small><?php echo $record->members ; ?> </small>
                         </td>
                         <td>
-
-
                             <?php if ($record->SenJun == 3 ){ echo 'University' ; }?>
                             <?php if ($record->SenJun == 4 ){ echo 'High School' ; }?>
-
-
-
-
-
-
                         </td>
                         <?php if($SA== 1){ ?>
                         <td>
                              <a href="https://tunivisions.link/Club/editClub/<?php echo  $record->clubID ?>">   <i class="ti-pencil"></i>
                         </td>
                          <?php    }    ?> 
-
                     </tr>
                     <?php
                         }
@@ -95,12 +85,7 @@
             <!-- Modal Header -->
             <div class="modal-header">
               <h4 class="modal-title">Ajouter un club 
-                        <select <?php if($SA!=1 ){ echo "Disable"; } ;?> name="HUA" >
-                          <option <?php if($clubID==0 ) {echo "Selected" ; } ?> value="3" >University</option>
-                          <option <?php if($clubID==1 ) {echo "Selected" ; } ?> value="4" >High School</option>
-                          <option  >Kids</option>
-                          <option <?php if($clubID==2 ) {echo "Selected" ; } ?> >Alumni</option>
-                        </select>
+                        
                 </h4>
               <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
@@ -108,11 +93,16 @@
             <!-- Modal body -->
             <div class="modal-body">
                 <?php $this->load->helper("form"); ?>
-                <form role="form"  id="addproject" action="<?php echo base_url() ?>Club/addNew" method="post" role="form"  enctype="multipart/form-data">
+                <form role="form"  action="<?php echo base_url() ?>Club/addNew" method="post" >
                       
 
                         <label>type</label>
-                        
+                        <select <?php if($SA!=1 ){ echo "Disable"; } ;?> name="HUA" >
+                          <option <?php if($clubID==0 ) {echo "Selected" ; } ?> value="3" >University</option>
+                          <option <?php if($clubID==1 ) {echo "Selected" ; } ?> value="4" >High School</option>
+                          <option  >Kids</option>
+                          <option <?php if($clubID==2 ) {echo "Selected" ; } ?> >Alumni</option>
+                        </select>
 
                         <label>Nom</label>
                         <input type="text" name="name" class="form-control" required>

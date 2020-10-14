@@ -23,7 +23,7 @@ class Club extends BaseController {
 		                $this->load->model('club_model');
 		                $searchText='' ;
 		                $clubs = $this->club_model->clubListing($this->HUA,$this->SA);
-
+		                /*
 		                foreach ($clubs as $key ) {
 		                	$key->NP =  $this->user_model->getMemberByRoleAndCelulle($key->clubID , 1 , '' ) ;
 							$key->NVPAF =  $this->user_model->getMemberByRoleAndCelulle($key->clubID , 3 , 'Administration et finance' ) ;
@@ -36,7 +36,7 @@ class Club extends BaseController {
 							$key->NAE =  $this->user_model->getMemberByRoleAndCelulle($key->clubID , 6 , 'Evenementiel' ) ;
 							$key->members =  $this->user_model->userListingByclub($key->clubID);
 		                }
-
+							*/
 		                $data["clubs"] =  $clubs ;
 
 		                $this->global['pageTitle'] = 'Clubs';

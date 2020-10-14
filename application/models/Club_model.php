@@ -31,11 +31,9 @@ class Club_model extends CI_Model
      */
     function clubListing($clubId,$SA)
     {
-        $this->db->select('BaseTbl.clubID  ,  Club.name  , Club.is_Actif , Club.SenJun   , Club.city   ');
+        $this->db->select('BaseTbl.ClubID , Club.name , Club.is_Actif , Club.SenJun , Club.city ');
         $this->db->from('tbl_users as BaseTbl');
         $this->db->join('tbl_club as Club', 'BaseTbl.ClubID = Club.clubID', 'LEFT');
-        $this->db->where('BaseTbl.roleId = 1 OR BaseTbl.roleId = ','2') ;
-        $this->db->where('BaseTbl.isDeleted = ','0') ;
 
         if($SA!=1){
 
@@ -51,9 +49,8 @@ class Club_model extends CI_Model
                     $this->db->where('BaseTbl.SenJun = ', 4 ) ;      
                 }
         }
-
-
-       $this->db->group_by('BaseTbl.clubID') ;
+        
+       $this->db->group_by('BaseTbl.ClubID') ;
         $query = $this->db->get();
         
 
