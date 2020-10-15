@@ -55,9 +55,10 @@ class Posts_model extends CI_Model
         $this->db->select('BaseTbl.postId , BaseTbl.Content , BaseTbl.userId , BaseTbl.photo  , BaseTbl.DatePosted , User.name , User.avatar ');
         $this->db->from('tbl_post as BaseTbl');
         $this->db->join('tbl_users as User ', 'User.userId = BaseTbl.userId', 'LEFT');
+
         $this->db->where('BaseTbl.postId  =  ' , $postId ) ;
         $query = $this->db->get();
-        return $query->row();
+        return $query->result();
     }
 
         function deletePost($postInfo, $postId)

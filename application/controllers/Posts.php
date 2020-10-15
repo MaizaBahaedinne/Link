@@ -43,20 +43,26 @@ class Posts extends BaseController {
 
 
 
-    public function post($post)
+    public function post($postId)
     {   
 
-        $data  ['userId'] = $this->vendorId ; 
-        
-        $data  ['postRecords'] =  $this->posts_model->postById($post) ; 
+         $data  ['userId'] = $this->vendorId ; 
+         $data['ActuRecords'] = $this->actualite_model->actuListing();
+         $data['projectRecords'] = $this->project_model->projectListing();
+          $data["clubInfo"] = $this->club_model->getClubInfo($this->clubID);
+          $data["members"] = $this->user_model->userListingByclubINFO($this->clubID) ;
 
+         $data  ['postRecords'] =  $this->posts_model-> postById($postId);
         
-        
-        $data['commentsRecords'] = $this->posts_model->CommentsListing($post);
-        $data['likeRecords'] = $this->posts_model->likesListing($post);
-        
+            foreach ($data['postRecords'] as $key ) {                
+                        $key->commentsRecords              = $this->posts_model->CommentsListing($key->postId);
+                        $key->likeRecords             = $this->posts_model->likesListing($key->postId);
+                         $key->likeCheck          = $this->posts_model->likeCheck($key->postId,$this->vendorId);
+                  }
 
-        $this->global['pageTitle'] = $data  ['postRecords']->name ;
+          
+         $this->global['pageTitle'] = 'Acceuil' ;
+       
         $this->loadViews("post/view", $this->global, $data, NULL);   
     }
 
