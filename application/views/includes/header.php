@@ -18,7 +18,7 @@
     <meta name="description" content="">
     <meta name="keywords" content="">
 	<title>Tunivisions.link</title>
-    <link rel="icon" href="images/fav.png" type="image/png" sizes="16x16"> 
+    <link rel="icon" href="<?php echo base_url() ?>assets/images/fav.png"  > 
    
     <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/main.min.css">
     <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/style.css">
