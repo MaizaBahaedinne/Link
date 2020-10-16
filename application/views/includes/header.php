@@ -289,9 +289,10 @@
 							<li><a href="privacy.html" title=""><i class="fa fa-pencil-square-o"></i>Terms &amp; Policy</a></li>
 							<li><a href="#" title=""><i class="fa fa-map-marker"></i>Contact</a></li>
 							<li><a href="#" title=""><i class="fa fa-exclamation-triangle"></i>Report a Problem</a></li>
-						</ul>
+						</ul>d
 					-->
-					<div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 0px;"><div class="ps-scrollbar-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps-scrollbar-y-rail" style="top: 0px; right: 0px;"><div class="ps-scrollbar-y" tabindex="0" style="top: 0px; height: 0px;"></div></div></div>
+					<div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 0px;">
+						<div class="ps-scrollbar-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps-scrollbar-y-rail" style="top: 0px; right: 0px;"><div class="ps-scrollbar-y" tabindex="0" style="top: 0px; height: 0px;"></div></div></div>
 				</li>
 			</ul>
 			<div class="user-img">
@@ -299,12 +300,9 @@
 				<img class="alligator-profile" src="<?php echo base_url() ?>uploads/avatar/<?php echo $avatar ?>"  alt="">
 				<span class="status f-online"></span>
 				<div class="user-setting">
-					<span class="seting-title">User setting <a href="#" title="">see all</a></span>
+					<span class="seting-title">Parametre <a href="#" title="">afficher tous</a></span>
 					<ul class="log-out">
-						<li><a href="about.html" title=""><i class="ti-user"></i> view profile</a></li>
-						<li><a href="setting.html" title=""><i class="ti-pencil-alt"></i>edit profile</a></li>
-						<li><a href="#" title=""><i class="ti-target"></i>activity log</a></li>
-						<li><a href="setting.html" title=""><i class="ti-settings"></i>account setting</a></li>
+						<li><a href="<?php echo base_url() ?>User/ProfileShow/<?php echo $uid ?>" title=""><i class="ti-user"></i> Profile</a></li>
 						<li><a href="<?php echo base_url() ?>logout" title=""><i class="ti-power-off"></i>log out</a></li>
 					</ul>
 				</div>

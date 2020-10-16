@@ -764,18 +764,18 @@ class User extends BaseController
     function ProfileShow($userId)
     {
         $data["userInfo"] = $this->user_model->getUserInfoWithRole($userId);
-        $data["ressourceInfo"] = $this->ressource_model->ressourceListingBUser($userId);
+      
         $data['postRecords'] =  $this->posts_model->postsListingbyUser($userId);
 
+   
+        
+            foreach ($data['postRecords'] as $key ) {                
+                        $key->commentsRecords              = $this->posts_model->CommentsListing($key->postId);
+                        $key->likeRecords             = $this->posts_model->likesListing($key->postId);
+                         $key->likeCheck          = $this->posts_model->likeCheck($key->postId,$this->vendorId);
+                  }
 
-        $data["ExperienceA"] = $this->user_cariere_model->carrierAutreListing($userId) ;
-        $data["ExperienceP"] = $this->user_cariere_model->carrierProListing($userId) ;
-        $data["Experience"] = $this->user_cariere_model->carrierListing($userId);   
-        $data["HSkils"] = $this->user_cariere_model->carrierListing($userId);
-        $data["Diplome"] = $this->user_diplome_model->diplomeListing($userId) ;
 
-        $data["Roles"] = $this->user_model->getUserAllRoles() ; 
-        $data["Clubs"] = $this->user_model->getClubs() ;
         
         
         $this->global['pageTitle'] = $data["userInfo"]->name;

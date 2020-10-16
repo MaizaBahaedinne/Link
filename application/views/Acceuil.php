@@ -84,7 +84,13 @@
                               </ul>
                             </div>
                           </div>
-                          <ins><a href="time-line.html" title=""><?php echo $post->name ?></a> a publié <a href="#" title="">une publication</a></ins>
+                          <ins>
+                            <a href="<?php echo base_url() ?>User/ProfileShow/<?php echo $post->userId  ?>" >
+                            <?php echo $post->name ?></a> a publié 
+                            <a href="#" title="">
+                            une publication
+                          </a>
+                          </ins>
                           <span><i class="fa fa-globe"></i> il y a <?php echo xTimeAgo ($post->DatePosted, date('Y-m-d H:i:s') )  ?> </span>
                         </div>
                         <div class="post-meta">
