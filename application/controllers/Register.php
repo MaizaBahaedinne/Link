@@ -158,36 +158,21 @@ class Register extends CI_Controller
 
   function registerNewUser()
     {
-                $birth = $this->security->xss_clean($this->input->post('birth'));
+                
                 $fname = strtoupper ($this->input->post('fname'));
                 $lname = $this->input->post('lname');
-                $name =  strtoupper ($fname).' '.$lname ; 
-
+                $name =  strtoupper ($fname).' '.$lname ;
                 $email = $this->input->post('email');
-                $password = $this->input->post('password');
                 $mobile = $this->security->xss_clean($this->input->post('mobile'));
-                $cin = $this->security->xss_clean($this->input->post('cin'));
-                $sexe = $this->security->xss_clean($this->input->post('sexe'));
-                $adresse = $this->security->xss_clean($this->input->post('adresse'));
-                $gouvernorat = $this->security->xss_clean($this->input->post('gouvernorat'));
-                $delegation = $this->security->xss_clean($this->input->post('delegation'));
-                $facebook = $this->security->xss_clean($this->input->post('facebook'));
-                $instagram = $this->security->xss_clean($this->input->post('instagram'));
-                $linkedin = $this->security->xss_clean($this->input->post('linkedin'));
-               
-                    $target_dir = "uploads/avatar/";
-                    $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]).$mobile;
-                    $uploadOk = 1;
-                    $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-            
-                    $mobile2 = 0 ; 
 
-                if($this->input->get('var3') == 1  ){
-                        $mobile2 = $this->security->xss_clean($this->input->post('mobile2'));
-                 } ;
+
+
+                 $password = $this->input->post('password');
+               
+                
 
                 $userInfo = array(
-                 'avatar' => basename($_FILES["fileToUpload"]["name"]).$mobile ,  
+                 
                  'email'=>$email,
                  'password'=>getHashedPassword($password),
                  'roleId'=>'5',
@@ -196,17 +181,11 @@ class Register extends CI_Controller
                  'nom'=> $fname,
                  'prenom'=> $lname,
                  'mobile'=>$mobile,
-                 'mobile2'=>$mobile2,
-                 'cin'=>$cin,
                  'createdBy'=> $this->input->get('var1'),
                  'createdDtm'=>date('Y-m-d H:i:s'),
-                 'sexe'=>$sexe,
-                 'adresse'=>$adresse,
-                 'gouvernorat'=>$gouvernorat,
-                 'delegation'=>$delegation,
-                 'facebook'=>$facebook, 
                  'birthday' =>date($birth) ,
                  'isDeleted' => 1 
+
                      );
               
        
@@ -215,12 +194,13 @@ class Register extends CI_Controller
 
                
                 $this->load->model('user_model');
+
                 if($this->user_model->checkEmailExists($email) < 1 ) {
                 $result = $this->user_model->addNewUser($userInfo);
                 
                 
                 
-                if($result > 0 && move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file) )
+                if($result > 0  )
                 {
                     $this->session->set_flashdata('success', 'votre dossier est en cours de traitement');
                 }
@@ -228,7 +208,9 @@ class Register extends CI_Controller
                 {
                     $this->session->set_flashdata('error', 'Problème veuillez contacter <a href="https://www.facebook.com/maiza.koussai">l\'administrateur</a> ');
                 }
-            }else{
+                }else
+
+            {
                 $this->session->set_flashdata('error', 'utilisateur existe deja');
             }
                 
