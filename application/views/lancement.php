@@ -27,7 +27,9 @@
                                 <section id="video" hidden  >
                                 <div class="central-meta">
                                 <h6> Info session et quiz </h6>
-                                  <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/QwrBWK07RnU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                  <iframe id="ytplayer" type="text/html" width="1980" height="1113.75"
+                                    src="https://www.youtube.com/embed/QwrBWK07RnU?autoplay=1&cc_load_policy=1&controls=0&fs=0&loop=1&color=white"
+                                    frameborder="0" allowfullscreen>
                                   <hr>
                                   <br>
                                   <span>
