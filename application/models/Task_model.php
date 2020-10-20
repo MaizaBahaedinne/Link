@@ -49,6 +49,19 @@ class Task_model extends CI_Model
        return $result;
    }
 
+     function AffectationsByUserListing($userId)
+    {
+        $this->db->select('user.name ,BaseTbl.status , user.name parname , user.avatar , tasks.titre , tasks.deadline  ');
+        $this->db->from('tbl_affectation as BaseTbl');
+        $this->db->join('tbl_users as user', 'user.userId = BaseTbl.userAffectatedID', 'LEFT');
+        $this->db->join('tbl_task as tasks ', 'tasks.tacheId = BaseTbl.tacheId', 'LEFT');
+        $this->db->where('BaseTbl.userAffectatedID = ', $userId);
+
+       $query = $this->db->get();
+       $result = $query->result();        
+       return $result;
+   }
+
      function DisponibleMembreListing()
     {
         $this->db->select('BaseTbl.userId , BaseTbl.name  ');

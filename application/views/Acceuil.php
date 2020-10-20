@@ -338,14 +338,45 @@
                     <h4 class="widget-title">Calendar</h4>
                     
                     <div class="full-calendar">
-                                <div id="yourId" class="jalendar">
-                                  
-                                  <div class="added-event" data-date="19-11-2015" data-link="http://google.com" data-title="WWDC 13 on San Francisco, LA"></div>
+                                <div id="yourId" class="jalendar mid">
+                                  <?php foreach ($taches as $tache ) { 
+
+                                    $date= date_create($tache->deadline); 
+                                    $dateF =date_format($date,'d-m-Y');
+                                    $timeF =date_format($date,'H:i'); 
+                                     ?> 
+
+                                    <div class="added-event"
+                                    data-date="<?php echo  $dateF ?>" 
+                                    data-time="<?php echo  $timeF ?>"
+                                    data-link="" 
+                                    data-title="Tache : <?php echo  $tache->titre ?>">
+                                      
+                                    </div>
+                                
+                                  <?php }?>
+
+                                  <?php foreach ($Projets as $Projet ) { 
+
+                                    $date= date_create($Projet->startDate); 
+                                    $dateF =date_format($date,'d-m-Y');   
+                                    $timeF =date_format($date,'H:i');   
+                                     ?> 
+
+                                    <div class="added-event"
+                                    data-date="<?php echo  $dateF ?>" 
+                                    data-time="<?php echo  $timeF ?>"
+                                    data-link="" 
+                                    data-title="<?php echo  $Projet->type ?> : <?php echo  $Projet->titre ?>">
+                                      
+                                    </div>
+                                
+                                  <?php }?>
 
                                 </div>
                               </div>
                   </div><!-- calendar -->
-                  
+                  <!--
                   <div class="widget stick-widget" style="">
                     <h4 class="widget-title">Recent Links <a title="" href="#" class="see-all">See All</a></h4>
                     <ul class="recent-links">
@@ -371,7 +402,10 @@
                         </div>
                       </li>
                     </ul>
-                  </div><!-- recent links -->
+                  </div>
+                  -->
+                  <!-- recent links -->
+
                 </aside>
               </div><!-- sidebar -->
             </div>

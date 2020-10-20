@@ -15,6 +15,8 @@ class Posts extends BaseController {
         $this->load->model('actualite_model');
         $this->load->model('posts_model');
         
+        $this->load->model('task_model');
+        
         $this->isLoggedIn();   
     }
     
@@ -24,9 +26,10 @@ class Posts extends BaseController {
          $data  ['userId'] = $this->vendorId ; 
          $data['ActuRecords'] = $this->actualite_model->actuListing();
          $data['projectRecords'] = $this->project_model->projectListing();
-          $data["clubInfo"] = $this->club_model->getClubInfo($this->clubID);
-          $data["members"] = $this->user_model->userListingByclub($this->clubID) ;
-
+         $data["clubInfo"] = $this->club_model->getClubInfo($this->clubID);
+         $data["members"] = $this->user_model->userListingByclub($this->clubID) ;
+         $data["Projets"] = $this->project_model->projectListingByClub($this->clubID);
+         $data["taches"] =  $this->task_model->AffectationsByUserListing($this->vendorId); 
 
          $data  ['postRecords'] =  $this->posts_model->postsListing();
         

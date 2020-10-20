@@ -1063,11 +1063,11 @@ if ($.isFunction($.fn.loadMoreResults)) {
 //---- calander	
 	if ($.isFunction($.fn.jalendar)) { 
 	 $('#yourId').jalendar({
-			customDay: '11/01/2015',
+			
 			color: '#577e9a', // Unlimited Colors
 			color2: '#57c8bf', // Unlimited Colors
-			lang: 'EN',
-			sundayStart: true
+			lang: 'FR',
+			sundayStart: false
 		});
 	}
 	
