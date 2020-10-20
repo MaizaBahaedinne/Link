@@ -123,7 +123,7 @@
 
                                   //if the string doesn't contain any space then it will cut without word basis.
                                   $string = $endPoint? substr($stringCut, 0, $endPoint) : substr($stringCut, 0);
-                                  $string .= '... <a href="<?php echo base_url() ?>Posts/post//<?php echo $post->postId ?>">Afficher la suite</a>';
+                                  $string .= '... <a href="'.base_url().'Posts/post/'.$post->postId.'">Afficher la suite</a>';
                               }
                               echo $string;
                               ?>
