@@ -29,7 +29,7 @@
                                 <h6> Info session et quiz </h6>
                                   <iframe id="ytplayer" type="text/html" width="1980" height="1113.75"
                                     src="https://www.youtube.com/embed/QwrBWK07RnU?autoplay=1&cc_load_policy=1&controls=0&fs=0&loop=1&color=white"
-                                    frameborder="0" allowfullscreen>
+                                    frameborder="0" allowfullscreen></iframe>
                                   <hr>
                                   <br>
                                   <span>
