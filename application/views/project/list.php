@@ -201,7 +201,10 @@
                                     data-date="<?php echo  $dateF ?>" 
                                     data-time="<?php echo  $timeF ?>"
                                     data-link="" 
-                                    data-title="<?php echo  $Projet->type ?> : <?php echo  $Projet->titre ?> by <?php if ($projet->ClubID > 5 ) {echo "club ";}  echo "Tunivisions ".$projet->ClubName; ?> ">
+                                    data-title="<?php echo  $Projet->type ?> 
+                                    : 
+                                    <?php echo  $Projet->titre ?> 
+                                    by <?php if ($Projet->ClubID > 5 ) {echo "club ";}  echo "Tunivisions ".$Projet->ClubName; ?> ">
                                       
                                     </div>
                                 
