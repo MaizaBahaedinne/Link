@@ -84,7 +84,13 @@
                               </ul>
                             </div>
                           </div>
-                          <ins><a href="time-line.html" title=""><?php echo $post->name ?></a> a publié <a href="#" title="">une publication</a></ins>
+                          <ins>
+                            <a href="<?php echo base_url() ?>User/ProfileShow/<?php echo $post->userId  ?>" >
+                            <?php echo $post->name ?></a> a publié 
+                            <a href="#" title="">
+                            une publication
+                          </a>
+                          </ins>
                           <span><i class="fa fa-globe"></i> il y a <?php echo xTimeAgo ($post->DatePosted, date('Y-m-d H:i:s') )  ?> </span>
                         </div>
                         <div class="post-meta">
@@ -238,7 +244,7 @@
                     <h4 class="widget-title">Mon Club</h4> 
                     <div class="your-page">
                       <figure>
-                        <a href="#" title=""><img src="images/resources/friend-avatar9.jpg" alt=""></a>
+                        <a href="#" title><img alt="author" src="<?php echo base_url()?>assets/images/resources/profile.png"></a>
                       </figure>
                       <div class="page-meta">
                         <a href="#" title="" class="underline"><?php if ($clubInfo->clubID > 5 ) {echo "club Tunivisions ";}  echo $clubInfo->name ; ?></a>
@@ -247,24 +253,26 @@
                       </div>
                       <ul class="page-publishes">
                         <li>
-                          <span><i class="ti-pencil-alt"></i>Publish</span>
+                          <span> <a href="<?php echo base_url()?>Club/clubInfo/<?php echo $clubInfo->clubID ?>">  <i class="ti-pencil-alt"></i>Projets</a></span>
                         </li>
                         <li>
-                          <span><i class="ti-camera"></i>Photo</span>
-                        </li>
-                        <li>
-                          <span><i class="ti-video-camera"></i>Live</span>
-                        </li>
-                        <li>
-                          <span><i class="fa fa-user-plus"></i>Invite</span>
+                          <span> 
+                             <a href="<?php echo base_url()?>Club/clubInfo/<?php echo $clubInfo->clubID ?>">
+                                <i class="fa fa-user-plus"></i>Invite
+                            </a>
+                          </span>
                         </li>
                       </ul>
+
+
+
+                      <!--
                       <div class="page-likes">
                         <ul class="nav nav-tabs likes-btn">
                           <li class="nav-item"><a class="active" href="#link1" data-toggle="tab" data-ripple="">likes</a></li>
                            <li class="nav-item"><a class="" href="#link2" data-toggle="tab" data-ripple="">views</a></li>
                         </ul>
-                        <!-- Tab panes -->
+                        
                         <div class="tab-content">
                           <div class="tab-pane active fade show" id="link1">
                           <span><i class="ti-heart"></i>884</span>
@@ -319,41 +327,25 @@
                               <img src="images/resources/userlist-7.jpg" alt="">  
                             </a>  
                             </div>
-                          </div>
+                          </div>  
                         </div>
-                      </div>
+
+                      </div>-->
                     </div>
                   </div><!-- page like widget -->
+                  <!-- explore events -->
                   <div class="widget">
-                    <h4 class="widget-title">Explor Events <a title="" href="#" class="see-all">See All</a></h4>
-                    <div class="rec-events bg-purple">
-                      <i class="ti-gift"></i>
-                      <h6><a href="#" title="">Ocean Motel good night event in columbia</a></h6>
-                      <img src="images/clock.png" alt="">
-                    </div>
-                    <div class="rec-events bg-blue">
-                      <i class="ti-microphone"></i>
-                      <h6><a href="#" title="">2016 The 3rd International Conference</a></h6>
-                      <img src="images/clock.png" alt="">
-                    </div>
-                  </div><!-- explore events -->
-                  <div class="widget">
-                    <h4 class="widget-title">Profile intro</h4>
-                    <ul class="short-profile">
-                      <li>
-                        <span>about</span>
-                        <p>Hi, i am jhon kates, i am 32 years old and worked as a web developer in microsoft </p>
-                      </li>
-                      <li>
-                        <span>fav tv show</span>
-                        <p>Sacred Games, Spartcus Blood, Games of Theron </p>
-                      </li>
-                      <li>
-                        <span>favourit music</span>
-                        <p>Justin Biber, Shakira, Nati Natasah</p>
-                      </li>
-                    </ul>
-                  </div><!-- profile intro widget -->
+                    <h4 class="widget-title">Calendar</h4>
+                    
+                    <div class="full-calendar">
+                                <div id="yourId" class="jalendar">
+                                  
+                                  <div class="added-event" data-date="19-11-2015" data-link="http://google.com" data-title="WWDC 13 on San Francisco, LA"></div>
+
+                                </div>
+                              </div>
+                  </div><!-- calendar -->
+                  
                   <div class="widget stick-widget" style="">
                     <h4 class="widget-title">Recent Links <a title="" href="#" class="see-all">See All</a></h4>
                     <ul class="recent-links">

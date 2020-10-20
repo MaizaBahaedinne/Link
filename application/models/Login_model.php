@@ -22,7 +22,7 @@ class Login_model extends CI_Model
         $this->db->join('tbl_roles as Roles','Roles.roleId = BaseTbl.roleId');
         $this->db->join('tbl_club as Club','Club.clubID = BaseTbl.clubID');
         $this->db->where('BaseTbl.email', $email);
-        $this->db->where('BaseTbl.isDeleted', 0 );
+        $this->db->where('BaseTbl.isDeleted !=', 2);
         $query = $this->db->get();
         
         $user = $query->row();

@@ -1,243 +1,350 @@
+<section>
+    <div class="gap2 gray-bg">
+      <div class="container">
+        <div class="row">
 
+<div class="col-lg-12">
+<div class="row merged20" id="page-contents">
+              <!-- sidebar -->
+              <div class="col-lg-8">
+                
+                <!-- top stories -->
+                <div class="loadMore">
+                  <!-- album post -->
+                  <!-- digital sponsors -->
+                  <!-- love post -->
+                  <!-- without image -->
+                  <!-- map location post -->
 
-
-<div id="content-page" class="content-page">
-            <div class="container">
-               <div class="row">
-
-<div class="col-sm-12">
-                        <div class="iq-card iq-card-block iq-card-stretch iq-card-height">
-                           <div class="iq-card-body">
-                              <div class="user-post-data">
-                                 <div class="d-flex flex-wrap">
-                                    <div class=" mr-3">
-                                       <img class="alligator-turtle  mr-3" src="https://tunivisions.link/uploads/avatar/<?php echo $postRecords->avatar ?>" >
-                                    </div>
-                                    <div class="media-support-info mt-2">
-                                       <h5 class="mb-0 d-inline-block"><a href="https://tunivisions.link/User/ProfileShow/<?php echo $postRecords->userId ?>"  ><?php echo $postRecords->name ?></a></h5>
-                                       <p class="mb-0 d-inline-block">a mise à jour son statut</p>
-                                       <p class="mb-0 text-primary">Il y a <?php echo xTimeAgo($postRecords->DatePosted,date('Y-m-d H:i:s')) ; ?></p>
-                                    </div>
-                                    <div class="iq-card-post-toolbar">
-                                       <div class="dropdown">
-                                          <span class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button">
-                                          <i class="ri-more-fill"></i>
-                                          </span>
-                                          <div class="iq-card-post-toolbar">
-                                       <div class="dropdown">
-                                          <span class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button">
-                                          <i class="ri-more-fill"></i>
-                                          </span>
-                                         
-                                          <div class="dropdown-menu m-0 p-0">
-                                             <?php if ($userId == $postRecords->userId ){  ?>
-                                             <a class="dropdown-item p-3"  >
-                                                <div class="d-flex align-items-top">
-                                                   <div class="icon font-size-20"><i class="ri-notification-line"></i></div>
-                                                   <div class="data ml-2">
-                                                      <h6>Modifier</h6>
-                                                      <p class="mb-0">modifier le contenu de ce post</p>
-                                                   </div>
-                                                </div>
-                                             </a>
-                                             <a class="dropdown-item p-3" id="<?php echo $postRecords->postId ?>" onclick="deleteP(this.id)" >
-                                                <div class="d-flex align-items-top">
-                                                   <div class="icon font-size-20"><i class="ri-close-circle-line"></i></div>
-                                                   <div class="data ml-2">
-                                                      <h6>Supprimer</h6>
-                                                      <p class="mb-0">Ajouter au Corbeille</p>
-                                                   </div>
-                                                </div>
-                                             </a>
-                                             <?php } else { ?>
-                                             <a class="dropdown-item p-3" id="<?php echo $postRecords->postId ?>" onclick="deleteP(this.id)" >
-                                                <div class="d-flex align-items-top">
-                                                   <div class="icon font-size-20"><i class="ri-close-circle-line"></i></div>
-                                                   <div class="data ml-2">
-                                                      <h6>Signaler</h6>
-                                                      <p class="mb-0">Signaler ce post </p>
-                                                   </div>
-                                                </div>
-                                             </a>
-                                          <?php }  ?>
-                                          </div>
-                                         
-                                       </div>
-                                    </div>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                              <div class="mt-3" >
-                                 <p  style="font-size: 13" >
-                                    <?php 
-
-                                          $reg_exUrl = "/(http|https|ftp|ftps)\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(\/\S*)?/";
-                                          $text = $postRecords->Content ;
-                                          if(preg_match($reg_exUrl, $text, $url)) {
-                                                 echo preg_replace($reg_exUrl, "<a href=".$url[0]." target=_blank >".$url[0]."</a> ", $text);
-                                          } else {
-                                                 echo $text;
-                                          }
-
-                                          if ($reg_exUrl = "(?:(?:http|https):\/\/)?(?:www.)?facebook.com\/(?:(?:\w)*" ) { ?>
-
-                                             
-                                            
-                                          
-                                          <?php
-                                          }
-
-                                    ?>
-                                       
-                                    </p>
-
-                              </div>
-
-                              <?php if ($postRecords->photo != 'Post___' ) { ?>
-                              <div class="user-post">
-                                 <a href="javascript:void();">
-                                    <img src="<?php echo base_url() ?>uploads/post/<?php echo $postRecords->photo ?>" alt="post-image" class="img-fluid rounded w-100"></a>
-                              </div>
-                           <?php }  ?>
-                              
-                              <div class="comment-area mt-3">
-                                 <div class="d-flex justify-content-between align-items-center">
-                                    <div class="like-block position-relative d-flex align-items-center">
-                                      
-                                       <div class="total-comment-block">
-                                          
-                                          <?php if (!empty($likeCheck)) {  ?>
-                                           <b id="PLiked<?php echo $postRecords->postId ?>" class='btn mb-3 btn-primary rounded-pill'  > <i class='ri-heart-2-fill'></i> <?php echo count($likeRecords) ?> J'aimes </b>
-
-                                            <?php } else {  ?>
-                                            
-
-
-                                             <p class="btn btn-outline-primary rounded-pill mb-3"  id="<?php echo $postRecords->postId ?>" onclick="like(this.id)" >  <?php echo count($likeRecords) ?> <i class='ri-heart-2-fill'></i> j'aimes </p>
-                                            <b id="Liked<?php echo $postRecords->postId ?>" class='btn mb-3 btn-primary rounded-pill' style="display: none" > <i class='ri-heart-2-fill'></i> <?php echo count($likeRecords)+ 1 ?> J'aimes </b>
-                                             <?php }   ?>
-
-                                             &nbsp; 
-
-                                             <?php if  (count($commentsRecords) ==  0) {  ?>
-                                                <b  class='btn btn-outline-primary rounded-pill mb-3' >
-                                                   <?php echo count($commentsRecords) ?> <i class="ri-chat-3-fill"></i> Commentaires
-                                                 </b>
-                                             <?php } if  (count($commentsRecords) >  0 ){ ?>
-                                             <b  class='btn mb-3 btn-primary rounded-pill' >
-                                                   <?php echo count($commentsRecords) ?> <i class="ri-chat-3-fill"></i> Commentaires
-                                                 </b>
-                                             <?php } ?> 
-
-                                          </div>
-                                       </div>
-                                    </div>
-                                    
-                                   
-                                 </div>
-                                 <hr>
-                                 <ul class="post-comments p-0 m-0">
-
-                                    
-                        <?php 
-                           
-                   
-
-                                    if(!empty($commentsRecords))
-                                     { 
-                                     foreach ($commentsRecords as $key ) {  ?>     
-                                    
-                                    <li  id="C<?php echo $key->commentId ?>" class="mb-2" style="background-color: aliceblue ">
-                                       <div class="d-flex flex-wrap">
-                                          <div class="user-img">
-                                             <img class="alligator-turtle  mr-3" src="https://tunivisions.link/uploads/avatar/<?php echo $key->avatar ?>"  >
-                                          </div>
-                                          <div class="comment-data-block ml-3">
-                                             <h6><a href="https://tunivisions.link/User/ProfileShow/<?php echo $key->comUserId ?>" class="text-primary"  > <?php echo $key->name ; ?> </a></h6>
-                                            
-                                             <p class="mb-0"><?php echo $key->content ; ?></p>
-                                             <div class="d-flex flex-wrap align-items-center comment-activity">
-                                             
-                                                <span class="text-primary mr-3" > <?php echo xTimeAgo($key->createdDTM,date('Y-m-d H:i:s')) ; ?> 
-
-                                                 </span>
-                                                 .
-                                                 <?php if ($userId == $key->userId ){  ?>
-                                                 <a class="text"  id="<?php echo $key->commentId ?>" onclick="deleteComment(this.id)" > <i class="ri-delete-bin-line"></i> supprimer </a>
-                                                 <?php } ?>
-                                             </div>
-                                          </div>
-                                       </div>
-                                    </li>
-                                    <?php  } }    ?>                                 
-                                 </ul>
-                                
-                                 <form id="commentF" class="comment-text d-flex align-items-center mt-1" method="post" action="<?php echo base_url().'Posts/addNewComment/'.$postRecords->postId ?>">
-                                    <input type="text" name="comment<?php echo $postRecords->postId ?>" class="form-control rounded" required>
-                                    <div class="comment-attagement d-flex">
-                                      
-                                       <a href="#" onclick="document.getElementById('commentF').submit();" ><i class="ri-link mr-3"></i></a>
-                                       <!-- 
-                                       <a href="javascript:void();"><i class="ri-user-smile-line mr-3"></i></a>
-                                       <a href="javascript:void();"><i class="ri-camera-line mr-3"></i></a>
-                                      -->
-
-                                                                       </div>
-                                 </form>
-                            
-                              </div>
-                           </div>
+                  <?php foreach ($postRecords as $post ) { ?>
+                                  
+                  <div class="central-meta item" style="display: inline-block;">
+                    <div class="user-post">
+                      <div class="friend-info">
+                        <figure>
+                          <img src="<?php echo base_url() ?>uploads/avatar/<?php echo $post->avatar ?>" class="alligator-profile" alt="">
+                        </figure>
+                        <div class="friend-name">
+                          <div class="more">
+                            <div class="more-post-optns"><i class="ti-more-alt"></i>
+                              <ul>
+                                <li><i class="fa fa-pencil-square-o"></i>Modifier le message</li>
+                                <li><i class="fa fa-trash-o"></i>Supprimer le message</li>
+                              </ul>
+                            </div>
+                          </div>
+                          <ins><a href="time-line.html" title=""><?php echo $post->name ?></a> a publié <a href="#" title="">une publication</a></ins>
+                          <span><i class="fa fa-globe"></i> il y a <?php echo xTimeAgo ($post->DatePosted, date('Y-m-d H:i:s') )  ?> </span>
                         </div>
-                     </div>
+                        <div class="post-meta">
+                          <?php if ($post->photo != 'Post___' ){ ?>
+                          <figure>
+                            <a href="<?php echo base_url() ?>uploads/post/<?php echo $post->photo ?>" title="" data-strip-group="mygroup" class="strip vdeo-link" data-strip-options="width: 700,height: 450,youtube: { autoplay: 1 }">
+                            <img src="<?php echo base_url() ?>uploads/post/<?php echo $post->photo ?>" alt="">
+                              
+                              <h2><!-- Titre  --></h2>
+                            </a>
+                            <ul class="like-dislike">
+                              <li><a class="bg-purple" href="#" title="Save to Pin Post"><i class="fa fa-thumb-tack"></i></a></li>
+                              <li><a class="bg-blue" href="#" title="Like Post"><i class="ti-thumb-up"></i></a></li>
+                              <li><a class="bg-red" href="#" title="dislike Post"><i class="ti-thumb-down"></i></a></li>
+                            </ul>
 
+                          </figure>     
+                          <?php } ?>                  
+                          <div class="description">
+                            <p id="Cpntent<?php $post->postId ?>" >
+                              <?php  
+                              
+                             
+                              $string = strip_tags($post->Content);
+                              if (strlen($string) > 500) {
+
+                                  // truncate string
+                                  $stringCut = substr($string, 0, 500);
+                                  $endPoint = strrpos($stringCut, ' ');
+
+                                  //if the string doesn't contain any space then it will cut without word basis.
+                                  $string = $endPoint? substr($stringCut, 0, $endPoint) : substr($stringCut, 0);
+                                  $string .= '... <a href="/this/story">Afficher la suite</a>';
+                              }
+                              echo $string;
+                              ?>
+                            </p>
+                          </div>
+                          <div class="we-video-info">
+                            <ul>
+                              
+                              <li>
+                                <div class="likes heart <?php if(count($post->likeCheck) > 0 ){echo "happy" ;} ?>" id="<?php echo $post->postId ?>" title="Like/Dislike">❤ <span><?php echo count($post->likeRecords) ?></span></div>
+                              </li>
+                              <li>
+                                <span class="comment" title="Comments">
+                                  <i class="fa fa-commenting"></i>
+                                  <ins><?php echo count($post->commentsRecords) ?></ins>
+                                </span>
+                              </li>
+
+                              
+                            </ul>
+                            <div class="users-thumb-list">
+                              <?php $i=1 ; foreach ($post->likeRecords  as $like ) { $i++ ;
+                              if ($i>6)
+                                        {
+                                        break;
+                                        }
+                                ?>
+                              <a data-toggle="tooltip" title="<?php echo $like->name ?>" href="#" data-original-title="<?php echo $like->name ?>">
+                                <img alt=""  class="alligator-profile-likes" src="<?php echo base_url() ?>uploads/avatar/<?php echo $like->avatar ?>">  
+                              </a>
+                              <?php  } ?>
+
+                              <?php $i=1 ; foreach ($post->likeRecords  as $like ) { $i++ ;
+                              if ($i>3)
+                                        {
+                                        break;
+                                        }
+                                ?>
+                              <span> <b><?php echo $like->name ?> </b> 
+                              <?php  } ?> et <a href="#" title=""> +<?php  echo  count($post->likeRecords) ?> </a> j'aimes</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="coment-area" style="">
+                          <ul class="we-comet">
+
+                            <?php foreach ($post->commentsRecords as $comment ) { ?>
+                            <li>
+                              <div class="comet-avatar">
+                                <img src="<?php echo base_url() ?>uploads/avatar/<?php echo $comment->avatar ?>" class="alligator-profile-likes" alt="">
+                              </div>
+                              <div class="we-comment">
+                                <h5><a href="time-line.html" title=""><?php echo $comment->name ?></a></h5>
+                                <p><?php echo $comment->content ?>
+                                  <i class="em em-smiley"></i>
+                                </p>
+                                <div class="inline-itms">
+                                  <span>  il y a <?php echo xTimeAgo ($comment->createdDTM,  date('Y-m-d H:i:s') )  ?> </span>
+                                  <!--
+                                  <a class="we-reply" href="#" title="Reply"><i class="fa fa-reply"></i></a>
+                                  <a href="#" title=""><i class="fa fa-heart"></i><span>20</span></a>
+                                  -->
+                                </div>
+                              </div>
+                            </li>
+                            <?php } ?>
+
+                            
+                            <li class="post-comment">
+                              <div class="comet-avatar">
+                                <img src="<?php echo base_url() ?>uploads/avatar/<?php echo $post->avatar ?>" class="alligator-profile" alt="">
+                              </div>
+                              <div class="post-comt-box">
+                                <form method="post" action="<?php echo base_url() ?>Posts/addNewComment/<?php echo $post->postId ?>">
+                                  <textarea  placeholder="Commentaire .."></textarea>
+                                  <div class="add-smiles">
+                                    <div class="uploadimage">
+                                      <i class="fa fa-image"></i>
+                                      <label class="fileContainer">
+                                        <input type="file" name="fileC">
+                                      </label>
+                                    </div>
+                                    <span class="em em-expressionless" title="add icon"></span>
+                                    <div class="smiles-bunch">
+                                      <i class="em em---1"></i>
+                                      <i class="em em-smiley"></i>
+                                      <i class="em em-anguished"></i>
+                                      <i class="em em-laughing"></i>
+                                      <i class="em em-angry"></i>
+                                      <i class="em em-astonished"></i>
+                                      <i class="em em-blush"></i>
+                                      <i class="em em-disappointed"></i>
+                                      <i class="em em-worried"></i>
+                                      <i class="em em-kissing_heart"></i>
+                                      <i class="em em-rage"></i>
+                                      <i class="em em-stuck_out_tongue"></i>
+                                    </div>
+                                  </div>
+                                  <div class="text-right">
+                                  <input  class="btn btn-primary " type="submit">
+                                  </div>
+                                </form> 
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
                   </div>
+
+                <?php $user = $post ; }?>
+
+                </div>
+             </div><!-- centerl meta -->
+
+
+             <div class="col-lg-4">
+                <aside class="sidebar static right">
+                  <div class="widget">
+                    <h4 class="widget-title">Mon Club</h4> 
+                    <div class="your-page">
+                      <figure>
+                        <a href="#" title=""> <img src="<?php echo base_url() ?>uploads/avatar/<?php echo $user->avatar ?>" class="alligator-profile" alt=""></a>
+                      </figure>
+                      <div class="page-meta">
+                        <a href="#" title="" class="underline"><?php echo $user->name ?></a>
+                         <span><i class="ti-bell"></i><a title="">Visiter <em>2</em></a></span>
+                        <span><i class="ti-comment"></i><a  title="">Messages <em>9</em></a></span>
+
+                      </div>
+                      <!--
+                      <ul class="page-publishes">
+                        <li>
+                          <span><i class="ti-pencil-alt"></i>Publish</span>
+                        </li>
+                        <li>
+                          <span><i class="ti-camera"></i>Photo</span>
+                        </li>
+                        <li>
+                          <span><i class="ti-video-camera"></i>Live</span>
+                        </li>
+                        <li>
+                          <span><i class="fa fa-user-plus"></i>Invite</span>
+                        </li>
+                      </ul>
+                      -->
+                      <div class="page-likes">
+                        <ul class="nav nav-tabs likes-btn">
+                          <li class="nav-item"><a class="active" href="#link1" data-toggle="tab" data-ripple="">likes</a></li>
+                           <li class="nav-item"><a class="" href="#link2" data-toggle="tab" data-ripple="">views</a></li>
+                        </ul>
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                          <div class="tab-pane active fade show" id="link1">
+                          <span><i class="ti-heart"></i>884</span>
+                            <a href="#" title="weekly-likes">35 new likes this week</a>
+                            <div class="users-thumb-list">
+                            <a href="#" title="" data-toggle="tooltip" data-original-title="Anderw">
+                              <img src="images/resources/userlist-1.jpg" alt="">  
+                            </a>
+                            <a href="#" title="" data-toggle="tooltip" data-original-title="frank">
+                              <img src="images/resources/userlist-2.jpg" alt="">  
+                            </a>
+                            <a href="#" title="" data-toggle="tooltip" data-original-title="Sara">
+                              <img src="images/resources/userlist-3.jpg" alt="">  
+                            </a>
+                            <a href="#" title="" data-toggle="tooltip" data-original-title="Amy">
+                              <img src="images/resources/userlist-4.jpg" alt="">  
+                            </a>
+                            <a href="#" title="" data-toggle="tooltip" data-original-title="Ema">
+                              <img src="images/resources/userlist-5.jpg" alt="">  
+                            </a>
+                            <a href="#" title="" data-toggle="tooltip" data-original-title="Sophie">
+                              <img src="images/resources/userlist-6.jpg" alt="">  
+                            </a>
+                            <a href="#" title="" data-toggle="tooltip" data-original-title="Maria">
+                              <img src="images/resources/userlist-7.jpg" alt="">  
+                            </a>  
+                            </div>
+                          </div>
+                          <div class="tab-pane fade" id="link2">
+                            <span><i class="fa fa-eye"></i>440</span>
+                            <a href="#" title="weekly-likes">440 new views this week</a>
+                            <div class="users-thumb-list">
+                            <a href="#" title="" data-toggle="tooltip" data-original-title="Anderw">
+                              <img src="images/resources/userlist-1.jpg" alt="">  
+                            </a>
+                            <a href="#" title="" data-toggle="tooltip" data-original-title="frank">
+                              <img src="images/resources/userlist-2.jpg" alt="">  
+                            </a>
+                            <a href="#" title="" data-toggle="tooltip" data-original-title="Sara">
+                              <img src="images/resources/userlist-3.jpg" alt="">  
+                            </a>
+                            <a href="#" title="" data-toggle="tooltip" data-original-title="Amy">
+                              <img src="images/resources/userlist-4.jpg" alt="">  
+                            </a>
+                            <a href="#" title="" data-toggle="tooltip" data-original-title="Ema">
+                              <img src="images/resources/userlist-5.jpg" alt="">  
+                            </a>
+                            <a href="#" title="" data-toggle="tooltip" data-original-title="Sophie">
+                              <img src="images/resources/userlist-6.jpg" alt="">  
+                            </a>
+                            <a href="#" title="" data-toggle="tooltip" data-original-title="Maria">
+                              <img src="images/resources/userlist-7.jpg" alt="">  
+                            </a>  
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div><!-- page like widget -->
+                  <div class="widget">
+                    <h4 class="widget-title">Explor Events <a title="" href="#" class="see-all">See All</a></h4>
+                    <div class="rec-events bg-purple">
+                      <i class="ti-gift"></i>
+                      <h6><a href="#" title="">Ocean Motel good night event in columbia</a></h6>
+                      <img src="images/clock.png" alt="">
+                    </div>
+                    <div class="rec-events bg-blue">
+                      <i class="ti-microphone"></i>
+                      <h6><a href="#" title="">2016 The 3rd International Conference</a></h6>
+                      <img src="images/clock.png" alt="">
+                    </div>
+                  </div><!-- explore events -->
+                  <div class="widget">
+                    <h4 class="widget-title">Profile intro</h4>
+                    <ul class="short-profile">
+                      <li>
+                        <span>about</span>
+                        <p>Hi, i am jhon kates, i am 32 years old and worked as a web developer in microsoft </p>
+                      </li>
+                      <li>
+                        <span>fav tv show</span>
+                        <p>Sacred Games, Spartcus Blood, Games of Theron </p>
+                      </li>
+                      <li>
+                        <span>favourit music</span>
+                        <p>Justin Biber, Shakira, Nati Natasah</p>
+                      </li>
+                    </ul>
+                  </div><!-- profile intro widget -->
+                  <div class="widget stick-widget" style="">
+                    <h4 class="widget-title">Recent Links <a title="" href="#" class="see-all">See All</a></h4>
+                    <ul class="recent-links">
+                      <li>
+                        <figure><img src="images/resources/recentlink-1.jpg" alt=""></figure>
+                        <div class="re-links-meta">
+                          <h6><a href="#" title="">moira's fade reaches much farther than you think.</a></h6>
+                          <span>2 weeks ago </span>
+                        </div>
+                      </li>
+                      <li>
+                        <figure><img src="images/resources/recentlink-2.jpg" alt=""></figure>
+                        <div class="re-links-meta">
+                          <h6><a href="#" title="">daniel asks if we want him to do the voice of doomfist</a></h6>
+                          <span>3 months ago </span>
+                        </div>
+                      </li>
+                      <li>
+                        <figure><img src="images/resources/recentlink-3.jpg" alt=""></figure>
+                        <div class="re-links-meta">
+                          <h6><a href="#" title="">the pitnik overwatch scandals.</a></h6>
+                          <span>1 day before</span>
+                        </div>
+                      </li>
+                    </ul>
+                  </div><!-- recent links -->
+                </aside>
+              </div><!-- sidebar -->
+
+           
             </div>
-</div>
 
-<script type="text/javascript">
-      
-  function like (clickid) {
-         link  = "<?php echo base_url()?>Posts/Like/"+clickid  ; 
-
-         $.ajax({
-            url: link , 
-            success: function(result){
-            $('#'+clickid).hide();
-            $('#Liked'+clickid).show();
-                        }
-            });
-
-           
-      }
-
-      
-      function deleteComment (clickid) {
-         link  = "<?php echo base_url()?>Posts/deleteComment/"+clickid  ; 
-
-         $.ajax({
-            url: link , 
-            success: function(result){
-            $('#C'+clickid).hide();
-               }
-            });
-
-           
-      }
+          </div>
 
 
-       function deleteP (clickid) {
-         link  = "<?php echo base_url()?>Posts/deletePost/"+clickid  ; 
-
-         $.ajax({
-            url: link , 
-            success: function(result){
-            $('#post'+clickid).hide();
- 
-                        }
-            });
-
-           
-      }
-
-</script>
+  
+        </div>
+      </div>
+    </div>  
+  </section>

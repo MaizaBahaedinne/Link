@@ -10,6 +10,7 @@
 class BaseController extends CI_Controller {
 	protected $role = '';
 	protected $vendorId = '';
+	protected $HUA = '';
 	protected $name = '';
 	protected $avatar = '';
 	protected $roleText = '';
@@ -94,7 +95,7 @@ class BaseController extends CI_Controller {
 			$this->global ['role'] = $this->role;
 			$this->global ['role_text'] = $this->roleText;
 			$this->global ['last_login'] = $this->lastLogin;
-
+			$this->global ['HUA'] = $this->HUA;
 			$this->global ['isBlocked'] = $this->isBlocked;
 			$this->global ['SA'] = $this->SA;
 
@@ -102,6 +103,57 @@ class BaseController extends CI_Controller {
 
 		}
 	}
+
+
+	public function send_mail($to, $subject  , $data , $content )
+    {       
+
+
+
+                 // Load PHPMailer library
+                    $this->load->library('phpmailer_lib');
+                    
+                    // PHPMailer object
+                    $mail = $this->phpmailer_lib->load();
+                    
+                    // SMTP configuration
+                    $mail->isSMTP();
+                    $mail->Host     = 'tunivisions.link';
+                    $mail->SMTPAuth = true;
+                    $mail->Username = 'no-reply@tunivisions.link';
+                    $mail->Password = 'Tunivisions-Link-2019';
+                    $mail->SMTPSecure = 'tls';
+                    $mail->Port     = 587;
+                    
+                    $mail->setFrom('no-reply@tunivisions.link', 'Tunivisions Link');
+                    $mail->addReplyTo('no-reply@tunivisions.link', 'Tunivisions Link');
+                    
+                    // Add a recipient
+                
+                    $mail->addAddress($to);
+                    
+                    
+                    // Email subject
+                    $mail->Subject = $subject ;
+                    
+                    // Set email format to HTML
+                    $mail->isHTML();
+                    
+                    // Email body content
+                    
+                  	$body =$content ; 
+
+                    $mail->Body =  $body  ; 
+                    
+                    // Send email
+                    if(!$mail->send()){
+                        echo 'Message could not be sent.';
+                        echo 'Mailer Error: ' . $mail->ErrorInfo;
+                    }else{
+                        $r =  'Message has been sent';
+                    }
+    }
+
 
 	
 	/**
@@ -167,24 +219,33 @@ class BaseController extends CI_Controller {
     	$this->load->model('login_model');
 		$this->load->model('notification_model');
 
-    	$headerInfo['MyUserId'] = $this->vendorId ; 
+    	$MyUser = $this->user_model->getUserInfo($this->vendorId)  ; 
 
 		$headerInfo['notifRecords'] = $this->notification_model->NotificationListingHome($this->vendorId) ;
-        $headerInfo['notifRecordsNumber'] = count($this->notification_model->NotificationNoSeenListing($this->vendorId)) ;
-        
-
+        $headerInfo['notifRecordsNumber'] = count($this->notification_model->NotificationNoSeenListing($this->vendorId)) ;     
         $headerInfo['ChatRecords'] = Null ; 
-				                  
-
-         $headerInfo['ConnrectedUser'] =  $this->login_model->lastLogins() ;
+        $headerInfo['ConnrectedUser'] =  $this->login_model->lastLogins() ;
 
          
-        if($this->SA == 1){
+        if($MyUser->isDeleted == 3 ){
+        if($this->SA == 1 ){	
+        /*
+        $this->send_mail($MyUser->email , 
+        	"Activation" , 
+        	Null ,  	
+        	"Bonjour ".$MyUser->name.",<br> Votre de code d'activation est : <br> <br> <b>".$MyUser->userId."-".$MyUser->clubID."/2020 </b> <br> <br>" ) ;
+        	*/
         $this->load->view('includes/header', $headerInfo);
-        $this->load->view($viewName, $pageInfo);
+        $this->load->view('lancement', $MyUser );
         $this->load->view('includes/footer', $footerInfo);
+        }
+        else {
+        	$this->load->view('soon');
+        }
         }else {
-			$this->load->view ( 'soon' );
+			 $this->load->view('includes/header', $headerInfo);
+	        $this->load->view($viewName, $pageInfo);
+	        $this->load->view('includes/footer', $footerInfo);
 		}
     }
 	
@@ -231,7 +292,6 @@ class BaseController extends CI_Controller {
 				"segment" => $segment
 		);
 	}
-
 
 
 

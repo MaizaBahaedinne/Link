@@ -1126,7 +1126,7 @@ if ($.isFunction($.fn.mmenu)) {
 //----- count down timer		
 	if ($.isFunction($.fn.downCount)) {
 		$('.countdown').downCount({
-			date: '10/15/2020 12:00:00',
+			date: '10/25/2020 12:00:00',
 			offset: +10
 		});
 	}

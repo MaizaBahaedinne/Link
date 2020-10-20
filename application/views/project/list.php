@@ -17,9 +17,9 @@
                                                 </div>
                                                 <div class="col-lg-6">
                                                     <div class="row">
-                                                        <div class="col-lg-5 col-md-7 col-sm-7">
+                                                        <div class="col-lg-5 ">
                                                             <form method="post">
-                                                                <input type="text" placeholder="Search..">
+                                                                <input type="text" placeholder="chercher ..">
                                                                 <button type="submit"><i class="fa fa-search"></i></button>
                                                             </form>
                                                         </div>
@@ -52,26 +52,29 @@
                                                     <div class="row merged20">
 
                                                         <div class="col-lg-4 col-md-4 col-sm-5">
-                                                            <figure class="event-thumb"><img src="<?php echo base_url() ?>uploads/projet/<?php echo $projet->banner ?>" alt="">
-                                                                <span class="yellow"><?php echo $projet->type ?></span></figure>
+                                                            <img src="<?php echo base_url() ?>uploads/projet/<?php echo $projet->banner ?>" class="alligator-projects " alt="">
+                                                                
                                                         </div>
-                                                        <div class="col-lg-6 col-md-6 col-sm-5">
+                                                        <div class="col-lg-5 col-md-6 col-sm-5">
                                                             <div class="event-title">
                                                                 <span class="ba"></span>
-                                                                <h4><a href="#" title=""><?php echo $projet->titre ?></a></h4>
-                                                                <span><i class="fa fa-clock-o"></i> <?php echo $projet->startDate ?></span>
-                                                                <span><i class="fa fa-map-marker" aria-hidden="true"></i> <?php echo $projet->startDate ?></span>
+                                                                <h4><a href="<?php echo base_url() ?>Project/projectDetails/<?php echo $projet->projectId ?>" title=""><?php echo $projet->titre ?></a></h4>
+                                                                <label class="text-mute" >by <a href="<?php echo base_url() ?>club/clubInfo/<?php echo $projet->ClubID  ?>"> <?php if ($projet->ClubID > 5 ) {echo "club ";}  echo "Tunivisions ".$projet->ClubName; ?></a></label>
+                                                                <span>de <i class="fa fa-clock-o" style="color: green"></i> <?php echo $projet->startDate ?></span>
+                                                                <span>à <i class="fa fa-clock-o" aria-hidden="true"></i> <?php echo $projet->endDate ?></span>
+                                                                <span><i class="fa fa-map-marker" aria-hidden="true"></i> <?php echo $projet->local ?></span>
                                                                 <span><i class="fa fa-money" aria-hidden="true"></i> <?php echo $projet->prix ?> DT</span>
-                                                                <ul class="sociaz-media">
-                                                                    <li><a title="" href="<?php echo $projet->eventFB ?>" class="facebook"><i class="fa fa-facebook"></i></a></li>
-                                                                </ul>
+                                                                <hr>
+                                                                
+                                                                    <li><a title="" href="<?php echo $projet->eventFB ?>" ><i class="fa fa-facebook"></i>  Evenement Facebook</a></li>
+                                                                
                                                                 
                                                                                                                                 
                                                             </div>
                                                         </div>
-                                                        <div class="col-lg-2 col-md-2 col-sm-2">
+                                                        <div class="col-lg-3 col-md-2 col-sm-2">
                                                             <div class="event-time">
-                                                                <span class="event-date"><?php echo $projet->startDate ?></span>
+                                                                <span class="event-date"><?php echo $projet->type ?></span>
                                                             </div>  
                                                         </div>
                                                     </div>

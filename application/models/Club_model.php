@@ -29,43 +29,30 @@ class Club_model extends CI_Model
      * @param number $segment : This is pagination limit
      * @return array $result : This is result
      */
-    function clubListing($clubId,$SA)
+    function clubListing($SA)
     {
-        $this->db->select('BaseTbl.clubID , BaseTbl.name , BaseTbl.birthday , BaseTbl.city ,BaseTbl.email , BaseTbl.is_Actif , Users.name P , Users.avatar , Users.userId , Users.isDeleted  ,count(Users1.userId) members  , BaseTbl.charte, BaseTbl.facebook , BaseTbl.SenJun  ');
+        $this->db->select('BaseTbl.clubID , BaseTbl.name , BaseTbl.is_Actif , BaseTbl.SenJun , BaseTbl.city ');
         $this->db->from('tbl_club as BaseTbl');
-   
-       $this->db->join('tbl_users as Users', 'Users.ClubID = BaseTbl.clubID', 'LEFT');
-       $this->db->join('tbl_users as Users1', 'Users1.ClubID = BaseTbl.clubID', 'LEFT') ; 
-        $this->db->where('Users.roleId = 1 OR Users.roleId = ','2') ;
-        $this->db->where('Users1.isDeleted = ','0') ;
 
         if($SA!=1){
-
                 $this->db->where('BaseTbl.clubID > ', 5 ) ;
-
                 $this->db->where('BaseTbl.clubID != ', -1 ) ; 
-
                 if($clubId == 0 ){
                     $this->db->where('BaseTbl.SenJun = ', 3 ) ;      
                 }
-
                 if($clubId == 1 ){
                     $this->db->where('BaseTbl.SenJun = ', 4 ) ;      
                 }
         }
 
-
-       $this->db->group_by('BaseTbl.clubId') ;
         $query = $this->db->get();
-        
-
         $result = $query->result();        
         return $result;
     }
 
 
 
-/**
+    /**
      * This function used to get user information by id with role
      * @param number $userId : This is user id
      * @return aray $result : This is user information
@@ -116,6 +103,23 @@ class Club_model extends CI_Model
         $this->db->update('tbl_club', $clubInfo);
         
         return TRUE;
+    }
+
+        /**
+     * This function is used to add new user to system
+     * @return number $insert_id : This is last inserted id
+     */
+    function addClub ($clubInfo)
+    {
+
+        $this->db->trans_start();
+        $this->db->insert('tbl_club', $clubInfo);
+        
+        $insert_id = $this->db->insert_id();
+        
+        $this->db->trans_complete();
+        
+        return $insert_id;
     }
 
    

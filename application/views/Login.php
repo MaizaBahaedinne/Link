@@ -116,7 +116,7 @@
                                     <a class="forgot underline" href="#" title="">Mot de passe oublié ?</a>
                                <br>
 
-                                <span>vous n'avez pas de compte? <a class="we-account underline" href="#" title=""> S'inscrire maintenant</a></span>
+                                <span>vous n'avez pas de compte? <a class="we-account underline" href="<?php echo base_url() ?>" title=""> S'inscrire maintenant</a></span>
                             </div>
                         </div>
                         

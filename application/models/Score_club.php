@@ -49,7 +49,7 @@ class Project_model extends CI_Model
 
    
 
-        function projectListingByType($type,$clubID)
+        function projectListingByType($clubID)
     {
          $this->db->select('BaseTbl.projectId , BaseTbl.startDate , BaseTbl.endDate , BaseTbl.titre , BaseTbl.type , BaseTbl.cible , Clubs.name as ClubName ,  BaseTbl.prix , BaseTbl.capacite , BaseTbl.description ,  BaseTbl.local ,BaseTbl.banner ');
         $this->db->from('tbl_project as BaseTbl');
@@ -67,10 +67,10 @@ class Project_model extends CI_Model
 
 
 
-    function addNewProject($projectInfo)
+    function addNew($scoresInfo)
     {
         $this->db->trans_start();
-        $this->db->insert('tbl_project', $projectInfo);
+        $this->db->insert('tbl_club_scores', $scoresInfo);
         
         $insert_id = $this->db->insert_id();
         

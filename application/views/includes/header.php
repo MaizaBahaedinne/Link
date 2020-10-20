@@ -18,13 +18,15 @@
     <meta name="description" content="">
     <meta name="keywords" content="">
 	<title>Tunivisions.link</title>
-    <link rel="icon" href="images/fav.png" type="image/png" sizes="16x16"> 
-    
+    <link rel="icon" href="<?php echo base_url() ?>assets/images/fav.png"  > 
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/eventCalendar.css">
     <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/main.min.css">
     <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/style.css">
     <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/color.css">
     <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/responsive.css">
-	<link rel="stylesheet" href="<?php echo base_url() ?>assets/css/calendar.css"> 
+	<link rel="stylesheet" href="<?php echo base_url() ?>assets/css/calendar.css">    
+	<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
+
 
     <style type="text/css">
     .alligator-profile {
@@ -39,18 +41,33 @@
         width: 80px;
         height: 80px;
     }
-            .alligator-profile-likes {
+    .alligator-profile-likes {
         object-fit: cover;
         object-position: 20% 50%;
         width: 40px;
         height: 40px;
     }
+    .alligator-projects {
+        object-fit: cover;
+        object-position: 50% 50%;
+        width: 100%;
+        height: 250px;
+    }
+    .alligator-projects-banner {
+        object-fit: cover;
+        object-position: 50% 50%;
+        width: 250px;
+        height: 350px;
+    }
+
 </style>
 
   <script src="<?php echo base_url() ?>assets/js/main.min.js"></script>
- 
-  <script src="<?php echo base_url() ?>assets/js/script.js"></script>
-  <script src="<?php echo base_url() ?>assets/js/calendar.js"></script>
+  <script  src="<?php echo base_url() ?>assets/js/calendar.js"></script>
+  <script type="text/javascript" src="//cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js" ></script>
+  <script defer src="<?php echo base_url() ?>assets/js/script.js"></script>
+  <script src="<?php echo base_url() ?>assets/js/jquery.eventCalendar.min.js"></script>
+
 
 </head>
 <body>
@@ -274,9 +291,10 @@
 							<li><a href="privacy.html" title=""><i class="fa fa-pencil-square-o"></i>Terms &amp; Policy</a></li>
 							<li><a href="#" title=""><i class="fa fa-map-marker"></i>Contact</a></li>
 							<li><a href="#" title=""><i class="fa fa-exclamation-triangle"></i>Report a Problem</a></li>
-						</ul>
+						</ul>d
 					-->
-					<div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 0px;"><div class="ps-scrollbar-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps-scrollbar-y-rail" style="top: 0px; right: 0px;"><div class="ps-scrollbar-y" tabindex="0" style="top: 0px; height: 0px;"></div></div></div>
+					<div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 0px;">
+						<div class="ps-scrollbar-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps-scrollbar-y-rail" style="top: 0px; right: 0px;"><div class="ps-scrollbar-y" tabindex="0" style="top: 0px; height: 0px;"></div></div></div>
 				</li>
 			</ul>
 			<div class="user-img">
@@ -284,12 +302,9 @@
 				<img class="alligator-profile" src="<?php echo base_url() ?>uploads/avatar/<?php echo $avatar ?>"  alt="">
 				<span class="status f-online"></span>
 				<div class="user-setting">
-					<span class="seting-title">User setting <a href="#" title="">see all</a></span>
+					<span class="seting-title">Parametre <a href="#" title="">afficher tous</a></span>
 					<ul class="log-out">
-						<li><a href="about.html" title=""><i class="ti-user"></i> view profile</a></li>
-						<li><a href="setting.html" title=""><i class="ti-pencil-alt"></i>edit profile</a></li>
-						<li><a href="#" title=""><i class="ti-target"></i>activity log</a></li>
-						<li><a href="setting.html" title=""><i class="ti-settings"></i>account setting</a></li>
+						<li><a href="<?php echo base_url() ?>User/ProfileShow/<?php echo $uid ?>" title=""><i class="ti-user"></i> Profile</a></li>
 						<li><a href="<?php echo base_url() ?>logout" title=""><i class="ti-power-off"></i>log out</a></li>
 					</ul>
 				</div>
@@ -334,8 +349,10 @@
 				<?php foreach ($ConnrectedUser as $userCon ) {?>
 				<li>
 					<div class="author-thmb">
-						<img src="<?php echo base_url() ?>uploads/avatar/<?php echo $userCon->avatar ?>" class="alligator-profile" alt="">
-						<span class="status f-online"></span>
+						<a title="<?php echo $userCon->name ?>" data-toggle="tooltip" data-placement="left" data-original-title="<?php echo $userCon->name ?>">
+							<img src="<?php echo base_url() ?>uploads/avatar/<?php echo $userCon->avatar ?>" class="alligator-profile" alt="">
+							<span class="status f-online"></span>
+						</a>
 					</div>
 				</li>
 				<?php } ?>

@@ -1,58 +1,158 @@
+
+
+
 <section>
 		<div class="gap gray-bg">
 			<div class="container">
 				<div class="row" id="page-contents">
 					<div class=" col-lg-12">
 						<div class="central-meta">
+              <div class="row">
               <div class="col-md-8">
-							<span><h4> Gestion des tache :  </h4> <?php echo $projet->titre ?></span>
+							<h6 class="widget-title" > Gestion des tache : <?php echo $projet->titre ?>  </h6> 
 							</div>
               <div class="col-md-4">
-              <button class="btn btn-primary" data-toggle="modal" data-target="#myModal" >Ajouter une tache</button> 
+              <a class="align-right main-btn" data-toggle="modal" data-target="#myModal" >Ajouter une tache</a> 
+              </div>
               </div>
 							<div>
-                  <table class="table">
+                <hr>
+
+                  <table class="table table-striped table-responsive-xl" style="width: cover">
                     <thead>
-                      <th>ID</th>
-                      <th>Deadline</th>
-                      <th>Par</th>
-                      <th>affecté à</th>
-                      <th>Action</th>
+                      <th  width="2%" >ID</th>
+                      <th  >titre</th>
+                      <th width="25%" >Deadline</th>
+                      <th width="5%">Par</th>
+                      <th width="30%">affecté à</th>
+                      <th width="5%" >Action</th>
                     </thead>
                     <tbody>
                       <?php foreach ($taches as $tache ) { ?>
-                        <td><?php echo $tache->tacheId?></td>
-                        <td><?php echo $tache->deadline?></td>                                     <td><?php echo $tache->par?></td>
-
-                        <td><?php foreach ($tache->affections as $affection ) { ?>
-                              <ul>
-
-                                   
-
-                            
-                              <?php echo  "<li>".$affection->name."</li>"
-                               
-                              ?> &nbsp;
-                             
-                                <?php 
-                                 $end = $tache->deadline ;
-                                 
-                                if($affection->status == 0 &&  (time()-(60*60*24)) < strtotime($tache->deadline) )  { ?>
-                                  <button class="btn" style="background-color:green" > <i class="fas fa-check-circle"></i> </button>
-                                  <?php }elseif ($affection->status== 1 )  {  ?>
-                                    <button class="btn" disabled style="background-color:gray"> <i class="fas fa-check-circle"></i> </button>
-                                  <?php } ?> 
-                                
-                              </ul>
-                            <?php }?>
+                        <tr>
+                          <td>
+                            <?php echo $tache->tacheId?>
+                        </td> 
+                        <td>
+                          <h4>
+                            <?php echo $tache->titre ?>
+                          </h4>
+                          <span>
+                            <?php echo $tache->description ?>
+                          </span>
+                        </td> 
+                        <td><b>Debut : </b><?php echo $tache->startedDate ?> <hr> <b>Fin : </b><?php echo $tache->deadline ?></td>                                     
+                        <td> 
+                          <a data-toggle="tooltip" title="" href="#" data-original-title="<?php echo $tache->parname?>">
+                                <img alt="" class="alligator-profile-likes" src="<?php echo base_url() ?>uploads/avatar/<?php echo $tache->avatar ?>">  
+                           </a> 
                         </td>
-                        <td></td>
-                        <td></td>
+                        <td>
+                           <ul>
+                        <?php foreach ($tache->affections as $affection ) { ?>
+  
+                               <li  class="<?php  if ($affection->status== 1 )  {   ?> badges-success <?php } ?>" > 
+                                  <div class="row  ">
+                                    <div class="col-md-3">
+                                      <img alt="" class="alligator-profile-likes" src="<?php echo base_url() ?>uploads/avatar/<?php echo $affection->avatar ?>"> 
+                                  </div>
 
-                      <?php }?>
+                                  <div class="col-md-3  ">
+                                    <?php  echo $affection->name  ; ?>
+                                  </div>
+                                </div>
+                                <div class="row ">
+                                <?php 
+
+                               
+                                if($affection->status == 0 &&  (time()-(60*60*24)) < strtotime($tache->deadline) )  { ?>
+                                  <button class="btn" style="color:orange" > <i class="fa fa-check-square"></i> Valider </button>
+                                  <?php }elseif ($affection->status== 1 )  {  ?>
+                                  <button class="btn" disabled style="color:green"> <i class="fa fa-check-square"></i> Cloturé </button>
+                                  <?php }elseif ($affection->status== 0 &&  (time()-(60*60*24)) > strtotime($tache->deadline) ) {  ?>
+                                  <button class="btn" disabled style="color:gray"> <i class="fa fa-check-square"></i> Dépassé </button>
+                                  <?php } ?> 
+                                  <br>
+                                 <button class="btn" disabled style="color:red"> <i class="fa fa-minus-square"></i> Supprimer </button>
+                                </div>
+                                
+                               </li>
+                               <hr>                                                         
+                           
+
+                            <?php }?>      
+                            </ul>                            
+                            <a  class="align-center main-btn" data-toggle="modal" data-target="#addMembersToTask<?php echo $tache->tacheId?>" >
+                              <i class="fa fa-user-plus"></i> Ajouter des membres 
+                            </a>
+                                <div class="modal fade" id="addMembersToTask<?php echo $tache->tacheId?>">
+                                    <div class="modal-dialog ">
+                                      <div class="modal-content">
+
+                                        <!-- Modal Header -->
+                                        <div class="modal-header">
+                                          <h4 class="modal-title">Ajouter des membres   </h4>
+
+                                          <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="un membre peut avoir seulement une tache dans une periode bien déterminer."> 
+                                            ?
+                                          </button>
+                                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        </div>
+
+                                        <!-- Modal body -->
+                                        <div class="modal-body">
+                                            <?php $this->load->helper("form"); ?>
+                                            <form role="form"  id="addproject" action="<?php echo base_url() ?>Task/addAffectations/<?php echo $tache->tacheId ?>" method="post" role="form"  enctype="multipart/form-data">
+                                                  
+
+                                               
+                                                <span class="text-mute">ci-dessous la liste des membres disponible</span>
+                                                <br>
+                                                <br>
+                                                <div >
+                                                    <select id='lists' class="form-control">
+                                                      <?php foreach ($membresDispo as $membre) { ?>
+                                                       <option value="<?php echo $membre->userId ?>" ><?php echo $membre->name ?> </option>
+                                                      <?php } ?>
+                                                    </select>
+                                                  </div>
+                                                  
+
+
+
+
+
+                                                    <br>
+                                                   
+                                                  <input type="submit" class="btn align-right btn-primary" value="Envoyer" />
+
+                             
+                                                   
+                                                </form>
+
+
+
+
+
+                                        </div>
+
+                                        <!-- Modal footer -->
+                                        <div class="modal-footer">
+                                          
+                                        </div>
+                                      </div>
+                                    </div>
+                                </div><!-- fade Modal -->
+                        </td>
+                        <td>
+                          <a href=""><i class="fa fa-pencil"></i></a>
+                          <a href=""><i class="fa fa-eye"></i></a>
+                        </td>
+                        </tr>
+                      <?php } ?>
                       
                     </tbody>
-                    <tfoot></tfoot>
+                   
                   </table>       
               </div>
 						</div>
@@ -62,32 +162,42 @@
 		</div>
 	</section>
 
-<div class="modal fade" id="myModal">
+    <div class="modal fade" id="myModal">
         <div class="modal-dialog modal-lg">
           <div class="modal-content">
 
             <!-- Modal Header -->
             <div class="modal-header">
-              <h4 class="modal-title">Ajouter une projet</h4>
+              <h4 class="modal-title">Ajouter une tache</h4>
               <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
 
             <!-- Modal body -->
             <div class="modal-body">
                 <?php $this->load->helper("form"); ?>
-                <form role="form"  id="addproject" action="<?php echo base_url() ?>Project/addNewP" method="post" role="form"  enctype="multipart/form-data">
-     
+                <form role="form"  id="addproject" action="<?php echo base_url() ?>Task/addNew/<?php echo $projet->projectId ?>" method="post" role="form"  enctype="multipart/form-data">
+                      
 
+                    <label>Titre</label>
+                    <input type="text"  class="form-control " name="titre" >
+                    <label>Description</label>
+                    <select>
+                      
+                    </select>
+                    <br>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <label>debut</label>
+                        <input type="datetime-local" class="form-control "  min="<?php echo date('Y-m-d').'T00:00' ?>"  name="startedDate">     
+                      </div>
+                      <div class="col-md-6">
+                        <label>Fin</label>
+                        <input type="datetime-local" class="form-control "  min="<?php echo date('Y-m-d').'T00:00' ?>"  name="deadline">
+                      </div>
+                    </div>                
 
-
-
-
-
-           
-                      <input type="submit" class="btn btn-primary" value="Envoyer" />
-                      <input type="reset" class="btn btn-secondary" value="Reset" />
- 
-                       
+                    <br>
+                      <input type="submit" class="btn align-right btn-primary" value="Envoyer" />
                     </form>
 
 
@@ -98,7 +208,7 @@
 
             <!-- Modal footer -->
             <div class="modal-footer">
-              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+              
             </div>
           </div>
         </div>

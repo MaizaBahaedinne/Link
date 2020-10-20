@@ -1,279 +1,285 @@
-
-
-
-<div class="kt-content  kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" id="kt_content">
-											<!-- begin:: Content Head -->
-
-<!-- end:: Content Head -->					
-					<!-- begin:: Content -->
-	<div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
-		<!--begin:: Portlet-->
-<div class="kt-portlet ">
-    <div class="kt-portlet__body">
-        <div class="kt-widget kt-widget--user-profile-3">
-            <div class="kt-widget__media kt-hidden-">
-                    <img src="<?php echo base_url()?>uploads/projet/<?php echo $projectInfo->banner ?>" alt="image" width="300px" >
-                </div>
-            <div class="kt-widget__top">
-                
-                <div class="kt-widget__pic kt-widget__pic--danger kt-font-danger kt-font-boldest kt-font-light kt-hidden">
-                    JM
-                </div>
-                <div class="kt-widget__content">
-                    <div class="kt-widget__head">
-                       
-
-                        <a href="#" class="kt-widget__title"><?php echo $projectInfo->titre; ?> <small> #<?php echo $projectInfo->projectId; ?></small></a>
-
-
-                    </div>
-
-                    <i class="fas fa-map-marker-alt"></i> <?php echo $projectInfo->local ?>
-                    <br></br>
-                    <div class="kt-widget__info">
-
-                        <div class="kt-widget__desc">
-                            <?php echo $projectInfo->description ; ?>
-                        </div>
-
-                        <div class="kt-widget__stats d-flex align-items-center flex-fill">
-                            <div class="kt-widget__item">
-                                <span class="kt-widget__date">
-                                 Date Debut
-                                </span>
-                                <div class="kt-widget__label">
-                                    <span class="btn btn-label-brand btn-sm btn-bold btn-upper"><?php echo $projectInfo->startDate ; ?></span>
-                                </div>
-                            </div>
-
-                            <div class="kt-widget__item">
-                                <span class="kt-widget__date">
-                                 Date Fin
-                                </span>
-                                <div class="kt-widget__label">
-                                    <span class="btn btn-label-danger btn-sm btn-bold btn-upper"><?php echo $projectInfo->endDate ; ?></span>
-                                </div>
-                            </div>
-
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="kt-widget__bottom">
-                <div class="kt-widget__item">
-                    <div class="kt-widget__icon">
-                        <i class="flaticon-piggy-bank"></i>
-                    </div>
-                    <div class="kt-widget__details">
-                        <span class="kt-widget__title">Prix</span>
-                        <span class="kt-widget__value"><span><?php echo $projectInfo->prix ; ?></span> DT</span>
-                    </div>
-                </div>
-
-                <div class="kt-widget__item">
-                    <div class="kt-widget__icon">
-                        <i class="flaticon-confetti"></i>
-                    </div>
-                    <div class="kt-widget__details">
-                        <span class="kt-widget__title">Place</span>
-                        <span class="kt-widget__value"><span></span><?php echo $projectInfo->capacite ; ?></span>
-                    </div>
-                </div>
-
-               
-
-                <div class="kt-widget__item">
-                    <div class="kt-widget__icon">
-                        <i class="flaticon-file-2"></i>
-                    </div>
-                    <div class="kt-widget__details">
-                        <span class="kt-widget__title">73 Tasks</span>
-                    </div>
-                </div>
-
-               
-
-                <div class="kt-widget__item">
-                    <div class="kt-widget__icon">
-                        <i class="flaticon-network"></i>
-                    </div>
-                    <div class="kt-widget__details">
-                        <div class="kt-section__content kt-section__content--solid">
-                            <div class="kt-badge kt-badge__pics">
-                                <?php foreach ($resource as $member) {
-                                ?>
-                                <a href="#" class="kt-badge__pic" data-toggle="kt-tooltip" data-skin="brand" data-placement="top" title="" data-original-title="<?php echo $member->name ; ?>">
-                                    <img src="<?php echo base_url() ; ?>uploads/avatar/<?php echo $member->avatar ; ?>" alt="image">
-                                </a>
-                                <?php
-                                }
-                                ?>
+<section>
+        <div class="gap2 gray-bg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="row merged20" id="page-contents">
+                            <div class="user-profile">
+                                <figure>
+                                   <img src="<?php echo base_url() ?>uploads/projet/<?php echo $projet->banner ?>" class="alligator-projects-banner" alt="">                                 
+                                    
+                                </figure>
+                                <div class="profile-section">
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-lg-7">
+                                             <h4><?php echo $projet->type ?> : <?php echo $projet->titre ?></h4>
+                                        </div>
+                                        <div class="col-lg-5">
+                                            <ul class="align-right user-ben">
+                                        
+                                            <li class="more">
+                                                <a href="#" title="" class="btn" data-ripple="">Participation
+                                                </a>
+                                                <ul class="more-dropdown">
+                                                    <li>
+                                                        <a href="#">J'y vais</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Peut ètre</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a href="#" title="Folow us" class="main-btn" data-ripple=""  data-toggle="modal" data-target="#myModal" >Modifier</a>
+                                            </li>
+                                            <li>
+                                                <a href="<?php echo base_url() ?>Task/tasksListing/<?php echo $projet->projectId ?>"  class="align-right user-ben main-btn " >Liste des taches</a>
+                                            </li>
+                                            
+                                        </ul>
+                                        
+                                        </div>
+                                    </div>
+                                    <br>
+                                </div>  
+                            </div><!-- user profile banner  -->
+                            
+                        
+                            <div class="col-lg-9">
+                                <div class="central-meta">
+                                    <span class="create-post">Description <a href="#" title=""></a></span>
+                                    <?php echo $projet->description ?> 
+                                </div><!-- suggested friends -->
                                 
-                                <a href="#" class="kt-badge__pic kt-badge__pic--last kt-font-brand">
-                                 +   <?php echo count($resource) ?>
-                                </a>
-                            </div>
-                        </div>
+                            </div><!-- centerl meta -->
+                            <div class="col-lg-3">
+                                <aside class="sidebar static right">
+                                    <div class="widget">
+                                        <h4 class="widget-title">Your page</h4> 
+                                        <div class="your-page">
+                                            <figure>
+                                                <a href="#" title=""><img src="images/resources/friend-avatar9.jpg" alt=""></a>
+                                            </figure>
+                                            <div class="page-meta">
+                                                <a href="#" title="" class="underline">My Creative Page</a>
+                                                <span><i class="ti-comment"></i><a href="insight.html" title="">Messages <em class="bg-blue">9</em></a></span>
+                                                <span><i class="ti-bell"></i><a href="insight.html" title="">Notifications <em class="bg-purple">2</em></a></span>
+                                            </div>
+                                            <ul class="page-publishes">
+                                                <li>
+                                                    <span><i class="ti-pencil-alt"></i>Publish</span>
+                                                </li>
+                                                <li>
+                                                    <span><i class="ti-camera"></i>Photo</span>
+                                                </li>
+                                                <li>
+                                                    <span><i class="ti-video-camera"></i>Live</span>
+                                                </li>
+                                                <li>
+                                                    <span><i class="fa fa-user-plus"></i>Invite</span>
+                                                </li>
+                                            </ul>
+                                            <div class="page-likes">
+                                                <ul class="nav nav-tabs likes-btn">
+                                                    <li class="nav-item"><a class="active" href="#link1" data-toggle="tab" data-ripple="">likes</a></li>
+                                                     <li class="nav-item"><a class="" href="#link2" data-toggle="tab" data-ripple="">views</a></li>
+                                                </ul>
+                                                <!-- Tab panes -->
+                                                <div class="tab-content">
+                                                  <div class="tab-pane active fade show" id="link1">
+                                                    <span><i class="ti-heart"></i>884</span>
+                                                      <a href="#" title="weekly-likes">35 new likes this week</a>
+                                                      <div class="users-thumb-list">
+                                                        <a href="#" title="" data-toggle="tooltip" data-original-title="Anderw">
+                                                            <img src="images/resources/userlist-1.jpg" alt="">  
+                                                        </a>
+                                                        <a href="#" title="" data-toggle="tooltip" data-original-title="frank">
+                                                            <img src="images/resources/userlist-2.jpg" alt="">  
+                                                        </a>
+                                                        <a href="#" title="" data-toggle="tooltip" data-original-title="Sara">
+                                                            <img src="images/resources/userlist-3.jpg" alt="">  
+                                                        </a>
+                                                        <a href="#" title="" data-toggle="tooltip" data-original-title="Amy">
+                                                            <img src="images/resources/userlist-4.jpg" alt="">  
+                                                        </a>
+                                                        <a href="#" title="" data-toggle="tooltip" data-original-title="Ema">
+                                                            <img src="images/resources/userlist-5.jpg" alt="">  
+                                                        </a>
+                                                        <a href="#" title="" data-toggle="tooltip" data-original-title="Sophie">
+                                                            <img src="images/resources/userlist-6.jpg" alt="">  
+                                                        </a>
+                                                        <a href="#" title="" data-toggle="tooltip" data-original-title="Maria">
+                                                            <img src="images/resources/userlist-7.jpg" alt="">  
+                                                        </a>  
+                                                      </div>
+                                                  </div>
+                                                  <div class="tab-pane fade" id="link2">
+                                                      <span><i class="fa fa-eye"></i>440</span>
+                                                      <a href="#" title="weekly-likes">440 new views this week</a>
+                                                      <div class="users-thumb-list">
+                                                        <a href="#" title="" data-toggle="tooltip" data-original-title="Anderw">
+                                                            <img src="images/resources/userlist-1.jpg" alt="">  
+                                                        </a>
+                                                        <a href="#" title="" data-toggle="tooltip" data-original-title="frank">
+                                                            <img src="images/resources/userlist-2.jpg" alt="">  
+                                                        </a>
+                                                        <a href="#" title="" data-toggle="tooltip" data-original-title="Sara">
+                                                            <img src="images/resources/userlist-3.jpg" alt="">  
+                                                        </a>
+                                                        <a href="#" title="" data-toggle="tooltip" data-original-title="Amy">
+                                                            <img src="images/resources/userlist-4.jpg" alt="">  
+                                                        </a>
+                                                        <a href="#" title="" data-toggle="tooltip" data-original-title="Ema">
+                                                            <img src="images/resources/userlist-5.jpg" alt="">  
+                                                        </a>
+                                                        <a href="#" title="" data-toggle="tooltip" data-original-title="Sophie">
+                                                            <img src="images/resources/userlist-6.jpg" alt="">  
+                                                        </a>
+                                                        <a href="#" title="" data-toggle="tooltip" data-original-title="Maria">
+                                                            <img src="images/resources/userlist-7.jpg" alt="">  
+                                                        </a>  
+                                                      </div>
+                                                  </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><!-- page like widget -->
+                                   
+                               
+                                  
+                                   
+                                </aside>
+                            </div><!-- sidebar -->
+                        </div>  
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</div>
-<!--end:: Portlet-->
+        </div>  
+    </section>
 
-<div class="row">
 
-<!--end:: Widgets/Tasks -->
-  
-</div>
-<div class="row">
-    <div class="col-md-6">
-        <!--begin:: Widgets/Last Updates-->
-<div class="kt-portlet kt-portlet--height-fluid">
-	<div class="kt-portlet__head">
-		<div class="kt-portlet__head-label">
-			<h3 class="kt-portlet__head-title">
-				Evaluation des membres
-			</h3>
-		</div>
-		<div class="kt-portlet__head-toolbar">
-			
-			<div class="dropdown-menu dropdown-menu-fit dropdown-menu-md dropdown-menu-right">
-				<!--begin::Nav-->
-<ul class="kt-nav">
-    <li class="kt-nav__head">
-        Export Options                                    
-        <span data-toggle="kt-tooltip" data-placement="right" title="" data-original-title="Click to learn more...">
-            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon kt-svg-icon--brand kt-svg-icon--md1">
-    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <rect id="bound" x="0" y="0" width="24" height="24"></rect>
-        <circle id="Oval-5" fill="#000000" opacity="0.3" cx="12" cy="12" r="10"></circle>
-        <rect id="Rectangle-9" fill="#000000" x="11" y="10" width="2" height="7" rx="1"></rect>
-        <rect id="Rectangle-9-Copy" fill="#000000" x="11" y="7" width="2" height="2" rx="1"></rect>
-    </g>
-</svg>        </span>
-   </li>
-    <li class="kt-nav__separator"></li>
-    <li class="kt-nav__item">
-        <a href="#" class="kt-nav__link">
-            <i class="kt-nav__link-icon flaticon2-drop"></i>
-            <span class="kt-nav__link-text">Activity</span>
-        </a>
-    </li>
-    <li class="kt-nav__item">
-        <a href="#" class="kt-nav__link">
-            <i class="kt-nav__link-icon flaticon2-calendar-8"></i>
-            <span class="kt-nav__link-text">FAQ</span>
-        </a>
-    </li>
-    <li class="kt-nav__item">
-        <a href="#" class="kt-nav__link">
-            <i class="kt-nav__link-icon flaticon2-link"></i>
-            <span class="kt-nav__link-text">Settings</span>
-        </a>
-    </li>
-    <li class="kt-nav__item">
-        <a href="#" class="kt-nav__link">
-            <i class="kt-nav__link-icon flaticon2-new-email"></i>
-            <span class="kt-nav__link-text">Support</span>
-            <span class="kt-nav__link-badge">
-                <span class="kt-badge kt-badge--success kt-badge--rounded">5</span>
-            </span>
-        </a>
-    </li>
-    <li class="kt-nav__separator"></li>
-    <li class="kt-nav__foot">
-        <a class="btn btn-label-danger btn-bold btn-sm" href="#">Upgrade plan</a>                                    
-        <a class="btn btn-clean btn-bold btn-sm" href="#" data-toggle="kt-tooltip" data-placement="right" title="" data-original-title="Click to learn more...">Learn more</a>
-    </li>
-</ul>
-<!--end::Nav-->			</div>
-		</div>
-	</div>
-    <style type="text/css">
-       .alligator-turtle {
-  object-fit: cover;
-  object-position: 50% 0%;
 
-  width: 25px;
-  height: 25px;
-}
-</style>
-	<div class="kt-portlet__body">
-		<!--begin::widget 12-->
-		<div class="kt-widget4">
-             <?php foreach ($resource as $member) {
-                                ?>
-			<div class="kt-widget4__item">
-				<span class="kt-widget4__icon">
-					<img src="<?php echo base_url() ; ?>uploads/avatar/<?php echo $member->avatar ; ?>" class="kt-radius-100 alligator-turtle"  >
-				</span>	
-				<a href="#" class="kt-widget4__title kt-widget4__title--light">
-					<?php echo $member->name ?><small>#<?php echo $member->userId ?></small>
-				</a> 		
-				<span class="kt-widget4__number kt-font-info"><?php echo $member->score ?></span>
-			</div>
-        <?php }     ?>
-			
-		</div>
-		<!--end::Widget 12-->
-	</div>
-</div>
-<!--end:: Widgets/Last Updates-->    </div>
-    <div class="col-xl-6">
-        <!--begin:: Widgets/Notifications-->
-<div class="kt-portlet kt-portlet--height-fluid">
-	<div class="kt-portlet__head">
-		<div class="kt-portlet__head-label">
-			<h3 class="kt-portlet__head-title">
-				Media
-			</h3>
-		</div>
-		<div class="kt-portlet__head-toolbar">
-			<ul class="nav nav-pills nav-pills-sm nav-pills-label nav-pills-bold" role="tablist">
-				<li class="nav-item">
-					<a class="nav-link active" data-toggle="tab" href="#kt_widget6_tab1_content" role="tab">
-						Album Photo
-					</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" data-toggle="tab" href="#kt_widget6_tab2_content" role="tab">
-						After Mov
-					</a>
-				</li>
-				<li class="nav-item">
 
-				</li>
-			</ul>
-		</div>
-	</div>
-    <div class="kt-portlet__body">
-        <div class="tab-content">
-            <div class="tab-pane active" id="kt_widget6_tab1_content" aria-expanded="true">
-                <div class="kt-notification">
-                   <a href="<?php echo $evaluations->album ; ?>">Album Photo</a> 
-                    <br>
-               <iframe src="https://www.facebook.com/plugins/post.php?href=<?php echo $evaluations->album ; ?>&width=600" width="100%" height="621" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
-                   
-               </iframe>
-                </div>
-                <div class="kt-notification">
-               <a href="<?php echo $evaluations->afterMovie ; ?>">After Movie </a>
-                <br>
-               <iframe src="https://www.facebook.com/plugins/post.php?href=<?php echo $evaluations->afterMovie ; ?>&width=600" width="100%" height="621" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
-                </div>
+
+    <div class="modal fade" id="myModal">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title">Modifier le projet <?php echo $projet->titre ?></h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
 
-            <div class="tab-pane" id="kt_widget6_tab2_content" aria-expanded="false">
+            <!-- Modal body -->
+            <div class="modal-body">
+                <?php $this->load->helper("form"); ?>
+                <form role="form"  id="addproject" action="<?php echo base_url() ?>Project/addNewP" method="post" role="form"  enctype="multipart/form-data">
+                        
+                           
+   
+                                    
+
+                                 
+                                    <label for="fname">Cible  &nbsp; &nbsp; <br> </label>
+                                        
+                                    <input type="radio" name="cible" id="Publique" value="Publique" required> Publique
+                                    <input type="radio" name="cible" id="prive" value="Privé"> Privé
+                                    <input type="radio" name="cible" id="Only" value="Only tunimateur" > Only tunimateur
+                           
+
+                                        <script type="text/javascript">
+                                          $( "#Publique" ).click(function() {
+                                              $("#facebook").prop("required", true);
+                                            });
+                                          $( "#Only" ).click(function() {
+                                              $("#facebook").prop("required", true);
+                                            });
+                                          $( "#prive" ).click(function() {
+                                              $("#facebook").prop("required", false);
+                                            });
+                                        </script>
+
+                                    <br>
+
+                                    <label for="fname">Lien d'évenement facebook : </label>
+                                    <input type="url" name="facebook" id="facebook" class="form-control" >
+                            
+                                    
+
+                                    <label for="fname">Type</label>
+                                    <select class="form-control" id="type" name="type" >
+                                            <option value="Evenement">Evenement</option>
+                                            <option value="Formation">Formation</option>
+                                            <option value="Conférence">Conférence</option>
+                                            <option value="Action">Action</option>
+                                            <option value="Couverture Mediatique">Couverture Mediatique</option>
+                                            <option value="Compétition">Compétition</option>
+                                            <option value="Soirée">Soirée</option>
+                                    </select>
+                          
+
+                                    <hr>
+                               
+                                    <label for="fname">Titre</label>
+                                    <input type="text" class="form-control required" id="Titre" name="Titre" maxlength="255" required >
+                              
+                                    
+                                                            
+                                   
+                                    <label for="fname">Description</label>
+                                    <textarea class="form-control" name="description" id="tinymceExample" rows="20" required></textarea>
+
+                               
+                                    
+
+                                    <label for="fname">Date debut</label>
+                                        <!-- min="<?php echo date('Y-m-d').'T00:00' ?>" -->
+                                    <input type="datetime-local" class="form-control "  min="<?php echo date('Y-m-d').'T00:00' ?>"   id="debut" name="debut"  required >
+ 
+
+                              
+                                    <label for="fname">Date fin</label>
+                                        <!-- min="<?php echo date('Y-m-d').'T00:00' ?>" -->
+                                    <input type="datetime-local" class="form-control"  min="<?php echo date('Y-m-d').'T00:00' ?>"   id="fin" name="fin"  required >
+
+                            
+                                    <hr>
+                             
+                                    <label for="fname">Local</label>
+                                    <input type="text" class="form-control " id="local" name="local" maxlength="255" required >      
+
+                             
+                                    <label for="fname">Capacité</label>
+                                    <input type="number" class="form-control " id="capacite" name="capacite"  required >      
+
+                                    <label for="fname">Prix</label>
+                                    <input type="number" class="form-control" id="prix" name="prix"  required >      
+
+
+
+
+
+
+                        </div>
+                       
+                            <input type="submit" class="btn btn-primary" value="Envoyer" />
+                            <input type="reset" class="btn btn-secondary" value="Reset" />
+ 
+                       
+                    </form>
+
+
+
+
 
             </div>
-            
 
+            <!-- Modal footer -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+          </div>
         </div>
-    </div>
-</div>
-<!--end:: Widgets/Notifications-->    </div>
-</div>	</div>
-<!-- end:: Content -->				</div>
+    </div><!-- fade Modal -->
