@@ -19,12 +19,12 @@
     <meta name="keywords" content="">
 	<title>Tunivisions.link</title>
     <link rel="icon" href="<?php echo base_url() ?>assets/images/fav.png"  > 
-   
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/eventCalendar.css">
     <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/main.min.css">
     <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/style.css">
     <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/color.css">
     <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/responsive.css">
-	<link rel="stylesheet" href="<?php echo base_url() ?>assets/css/calendar.css"> 
+	<link rel="stylesheet" href="<?php echo base_url() ?>assets/css/calendar.css">    
 	<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
 
 
@@ -63,9 +63,11 @@
 </style>
 
   <script src="<?php echo base_url() ?>assets/js/main.min.js"></script>
+  <script  src="<?php echo base_url() ?>assets/js/calendar.js"></script>
   <script type="text/javascript" src="//cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js" ></script>
-  <script src="<?php echo base_url() ?>assets/js/script.js"></script>
-  <script src="<?php echo base_url() ?>assets/js/calendar.js"></script>
+  <script defer src="<?php echo base_url() ?>assets/js/script.js"></script>
+  <script src="<?php echo base_url() ?>assets/js/jquery.eventCalendar.min.js"></script>
+
 
 </head>
 <body>
