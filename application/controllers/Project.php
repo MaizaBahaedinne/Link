@@ -11,7 +11,8 @@ class Project extends BaseController {
         parent::__construct();
         $this->load->model('user_model');
         $this->load->model('project_model');
-
+        $this->load->model('club_model'); 
+        $this->load->model('project_model'); 
         $this->isLoggedIn();   
     }
 
@@ -20,6 +21,10 @@ class Project extends BaseController {
 		               
 		                $searchText='' ;
 		                $data['projectRecords'] = $this->project_model->projectListing();
+                                 $data['projectRecords'] = $this->project_model->projectListing();
+                                 $data["clubInfo"] = $this->club_model->getClubInfo($this->clubID);
+                                 $data["members"] = $this->user_model->userListingByclub($this->clubID) ;
+                                 $data["Projets"] = $this->project_model->projectListing();
                           $this->global['pageTitle'] = 'Projets ';
 		                  $this->global['active'] = 'Projets';
 		                $this->loadViews("project/list", $this->global, $data, NULL);   

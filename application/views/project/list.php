@@ -6,7 +6,7 @@
                         <div class="row merged20" id="page-contents">
                             <!-- user profile banner  -->
                             <!-- sidebar -->
-                            <div class="col-lg-9">
+                            <div class="col-lg-8">
                                     <div class="central-meta">
                                         <div class="title-block">
                                             <div class="row">
@@ -88,7 +88,7 @@
                                         
                                     </div>
                             </div><!-- centerl meta -->
-                            <div class="col-lg-3">
+                            <div class="col-lg-4">
                 <aside class="sidebar static right">
                   <div class="widget">
                     <h4 class="widget-title">Mon Club</h4> 
@@ -189,22 +189,6 @@
                     
                     <div class="full-calendar">
                                 <div id="yourId" class="jalendar mid">
-                                  <?php foreach ($taches as $tache ) { 
-
-                                    $date= date_create($tache->deadline); 
-                                    $dateF =date_format($date,'d-m-Y');
-                                    $timeF =date_format($date,'H:i'); 
-                                     ?> 
-
-                                    <div class="added-event"
-                                    data-date="<?php echo  $dateF ?>" 
-                                    data-time="<?php echo  $timeF ?>"
-                                    data-link="" 
-                                    data-title="Tache : <?php echo  $tache->titre ?>">
-                                      
-                                    </div>
-                                
-                                  <?php }?>
 
                                   <?php foreach ($Projets as $Projet ) { 
 
@@ -217,7 +201,7 @@
                                     data-date="<?php echo  $dateF ?>" 
                                     data-time="<?php echo  $timeF ?>"
                                     data-link="" 
-                                    data-title="<?php echo  $Projet->type ?> : <?php echo  $Projet->titre ?>">
+                                    data-title="<?php echo  $Projet->type ?> : <?php echo  $Projet->titre ?> by <?php if ($projet->ClubID > 5 ) {echo "club ";}  echo "Tunivisions ".$projet->ClubName; ?> ">
                                       
                                     </div>
                                 
