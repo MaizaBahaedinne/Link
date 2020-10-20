@@ -67,6 +67,7 @@
   <script type="text/javascript" src="//cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js" ></script>
   <script defer src="<?php echo base_url() ?>assets/js/script.js"></script>
   <script src="<?php echo base_url() ?>assets/js/jquery.eventCalendar.min.js"></script>
+  <script src="<?php echo base_url() ?>assets/js/qrcode.js"></script>
 
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-151434993-1"></script>
