@@ -150,7 +150,7 @@ class BaseController extends CI_Controller {
                         echo 'Message could not be sent.';
                         echo 'Mailer Error: ' . $mail->ErrorInfo;
                     }else{
-                        echo 'Message has been sent';
+                        $r =  'Message has been sent';
                     }
     }
 
@@ -233,7 +233,7 @@ class BaseController extends CI_Controller {
          
         if($MyUser->isDeleted == 3 ){
         if($this->SA == 1 ){	
-        $this->send_mail($MyUser->email , "Activation"  , Null ,  	"Votre de code d'activation est : <br> <br> <b>'".$MyUser->userId."-".$MyUser->clubID."/2020 </b> <br> <br>" ) ;
+        $this->send_mail($MyUser->email , "Activation"  , Null ,  	"Votre de code d'activation est : <br> <br> <b>".$MyUser->userId."-".$MyUser->clubID."/2020 </b> <br> <br>" ) ;
         $this->load->view('includes/header', $headerInfo);
         $this->load->view('lancement', $MyUser );
         $this->load->view('includes/footer', $footerInfo);
