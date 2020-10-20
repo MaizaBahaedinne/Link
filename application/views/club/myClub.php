@@ -169,13 +169,10 @@
                                                 </div>
                                                 
                                                <?php  } ?>
+                                             </div>
                                                 
                                                 
-                                            </div>
-                                        </div>
-                                        </div>
-                                    </div>
-                                  </div>
+
                                      <div class="central-meta tab-pane fade " id="membresBlock" >
                                         <div class="row">
                                           <?php foreach ($members as $member ) { ?>
