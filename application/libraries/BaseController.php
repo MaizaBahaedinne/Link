@@ -222,13 +222,9 @@ class BaseController extends CI_Controller {
     	$MyUser = $this->user_model->getUserInfo($this->vendorId)  ; 
 
 		$headerInfo['notifRecords'] = $this->notification_model->NotificationListingHome($this->vendorId) ;
-        $headerInfo['notifRecordsNumber'] = count($this->notification_model->NotificationNoSeenListing($this->vendorId)) ;
-        
-
+        $headerInfo['notifRecordsNumber'] = count($this->notification_model->NotificationNoSeenListing($this->vendorId)) ;     
         $headerInfo['ChatRecords'] = Null ; 
-				                  
-
-         $headerInfo['ConnrectedUser'] =  $this->login_model->lastLogins() ;
+        $headerInfo['ConnrectedUser'] =  $this->login_model->lastLogins() ;
 
          
         if($MyUser->isDeleted == 3 ){
