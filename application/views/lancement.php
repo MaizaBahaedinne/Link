@@ -27,7 +27,7 @@
                                 <section id="video" hidden  >
                                 <div class="central-meta">
                                 <h6> Info session et quiz </h6>
-                                  <iframe id="ytplayer" type="text/html" width="1980" height="1113.75"
+                                  <iframe id="ytplayer" type="text/html" width="1980" height="400" 
                                     src="https://www.youtube.com/embed/QwrBWK07RnU?autoplay=1&cc_load_policy=1&controls=0&fs=0&loop=1&color=white"
                                     frameborder="0" allowfullscreen></iframe>
                                   <hr>
@@ -36,7 +36,7 @@
                                       Tunivisions Foundation est offert par Media Visions Editing. Une communauté de plus de 157 universités et 40 clubs lycéen à travers le pays qui offre des expériences où les jeunes apprennent par la pratique. Les étudiants réalisent des événements et des projets pratiques dans des domaines comme les activités culturelles, artistiques, sportives et la citoyenneté, dans un environnement positif où ils sont encouragés à assumer des rôles de leadership proactifs. Les étudiants font l’expérience des Tunimateurs dans chaque club du pays – par le biais de programmes de formation durable, de clubs universitaires et camp Tunivisions.
                                   </span>
                                 </div><!-- suggested friends -->
-                                <button class="btn btn-danger">Lancer le quiz</button>
+                                <button id="videoEnd" class="btn btn-danger">Lancer le quiz</button>
                                 </section>
                                 <section id="quiz" hidden >
                                 <h6> Info session et quiz </h6>
@@ -71,6 +71,15 @@
             animated = true;
             $("#activation").hide();
            }
+        })
+
+
+        $("#videoEnd").click(function test(argument) {
+            
+            $("#quiz").removeAttr("hidden");
+            
+            $("#video").hide();
+           
         })
 
     </script>
