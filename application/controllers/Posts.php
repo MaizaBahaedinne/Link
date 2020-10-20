@@ -54,7 +54,10 @@ class Posts extends BaseController {
          $data['projectRecords'] = $this->project_model->projectListing();
           $data["clubInfo"] = $this->club_model->getClubInfo($this->clubID);
           $data["members"] = $this->user_model->userListingByclub($this->clubID) ;
+                   $data["Projets"] = $this->project_model->projectListingByClub($this->clubID);
+         $data["taches"] =  $this->task_model->AffectationsByUserListing($this->vendorId); 
 
+         
          $data  ['postRecords'] =  $this->posts_model-> postById($postId);
         
             foreach ($data['postRecords'] as $key ) {                

@@ -68,6 +68,16 @@
   <script defer src="<?php echo base_url() ?>assets/js/script.js"></script>
   <script src="<?php echo base_url() ?>assets/js/jquery.eventCalendar.min.js"></script>
 
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-151434993-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-151434993-1');
+        </script>
+
 
 </head>
 <body>
