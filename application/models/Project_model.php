@@ -10,63 +10,8 @@
 class Project_model extends CI_Model
 {
 
-    function projectOldListing($serchText)
-    {
-         $this->db->select('BaseTbl.projectId , BaseTbl.description , BaseTbl.startDate , BaseTbl.endDate , BaseTbl.titre , BaseTbl.type , BaseTbl.cible , Clubs.name as ClubName ,  BaseTbl.prix , BaseTbl.capacite , BaseTbl.description descP ,  BaseTbl.local ,BaseTbl.banner , Evaluations.valider , Evaluer.name dobyName , Evaluations.doDate   ,  Scores.score , Evaluations.statut , Scores.affectedBy , Valider.name validName 
-            , Evaluations.album , Evaluations.afterMovie , BaseTbl.eventFB');
-        
-        $this->db->from('tbl_project as BaseTbl');
-        $this->db->join('tbl_club as Clubs', 'Clubs.clubID = BaseTbl.ClubID', 'LEFT');
 
-        $this->db->join('tbl_evaluation as Evaluations', 'Evaluations.projectId = BaseTbl.projectId', 'LEFT');
-        $this->db->join('tbl_score_club as Scores', 'Evaluations.score_clubID = Scores.score_clubID', 'LEFT');
-
-        $this->db->join('tbl_users as Valider ', 'Valider.userId = Evaluations.validBy', 'LEFT');
-         $this->db->join('tbl_users as Evaluer ', 'Evaluer.userId = Evaluations.doBy', 'LEFT');
-
-
-
-        $this->db->where('NOW() > BaseTbl.endDate ') ;
-        
-        
-  
-
-        $query = $this->db->get();
-        
-        $result = $query->result();        
-        return $result;
-    }
-
-
-
-
-     function ScoringProjectListing($serchText)
-    {
-         $this->db->select('BaseTbl.projectId , BaseTbl.description , BaseTbl.startDate , BaseTbl.endDate , BaseTbl.titre , BaseTbl.type , BaseTbl.cible , Clubs.name as ClubName ,  BaseTbl.prix , BaseTbl.capacite , BaseTbl.description descP ,  BaseTbl.local ,BaseTbl.banner , Evaluations.valider , Evaluer.name dobyName ,  Scores.score , Evaluations.statut , Scores.affectedBy , Valider.name validName 
-            , Evaluations.album , Evaluations.afterMovie , BaseTbl.eventFB , Evaluations.doDate');
-        
-        $this->db->from('tbl_project as BaseTbl');
-        $this->db->join('tbl_club as Clubs', 'Clubs.clubID = BaseTbl.ClubID', 'LEFT');
-
-        $this->db->join('tbl_evaluation as Evaluations', 'Evaluations.projectId = BaseTbl.projectId', 'LEFT');
-        $this->db->join('tbl_score_club as Scores', 'Evaluations.score_clubID = Scores.score_clubID', 'LEFT');
-
-        $this->db->join('tbl_users as Valider ', 'Valider.userId = Evaluations.validBy', 'LEFT');
-         $this->db->join('tbl_users as Evaluer ', 'Evaluer.userId = Evaluations.doBy', 'LEFT');
-
-
-
-        $this->db->where('Evaluations.validBy = 0 and Evaluations.doBy != 0 ') ;
-        
-        $this->db->order_by('Evaluations.doDate ASC ') ;
-        
-  
-
-        $query = $this->db->get();
-        
-        $result = $query->result();        
-        return $result;
-    }
+    
 
     function projectListing()
     {
@@ -87,7 +32,7 @@ class Project_model extends CI_Model
 
     function projectListingByClub($clubID)
     {
-         $this->db->select('Users.userId , BaseTbl.projectId , BaseTbl.startDate , BaseTbl.endDate , BaseTbl.titre , BaseTbl.type , BaseTbl.cible , Clubs.name as ClubName , BaseTbl.description descP ,  BaseTbl.prix , BaseTbl.capacite , BaseTbl.description ,  BaseTbl.local ,BaseTbl.banner , Users.name , Users.avatar , BaseTbl.eventFB ');
+         $this->db->select('Users.userId , BaseTbl.projectId , BaseTbl.startDate , BaseTbl.endDate , BaseTbl.titre , BaseTbl.type , BaseTbl.cible ,Clubs.ClubID ,Clubs.name as ClubName , BaseTbl.description descP ,  BaseTbl.prix , BaseTbl.capacite , BaseTbl.description ,  BaseTbl.local ,BaseTbl.banner , Users.name , Users.avatar , BaseTbl.eventFB ');
         $this->db->from('tbl_project as BaseTbl');
         $this->db->join('tbl_club as Clubs', 'Clubs.clubID = BaseTbl.ClubID', 'LEFT');
         $this->db->join('tbl_users as Users', 'Users.userId = BaseTbl.createBy', 'LEFT');
