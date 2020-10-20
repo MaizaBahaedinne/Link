@@ -53,7 +53,7 @@ class Posts extends BaseController {
          $data['ActuRecords'] = $this->actualite_model->actuListing();
          $data['projectRecords'] = $this->project_model->projectListing();
           $data["clubInfo"] = $this->club_model->getClubInfo($this->clubID);
-          $data["members"] = $this->user_model->userListingByclubINFO($this->clubID) ;
+          $data["members"] = $this->user_model->userListingByclub($this->clubID) ;
 
          $data  ['postRecords'] =  $this->posts_model-> postById($postId);
         
