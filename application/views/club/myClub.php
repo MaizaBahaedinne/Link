@@ -177,8 +177,9 @@
                                         
                                     </div>
                                               <?php  } ?>
-                                  </div>
-                                                
+                                      </div>
+                                    </div>
+                                    </div>           
                                                 
 
                                      <div class="central-meta tab-pane fade " id="membresBlock" >

@@ -71,7 +71,7 @@ class Register extends CI_Controller
                  'createdBy'=> $this->input->get('var1'),
                  'createdDtm'=>date('Y-m-d H:i:s'),
                  'birthday' =>date($birth) ,
-                 'isDeleted' => 1 
+                 'isDeleted' => 3 
 
                      );
               
