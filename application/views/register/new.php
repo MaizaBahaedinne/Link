@@ -68,6 +68,7 @@
                                     </div>
                                 </div>
                                 <div class="barcode">
+                                  <!--
                                     <figure><img src="<?php echo base_url() ?>assets/images/resources/Barcode.jpg" alt=""></figure>
                                     <div class="app-download">
                                         <span>Patager le T-Link avec vos amis</span>
@@ -77,6 +78,7 @@
                                             <li><a title="" href="https://www.microsoft.com/store/apps"><img src="<?php echo base_url() ?>assets/images/windows.png" alt="">Windows</a></li>
                                         </ul>
                                     </div>
+                                  -->
                                 </div>
                             </div>
                         </div>
@@ -84,7 +86,8 @@
                             <div class="we-login-register">
                                 <div class="form-title">
                                     <i class="fa fa-key"></i>S'inscrire
-                                    <span> </span>
+                                    <span> Club : <?php echo $club->name ?> <br> parrain : <?php echo $parrain->name ?> </span>
+                             
                                 </div>
                                    <?php
             $this->load->helper('form');
@@ -103,12 +106,11 @@
             
        
                 
-             
+              <input  type="text" placeholder="cin" name="cin" maxlength="8" minlength="8" required>
               <input  type="text" placeholder="Nom" name="fname" required>
               <input   type="text" placeholder="Prenom" name="lname" required> 
               <input   type="date" placeholder="Date de naissance" name="birth" placeholder="sexe" required>
               <input  type="email" placeholder="Email" name="email"  required>
-              
               <input  type="text" pattern="[0-9]{2}\d{6}" placeholder="mobile" name="mobile" required>
               <input type="checkbox"><label>j'accepte  <a href="<?php echo base_url(); ?>Register/reglement" class="kt-link kt-login__link kt-font-bold">le reglement</a> </label> 
               <br>
@@ -116,11 +118,12 @@
                   
 
              <?php if ($var1!=Null || $var2!=Null ) { ?> 
-              <input type="submit" value="S'inscrire" data-ripple="" > &nbsp;&nbsp;
+                <input type="submit" value="S'inscrire" data-ripple="" > &nbsp;&nbsp;
 
-              <?php } else { ?><div class="alert alert-danger alert-dismissable">
-                            Tu doit ètre parrainé par un président des club Tunivisions                    
-                        </div> 
+              <?php } else { ?>
+                <div class="alert alert-danger alert-dismissable">
+                            Tu doit ètre parrainé par un responsable des club Tunivisions                    
+                </div> 
             <?php }   ?>
              
            

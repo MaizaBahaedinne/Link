@@ -17,6 +17,7 @@ class Register extends CI_Controller
         parent::__construct();
         $this->load->model('login_model');
         $this->load->model('user_model');
+        $this->load->model('club_model');
         $this->load->model('actualite_model');
     }
 
@@ -25,8 +26,9 @@ class Register extends CI_Controller
      */
     public function index()
     {
-            $data['ActuRecords'] = $this->actualite_model->actuListing();
 
+        $data['parrain'] = $this->user_model->getUserInfo($this->input->get('var1')) ;      
+        $data['club'] = $this->club_model->getClubInfo($this->input->get('var2')) ; 
          $this->load->view('register/new',$data);
     }
     
@@ -38,6 +40,8 @@ class Register extends CI_Controller
      */
     public function reglement()
     {       
+
+
 
          $this->load->view('reglement');
     }
@@ -60,6 +64,8 @@ class Register extends CI_Controller
 
                 $userInfo = array(
                  
+
+                 'cin'=>$cin,
                  'email'=>$email,
                  'password'=>getHashedPassword($password),
                  'roleId'=>'11',

@@ -101,7 +101,7 @@ class Posts extends BaseController {
 
      public function addNewComment($postId)
     {
-        $comment = $this->input->post('comment'.$postId);
+        $comment = $this->input->post('comment');
         $commentInfo = array(        
            'content' => NL2BR($comment) ,
            'userId ' => $this->vendorId ,

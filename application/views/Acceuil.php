@@ -178,7 +178,7 @@
                               <div class="we-comment">
                                 <h5><a href="time-line.html" title=""><?php echo $comment->name ?></a></h5>
                                 <p><?php echo $comment->content ?>
-                                  <i class="em em-smiley"></i>
+                                  
                                 </p>
                                 <div class="inline-itms">
                                   <span>  il y a <?php echo xTimeAgo ($comment->createdDTM,  date('Y-m-d H:i:s') )  ?> </span>
@@ -198,7 +198,7 @@
                               </div>
                               <div class="post-comt-box">
                                 <form method="post" action="<?php echo base_url() ?>Posts/addNewComment/<?php echo $post->postId ?>">
-                                  <textarea  placeholder="Commentaire .."></textarea>
+                                  <textarea name="comment"  placeholder="Commentaire .."></textarea>
                                   <div class="add-smiles">
                                     <div class="uploadimage">
                                       <i class="fa fa-image"></i>
@@ -206,7 +206,7 @@
                                         <input type="file" name="fileC">
                                       </label>
                                     </div>
-                                    <span class="em em-expressionless" title="add icon"></span>
+                                    <span class="em em-expressionless" title="icon"></span>
                                     <div class="smiles-bunch">
                                       <i class="em em---1"></i>
                                       <i class="em em-smiley"></i>
@@ -221,10 +221,11 @@
                                       <i class="em em-rage"></i>
                                       <i class="em em-stuck_out_tongue"></i>
                                     </div>
+
+                                  <input  class="btn  " type="submit" value="" ></input>
+                                  
                                   </div>
-                                  <div class="text-right">
-                                  <input  class="btn btn-primary " type="submit">
-                                  </div>
+                                  
                                 </form> 
                               </div>
                             </li>
@@ -420,52 +421,3 @@
   </section>
 
 
-      <div class="modal fade" id="TuniFan">
-        <div class="modal-dialog">
-          <div class="modal-content">
-
-            <!-- Modal Header -->
-            <div class="modal-header">
-              <h4 class="modal-title">Invitez un tuniFan</h4>
-              <button type="button" class="close" data-dismiss="modal">&times;</button>
-            </div>
-
-            <!-- Modal body -->
-            <div class="modal-body">
-
-              <div id="qrcode"></div>
-              <script type="text/javascript">
-                  var qrcode = new QRCode(document.getElementById("qrcode"), {
-                    width : 600,
-                    height : 600
-                  });
-
-                  function makeCode () {    
-
-                    qrcode.makeCode("<?php echo base_url() ;?>");
-                  }
-
-                  makeCode();
-
-                  $("#text").
-                    on("blur", function () {
-                      makeCode();
-                    }).
-                    on("keydown", function (e) {
-                      if (e.keyCode == 13) {
-                        makeCode();
-                      }
-                    });
-                </script>
-
-
-
-            </div>
-
-            <!-- Modal footer -->
-            <div class="modal-footer">
-              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-            </div>
-          </div>
-        </div>
-    </div><!-- fade Modal -->

@@ -164,7 +164,55 @@
 </script>
 
 
+      <div class="modal fade" id="TuniFan">
+        <div class="modal-dialog">
+          <div class="modal-content">
 
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title">Invitez un tuniFan</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+
+              <div id="qrcode"></div>
+              <script type="text/javascript">
+                  var qrcode = new QRCode(document.getElementById("qrcode"), {
+                    width : 600,
+                    height : 600
+                  });
+
+                  function makeCode () {    
+
+                    qrcode.makeCode("<?php echo base_url() ;?>Register?var1=<?php echo $uid ?>&var2=<?php echo $clubID ?>&var3=1");
+                  }
+
+                  makeCode();
+
+                  $("#text").
+                    on("blur", function () {
+                      makeCode();
+                    }).
+                    on("keydown", function (e) {
+                      if (e.keyCode == 13) {
+                        makeCode();
+                      }
+                    });
+                </script>
+
+
+
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Fermer</button>
+            </div>
+          </div>
+        </div>
+    </div><!-- fade Modal -->
 
 
 </html>
