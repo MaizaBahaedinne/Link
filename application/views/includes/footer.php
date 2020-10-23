@@ -1,14 +1,98 @@
+<footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-4">
+          <div class="widget">
+            <div class="foot-logo">
+              <div class="logo">
+                <a href="<?php echo base_url()?>" title=""><img src="<?php echo base_url() ?>assets/images/logo2.svg" width="150" alt=""></a>
+              </div>  
+              <p>
+                The trio took this simple idea and built it into the world’s leading students network platform.
+              </p>
+            </div>
+            <ul class="location">
+              <li>
+                <i class="fa fa-map-marker"></i>
+                <p>Association Tunivisions , 32 B (2eme étage) centre Millenium route de la Marsa, Tunisie.</p>
+              </li>
+              <li>
+                <i class="fa fa-phone"></i>
+                <p>+216 58 465 249</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-4 col-sm-6">
+          <div class="widget">
+            <div class="widget-title"><h4>follow</h4></div>
+            <ul class="list-style">
+              <li><i class="fa fa-facebook-square"></i> <a href="https://www.facebook.com/Tunivisionsfoundation/" title="">facebook</a></li>
+              <li><i class="fa fa-twitter-square"></i><a href="hhttps://twitter.com/TnvFoundation" title="">twitter</a></li>
+              <li><i class="fa fa-instagram"></i><a href="https://www.instagram.com/tunivisions_foundation/" title="">instagram</a></li>
+              <li><i class="fa fa-google-plus-square"></i> <a href="https://plus.google.com/discover" title="">Google+</a></li>
+              
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-4 col-sm-6">
+          <div class="widget">
+            <div class="widget-title"><h4>Navigate</h4></div>
+            <ul class="list-style">
+              <!--
+              <li><a href="about.html" title="">about us</a></li>
+              <li><a href="contact.html" title="">contact us</a></li>
+              <li><a href="terms.html" title="">terms &amp; Conditions</a></li>
+              <li><a href="#" title="">RSS syndication</a></li>
+              <li><a href="sitemap.html" title="">Sitemap</a></li>
+            -->
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-4 col-sm-6">
+          <div class="widget">
+            <div class="widget-title"><h4>useful links</h4></div>
+            <ul class="list-style">
+              <!--
+              <li><a href="#" title="">leasing</a></li>
+              <li><a href="#" title="">submit route</a></li>
+              <li><a href="#" title="">how does it work?</a></li>
+              <li><a href="#" title="">agent listings</a></li>
+              <li><a href="#" title="">view All</a></li>
+            </ul>
+            -->
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-4 col-sm-6">
+          <div class="widget">
+            <div class="widget-title"><h4>download apps</h4></div>
+            <ul class="colla-apps">
+              <!--
+              <li><a href="https://play.google.com/store?hl=en" title=""><i class="fa fa-android"></i>android</a></li>
+              <li><a href="https://www.apple.com/lae/ios/app-store/" title=""><i class="ti-apple"></i>iPhone</a></li>
+              <li><a href="https://www.microsoft.com/store/apps" title=""><i class="fa fa-windows"></i>Windows</a></li>
+              -->
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
 <div class="bottombar">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
           <span class="copyright">© Tunivisions.link 2020. All rights reserved.</span>
-          <i><img src="<?php echo base_url() ?>assets/images/logo.svg" width="80" alt=""></i>
+          <i><img src="<?php echo base_url() ?>assets/images/logo2.svg" width="50" alt=""></i>
         </div>
       </div>
     </div>
   </div>
-</div><div class="side-panel">
+</div>
+
+
+<div class="side-panel">
   <!--
     <h4 class="panel-title">General Setting</h4>
     <form method="post">
@@ -167,7 +251,7 @@
 
 
       <div class="modal fade" id="TuniFan">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-sm">
           <div class="modal-content">
 
             <!-- Modal Header -->
@@ -188,7 +272,7 @@
 
                   function makeCode () {    
 
-                    qrcode.makeCode("<?php echo base_url() ;?>Register?var1=<?php echo $uid ?>&var2=<?php echo $clubID ?>&var3=1");
+                    qrcode.makeCode("<?php echo base_url() ;?>Register?var1=<?php echo $uid ?>&var4=<?php echo  Date('Y-m-d') ?>&var2=<?php echo $clubID ?>&var3=1");
                   }
 
                   makeCode();
