@@ -141,7 +141,9 @@
                                 </p>
                                 <span class="f-title"><i class="fa fa-phone"></i> Mobile:</span>
                                 <p>
+                                  <?php if ($SA == 1 ){ ?>
                                   <?php echo $userInfo->mobile ?>  
+                                  <?php } ?>
                                 </p>
                                 <span class="f-title"><i class="fa fa-male"></i> Sexe:</span>
                                 <p>
