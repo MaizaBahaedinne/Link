@@ -182,8 +182,8 @@
               <div id="qrcode"></div>
               <script type="text/javascript">
                   var qrcode = new QRCode(document.getElementById("qrcode"), {
-                    width : 350,
-                    height : 350
+                    width : 400,
+                    height : 400
                   });
 
                   function makeCode () {    
