@@ -369,10 +369,11 @@ class User_model extends CI_Model
      */
     function getUserInfoWithRole($userId)
     {
-        $this->db->select('BaseTbl.userId, BaseTbl.isDeleted ,  BaseTbl.email, BaseTbl.name, BaseTbl.nom , BaseTbl.prenom , BaseTbl.mobile, BaseTbl.roleId, Roles.role, BaseTbl.birthday, BaseTbl.gouvernorat, BaseTbl.delegation, BaseTbl.facebook, BaseTbl.instagram, BaseTbl.linkedin , BaseTbl.ClubID , BaseTbl.adresse , Clubs.name as ClubName  ,  Clubs.clubID ,   BaseTbl.avatar ,  BaseTbl.cellule , BaseTbl.cin , BaseTbl.SA , BaseTbl.sexe , BaseTbl.createdDtm , ');
+        $this->db->select('BaseTbl.userId, BaseTbl.isDeleted ,  BaseTbl.email, BaseTbl.name, BaseTbl.nom , BaseTbl.prenom , BaseTbl.mobile, BaseTbl.roleId, Roles.role, BaseTbl.birthday, BaseTbl.gouvernorat, BaseTbl.delegation, BaseTbl.facebook, BaseTbl.instagram, BaseTbl.linkedin , BaseTbl.ClubID , BaseTbl.adresse , Clubs.name as ClubName  ,  Clubs.clubID ,   BaseTbl.avatar ,  BaseTbl.cellule , BaseTbl.cin , BaseTbl.SA , BaseTbl.sexe , BaseTbl.createdDtm , par.name parrain ');
         $this->db->from('tbl_users as BaseTbl');
         $this->db->join('tbl_roles as Roles','Roles.roleId = BaseTbl.roleId');
         $this->db->join('tbl_club as Clubs', 'Clubs.clubID = BaseTbl.ClubID', 'LEFT');
+        $this->db->join('tbl_users as par', 'par.userId = BaseTbl.createdBy', 'LEFT');
         $this->db->where('BaseTbl.userId', $userId);
 
         $query = $this->db->get();
