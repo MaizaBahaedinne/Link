@@ -179,11 +179,11 @@
             <!-- Modal body -->
             <div class="modal-body">
 
-              <div id="qrcode"></div>
+              <div id="qrcode" style="align-content: center ; vertical-align: center"></div>
               <script type="text/javascript">
                   var qrcode = new QRCode(document.getElementById("qrcode"), {
-                    width : 400,
-                    height : 400
+                    width : 350,
+                    height : 350
                   });
 
                   function makeCode () {    
