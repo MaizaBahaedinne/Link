@@ -759,6 +759,7 @@ class User extends BaseController
     function ProfileShow($userId)
     {
         $data["userInfo"] = $this->user_model->getUserInfoWithRole($userId);
+        $data["ExpTuns"] = $this->user_cariere_model->carrierListing($userId);
       
         $data['postRecords'] =  $this->posts_model->postsListingbyUser($userId);
 

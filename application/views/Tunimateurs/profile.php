@@ -167,7 +167,7 @@
                            
                            
                            <div class="advertisment-box">
-                              <h4 class="">advertisment</h4>
+                              <h4 class="">publicité</h4>
                               <figure>
                                  <a href="#" title="Advertisment"><img src="<?php echo base_url() ?>assets/images/resources/ad-widget.gif" alt=""></a>
                               </figure>
@@ -198,13 +198,16 @@
                   <div class="row">
                     <div class="col-lg-6">
                       <div class="gen-metabox">
-                        <span><i class="fa fa-puzzle-piece"></i> Hobbies</span>
-                        <p>
-                          I like to ride the bicycle, swimming, and working out. I also like reading design magazines, and searching on internet, and also binge watching a good hollywood Movies while it’s raining outside.
-                        </p>
+                        <span><i class="fa fa-puzzle-piece"></i> Tunivisions Experience</span>
+                          <?php foreach ($ExpTuns as $ExpTun ) { ?>
+                          <p>
+                            <a href="#" title="#" > <?php echo  $ExpTun->role ?> </a> <?php echo  $ExpTun->cellule ?> 
+                            <a href="#" title="#"> <?php if ($ExpTun->clubID > 5 ) {echo "club ";}  echo 'Tunivisions '.$ExpTun->ClubName ; ?> </a>
+                          </p>
+                          <?php } ?>
                       </div>
                       <div class="gen-metabox">
-                        <span><i class="fa fa-plus"></i> Others Interests</span>
+                        <span><i class="fa fa-plus"></i> Skills</span>
                         <p>
                           Swimming, Surfing, Uber Diving, Anime, Photography, Tattoos, Street Art.
                         </p>
@@ -212,13 +215,13 @@
                     </div>
                     <div class="col-lg-6">
                       <div class="gen-metabox">
-                        <span><i class="fa fa-mortar-board"></i> Education</span>
+                        <span><i class="fa fa-mortar-board"></i> Diplome</span>
                         <p>
                           Master of computer science, sixteen years degree From <a href="#" title="">Oxford Uniersity, London</a>
                         </p>
                       </div>
                       <div class="gen-metabox">
-                        <span><i class="fa fa-certificate"></i> Work and experience</span>
+                        <span><i class="fa fa-certificate"></i> Expérience professionnelle</span>
                         <p>
                           Currently working in the "color hands" web development agency from the last 5 five years as <a href="#" title="">Senior UI/UX Designer</a>
                         </p>
@@ -226,29 +229,11 @@
                     </div>
                     <div class="col-lg-">
                       <div class="gen-metabox no-margin">
-                        <span><i class="fa fa-sitemap"></i> Social Networks</span>
-                        <ul class="sociaz-media">
-                          <li><a class="facebook" href="#" title=""><i class="fa fa-facebook"></i></a></li>
-                          <li><a class="twitter" href="#" title=""><i class="fa fa-twitter"></i></a></li>
-                          <li><a class="google" href="#" title=""><i class="fa fa-google-plus"></i></a></li>
-                          <li><a class="vk" href="#" title=""><i class="fa fa-vk"></i></a></li>
-                          <li><a class="instagram" href="#" title=""><i class="fa fa-instagram"></i></a></li>
-                          
-                        </ul>
+                        <span><i class="fa fa-sitemap"></i> Langue</span>
+
                       </div>
                     </div>
-                    <div class="col-lg-6">
-                      <div class="gen-metabox no-margin">
-                        <span><i class="fa fa-trophy"></i> Badges</span>
-                        <ul class="badged">
-                          <li><img src="images/badges/badge2.png" alt=""></li>
-                          <li><img src="images/badges/badge19.png" alt=""></li>
-                          <li><img src="images/badges/badge21.png" alt=""></li>
-                          <li><img src="images/badges/badge3.png" alt=""></li>
-                          <li><img src="images/badges/badge4.png" alt=""></li>
-                        </ul>
-                      </div>
-                    </div>
+                    
                   </div>  
                 </div>
 
