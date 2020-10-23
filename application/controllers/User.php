@@ -761,6 +761,7 @@ class User extends BaseController
         $data["userInfo"] = $this->user_model->getUserInfoWithRole($userId);
         $data["ExpTuns"] = $this->user_cariere_model->carrierListing($userId);
         $data["Diplomes"] = $this->user_diplome_model->diplomeListing($userId); 
+        $data["Skills"] = $this->user_diplome_model->diplomeListing($userId); 
 
 
         $data['postRecords'] =  $this->posts_model->postsListingbyUser($userId);

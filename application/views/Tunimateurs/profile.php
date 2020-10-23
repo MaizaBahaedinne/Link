@@ -9,13 +9,15 @@
                     <div class="user-profile">
                 <figure>
                   <img src="<?php echo base_url() ?>assets/images/resources/profile-image.jpg" alt="">
+                   <!--
                   <ul class="profile-controls">
+                   
                     <li><a href="#" title="" data-toggle="tooltip" data-original-title="Add friend"><i class="fa fa-user-plus"></i></a></li>
                     <li><a href="#" title="" data-toggle="tooltip" data-original-title="Follow"><i class="fa fa-star"></i></a></li>
                     <li><a class="send-mesg" href="#" title="" data-toggle="tooltip" data-original-title="Send Message"><i class="fa fa-comment"></i></a></li>
                     <li>
                       <div class="edit-seting" title="Edit Profile image"><i class="fa fa-sliders"></i>
-                        <!--
+                        
                         <ul class="more-dropdown">
                           <li><a href="setting.html" title="">Update Profile Photo</a></li>
                           <li><a href="setting.html" title="">Update Header Photo</a></li>
@@ -24,10 +26,12 @@
                           <li><a class="bad-report" href="#" title="">Report Profile</a></li>
                           <li><a href="#" title="">Block Profile</a></li>
                         </ul>
-                      -->
+                      
                       </div>
                     </li>
+                   
                   </ul>
+                   -->
                 </figure> 
               </div>
 
