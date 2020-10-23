@@ -217,10 +217,11 @@
                     <div class="col-lg-6">
                       <div class="gen-metabox">
                         <span><i class="fa fa-mortar-board"></i> Diplome</span>
+                        <?php foreach ($Diplomes as $Diplome ) { ?>
                         <p>
-                          <?php foreach ($Diplomes as $Diplome ) { ?>
                           <b><?php echo $Diplome->type ?></b>, <?php echo $Diplome->titre ?> <a href="#" title="">  <?php echo $Diplome->instituts ?> - <?php echo $Diplome->city ?> </a>
                         </p>
+                         <?php } ?>
                       </div>
                       <div class="gen-metabox">
                         <span><i class="fa fa-certificate"></i> Expérience professionnelle</span>
