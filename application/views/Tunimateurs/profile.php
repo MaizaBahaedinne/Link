@@ -218,7 +218,8 @@
                       <div class="gen-metabox">
                         <span><i class="fa fa-mortar-board"></i> Diplome</span>
                         <p>
-                          Master of computer science, sixteen years degree From <a href="#" title="">Oxford Uniersity, London</a>
+                          <?php foreach ($Diplomes as $Diplome ) { ?>
+                          <b><?php echo $Diplome->type ?></b>, <?php echo $Diplome->titre ?> <a href="#" title="">  <?php echo $Diplome->instituts ?> - <?php echo $Diplome->city ?> </a>
                         </p>
                       </div>
                       <div class="gen-metabox">
@@ -228,7 +229,7 @@
                         </p>
                       </div>
                     </div>
-                    <div class="col-lg-">
+                    <div class="col-lg-6">
                       <div class="gen-metabox no-margin">
                         <span><i class="fa fa-sitemap"></i> Langue</span>
 
