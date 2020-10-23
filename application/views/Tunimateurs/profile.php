@@ -200,9 +200,10 @@
                       <div class="gen-metabox">
                         <span><i class="fa fa-puzzle-piece"></i> Tunivisions Experience</span>
                           <?php foreach ($ExpTuns as $ExpTun ) { ?>
+                           Mandat : <b> <?php echo  $ExpTun->attacheDT ?> -  <?php echo  $ExpTun->endDT ?></b>
                           <p>
                             <a href="#" title="#" > <?php echo  $ExpTun->role ?> </a> <?php echo  $ExpTun->cellule ?> 
-                            <a href="#" title="#"> <?php if ($ExpTun->clubID > 5 ) {echo "club ";}  echo 'Tunivisions '.$ExpTun->ClubName ; ?> </a>
+                            <a href="#" title="#"> <?php if ($ExpTun->clubId > 5 ) {echo "club ";}  echo 'Tunivisions '.$ExpTun->ClubName ; ?> </a>
                           </p>
                           <?php } ?>
                       </div>
