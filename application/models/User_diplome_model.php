@@ -16,7 +16,7 @@ class User_diplome_model extends CI_Model
      */
     function diplomeListing($userID)
     {
-        $this->db->select('BaseTbl.diplomeId , BaseTbl.dateDebut , BaseTbl.dateFin , Clubs.name instituts , BaseTbl.type , BaseTbl.titre Clubs.city , ');
+        $this->db->select('BaseTbl.diplomeId , BaseTbl.dateDebut , BaseTbl.dateFin , Clubs.name instituts , BaseTbl.type , BaseTbl.titre , Clubs.city , ');
         $this->db->from('tbl_users_diplome as BaseTbl');
         $this->db->join('tbl_club as Clubs', 'Clubs.clubID = BaseTbl.institut', 'LEFT');
         $this->db->where('BaseTbl.userId =', $userID );
