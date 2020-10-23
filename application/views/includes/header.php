@@ -19,7 +19,9 @@
     <meta name="keywords" content="">
 	<title>Tunivisions.link</title>
     <link rel="icon" href="<?php echo base_url() ?>assets/images/fav.png"  > 
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/calendar.css">    
     <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/eventCalendar.css">
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/dropify.min.css">
     <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/main.min.css">
     <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/style.css">
     <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/color.css">
@@ -66,6 +68,7 @@
   <script  src="<?php echo base_url() ?>assets/js/calendar.js"></script>
   <script type="text/javascript" src="//cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js" ></script>
   <script defer src="<?php echo base_url() ?>assets/js/script.js"></script>
+  <script defer src="<?php echo base_url() ?>assets/js/dropify.min.js"></script> 
   <script src="<?php echo base_url() ?>assets/js/jquery.eventCalendar.min.js"></script>
   <script src="<?php echo base_url() ?>assets/js/qrcode.js"></script>
 

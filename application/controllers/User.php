@@ -380,8 +380,6 @@ class User extends BaseController
     {
 
                 $name = ucwords(strtolower($this->security->xss_clean($this->input->post('fname'))));
-                $email = strtolower($this->security->xss_clean($this->input->post('email')));           
-                $mobile = $this->security->xss_clean($this->input->post('mobile'));
                 $facebook = $this->security->xss_clean($this->input->post('facebook'));
                 $instagram = $this->security->xss_clean($this->input->post('instagram'));
                 $linkedin = $this->security->xss_clean($this->input->post('linkedin'));
@@ -399,7 +397,6 @@ class User extends BaseController
                                       'name'=>$name,
                                       'email'=>$email,
                                       'birthday'=>$birthday,
-                                      'mobile'=>$mobile,
                                       'facebook'=>$facebook,
                                       'instagram'=>$instagram,
                                       'linkedin'=>$linkedin,
@@ -420,9 +417,7 @@ class User extends BaseController
                                     $userInfo = array(                                      
                                       'email'=>$email,
                                       'name'=>$name,
-                                      'email'=>$email,
                                       'birthday'=>$birthday,
-                                      'mobile'=>$mobile,
                                       'facebook'=>$facebook,
                                       'instagram'=>$instagram,
                                       'linkedin'=>$linkedin,
