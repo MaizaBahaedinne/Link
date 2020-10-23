@@ -9,6 +9,7 @@
     </div>
   </div>
 </div><div class="side-panel">
+  <!--
     <h4 class="panel-title">General Setting</h4>
     <form method="post">
       <div class="setting-row">
@@ -70,7 +71,8 @@
         <label for="switch111" data-on-label="ON" data-off-label="OFF"></label>
       </div>
     </form>
-  </div><div class="popup-wraper1">
+  </div>
+--> <div class="popup-wraper1">
     <div class="popup direct-mesg">
       <span class="popup-closed"><i class="ti-close"></i></span>
       <div class="popup-meta">
@@ -180,8 +182,8 @@
               <div id="qrcode"></div>
               <script type="text/javascript">
                   var qrcode = new QRCode(document.getElementById("qrcode"), {
-                    width : 600,
-                    height : 600
+                    width : 200,
+                    height : 200
                   });
 
                   function makeCode () {    
