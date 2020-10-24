@@ -107,7 +107,7 @@
                   <!-- explore events -->
                   
                    <div class="widget">
-                    <h4 class="widget-title">Ma calendar</h4>
+                    <h4 class="widget-title">Ma calendarier</h4>
                     
                     <div class="full-calendar">
                                 <div id="yourId" class="jalendar mid">
@@ -411,8 +411,9 @@
 
 
                    <div class="widget stick-widget" style="">
-                    <h4 class="widget-title">Projet à venir <a title="" href="#" class="see-all">See All</a></h4>
+                    <h4 class="widget-title">Actualité <a title="" href="#" class="see-all">Lire plus</a></h4>
                     <ul class="recent-links">
+                      <!--
                       <li>
                         <figure><img src="images/resources/recentlink-1.jpg" alt=""></figure>
                         <div class="re-links-meta">
@@ -434,6 +435,7 @@
                           <span>1 day before</span>
                         </div>
                       </li>
+                      -->
                     </ul>
                   </div>
                 </aside>

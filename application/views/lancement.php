@@ -133,18 +133,17 @@
                                     <h6> Informations Personnelle </h6>
 
                                     <form  
-                                    methode="post" 
+                                   
                                     action="<?php echo base_url() ?>User/MAJUser" 
-                                    enctype="multipart/form-data" >
+                                    method="POST" enctype="multipart/form-data"  >
                                     
                                     <label>Photo de profil</label>
                                     <div style="height: 200px">
-                                    <input type="file" 
+                                    <input type="file" name="fileT"   
                                     class="dropify-fr" 
-                                    data-height="200" 
-                                    data-max-file-size="200K"
-                                    name="file"
-                                     />
+                                    data-max-file-size="200K"                                      
+                                    id="input-file-events"
+                                    >
                                     </div>
                                      <hr>
                                      <label>CIN</label>
@@ -205,9 +204,10 @@
                                      <?php } }  ?>
                                      <br>
                                      <input type="submit"  class="btn btn-success" value="Envoyer" >
+                                     </form>
                                     </section>
                         
-                                    </form>
+                                    
                                 
                                 </div>
                                

@@ -376,12 +376,12 @@ class User extends BaseController
     /**
      * This function is used to edit the user information
      */
-    function MAJUser()
+    public function MAJUser()
     { 
                 $cin = $this->input->post('cin');
                 $nom = strtoupper ($this->input->post('nom'));
                 $prenom = $this->input->post('prenom');
-                $name =  strtoupper ($nom).' '.$prenom ;
+                $name =  $nom.' '.$prenom ;
                 $birthday = $this->input->post('birthday');
                 $facebook = $this->input->post('facebook');
                 $instagram = $this->input->post('instagram');
@@ -390,17 +390,22 @@ class User extends BaseController
                 $delegation = $this->input->post('delegation');
                 $gouvernorat = $this->input->post('gouvernorat');
                 $cellule = $this->input->post('cellule');
+                
+                
+                
 
-                $file_name = 'avatar_'.$cin.'_'.$_FILES['file']['name'];
-                $file_tmp = $_FILES['file']['tmp_name'];
+                $file_name = 'avatar__'.$name.'_'.$_FILES['fileT']['name'];
+                $file_tmp = $_FILES['fileT']['tmp_name'];
+                
                 $file_destination = 'uploads/avatar/' . $file_name;
+                
+
 
                    
                     $userInfo = array(
                                       'avatar' => $file_name ,
-                                      'email'=>$email,
                                       'name'=>$name,
-                                      'prenom'=>$lname,
+                                      'prenom'=>$prenom,
                                       'nom'=>$nom,
                                       'adresse' => $adresse,
                                       'birthday'=>$birthday,
@@ -414,20 +419,23 @@ class User extends BaseController
                                       'updatedDtm'=>date('Y-m-d H:i:s'));
 
                 
-                if(move_uploaded_file($_FILES["file"]["tmp_name"], $file_destination) )
-                {
+                  if(move_uploaded_file($file_tmp, $file_destination))
+                  {
                   $result = $this->user_model->editUser($userInfo, $this->vendorId);
                   if($result == true){
-                    $this->session->set_flashdata('success', 'Votre profile a été mise à jour');
+                    $this->session->set_flashdata('success', 'Votre profile a été mise à jour <br> merci de se connecter !');
+                    redirect("/logout") ; 
                   }
-                }
+                
                 else
                 {
                     $this->session->set_flashdata('error', 'Erreur de mise à jour');
+                    redirect("/") ;
+                }
                 }
 
                 
-                redirect('/');
+              
             
         
     }
