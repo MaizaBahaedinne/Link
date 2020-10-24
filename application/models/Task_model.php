@@ -19,7 +19,7 @@ class Task_model extends CI_Model
         return $insert_id;
     }
 
-
+ 
 
 
 
@@ -59,7 +59,97 @@ class Task_model extends CI_Model
        $query = $this->db->get();
        $result = $query->result();        
        return $result;
+   
    }
+    function addAffectation($affectationInfo)
+    {
+        $this->db->trans_start();
+        $this->db->insert('tbl_affectation', $affectationInfo);
+        $insert_id = $this->db->insert_id();
+        $this->db->trans_complete();  
+        return $insert_id;
+    }
+    function projectById($tacheId)
+{ $this->db->select('BaseTbl.projectId');
+       $this->db->from('tbl_task as BaseTbl');
+ $query = $this->db->get();
+       $result = $query->row();        
+       return $result;
+   
+}
+    function affectationListing($tacheId)
+    {
+
+       $this->db->select('BaseTbl.affectationId ,BaseTbl.tacheId , BaseTbl.createdDTM , BaseTbl.userAffectedID , BaseTbl.status   , proj.projectId ,t.startedDate , t.deadline , t.par   , t.titre , t.description, user.name parname , user.avatar ');
+       $this->db->from('tbl_affectation as BaseTbl');
+              $this->db->join('tbl_task as t', 't.tacheId = BaseTbl.tacheId', 'LEFT');
+              $this->db->join('tbl_users as user', 'user.userId = BaseTbl.userAffectedID', 'LEFT');
+      $this->db->where('BaseTbl.tacheId = ', $tacheId);
+
+       $query = $this->db->get();
+       $result = $query->result();        
+       return $result;
+   }
+     function DisponibleMembreAffected($dateStart,$deadline)
+    {   
+
+      $ds= date_create($dateStart);
+      $dates =date_format($ds,'Y-m-d H:i:s');
+      $df= date_create($dateStart);
+      $datef =date_format($df,'Y-m-d H:i:s');
+      echo $dates ;
+
+
+
+//tous les utilisateurs affectés  du date concerné
+ $this->db->select('us.userId ');
+        $this->db->from('tbl_affectation as BaseTbl');
+        $this->db->join('tbl_users as us', 'BaseTbl.userAffectatedID = us.userId', 'LEFT');
+        $this->db->join('tbl_task as t', 't.tacheId = BaseTbl.tacheId', 'LEFT');
+       $this->db->where('t.startedDate >= ',$dateStart);
+        $this->db->where('t.deadline <= ',$deadline);
+ $tab = $this->db->get();
+$query1_result = $tab->result(); 
+//save the users  affected of querry in ids
+  $room_id= array();
+  foreach($query1_result as $row){
+     $room_id[] = $row->userId;
+   }
+  $room = implode(",",$room_id);
+  $ids = explode(",", $room);
+  
+ // tous les utilisateur non affécté 
+
+ $this->db->select('us.userId , us.name  ');
+        $this->db->from('tbl_users as us');
+         $this->db->where_not_in('us.userId',$ids);
+ $query1 = $this->db->get();
+        $result1 = $query1->result();        
+//save users not affected 
+ $room_id1= array();
+  foreach($result1 as $row){
+     $room_id1[] = $row->userId;
+   }
+  $room1 = implode(",",$room_id1);
+  $ids1 = explode(",", $room1);
+  
+//resultat final 
+
+ $this->db->select('us.userId , us.name  ');
+        $this->db->from('tbl_users as us');
+       $this->db->where_not_in('us.userId',$ids);
+          $this->db->or_where_in('us.userId',$ids1);
+
+ $queryfinal = $this->db->get();
+        $resultfinal = $queryfinal->result();  
+
+
+return $resultfinal;
+
+
+
+   }
+   
 
    
     

@@ -29,8 +29,17 @@ class User_model extends CI_Model
         $result = $query->result();        
         return $result;
     }
+  function getUserId(){
 
+   $this->db->select('BaseTbl.userId');
+        $this->db->from('tbl_users as BaseTbl');
+        $this->db->order_by('BaseTbl.userId', 'DESC');
+        $query = $this->db->get();
+        
+        $result = $query->result();        
+        return $result;
 
+  }
 
     /**
      * This function is used to get the user listing count
