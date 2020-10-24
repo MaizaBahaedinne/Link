@@ -30,6 +30,7 @@
 	<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
 
 
+
     <style type="text/css">
     .alligator-profile {
         object-fit: cover;
@@ -71,7 +72,7 @@
   <script defer src="<?php echo base_url() ?>assets/js/dropify.min.js"></script> 
   <script src="<?php echo base_url() ?>assets/js/jquery.eventCalendar.min.js"></script>
   <script src="<?php echo base_url() ?>assets/js/qrcode.js"></script>
-
+  <script src="<?php echo base_url() ?>assets/js/html5-qrcode.min.js"></script>
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-151434993-1"></script>
         <script>

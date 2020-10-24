@@ -248,6 +248,18 @@
     } );
 
 </script>
+<script type="text/javascript">
+  
+      function onScanSuccess(qrCodeMessage) {
+        // handle on success condition with the decoded message
+      }
+
+      var html5QrcodeScanner = new Html5QrcodeScanner(
+        "readerqr", { fps: 10, qrbox: 250 });
+      html5QrcodeScanner.render(onScanSuccess);
+
+
+</script>
 
 
       <div class="modal fade" id="TuniFan">
@@ -289,6 +301,30 @@
                 </script>
 
 
+
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Fermer</button>
+            </div>
+          </div>
+        </div>
+    </div><!-- fade Modal -->
+
+ <div class="modal fade" id="TuniFan">
+        <div class="modal-dialog modal-sm">
+          <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title">Invitez un tuniFan</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+              <div style="width: 500px" id="readerqr"></div>
 
             </div>
 
