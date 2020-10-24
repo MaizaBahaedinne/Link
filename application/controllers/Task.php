@@ -30,7 +30,7 @@ class Task extends BaseController {
       
       foreach ($taches as $tache ) {
         $tache->affections= $this->Task_model->AffectationsListing($tache->tacheId);
-        $tache->membresDispo =  $this->Task_model-> DisponibleMembreAffected($tache->startedDate,$tache->deadline); 
+        $tache->membresDispo =  $this->Task_model-> DisponibleMembreAffected($tache->startedDate,$tache->deadline,$this->clubID); 
 
          
       }
@@ -108,56 +108,90 @@ class Task extends BaseController {
 
 
 
-                   public function editTask($tacheId)
-            {
-
-
-        $tache->affections= $this->Task_model->AffectationsListing($tacheId);
-      
-
-
-              $this->global['pageTitle'] = 'Task';
-              $this->loadViews("task/edit", $this->global, $data, NULL);
-            }
+        
 
                 /**
-             * This function is used to delete the user using userId
-             * @return boolean $result : TRUE / FALSE
+             * This function is used to edit the task using taskId
+             * @return boolean $b : TRUE / FALSE
              */
-         /*   function edit($tacheId)
+           function editTask($tacheId)
             {
+   $affections= $this->Task_model->AffectationsListing($tacheId);
+           $membresDispoRow =  $this->Task_model-> DisponibleMembreAffected($this->input->post('startedDate'),$this->input->post('deadline'),$this->clubID);
+$b=false;
 
-                $startedDate = $this->input->post('startedDate');
-                $deadline = $this->input->post('deadline');
-                $Description = $this->input->post('description');
-                $debut = $this->input->post('debut');
-                $titre = $this->input->post('titre');
-                $type = $this->input->post('type');
-           $user=$this->vendorId ,   
+    
+$this->global['pageTitle'] = 'Task';
+              $this->loadViews("task/edit", $this->global, $data, NULL);
+
+      
+              foreach ($affections as $aff ) {
+                foreach ($membresDispoRow as $membre ) {
+        if ($membre->userId==$aff->userAffectedID) {
+$b=true;
+break;
+        }
+      
+    if ($membre->userId!=$aff->userAffectedID) {
+$b=false;
+        } 
+           }
+      }
+      if ($b==TRUE){
+                $userAffectatedID  =$this->input->post('userIdAffected');                
+                $affectationInfo = array(        
+                 'tacheId' =>  $tacheId,
+                 //'createdBy' => $this->vendorId  , 
+                 'userAffectatedID' => $userAffectatedID ,
+                 'createdDTM'=> date('Y-m-d H:i:s') 
+                     );
+             
                 
+                $result = $this->Task_model->addAffectation($affectationInfo);
+             
+                }
+                    
+                
+
+   
+              $project=$this->Task_model->projectById($tacheId);
+                     redirect('/Task/tasksListing/'. $project->projectId);
               
-
-                    
-                    $clubInfo = array('name'=> $name ,
-                                      'city'=>$city,
-                                       'birthday'=>$birthday,
-                                       'email'=>  $email  ,
-                                       'facebook'=>  $facebook ,
-                                       'is_Actif'=> $is_Actif ,
-
-                                     );
-                    
-                   if( $this->club_model->editClub($clubId , $clubInfo) ){
-
-                      $this->session->set_flashdata('success', 'Mise à jour enregistrée ');
-                   }
-                    else
-                    {
-                        $this->session->set_flashdata('error', 'Mise à jour erronée ');
-                    }
-                  
-                  redirect('/Club/editClub/'.$clubId)  ;
             }
-*/
+        
+ function deleteTask($tacheId)
+    {
+            $taskInfo = array('isDeleted'=>1,'updatedBy'=>$this->vendorId, 'updatedDtm'=>date('Y-m-d H:i:s'));
+            
+            if( $this->user_model->deleteUser($tacheId, $taskInfo) ) {  }  
+$project=$this->Task_model->projectById($tacheId);
+                     redirect('/Task/tasksListing/'. $project->projectId);    }
+
+         function editAffect($affectionsId)
+            {
+   $affection1= $this->Task_model->getAffectation($affectionsId);
+
+
+    
+//$this->global['pageTitle'] = 'Task';
+  //            $this->loadViews("task/edit", $this->global, $data, NULL);
+
+  
+                     $status = $this->input->post('status');                
+
+                $affection1 = array(        
+                 'status' => $status ,
+                 
+                 'createdDate'=> date('Y-m-d H:i:s') 
+                     );
+                  $result = $this->Task_model->editAffect($taskInfo,$tacheId);
+                    
+                
+
+   
+              $project=$this->Task_model->projectById($affection1->tacheId);
+                     redirect('/Task/tasksListing/'. $project->projectId);
+              
+            }
     
 }

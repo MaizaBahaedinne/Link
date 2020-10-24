@@ -103,7 +103,7 @@ class Task_model extends CI_Model
        $result = $query->result();        
        return $result;
    }
-     function DisponibleMembreAffected($dateStart,$deadline)
+     function DisponibleMembreAffected($dateStart,$deadline,$clubID)
     {   
 
           $ds= date_create($dateStart);
@@ -121,6 +121,7 @@ class Task_model extends CI_Model
           $this->db->join('tbl_task as t', 't.tacheId = BaseTbl.tacheId', 'LEFT');
           $this->db->where('t.startedDate >= ',$dateStart);
           $this->db->where('t.deadline <= ',$deadline);
+          $this->db->where('us.ClubId <= ',$clubID);
           $tab = $this->db->get();
           $query1_result = $tab->result(); 
           //save the users  affected of querry in ids
@@ -135,6 +136,7 @@ class Task_model extends CI_Model
 
           $this->db->select('us.userId , us.name  ');
           $this->db->from('tbl_users as us');
+          $this->db->where('us.ClubId <= ',$clubID);
            $this->db->where_not_in('us.userId',$ids);
           $query1 = $this->db->get();
           $result1 = $query1->result();        
@@ -150,6 +152,7 @@ class Task_model extends CI_Model
 
           $this->db->select('us.userId , us.name  ');
           $this->db->from('tbl_users as us');
+          $this->db->where('us.ClubId <= ',$clubID);
           $this->db->where_not_in('us.userId',$ids);
             $this->db->or_where_in('us.userId',$ids1);
 
@@ -164,8 +167,38 @@ class Task_model extends CI_Model
    }
    
 
-   
-    
+    /**
+     * This function is used to update the user information
+     * @param array $userInfo : This is users updated information
+     * @param number $userId : This is user id
+     */
+    function editTask($taskInfo, $taskId)
+    {
+        $this->db->where('tacheId', $taskId);
+        $this->db->update('tbl_task', $taskInfo);
+        
+        return TRUE;
+    }
+     function deleteTask($taskId, $taskInfo)
+    {
+        $this->db->where('tacheId', $taskId);
+        $this->db->update('tbl_task', $taskInfo);
+        
+        return $this->db->affected_rows();
+    }
+
+   function editAffect($affectInfo, $affectId)
+    {
+        $this->db->where('affectationId', $affectId);
+        $this->db->update('tbl_affectation', $affectInfo);
+        
+        return TRUE;
+    }   
+    function getAffectation($affectationId){
+      $this->db->select('*');
+          $this->db->from('tbl_affectation as BaseTbl');
+          where('BaseTbl.affectationId', $affectationId);
+    }
 
 
 }
