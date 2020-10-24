@@ -198,7 +198,9 @@
                       </ul>
                       <div style="display: none" id="FileDown" >
                         <br>
-                      <input type="file" name="fileT"   class="dropify-fr" >
+                      <input type="file" name="fileT"   class="dropify-fr"                                     data-max-file-size="200K"                                      
+                      id="input-file-events"
+                       >
 
                     </div>
                       <input class="post-btn" type="submit" data-ripple="" value="Post" >
