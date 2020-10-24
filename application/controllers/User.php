@@ -378,13 +378,15 @@ class User extends BaseController
      */
     function MAJUser()
     {
+                $fname = strtoupper ($this->input->post('fname'));
+                $lname = $this->input->post('lname');
+                $name =  strtoupper ($fname).' '.$lname ;
 
-                $name = ucwords(strtolower($this->security->xss_clean($this->input->post('fname'))));
                 $facebook = $this->security->xss_clean($this->input->post('facebook'));
                 $instagram = $this->security->xss_clean($this->input->post('instagram'));
                 $linkedin = $this->security->xss_clean($this->input->post('linkedin'));
                 $birthday = $this->security->xss_clean($this->input->post('birthday'));
- 
+          
                  $target_dir = "uploads/avatar/";
                     $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
                     $uploadOk = 1;

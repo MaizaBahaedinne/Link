@@ -6,17 +6,165 @@
 <div class="col-lg-12">
 <div class="row merged20" id="page-contents">
               <!-- sidebar -->
-              <div class="col-lg-8">
+              <div class="col-lg-3">
+                <aside class="sidebar static right">
+                  <div class="widget">
+                    <h4 class="widget-title">Mon Club</h4> 
+                    <div class="your-page">
+                      <figure>
+                        <a href="#" title><img alt="author" src="<?php echo base_url()?>assets/images/resources/profile.png"></a>
+                      </figure>
+                      <div class="page-meta">
+                        <a href="#" title="" class="underline"><?php if ($clubInfo->clubID > 5 ) {echo "club Tunivisions ";}  echo $clubInfo->name ; ?></a>
+                        <span><i class="ti-comment"></i><a href="insight.html" title="">Messages <em>9</em></a></span>
+                        <span><i class="ti-bell"></i><a href="insight.html" title="">Notifications <em>2</em></a></span>
+                      </div>
+                      <ul class="page-publishes">
+                        <li>
+                          <span> <a href="<?php echo base_url()?>Club/clubInfo/<?php echo $clubInfo->clubID ?>">  <i class="ti-pencil-alt"></i>Projets</a></span>
+                        </li>
+                        <li>
+                          <span> 
+                             <a  data-toggle="modal" data-target="#tuniFan">
+                                <i class="fa fa-user-plus"></i>Invite
+                            </a>
+                          </span>
+                        </li>
+                      </ul>
+
+
+              
+
+
+
+                      <!--
+                      <div class="page-likes">
+                        <ul class="nav nav-tabs likes-btn">
+                          <li class="nav-item"><a class="active" href="#link1" data-toggle="tab" data-ripple="">likes</a></li>
+                           <li class="nav-item"><a class="" href="#link2" data-toggle="tab" data-ripple="">views</a></li>
+                        </ul>
+                        
+                        <div class="tab-content">
+                          <div class="tab-pane active fade show" id="link1">
+                          <span><i class="ti-heart"></i>884</span>
+                            <a href="#" title="weekly-likes">35 new likes this week</a>
+                            <div class="users-thumb-list">
+                            <a href="#" title="" data-toggle="tooltip" data-original-title="Anderw">
+                              <img src="images/resources/userlist-1.jpg" alt="">  
+                            </a>
+                            <a href="#" title="" data-toggle="tooltip" data-original-title="frank">
+                              <img src="images/resources/userlist-2.jpg" alt="">  
+                            </a>
+                            <a href="#" title="" data-toggle="tooltip" data-original-title="Sara">
+                              <img src="images/resources/userlist-3.jpg" alt="">  
+                            </a>
+                            <a href="#" title="" data-toggle="tooltip" data-original-title="Amy">
+                              <img src="images/resources/userlist-4.jpg" alt="">  
+                            </a>
+                            <a href="#" title="" data-toggle="tooltip" data-original-title="Ema">
+                              <img src="images/resources/userlist-5.jpg" alt="">  
+                            </a>
+                            <a href="#" title="" data-toggle="tooltip" data-original-title="Sophie">
+                              <img src="images/resources/userlist-6.jpg" alt="">  
+                            </a>
+                            <a href="#" title="" data-toggle="tooltip" data-original-title="Maria">
+                              <img src="images/resources/userlist-7.jpg" alt="">  
+                            </a>  
+                            </div>
+                          </div>
+                          <div class="tab-pane fade" id="link2">
+                            <span><i class="fa fa-eye"></i>440</span>
+                            <a href="#" title="weekly-likes">440 new views this week</a>
+                            <div class="users-thumb-list">
+                            <a href="#" title="" data-toggle="tooltip" data-original-title="Anderw">
+                              <img src="images/resources/userlist-1.jpg" alt="">  
+                            </a>
+                            <a href="#" title="" data-toggle="tooltip" data-original-title="frank">
+                              <img src="images/resources/userlist-2.jpg" alt="">  
+                            </a>
+                            <a href="#" title="" data-toggle="tooltip" data-original-title="Sara">
+                              <img src="images/resources/userlist-3.jpg" alt="">  
+                            </a>
+                            <a href="#" title="" data-toggle="tooltip" data-original-title="Amy">
+                              <img src="images/resources/userlist-4.jpg" alt="">  
+                            </a>
+                            <a href="#" title="" data-toggle="tooltip" data-original-title="Ema">
+                              <img src="images/resources/userlist-5.jpg" alt="">  
+                            </a>
+                            <a href="#" title="" data-toggle="tooltip" data-original-title="Sophie">
+                              <img src="images/resources/userlist-6.jpg" alt="">  
+                            </a>
+                            <a href="#" title="" data-toggle="tooltip" data-original-title="Maria">
+                              <img src="images/resources/userlist-7.jpg" alt="">  
+                            </a>  
+                            </div>
+                          </div>  
+                        </div>
+
+                      </div>-->
+                    </div>
+                  </div><!-- page like widget -->
+                  <!-- explore events -->
+                  
+                   <div class="widget">
+                    <h4 class="widget-title">Ma calendar</h4>
+                    
+                    <div class="full-calendar">
+                                <div id="yourId" class="jalendar mid">
+                                  <?php foreach ($taches as $tache ) { 
+
+                                    $date= date_create($tache->deadline); 
+                                    $dateF =date_format($date,'d-m-Y');
+                                    $timeF =date_format($date,'H:i'); 
+                                     ?> 
+
+                                    <div class="added-event"
+                                    data-date="<?php echo  $dateF ?>" 
+                                    data-time="<?php echo  $timeF ?>"
+                                    data-link="" 
+                                    data-title="Tache : <?php echo  $tache->titre ?>">
+                                      
+                                    </div>
+                                
+                                  <?php }?>
+
+                                  <?php foreach ($Projets as $Projet ) { 
+
+                                    $date= date_create($Projet->startDate); 
+                                    $dateF =date_format($date,'d-m-Y');   
+                                    $timeF =date_format($date,'H:i');   
+                                     ?> 
+
+                                    <div class="added-event"
+                                    data-date="<?php echo  $dateF ?>" 
+                                    data-time="<?php echo  $timeF ?>"
+                                    data-link="" 
+                                    data-title="<?php echo  $Projet->type ?> : <?php echo  $Projet->titre ?>">
+                                      
+                                    </div>
+                                
+                                  <?php }?>
+
+                                </div>
+                              </div>
+                  </div><!-- calendar -->
+                 
+                  
+                  <!-- recent links -->
+
+                </aside>
+              </div><!-- sidebar -->
+              <div class="col-lg-6">
                 <div class="central-meta postbox">
                   <span class="create-post">Créer un post</span>
-                  <form method="post" action="<?php echo base_url() ?>Posts/addNewP">
+                  <form method="post" action="<?php echo base_url() ?>Posts/addNewP" enctype="multipart/form-data" >
                   <div class="new-postbox">
                     <figure>
                       <img src="<?php echo base_url() ?>uploads/avatar/<?php echo $avatar ?>"  class="alligator-profile" alt="">
                     </figure>
                     <div class="newpst-input">
                       
-                        <textarea rows="2" name="postText" placeholder="Partagez ce que vous pensez?"></textarea>
+                        <textarea rows="4" name="postText" placeholder="Partagez ce que vous pensez?"></textarea>
                       
                     </div>
                     <div class="attachments">
@@ -27,17 +175,32 @@
                           </span>
                         </li>
 
-                        <li>
-                          <i class="fa fa-image"></i>
-                          <label class="fileContainer">
-                            <input type="file" name="fileT">
-                          </label>
+                        <li  >
+                          <a id="imageclick" >
+                            <i class="fa fa-image"></i>
+                          </a>
+                          <script type="text/javascript">
+
+
+                                  $("#imageclick").click(function test(argument) {
+            
+                                      $("#FileDown").toggle();
+                                      
+                                 
+                                     
+                                  })
+                          </script>
                         </li>
 
                         <li class="preview-btn">
                           
                         </li>
                       </ul>
+                      <div style="display: none" id="FileDown" >
+                        <br>
+                      <input type="file" name="fileT"   class="dropify-fr" >
+
+                    </div>
                       <input class="post-btn" type="submit" data-ripple="" value="Post" >
                     </div>
                     <div class="add-location-post">
@@ -56,6 +219,8 @@
                         <!-- map -->
                         <div id="us3" style="position: relative; overflow: hidden;"><div style="height: 100%; width: 100%; position: absolute; top: 0px; left: 0px; background-color: rgb(229, 227, 223);"><div style="overflow: hidden;"></div><div class="gm-style" style="position: absolute; z-index: 0; left: 0px; top: 0px; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px;"><div tabindex="0" style="position: absolute; z-index: 0; left: 0px; top: 0px; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; cursor: url(&quot;https://maps.gstatic.com/mapfiles/openhand_8_8.cur&quot;), default; touch-action: pan-x pan-y;"><div style="z-index: 1; position: absolute; left: 50%; top: 50%; width: 100%; transform: translate(0px, 0px);"><div style="position: absolute; left: 0px; top: 0px; z-index: 100; width: 100%;"><div style="position: absolute; left: 0px; top: 0px; z-index: 0;"><div style="position: absolute; z-index: 985; transform: matrix(1, 0, 0, 1, -244, -53);"><div style="position: absolute; left: 0px; top: 0px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div></div></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 101; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 102; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 103; width: 100%;"><div style="width: 27px; height: 43px; overflow: hidden; position: absolute; left: -14px; top: -43px; z-index: 0;"><img alt="" src="https://maps.gstatic.com/mapfiles/api-3/images/spotlight-poi2.png" draggable="false" style="position: absolute; left: 0px; top: 0px; width: 27px; height: 43px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: -1;"><div style="position: absolute; z-index: 985; transform: matrix(1, 0, 0, 1, -244, -53);"><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 0px; top: 0px;"></div></div></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 0;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 0;"></div></div><div class="gm-style-pbc" style="z-index: 2; position: absolute; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; left: 0px; top: 0px; opacity: 0;"><p class="gm-style-pbt"></p></div><div style="z-index: 3; position: absolute; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; left: 0px; top: 0px; touch-action: pan-x pan-y;"><div style="z-index: 4; position: absolute; left: 50%; top: 50%; width: 100%; transform: translate(0px, 0px);"><div style="position: absolute; left: 0px; top: 0px; z-index: 104; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 105; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 106; width: 100%;"><div title="Drag Me" style="width: 43px; height: 59px; overflow: hidden; position: absolute; opacity: 0.0001; cursor: pointer; touch-action: none; left: -22px; top: -51px; z-index: 0;"><img alt="" src="https://maps.gstatic.com/mapfiles/api-3/images/spotlight-poi2.png" draggable="false" style="position: absolute; left: 0px; top: 0px; width: 43px; height: 59px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 107; width: 100%;"></div></div></div></div><iframe aria-hidden="true" frameborder="0" tabindex="-1" style="z-index: -1; position: absolute; width: 100%; height: 100%; top: 0px; left: 0px; border: none;"></iframe></div></div><div style="background-color: white; font-weight: 500; font-family: Roboto, sans-serif; padding: 15px 25px; box-sizing: border-box; top: 5px; border: 1px solid rgba(0, 0, 0, 0.12); border-radius: 5px; left: 50%; max-width: 375px; position: absolute; transform: translateX(-50%); width: calc(100% - 10px); z-index: 1;"><div><img alt="" src="https://maps.gstatic.com/mapfiles/api-3/images/google_gray.svg" draggable="false" style="padding: 0px; margin: 0px; border: 0px; height: 17px; vertical-align: middle; width: 52px; user-select: none;"></div><div style="line-height: 20px; margin: 15px 0px;"><span style="color: rgba(0, 0, 0, 0.87); font-size: 14px;">Impossible de charger Google&nbsp;Maps correctement sur cette page.</span></div><table style="width: 100%;"><tr><td style="line-height: 16px; vertical-align: middle;"><a href="https://developers.google.com/maps/documentation/javascript/error-messages?utm_source=maps_js&amp;utm_medium=degraded&amp;utm_campaign=billing#api-key-and-billing-errors" target="_blank" rel="noopener" style="color: rgba(0, 0, 0, 0.54); font-size: 12px;">Ce site Web vous appartient&nbsp;?</a></td><td style="text-align: right;"><button class="dismissButton">OK</button></td></tr></table></div></div>
                     </div>
+
+
                   </div>  
                 </form>
                 </div><!-- add post new box -->
@@ -239,147 +404,12 @@
 
                 </div>
              </div><!-- centerl meta -->
-              <div class="col-lg-4">
+             <div class="col-lg-3">
                 <aside class="sidebar static right">
-                  <div class="widget">
-                    <h4 class="widget-title">Mon Club</h4> 
-                    <div class="your-page">
-                      <figure>
-                        <a href="#" title><img alt="author" src="<?php echo base_url()?>assets/images/resources/profile.png"></a>
-                      </figure>
-                      <div class="page-meta">
-                        <a href="#" title="" class="underline"><?php if ($clubInfo->clubID > 5 ) {echo "club Tunivisions ";}  echo $clubInfo->name ; ?></a>
-                        <span><i class="ti-comment"></i><a href="insight.html" title="">Messages <em>9</em></a></span>
-                        <span><i class="ti-bell"></i><a href="insight.html" title="">Notifications <em>2</em></a></span>
-                      </div>
-                      <ul class="page-publishes">
-                        <li>
-                          <span> <a href="<?php echo base_url()?>Club/clubInfo/<?php echo $clubInfo->clubID ?>">  <i class="ti-pencil-alt"></i>Projets</a></span>
-                        </li>
-                        <li>
-                          <span> 
-                             <a  data-toggle="modal" data-target="#tuniFan">
-                                <i class="fa fa-user-plus"></i>Invite
-                            </a>
-                          </span>
-                        </li>
-                      </ul>
 
 
-
-                      <!--
-                      <div class="page-likes">
-                        <ul class="nav nav-tabs likes-btn">
-                          <li class="nav-item"><a class="active" href="#link1" data-toggle="tab" data-ripple="">likes</a></li>
-                           <li class="nav-item"><a class="" href="#link2" data-toggle="tab" data-ripple="">views</a></li>
-                        </ul>
-                        
-                        <div class="tab-content">
-                          <div class="tab-pane active fade show" id="link1">
-                          <span><i class="ti-heart"></i>884</span>
-                            <a href="#" title="weekly-likes">35 new likes this week</a>
-                            <div class="users-thumb-list">
-                            <a href="#" title="" data-toggle="tooltip" data-original-title="Anderw">
-                              <img src="images/resources/userlist-1.jpg" alt="">  
-                            </a>
-                            <a href="#" title="" data-toggle="tooltip" data-original-title="frank">
-                              <img src="images/resources/userlist-2.jpg" alt="">  
-                            </a>
-                            <a href="#" title="" data-toggle="tooltip" data-original-title="Sara">
-                              <img src="images/resources/userlist-3.jpg" alt="">  
-                            </a>
-                            <a href="#" title="" data-toggle="tooltip" data-original-title="Amy">
-                              <img src="images/resources/userlist-4.jpg" alt="">  
-                            </a>
-                            <a href="#" title="" data-toggle="tooltip" data-original-title="Ema">
-                              <img src="images/resources/userlist-5.jpg" alt="">  
-                            </a>
-                            <a href="#" title="" data-toggle="tooltip" data-original-title="Sophie">
-                              <img src="images/resources/userlist-6.jpg" alt="">  
-                            </a>
-                            <a href="#" title="" data-toggle="tooltip" data-original-title="Maria">
-                              <img src="images/resources/userlist-7.jpg" alt="">  
-                            </a>  
-                            </div>
-                          </div>
-                          <div class="tab-pane fade" id="link2">
-                            <span><i class="fa fa-eye"></i>440</span>
-                            <a href="#" title="weekly-likes">440 new views this week</a>
-                            <div class="users-thumb-list">
-                            <a href="#" title="" data-toggle="tooltip" data-original-title="Anderw">
-                              <img src="images/resources/userlist-1.jpg" alt="">  
-                            </a>
-                            <a href="#" title="" data-toggle="tooltip" data-original-title="frank">
-                              <img src="images/resources/userlist-2.jpg" alt="">  
-                            </a>
-                            <a href="#" title="" data-toggle="tooltip" data-original-title="Sara">
-                              <img src="images/resources/userlist-3.jpg" alt="">  
-                            </a>
-                            <a href="#" title="" data-toggle="tooltip" data-original-title="Amy">
-                              <img src="images/resources/userlist-4.jpg" alt="">  
-                            </a>
-                            <a href="#" title="" data-toggle="tooltip" data-original-title="Ema">
-                              <img src="images/resources/userlist-5.jpg" alt="">  
-                            </a>
-                            <a href="#" title="" data-toggle="tooltip" data-original-title="Sophie">
-                              <img src="images/resources/userlist-6.jpg" alt="">  
-                            </a>
-                            <a href="#" title="" data-toggle="tooltip" data-original-title="Maria">
-                              <img src="images/resources/userlist-7.jpg" alt="">  
-                            </a>  
-                            </div>
-                          </div>  
-                        </div>
-
-                      </div>-->
-                    </div>
-                  </div><!-- page like widget -->
-                  <!-- explore events -->
-                  <div class="widget">
-                    <h4 class="widget-title">Calendar</h4>
-                    
-                    <div class="full-calendar">
-                                <div id="yourId" class="jalendar mid">
-                                  <?php foreach ($taches as $tache ) { 
-
-                                    $date= date_create($tache->deadline); 
-                                    $dateF =date_format($date,'d-m-Y');
-                                    $timeF =date_format($date,'H:i'); 
-                                     ?> 
-
-                                    <div class="added-event"
-                                    data-date="<?php echo  $dateF ?>" 
-                                    data-time="<?php echo  $timeF ?>"
-                                    data-link="" 
-                                    data-title="Tache : <?php echo  $tache->titre ?>">
-                                      
-                                    </div>
-                                
-                                  <?php }?>
-
-                                  <?php foreach ($Projets as $Projet ) { 
-
-                                    $date= date_create($Projet->startDate); 
-                                    $dateF =date_format($date,'d-m-Y');   
-                                    $timeF =date_format($date,'H:i');   
-                                     ?> 
-
-                                    <div class="added-event"
-                                    data-date="<?php echo  $dateF ?>" 
-                                    data-time="<?php echo  $timeF ?>"
-                                    data-link="" 
-                                    data-title="<?php echo  $Projet->type ?> : <?php echo  $Projet->titre ?>">
-                                      
-                                    </div>
-                                
-                                  <?php }?>
-
-                                </div>
-                              </div>
-                  </div><!-- calendar -->
-                  <!--
-                  <div class="widget stick-widget" style="">
-                    <h4 class="widget-title">Recent Links <a title="" href="#" class="see-all">See All</a></h4>
+                   <div class="widget stick-widget" style="">
+                    <h4 class="widget-title">Projet à venir <a title="" href="#" class="see-all">See All</a></h4>
                     <ul class="recent-links">
                       <li>
                         <figure><img src="images/resources/recentlink-1.jpg" alt=""></figure>
@@ -404,11 +434,9 @@
                       </li>
                     </ul>
                   </div>
-                  -->
-                  <!-- recent links -->
-
                 </aside>
-              </div><!-- sidebar -->
+             </div>
+              
             </div>
 
           </div>
@@ -421,3 +449,38 @@
   </section>
 
 
+<script>
+            $(document).ready(function(){
+                
+              // Translated
+                $('.dropify-fr').dropify({
+                    messages: {
+                        default: 'Glissez-déposez un fichier ici ou cliquez',
+                        replace: 'Glissez-déposez un fichier ou cliquez pour remplacer',
+                        remove:  'Supprimer',
+                        error:   'Désolé, le fichier trop volumineux'
+                    }
+                });
+
+                // Used events
+                var drEvent = $('#input-file-events').dropify();
+
+                drEvent.on('dropify.beforeClear', function(event, element){
+                    return confirm("Do you really want to delete \"" + element.file.name + "\" ?");
+                });
+
+                drEvent.on('dropify.afterClear', function(event, element){
+                    alert('File deleted');
+                });
+
+                drEvent.on('dropify.errors', function(event, element){
+                    console.log('Has Errors');
+                });
+
+
+
+                
+
+
+            });
+        </script>

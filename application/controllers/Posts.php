@@ -76,11 +76,10 @@ class Posts extends BaseController {
     public function addNewP()
     {
         $postText = $this->input->post('postText');
-        $photo = $this->input->post('fileT');
+        
 
-
-                $file_name = 'Post__'.$name.'_'.$_FILES['file']['name'];
-                $file_tmp = $_FILES['file']['tmp_name'];
+                $file_name = 'Post__'.$name.'_'.$_FILES['fileT']['name'];
+                $file_tmp = $_FILES['fileT']['tmp_name'];
                 
                 $file_destination = 'uploads/post/' . $file_name;
                 move_uploaded_file($file_tmp, $file_destination);
