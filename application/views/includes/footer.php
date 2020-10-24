@@ -254,21 +254,7 @@
     } );
 
 </script>
-<script type="text/javascript">
-  
-        function onScanSuccess(qrCodeMessage) {
-            // handle on success condition with the decoded message
-        }
 
-        function onScanError(errorMessage) {
-            // handle on error condition, with error message
-        }
-
-        var html5QrcodeScanner = new Html5QrcodeScanner(
-            "readerqr", { fps: 10, qrbox: 250 });
-        html5QrcodeScanner.render(onScanSuccess, onScanError);
-
-</script>
 
 
       <div class="modal fade" id="TuniFan">
@@ -333,7 +319,22 @@
 
             <!-- Modal body -->
             <div class="modal-body">
-              <div style="width: 500px" id="readerqr"></div>
+              <div style="width: auto;" id="readerqr"></div>
+              <script type="text/javascript">
+  
+                function onScanSuccess(qrCodeMessage) {
+                    // handle on success condition with the decoded message
+                }
+
+                function onScanError(errorMessage) {
+                    // handle on error condition, with error message
+                }
+
+                var html5QrcodeScanner = new Html5QrcodeScanner(
+                    "readerqr", { fps: 10, qrbox: 250 });
+                html5QrcodeScanner.render(onScanSuccess, onScanError);
+
+          </script>
 
             </div>
 
