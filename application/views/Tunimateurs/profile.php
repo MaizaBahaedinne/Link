@@ -4,91 +4,120 @@
             <div class="row">
                <div class="col-lg-12">
                   <div class="row merged20" id="page-contents">
-                     <div class="user-profile">
-                        <figure>
-                           <div class="edit-pp">
-                              <label class="fileContainer">
-                                 <i class="fa fa-camera"></i>
-                                 <input type="file">
-                              </label>
-                           </div>
-                           <img src="<?php echo base_url() ?>assets/images/resources/profile-image.jpg" alt="">
-                            <!--
-                           <ul class="profile-controls">
-                              <li><a href="#" title="Add friend" data-toggle="tooltip"><i class="fa fa-user-plus"></i></a></li>
-                              <li><a href="#" title="Follow" data-toggle="tooltip"><i class="fa fa-star"></i></a></li>
-                              <li><a class="send-mesg" href="#" title="Send Message" data-toggle="tooltip"><i class="fa fa-comment"></i></a></li>
-                              <li>
-                                 <div class="edit-seting" title="Edit Profile image"><i class="fa fa-sliders"></i>
-                                    <ul class="more-dropdown">
-                                       <li><a href="setting.html" title="">Update Profile Photo</a></li>
-                                       <li><a href="setting.html" title="">Update Header Photo</a></li>
-                                       <li><a href="setting.html" title="">Account Settings</a></li>
-                                       <li><a href="support-and-help.html" title="">Find Support</a></li>
-                                       <li><a class="bad-report" href="#" title="">Report Profile</a></li>
-                                       <li><a href="#" title="">Block Profile</a></li>
-                                    </ul>
-                                 
-                                 </div>
-                              </li>
-                           </ul>
-                           -->
-                           <!--
-                           <ol class="pit-rate">
-                              <li class="rated"><i class="fa fa-star"></i></li>
-                              <li class="rated"><i class="fa fa-star"></i></li>
-                              <li class="rated"><i class="fa fa-star"></i></li>
-                              <li class="rated"><i class="fa fa-star"></i></li>
-                              <li class=""><i class="fa fa-star"></i></li>
-                              <li><span>4.7/5</span></li>
-                           </ol>
-                        -->
-                        </figure>
-                        
-                        <div class="profile-section">
-                           <div class="row">
-                              <div class="col-lg-2 col-md-3">
-                                 <div class="profile-author">
-                                    <div class="profile-author-thumb">
-                                       <img alt="author" src="<?php echo base_url() ?>uploads/avatar/<?php echo $userInfo->avatar ?>">
-                                       <div class="edit-dp">
-                                          <label class="fileContainer">
-                                             <i class="fa fa-camera"></i>
-                                             <input type="file">
-                                          </label>
-                                       </div>
-                                    </div>
-                                       
-                                    <div class="author-content">
-                                       <a class="h4 author-name" href="about.html"><?php echo $userInfo->name ?></a>
-                                       <div class="country"><?php if($userInfo->ClubID > 5){ echo "Club " ; } ?> Tunivisions <?php echo $userInfo->ClubName ?></div>
-                                    </div>
-                                 </div>
-                              </div>
-                              <div class="col-lg-7 col-md-9">
-                                 <ul class="nav nav-tabs  nav-tabs--left" >
-                                    <li class="nav-item">
-                                      <a href="#ProjetBlock" class="nav-link active" data-toggle="tab" ><i class="fa fa-gear"></i>Timeline</a>
-                                    </li>
-                                    <li class="nav-item">
-                                      <a href="#membresBlock" class="nav-link" data-toggle="tab" ><i class="fa fa-users"></i>Membres</a>
-                                    </li>
+                     
 
-                                  </ul>
-                                 
-                              </div>
-                              <ol class="folw-detail">
-                                    <li><span>Posts</span><ins><?php echo count($postRecords) ?></ins></li>
-                                    <li><span>Scores</span><ins>1.3K</ins></li>
-                                    <li><span>Following</span><ins>22</ins></li>
-                                 </ol>
-                           </div>
-                        </div>   
-                     </div><!-- user profile banner  -->
+                    <div class="user-profile">
+                <figure>
+                  <img src="<?php echo base_url() ?>assets/images/resources/profile-image.jpg" alt="">
+                   <!--
+                  <ul class="profile-controls">
+                   
+                    <li><a href="#" title="" data-toggle="tooltip" data-original-title="Add friend"><i class="fa fa-user-plus"></i></a></li>
+                    <li><a href="#" title="" data-toggle="tooltip" data-original-title="Follow"><i class="fa fa-star"></i></a></li>
+                    <li><a class="send-mesg" href="#" title="" data-toggle="tooltip" data-original-title="Send Message"><i class="fa fa-comment"></i></a></li>
+                    <li>
+                      <div class="edit-seting" title="Edit Profile image"><i class="fa fa-sliders"></i>
+                        
+                        <ul class="more-dropdown">
+                          <li><a href="setting.html" title="">Update Profile Photo</a></li>
+                          <li><a href="setting.html" title="">Update Header Photo</a></li>
+                          <li><a href="setting.html" title="">Account Settings</a></li>
+                          <li><a href="support-and-help.html" title="">Find Support</a></li>
+                          <li><a class="bad-report" href="#" title="">Report Profile</a></li>
+                          <li><a href="#" title="">Block Profile</a></li>
+                        </ul>
+                      
+                      </div>
+                    </li>
+                   
+                  </ul>
+                   -->
+                </figure> 
+              </div>
+
+              <div class="user-feature-info">
+                <div class="row">
+                  <div class="col-lg-6 col-md-6 col-sm-3">
+                    <div class="user-figure">
+                      <figure><img src="<?php echo base_url() ?>uploads/avatar/<?php echo $userInfo->avatar ?>" alt=""></figure>
+                      <div class="author-meta">
+                        <h5><a href="#" title=""><?php echo $userInfo->name ?></a></h5>
+                        <span><?php echo $userInfo->role ?> <?php echo $userInfo->cellule ?></span>
+                        <ins><?php if ($userInfo->clubID > 5 ) {echo "club ";}  echo 'Tunivisions '.$userInfo->ClubName ; ?></a>
+</ins>
+                      </div>
+                      <!--
+                      <a href="setting.html" title="">edit your profile</a>
+                      -->
+                    </div>
+                  </div>
+                  <div class="col-lg-6 col-md-6 col-sm-9">
+                    <div class="user-inf-meta">
+                      <ul class="user-info">
+                        <li><span>0</span> Projets</li>
+                        <li><span>0</span> Formations</li>
+                        <li><span>0</span> Conférences</li>
+                        <li><span>0</span> Missions</li>
+                      </ul>
+                      <ol class="pit-rate">
+                        <li class="rated"><i class="fa fa-star"></i></li>
+                        <li class="rated"><i class="fa fa-star"></i></li>
+                        <li class="rated"><i class="fa fa-star"></i></li>
+                        <li class="rated"><i class="fa fa-star"></i></li>
+                        <li class=""><i class="fa fa-star"></i></li>
+                      </ol>
+                      <span>4.7/5</span>
+                    </div>
+                  </div>
+                  <div class="col-lg-12 col-md-12 col-sm-12">
+                    <ul class="job-progres">
+                      <li><span class="main-color">0%</span> Tâches</li>
+                      <li><span class="color-blue">0</span> Tâches en cours</li>
+                      <li><span class="color-valvet">0</span> Tâches terminées</li>
+                    </ul>
+                  </div>
+                  <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="sharing-tools">
+                      <div class="we-video-info">
+                        <ul>
+                          <li>
+                            <span class="views" title="views">
+                              <i class="fa fa-eye"></i>
+                              <ins>0</ins>
+                            </span>
+                          </li>
+                          <li>
+
+                        </ul>
+                        <div class="share-to-other">
+                          <ul>
+                            <?php if($userInfo->facebook != '' ){ ?>
+                            <li>
+                              <a title="" href="<?php echo $userInfo->facebook  ?>" class="facebook-color"><i class="fa fa-facebook-square"></i></a></li>
+                            <li>
+                            <?php }if($userInfo->linkedin != '' ){ ?>
+                            <li>
+                              <a title="" href="<?php echo $userInfo->linkedin  ?>" class="dribble-color"><i class="fa fa-linkedin-square"></i></a>
+                            </li>
+                            <?php }if($userInfo->instagram != '' ){ ?>
+                            <li>
+                              <a title="" href="<?php echo $userInfo->instagram  ?>" class="instagram-color"><i class="fa fa-instagram"></i></a>
+                            </li>
+                            <?php } ?>
+
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>  
+              </div>
+
+
                <div class="row">
                <div class="col-lg-12">
                <div class="row merged20" id="page-contents">
-               <div class="col-lg-3">
+               <div class="col-lg-4">
                         <aside class="sidebar static left">
                            <div class="widget">
                               <h4 class="widget-title">Badges <a class="see-all" href="#" title="">See All</a></h4>
@@ -99,10 +128,52 @@
                                  
                               </ul>
                            </div><!-- badges -->
+                           <div class="central-meta ">
+                              <span class="create-post">Personal Info</span>
+                              <div class="personal-head">
+                                <span class="f-title"><i class="fa fa-user"></i> About Me:</span>
+                                <p>
+ 
+                                </p>
+                                <span class="f-title"><i class="fa fa-birthday-cake"></i> Anniversaire:</span>
+                                <p>
+                                  <?php echo $userInfo->birthday ?> 
+                                </p>
+                                <span class="f-title"><i class="fa fa-phone"></i> Mobile:</span>
+                                <p>
+                                  <?php if ($SA == 1 ){ ?>
+                                  <?php echo $userInfo->mobile ?>  
+                                  <?php } ?>
+                                </p>
+                                <span class="f-title"><i class="fa fa-male"></i> Sexe:</span>
+                                <p>
+                                  <?php echo $userInfo->sexe ?>  
+                                </p>
+                                <span class="f-title"><i class="fa fa-globe"></i> Country:</span>
+                                <p>
+                                  <?php echo $userInfo->gouvernorat ?> 
+                                </p>
+                                <span class="f-title"><i class="fa fa-briefcase"></i> Occupation:</span>
+                                <p>
+                                  UI/UX Designer 
+                                </p>
+                                <span class="f-title"><i class="fa fa-handshake-o"></i> Joined:</span>
+                                <p>
+                                  <?php echo $userInfo->createdDtm ?>  
+                                  <br> par <?php echo $userInfo->parrain ?>  
+                                </p>
+                                
+                                <span class="f-title"><i class="fa fa-envelope"></i> Email &amp; Website:</span>
+                                <p>
+                                  <a href="wpkixx.html" title="">www.wpkixx.com</a> Pitnik@yourmail.com 
+                                </p>
+                                
+                              </div>
+                            </div>
                            
                            
                            <div class="advertisment-box">
-                              <h4 class="">advertisment</h4>
+                              <h4 class="">publicité</h4>
                               <figure>
                                  <a href="#" title="Advertisment"><img src="<?php echo base_url() ?>assets/images/resources/ad-widget.gif" alt=""></a>
                               </figure>
@@ -125,238 +196,60 @@
                            
                         </aside>
                      </div>      
-               <div class="col-lg-6">
-                <div class="central-meta postbox">
-                  <span class="create-post">Créer un post</span>
-                  <form method="post" action="<?php echo base_url() ?>Posts/addNewP">
-                  <div class="new-postbox">
-                    <figure>
-                      <img src="<?php echo base_url() ?>uploads/avatar/<?php echo $avatar ?>"  class="alligator-profile" alt="">
-                    </figure>
-                    <div class="newpst-input">
-                      
-                        <textarea rows="2" name="postText" placeholder="Partagez ce que vous pensez?"></textarea>
-                      
-                    </div>
-                    <div class="attachments">
-                      <ul>
-                        <li>
-                          <span class="add-loc">
-                            <i class="fa fa-map-marker"></i>
-                          </span>
-                        </li>
-
-                        <li>
-                          <i class="fa fa-image"></i>
-                          <label class="fileContainer">
-                            <input type="file" name="fileT">
-                          </label>
-                        </li>
-
-                        <li class="preview-btn">
-                          
-                        </li>
-                      </ul>
-                      <input class="post-btn" type="submit" data-ripple="" value="Post" >
-                    </div>
-                    <div class="add-location-post">
-                      <span>Faites glisser le point de la carte vers la zone sélectionnée</span>
-                      <div class="row">
-
-                          <div class="col-lg-6">
-                              <label class="control-label">Lat :</label>
-                              <input type="text" class="" id="us3-lat">
-                          </div>
-                          <div class="col-lg-6">
-                              <label>Long :</label>
-                              <input type="text" class="" id="us3-lon">
-                          </div>
+                 
+                     <div class="col-md-8">
+                        
+                        <div class="central-meta">
+                  <span class="create-post">General Info<a href="#" title="">See All</a></span>
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <div class="gen-metabox">
+                        <span><i class="fa fa-puzzle-piece"></i> Tunivisions Experience</span>
+                          <?php foreach ($ExpTuns as $ExpTun ) { ?>
+                            - Mandat : <b> <?php echo  $ExpTun->attacheDT ?> -  <?php echo  $ExpTun->endDT ?></b>
+                          <p>
+                            <a href="#" title="#" >&nbsp;&nbsp;<?php echo  $ExpTun->role ?> </a> <?php echo  $ExpTun->cellule ?> 
+                            <a href="#" title="#"> <?php if ($ExpTun->clubId > 5 ) {echo "club ";}  echo 'Tunivisions '.$ExpTun->ClubName ; ?> </a>
+                          </p>
+                          <?php } ?>
                       </div>
-                        <!-- map -->
-                        <div id="us3" style="position: relative; overflow: hidden;"><div style="height: 100%; width: 100%; position: absolute; top: 0px; left: 0px; background-color: rgb(229, 227, 223);"><div style="overflow: hidden;"></div><div class="gm-style" style="position: absolute; z-index: 0; left: 0px; top: 0px; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px;"><div tabindex="0" style="position: absolute; z-index: 0; left: 0px; top: 0px; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; cursor: url(&quot;https://maps.gstatic.com/mapfiles/openhand_8_8.cur&quot;), default; touch-action: pan-x pan-y;"><div style="z-index: 1; position: absolute; left: 50%; top: 50%; width: 100%; transform: translate(0px, 0px);"><div style="position: absolute; left: 0px; top: 0px; z-index: 100; width: 100%;"><div style="position: absolute; left: 0px; top: 0px; z-index: 0;"><div style="position: absolute; z-index: 985; transform: matrix(1, 0, 0, 1, -244, -53);"><div style="position: absolute; left: 0px; top: 0px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div></div></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 101; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 102; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 103; width: 100%;"><div style="width: 27px; height: 43px; overflow: hidden; position: absolute; left: -14px; top: -43px; z-index: 0;"><img alt="" src="https://maps.gstatic.com/mapfiles/api-3/images/spotlight-poi2.png" draggable="false" style="position: absolute; left: 0px; top: 0px; width: 27px; height: 43px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: -1;"><div style="position: absolute; z-index: 985; transform: matrix(1, 0, 0, 1, -244, -53);"><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 0px; top: 0px;"></div></div></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 0;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 0;"></div></div><div class="gm-style-pbc" style="z-index: 2; position: absolute; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; left: 0px; top: 0px; opacity: 0;"><p class="gm-style-pbt"></p></div><div style="z-index: 3; position: absolute; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; left: 0px; top: 0px; touch-action: pan-x pan-y;"><div style="z-index: 4; position: absolute; left: 50%; top: 50%; width: 100%; transform: translate(0px, 0px);"><div style="position: absolute; left: 0px; top: 0px; z-index: 104; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 105; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 106; width: 100%;"><div title="Drag Me" style="width: 43px; height: 59px; overflow: hidden; position: absolute; opacity: 0.0001; cursor: pointer; touch-action: none; left: -22px; top: -51px; z-index: 0;"><img alt="" src="https://maps.gstatic.com/mapfiles/api-3/images/spotlight-poi2.png" draggable="false" style="position: absolute; left: 0px; top: 0px; width: 43px; height: 59px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 107; width: 100%;"></div></div></div></div><iframe aria-hidden="true" frameborder="0" tabindex="-1" style="z-index: -1; position: absolute; width: 100%; height: 100%; top: 0px; left: 0px; border: none;"></iframe></div></div><div style="background-color: white; font-weight: 500; font-family: Roboto, sans-serif; padding: 15px 25px; box-sizing: border-box; top: 5px; border: 1px solid rgba(0, 0, 0, 0.12); border-radius: 5px; left: 50%; max-width: 375px; position: absolute; transform: translateX(-50%); width: calc(100% - 10px); z-index: 1;"><div><img alt="" src="https://maps.gstatic.com/mapfiles/api-3/images/google_gray.svg" draggable="false" style="padding: 0px; margin: 0px; border: 0px; height: 17px; vertical-align: middle; width: 52px; user-select: none;"></div><div style="line-height: 20px; margin: 15px 0px;"><span style="color: rgba(0, 0, 0, 0.87); font-size: 14px;">Impossible de charger Google&nbsp;Maps correctement sur cette page.</span></div><table style="width: 100%;"><tr><td style="line-height: 16px; vertical-align: middle;"><a href="https://developers.google.com/maps/documentation/javascript/error-messages?utm_source=maps_js&amp;utm_medium=degraded&amp;utm_campaign=billing#api-key-and-billing-errors" target="_blank" rel="noopener" style="color: rgba(0, 0, 0, 0.54); font-size: 12px;">Ce site Web vous appartient&nbsp;?</a></td><td style="text-align: right;"><button class="dismissButton">OK</button></td></tr></table></div></div>
+                      <div class="gen-metabox">
+                        <span><i class="fa fa-plus"></i> Skills</span>
+                        <p>
+                          Swimming, Surfing, Uber Diving, Anime, Photography, Tattoos, Street Art.
+                        </p>
+                      </div>
                     </div>
+                    <div class="col-lg-6">
+                      <div class="gen-metabox">
+                        <span><i class="fa fa-mortar-board"></i> Diplome</span>
+                        <?php foreach ($Diplomes as $Diplome ) { ?>
+                        <p>
+                          <b><?php echo $Diplome->type ?></b>, <?php echo $Diplome->titre ?> <a href="#" title="">  <?php echo $Diplome->instituts ?> - <?php echo $Diplome->city ?> </a>
+                        </p>
+                         <?php } ?>
+                      </div>
+                      <div class="gen-metabox">
+                        <span><i class="fa fa-certificate"></i> Expérience professionnelle</span>
+                        <p>
+                          Currently working in the "color hands" web development agency from the last 5 five years as <a href="#" title="">Senior UI/UX Designer</a>
+                        </p>
+                      </div>
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="gen-metabox no-margin">
+                        <span><i class="fa fa-sitemap"></i> Langue</span>
+
+                      </div>
+                    </div>
+                    
                   </div>  
-                </form>
-                </div><!-- add post new box -->
-                <!-- top stories -->
-                <div class="loadMore">
-                  <!-- album post -->
-                  <!-- digital sponsors -->
-                  <!-- love post -->
-                  <!-- without image -->
-                  <!-- map location post -->
-
-                  <?php foreach ($postRecords as $post ) { ?>
-                                  
-                  <div class="central-meta item" style="display: inline-block;">
-                    <div class="user-post">
-                      <div class="friend-info">
-                        <figure>
-                          <img src="<?php echo base_url() ?>uploads/avatar/<?php echo $post->avatar ?>" class="alligator-profile" alt="">
-                        </figure>
-                        <div class="friend-name">
-                          <div class="more">
-                            <div class="more-post-optns"><i class="ti-more-alt"></i>
-                              <ul>
-                                <li><i class="fa fa-pencil-square-o"></i>Modifier le message</li>
-                                <li><i class="fa fa-trash-o"></i>Supprimer le message</li>
-                              </ul>
-                            </div>
-                          </div>
-                          <ins>
-                            <a href="<?php echo base_url() ?>User/ProfileShow/<?php echo $post->userId  ?>" >
-                            <?php echo $post->name ?></a> a publié 
-                            <a href="#" title="">
-                            une publication
-                          </a>
-                          </ins>
-                          <span><i class="fa fa-globe"></i> il y a <?php echo xTimeAgo ($post->DatePosted, date('Y-m-d H:i:s') )  ?> </span>
-                        </div>
-                        <div class="post-meta">
-                          <?php if ($post->photo != 'Post___' ){ ?>
-                          <figure>
-                            <a href="<?php echo base_url() ?>uploads/post/<?php echo $post->photo ?>" title="" data-strip-group="mygroup" class="strip vdeo-link" data-strip-options="width: 700,height: 450,youtube: { autoplay: 1 }">
-                            <img src="<?php echo base_url() ?>uploads/post/<?php echo $post->photo ?>" alt="">
-                              
-                              <h2><!-- Titre  --></h2>
-                            </a>
-                            <ul class="like-dislike">
-                              <li><a class="bg-purple" href="#" title="Save to Pin Post"><i class="fa fa-thumb-tack"></i></a></li>
-                              <li><a class="bg-blue" href="#" title="Like Post"><i class="ti-thumb-up"></i></a></li>
-                              <li><a class="bg-red" href="#" title="dislike Post"><i class="ti-thumb-down"></i></a></li>
-                            </ul>
-
-                          </figure>     
-                          <?php } ?>                  
-                          <div class="description">
-                            <p id="Cpntent<?php $post->postId ?>" >
-                              <?php  
-                              
-                             
-                              $string = strip_tags($post->Content);
-                              if (strlen($string) > 500) {
-
-                                  // truncate string
-                                  $stringCut = substr($string, 0, 500);
-                                  $endPoint = strrpos($stringCut, ' ');
-
-                                  //if the string doesn't contain any space then it will cut without word basis.
-                                  $string = $endPoint? substr($stringCut, 0, $endPoint) : substr($stringCut, 0);
-                                  $string .= '... <a href="/this/story">Afficher la suite</a>';
-                              }
-                              echo $string;
-                              ?>
-                            </p>
-                          </div>
-                          <div class="we-video-info">
-                            <ul>
-                              
-                              <li>
-                                <div class="likes heart <?php if(count($post->likeCheck) > 0 ){echo "happy" ;} ?>" id="<?php echo $post->postId ?>" title="Like/Dislike">❤ <span><?php echo count($post->likeRecords) ?></span></div>
-                              </li>
-                              <li>
-                                <span class="comment" title="Comments">
-                                  <i class="fa fa-commenting"></i>
-                                  <ins><?php echo count($post->commentsRecords) ?></ins>
-                                </span>
-                              </li>
-
-                              
-                            </ul>
-                            <div class="users-thumb-list">
-                              <?php $i=1 ; foreach ($post->likeRecords  as $like ) { $i++ ;
-                              if ($i>6)
-                                        {
-                                        break;
-                                        }
-                                ?>
-                              <a data-toggle="tooltip" title="<?php echo $like->name ?>" href="#" data-original-title="<?php echo $like->name ?>">
-                                <img alt=""  class="alligator-profile-likes" src="<?php echo base_url() ?>uploads/avatar/<?php echo $like->avatar ?>">  
-                              </a>
-                              <?php  } ?>
-
-                              <?php $i=1 ; foreach ($post->likeRecords  as $like ) { $i++ ;
-                              if ($i>3)
-                                        {
-                                        break;
-                                        }
-                                ?>
-                              <span> <b><?php echo $like->name ?> </b> 
-                              <?php  } ?> et <a href="#" title=""> +<?php  echo  count($post->likeRecords) ?> </a> j'aimes</span>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="coment-area" style="">
-                          <ul class="we-comet">
-
-                            <?php foreach ($post->commentsRecords as $comment ) { ?>
-                            <li>
-                              <div class="comet-avatar">
-                                <img src="<?php echo base_url() ?>uploads/avatar/<?php echo $comment->avatar ?>" class="alligator-profile-likes" alt="">
-                              </div>
-                              <div class="we-comment">
-                                <h5><a href="time-line.html" title=""><?php echo $comment->name ?></a></h5>
-                                <p><?php echo $comment->content ?>
-                                  <i class="em em-smiley"></i>
-                                </p>
-                                <div class="inline-itms">
-                                  <span>  il y a <?php echo xTimeAgo ($comment->createdDTM,  date('Y-m-d H:i:s') )  ?> </span>
-                                  <!--
-                                  <a class="we-reply" href="#" title="Reply"><i class="fa fa-reply"></i></a>
-                                  <a href="#" title=""><i class="fa fa-heart"></i><span>20</span></a>
-                                  -->
-                                </div>
-                              </div>
-                            </li>
-                            <?php } ?>
-
-                            
-                            <li class="post-comment">
-                              <div class="comet-avatar">
-                                <img src="<?php echo base_url() ?>uploads/avatar/<?php echo $post->avatar ?>" class="alligator-profile" alt="">
-                              </div>
-                              <div class="post-comt-box">
-                                <form method="post" action="<?php echo base_url() ?>Posts/addNewComment/<?php echo $post->postId ?>">
-                                  <textarea  placeholder="Commentaire .."></textarea>
-                                  <div class="add-smiles">
-                                    <div class="uploadimage">
-                                      <i class="fa fa-image"></i>
-                                      <label class="fileContainer">
-                                        <input type="file" name="fileC">
-                                      </label>
-                                    </div>
-                                    <span class="em em-expressionless" title="add icon"></span>
-                                    <div class="smiles-bunch">
-                                      <i class="em em---1"></i>
-                                      <i class="em em-smiley"></i>
-                                      <i class="em em-anguished"></i>
-                                      <i class="em em-laughing"></i>
-                                      <i class="em em-angry"></i>
-                                      <i class="em em-astonished"></i>
-                                      <i class="em em-blush"></i>
-                                      <i class="em em-disappointed"></i>
-                                      <i class="em em-worried"></i>
-                                      <i class="em em-kissing_heart"></i>
-                                      <i class="em em-rage"></i>
-                                      <i class="em em-stuck_out_tongue"></i>
-                                    </div>
-                                  </div>
-                                  <div class="text-right">
-                                  <input  class="btn btn-primary " type="submit">
-                                  </div>
-                                </form> 
-                              </div>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                <?php }?>
-
                 </div>
-             </div><!-- centerl meta -->
+
+                     </div>
+
+
+
                 </div>
              </div>
           </div>     

@@ -219,7 +219,7 @@ class BaseController extends CI_Controller {
     	$this->load->model('login_model');
 		$this->load->model('notification_model');
 
-    	$MyUser = $this->user_model->getUserInfo($this->vendorId)  ; 
+    	$MyUser["user"] = $this->user_model->getUserInfoWithRole($this->vendorId)  ; 
 
 		$headerInfo['notifRecords'] = $this->notification_model->NotificationListingHome($this->vendorId) ;
         $headerInfo['notifRecordsNumber'] = count($this->notification_model->NotificationNoSeenListing($this->vendorId)) ;     
@@ -227,7 +227,7 @@ class BaseController extends CI_Controller {
         $headerInfo['ConnrectedUser'] =  $this->login_model->lastLogins() ;
 
          
-        if($MyUser->isDeleted == 3 ){
+        if($MyUser["user"]->isDeleted == 3 ){
         if($this->SA == 1 ){	
         /*
         $this->send_mail($MyUser->email , 

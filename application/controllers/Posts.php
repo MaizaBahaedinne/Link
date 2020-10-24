@@ -15,6 +15,8 @@ class Posts extends BaseController {
         $this->load->model('actualite_model');
         $this->load->model('posts_model');
         
+        $this->load->model('task_model');
+        
         $this->isLoggedIn();   
     }
     
@@ -24,9 +26,10 @@ class Posts extends BaseController {
          $data  ['userId'] = $this->vendorId ; 
          $data['ActuRecords'] = $this->actualite_model->actuListing();
          $data['projectRecords'] = $this->project_model->projectListing();
-          $data["clubInfo"] = $this->club_model->getClubInfo($this->clubID);
-          $data["members"] = $this->user_model->userListingByclub($this->clubID) ;
-
+         $data["clubInfo"] = $this->club_model->getClubInfo($this->clubID);
+         $data["members"] = $this->user_model->userListingByclub($this->clubID) ;
+         $data["Projets"] = $this->project_model->projectListingByClub($this->clubID);
+         $data["taches"] =  $this->task_model->AffectationsByUserListing($this->vendorId); 
 
          $data  ['postRecords'] =  $this->posts_model->postsListing();
         
@@ -50,8 +53,11 @@ class Posts extends BaseController {
          $data['ActuRecords'] = $this->actualite_model->actuListing();
          $data['projectRecords'] = $this->project_model->projectListing();
           $data["clubInfo"] = $this->club_model->getClubInfo($this->clubID);
-          $data["members"] = $this->user_model->userListingByclubINFO($this->clubID) ;
+          $data["members"] = $this->user_model->userListingByclub($this->clubID) ;
+                   $data["Projets"] = $this->project_model->projectListingByClub($this->clubID);
+         $data["taches"] =  $this->task_model->AffectationsByUserListing($this->vendorId); 
 
+         
          $data  ['postRecords'] =  $this->posts_model-> postById($postId);
         
             foreach ($data['postRecords'] as $key ) {                
@@ -70,11 +76,10 @@ class Posts extends BaseController {
     public function addNewP()
     {
         $postText = $this->input->post('postText');
-        $photo = $this->input->post('fileT');
+        
 
-
-                $file_name = 'Post__'.$name.'_'.$_FILES['file']['name'];
-                $file_tmp = $_FILES['file']['tmp_name'];
+                $file_name = 'Post__'.$name.'_'.$_FILES['fileT']['name'];
+                $file_tmp = $_FILES['fileT']['tmp_name'];
                 
                 $file_destination = 'uploads/post/' . $file_name;
                 move_uploaded_file($file_tmp, $file_destination);
@@ -95,7 +100,7 @@ class Posts extends BaseController {
 
      public function addNewComment($postId)
     {
-        $comment = $this->input->post('comment'.$postId);
+        $comment = $this->input->post('comment');
         $commentInfo = array(        
            'content' => NL2BR($comment) ,
            'userId ' => $this->vendorId ,

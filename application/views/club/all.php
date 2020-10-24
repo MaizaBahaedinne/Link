@@ -14,8 +14,8 @@
                     <thead>
                     <tr>
                         <th>Ecole</th>
-                        <th>Secteur</th>
-                        <th>Bureau</th>
+                        <th>Region</th>
+                       
                         <th>Membres</th>
                         <th>Contact</th>
                         <th>Action</th>
@@ -31,18 +31,13 @@
                     <tr>
                         <td>
                           <a href="<?php echo base_url() ?>club/clubInfo/<?php echo $record->clubID ?>" target="_blank"   >
-                           <small><?php echo $record->name ?> </small> 
+                           <b><?php echo $record->name ?> </b> 
                            <?php if ($record->is_Actif=="0"){  ?>
                                <i class="fa fa-ban" aria-hidden="true"></i>
                            <?php } ?>
                          </a>
-                        </td>
-                        <td>
-                            <small><?php echo $record->city ?></small>
-                        </td>
-                        <td>
-                          <?php $P = $record->P ;  ?>
 
+                          <?php $P = $record->P ;  ?>
                           <?php $VPAF = $record->VPAF ; ?>
                           <?php $VPRH = $record->VPRH ; ?>
                           <?php $VPM = $record->VPM ; ?>
@@ -53,7 +48,7 @@
                           <?php $ARH = $record->ARH ; ?>
                           <?php $AM = $record->AM ; ?>
                           <?php $AE = $record->AE ; ?>
-   
+
                           <div class="row">
                             <div class="col-md-4">
                               <small>Président</small>
@@ -68,7 +63,7 @@
                               </div>
                             </div>
                             </div>
-                            <hr>
+
                             <div class="row">
                             <div class="col-md-4">
                               <small> Vice Président</small>
@@ -111,43 +106,12 @@
                               </div>
                             </div>
                             </div>
-                            
-                            <hr>
 
-                            <div class="row">
-                            <div class="col-md-4">
-                               <small>Assistants</small>
-                            </div>
-                            <div class="col-md-2">
-                              <?php if($AAF) { ?>
-                              <a href="<?php echo base_url() ?>User/ProfileShow/<?php echo $AAF->userId ?>" target="_blank">
-                               <img alt="" class="alligator-profile-likes" src="<?php echo base_url() ?>uploads/avatar/<?php echo $AAF->avatar ?>">                                 
-                              </a>
-                            </div>
-                            <div class="col-md-2">
-                              <?php if($ARH) { ?>
-                              <a href="<?php echo base_url() ?>User/ProfileShow/<?php echo $ARH->userId ?>" target="_blank">
-                               <img alt="" class="alligator-profile-likes" src="<?php echo base_url() ?>uploads/avatar/<?php echo $ARH->avatar ?>"> 
-                              </a>
-                              <?php } ?>
-                            </div>
-                            <div class="col-md-2">
-                              ?php if($AM) { ?>
-                              <a href="<?php echo base_url() ?>User/ProfileShow/<?php echo $record->userId ?>" target="_blank">
-                               <img alt="" class="alligator-profile-likes" src="<?php echo base_url() ?>uploads/avatar/<?php echo $AM->avatar ?>"> 
-                              </a>
-                              <?php } ?>
-                            </div>
-                            <div class="col-md-2">
-                              <?php if($AE) { ?>
-                              <a href="<?php echo base_url() ?>User/ProfileShow/<?php echo $AE->userId ?>" target="_blank">
-                               <img alt="" class="alligator-profile-likes" src="<?php echo base_url() ?>uploads/avatar/<?php echo $AE->avatar ?>"> 
-                              </a>
-                              <?php } ?>
-                            </div>
-                          </div>
-                          </div>
                         </td>
+                        <td>
+                            <small><?php echo $record->city ?></small>
+                        </td>
+
                         <td>
                          
                             <small><?php echo $record->members ; ?> </small>

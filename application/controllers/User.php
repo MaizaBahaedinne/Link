@@ -377,71 +377,57 @@ class User extends BaseController
      * This function is used to edit the user information
      */
     function MAJUser()
-    {
+    { 
+                $cin = $this->input->post('cin');
+                $nom = strtoupper ($this->input->post('nom'));
+                $prenom = $this->input->post('prenom');
+                $name =  strtoupper ($nom).' '.$prenom ;
+                $birthday = $this->input->post('birthday');
+                $facebook = $this->input->post('facebook');
+                $instagram = $this->input->post('instagram');
+                $linkedin = $this->input->post('linkedin');
+                $adresse =$this->input->post('adresse');
+                $delegation = $this->input->post('delegation');
+                $gouvernorat = $this->input->post('gouvernorat');
+                $cellule = $this->input->post('cellule');
 
-                $name = ucwords(strtolower($this->security->xss_clean($this->input->post('fname'))));
-                $email = strtolower($this->security->xss_clean($this->input->post('email')));           
-                $mobile = $this->security->xss_clean($this->input->post('mobile'));
-                $facebook = $this->security->xss_clean($this->input->post('facebook'));
-                $instagram = $this->security->xss_clean($this->input->post('instagram'));
-                $linkedin = $this->security->xss_clean($this->input->post('linkedin'));
-                $birthday = $this->security->xss_clean($this->input->post('birthday'));
- 
-                 $target_dir = "uploads/avatar/";
-                    $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
-                    $uploadOk = 1;
-                    $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+                $file_name = 'avatar_'.$cin.'_'.$_FILES['file']['name'];
+                $file_tmp = $_FILES['file']['tmp_name'];
+                $file_destination = 'uploads/avatar/' . $file_name;
 
-                    if(basename($_FILES["fileToUpload"]["name"]) != ''){
+                   
                     $userInfo = array(
-                                      'avatar' => basename($_FILES["fileToUpload"]["name"]),
+                                      'avatar' => $file_name ,
                                       'email'=>$email,
                                       'name'=>$name,
-                                      'email'=>$email,
+                                      'prenom'=>$lname,
+                                      'nom'=>$nom,
+                                      'adresse' => $adresse,
                                       'birthday'=>$birthday,
-                                      'mobile'=>$mobile,
                                       'facebook'=>$facebook,
                                       'instagram'=>$instagram,
                                       'linkedin'=>$linkedin,
+                                      'cin'=>$cin,
+                                      'cellule'=>$cellule,
+                                      'isDeleted'=> 0,
                                       'updatedBy'=>$this->vendorId,
                                       'updatedDtm'=>date('Y-m-d H:i:s'));
 
-                $result = $this->user_model->editUser($userInfo, $this->vendorId);
-                if($result == true && move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file) )
+                
+                if(move_uploaded_file($_FILES["file"]["tmp_name"], $file_destination) )
                 {
+                  $result = $this->user_model->editUser($userInfo, $this->vendorId);
+                  if($result == true){
                     $this->session->set_flashdata('success', 'Votre profile a été mise à jour');
+                  }
                 }
                 else
                 {
                     $this->session->set_flashdata('error', 'Erreur de mise à jour');
-                }
-                }
-                else {
-                                    $userInfo = array(                                      
-                                      'email'=>$email,
-                                      'name'=>$name,
-                                      'email'=>$email,
-                                      'birthday'=>$birthday,
-                                      'mobile'=>$mobile,
-                                      'facebook'=>$facebook,
-                                      'instagram'=>$instagram,
-                                      'linkedin'=>$linkedin,
-                                      'updatedBy'=>$this->vendorId,
-                                      'updatedDtm'=>date('Y-m-d H:i:s'));
-
-                $result = $this->user_model->editUser($userInfo, $this->vendorId);
-                if($result == true)
-                {
-                    $this->session->set_flashdata('success', 'Votre profile a été mise à jour');
-                }
-                else
-                {
-                    $this->session->set_flashdata('error', 'Erreur de mise à jour');
-                }
                 }
 
                 
-                redirect('profile');
+                redirect('/');
             
         
     }
@@ -764,7 +750,11 @@ class User extends BaseController
     function ProfileShow($userId)
     {
         $data["userInfo"] = $this->user_model->getUserInfoWithRole($userId);
-      
+        $data["ExpTuns"] = $this->user_cariere_model->carrierListing($userId);
+        $data["Diplomes"] = $this->user_diplome_model->diplomeListing($userId); 
+        $data["Skills"] = $this->user_diplome_model->diplomeListing($userId); 
+
+
         $data['postRecords'] =  $this->posts_model->postsListingbyUser($userId);
 
    
