@@ -93,6 +93,12 @@
 
 
 <div class="side-panel">
+
+
+ 
+  <div class="setting-row">
+        <a data-toggle="modal" data-target="#qrscanner" > Scanner QR</a>
+      </div>
   <!--
     <h4 class="panel-title">General Setting</h4>
     <form method="post">
@@ -250,14 +256,17 @@
 </script>
 <script type="text/javascript">
   
-      function onScanSuccess(qrCodeMessage) {
-        // handle on success condition with the decoded message
-      }
+        function onScanSuccess(qrCodeMessage) {
+            // handle on success condition with the decoded message
+        }
 
-      var html5QrcodeScanner = new Html5QrcodeScanner(
-        "readerqr", { fps: 10, qrbox: 250 });
-      html5QrcodeScanner.render(onScanSuccess);
+        function onScanError(errorMessage) {
+            // handle on error condition, with error message
+        }
 
+        var html5QrcodeScanner = new Html5QrcodeScanner(
+            "readerqr", { fps: 10, qrbox: 250 });
+        html5QrcodeScanner.render(onScanSuccess, onScanError);
 
 </script>
 
@@ -312,13 +321,13 @@
         </div>
     </div><!-- fade Modal -->
 
- <div class="modal fade" id="TuniFan">
+ <div class="modal fade" id="qrscanner">
         <div class="modal-dialog modal-sm">
           <div class="modal-content">
 
             <!-- Modal Header -->
             <div class="modal-header">
-              <h4 class="modal-title">Invitez un tuniFan</h4>
+              <h4 class="modal-title">Scanner QR Code</h4>
               <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
 

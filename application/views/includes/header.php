@@ -73,6 +73,7 @@
   <script src="<?php echo base_url() ?>assets/js/jquery.eventCalendar.min.js"></script>
   <script src="<?php echo base_url() ?>assets/js/qrcode.js"></script>
   <script src="<?php echo base_url() ?>assets/js/html5-qrcode.min.js"></script>
+
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-151434993-1"></script>
         <script>
@@ -103,6 +104,7 @@
 
 	<nav id="shoppingbag" class="mm-menu mm-offcanvas mm-right" aria-hidden="true"><div class="mm-panels"><div class="mm-panel mm-hasnavbar mm-opened" id="mm-13"><div class="mm-navbar"><a class="mm-title">General Setting</a></div>
 				<div class="">
+					<a data-toggle="modal" data-target="#qrscanner" > Scanner QR</a>
 					<!--
 					<form method="post">
 						<div class="setting-row">
