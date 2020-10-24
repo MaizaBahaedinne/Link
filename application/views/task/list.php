@@ -30,7 +30,7 @@
                     <tbody>
                       <?php foreach ($taches as $tache ) { ?>
                         <tr>
-                          <td>
+                          <td name="T">
                             <?php echo $tache->tacheId?>
                         </td> 
                         <td>
@@ -102,17 +102,16 @@
                                         <!-- Modal body -->
                                         <div class="modal-body">
                                             <?php $this->load->helper("form"); ?>
-                                            <form role="form"  id="addproject" action="<?php echo base_url() ?>Task/addAffectations/<?php echo $tache->tacheId ?>" method="post" role="form"  enctype="multipart/form-data">
-                                                  
-
+                                            <form role="form"  id="addmember" action="<?php echo base_url() ?>Task/affectUser/<?php echo $tache->tacheId ?>" method="post" role="form"  enctype="multipart/form-data">
+       
                                                
                                                 <span class="text-mute">ci-dessous la liste des membres disponible</span>
                                                 <br>
                                                 <br>
                                                 <div >
-                                                    <select id='lists' class="form-control">
-                                                      <?php foreach ($membresDispo as $membre) { ?>
-                                                       <option value="<?php echo $membre->userId ?>" ><?php echo $membre->name ?> </option>
+                                                    <select id='lists' class="form-control"name ="userIdAffected">
+                                                      <?php foreach ($tache->membresDispo as $user) { ?>
+                                                       <option value="<?php echo $user->userId ?>" ><?php echo $user->name ?> </option>
                                                       <?php } ?>
                                                     </select>
                                                   </div>
@@ -175,17 +174,21 @@
             <!-- Modal body -->
             <div class="modal-body">
                 <?php $this->load->helper("form"); ?>
-                <form role="form"  id="addproject" action="<?php echo base_url() ?>Task/addNew/<?php echo $projet->projectId ?>" method="post" role="form"  enctype="multipart/form-data">
+                <form role="form"  id="addtask" action="<?php echo base_url() ?>Task/addNewT/<?php echo $projet->projectId ?>" method="post" role="form"  enctype="multipart/form-data">
                       
 
                     <label>Titre</label>
                     <input type="text"  class="form-control " name="titre" >
                     <label>Description</label>
-                    <select>
-                      
-                    </select>
+                  <textarea class="form-control"name="description"row="20">
+                    
+                  </textarea>
                     <br>
                     <div class="row">
+                      <div class="col-md-6">
+                        <label>type</label>
+                        <input  class="form-control "  name="type">     
+                      </div>
                       <div class="col-md-6">
                         <label>debut</label>
                         <input type="datetime-local" class="form-control "  min="<?php echo date('Y-m-d').'T00:00' ?>"  name="startedDate">     
