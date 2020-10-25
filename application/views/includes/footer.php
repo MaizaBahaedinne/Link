@@ -320,9 +320,9 @@
             <!-- Modal body -->
             <div class="modal-body">
               <div style="width: auto;" id="readerqr"></div>
-              <div style="width: auto;" id="readerValid">
+              <div style="width: auto; display: none ; " id="readerValid"  >
                 <h3 style="text-align: center;" >Bravo</h3>
-                <p>Votre participation a été valider avec succées</p>
+                <p style="text-align: center;">Votre participation a été valider avec succées</p>
               </div>
               <script type="text/javascript">
   
