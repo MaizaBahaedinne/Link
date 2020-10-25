@@ -320,11 +320,19 @@
             <!-- Modal body -->
             <div class="modal-body">
               <div style="width: auto;" id="readerqr"></div>
+              <div style="width: auto;" id="readerValid">
+                <h3 style="text-align: center;" >Bravo</h3>
+                <p>Votre participation a été valider avec succées</p>
+              </div>
               <script type="text/javascript">
   
                 function onScanSuccess(qrCodeMessage) {
-                   alert(qrCodeMessage) ;
-                }
+                  
+                  $("#readerqr").hide() ;
+                  $("#readerValid").show() ; 
+
+
+              }
 
                 function onScanError(errorMessage) {
                     // handle on error condition, with error message
