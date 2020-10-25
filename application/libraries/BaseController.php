@@ -220,20 +220,20 @@ class BaseController extends CI_Controller {
 		$this->load->model('notification_model');
 
     	$MyUser["user"] = $this->user_model->getUserInfoWithRole($this->vendorId)  ; 
-
+    	$user = $this->user_model->getUserInfoWithRole($this->vendorId)  ; 
 		$headerInfo['notifRecords'] = $this->notification_model->NotificationListingHome($this->vendorId) ;
         $headerInfo['notifRecordsNumber'] = count($this->notification_model->NotificationNoSeenListing($this->vendorId)) ;     
         $headerInfo['ChatRecords'] = Null ; 
         $headerInfo['ConnrectedUser'] =  $this->login_model->lastLogins() ;
 
          
-        if($MyUser["user"]->isDeleted == 3 ){
+        if($user->isDeleted == 3 ){
         if($this->SA == 1 ){	
         
-        $this->send_mail($MyUser["user"]->email , 
+        $this->send_mail($user->email , 
         	"Activation" , 
         	Null ,  	
-        	"Bonjour ".$MyUser["user"]->name.",<br> Votre de code d'activation est : <br> <br> <b>".$MyUser["user"]->userId."-".$MyUser["user"]->clubID."/2020 </b> <br> <br>" ) ;
+        	"Bonjour ".$user->name.",<br> Votre de code d'activation est : <br> <br> <b>".$user->userId."-".$user->clubID."/2020 </b> <br> <br>" ) ;
         	        $this->load->view('includes/header', $headerInfo);
         $this->load->view('lancement', $MyUser["user"] );
         $this->load->view('includes/footer', $footerInfo);
