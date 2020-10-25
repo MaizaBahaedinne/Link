@@ -166,27 +166,67 @@
 
 
 
-    <div class="modal fade" id="myModal">
+       <div class="modal fade" id="myModal">
         <div class="modal-dialog modal-lg">
           <div class="modal-content">
 
             <!-- Modal Header -->
             <div class="modal-header">
-              <h4 class="modal-title">Modifier le projet <?php echo $projet->titre ?></h4>
+              <h4 class="modal-title">Ajouter un projet</h4>
               <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
 
             <!-- Modal body -->
             <div class="modal-body">
                 <?php $this->load->helper("form"); ?>
-                <form role="form"  id="addproject" action="<?php echo base_url() ?>Project/addNewP" method="post" role="form"  enctype="multipart/form-data">
+                <form role="form" class="c-form"  id="addproject" action="<?php echo base_url() ?>Project/addNewP" method="post" role="form"  enctype="multipart/form-data">
                         
                            
-   
+                                    <label for="fname">Banner</label>
+                                    <input type="file" name="file" id="file" class="dropify-fr" 
+                                    required accept="image/*"  />                                                                          
+                                    <p >le format de fichier doit etre JPG ou JPEG avec une taile maximale de 500 ko </p>
+                                    <p id="error1" style="display:none; color:#FF0000;">
+                                          Format d'image invalide! Le format d'image doit être JPG, JPEG.
+                                          </p>
+                                          <p id="error2" style="display:none; color:#FF0000;">
+                                          La taille maximale du fichier est de 500 ko.
+                                          </p>
+                                 
+
+                                    <script type="text/javascript">
+                                          $('#submitt').prop("disabled", true);
+                                            var a=0;
+                                            //binds to onchange event of your input field
+                                            $('#file').bind('change', function() {
+                                              if ($('input:submit').attr('disabled',false)){
+                                                 $('input:submit').attr('disabled',true);
+                                                 }
+                                                var ext = $('#file').val().split('.').pop().toLowerCase();
+                                                if ($.inArray(ext, ['jpg','jpeg']) == -1){
+                                                   $('#error1').slideDown("slow");
+                                                   $('#error2').slideUp("slow");
+                                                   a=0;
+                                                 }else{
+                                                   var picsize = (this.files[0].size);
+                                                   if (picsize > 500000){
+                                                   $('#error2').slideDown("slow");
+                                                 a=0;
+                                                 }else{
+                                                 a=1;
+                                                    $('#error2').slideUp("slow");
+                                                 }
+                                                    $('#error1').slideUp("slow");
+                                                 if (a==1){
+                                                 $('input:submit').attr('disabled',false);
+                                               }
+                                            }
+                                        });
+                                    </script>
                                     
 
-                                 
-                                    <label for="fname">Cible  &nbsp; &nbsp; <br> </label>
+                                    <br>
+                                    <b for="fname">Cible  &nbsp; &nbsp; <br> </b>
                                         
                                     <input type="radio" name="cible" id="Publique" value="Publique" required> Publique
                                     <input type="radio" name="cible" id="prive" value="Privé"> Privé
@@ -201,14 +241,19 @@
                                               $("#facebook").prop("required", true);
                                             });
                                           $( "#prive" ).click(function() {
-                                              $("#facebook").prop("required", false);
+                                              $("#uzer-nam").prop("required", false);
                                             });
                                         </script>
 
-                                    <br>
-
-                                    <label for="fname">Lien d'évenement facebook : </label>
-                                    <input type="url" name="facebook" id="facebook" class="form-control" >
+                                   <br>
+                                    <div class="uzer-nam">
+                                      <label><br>Lien d'évenement facebook :</label>
+                                      <span>https://www.facebook.com/events/</span>
+                                        <input type="number" 
+                                         placeholder="exemple : 235643091127564" name="facebook" width="30%" id="facebook" value="<?php echo $projet->facebook ?> "   >
+                                      
+                                    </div>
+                                    
                             
                                     
 
@@ -221,56 +266,65 @@
                                             <option value="Couverture Mediatique">Couverture Mediatique</option>
                                             <option value="Compétition">Compétition</option>
                                             <option value="Soirée">Soirée</option>
+                                            <option value="Team Building">Team Building</option>
                                     </select>
                           
 
                                     <hr>
                                
                                     <label for="fname">Titre</label>
-                                    <input type="text" class="form-control required" id="Titre" name="Titre" maxlength="255" required >
+                                    <input value="<?php echo $projet->titre ?>"  type="text" class="form-control required" id="Titre" name="Titre" maxlength="255" required >
                               
                                     
                                                             
                                    
                                     <label for="fname">Description</label>
-                                    <textarea class="form-control" name="description" id="tinymceExample" rows="20" required></textarea>
+                                    <textarea class="form-control" name="description"  id="TinyMCE" rows="20" value="<?php echo $projet->description ?>"  required></textarea>
 
                                
                                     
 
                                     <label for="fname">Date debut</label>
                                         <!-- min="<?php echo date('Y-m-d').'T00:00' ?>" -->
-                                    <input type="datetime-local" class="form-control "  min="<?php echo date('Y-m-d').'T00:00' ?>"   id="debut" name="debut"  required >
+                                    <input type="datetime-local" class="form-control "  min="<?php echo date('Y-m-d').'T00:00' ?>" value="<?php echo $projet->startDate ?>"    id="debut" name="debut"  required >
  
 
                               
                                     <label for="fname">Date fin</label>
                                         <!-- min="<?php echo date('Y-m-d').'T00:00' ?>" -->
-                                    <input type="datetime-local" class="form-control"  min="<?php echo date('Y-m-d').'T00:00' ?>"   id="fin" name="fin"  required >
+                                    <input type="datetime-local" class="form-control"  min="<?php echo date('Y-m-d').'T00:00' ?>"   id="fin" value="<?php echo $projet->endDate ?>"  name="fin"  required >
 
                             
                                     <hr>
                              
                                     <label for="fname">Local</label>
-                                    <input type="text" class="form-control " id="local" name="local" maxlength="255" required >      
+                                    <input type="text" class="form-control " value="<?php echo $projet->local ?>"  id="local" name="local" maxlength="255" required >      
 
                              
                                     <label for="fname">Capacité</label>
-                                    <input type="number" class="form-control " id="capacite" name="capacite"  required >      
+                                    <input type="number" class="form-control " value="<?php echo $projet->capacite ?>"  id="capacite" name="capacite"  required >      
 
                                     <label for="fname">Prix</label>
-                                    <input type="number" class="form-control" id="prix" name="prix"  required >      
+                                    <input type="number" class="form-control" id="prix" value="<?php echo $projet->capacite ?> " name="prix" value="<?php echo $projet->prix ?>"  required >      
+                                   
 
 
+                                    <hr>
+                        <div class="row">
+                            <div class="col-lg-6">
+                            <input type="submit" class="btn btn-primary" value="Envoyer" />
+                            </div>
+                            <div class="col-lg-6">
+                            <input type="reset" class="btn btn-secondary" value="Reset" />
+                            </div>
+                        </div>  
 
 
 
 
                         </div>
-                       
-                            <input type="submit" class="btn btn-primary" value="Envoyer" />
-                            <input type="reset" class="btn btn-secondary" value="Reset" />
- 
+                        
+
                        
                     </form>
 
@@ -282,8 +336,47 @@
 
             <!-- Modal footer -->
             <div class="modal-footer">
-              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Fermer</button>
             </div>
           </div>
         </div>
     </div><!-- fade Modal -->
+
+
+<script>
+            $(document).ready(function(){
+                
+              // Translated
+                $('.dropify-fr').dropify({
+                    messages: {
+                        default: 'Glissez-déposez un fichier ici ou cliquez',
+                        replace: 'Glissez-déposez un fichier ou cliquez pour remplacer',
+                        remove:  'Supprimer',
+                        error:   'Désolé, le fichier trop volumineux'
+                    }
+                });
+
+                // Used events
+                var drEvent = $('#input-file-events').dropify();
+
+                drEvent.on('dropify.beforeClear', function(event, element){
+                    return confirm("Do you really want to delete \"" + element.file.name + "\" ?");
+                });
+
+                drEvent.on('dropify.afterClear', function(event, element){
+                    alert('File deleted');
+                });
+
+                drEvent.on('dropify.errors', function(event, element){
+                    console.log('Has Errors');
+                });
+
+
+
+                
+
+
+            });
+        </script>
+
+

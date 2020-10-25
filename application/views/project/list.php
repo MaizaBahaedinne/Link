@@ -396,14 +396,20 @@
                                     <input type="number" class="form-control" id="prix" name="prix"  required >      
 
 
-
+                                    <hr>
+                        <div class="row">
+                            <div class="col-lg-6">
+                            <input type="submit" class="btn btn-primary" value="Envoyer" />
+                            </div>
+                            <div class="col-lg-6">
+                            <input type="reset" class="btn btn-secondary" value="Reset" />
+                            </div>
+                        </div>  
 
 
 
                         </div>
-                       
-                            <input type="submit" class="btn btn-primary" value="Envoyer" />
-                            <input type="reset" class="btn btn-secondary" value="Reset" />
+
  
                        
                     </form>
@@ -416,7 +422,7 @@
 
             <!-- Modal footer -->
             <div class="modal-footer">
-              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Fermer</button>
             </div>
           </div>
         </div>
@@ -424,3 +430,38 @@
 
 
   
+<script>
+            $(document).ready(function(){
+                
+              // Translated
+                $('.dropify-fr').dropify({
+                    messages: {
+                        default: 'Glissez-déposez un fichier ici ou cliquez',
+                        replace: 'Glissez-déposez un fichier ou cliquez pour remplacer',
+                        remove:  'Supprimer',
+                        error:   'Désolé, le fichier trop volumineux'
+                    }
+                });
+
+                // Used events
+                var drEvent = $('#input-file-events').dropify();
+
+                drEvent.on('dropify.beforeClear', function(event, element){
+                    return confirm("Do you really want to delete \"" + element.file.name + "\" ?");
+                });
+
+                drEvent.on('dropify.afterClear', function(event, element){
+                    alert('File deleted');
+                });
+
+                drEvent.on('dropify.errors', function(event, element){
+                    console.log('Has Errors');
+                });
+
+
+
+                
+
+
+            });
+        </script>
