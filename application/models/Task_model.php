@@ -103,6 +103,11 @@ class Task_model extends CI_Model
        $result = $query->result();        
        return $result;
    }
+
+
+    
+
+
      function DisponibleMembreAffected($dateStart,$deadline,$clubID)
     {   
 
@@ -112,58 +117,35 @@ class Task_model extends CI_Model
           $datef =date_format($df,'Y-m-d H:i:s');
 
 
-
-
           //tous les utilisateurs affectés  du date concerné
-          $this->db->select('us.userId ');
-          $this->db->from('tbl_affectation as BaseTbl');
-          $this->db->join('tbl_users as us', 'BaseTbl.userAffectatedID = us.userId', 'LEFT');
-          $this->db->join('tbl_task as t', 't.tacheId = BaseTbl.tacheId', 'LEFT');
-          $this->db->where('t.startedDate >= ',$dateStart);
-          $this->db->where('t.deadline <= ',$deadline);
-          $this->db->where('us.ClubId <= ',$clubID);
+          $this->db->select('us.userId , us.name ');
+          $this->db->from('tbl_users as us');
+          $this->db->join('tbl_affectation as BaseTbl', 'BaseTbl.userAffectatedID = us.userId', 'right');
+          $this->db->join('tbl_task as t', 't.tacheId = BaseTbl.tacheId', 'right');
+          $this->db->where('us.ClubID = ',$clubID);
+          $this->db->where('t.startedDate < ',$deadline);
+          $this->db->where('t.deadline > ',$dateStart);
           $tab = $this->db->get();
-          $query1_result = $tab->result(); 
-          //save the users  affected of querry in ids
-          $room_id= array();
-          foreach($query1_result as $row){
-          $room_id[] = $row->userId;
-          }
-          $room = implode(",",$room_id);
-          $ids = explode(",", $room);
+          $array1 = $tab->result(); 
+          
 
-          // tous les utilisateur non affécté 
-
-          $this->db->select('us.userId , us.name  ');
+          //tous les utilisateurs 
+          $this->db->select('us.userId , us.name ');
           $this->db->from('tbl_users as us');
-          $this->db->where('us.ClubId <= ',$clubID);
-           $this->db->where_not_in('us.userId',$ids);
-          $query1 = $this->db->get();
-          $result1 = $query1->result();        
-          //save users not affected 
-          $room_id1= array();
-          foreach($result1 as $row){
-          $room_id1[] = $row->userId;
+          $this->db->where('us.ClubID = ',$clubID);
+          $tab = $this->db->get();
+          $array2 = $tab->result(); 
+
+          $result=array_udiff($array2,$array1,
+          function ($obj_a, $obj_b) {
+            return $obj_a->userId - $obj_b->userId;
           }
-          $room1 = implode(",",$room_id1);
-          $ids1 = explode(",", $room1);
+          );
 
-          //resultat final 
-
-          $this->db->select('us.userId , us.name  ');
-          $this->db->from('tbl_users as us');
-          $this->db->where('us.ClubId <= ',$clubID);
-          $this->db->where_not_in('us.userId',$ids);
-            $this->db->or_where_in('us.userId',$ids1);
-
-          $queryfinal = $this->db->get();
-          $resultfinal = $queryfinal->result();  
-
-
-          return $resultfinal;
-
-
-
+         
+       
+        return $result ;
+       
    }
    
 
@@ -179,7 +161,8 @@ class Task_model extends CI_Model
         
         return TRUE;
     }
-     function deleteTask($taskId, $taskInfo)
+
+    function deleteTask($taskId, $taskInfo)
     {
         $this->db->where('tacheId', $taskId);
         $this->db->update('tbl_task', $taskInfo);
@@ -193,7 +176,17 @@ class Task_model extends CI_Model
         $this->db->update('tbl_affectation', $affectInfo);
         
         return TRUE;
-    }   
+    } 
+
+
+   function deleteAffect($affectInfo, $affectId)
+    {
+        $this->db->where('affectationId', $affectId);
+        $this->db->delete('tbl_affectation');
+        
+        return TRUE;
+    } 
+
     function getAffectation($affectationId){
       $this->db->select('*');
           $this->db->from('tbl_affectation as BaseTbl');

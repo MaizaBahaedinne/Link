@@ -12,8 +12,11 @@
 							<h6 class="widget-title" > Gestion des tache : <?php echo $projet->titre ?>  </h6> 
 							</div>
               <div class="col-md-4">
-
+              <?php 
+               if (($role == 1 || $role == 3 || $role == 6  ) &&   $projet->ClubID == $clubID  ){ 
+                if ( (time()-(60*60*24)) < strtotime($projet->endDate) ){ ?> 
               <a class="align-right main-btn" data-toggle="modal" data-target="#myModal" >Ajouter une tache</a> 
+              <?php } } ?>
               </div>
               </div>
 							<div>
@@ -24,7 +27,7 @@
                       <th  width="2%" >ID</th>
                       <th  >titre</th>
                       <th width="25%" >Deadline</th>
-                      <th width="5%">Par</th>
+                      
                       <th width="30%">affecté à</th>
                       <th width="5%" >Action</th>
                     </thead>
@@ -40,14 +43,15 @@
                           </h4>
                           <span>
                             <?php echo $tache->description ?>
+
                           </span>
+                          <hr>
+                          Crée par : <a data-toggle="tooltip" title="" href="#" data-original-title="<?php echo $tache->parname?>">
+                                <img alt="" class="alligator-profile-likes" src="<?php echo base_url() ?>uploads/avatar/<?php echo $tache->avatar ?>" style="border-radius: 50%;" >  <?php echo $tache->parname?>
+                           </a> 
                         </td> 
                         <td><b>Debut : </b><?php echo $tache->startedDate ?> <hr> <b>Fin : </b><?php echo $tache->deadline ?></td>                                     
-                        <td> 
-                          <a data-toggle="tooltip" title="" href="#" data-original-title="<?php echo $tache->parname?>">
-                                <img alt="" class="alligator-profile-likes" src="<?php echo base_url() ?>uploads/avatar/<?php echo $tache->avatar ?>">  
-                           </a> 
-                        </td>
+
                         <td>
                            <ul>
                         <?php foreach ($tache->affections as $affection ) { ?>
@@ -55,7 +59,9 @@
                                <li  class="<?php  if ($affection->status== 1 )  {   ?> badges-success <?php } ?>" > 
                                   <div class="row  ">
                                     <div class="col-md-3">
-                                      <img alt="" class="alligator-profile-likes" src="<?php echo base_url() ?>uploads/avatar/<?php echo $affection->avatar ?>"> 
+                                      <a data-toggle="tooltip" title="" href="#" data-original-title="<?php echo $affection->name  ;  ?>">
+                                      <img alt="" class="alligator-profile-likes" src="<?php echo base_url() ?>uploads/avatar/<?php echo $affection->avatar ?>" style="border-radius: 50%;"> 
+                                       </a> 
                                   </div>
 
                                   <div class="col-md-3  ">
@@ -85,10 +91,15 @@
                            
 
                             <?php }?>      
-                            </ul>                            
-                            <a  class="align-center main-btn" data-toggle="modal" data-target="#addMembersToTask<?php echo $tache->tacheId?>" >
+                            </ul> 
+                            <?php 
+                               if (($role == 1 || $role == 3 || $role == 6  ) &&   $projet->ClubID == $clubID  ){ 
+                                if ( (time()-(60*60*24)) < strtotime($projet->endDate) ){ ?>  
+                                <small>                        
+                            <a  class="align-center main-btn btn-sm" data-toggle="modal" data-target="#addMembersToTask<?php echo $tache->tacheId?>" >
                               <i class="fa fa-user-plus"></i> Ajouter des membres 
-                            </a>
+                            </a></small>  
+                            <?php  } } ?>
                                 <div class="modal fade" id="addMembersToTask<?php echo $tache->tacheId?>">
                                     <div class="modal-dialog ">
                                       <div class="modal-content">

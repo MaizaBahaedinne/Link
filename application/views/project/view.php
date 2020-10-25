@@ -32,7 +32,7 @@
                                                 </ul>
                                             </li>
                                             <?php 
-                                            if (($role == 1 || $role == 3 || $role == 6 ) ){
+                                            if (($role == 1 || $role == 3 || $role == 6 ) && $projet->ClubID == $clubID  ){
                                             if ( (time()-(60*60*24)) > strtotime($projet->endDate) ){ ?>
                                             <li>
                                                 <a href="#" title="Folow us" class="main-btn" data-ripple=""  data-toggle="modal" data-target="#myModal" >Modifier</a>

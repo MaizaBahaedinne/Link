@@ -31,11 +31,7 @@ class Task extends BaseController {
       foreach ($taches as $tache ) {
         $tache->affections= $this->Task_model->AffectationsListing($tache->tacheId);
         $tache->membresDispo =  $this->Task_model-> DisponibleMembreAffected($tache->startedDate,$tache->deadline,$this->clubID); 
-
-         
       }
-
-
        $data["taches"] = $taches;
 
   
@@ -86,7 +82,7 @@ class Task extends BaseController {
 
                 }
 
-  public function affectUser($tacheId)
+              public function affectUser($tacheId)
                 {
                    
           
@@ -110,88 +106,35 @@ class Task extends BaseController {
 
         
 
-                /**
+            /**
              * This function is used to edit the task using taskId
              * @return boolean $b : TRUE / FALSE
              */
-           function editTask($tacheId)
-            {
-   $affections= $this->Task_model->AffectationsListing($tacheId);
-           $membresDispoRow =  $this->Task_model-> DisponibleMembreAffected($this->input->post('startedDate'),$this->input->post('deadline'),$this->clubID);
-$b=false;
-
-    
-$this->global['pageTitle'] = 'Task';
-              $this->loadViews("task/edit", $this->global, $data, NULL);
-
-      
-              foreach ($affections as $aff ) {
-                foreach ($membresDispoRow as $membre ) {
-        if ($membre->userId==$aff->userAffectedID) {
-$b=true;
-break;
-        }
-      
-    if ($membre->userId!=$aff->userAffectedID) {
-$b=false;
-        } 
-           }
-      }
-      if ($b==TRUE){
-                $userAffectatedID  =$this->input->post('userIdAffected');                
-                $affectationInfo = array(        
-                 'tacheId' =>  $tacheId,
-                 //'createdBy' => $this->vendorId  , 
-                 'userAffectatedID' => $userAffectatedID ,
-                 'createdDTM'=> date('Y-m-d H:i:s') 
-                     );
-             
-                
-                $result = $this->Task_model->addAffectation($affectationInfo);
-             
-                }
+                 function editAffect($affectID)
+                  {
+ 
+                        $affectationInfo = array(        
+                              'status' => 1 ,
+                        );
+                        $result = $this->Task_model->editAffect($affectInfo, $affectID);
+                  }
                     
-                
+            /**
+             * This function is used to edit the task using taskId
+             * @return boolean $b : TRUE / FALSE
+             */
+                 function deleteAffect($affectID)
+                  {
+ 
+                       
+                        $result = $this->Task_model->deleteAffect($affectID);
+                  } 
 
    
-              $project=$this->Task_model->projectById($tacheId);
-                     redirect('/Task/tasksListing/'. $project->projectId);
-              
-            }
+                
+                  
+                
         
- function deleteTask($tacheId)
-    {
-            $taskInfo = array('isDeleted'=>1,'updatedBy'=>$this->vendorId, 'updatedDtm'=>date('Y-m-d H:i:s'));
-            
-            if( $this->user_model->deleteUser($tacheId, $taskInfo) ) {  }  
-$project=$this->Task_model->projectById($tacheId);
-                     redirect('/Task/tasksListing/'. $project->projectId);    }
-
-         function editAffect($affectionsId)
-            {
-   $affection1= $this->Task_model->getAffectation($affectionsId);
-
-
-    
-//$this->global['pageTitle'] = 'Task';
-  //            $this->loadViews("task/edit", $this->global, $data, NULL);
-
-  
-                     $status = $this->input->post('status');                
-
-                $affection1 = array(        
-                 'status' => $status ,
-                 
-                 'createdDate'=> date('Y-m-d H:i:s') 
-                     );
-                  $result = $this->Task_model->editAffect($taskInfo,$tacheId);
-                    
-                
-
-   
-              $project=$this->Task_model->projectById($affection1->tacheId);
-                     redirect('/Task/tasksListing/'. $project->projectId);
-              
-            }
+                  
     
 }
