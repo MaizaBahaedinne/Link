@@ -66,14 +66,17 @@
 
                                
                                 if($affection->status == 0 &&  (time()-(60*60*24)) < strtotime($tache->deadline) )  { ?>
-                                  <button class="btn" style="color:orange" > <i class="fa fa-check-square"></i> Valider </button>
+                                  <small>
+                                  <button class="btn btn-warning btn-sm" > <i class="fa fa-check-square"></i> Valider </button>
                                   <?php }elseif ($affection->status== 1 )  {  ?>
-                                  <button class="btn" disabled style="color:green"> <i class="fa fa-check-square"></i> Cloturé </button>
+                                  <button class="btn btn-success btn-sm" disabled > <i class="fa fa-check-square"></i> Cloturé </button>
                                   <?php }elseif ($affection->status== 0 &&  (time()-(60*60*24)) > strtotime($tache->deadline) ) {  ?>
-                                  <button class="btn" disabled style="color:gray"> <i class="fa fa-check-square"></i> Dépassé </button>
-                                  <?php } ?> 
-                                  <br>
-                                 <button class="btn" disabled style="color:red"> <i class="fa fa-minus-square"></i> Supprimer </button>
+                                  <button class="btn btn-sm" disabled style="color:gray"> <i class="fa fa-check-square"></i> Dépassé </button>
+                                  <?php } ?>
+                                  <?php if ((time()-(60*60*24)) < strtotime($tache->deadline) ) {  ?> 
+                                  <button class="btn btn-danger btn-sm"  > <i class="fa fa-minus-square"></i> Supprimer </button>
+                                  <?php } ?>
+                                 </small>
                                 </div>
                                 
                                </li>

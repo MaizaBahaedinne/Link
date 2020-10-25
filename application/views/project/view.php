@@ -30,12 +30,16 @@
                                                     </li>
                                                 </ul>
                                             </li>
+                                            <?php 
+                                            if ($role == 1 || $role == 3 || $role == 6 ){
+                                            if ( (time()-(60*60*24)) < strtotime($projet->endDate) ){ ?>
                                             <li>
                                                 <a href="#" title="Folow us" class="main-btn" data-ripple=""  data-toggle="modal" data-target="#myModal" >Modifier</a>
                                             </li>
                                             <li>
                                                 <a href="<?php echo base_url() ?>Task/tasksListing/<?php echo $projet->projectId ?>"  class="align-right user-ben main-btn " >Liste des taches</a>
                                             </li>
+                                            <?php } } ?>
                                             
                                         </ul>
                                         
