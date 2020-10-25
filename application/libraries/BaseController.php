@@ -231,7 +231,7 @@ class BaseController extends CI_Controller {
         if($this->SA == 1 ){	
         
         $this->send_mail($user->email , 
-        	"Activation" , 
+        	"Activation compte T-Link" , 
         	Null ,  	
         	"Bonjour ".$user->name.",<br> Votre de code d'activation est : <br> <br> <b>".$user->userId."-".$user->clubID."/2020 </b> <br> <br>" ) ;
         	        $this->load->view('includes/header', $headerInfo);
