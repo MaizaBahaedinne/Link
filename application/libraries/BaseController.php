@@ -230,12 +230,12 @@ class BaseController extends CI_Controller {
         if($MyUser["user"]->isDeleted == 3 ){
         if($this->SA == 1 ){	
         
-        $this->send_mail($MyUser->email , 
+        $this->send_mail($MyUse["user"]r->email , 
         	"Activation" , 
         	Null ,  	
-        	"Bonjour ".$MyUser->name.",<br> Votre de code d'activation est : <br> <br> <b>".$MyUser->userId."-".$MyUser->clubID."/2020 </b> <br> <br>" ) ;
+        	"Bonjour ".$MyUser["user"]->name.",<br> Votre de code d'activation est : <br> <br> <b>".$MyUser["user"]->userId."-".$MyUser["user"]->clubID."/2020 </b> <br> <br>" ) ;
         	        $this->load->view('includes/header', $headerInfo);
-        $this->load->view('lancement', $MyUser );
+        $this->load->view('lancement', $MyUser["user"] );
         $this->load->view('includes/footer', $footerInfo);
         }
         else {
