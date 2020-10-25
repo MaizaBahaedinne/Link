@@ -323,7 +323,7 @@
               <script type="text/javascript">
   
                 function onScanSuccess(qrCodeMessage) {
-                    // handle on success condition with the decoded message
+                   alert(qrCodeMessage) ;
                 }
 
                 function onScanError(errorMessage) {
