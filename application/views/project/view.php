@@ -13,6 +13,7 @@
                                     <br>
                                     <div class="row">
                                         <div class="col-lg-7">
+                                             <a style="color: red" >DU <?php echo $projet->startDate ?> AU <?php echo $projet->endDate ?></a><br>
                                              <h4><?php echo $projet->type ?> : <?php echo $projet->titre ?></h4>
                                         </div>
                                         <div class="col-lg-5">
@@ -31,15 +32,16 @@
                                                 </ul>
                                             </li>
                                             <?php 
-                                            if ($role == 1 || $role == 3 || $role == 6 ){
-                                            if ( (time()-(60*60*24)) < strtotime($projet->endDate) ){ ?>
+                                            if (($role == 1 || $role == 3 || $role == 6 ) ){
+                                            if ( (time()-(60*60*24)) > strtotime($projet->endDate) ){ ?>
                                             <li>
                                                 <a href="#" title="Folow us" class="main-btn" data-ripple=""  data-toggle="modal" data-target="#myModal" >Modifier</a>
                                             </li>
+                                            <?php } ?>
                                             <li>
                                                 <a href="<?php echo base_url() ?>Task/tasksListing/<?php echo $projet->projectId ?>"  class="align-right user-ben main-btn " >Liste des taches</a>
                                             </li>
-                                            <?php } } ?>
+                                            <?php  } ?>
                                             
                                         </ul>
                                         
@@ -51,10 +53,21 @@
                             
                         
                             <div class="col-lg-9">
+
                                 <div class="central-meta">
-                                    <span class="create-post">Description <a href="#" title=""></a></span>
+                                    <span class="create-post">Détails <a href="#" title=""></a></span>
+                                    <i class="fa fa-clock-o" aria-hidden="true" ></i> DU <?php echo $projet->startDate ?> AU <?php echo $projet->endDate ?> <br><br>
+                                    <i class="fa fa-users" aria-hidden="true"></i> Participants<br><br>
+                                    <i class="fa fa-globe" aria-hidden="true"></i> <?php echo $projet->type ?> <br><br>
+                                    <i class="fa fa-map-marker" aria-hidden="true"></i> <?php echo $projet->local ?><br><br>
                                     <?php echo $projet->description ?> 
                                 </div><!-- suggested friends -->
+                                <div class="central-meta">
+                                    <span class="create-post">Organisateur <a href="#" title=""></a></span>
+                                    <a href="<?php echo base_url() ?>club/clubInfo/<?php echo $projet->ClubID  ?>"> <?php if ($projet->ClubID > 5 ) {echo "club ";}  echo "Tunivisions ".$projet->ClubName; ?></a>
+                                </div><!-- suggested friends -->
+
+
                                 
                             </div><!-- centerl meta -->
                             <div class="col-lg-3">

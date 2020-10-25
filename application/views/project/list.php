@@ -25,7 +25,10 @@
                                                         </div>
                                                         <div class="col-lg-6 col-md-4 col-sm-4">
                                                             <div class="select-options">
+                                                               <?php 
+                                                              if ($role == 1 || $role == 3 || $role == 6 ) { ?>
                                                                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Ajouter un projet</button>
+                                                                <?php } ?>
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-1 col-md-1 col-sm-1">
@@ -107,7 +110,7 @@
                         </li>
                         <li>
                           <span> 
-                             <a href="<?php echo base_url()?>Club/clubInfo/<?php echo $clubInfo->clubID ?>">
+                            <a  data-toggle="modal" data-target="#tuniFan">
                                 <i class="fa fa-user-plus"></i>Invite
                             </a>
                           </span>

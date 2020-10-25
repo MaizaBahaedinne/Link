@@ -12,6 +12,7 @@
 							<h6 class="widget-title" > Gestion des tache : <?php echo $projet->titre ?>  </h6> 
 							</div>
               <div class="col-md-4">
+
               <a class="align-right main-btn" data-toggle="modal" data-target="#myModal" >Ajouter une tache</a> 
               </div>
               </div>
@@ -94,9 +95,9 @@
 
                                         <!-- Modal Header -->
                                         <div class="modal-header">
-                                          <h4 class="modal-title">Ajouter des membres   </h4>
+                                          <h4 class="modal-title">Ajouter des membres</h4>&nbsp;&nbsp;
 
-                                          <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="un membre peut avoir seulement une tache dans une periode bien déterminer."> 
+                                          <button type="button" class="btn btn-secondary btn-sm" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="un membre peut avoir seulement une tache dans une periode bien déterminer."> 
                                             ?
                                           </button>
                                           <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -119,11 +120,6 @@
                                                     </select>
                                                   </div>
                                                   
-
-
-
-
-
                                                     <br>
                                                    
                                                   <input type="submit" class="btn align-right btn-primary" value="Envoyer" />
@@ -177,33 +173,62 @@
             <!-- Modal body -->
             <div class="modal-body">
                 <?php $this->load->helper("form"); ?>
-                <form role="form"  id="addtask" action="<?php echo base_url() ?>Task/addNewT/<?php echo $projet->projectId ?>" method="post" role="form"  enctype="multipart/form-data">
+                <form role="form"  id="addtask" action="<?php echo base_url() ?>Task/addNewT/<?php echo $projet->projectId ?>" method="post" class="c-form"  enctype="multipart/form-data">
                       
 
                     <label>Titre</label>
-                    <input type="text"  class="form-control " name="titre" >
+
+                        <?php if( (time()-(60*60*24)) < strtotime($projet->endDate)) { ?>
+                          <input type="text"    name="titre" required >
+                        <?php } ?>
+
+                        <?php if( (time()-(60*60*24)) > strtotime($projet->endDate)) { ?>
+                            <select  name="titre" required >
+                                <option value="" ></option>
+                               <option value="  Faire le bilan budgétaire"> Faire le bilan budgétaire </option>
+                               <option value="Analyser les fiches d'évaluation"> Analyser les fiches d'évaluation  </option>
+                               <option value="Faire le bilan de l'événement"> Faire le bilan de l'événement </option>
+                               <option value="Rédiger les actes de l'événement"> Rédiger les actes de l'événement  </option>
+                               <option value="Diffuser les actes de l'événement"> Diffuser les actes de l'événement </option>
+
+                            </select>
+                        <?php } ?>
                     <label>Description</label>
-                  <textarea class="form-control"name="description"row="20">
-                    
-                  </textarea>
+                  <textarea  name="description"row="40" required ></textarea>
                     <br>
                     <div class="row">
-                      <div class="col-md-6">
+                      <div class="col-md-12">
                         <label>type</label>
-                        <input  class="form-control "  name="type">     
+                        <select  name="type" required>
+                          <option value=""></option>
+                          <option value="Evenmentiel">Evenmentiel</option>
+                          <option value="Administrative">Administrative</option>
+                          <option value="Marketing">Marketing</option>
+                          <option value="Ressource humaine">Ressource humaine</option>
+                        </select>     
                       </div>
                       <div class="col-md-6">
                         <label>debut</label>
-                        <input type="datetime-local" class="form-control "  min="<?php echo date('Y-m-d').'T00:00' ?>"  name="startedDate">     
+                        <input type="datetime-local"   min="<?php echo date('Y-m-d').'T00:00' ?>"  required name="startedDate">     
                       </div>
                       <div class="col-md-6">
                         <label>Fin</label>
-                        <input type="datetime-local" class="form-control "  min="<?php echo date('Y-m-d').'T00:00' ?>"  name="deadline">
+                        <input type="datetime-local"  min="<?php echo date('Y-m-d').'T00:00' ?>" required  name="deadline">
                       </div>
                     </div>                
 
                     <br>
-                      <input type="submit" class="btn align-right btn-primary" value="Envoyer" />
+
+
+                                    <hr>
+                        <div class="row">
+                            <div class="col-lg-6">
+                            <input type="submit" class="btn btn-primary" value="Envoyer" />
+                            </div>
+                            <div class="col-lg-6">
+                            <input type="reset" class="btn btn-secondary" value="Reset" />
+                            </div>
+                        </div> 
                     </form>
 
 

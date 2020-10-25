@@ -32,7 +32,7 @@
                                             </div>
                                       <?php } ?>
                               <?php $this->load->helper("form"); ?>
-                    <form role="form"  id="editClub" action="<?php echo base_url() ?>Club/edit/<?php echo $clubInfo->clubID ?>" method="post" role="form"  enctype="multipart/form-data">
+                    <form role="form"  id="editClub" action="<?php echo base_url() ?>Club/edit/<?php echo $clubInfo->clubID ?>" method="post" class="c-form" enctype="multipart/form-data">
                         
 
 
@@ -66,8 +66,17 @@
                             <?php } ?>
                         </select>
 
+
+
+                                    <hr>
+                        <div class="row">
+                            <div class="col-lg-6">
                             <input type="submit" class="btn btn-primary" value="Envoyer" />
-                            <input type="reset" class="btn btn-secondry" value="Reset" />
+                            </div>
+                            <div class="col-lg-6">
+                            <input type="reset" class="btn btn-secondary" value="Annuler" />
+                            </div>
+                        </div> 
                    
                        
                     </form>

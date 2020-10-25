@@ -135,7 +135,7 @@
                                     <form  
                                    
                                     action="<?php echo base_url() ?>User/MAJUser" 
-                                    method="POST" enctype="multipart/form-data"  >
+                                    method="POST" enctype="multipart/form-data" class="c-form"  >
                                     
                                     <label>Photo de profil</label>
                                     <div style="height: 200px">
@@ -158,9 +158,34 @@
                                      <label>Adresse</label>
                                      <input type="text" name="adresse" value="<?php echo $user->adresse ?>" class="form-control" required >
                                      <label>Gouvernourat</label>
-                                     <select  name="gouvernorat" id="gouvernorat" ></select>
-                                     <label>Delegation / cité </label>
-                                     <select  name="delegation" id="delegation"  ></select>
+                                     <select  name="gouvernorat" id="gouvernorat" >
+                                        <option value="Ariana">Ariana</option>
+                                        <option value="Béja">Béja</option>
+                                        <option value="Ben Arous">Ben Arous</option>
+                                        <option value="Bizerte">Bizerte</option>
+                                        <option value="Gabes">Gabès</option>
+                                        <option value="Gafsa">Gafsa</option>
+                                        <option value="Jendouba">Jendouba</option>
+                                        <option value="Kairouan">Kairouan</option>
+                                        <option value="Kasserine">Kasserine</option>
+                                        <option value="Kébili">Kébili</option>
+                                        <option value="Kef">Kef</option>
+                                        <option value="Mahdia">Mahdia</option>
+                                        <option value="Manouba">Manouba</option>
+                                        <option value="Médenine">Médenine</option>
+                                        <option value="Monastir">Monastir</option>
+                                        <option value="Nabeul">Nabeul</option>
+                                        <option value="Sfax">Sfax</option>
+                                        <option value="Sidi Bouzid">Sidi Bouzid</option>
+                                        <option value="Siliana">Siliana</option>
+                                        <option value="Sousse">Sousse</option>
+                                        <option value="Tataouine">Tataouine</option>
+                                        <option value="Tozeur">Tozeur</option>
+                                        <option value="Tunis">Tunis</option>
+                                        <option value="Zaghouan">Zaghouan</option>
+                                     </select>
+                                     <label>code postale</label>
+                                     <input name="delegation" id="delegation" type="number"  ></select>
                                      <hr>
                                      <label>Facebook</label>
                                      <input type="url" name="facebook" value="<?php echo $user->facebook ?>" class="form-control" required >
@@ -177,13 +202,13 @@
                                      <?php if ($user->roleId != 1 ) { ?>
                                      <label>Departement/Unité</label>
                                      <?php if($clubID != 2) { ?>
-                                     <select class="form-control" name="cellule" required>
-                                        <option value=""  ></option>
-                                         <option value="Ressource humaine" >Ressource humaine </option>
-                                         <option value="Marketing" >Marketing </option>
-                                         <option value="Evenmentiel" >Evenmentiel </option>
-                                         <option value="Administration et finance" >Administration et finance </option>
-                                     </select>
+                                         <select class="form-control" name="cellule" required>
+                                            <option value=""  ></option>
+                                             <option value="Ressource humaine" >Ressource humaine </option>
+                                             <option value="Marketing" >Marketing </option>
+                                             <option value="Evenmentiel" >Evenmentiel </option>
+                                             <option value="Administration et finance" >Administration et finance </option>
+                                         </select>
                                      <?php } else { ?>
                                         <select class="form-control"  name="cellule" required>
                                          <option value="" ></option>
@@ -203,7 +228,17 @@
                                      </select>
                                      <?php } }  ?>
                                      <br>
-                                     <input type="submit"  class="btn btn-success" value="Envoyer" >
+
+                                        <hr>
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                            <input type="submit" class="btn btn-primary" value="Envoyer" />
+                                            </div>
+                                            <div class="col-lg-6">
+                                            <input type="reset" class="btn btn-secondary" value="Reset" />
+                                            </div>
+                                        </div>  
+
                                      </form>
                                     </section>
                         
@@ -238,7 +273,7 @@
             if($( "#code" ).val() == '<?php echo $user->userId ;?>-<?php echo $user->clubID ;?>/2020' ){
             $("#video").removeAttr("hidden");
             $("#activation").hide();
-            /*
+            
             var countDownDate = new Date().getTime() + 5 * 60000;
 
                                 // Update the count down every 1 second
@@ -267,7 +302,7 @@
                                   }
                                 }, 1000);
 
-           */
+           
            }
         })
 
