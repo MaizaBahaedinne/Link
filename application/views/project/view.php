@@ -38,10 +38,11 @@
                                                 <a href="#" title="Folow us" class="main-btn" data-ripple=""  data-toggle="modal" data-target="#myModal" >Modifier</a>
                                             </li>
                                             <?php } ?>
+                                            <?php  } ?>
                                             <li>
                                                 <a href="<?php echo base_url() ?>Task/tasksListing/<?php echo $projet->projectId ?>"  class="align-right user-ben main-btn " >Liste des taches</a>
                                             </li>
-                                            <?php  } ?>
+                                            
                                             
                                         </ul>
                                         
