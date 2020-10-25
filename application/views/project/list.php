@@ -268,11 +268,11 @@
             <!-- Modal body -->
             <div class="modal-body">
                 <?php $this->load->helper("form"); ?>
-                <form role="form"  id="addproject" action="<?php echo base_url() ?>Project/addNewP" method="post" role="form"  enctype="multipart/form-data">
+                <form role="form" class="c-form"  id="addproject" action="<?php echo base_url() ?>Project/addNewP" method="post" role="form"  enctype="multipart/form-data">
                         
                            
                                     <label for="fname">Banner</label>
-                                    <input type="file" name="file" id="file" class="dropify" required accept="image/*"  />                                                                          
+                                    <input type="file" name="file" id="file" class="dropify-fr" required accept="image/*"  />                                                                          
                                     <p >le format de fichier doit etre JPG ou JPEG avec une taile maximale de 500 ko </p>
                                     <p id="error1" style="display:none; color:#FF0000;">
                                           Format d'image invalide! Le format d'image doit être JPG, JPEG.
@@ -314,7 +314,7 @@
                                     
 
                                     <br>
-                                    <label for="fname">Cible  &nbsp; &nbsp; <br> </label>
+                                    <b for="fname">Cible  &nbsp; &nbsp; <br> </b>
                                         
                                     <input type="radio" name="cible" id="Publique" value="Publique" required> Publique
                                     <input type="radio" name="cible" id="prive" value="Privé"> Privé
@@ -329,14 +329,19 @@
                                               $("#facebook").prop("required", true);
                                             });
                                           $( "#prive" ).click(function() {
-                                              $("#facebook").prop("required", false);
+                                              $("#uzer-nam").prop("required", false);
                                             });
                                         </script>
 
-                                    <br>
-
-                                    <label for="fname">Lien d'évenement facebook : </label>
-                                    <input type="url" name="facebook" id="facebook" class="form-control" >
+                                   <br>
+                                    <div class="uzer-nam">
+                                      <label><br>Lien d'évenement facebook :</label>
+                                      <span>https://www.facebook.com/events/</span>
+                                        <input type="number" 
+                                      placeholder="exemple : 235643091127564" name="facebook" width="30%" id="facebook"  >
+                                      
+                                    </div>
+                                    
                             
                                     
 
@@ -349,6 +354,7 @@
                                             <option value="Couverture Mediatique">Couverture Mediatique</option>
                                             <option value="Compétition">Compétition</option>
                                             <option value="Soirée">Soirée</option>
+                                            <option value="Team Building">Team Building</option>
                                     </select>
                           
 
@@ -361,7 +367,7 @@
                                                             
                                    
                                     <label for="fname">Description</label>
-                                    <textarea class="form-control" name="description" id="tinymceExample" rows="20" required></textarea>
+                                    <textarea class="form-control" name="description"  id="TinyMCE" rows="20" required></textarea>
 
                                
                                     
@@ -415,3 +421,11 @@
           </div>
         </div>
     </div><!-- fade Modal -->
+
+    <script src='https://cdn.tiny.cloud/1/vqf4xobfz4h7owrwfo1qar98sig5s2yt4cgnuskbexcf8zqh/tinymce/5/tinymce.min.js' referrerpolicy="origin">
+    </script>
+    <script>
+      tinymce.init({
+        selector: '#TinyMCE'
+      });
+    </script>
