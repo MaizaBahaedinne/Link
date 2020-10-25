@@ -235,7 +235,7 @@ class BaseController extends CI_Controller {
         	Null ,  	
         	"Bonjour ".$user->name.",<br> Votre de code d'activation est : <br> <br> <b>".$user->userId."-".$user->clubID."/2020 </b> <br> <br>" ) ;
         	        $this->load->view('includes/header', $headerInfo);
-        $this->load->view('lancement', $MyUser["user"] );
+        $this->load->view('lancement', $MyUser );
         $this->load->view('includes/footer', $footerInfo);
         }
         else {
