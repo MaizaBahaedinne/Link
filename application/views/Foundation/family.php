@@ -7,8 +7,7 @@ font-size:10pt;
 }
 .tree {
 white-space: nowrap;
-min-width: 800px;
-min-height:500px;
+
 }
 .tree ul {
 padding-top: 20px;
