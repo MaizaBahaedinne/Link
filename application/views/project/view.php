@@ -398,7 +398,7 @@
 
 
       <div class="modal fade" id="presence">
-        <div class="modal-dialog modal-sm">
+        <div class="modal-dialog ">
           <div class="modal-content">
 
             <!-- Modal Header -->
