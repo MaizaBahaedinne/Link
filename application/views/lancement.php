@@ -142,7 +142,7 @@
                                     <input type="file" name="fileT"   
                                     class="dropify-fr" 
                                     data-max-file-size="200K"                                      
-                                    id="input-file-events"
+                                    id="input-file-events" required accept="image/*"
                                     >
                                     </div>
                                      <hr>

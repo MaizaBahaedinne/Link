@@ -12,11 +12,11 @@
                                 <div class="profile-section">
                                     <br>
                                     <div class="row">
-                                        <div class="col-lg-7">
+                                        <div class="col-lg-5">
                                              <a style="color: red" >DU <?php echo $projet->startDate ?> AU <?php echo $projet->endDate ?></a><br>
                                              <h4><?php echo $projet->type ?> : <?php echo $projet->titre ?></h4>
                                         </div>
-                                        <div class="col-lg-5">
+                                        <div class="col-lg-7">
                                             <ul class="align-right user-ben">
                                         
                                             <li class="more">
@@ -33,7 +33,7 @@
                                             </li>
                                             <?php 
                                             if ((($role == 1 || $role == 3 || $role == 6 || $role == 7  ) && $projet->ClubID == $clubID  ) || $SA == 1 ){
-                                            if ( (time()-(60*60*24)) > strtotime($projet->endDate) ){ ?>
+                                            if ( (time()-(60*60*24)) < strtotime($projet->startDate) ){ ?>
                                             <li>
                                                 <a href="#" title="Folow us" class="main-btn" data-ripple=""  data-toggle="modal" data-target="#myModal" >Modifier</a>
                                             </li>
