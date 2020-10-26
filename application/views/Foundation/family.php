@@ -120,20 +120,20 @@ The markup will be simple nested lists
 									<li>
 										
 										<a href="#">
-											<img  class="alligator-profile-likes" style="border-radius: 50%;"  src="<?php echo base_url() ?>uploads/avatar/<?php echo $President->avatar ?>" > <b><br><?php echo $President->name ?></b> <br> Président National</a>
+											<img  class="alligator-profile-likes" style="border-radius: 50%;"  src="<?php echo base_url() ?>uploads/avatar/<?php echo $President->avatar ?>" > <b><br><?php echo $President->name ?></b> </a>
 										<ul>
 											<li>
 												<a href="#">
-												<img  class="alligator-profile-likes" style="border-radius: 50%;"  src="<?php echo base_url() ?>uploads/avatar/<?php echo $EM->avatar ?>" ><br> <b><?php echo $EM->name ?></b> <br> Executif Manager</a>
+												<img  class="alligator-profile-likes" style="border-radius: 50%;"  src="<?php echo base_url() ?>uploads/avatar/<?php echo $EM->avatar ?>" ><br> <b><?php echo $EM->name ?></b> r</a>
 												<ul>
 													<li>
 														<a href="#">
-														<img  class="alligator-profile-likes" style="border-radius: 50%;"  src="<?php echo base_url() ?>uploads/avatar/<?php echo $CA->avatar ?>" > <br><b><?php echo $CA->name ?></b> <br> Coordinateur Alumni</a>
+														<img  class="alligator-profile-likes" style="border-radius: 50%;"  src="<?php echo base_url() ?>uploads/avatar/<?php echo $CA->avatar ?>" > <br><b><?php echo $CA->name ?></b></a>
 														<ul>
 															<?php foreach ($CA->managers as $manager ) { ?>
 															<li>
 																<a href="#">
-																<img  class="alligator-profile-likes" style="border-radius: 50%;"  src="<?php echo base_url() ?>uploads/avatar/<?php echo $manager->avatar ?>" > <br><b><?php echo $manager->name ?></b> <br> Manager <?php echo $manager->cellule ?></a>
+																<img  class="alligator-profile-likes" style="border-radius: 50%;"  src="<?php echo base_url() ?>uploads/avatar/<?php echo $manager->avatar ?>" > <br><b><?php echo $manager->name ?></b></a>
 															</li>
 														  <?php } ?>
 														</ul>
@@ -145,19 +145,19 @@ The markup will be simple nested lists
 															<?php foreach ($CU->managers as $manager ) { ?>
 															<li>
 																<a href="#">
-																<img  class="alligator-profile-likes" style="border-radius: 50%;"  src="<?php echo base_url() ?>uploads/avatar/<?php echo $manager->avatar ?>" > <br><b><?php echo $manager->name ?></b> <br> Manager <?php echo $manager->cellule ?></a>
+																<img  class="alligator-profile-likes" style="border-radius: 50%;"  src="<?php echo base_url() ?>uploads/avatar/<?php echo $manager->avatar ?>" > <br><b><?php echo $manager->name ?></b></a>
 															</li>
 														  <?php } ?>
 														</ul>
 													</li>
 													<li>
 														<a href="#">
-														<img  class="alligator-profile-likes"  style="border-radius: 50%;" src="<?php echo base_url() ?>uploads/avatar/<?php echo $CH->avatar ?>" > <br><b><?php echo $CH->name ?></b> <br> Coordinateur High School</a>
+														<img  class="alligator-profile-likes"  style="border-radius: 50%;" src="<?php echo base_url() ?>uploads/avatar/<?php echo $CH->avatar ?>" > <br><b><?php echo $CH->name ?></b> </a>
 														<ul>
 															<?php foreach ($CH->managers as $manager ) { ?>
 															<li>
 																<a href="#">
-																<img  class="alligator-profile-likes" style="border-radius: 50%;"  src="<?php echo base_url() ?>uploads/avatar/<?php echo $manager->avatar ?>" > <br><b><?php echo $manager->name ?></b> <br> Manager <?php echo $manager->cellule ?></a>
+																<img  class="alligator-profile-likes" style="border-radius: 50%;"  src="<?php echo base_url() ?>uploads/avatar/<?php echo $manager->avatar ?>" > <br><b><?php echo $manager->name ?></b></a>
 															</li>
 														  <?php } ?>
 														</ul>
