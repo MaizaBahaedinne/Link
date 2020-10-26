@@ -53,7 +53,7 @@ class Club extends BaseController {
 		                $data["EM"] 	=  	$this->user_model->getMemberByRoleAndCelulle(-1 , 10 , '' ) ;
 		                $data["CU"] 	=  	$this->user_model->getMemberByRoleAndCelulle(0 , 2 , '' ) ;
 		                $data["CH"] 	=  	$this->user_model->getMemberByRoleAndCelulle(1 , 2 , '' ) ;
-		                $data["A"] 	=  	$this->user_model->getMemberByRoleAndCelulle(2 , 2 , '' ) ;
+		                $data["CA"] 	=  	$this->user_model->getMemberByRoleAndCelulle(2 , 2 , '' ) ;
 
  		                $this->global['pageTitle'] = 'Clubs';
 		             	$this->global['active'] = 'Clubs';
