@@ -132,7 +132,7 @@ class Project extends BaseController {
                                      $projectId =>    $projectId ,
                                      $createdDTM   => date('Y-m-d H:i:s') , 
                                      $ValidDTM   => date('Y-m-d H:i:s') ,
-                                     $userId => $this->vendor ; 
+                                     $userId => $this->vendor , 
                                      $statut => 0 
                                 ); 
 
