@@ -450,6 +450,8 @@
                     <li>5 - Scanner le code  </li>
                 </ul>
 
+                <p>Les Tunimateurs partants des autres club peuvent scanner se code pour avoir des bonus</p>
+
 
 
 
