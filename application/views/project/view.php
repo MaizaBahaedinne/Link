@@ -204,7 +204,7 @@
                                     type="file" 
                                     name="file" id="file" 
                                     class="dropify-fr"  
-                                    data-default-file = "<?php echo base_url() ?>uploads/project/<?php echo $projet->banner ?>"
+                                    data-default-file = "<?php echo base_url() ?>uploads/projet/<?php echo $projet->banner ?>"
                                     required accept="image/*"  />                                                                          
                                     <p >le format de fichier doit etre JPG ou JPEG avec une taile maximale de 500 ko </p>
                                     <p id="error1" style="display:none; color:#FF0000;">
