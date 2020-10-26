@@ -182,6 +182,7 @@ The markup will be simple nested lists
 								<br><?php echo $CA->name ?>
 								</span></div>
 
+								<ul>	
 								<?php foreach ($CA->managers as $manager ) { ?> 
 								<li>
 								<div>
@@ -192,7 +193,9 @@ The markup will be simple nested lists
 								<br><?php echo $manager->name ?>
 								</span></div>
 								</li>
-								}?> 
+								<?php  } ?>
+								</ul>
+
 								</li>
 
 
@@ -204,6 +207,7 @@ The markup will be simple nested lists
 										</a>
 								<br><?php echo $CU->name ?>
 								</span></div>
+								<ul>
 								<?php foreach ($CU->managers as $manager ) { ?> 
 								<li>
 								<div>
@@ -214,7 +218,8 @@ The markup will be simple nested lists
 								<br><?php echo $manager->name ?>
 								</span></div>
 								</li>
-								}?>
+								<?php } ?>
+								</ul>
 								</li>
 
 								<li>
@@ -236,7 +241,7 @@ The markup will be simple nested lists
 								<br><?php echo $manager->name ?>
 								</span></div>
 								</li>
-								}?> 
+								<?php } ?> 
 								</ul>
 								</li>
 								 
