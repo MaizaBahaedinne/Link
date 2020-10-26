@@ -11,7 +11,7 @@
 }
 
 .tree li {
-	float: left; text-align: center;
+	float: center; text-align: center;
 	list-style-type: none;
 	position: relative;
 	padding: 20px 5px 0 5px;
@@ -120,44 +120,44 @@ The markup will be simple nested lists
 									<li>
 										
 										<a href="#">
-											<img  class="alligator-profile-likes" style="border-radius: 50%;"  src="<?php echo base_url() ?>uploads/avatar/<?php echo $President->avatar ?>" > <b><br><?php echo $President->name ?></b> </a>
+											<img  class="alligator-profile-likes" style="border-radius: 50%;"  src="<?php echo base_url() ?>uploads/avatar/<?php echo $President->avatar ?>" ></a>
 										<ul>
 											<li>
 												<a href="#">
-												<img  class="alligator-profile-likes" style="border-radius: 50%;"  src="<?php echo base_url() ?>uploads/avatar/<?php echo $EM->avatar ?>" ><br> <b><?php echo $EM->name ?></b> r</a>
+												<img  class="alligator-profile-likes" style="border-radius: 50%;"  src="<?php echo base_url() ?>uploads/avatar/<?php echo $EM->avatar ?>" ></a>
 												<ul>
 													<li>
 														<a href="#">
-														<img  class="alligator-profile-likes" style="border-radius: 50%;"  src="<?php echo base_url() ?>uploads/avatar/<?php echo $CA->avatar ?>" > <br><b><?php echo $CA->name ?></b></a>
+														<img  class="alligator-profile-likes" style="border-radius: 50%;"  src="<?php echo base_url() ?>uploads/avatar/<?php echo $CA->avatar ?>" ></a>
 														<ul>
 															<?php foreach ($CA->managers as $manager ) { ?>
 															<li>
 																<a href="#">
-																<img  class="alligator-profile-likes" style="border-radius: 50%;"  src="<?php echo base_url() ?>uploads/avatar/<?php echo $manager->avatar ?>" > <br><b><?php echo $manager->name ?></b></a>
+																<img  class="alligator-profile-likes" style="border-radius: 50%;"  src="<?php echo base_url() ?>uploads/avatar/<?php echo $manager->avatar ?>" ></a>
 															</li>
 														  <?php } ?>
 														</ul>
 													</li>
 													<li>
 														<a href="#">
-														<img  class="alligator-profile-likes" style="border-radius: 50%;" src="<?php echo base_url() ?>uploads/avatar/<?php echo $CU->avatar ?>" ><br><b><?php echo $CU->name ?></b> <br> Coordinateur University</a>
+														<img  class="alligator-profile-likes" style="border-radius: 50%;" src="<?php echo base_url() ?>uploads/avatar/<?php echo $CU->avatar ?>" ><br></a>
 														<ul>
 															<?php foreach ($CU->managers as $manager ) { ?>
 															<li>
 																<a href="#">
-																<img  class="alligator-profile-likes" style="border-radius: 50%;"  src="<?php echo base_url() ?>uploads/avatar/<?php echo $manager->avatar ?>" > <br><b><?php echo $manager->name ?></b></a>
+																<img  class="alligator-profile-likes" style="border-radius: 50%;"  src="<?php echo base_url() ?>uploads/avatar/<?php echo $manager->avatar ?>" > </a>
 															</li>
 														  <?php } ?>
 														</ul>
 													</li>
 													<li>
 														<a href="#">
-														<img  class="alligator-profile-likes"  style="border-radius: 50%;" src="<?php echo base_url() ?>uploads/avatar/<?php echo $CH->avatar ?>" > <br><b><?php echo $CH->name ?></b> </a>
+														<img  class="alligator-profile-likes"  style="border-radius: 50%;" src="<?php echo base_url() ?>uploads/avatar/<?php echo $CH->avatar ?>" ></a>
 														<ul>
 															<?php foreach ($CH->managers as $manager ) { ?>
 															<li>
 																<a href="#">
-																<img  class="alligator-profile-likes" style="border-radius: 50%;"  src="<?php echo base_url() ?>uploads/avatar/<?php echo $manager->avatar ?>" > <br><b><?php echo $manager->name ?></b></a>
+																<img  class="alligator-profile-likes" style="border-radius: 50%;"  src="<?php echo base_url() ?>uploads/avatar/<?php echo $manager->avatar ?>" ></a>
 															</li>
 														  <?php } ?>
 														</ul>
