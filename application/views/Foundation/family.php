@@ -159,7 +159,7 @@ The markup will be simple nested lists
 								</span></div>
 								</li>
 								 
-								 
+								<ul> 
 								<li>
 								<div>
 								<span class="male">
@@ -190,7 +190,7 @@ The markup will be simple nested lists
 									<a href="#">
 											<img class="alligator-profile-likes" style="border-radius: 50%;" src="<?php echo base_url() ?>uploads/avatar/<?php echo $manager->avatar ?>">
 										</a>
-								<br><?php echo $manager->name ?>
+								<br>
 								</span></div>
 								</li>
 								<?php  } ?>
@@ -215,7 +215,7 @@ The markup will be simple nested lists
 									<a href="#">
 											<img class="alligator-profile-likes" style="border-radius: 50%;" src="<?php echo base_url() ?>uploads/avatar/<?php echo $manager->avatar ?>">
 										</a>
-								<br><?php echo $manager->name ?>
+								<br>
 								</span></div>
 								</li>
 								<?php } ?>
@@ -238,7 +238,7 @@ The markup will be simple nested lists
 									<a href="#">
 											<img class="alligator-profile-likes" style="border-radius: 50%;" src="<?php echo base_url() ?>uploads/avatar/<?php echo $manager->avatar ?>">
 										</a>
-								<br><?php echo $manager->name ?>
+								<br>
 								</span></div>
 								</li>
 								<?php } ?> 
@@ -246,6 +246,8 @@ The markup will be simple nested lists
 								</li>
 								 
 								</ul>
+								</ul>
+
 								</li>
 								</ul>
 								 
