@@ -120,23 +120,23 @@ The markup will be simple nested lists
 									<li>
 										
 										<a href="#">
-											<img  class="alligator-profile-likes" style="border-radius: 50%;"  src="<?php echo base_url() ?>uploads/avatar/<?php echo $President->avatar ?>" > <br> Président</a>
+											<img  class="alligator-profile-likes" style="border-radius: 50%;"  src="<?php echo base_url() ?>uploads/avatar/<?php echo $President->avatar ?>" > <b><?php echo $President->name ?></b> <br> Président National</a>
 										<ul>
 											<li>
 												<a href="#">
-												<img  class="alligator-profile-likes" style="border-radius: 50%;"  src="<?php echo base_url() ?>uploads/avatar/<?php echo $EM->avatar ?>" > <br> Executif Manager</a>
+												<img  class="alligator-profile-likes" style="border-radius: 50%;"  src="<?php echo base_url() ?>uploads/avatar/<?php echo $EM->avatar ?>" > <b><?php echo $EM->name ?></b> <br> Executif Manager</a>
 												<ul>
 													<li>
 														<a href="#">
-														<img  class="alligator-profile-likes" style="border-radius: 50%;"  src="<?php echo base_url() ?>uploads/avatar/<?php echo $CA->avatar ?>" > <br> Coordinateur Alumni</a>
+														<img  class="alligator-profile-likes" style="border-radius: 50%;"  src="<?php echo base_url() ?>uploads/avatar/<?php echo $CA->avatar ?>" > <br><b><?php echo $CA->name ?></b> <br> Coordinateur Alumni</a>
 													</li>
 													<li>
 														<a href="#">
-														<img  class="alligator-profile-likes" style="border-radius: 50%;" src="<?php echo base_url() ?>uploads/avatar/<?php echo $CU->avatar ?>" > <br> Coordinateur University</a>
+														<img  class="alligator-profile-likes" style="border-radius: 50%;" src="<?php echo base_url() ?>uploads/avatar/<?php echo $CU->avatar ?>" ><b><?php echo $CU->name ?></b> <br> Coordinateur University</a>
 													</li>
 													<li>
 														<a href="#">
-														<img  class="alligator-profile-likes"  style="border-radius: 50%;" src="<?php echo base_url() ?>uploads/avatar/<?php echo $CH->avatar ?>" > <br> Coordinateur High School</a>
+														<img  class="alligator-profile-likes"  style="border-radius: 50%;" src="<?php echo base_url() ?>uploads/avatar/<?php echo $CH->avatar ?>" > <b><?php echo $CH->name ?></b> <br> Coordinateur High School</a>
 													</li>
 												</ul>
 											</li>
