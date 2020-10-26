@@ -25,7 +25,7 @@ class Project extends BaseController {
                                  $data['projectRecords'] = $this->project_model->projectListing();
                                  $data["clubInfo"] = $this->club_model->getClubInfo($this->clubID);
                                  $data["members"] = $this->user_model->userListingByclub($this->clubID) ;
-                                 $data["Projets"] = $this->project_model->projectListingOldNew();
+                                
                           $this->global['pageTitle'] = 'Projets ';
 		                  $this->global['active'] = 'Projets';
 		                $this->loadViews("project/list", $this->global, $data, NULL);   
