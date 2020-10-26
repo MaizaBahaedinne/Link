@@ -31,6 +31,7 @@ class Task_model extends CI_Model
               $this->db->join('tbl_project as proj', 'proj.projectId = BaseTbl.projectId', 'LEFT');
               $this->db->join('tbl_users as user', 'user.userId = BaseTbl.par', 'LEFT');
       $this->db->where('BaseTbl.projectId = ', $projectId);
+      $this->db->where('user.isDeleted = ', 0 );
 
        $query = $this->db->get();
        $result = $query->result();        
@@ -43,6 +44,7 @@ class Task_model extends CI_Model
         $this->db->from('tbl_affectation as BaseTbl');
         $this->db->join('tbl_users as user', 'user.userId = BaseTbl.userAffectatedID', 'LEFT');
         $this->db->where('BaseTbl.tacheId = ', $tacheId);
+        $this->db->where('user.isDeleted = ', 0 );
 
        $query = $this->db->get();
        $result = $query->result();        
@@ -57,23 +59,14 @@ class Task_model extends CI_Model
         $this->db->join('tbl_task as tasks ', 'tasks.tacheId = BaseTbl.tacheId', 'LEFT');
         $this->db->where('BaseTbl.userAffectatedID = ', $userId);
 
-       $query = $this->db->get();
-       $result = $query->result();        
-       return $result;
-   }
-
-     function DisponibleMembreListing()
-    {
-        $this->db->select('BaseTbl.userId , BaseTbl.name  ');
-        $this->db->from('tbl_users as BaseTbl');
-
 
 
        $query = $this->db->get();
        $result = $query->result();        
        return $result;
-   
    }
+
+
     function addAffectation($affectationInfo)
     {
         $this->db->trans_start();
@@ -83,11 +76,11 @@ class Task_model extends CI_Model
         return $insert_id;
     }
     function projectById($tacheId)
-{ $this->db->select('BaseTbl.projectId');
-       $this->db->from('tbl_task as BaseTbl');
- $query = $this->db->get();
-       $result = $query->row();        
-       return $result;
+        { $this->db->select('BaseTbl.projectId');
+               $this->db->from('tbl_task as BaseTbl');
+         $query = $this->db->get();
+               $result = $query->row();        
+               return $result;
    
 }
     function affectationListing($tacheId)
@@ -98,6 +91,7 @@ class Task_model extends CI_Model
               $this->db->join('tbl_task as t', 't.tacheId = BaseTbl.tacheId', 'LEFT');
               $this->db->join('tbl_users as user', 'user.userId = BaseTbl.userAffectedID', 'LEFT');
       $this->db->where('BaseTbl.tacheId = ', $tacheId);
+      $this->db->where('user.isDeleted = ', 0 );
 
        $query = $this->db->get();
        $result = $query->result();        
@@ -123,6 +117,7 @@ class Task_model extends CI_Model
           $this->db->join('tbl_affectation as BaseTbl', 'BaseTbl.userAffectatedID = us.userId', 'right');
           $this->db->join('tbl_task as t', 't.tacheId = BaseTbl.tacheId', 'right');
           $this->db->where('us.ClubID = ',$clubID);
+          $this->db->where('us.isDeleted = ', 0 );
           $this->db->where('t.startedDate < ',$deadline);
           $this->db->where('t.deadline > ',$dateStart);
           $tab = $this->db->get();

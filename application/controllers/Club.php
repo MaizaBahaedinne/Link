@@ -46,6 +46,27 @@ class Club extends BaseController {
 		        }
 
 
+		        		public function Hierarchy ()
+		        {
+		                
+		            
+		                
+
+
+		                $data["President"]  	=  	$this->user_model->getMemberByRoleAndCelulle(-1 , 1 , '' ) ;
+		                $data["EM"] 	=  	$this->user_model->getMemberByRoleAndCelulle(-1 , 10 , '' ) ;
+		                $data["CU"] 	=  	$this->user_model->getMemberByRoleAndCelulle(0 , 10 , '' ) ;
+		                $data["CH"] 	=  	$this->user_model->getMemberByRoleAndCelulle(1 , 2 , '' ) ;
+		                $data["A"] 	=  	$this->user_model->getMemberByRoleAndCelulle(2 , 10 , '' ) ;
+
+						
+		                echo ( $data["President"] );
+ 		                $this->global['pageTitle'] = 'Clubs';
+		             	$this->global['active'] = 'Clubs';
+		               $this->loadViews("Foundation/family", $this->global, $data, NULL);   
+						
+		        }
+
 
 			public function clubInfo($clubId)
 		        {
