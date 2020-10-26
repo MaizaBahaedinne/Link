@@ -267,7 +267,7 @@
                                       <label><br>Lien d'évenement facebook :</label>
                                       <span>https://www.facebook.com/events/</span>
                                         <input type="number" 
-                                         placeholder="exemple : 235643091127564" name="facebook" width="30%" id="facebook" value="<?php echo $projet->facebook ?> "   >
+                                         placeholder="exemple : 235643091127564" name="facebook" width="30%" id="facebook" value="<?php echo $projet->eventFB ?> "   >
                                       
                                     </div>
                                     
