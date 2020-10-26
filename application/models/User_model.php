@@ -120,7 +120,7 @@ class User_model extends CI_Model
         {
             $this->db->select('*');
             $this->db->from('tbl_users');
-            $this->db->where('roleId =', 6 );
+            $this->db->where('roleId =', 7 );
             $this->db->where('ClubID =', $ClubID );
             $query = $this->db->get();         
             return $query->result();
