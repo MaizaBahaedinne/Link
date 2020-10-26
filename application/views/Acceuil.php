@@ -25,7 +25,7 @@
                         </li>
                         <li>
                           <span> 
-                             <a  data-toggle="modal" data-target="#tuniFan">
+                             <a  data-toggle="modal" data-target="#TuniFan">
                                 <i class="fa fa-user-plus"></i>Invite
                             </a>
                           </span>

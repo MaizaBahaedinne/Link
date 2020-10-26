@@ -277,20 +277,20 @@
                     height : 350
                   });
 
-                  function makeCode () {    
+                  function makeCode1 () {    
 
                     qrcode.makeCode("<?php echo base_url() ;?>Register?var1=<?php echo $uid ?>&var4=<?php echo  Date('Y-m-d') ?>&var2=<?php echo $clubID ?>&var3=1");
                   }
 
-                  makeCode();
+                  makeCode1();
 
                   $("#text").
                     on("blur", function () {
-                      makeCode();
+                      makeCode1();
                     }).
                     on("keydown", function (e) {
                       if (e.keyCode == 13) {
-                        makeCode();
+                        makeCode1();
                       }
                     });
                 </script>
