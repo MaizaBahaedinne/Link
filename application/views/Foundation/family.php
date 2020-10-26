@@ -120,13 +120,22 @@ The markup will be simple nested lists
 									<li>
 										
 										<a href="#">
-											<img  src="<?php echo base_url() ?>uploads/avatar/<?php echo $President->avatar ?>" > Président</a>
+											<img  class="alligator-profile-likes"  src="<?php echo base_url() ?>uploads/avatar/<?php echo $President->avatar ?>" > <br> Président</a>
 										<ul>
 											<li>
-												<a href="#">Child</a>
+												<img  class="alligator-profile-likes"  src="<?php echo base_url() ?>uploads/avatar/<?php echo $EM->avatar ?>" > <br> Executif Manager</a>
 												<ul>
 													<li>
-														<a href="#">Grand Child</a>
+														<a href="#">
+														<img  class="alligator-profile-likes"  src="<?php echo base_url() ?>uploads/avatar/<?php echo $CA->avatar ?>" > <br> Coordinateur Alumni</a>
+													</li>
+													<li>
+														<a href="#">
+														<img  class="alligator-profile-likes"  src="<?php echo base_url() ?>uploads/avatar/<?php echo $CA->avatar ?>" > <br> Coordinateur University</a>
+													</li>
+													<li>
+														<a href="#">
+														<img  class="alligator-profile-likes"  src="<?php echo base_url() ?>uploads/avatar/<?php echo $CA->avatar ?>" > <br> Coordinateur High School</a>
 													</li>
 												</ul>
 											</li>
