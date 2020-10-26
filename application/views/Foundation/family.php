@@ -181,6 +181,18 @@ The markup will be simple nested lists
 										</a>
 								<br><?php echo $CA->name ?>
 								</span></div>
+
+								<?php foreach ($CA->managers as $manager ) { ?> 
+								<li>
+								<div>
+								<span class="male">
+									<a href="#">
+											<img class="alligator-profile-likes" style="border-radius: 50%;" src="<?php echo base_url() ?>uploads/avatar/<?php echo $manager->avatar ?>">
+										</a>
+								<br><?php echo $manager->name ?>
+								</span></div>
+								</li>
+								}?> 
 								</li>
 
 
@@ -192,6 +204,17 @@ The markup will be simple nested lists
 										</a>
 								<br><?php echo $CU->name ?>
 								</span></div>
+								<?php foreach ($CU->managers as $manager ) { ?> 
+								<li>
+								<div>
+								<span class="male">
+									<a href="#">
+											<img class="alligator-profile-likes" style="border-radius: 50%;" src="<?php echo base_url() ?>uploads/avatar/<?php echo $manager->avatar ?>">
+										</a>
+								<br><?php echo $manager->name ?>
+								</span></div>
+								</li>
+								}?>
 								</li>
 
 								<li>
@@ -202,6 +225,19 @@ The markup will be simple nested lists
 										</a>
 								<br><?php echo $CH->name ?>
 								</span></div>
+								<ul>
+								<?php foreach ($CH->managers as $manager ) { ?> 
+								<li>
+								<div>
+								<span class="male">
+									<a href="#">
+											<img class="alligator-profile-likes" style="border-radius: 50%;" src="<?php echo base_url() ?>uploads/avatar/<?php echo $manager->avatar ?>">
+										</a>
+								<br><?php echo $manager->name ?>
+								</span></div>
+								</li>
+								}?> 
+								</ul>
 								</li>
 								 
 								</ul>
