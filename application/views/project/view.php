@@ -436,7 +436,7 @@
                     });
                 </script>
                 <?php } ?>
-                <p>Ce code reste valable jusqu'à <?php date($projet->endDate , strtotime('+6 hours')) ?> </p>
+                <p>Ce code reste valable de  <?php echo date($projet->startDate) ?> jusqu'à <?php echo date($projet->endDate , strtotime('+6 hours')) ?> </p>
 
                 <br>
                 <p>Pour valider votre participation merci de faire les étaps suivantes : </p>
