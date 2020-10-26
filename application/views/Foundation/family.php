@@ -131,11 +131,11 @@ The markup will be simple nested lists
 													</li>
 													<li>
 														<a href="#">
-														<img  class="alligator-profile-likes"  src="<?php echo base_url() ?>uploads/avatar/<?php echo $CA->avatar ?>" > <br> Coordinateur University</a>
+														<img  class="alligator-profile-likes"  src="<?php echo base_url() ?>uploads/avatar/<?php echo $CU->avatar ?>" > <br> Coordinateur University</a>
 													</li>
 													<li>
 														<a href="#">
-														<img  class="alligator-profile-likes"  src="<?php echo base_url() ?>uploads/avatar/<?php echo $CA->avatar ?>" > <br> Coordinateur High School</a>
+														<img  class="alligator-profile-likes"  src="<?php echo base_url() ?>uploads/avatar/<?php echo $CH->avatar ?>" > <br> Coordinateur High School</a>
 													</li>
 												</ul>
 											</li>
