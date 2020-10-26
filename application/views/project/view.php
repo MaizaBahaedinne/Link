@@ -410,7 +410,9 @@
             <!-- Modal body -->
             <div class="modal-body">
               <h5>Patager ce code avec les tunimateurs partants</h5>
-              <?php if ( (time()-(60*60*24)) < strtotime($projet->startDate) && (time()-(60*60*24)) < date($projet->deadline , strtotime('+6 hours'))  ){ ?>
+              <?php 
+              if ( (time()-(60*60*24)) > strtotime($projet->startDate) 
+                && (time()-(60*60*24)) < strtotime(date($projet->deadline , strtotime('+6 hours')))   ){ ?>
               <div id="qrcode" style="align-content: center ; vertical-align: center"></div>
               <script type="text/javascript">
                   var qrcode = new QRCode(document.getElementById("qrcode"), {
