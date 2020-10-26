@@ -136,7 +136,7 @@ The markup will be simple nested lists
 													</li>
 													<li>
 														<a href="#">
-														<img  class="alligator-profile-likes" style="border-radius: 50%;" src="<?php echo base_url() ?>uploads/avatar/<?php echo $CU->avatar ?>" ><br></a>
+														<img  class="alligator-profile-likes" style="border-radius: 50%;" src="<?php echo base_url() ?>uploads/avatar/<?php echo $CU->avatar ?>" ></a>
 														<ul>
 															
 														</ul>
