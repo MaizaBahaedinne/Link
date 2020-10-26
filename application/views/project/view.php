@@ -413,9 +413,9 @@
               <?php 
               if ( (time()-(60*60*24)) > strtotime($projet->startDate) 
                 && (time()-(60*60*24)) < strtotime(date($projet->endDate , strtotime('+6 hours')))   ){ ?>
-              <div id="qrcode" style="align-content: center ; vertical-align: center"></div>
+              <div id="qrcode1" style="align-content: center ; vertical-align: center"></div>
               <script type="text/javascript">
-                  var qrcode = new QRCode(document.getElementById("qrcode"), {
+                  var qrcode = new QRCode(document.getElementById("qrcode1"), {
                     width : 350,
                     height : 350
                   });
