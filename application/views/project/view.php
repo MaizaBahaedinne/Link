@@ -441,8 +441,8 @@
                 <br>
                 <p>Pour valider votre participation merci de faire les étaps suivantes : </p>
                 <ul>
-                    <li>1 - Se connecter avec le compte T-Link </li>
-                    <li>2 - Cliquer sur le button <i class="fa fa-sliders" ></i> n haut à gauche</li>
+                    <li>1 - Se connecter avec votre compte sur <a href="<?php echo base_url() ?>" >Tunivisions.link</a> </li>
+                    <li>2 - Cliquer sur <i class="fa fa-sliders" ></i> en haut à droit</li>
                     <li>3 - selectioner "Scanner QR" </li>
                     <li>4 - Donner la permission au navigateur d'utiliser la camera </li>
                     <li>5 - Scanner le code  </li>
