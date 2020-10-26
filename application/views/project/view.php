@@ -37,11 +37,11 @@
                                             <li>
                                                 <a href="#" title="Folow us" class="main-btn" data-ripple=""  data-toggle="modal" data-target="#myModal" >Modifier</a>
                                             </li>
-                                            <?php if ( (time()-(60*60*24)) < strtotime($projet->start) && (time()-(60*60*24)) < date($projet->deadline , strtotime('+6 hours'))  ){ ?>
+                                            
                                             <li>
                                                 <a href="#" title="Folow us" class="main-btn" data-ripple=""  data-toggle="modal" data-target="#presence" >Présence</a>
                                             </li>
-                                            <?php } ?>
+                                           
                                             <?php } ?>
                                             <?php  } ?>
                                             <li>
@@ -412,6 +412,7 @@
             <!-- Modal body -->
             <div class="modal-body">
               <h5>Patager ce code avec les tunimateurs partants</h5>
+              <?php if ( (time()-(60*60*24)) < strtotime($projet->start) && (time()-(60*60*24)) < date($projet->deadline , strtotime('+6 hours'))  ){ ?>
               <div id="qrcode" style="align-content: center ; vertical-align: center"></div>
               <script type="text/javascript">
                   var qrcode = new QRCode(document.getElementById("qrcode"), {
@@ -436,7 +437,7 @@
                       }
                     });
                 </script>
-
+                <?php } ?>
                 <p>Ce code reste valable jusqu'à <?php date($projet->deadline , strtotime('+6 hours')) ?> </p>
 
                 <br>
