@@ -200,7 +200,11 @@
                         
                            
                                     <label for="fname">Banner</label>
-                                    <input type="file" name="file" id="file" class="dropify-fr" 
+                                    <input 
+                                    type="file" 
+                                    name="file" id="file" 
+                                    class="dropify-fr"  
+                                    data-default-file = "<?php echo base_url() ?>uploads/project/?php echo $projet->banner ?>"
                                     required accept="image/*"  />                                                                          
                                     <p >le format de fichier doit etre JPG ou JPEG avec une taile maximale de 500 ko </p>
                                     <p id="error1" style="display:none; color:#FF0000;">
@@ -267,7 +271,7 @@
                                       <label><br>Lien d'évenement facebook :</label>
                                       <span>https://www.facebook.com/events/</span>
                                         <input type="number" 
-                                         placeholder="exemple : 235643091127564" name="facebook" width="30%" id="facebook" value="<?php echo $projet->eventFB ?> "   >
+                                         placeholder="exemple : 235643091127564" name="facebook" width="30%" id="facebook" value="<?php echo $projet->eventFB ?>"   >
                                       
                                     </div>
                                     
@@ -302,13 +306,16 @@
                                     
 
                                     <label for="fname">Date debut</label>
-                                        <!-- min="<?php echo date('Y-m-d').'T00:00' ?>" -->
-                                    <input type="datetime-local" class="form-control "  min="<?php echo date('Y-m-d').'T00:00' ?>" value="<?php echo $projet->startDate ?>"    id="debut" name="debut"  required >
+                                        
+                                    <input type="datetime-local" class="form-control "  
+                                    min="<?php echo date('Y-m-d').'T00:00' ?>" 
+                                    value="<?php echo $projet->startDate ?>"    
+                                    id="debut" name="debut"  required >
  
 
                               
                                     <label for="fname">Date fin</label>
-                                        <!-- min="<?php echo date('Y-m-d').'T00:00' ?>" -->
+                                        
                                     <input type="datetime-local" class="form-control"  min="<?php echo date('Y-m-d').'T00:00' ?>"   id="fin" value="<?php echo $projet->endDate ?>"  name="fin"  required >
 
                             
