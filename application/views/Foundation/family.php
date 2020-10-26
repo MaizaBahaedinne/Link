@@ -138,24 +138,14 @@ The markup will be simple nested lists
 														<a href="#">
 														<img  class="alligator-profile-likes" style="border-radius: 50%;" src="<?php echo base_url() ?>uploads/avatar/<?php echo $CU->avatar ?>" ><br></a>
 														<ul>
-															<?php foreach ($CU->managers as $manager ) { ?>
-															<li>
-																<a href="#">
-																<img  class="alligator-profile-likes" style="border-radius: 50%;"  src="<?php echo base_url() ?>uploads/avatar/<?php echo $manager->avatar ?>" > </a>
-															</li>
-														  <?php } ?>
+															
 														</ul>
 													</li>
 													<li>
 														<a href="#">
 														<img  class="alligator-profile-likes"  style="border-radius: 50%;" src="<?php echo base_url() ?>uploads/avatar/<?php echo $CH->avatar ?>" ></a>
 														<ul>
-															<?php foreach ($CH->managers as $manager ) { ?>
-															<li>
-																<a href="#">
-																<img  class="alligator-profile-likes" style="border-radius: 50%;"  src="<?php echo base_url() ?>uploads/avatar/<?php echo $manager->avatar ?>" ></a>
-															</li>
-														  <?php } ?>
+															
 														</ul>
 													</li>
 												</ul>
