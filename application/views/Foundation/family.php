@@ -120,46 +120,27 @@ The markup will be simple nested lists
 									<li>
 										
 										<a href="#">
-											<img  class="alligator-profile-likes"  src="<?php echo base_url() ?>uploads/avatar/<?php echo $President->avatar ?>" > <br> Président</a>
+											<img  class="alligator-profile-likes" style="border-radius: 50%;"  src="<?php echo base_url() ?>uploads/avatar/<?php echo $President->avatar ?>" > <br> Président</a>
 										<ul>
 											<li>
-												<img  class="alligator-profile-likes"  src="<?php echo base_url() ?>uploads/avatar/<?php echo $EM->avatar ?>" > <br> Executif Manager</a>
+												<a href="#">
+												<img  class="alligator-profile-likes" style="border-radius: 50%;"  src="<?php echo base_url() ?>uploads/avatar/<?php echo $EM->avatar ?>" > <br> Executif Manager</a>
 												<ul>
 													<li>
 														<a href="#">
-														<img  class="alligator-profile-likes"  src="<?php echo base_url() ?>uploads/avatar/<?php echo $CA->avatar ?>" > <br> Coordinateur Alumni</a>
+														<img  class="alligator-profile-likes" style="border-radius: 50%;"  src="<?php echo base_url() ?>uploads/avatar/<?php echo $CA->avatar ?>" > <br> Coordinateur Alumni</a>
 													</li>
 													<li>
 														<a href="#">
-														<img  class="alligator-profile-likes"  src="<?php echo base_url() ?>uploads/avatar/<?php echo $CU->avatar ?>" > <br> Coordinateur University</a>
+														<img  class="alligator-profile-likes" style="border-radius: 50%;" src="<?php echo base_url() ?>uploads/avatar/<?php echo $CU->avatar ?>" > <br> Coordinateur University</a>
 													</li>
 													<li>
 														<a href="#">
-														<img  class="alligator-profile-likes"  src="<?php echo base_url() ?>uploads/avatar/<?php echo $CH->avatar ?>" > <br> Coordinateur High School</a>
+														<img  class="alligator-profile-likes"  style="border-radius: 50%;" src="<?php echo base_url() ?>uploads/avatar/<?php echo $CH->avatar ?>" > <br> Coordinateur High School</a>
 													</li>
 												</ul>
 											</li>
-											<li>
-												<a href="#">Child</a>
-												<ul>
-													<li><a href="#">Grand Child</a></li>
-													<li>
-														<a href="#">Grand Child</a>
-														<ul>
-															<li>
-																<a href="#">Great Grand Child</a>
-															</li>
-															<li>
-																<a href="#">Great Grand Child</a>
-															</li>
-															<li>
-																<a href="#">Great Grand Child</a>
-															</li>
-														</ul>
-													</li>
-													<li><a href="#">Grand Child</a></li>
-												</ul>
-											</li>
+											
 										</ul>
 									</li>
 								</ul>
