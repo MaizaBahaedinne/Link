@@ -30,22 +30,6 @@ class Project_model extends CI_Model
     }
 
 
-    function projectListingOldNew()
-    {
-         $this->db->select('BaseTbl.projectId , BaseTbl.startDate , BaseTbl.endDate , BaseTbl.titre , BaseTbl.type , BaseTbl.cible , Clubs.name as ClubName , Clubs.ClubID  ,  BaseTbl.prix , BaseTbl.capacite , BaseTbl.description descP ,  BaseTbl.local ,BaseTbl.banner , BaseTbl.eventFB ');
-        $this->db->from('tbl_project as BaseTbl');
-        $this->db->join('tbl_club as Clubs', 'Clubs.clubID = BaseTbl.ClubID', 'LEFT');
-       
-
-        $this->db->order_by('BaseTbl.startDate','ASC');
-       
-
-        $query = $this->db->get();
-        
-        $result = $query->result();        
-        return $result;
-    }
-
 
     function projectListingByClub($clubID)
     {
@@ -63,10 +47,7 @@ class Project_model extends CI_Model
     }
    
 
-
-   
-
-        function projectListingByType($type,$clubID)
+    function projectListingByType($type,$clubID)
     {
          $this->db->select('BaseTbl.projectId , BaseTbl.startDate , BaseTbl.endDate , BaseTbl.titre , BaseTbl.type , BaseTbl.cible , Clubs.name as ClubName ,  BaseTbl.prix , BaseTbl.capacite , BaseTbl.description ,  BaseTbl.local ,BaseTbl.banner ');
         $this->db->from('tbl_project as BaseTbl');
@@ -107,6 +88,14 @@ class Project_model extends CI_Model
         
         return $query->row();
     }
+
+
+
+
+
+    
+
+
 
     
 

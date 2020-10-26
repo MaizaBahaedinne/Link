@@ -37,6 +37,11 @@
                                             <li>
                                                 <a href="#" title="Folow us" class="main-btn" data-ripple=""  data-toggle="modal" data-target="#myModal" >Modifier</a>
                                             </li>
+                                            <?php if ( (time()-(60*60*24)) < strtotime($projet->start) && (time()-(60*60*24)) < date($projet->deadline , strtotime('+6 hours'))  ){ ?>
+                                            <li>
+                                                <a href="#" title="Folow us" class="main-btn" data-ripple=""  data-toggle="modal" data-target="#presence" >Présence</a>
+                                            </li>
+                                            <?php } ?>
                                             <?php } ?>
                                             <?php  } ?>
                                             <li>
@@ -394,3 +399,65 @@
         </script>
 
 
+      <div class="modal fade" id="presence">
+        <div class="modal-dialog modal-sm">
+          <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title">Code de présence</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+              <h5>Patager ce code avec les tunimateurs partants</h5>
+              <div id="qrcode" style="align-content: center ; vertical-align: center"></div>
+              <script type="text/javascript">
+                  var qrcode = new QRCode(document.getElementById("qrcode"), {
+                    width : 350,
+                    height : 350
+                  });
+
+                  function makeCode () {    
+
+                    qrcode.makeCode("<?php echo base_url() ;?>Project/addPresence/<?php $projet->projectId ?>/<?php echo $uid ?>");
+                  }
+
+                  makeCode();
+
+                  $("#text").
+                    on("blur", function () {
+                      makeCode();
+                    }).
+                    on("keydown", function (e) {
+                      if (e.keyCode == 13) {
+                        makeCode();
+                      }
+                    });
+                </script>
+
+                <p>Ce code reste valable jusqu'à <?php date($projet->deadline , strtotime('+6 hours')) ?> </p>
+
+                <br>
+                <p>Pour valider votre participation merci de faire les étaps suivantes : </p>
+                <ul>
+                    <li>1 - Se connecter avec le compte T-Link </li>
+                    <li>2 - Cliquer sur le button <i class="fa fa-sliders" ></i> n haut à gauche</li>
+                    <li>3 - selectioner "Scanner QR" </li>
+                    <li>4 - Donner la permission au navigateur d'utiliser la camera </li>
+                    <li>5 - Scanner le code  </li>
+                </ul>
+
+
+
+
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Fermer</button>
+            </div>
+          </div>
+        </div>
+    </div><!-- fade Modal -->

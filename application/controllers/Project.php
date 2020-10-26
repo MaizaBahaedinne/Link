@@ -13,6 +13,7 @@ class Project extends BaseController {
         $this->load->model('project_model');
         $this->load->model('club_model'); 
         $this->load->model('project_model'); 
+        $this->load->model('scoring_model');
         $this->isLoggedIn();   
     }
 
@@ -98,6 +99,54 @@ class Project extends BaseController {
                 }
                 
                      redirect('/Project');
+
+                }
+
+
+
+                function addPresence ($projectId,$userId = '')
+                {
+
+                    if($userId != '' && $projectId != Null ){
+
+                    $projet = $this->project_model->getProjectInfo($projectID);
+                    $participation = $this->scoring_model->PresenceCheck($projectId,$userId) ;
+                    
+                        if( date($projet->deadline , strtotime('+6 hours')) > NOW()   )
+                        {
+                    
+                            if(empty($participation)){
+
+                                $PresenceInfo = array(   
+                                     $projectId =>    $projectId ,  
+                                     $ValidDTM   => date('Y-m-d H:i:s') ,
+                                     $statut => 0 
+                                );
+
+                                $result = $this->scoring_model->PresenceCheck($PresenceInfo) ;
+                            }
+                            else
+                            {
+
+                                $PresenceInfo = array(   
+                                     $projectId =>    $projectId ,
+                                     $createdDTM   => date('Y-m-d H:i:s') , 
+                                     $ValidDTM   => date('Y-m-d H:i:s') ,
+                                     $userId => $this->vendor ; 
+                                     $statut => 0 
+                                ); 
+
+                                $result = $this->scoring_model->editPresence($PresenceInfo,$participation->scoringId) ;
+                            }
+
+                        }
+
+
+
+                }
+
+
+
 
                 }
 
