@@ -120,7 +120,8 @@ The markup will be simple nested lists
 									<li>
 										
 										<a href="#">
-											<img  class="alligator-profile-likes" style="border-radius: 50%;"  src="<?php echo base_url() ?>uploads/avatar/<?php echo $President->avatar ?>" ></a>
+											<img  class="alligator-profile-likes" style="border-radius: 50%;"  src="<?php echo base_url() ?>uploads/avatar/<?php echo $President->avatar ?>" >
+										</a>
 										<ul>
 											<li>
 												<a href="#">
@@ -130,12 +131,7 @@ The markup will be simple nested lists
 														<a href="#">
 														<img  class="alligator-profile-likes" style="border-radius: 50%;"  src="<?php echo base_url() ?>uploads/avatar/<?php echo $CA->avatar ?>" ></a>
 														<ul>
-															<?php foreach ($CA->managers as $manager ) { ?>
-															<li>
-																<a href="#">
-																<img  class="alligator-profile-likes" style="border-radius: 50%;"  src="<?php echo base_url() ?>uploads/avatar/<?php echo $manager->avatar ?>" ></a>
-															</li>
-														  <?php } ?>
+															
 														</ul>
 													</li>
 													<li>
