@@ -80,7 +80,7 @@ class Project_model extends CI_Model
 
     function getProjectInfo($projectID)
     {
-        $this->db->select('BaseTbl.projectId , BaseTbl.startDate , BaseTbl.endDate , BaseTbl.titre , BaseTbl.banner , BaseTbl.type , BaseTbl.cible , Clubs.name as ClubName ,  BaseTbl.prix , BaseTbl.capacite , BaseTbl.description ,  BaseTbl.local , BaseTbl.eventFB  ,  BaseTbl.createdDate , BaseTbl.ClubID ');
+        $this->db->select('BaseTbl.projectId , BaseTbl.startDate , BaseTbl.endDate , BaseTbl.titre , BaseTbl.banner , BaseTbl.type , BaseTbl.cible , Clubs.name as ClubName ,  BaseTbl.prix , BaseTbl.capacite , BaseTbl.description ,  BaseTbl.local , BaseTbl.eventFB  ,  BaseTbl.createdDate , BaseTbl.facebook , BaseTbl.ClubID ');
         $this->db->from('tbl_project as BaseTbl');
         $this->db->join('tbl_club as Clubs', 'Clubs.clubID = BaseTbl.ClubID', 'LEFT');
         $this->db->where('BaseTbl.projectID', $projectID);
@@ -93,7 +93,7 @@ class Project_model extends CI_Model
 
 
 
-    
+
 
 
 

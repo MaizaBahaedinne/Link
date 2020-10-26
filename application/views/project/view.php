@@ -422,7 +422,7 @@
 
                   function makeCode () {    
 
-                    qrcode.makeCode("<?php echo base_url() ;?>Project/addPresence/<?php $projet->projectId ?>/<?php echo $uid ?>");
+                    qrcode.makeCode("<?php echo base_url() ;?>Project/addPresence/<?php echo $projet->projectId ?>/<?php echo $uid ?>");
                   }
 
                   makeCode();
