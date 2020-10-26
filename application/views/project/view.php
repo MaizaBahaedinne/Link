@@ -309,14 +309,22 @@
                                         
                                     <input type="datetime-local" class="form-control "  
                                     min="<?php echo date('Y-m-d').'T00:00' ?>" 
-                                    value="<?php echo $projet->startDate ?>"    
+                                    value="<?php $date = new DateTime($projet->startDate);
+                                            echo $date->format('d-m-YTH:i'); ?>"    
                                     id="debut" name="debut"  required >
  
 
                               
                                     <label for="fname">Date fin</label>
                                         
-                                    <input type="datetime-local" class="form-control"  min="<?php echo date('Y-m-d').'T00:00' ?>"   id="fin" value="<?php echo $projet->endDate ?>"  name="fin"  required >
+                                    <input type="datetime-local" class="form-control"  
+                                    min="<?php echo date('Y-m-d').'T00:00' ?>"   
+                                    id="fin" 
+                                    value="
+                                    <?php   $date = new DateTime($projet->endDate);
+                                            echo $date->format('d-m-YTH:i'); 
+                                    echo ?>"  
+                                    name="fin"  required >
 
                             
                                     <hr>
@@ -329,7 +337,7 @@
                                     <input type="number" class="form-control " value="<?php echo $projet->capacite ?>"  id="capacite" name="capacite"  required >      
 
                                     <label for="fname">Prix</label>
-                                    <input type="number" class="form-control" id="prix" value="<?php echo $projet->capacite ?> " name="prix" value="<?php echo $projet->prix ?>"  required >      
+                                    <input type="number" class="form-control" id="prix" value="<?php echo $projet->prix ?> " name="prix" value="<?php echo $projet->prix ?>"  required >      
                                    
 
 
