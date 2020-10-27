@@ -13,7 +13,10 @@
                                     <br>
                                     <div class="row">
                                         <div class="col-lg-5">
-                                             <a style="color: red" >DU <?php echo $projet->startDate ?> AU <?php echo $projet->endDate ?></a><br>
+                                             <a style="color: red" >DU 
+                                                <?php echo date('d/m/Y H:i',strtotime('+0 hours',strtotime($projet->startDate))) ; ?> 
+                                                AU <?php echo date('d/m/Y H:i',strtotime('+0 hours',strtotime($projet->endDate))) ; ?>   
+                                                </a><br>
                                              <h4><?php echo $projet->type ?> : <?php echo $projet->titre ?></h4>
                                         </div>
                                         <div class="col-lg-7">
@@ -309,8 +312,7 @@
                                         
                                     <input type="datetime-local" class="form-control "  
                                     min="<?php echo date('Y-m-d').'T00:00' ?>" 
-                                    value="<?php $date = new DateTime($projet->startDate);
-                                            echo $date->format('d-m-YTH:i'); ?>"    
+                                    value="<?php $debut = date_create($projet->startDate) ; echo date_format($debut , 'Y-m-d\TH:i'); ?>"    
                                     id="debut" name="debut"  required >
  
 
@@ -320,10 +322,8 @@
                                     <input type="datetime-local" class="form-control"  
                                     min="<?php echo date('Y-m-d').'T00:00' ?>"   
                                     id="fin" 
-                                    value="
-                                    <?php   $date = new DateTime($projet->endDate);
-                                            echo $date->format('d-m-YTH:i'); 
-                                    echo ?>"  
+                                    value="<?php $end = date_create($projet->endDate) ; 
+                                    echo date_format($end , 'Y-m-d\TH:i'); ?>" 
                                     name="fin"  required >
 
                             
@@ -425,10 +425,15 @@
             <!-- Modal body -->
             <div class="modal-body">
               <h5>Patager ce code avec les tunimateurs partants</h5>
+              <br>
               <?php 
-              if ( (time()-(60*60*24)) > strtotime($projet->startDate) 
-                && (time()-(60*60*24)) < strtotime(date($projet->endDate , strtotime('+6 hours')))   ){ ?>
-              <div id="qrcode1" style="align-content: center ; vertical-align: center"></div>
+              $now  = new DateTime('now') ;
+              $start  = new DateTime($projet->startDate) ;
+              $end = new DateTime($projet->endDate) ;
+
+
+              if ( $now >= $start &&  $now <= $end ){ ?>
+              <div id="qrcode1" style="height: 350px ; width: 350px"></div>
               <script type="text/javascript">
                   var qrcode = new QRCode(document.getElementById("qrcode1"), {
                     width : 350,
@@ -436,7 +441,6 @@
                   });
 
                   function makeCode () {    
-
                     qrcode.makeCode("<?php echo base_url() ;?>Project/addPresence/<?php echo $projet->projectId ?>/<?php echo $uid ?>");
                   }
 
@@ -453,7 +457,11 @@
                     });
                 </script>
                 <?php } ?>
-                <p>Ce code reste valable de  <?php echo date($projet->startDate) ?> jusqu'à <?php echo date($projet->endDate , strtotime('+6 hours')) ?> </p>
+                <br>
+                <p>Ce code reste valable du 
+                 <b style="color: green "> <?php echo date( 'd/m/Y H:i' , strtotime('+0 hours',strtotime($projet->startDate))) ; ?> </b>
+                 jusqu'à <b style="color: red ">
+                 <?php echo date('d/m/Y H:i',strtotime('+3 hours',strtotime($projet->endDate))) ; ?></b> </p>
 
                 <br>
                 <p>Pour valider votre participation merci de faire les étaps suivantes : </p>
