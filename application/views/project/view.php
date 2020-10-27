@@ -427,12 +427,11 @@
               <h5>Patager ce code avec les tunimateurs partants</h5>
               <br>
               <?php 
-              $now  = new DateTime('now') ;
-              $start  = new DateTime($projet->startDate) ;
-              $end = new DateTime($projet->endDate) ;
+              $now  =    strtotime('now') ;
+              $start  =   strtotime($projet->startDate) ;
+              $end =  strtotime('+3 hours',strtotime($projet->endDate)) ;
 
-
-              if ( $now >= $start &&  $now <= $end ){ ?>
+              if ( (($now-$start) >= 0 ) &&  (($now-$end) <= 0 ) ){ ?>
               <div id="qrcode1" style="height: 350px ; width: 350px"></div>
               <script type="text/javascript">
                   var qrcode = new QRCode(document.getElementById("qrcode1"), {
