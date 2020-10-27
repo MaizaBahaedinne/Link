@@ -34,6 +34,20 @@ class Scoring_model extends CI_Model
         return $insert_id;
     } 
 
+
+
+    function editPresence($projectInfo,$scoringId)
+    {
+         $this->db->where('scoringId', $scoringId);
+        $this->db->update('tbl_scoring', $projectInfo);
+        
+        return TRUE;
+    } 
+
+
+
+    
+
 }
 
 ?>

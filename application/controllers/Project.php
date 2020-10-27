@@ -177,9 +177,11 @@ class Project extends BaseController {
                                      "userId" => $userId , 
                                      "statut" => 0 
                                 ); 
-
+                                if(empty($participation)){
                                 $result = $this->scoring_model->addPresence($PresenceInfo) ;
-                                    
+                                }else{
+                                $result = $this->scoring_model->addPresence($PresenceInfo,$participation->scoringId) ;
+                                }    
                                         echo "Bravo votre participation a été valider pour le projet ".$projet->titre ;
                                     
                             }
