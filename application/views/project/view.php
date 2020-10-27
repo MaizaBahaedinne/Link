@@ -252,9 +252,9 @@
                                     <br>
                                     <b for="fname">Cible  &nbsp; &nbsp; <br> </b>
                                         
-                                    <input type="radio" name="cible" id="Publique" value="Publique" required> Publique
-                                    <input type="radio" name="cible" id="prive" value="Privé"> Privé
-                                    <input type="radio" name="cible" id="Only" value="Only tunimateur" > Only tunimateur
+                                    <input type="radio" name="cible" id="Publique" value="Publique" required <?php if($projet->cible=="Publique") { ?> checked <?php } ?> >Publique 
+                                    <input type="radio" name="cible" id="prive" value="Privé" <?php if($projet->cible=="Privé") { ?> checked <?php } ?> > Privé
+                                    <input type="radio" name="cible" id="Only" value="Only tunimateur" <?php if($projet->cible=="Only tunimateur"){ ?> checked <?php } ?> > Only tunimateur
                            
 
                                         <script type="text/javascript">
@@ -283,14 +283,14 @@
 
                                     <label for="fname">Type</label>
                                     <select class="form-control" id="type" name="type" >
-                                            <option value="Evenement">Evenement</option>
-                                            <option value="Formation">Formation</option>
-                                            <option value="Conférence">Conférence</option>
-                                            <option value="Action">Action</option>
-                                            <option value="Couverture Mediatique">Couverture Mediatique</option>
-                                            <option value="Compétition">Compétition</option>
-                                            <option value="Soirée">Soirée</option>
-                                            <option value="Team Building">Team Building</option>
+                                            <option value="Evenement" <?php if($projet->type=="Evenement"){ ?> selected <?php } ?> >Evenement</option>
+                                            <option value="Formation" <?php if($projet->type=="Formation"){ ?> selected <?php } ?> >Formation</option>
+                                            <option value="Conférence" <?php if($projet->type=="Conférence"){ ?> selected <?php } ?> >Conférence</option>
+                                            <option value="Action"  <?php if($projet->type=="Action"){ ?> selected <?php } ?> >Action</option>
+                                            <option value="Couverture Mediatique" <?php if($projet->type=="Couverture Mediatique"){ ?> selected <?php } ?> >Couverture Mediatique</option>
+                                            <option value="Compétition" <?php if($projet->type=="Compétition"){ ?> selected <?php } ?> >Compétition</option>
+                                            <option value="Soirée" <?php if($projet->type=="Soirée"){ ?> selected <?php } ?> >Soirée</option>
+                                            <option value="Team Building"  <?php if($projet->type=="Team Building"){ ?> selected <?php } ?> >Team Building</option>
                                     </select>
                           
 
@@ -337,7 +337,7 @@
                                     <input type="number" class="form-control " value="<?php echo $projet->capacite ?>"  id="capacite" name="capacite"  required >      
 
                                     <label for="fname">Prix</label>
-                                    <input type="number" class="form-control" id="prix" value="<?php echo $projet->prix ?> " name="prix" value="<?php echo $projet->prix ?>"  required >      
+                                    <input type="number" class="form-control" name="prix" value="<?php echo $projet->prix ?>"  required >      
                                    
 
 
