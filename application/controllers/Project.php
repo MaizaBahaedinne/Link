@@ -155,19 +155,17 @@ class Project extends BaseController {
 
                 function addPresence ($projectId,$createdBy ,$userId)
                 {
-                    echo ($projectId); 
-                    echo($createdBy);
-                    echo($userId);
+
                         $projet = $this->project_model->getProjectInfo($projectId);
                         $participation = $this->scoring_model->PresenceCheck($projectId,$userId) ;
-                    
+                        echo $participation ;
                           $now  =    strtotime('now') ;
                           $start  =  strtotime($projet->startDate) ;
                           $end =     strtotime('+3 hours',strtotime($projet->endDate)) ;
 
                         if(  (($now-$start) >= 0 ) )
                         {
-                           if( (($now-$end) <= 0 ))
+                           if( (($now-$end) >= 0 ))
                            {
                                 $PresenceInfo = array(   
                                      "projectId" =>    $projectId ,
@@ -177,17 +175,21 @@ class Project extends BaseController {
                                      "userId" => $userId , 
                                      "statut" => 0 
                                 ); 
+
                                 if(empty($participation)){
                                 $result = $this->scoring_model->addPresence($PresenceInfo) ;
+                                return "votre participation a été valider pour le projet ".$projet->titre ;
                                 }else{
-                                $result = $this->scoring_model->addPresence($PresenceInfo,$participation->scoringId) ;
-                                }    
-                                        echo "Bravo votre participation a été valider pour le projet ".$projet->titre ;
+                                $result = $this->scoring_model->editPresence($PresenceInfo,$participation->scoringId) ;
+                                return "votre participation a été mise à jour pour le projet ".$projet->titre ;
+                                }  
+
+                                
                                     
                             }
                              else
                             {
-                                echo "Participation non validé <b>Vous avez dépassé le deadline</b> à la prochainne " ;
+                                return "Participation non validé <b>Vous avez dépassé le deadline</b> à la prochainne " ;
                             }
 
                         }
