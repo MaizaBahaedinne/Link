@@ -104,6 +104,55 @@ class Project extends BaseController {
 
 
 
+                public function editProject($projectId)
+                {
+                $type = $this->input->post('type');
+                $Titre = $this->input->post('Titre');
+                $Description = $this->input->post('description');
+                $debut = $this->input->post('debut');
+                $fin = $this->input->post('fin');
+                $cible = $this->input->post('cible');
+               
+                $local = $this->input->post('local');
+                $prix = $this->input->post('prix');
+                $capacite = $this->input->post('capacite');
+                $facebook = $this->input->post('facebook');
+
+                $file_name = 'Projet_'.$Titre.'_'.$_FILES['file']['name'];
+                $file_tmp = $_FILES['file']['tmp_name'];
+                $file_destination = 'uploads/projet/' . $file_name;
+               
+
+                $projectInfo = array(        
+                 'banner' => $file_name ,
+                 'type' => $type ,
+                 'Titre' => NL2BR($Titre) , 
+                 'description' => $Description , 
+                 'startDate' => $debut , 
+                 'endDate' => $fin , 
+                 'cible' => $cible ,
+                 'local' => $local ,
+                 'prix' => $prix ,   
+                 'capacite'=>$capacite,
+                 'createBy'=> $this->vendorId ,
+                 'createdDate'=> date('Y-m-d H:i:s') ,
+                 'eventFB'=>$facebook ,
+                 'clubID'=>$this->clubID
+                     );
+                
+                if( move_uploaded_file($file_tmp, $file_destination)){
+                $this->load->model('project_model');
+                $result = $this->project_model->editProject($projectInfo,$projectId);
+                                
+                }
+                
+                     redirect('/Project/projectDetails/'.$projectId);
+
+                }
+
+
+
+
                 function addPresence ($projectId,$userId = '')
                 {
 

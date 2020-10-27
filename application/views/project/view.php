@@ -199,7 +199,7 @@
             <!-- Modal body -->
             <div class="modal-body">
                 <?php $this->load->helper("form"); ?>
-                <form role="form" class="c-form"  id="addproject" action="<?php echo base_url() ?>Project/addNewP" method="post" role="form"  enctype="multipart/form-data">
+                <form role="form" class="c-form"  id="addproject" action="<?php echo base_url() ?>Project/editProject/<?php echo $projet->projectId ?>" method="post" role="form"  enctype="multipart/form-data">
                         
                            
                                     <label for="fname">Banner</label>

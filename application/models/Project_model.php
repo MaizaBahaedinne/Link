@@ -89,7 +89,19 @@ class Project_model extends CI_Model
         return $query->row();
     }
 
-
+   /**
+     * This function is used to update the user information
+     * @param array $userInfo : This is users updated information
+     * @param number $userId : This is user id
+     */
+    function editProject($projectInfo, $projectId)
+    {
+        $this->db->where('projectId', $projectId);
+        $this->db->update('tbl_project', $projectInfo);
+        
+        return TRUE;
+    }
+    
 
 
 
