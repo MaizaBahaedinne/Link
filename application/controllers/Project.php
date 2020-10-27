@@ -159,7 +159,7 @@ class Project extends BaseController {
                     if($userId != '' && $projectId != Null )
                     {
 
-                        $projet = $this->project_model->getProjectInfo($projectID);
+                        $projet = $this->project_model->getProjectInfo($projectId);
                         $participation = $this->scoring_model->PresenceCheck($projectId,$userId) ;
                     
                           $now  =    strtotime('now') ;
