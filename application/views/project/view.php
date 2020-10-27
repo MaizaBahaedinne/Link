@@ -440,7 +440,7 @@
                   });
 
                   function makeCode () {    
-                    qrcode.makeCode("addPresence/<?php echo $projet->projectId ?>/<?php echo $uid ?>");
+                    qrcode.makeCode("Project/addPresence/<?php echo $projet->projectId ?>/<?php echo $uid ?>");
                   }
 
                   makeCode();

@@ -329,7 +329,7 @@
                 function onScanSuccess(qrCodeMessage) {
                   alert("1 " + qrCodeMessage) ;
                   $.ajax({
-                            url: qrCodeMessage + "/" +<?php echo $uid ?> ,
+                            url:  <?php base_url()?> + qrCodeMessage + "/" +<?php echo $uid ?> ,
                             type: "post"
                            
                           }).done(function( data ) {
