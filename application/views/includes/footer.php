@@ -330,14 +330,15 @@
                   
                   $.ajax({
                             url:  "<?php echo base_url()?>"+qrCodeMessage+"/<?php echo $uid ?>" ,
-                            type: "post"
-                           
-                          }).done(function( data ) {
-                                 alert(url) ; 
+                            type: "POST",
+                            success: function(data){
+                               alert(url) ; 
                                $("#readerqr").hide() ;
                                $("#readerValid").show() ;
                                $("#readerTxt").html(data)  ;
-                              });
+                               },
+                           
+                          });
 
 
               }
