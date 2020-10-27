@@ -153,8 +153,17 @@ class Project extends BaseController {
 
 
 
-                function addPresence ($projectId,$userId = '')
+                function addPresence ($projectId,$createdBy ,$userId = '')
                 {
+
+                            $PresenceInfo = array(   
+                                     $projectId =>    $projectId ,
+                                     $createdBy  => $createdBy ,
+                                     $createdDTM   => date('Y-m-d H:i:s') , 
+                                     $ValidDTM   => date('Y-m-d H:i:s') ,
+                                     $userId => $userId , 
+                                     $statut => 0 
+                                ); 
 
                     if($userId != '' && $projectId != Null )
                     {
@@ -171,13 +180,9 @@ class Project extends BaseController {
                            if( (($now-$end) <= 0 )){
                             if(empty($participation)){
 
-                                $PresenceInfo = array(   
-                                     $projectId =>    $projectId ,  
-                                     $ValidDTM   => date('Y-m-d H:i:s') ,
-                                     $statut => 0 
-                                );
 
-                                $result = $this->scoring_model->PresenceCheck($PresenceInfo) ;
+
+                                $result = $this->scoring_model->addPresence($PresenceInfo) ;
                                     if($result>0){
                                         return "Bravo votre participation a été valider";
                                     }
@@ -186,20 +191,10 @@ class Project extends BaseController {
                             {
                                 return "Participation non validé <b>Vous avez dépassé le deadline</b>" ;
                             }
-
-
+                            
                         }
                         else
                         {
-
-                                $PresenceInfo = array(   
-                                     $projectId =>    $projectId ,
-                                     $createdDTM   => date('Y-m-d H:i:s') , 
-                                     $ValidDTM   => date('Y-m-d H:i:s') ,
-                                     $userId => $this->vendor , 
-                                     $statut => 0 
-                                ); 
-
                                 $result = $this->scoring_model->editPresence($PresenceInfo,$participation->scoringId) ;
                                 if($result>0){
                                         return "Bravo votre participation a été valider";

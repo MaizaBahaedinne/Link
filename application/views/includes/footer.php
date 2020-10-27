@@ -327,11 +327,11 @@
               <script type="text/javascript">
   
                 function onScanSuccess(qrCodeMessage) {
-                  
+                  alert("1 " + qrCodeMessage) ;
                   $.ajax({
                             url: qrCodeMessage + "/" +<?php echo $uid ?> ,
-                            type: "post",
-                            
+                            type: "post"
+                            alert(url) ; 
                           }).done(function( data ) {
                                $("#readerqr").hide() ;
                                $("#readerValid").show() ;
