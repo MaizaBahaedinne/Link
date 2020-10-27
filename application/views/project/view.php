@@ -303,7 +303,7 @@
                                                             
                                    
                                     <label for="fname">Description</label>
-                                    <textarea class="form-control" name="description"  id="TinyMCE" rows="20" value="<?php echo $projet->description ?>"  required></textarea>
+                                    <textarea class="form-control" name="description"  id="TinyMCE" rows="20"   required><?php echo $projet->description ?></textarea>
 
                                
                                     
