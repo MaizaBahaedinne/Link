@@ -322,14 +322,21 @@
               <div style="width: auto;" id="readerqr"></div>
               <div style="width: auto; display: none ; " id="readerValid"  >
                 <h3 style="text-align: center;" >Bravo</h3>
-                <p style="text-align: center;">Votre participation a été valider avec succées</p>
+                <p id="readerTxt" style="text-align: center;">Votre participation a été valider avec succées</p>
               </div>
               <script type="text/javascript">
   
                 function onScanSuccess(qrCodeMessage) {
                   
-                  $("#readerqr").hide() ;
-                  $("#readerValid").show() ; 
+                  $.ajax({
+                            url: qrCodeMessage + "/" +<?php echo $uid ?> ,
+                            type: "post",
+                            
+                          }).done(function( data ) {
+                               $("#readerqr").hide() ;
+                               $("#readerValid").show() ;
+                               $("#readerTxt").html(data)  ;
+                              });
 
 
               }
