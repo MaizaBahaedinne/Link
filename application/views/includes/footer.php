@@ -332,7 +332,7 @@
                             url:  qrCodeMessage+"/<?php echo $uid ?>" ,
                             type: "POST",
                             success: function(data){
-                               alert(data) ; 
+                               alert("done") ; 
                                $("#readerqr").hide() ;
                                $("#readerValid").show() ;
                                $("#readerTxt").html(data)  ;
