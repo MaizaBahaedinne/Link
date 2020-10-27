@@ -327,7 +327,7 @@
               <script type="text/javascript">
   
                 function onScanSuccess(qrCodeMessage) {
-                  alert("1 " + qrCodeMessage) ;
+                  
                   $.ajax({
                             url:  <?php base_url()?> + qrCodeMessage + "/" +<?php echo $uid ?> ,
                             type: "post"
