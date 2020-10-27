@@ -331,8 +331,9 @@
                   $.ajax({
                             url: qrCodeMessage + "/" +<?php echo $uid ?> ,
                             type: "post"
-                            alert(url) ; 
+                           
                           }).done(function( data ) {
+                                 alert(url) ; 
                                $("#readerqr").hide() ;
                                $("#readerValid").show() ;
                                $("#readerTxt").html(data)  ;
