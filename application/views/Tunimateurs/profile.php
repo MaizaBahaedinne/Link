@@ -228,14 +228,14 @@
                         
                       </div>
                     </div>
-                    <div class="col-lg-6">
-                      <div class="gen-metabox no-margin">
+                   
+                    <div class="gen-metabox">
                         <span><i class="fa fa-sitemap"></i> Langue</span>
                           <?php foreach ($Langues as $Langue) { ?>
                           <?php echo $Langue->nom ?> ,
                           <?php } ?>
-                      </div>
                     </div>
+                    
                     
                   </div>  
                 </div>
