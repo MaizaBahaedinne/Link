@@ -234,7 +234,7 @@
                 </div>
 
 
-
+                <div class="central-meta">
                  <div class="widget">
                               <h4 class="widget-title">Activité récente</h4>
                               <ul class="activitiez">
@@ -249,9 +249,9 @@
                                  -->
                               </ul>
                            </div><!-- recent activites -->
-
-                     </div>
-
+                  </div>
+              </div>
+                 
 
 
                 </div>
