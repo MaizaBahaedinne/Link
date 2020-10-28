@@ -8,7 +8,7 @@
 
                     <div class="user-profile">
                 <figure>
-                  <img  class="alligator-profile" src="<?php echo base_url() ?>assets/images/resources/profile-image.jpg" alt="">
+                  <img  src="<?php echo base_url() ?>assets/images/resources/profile-image.jpg" alt="">
                    <!--
                   <ul class="profile-controls">
                    
@@ -39,7 +39,7 @@
                 <div class="row">
                   <div class="col-lg-6 col-md-6 col-sm-3">
                     <div class="user-figure">
-                      <figure><img src="<?php echo base_url() ?>uploads/avatar/<?php echo $userInfo->avatar ?>" alt=""></figure>
+                      <figure><img class="alligator-profile"  src="<?php echo base_url() ?>uploads/avatar/<?php echo $userInfo->avatar ?>" alt=""></figure>
                       <div class="author-meta">
                         <h5><a href="#" title=""><?php echo $userInfo->name ?></a></h5>
                         <span><?php echo $userInfo->role ?> <?php echo $userInfo->cellule ?></span>

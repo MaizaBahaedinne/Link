@@ -35,8 +35,8 @@
     .alligator-profile {
         object-fit: cover;
         object-position: 20% 50%;
-        width: 40px;
-        height: 40px;
+        width: 100px;
+        height: 100px;
     }
     .alligator-profile-member {
         object-fit: cover;
