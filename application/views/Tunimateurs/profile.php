@@ -236,7 +236,8 @@
 
                 <div class="central-meta">
                  <div class="widget">
-                              <h4 class="widget-title">Activité récente</h4>
+                  <span class="create-post">Activité récente<a href="#" title="">See All</a></span>
+                              
                               <ul class="activitiez">
                                  <!--  log 
                                  <li>
