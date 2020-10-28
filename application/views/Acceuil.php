@@ -26,7 +26,7 @@
                         <li>
                           <span> 
                              <a  data-toggle="modal" data-target="#TuniFan">
-                                <i class="fa fa-user-plus"></i>Invite
+                                <i class="fa fa-user-plus"></i>Inviter
                             </a>
                           </span>
                         </li>
@@ -121,7 +121,7 @@
                                     <div class="added-event"
                                     data-date="<?php echo  $dateF ?>" 
                                     data-time="<?php echo  $timeF ?>"
-                                    data-link="" 
+                                    data-link="<?php echo base_url() ?>task/tasksListing/?php echo  $Projet->projectId ?>" 
                                     data-title="Tache : <?php echo  $tache->titre ?>">
                                       
                                     </div>
@@ -138,7 +138,7 @@
                                     <div class="added-event"
                                     data-date="<?php echo  $dateF ?>" 
                                     data-time="<?php echo  $timeF ?>"
-                                    data-link="" 
+                                    data-link="<?php echo base_url() ?>Project/projectDetails/<?php echo  $Projet->projectId ?>" 
                                     data-title="<?php echo  $Projet->type ?> : <?php echo  $Projet->titre ?>">
                                       
                                     </div>
