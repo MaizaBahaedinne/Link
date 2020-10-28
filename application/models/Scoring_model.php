@@ -10,6 +10,20 @@
 class Scoring_model extends CI_Model
 {
 
+
+     function ScoreByUser($userId) 
+     {
+        $this->db->select('BaseTbl.points , BaseTbl.ValidDTM , proj.titre ');
+        $this->db->from('tbl_scoring as BaseTbl');
+        $this->db->join('tbl_project as proj', 'proj.projectId = BaseTbl.projectId', 'LEFT');
+      
+    
+        $this->db->where('BaseTbl.userId', $userId);
+        $this->db->where('statut = ',0 );
+        $query = $this->db->get();
+        
+        return $query->row();
+    } 
  
    function PresenceCheck($projectId,$userId)
     {

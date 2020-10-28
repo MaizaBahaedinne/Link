@@ -240,15 +240,15 @@
                   
                               
                               <ul class="activitiez">
-                                 <!--  log 
+                                 <?php echo ($scores as $score){  ?>
                                  <li>
                                     <div class="activity-meta">
-                                       <i>10 hours Ago</i>
-                                       <span><a href="#" title="">Commented on Video posted </a></span>
-                                       <h6>by <a href="time-line.html">black demon.</a></h6>
+                                       <i><?php echo xTimeAgo ($score->ValidDTM, date('Y-m-d H:i:s') )  ?></i>
+                                       <span><a href="#" title=""> </a>Participation au <?php echo $score->type ?> : <?php echo $score->titre ?></span>
+                                       <h6>by <a >black demon.</a></h6>
                                     </div>
                                  </li>
-                                 -->
+                                 <?php } ?>
                               </ul>
                            </div><!-- recent activites -->
                   </div>

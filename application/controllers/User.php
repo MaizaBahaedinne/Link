@@ -32,7 +32,10 @@ class User extends BaseController
         $this->load->model('login_model');
         $this->load->model('posts_model') ; 
         $this->load->model('user_cariere_model') ;
-        $this->load->model('user_diplome_model') ;  
+        $this->load->model('user_diplome_model') ;
+
+
+        $this->load->model('scoring_model') ;  
         
         $this->isLoggedIn();   
     }
@@ -761,6 +764,9 @@ class User extends BaseController
         $data["ExpTuns"] = $this->user_cariere_model->carrierListing($userId);
         $data["Diplomes"] = $this->user_diplome_model->diplomeListing($userId); 
         $data["Skills"] = $this->user_diplome_model->diplomeListing($userId); 
+
+
+        $data["Scores"] = $this->scoring_model->ScoreByUser($userId); 
 
 
         $data['postRecords'] =  $this->posts_model->postsListingbyUser($userId);
