@@ -165,7 +165,7 @@ class Project extends BaseController {
 
                         if(  (($now-$start) >= 0 ) )
                         {
-                           if( (($now-$end) >= 0 ))
+                           if( (($now-$end) <= 0 ))
                            {
                                 $PresenceInfo = array(   
                                      "projectId" =>    $projectId ,
