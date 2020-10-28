@@ -88,6 +88,7 @@
                       
                         <label>Président</label>
                         <select name="President" class="form-control" >
+                          <option value="" ></option>
                           <?php foreach ($members as $key ) {?>
                             <option value="<?php echo  $key->userId ?>" 
                             <?php if($key->roleId == 1 ){ ?> selected <?php } ?> > 
@@ -100,6 +101,7 @@
                           <div class="col-lg-3">
                             <label>VP Ressource Humaine</label>
                               <select name="VPRH" class="form-control" >
+                                <option value="" ></option>
                                 <?php foreach ($members as $key ) {?>
                                   <option value="<?php echo  $key->userId ?>" 
                                   <?php if($key->roleId == 3 && $key->cellule == "Ressource humaine" ){ ?> selected <?php } ?> > 
@@ -111,6 +113,7 @@
                           <div class="col-lg-3">
                             <label>VP Marketing</label>
                               <select name="VPM" class="form-control" >
+                                <option value="" ></option>
                                 <?php foreach ($members as $key ) {?>
                                   <option value="<?php echo  $key->userId ?>" 
                                   <?php if($key->roleId == 3 && $key->cellule == "Marketing" ){ ?> selected <?php } ?> > 
@@ -123,6 +126,7 @@
                             <label>VP Administraion & finance</label>
                               <select name="VPAF" class="form-control" >
                                 <?php foreach ($members as $key ) {?>
+                                  <option value="" ></option>
                                   <option value="<?php echo  $key->userId ?>" 
                                   <?php if($key->roleId == 3 && $key->cellule == "Administration et finance" ){ ?> selected <?php } ?> > 
                                     <?php echo  $key->name ?> 
@@ -133,6 +137,7 @@
                           <div class="col-lg-3">
                             <label>VP Evenmentiel</label>
                               <select name="VPE" class="form-control" >
+                                <option value="" ></option>
                                 <?php foreach ($members as $key ) {?>
                                   <option value="<?php echo  $key->userId ?>" 
                                   <?php if($key->roleId == 3 && $key->cellule == "Evenmentiel" ){ ?> selected <?php } ?> > 
@@ -142,7 +147,7 @@
                               </select>
                           </div>
                         </div>
-                        
+
                         <hr>
                         <div class="row">
                             <div class="col-lg-6">
