@@ -140,17 +140,17 @@ class Club extends BaseController {
 					//P
 			        $P = $this->input->post('P');
 			        $OldP = $this->user_model->getMemberByRoleAndCelulle($clubId,1,'');
-			        $OldP = array('roleId'=> 5 , 'ClubID'=> 2 , 'cellule'=> '' );
+			        $OldPU = array('roleId'=> 5 , 'ClubID'=> 2 , 'cellule'=> '' );
 			        $NewP = $this->user_model->getUserInfo($P);
-			        $NewP = array('roleId'=> 1 , 'cellule'=> '' );
+			        $NewPU = array('roleId'=> 1 , 'cellule'=> '' );
 			        if($OldP->userId != $P )
 			        	{
-			        		$this->user_model->editUser($OldP->userId , $OldP);
-			       			$this->user_model->editUser($NewP->userId , $NewP);
+			        		$this->user_model->editUser($OldP->userId , $OldPU);
+			       			$this->user_model->editUser($NewP->userId , $NewPU);
 			        	}
 			        else 
 			        	{  
-			        		$this->user_model->editUser($NewP->userId , $NewP); 
+			        		$this->user_model->editUser($NewP->userId , $NewPU); 
 			        	}
 
 
