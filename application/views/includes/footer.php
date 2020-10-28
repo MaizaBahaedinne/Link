@@ -328,18 +328,18 @@
   
                 function onScanSuccess(qrCodeMessage) {
                   
-                  $.ajax({
-                            url:  qrCodeMessage+"/<?php echo $uid ?>" ,
-                            type: "POST",
-                            success: function(data){
-                               alert("done") ; 
-                               $("#readerqr").hide() ;
-                               $("#readerValid").show() ;
-                               $("#readerTxt").html(data)  ;
-                               },
-                           
-                          });
+                  $.ajax( "<?php echo base_url() ?>"+qrCodeMessage+"/<?php echo $uid ?>" )
+                        .done(function() {
+                          alert( "success" );
+                        })
+                        .fail(function() {
+                          alert( "error" );
+                        })
+                        .always(function() {
+                          alert( "complete" );
+                        });
 
+                               
 
               }
 
