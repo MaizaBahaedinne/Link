@@ -8,7 +8,7 @@
 
                     <div class="user-profile">
                 <figure>
-                  <img src="<?php echo base_url() ?>assets/images/resources/profile-image.jpg" alt="">
+                  <img  class="alligator-profile" src="<?php echo base_url() ?>assets/images/resources/profile-image.jpg" alt="">
                    <!--
                   <ul class="profile-controls">
                    
