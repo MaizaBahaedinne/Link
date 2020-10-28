@@ -77,6 +77,12 @@
 
 
 
+                    
+
+                    </ul>
+                  </div>
+                  <div class="widget">
+                    <h4 class="widget-title">Bureau du club </h4>
                     <form action="<?php echo base_url() ?>Club/edit/<?php echo $clubInfo->clubID ?>" method="post" class="c-form" enctype="multipart/form-data">
                       
                         <label>Président</label>
@@ -90,7 +96,7 @@
                         </select>
 
                         <div class="row">
-                          <div class="col-lg-4">
+                          <div class="col-lg-3">
                             <label>VP RH</label>
                               <select name="VPRH" class="form-control" >
                                 <?php foreach ($members as $key ) {?>
@@ -101,7 +107,7 @@
                                 <?php } ?>
                               </select>
                           </div>
-                          <div class="col-lg-4">
+                          <div class="col-lg-3">
                             <label>VP Marketing</label>
                               <select name="VPRH" class="form-control" >
                                 <?php foreach ($members as $key ) {?>
@@ -112,7 +118,7 @@
                                 <?php } ?>
                               </select>
                           </div>
-                          <div class="col-lg-4">
+                          <div class="col-lg-3">
                             <label>VP Administraion & finance</label>
                               <select name="VPAF" class="form-control" >
                                 <?php foreach ($members as $key ) {?>
@@ -123,7 +129,7 @@
                                 <?php } ?>
                               </select>
                           </div>
-                          <div class="col-lg-4">
+                          <div class="col-lg-3">
                             <label>VP Evenmentiel</label>
                               <select name="VPRH" class="form-control" >
                                 <?php foreach ($members as $key ) {?>
@@ -137,8 +143,6 @@
                         </div>
 
                     </form>
-
-                    </ul>
                   </div>
                 </aside>
               </div><!-- sidebar -->
