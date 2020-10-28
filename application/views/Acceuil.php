@@ -121,7 +121,7 @@
                                     <div class="added-event"
                                     data-date="<?php echo  $dateF ?>" 
                                     data-time="<?php echo  $timeF ?>"
-                                    data-link="<?php echo base_url() ?>task/tasksListing/<?php echo  $Projet->projectId ?>" 
+                                    data-link="<?php echo base_url() ?>task/tasksListing/<?php echo  $tache->projectId ?>" 
                                     data-title="Tache : <?php echo  $tache->titre ?>">
                                       
                                     </div>
