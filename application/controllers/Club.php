@@ -72,7 +72,7 @@ class Club extends BaseController {
 			        $data["projectRecords"] = $this->project_model->projectListingByClub($clubId);
 			        $data['cl'] = $clubId;
 			        $data['members'] = $this->user_model->userListingByclub($clubId);
-			 		$count = $this->user_model->userListing($this->vendorId);
+			 		
 			   
 			    	$this->global['pageTitle'] = 'Mon club';   
 			    	$this->global['clubN'] = $clubId;    
