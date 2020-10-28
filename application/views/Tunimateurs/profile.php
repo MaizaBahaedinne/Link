@@ -204,12 +204,12 @@
                       <div class="gen-metabox">
                         <span><i class="fa fa-plus"></i> Experience Pro</span>
                          <?php foreach ($ExperienceP as $Pro ) { ?>
-                            - Mandat : <b> <?php echo  $Pro->debut ?> -  <?php echo  $Pro->fin ?></b>
+                          <a href="#" title="#"><b><?php echo $Pro->ste ; ?></b> </a>
+                            <b> <?php echo  $Pro->debut ?> -  <?php echo  $Pro->fin ?></b>
                           <p>
                             <a href="#" title="#" >&nbsp;&nbsp;<?php echo  $Pro->poste ?> </a> <?php echo  $Pro->departement ?> 
-                            <a href="#" title="#">Chez <?php echo $Pro->ste ; ?> </a>
                             <br>
-                            <span>Domain :  $Pro->steDomain  </span>
+                            <span>Domain :  <?php echo $Pro->steDomain ?>  </span>
                           </p>
                           <?php } ?>
                       </div>
