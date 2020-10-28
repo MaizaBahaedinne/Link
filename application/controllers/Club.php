@@ -134,7 +134,7 @@ class Club extends BaseController {
 		     * This function is used to delete the user using userId
 		     * @return boolean $result : TRUE / FALSE
 		     */
-		    function editBureau()
+		    function editBureau($clubId)
 			    {
 
 					//P
