@@ -87,7 +87,7 @@
                     <form action="<?php echo base_url() ?>Club/editBureau/<?php echo $clubInfo->clubID ?>" method="post" class="c-form" enctype="multipart/form-data">
                       
                         <label>Président</label>
-                        <select name="President" class="form-control" >
+                        <select name="P" class="form-control" >
                           <option value="" ></option>
                           <?php foreach ($members as $key ) {?>
                             <option value="<?php echo  $key->userId ?>" 
