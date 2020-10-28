@@ -766,7 +766,7 @@ class User extends BaseController
         $data["Skills"] = $this->user_diplome_model->diplomeListing($userId); 
 
 
-        $data["Scores"] = $this->scoring_model->ScoreByUser($userId); 
+        $data["scores"] = $this->scoring_model->ScoreByUser($userId); 
 
 
         $data['postRecords'] =  $this->posts_model->postsListingbyUser($userId);
