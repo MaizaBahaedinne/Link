@@ -144,18 +144,21 @@ class Club extends BaseController {
 			        $NewP = $this->user_model->getUserInfo($P);
 			        $NewPU = array('roleId'=> 1 , 'cellule'=> '' );
 			        
-			        if($OldP->userId != NULL && $OldP->userId != $P)
+			        if((!(empty($OldP))) $OldP->userId != $P){
+			        	if($OldP->userId != $P)
 			        	{
 			        		$this->user_model->editUser($OldP->userId , $OldPU);
 			       			$this->user_model->editUser($NewP->userId , $NewPU);
+			       			$this->session->set_flashdata('success', 'Le bureau à été mise à jour enregistrée ');
 			        	}
 			        else 
 			        	{  
 			        		$this->user_model->editUser($NewP->userId , $NewPU); 
+			        		$this->session->set_flashdata('success', 'Le bureau à été mise à jour enregistrée ');
+			        	}
 			        	}
 
-
-					$this->session->set_flashdata('success', 'Le bureau à été mise à jour enregistrée ');
+					
 
 
 			          
