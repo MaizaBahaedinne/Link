@@ -37,7 +37,7 @@ class Project_model extends CI_Model
                
 
                 $this->db->order_by('BaseTbl.startDate','ASC');
-                $this->db->where('NOW() < BaseTbl.endDate ') ;
+               
 
                 $query = $this->db->get();
                 
