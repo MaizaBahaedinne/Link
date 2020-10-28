@@ -25,7 +25,7 @@ class Project extends BaseController {
                                  $data['projectRecords'] = $this->project_model->projectListing();
                                  $data["clubInfo"] = $this->club_model->getClubInfo($this->clubID);
                                  $data["members"] = $this->user_model->userListingByclub($this->clubID) ;
-                                
+                                 $data['Projets'] = $this->project_model->projectNationalListing()
                           $this->global['pageTitle'] = 'Projets ';
 		                  $this->global['active'] = 'Projets';
 		                $this->loadViews("project/list", $this->global, $data, NULL);   
@@ -122,6 +122,7 @@ class Project extends BaseController {
                 $file_tmp = $_FILES['file']['tmp_name'];
                 $file_destination = 'uploads/projet/' . $file_name;
                
+                $projet = $this->project_model->getProjectInfo($projectId);
 
                 $projectInfo = array(        
                  'banner' => $file_name ,
