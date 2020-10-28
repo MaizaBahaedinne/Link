@@ -95,10 +95,10 @@
                             </option>
                           <?php } ?>
                         </select>
-
+                        <br>
                         <div class="row">
                           <div class="col-lg-3">
-                            <label>VP RH</label>
+                            <label>VP Ressource Humaine</label>
                               <select name="VPRH" class="form-control" >
                                 <?php foreach ($members as $key ) {?>
                                   <option value="<?php echo  $key->userId ?>" 
@@ -110,7 +110,7 @@
                           </div>
                           <div class="col-lg-3">
                             <label>VP Marketing</label>
-                              <select name="VPRH" class="form-control" >
+                              <select name="VPM" class="form-control" >
                                 <?php foreach ($members as $key ) {?>
                                   <option value="<?php echo  $key->userId ?>" 
                                   <?php if($key->roleId == 3 && $key->cellule == "Marketing" ){ ?> selected <?php } ?> > 
@@ -132,7 +132,7 @@
                           </div>
                           <div class="col-lg-3">
                             <label>VP Evenmentiel</label>
-                              <select name="VPRH" class="form-control" >
+                              <select name="VPE" class="form-control" >
                                 <?php foreach ($members as $key ) {?>
                                   <option value="<?php echo  $key->userId ?>" 
                                   <?php if($key->roleId == 3 && $key->cellule == "Evenmentiel" ){ ?> selected <?php } ?> > 
@@ -142,7 +142,16 @@
                               </select>
                           </div>
                         </div>
-
+                        
+                        <hr>
+                        <div class="row">
+                            <div class="col-lg-6">
+                            <input type="submit" class="btn btn-primary" value="Envoyer" />
+                            </div>
+                            <div class="col-lg-6">
+                            <input type="reset" class="btn btn-secondary" value="Annuler" />
+                            </div>
+                        </div> 
                     </form>
                     </ul>
                   </div>
