@@ -144,7 +144,7 @@ class Club extends BaseController {
 			        $NewP = $this->user_model->getUserInfo($P);
 			        $NewPU = array('roleId'=> 1 , 'cellule'=> '' );
 			        
-			        if((!(empty($OldP))) $OldP->userId != $P){
+			        if((!(empty($OldP))) ){
 			        	if($OldP->userId != $P)
 			        	{
 			        		$this->user_model->editUser($OldP->userId , $OldPU);
