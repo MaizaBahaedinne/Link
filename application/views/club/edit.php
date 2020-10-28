@@ -104,7 +104,7 @@
                                 <option value="" ></option>
                                 <?php foreach ($members as $key ) {?>
                                   <option value="<?php echo  $key->userId ?>" 
-                                  <?php if($key->roleId == 3 && $key->cellule == "Ressource humaine" ){ ?> selected <?php } ?> > 
+                                  <?php if($key->roleId == 3 && $key->cellule == "Ressource Humaine" ){ ?> selected <?php } ?> > 
                                     <?php echo  $key->name ?> 
                                   </option>
                                 <?php } ?>
@@ -140,7 +140,7 @@
                                 <option value="" ></option>
                                 <?php foreach ($members as $key ) {?>
                                   <option value="<?php echo  $key->userId ?>" 
-                                  <?php if($key->roleId == 3 && $key->cellule == "Evenmentiel" ){ ?> selected <?php } ?> > 
+                                  <?php if($key->roleId == 3 && $key->cellule == "Evenementiel" ){ ?> selected <?php } ?> > 
                                     <?php echo  $key->name ?> 
                                   </option>
                                 <?php } ?>
