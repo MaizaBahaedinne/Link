@@ -57,7 +57,7 @@
                         <li><span><?php echo count($participations) ?></span> Participations</li>
                         <li><span><?php echo count($formations) ?></span> Formations</li>
                         <li><span><?php echo count($conferences) ?></span> Conférences</li>
-                        <li><span><?php echo count($missions) ?></span> Missions</li>
+                        <li><span><?php echo '0' ?></span> Missions</li>
                       </ul>
                       <ol class="pit-rate">
                         <li class="rated"><i class="fa fa-star"></i></li>
@@ -165,7 +165,7 @@
                                 
                                 <span class="f-title"><i class="fa fa-envelope"></i> Email &amp; Website:</span>
                                 <p>
-                                  <a href="wpkixx.html" title="">www.wpkixx.com</a> Pitnik@yourmail.com 
+                                  <?php echo $userInfo->email ?>
                                 </p>
                                 
                               </div>
