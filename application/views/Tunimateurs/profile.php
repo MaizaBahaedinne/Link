@@ -240,7 +240,7 @@
                   
                               
                               <ul class="activitiez">
-                                 <?php echo ($scores as $score){  ?>
+                                 <?php foreach ($scores as $score){  ?>
                                  <li>
                                     <div class="activity-meta">
                                        <i><?php echo xTimeAgo ($score->ValidDTM, date('Y-m-d H:i:s') )  ?></i>
