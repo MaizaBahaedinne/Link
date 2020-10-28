@@ -236,7 +236,7 @@
 
                 <div class="central-meta">
                   <span class="create-post">Activité récente<a href="#" title="">See All</a></span>
-                 <div class="widget">
+                 
                   
                               
                               <ul class="activitiez">
@@ -244,15 +244,21 @@
                                  if(!(empty($scores))){
                                  foreach ($scores as $score){  ?>
                                  <li>
-                                    <div class="activity-meta">
-                                       <i><?php echo xTimeAgo ($score->ValidDTM, date('Y-m-d H:i:s') )  ?></i>
+                                    <div class="col-md-9 activity-meta">
+                                       
                                        <span><a href="#" title=""> </a>Participation au <?php echo $score->type ?> : <?php echo $score->titre ?></span>
-                                       <h6>by <a >black demon.</a></h6>
+                                       <h6>by <a ><?php if ($score->clubID > 5 ) {echo "club ";}  echo 'Tunivisions '.$score->name ; ?></a></h6>
+                                       <i><?php echo xTimeAgo ($score->ValidDTM, date('Y-m-d H:i:s') )  ?></i>
+                                    </div>
+                                    <div class="col-md-2 activity-meta">
+                                       <span><a href="#" title=""><?php echo $score->points ?> </a>
+                                        &nbsp; points
+                                       </span>
                                     </div>
                                  </li>
                                  <?php } } ?>
                               </ul>
-                           </div><!-- recent activites -->
+                          
                   </div>
               </div>
                  
