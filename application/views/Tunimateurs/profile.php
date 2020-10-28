@@ -179,20 +179,7 @@
                               </figure>
                            </div>
                            
-                           <div class="widget">
-                              <h4 class="widget-title">Activité récente</h4>
-                              <ul class="activitiez">
-                                 <!--  log 
-                                 <li>
-                                    <div class="activity-meta">
-                                       <i>10 hours Ago</i>
-                                       <span><a href="#" title="">Commented on Video posted </a></span>
-                                       <h6>by <a href="time-line.html">black demon.</a></h6>
-                                    </div>
-                                 </li>
-                                 -->
-                              </ul>
-                           </div><!-- recent activites -->
+                          
                            
                         </aside>
                      </div>      
@@ -245,6 +232,23 @@
                     
                   </div>  
                 </div>
+
+
+
+                 <div class="widget">
+                              <h4 class="widget-title">Activité récente</h4>
+                              <ul class="activitiez">
+                                 <!--  log 
+                                 <li>
+                                    <div class="activity-meta">
+                                       <i>10 hours Ago</i>
+                                       <span><a href="#" title="">Commented on Video posted </a></span>
+                                       <h6>by <a href="time-line.html">black demon.</a></h6>
+                                    </div>
+                                 </li>
+                                 -->
+                              </ul>
+                           </div><!-- recent activites -->
 
                      </div>
 
