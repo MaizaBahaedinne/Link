@@ -92,11 +92,11 @@ class Club extends BaseController {
 			        $this->loadViews("club/edit", $this->global, $data, NULL);
 		        }
 
-				        /**
-				     * This function is used to delete the user using userId
-				     * @return boolean $result : TRUE / FALSE
-				     */
-				    function edit($clubId)
+			        /**
+			     * This function is used to delete the user using userId
+			     * @return boolean $result : TRUE / FALSE
+			     */
+			    function edit($clubId)
 				    {
 
 				        $name = $this->input->post('name');
@@ -128,6 +128,38 @@ class Club extends BaseController {
 				          
 				          redirect('/Club/editClub/'.$clubId)  ;
 				    }
+
+
+			/**
+		     * This function is used to delete the user using userId
+		     * @return boolean $result : TRUE / FALSE
+		     */
+		    function editBureau()
+			    {
+
+					//P
+			        $P = $this->input->post('P');
+			        $OldP = $this->user_model->getMemberByRoleAndCelulle($clubId,1,'');
+			        $OldP = array('roleId'=> 5 , 'ClubID'=> 2 , 'cellule'=> '' );
+			        $NewP = $this->user_model->getUserInfo($P);
+			        $NewP = array('roleId'=> 1 , 'cellule'=> '' );
+			        if($OldP->userId != $P )
+			        	{
+			        		$this->user_model->editUser($OldP->userId , $OldP);
+			       			$this->user_model->editUser($NewP->userId , $NewP);
+			        	}
+			        else 
+			        	{  
+			        		$this->user_model->editUser($NewP->userId , $NewP); 
+			        	}
+
+
+					$this->session->set_flashdata('success', 'Le bureau à été mise à jour enregistrée ');
+
+
+			          
+			          redirect('/Club/editClub/'.$clubId)  ;
+			    }
 
 
 
