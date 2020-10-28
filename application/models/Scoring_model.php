@@ -21,8 +21,8 @@ class Scoring_model extends CI_Model
         $this->db->where('BaseTbl.userId', $userId);
         $this->db->where('statut = ',0 );
         $query = $this->db->get();
-        
-        return $query->row();
+         
+        return $query->result();
     } 
  
    function PresenceCheck($projectId,$userId)

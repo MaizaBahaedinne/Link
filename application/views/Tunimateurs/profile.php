@@ -240,7 +240,9 @@
                   
                               
                               <ul class="activitiez">
-                                 <?php foreach ($scores as $score){  ?>
+                                 <?php 
+                                 if(!(empty($score))){
+                                 foreach ($scores as $score){  ?>
                                  <li>
                                     <div class="activity-meta">
                                        <i><?php echo xTimeAgo ($score->ValidDTM, date('Y-m-d H:i:s') )  ?></i>
@@ -248,7 +250,7 @@
                                        <h6>by <a >black demon.</a></h6>
                                     </div>
                                  </li>
-                                 <?php } ?>
+                                 <?php } } ?>
                               </ul>
                            </div><!-- recent activites -->
                   </div>

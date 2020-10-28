@@ -768,6 +768,9 @@ class User extends BaseController
 
         $data["scores"] = $this->scoring_model->ScoreByUser($userId); 
 
+        foreach ($data["scores"] as $key ) {
+          echo $key->titre .''.$key->ValidDTM ;
+        }
 
         $data['postRecords'] =  $this->posts_model->postsListingbyUser($userId);
 
