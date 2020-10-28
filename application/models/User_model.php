@@ -51,7 +51,7 @@ class User_model extends CI_Model
         $this->db->from('tbl_users as BaseTbl');
         $this->db->join('tbl_roles as Role', 'Role.roleId = BaseTbl.roleId','left');
         $this->db->join('tbl_club as Clubs', 'Clubs.clubID = BaseTbl.ClubID', 'LEFT');
-        $this->db->where('BaseTbl.isDeleted =', 0);
+        
         $this->db->where('BaseTbl.CLubID =', $clubID);
         
         $query = $this->db->get();
