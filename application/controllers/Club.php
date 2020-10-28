@@ -143,7 +143,8 @@ class Club extends BaseController {
 			        $OldPU = array('roleId'=> 5 , 'ClubID'=> 2 , 'cellule'=> '' );
 			        $NewP = $this->user_model->getUserInfo($P);
 			        $NewPU = array('roleId'=> 1 , 'cellule'=> '' );
-			        if($OldP->userId != $P )
+			        
+			        if($OldP->userId != NULL && $OldP->userId != $P)
 			        	{
 			        		$this->user_model->editUser($OldP->userId , $OldPU);
 			       			$this->user_model->editUser($NewP->userId , $NewPU);
