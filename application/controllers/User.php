@@ -35,7 +35,8 @@ class User extends BaseController
         $this->load->model('user_diplome_model') ;
 
 
-        $this->load->model('scoring_model') ;  
+        $this->load->model('scoring_model') ;
+        $this->load->model('task_model') ;  
         
         $this->isLoggedIn();   
     }
@@ -762,28 +763,22 @@ class User extends BaseController
     {
         $data["userInfo"] = $this->user_model->getUserInfoWithRole($userId);
         $data["ExpTuns"] = $this->user_cariere_model->carrierListing($userId);
-        $data["Diplomes"] = $this->user_diplome_model->diplomeListing($userId); 
-        $data["Skills"] = $this->user_diplome_model->diplomeListing($userId); 
-
+        $data["Diplomes"] = $this->user_diplome_model->diplomeListing($userId);
+        $data["ExperienceP"] = $this->user_cariere_model->carrierProListing($userId) ;
+        $data["Langue"] = $this->user_cariere_model->langListing($userId) ;
+        $data["skills"] = $this->user_cariere_model->hardListing($userId) ;    
 
         $data["scores"] = $this->scoring_model->ScoreByUser($userId); 
 
-        foreach ($data["scores"] as $key ) {
-          echo $key->titre .''.$key->ValidDTM ;
-        }
+        $data["tasks"] = $this->task_model->taskListingByUser($userId);
+        $data["eff"] = $this->task_model->taskListingByUserValid($userId);
 
-        $data['postRecords'] =  $this->posts_model->postsListingbyUser($userId);
+        $data["participations"] = $this->scoring_model->ScoreByUserByPart($userId) ;
+        $data["formations"] = $this->scoring_model->ScoreByUserByType($userId,"Formation");
+        $data["formations"] = $this->scoring_model->ScoreByUserByType($userId,"Formation");
+        $data["conferences"] = $this->scoring_model->ScoreByUserByType($userId,"Conférences");
+        $data["missions"]   = null ;
 
-   
-        
-            foreach ($data['postRecords'] as $key ) {                
-                        $key->commentsRecords              = $this->posts_model->CommentsListing($key->postId);
-                        $key->likeRecords             = $this->posts_model->likesListing($key->postId);
-                         $key->likeCheck          = $this->posts_model->likeCheck($key->postId,$this->vendorId);
-                  }
-
-
-        
         
         $this->global['pageTitle'] = $data["userInfo"]->name;
         $this->loadViews("Tunimateurs/profile", $this->global, $data, NULL);

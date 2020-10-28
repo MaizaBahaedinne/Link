@@ -54,10 +54,10 @@
                   <div class="col-lg-6 col-md-6 col-sm-9">
                     <div class="user-inf-meta">
                       <ul class="user-info">
-                        <li><span>0</span> Projets</li>
-                        <li><span>0</span> Formations</li>
-                        <li><span>0</span> Conférences</li>
-                        <li><span>0</span> Missions</li>
+                        <li><span><?php echo count($participations) ?></span> Participations</li>
+                        <li><span><?php echo count($formations) ?></span> Formations</li>
+                        <li><span><?php echo count($conferences) ?></span> Conférences</li>
+                        <li><span><?php echo count($missions) ?></span> Missions</li>
                       </ul>
                       <ol class="pit-rate">
                         <li class="rated"><i class="fa fa-star"></i></li>
@@ -71,9 +71,9 @@
                   </div>
                   <div class="col-lg-12 col-md-12 col-sm-12">
                     <ul class="job-progres">
-                      <li><span class="main-color">0%</span> Tâches</li>
-                      <li><span class="color-blue">0</span> Tâches en cours</li>
-                      <li><span class="color-valvet">0</span> Tâches terminées</li>
+                      <li><span class="main-color"><?php echo ((count($eff)*100)/count($tasks)) ?>%</span> efficacité</li>
+                      <li><span class="color-blue"><?php echo count($tasks) ?></span> Tâches</li>
+                      <li><span class="color-valvet"><?php echo count($eff) ?></span> Tâches terminées</li>
                     </ul>
                   </div>
                   <div class="col-lg-12 col-md-12 col-sm-12">
@@ -192,6 +192,16 @@
                     <div class="col-lg-6">
                       <div class="gen-metabox">
                         <span><i class="fa fa-puzzle-piece"></i> Tunivisions Experience</span>
+                          <?php foreach ($ExperienceP as $ExpTun ) { ?>
+                            - Mandat : <b> <?php echo  $ExpTun->attacheDT ?> -  <?php echo  $ExpTun->endDT ?></b>
+                          <p>
+                            <a href="#" title="#" >&nbsp;&nbsp;<?php echo  $ExpTun->role ?> </a> <?php echo  $ExpTun->cellule ?> 
+                            <a href="#" title="#"> <?php if ($ExpTun->clubId > 5 ) {echo "club ";}  echo 'Tunivisions '.$ExpTun->ClubName ; ?> </a>
+                          </p>
+                          <?php } ?>
+                      </div>
+                      <div class="gen-metabox">
+                        <span><i class="fa fa-puzzle-piece"></i>Experience Pro</span>
                           <?php foreach ($ExpTuns as $ExpTun ) { ?>
                             - Mandat : <b> <?php echo  $ExpTun->attacheDT ?> -  <?php echo  $ExpTun->endDT ?></b>
                           <p>
@@ -217,10 +227,13 @@
                          <?php } ?>
                       </div>
                       <div class="gen-metabox">
-                        <span><i class="fa fa-certificate"></i> Expérience professionnelle</span>
+                        <span><i class="fa fa-certificate"></i>Skills</span>
+                        <?php foreach ($skills as $skill) { ?>
                         <p>
-                          Currently working in the "color hands" web development agency from the last 5 five years as <a href="#" title="">Senior UI/UX Designer</a>
+
+                          <?php echo $skill->nom ?> 
                         </p>
+                        <?php } ?>
                       </div>
                     </div>
                     <div class="col-lg-6">
@@ -244,17 +257,16 @@
                                  if(!(empty($scores))){
                                  foreach ($scores as $score){  ?>
                                  <li>
-                                    <div class="col-md-9 activity-meta">
-                                       
+                                    <div class="activity-meta">
+                                        <b><a href="#" title=""><?php echo $score->points ?> </a>
+                                        &nbsp; points
+                                       </b>
                                        <span><a href="#" title=""> </a>Participation au <?php echo $score->type ?> : <?php echo $score->titre ?></span>
                                        <h6>by <a ><?php if ($score->clubID > 5 ) {echo "club ";}  echo 'Tunivisions '.$score->name ; ?></a></h6>
                                        <i><?php echo xTimeAgo ($score->ValidDTM, date('Y-m-d H:i:s') )  ?></i>
+
                                     </div>
-                                    <div class="col-md-2 activity-meta">
-                                       <span><a href="#" title=""><?php echo $score->points ?> </a>
-                                        &nbsp; points
-                                       </span>
-                                    </div>
+
                                  </li>
                                  <?php } } ?>
                               </ul>
