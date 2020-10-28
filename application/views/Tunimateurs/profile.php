@@ -241,7 +241,7 @@
                               
                               <ul class="activitiez">
                                  <?php 
-                                 if(!(empty($score))){
+                                 if(!(empty($scores))){
                                  foreach ($scores as $score){  ?>
                                  <li>
                                     <div class="activity-meta">
