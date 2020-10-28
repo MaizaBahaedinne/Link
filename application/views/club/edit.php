@@ -83,6 +83,7 @@
                   </div>
                   <div class="widget">
                     <h4 class="widget-title">Bureau du club </h4>
+                    <ul class="faved-page">
                     <form action="<?php echo base_url() ?>Club/edit/<?php echo $clubInfo->clubID ?>" method="post" class="c-form" enctype="multipart/form-data">
                       
                         <label>Président</label>
@@ -143,6 +144,7 @@
                         </div>
 
                     </form>
+                    </ul>
                   </div>
                 </aside>
               </div><!-- sidebar -->
