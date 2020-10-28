@@ -202,10 +202,16 @@
                           <?php } ?>
                       </div>
                       <div class="gen-metabox">
-                        <span><i class="fa fa-plus"></i> Skills</span>
-                        <p>
-                          Swimming, Surfing, Uber Diving, Anime, Photography, Tattoos, Street Art.
-                        </p>
+                        <span><i class="fa fa-plus"></i> Experience Pro</span>
+                         <?php foreach ($ExperienceP as $Pro ) { ?>
+                            - Mandat : <b> <?php echo  $Pro->debut ?> -  <?php echo  $Pro->fin ?></b>
+                          <p>
+                            <a href="#" title="#" >&nbsp;&nbsp;<?php echo  $ExpTun->poste ?> </a> <?php echo  $ExpTun->departement ?> 
+                            <a href="#" title="#">Chez <?php echo $ExpTun->ste ; ?> </a>
+                            <br>
+                            <span>Domain :  $ExpTun->steDomain  </span>
+                          </p>
+                          <?php } ?>
                       </div>
                     </div>
                     <div class="col-lg-6">
@@ -227,7 +233,7 @@
                         </p>
                         
                       </div>
-                    </div>
+                  
                    
                     <div class="gen-metabox">
                         <span><i class="fa fa-sitemap"></i> Langue</span>
@@ -235,7 +241,7 @@
                           <?php echo $Langue->nom ?> ,
                           <?php } ?>
                     </div>
-                    
+                      </div>
                     
                   </div>  
                 </div>
