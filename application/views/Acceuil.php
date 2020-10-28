@@ -160,7 +160,7 @@
                   <form method="post" action="<?php echo base_url() ?>Posts/addNewP" enctype="multipart/form-data" >
                   <div class="new-postbox">
                     <figure>
-                      <img src="<?php echo base_url() ?>uploads/avatar/<?php echo $avatar ?>"  class="alligator-profile" alt="">
+                      <img src="<?php echo base_url() ?>uploads/avatar/<?php echo $avatar ?>"  class="alligator-profile-header" alt="">
                     </figure>
                     <div class="newpst-input">
                       
@@ -240,7 +240,7 @@
                     <div class="user-post">
                       <div class="friend-info">
                         <figure>
-                          <img src="<?php echo base_url() ?>uploads/avatar/<?php echo $post->avatar ?>" class="alligator-profile" alt="">
+                          <img src="<?php echo base_url() ?>uploads/avatar/<?php echo $post->avatar ?>" class="alligator-profile-header" alt="">
                         </figure>
                         <div class="friend-name">
                           <div class="more">

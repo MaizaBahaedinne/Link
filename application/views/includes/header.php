@@ -38,6 +38,13 @@
         width: 100px;
         height: 100px;
     }
+
+    .alligator-profile-header {
+        object-fit: cover;
+        object-position: 20% 50%;
+        width: 40px;
+        height: 40px;
+    }
     .alligator-profile-member {
         object-fit: cover;
         object-position: 20% 50%;
@@ -47,8 +54,8 @@
     .alligator-profile-likes {
         object-fit: cover;
         object-position: 20% 50%;
-        width: 40px;
-        height: 40px;
+        width: 30px;
+        height: 30px;
     }
     .alligator-projects {
         object-fit: cover;
@@ -317,7 +324,7 @@
 			</ul>
 			<div class="user-img">
 				<h5><?php echo $name ?></h5>
-				<img class="alligator-profile" src="<?php echo base_url() ?>uploads/avatar/<?php echo $avatar ?>"  alt="">
+				<img class="alligator-profile-header" src="<?php echo base_url() ?>uploads/avatar/<?php echo $avatar ?>"  alt="">
 				<span class="status f-online"></span>
 				<div class="user-setting">
 					<span class="seting-title">Parametre <a href="#" title="">afficher tous</a></span>
