@@ -190,18 +190,9 @@
                   <span class="create-post">General Info<a href="#" title="">See All</a></span>
                   <div class="row">
                     <div class="col-lg-6">
+
                       <div class="gen-metabox">
-                        <span><i class="fa fa-puzzle-piece"></i> Tunivisions Experience</span>
-                          <?php foreach ($ExperienceP as $ExpTun ) { ?>
-                            - Mandat : <b> <?php echo  $ExpTun->attacheDT ?> -  <?php echo  $ExpTun->endDT ?></b>
-                          <p>
-                            <a href="#" title="#" >&nbsp;&nbsp;<?php echo  $ExpTun->role ?> </a> <?php echo  $ExpTun->cellule ?> 
-                            <a href="#" title="#"> <?php if ($ExpTun->clubId > 5 ) {echo "club ";}  echo 'Tunivisions '.$ExpTun->ClubName ; ?> </a>
-                          </p>
-                          <?php } ?>
-                      </div>
-                      <div class="gen-metabox">
-                        <span><i class="fa fa-puzzle-piece"></i>Experience Pro</span>
+                        <span><i class="fa fa-puzzle-piece"></i>Experience Tunivisions</span>
                           <?php foreach ($ExpTuns as $ExpTun ) { ?>
                             - Mandat : <b> <?php echo  $ExpTun->attacheDT ?> -  <?php echo  $ExpTun->endDT ?></b>
                           <p>
@@ -228,18 +219,21 @@
                       </div>
                       <div class="gen-metabox">
                         <span><i class="fa fa-certificate"></i>Skills</span>
-                        <?php foreach ($skills as $skill) { ?>
+                        
                         <p>
-
-                          <?php echo $skill->nom ?> 
+                          <?php foreach ($skills as $skill) { ?>
+                          <?php echo $skill->nom ?> ,
+                          <?php } ?>
                         </p>
-                        <?php } ?>
+                        
                       </div>
                     </div>
                     <div class="col-lg-6">
                       <div class="gen-metabox no-margin">
                         <span><i class="fa fa-sitemap"></i> Langue</span>
-
+                          <?php foreach ($Langues as $Langue) { ?>
+                          <?php echo $Langue->nom ?> ,
+                          <?php } ?>
                       </div>
                     </div>
                     

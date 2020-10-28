@@ -765,7 +765,7 @@ class User extends BaseController
         $data["ExpTuns"] = $this->user_cariere_model->carrierListing($userId);
         $data["Diplomes"] = $this->user_diplome_model->diplomeListing($userId);
         $data["ExperienceP"] = $this->user_cariere_model->carrierProListing($userId) ;
-        $data["Langue"] = $this->user_cariere_model->langListing($userId) ;
+        $data["Langues"] = $this->user_cariere_model->langListing($userId) ;
         $data["skills"] = $this->user_cariere_model->hardListing($userId) ;    
 
         $data["scores"] = $this->scoring_model->ScoreByUser($userId); 
