@@ -206,10 +206,10 @@
                          <?php foreach ($ExperienceP as $Pro ) { ?>
                             - Mandat : <b> <?php echo  $Pro->debut ?> -  <?php echo  $Pro->fin ?></b>
                           <p>
-                            <a href="#" title="#" >&nbsp;&nbsp;<?php echo  $ExpTun->poste ?> </a> <?php echo  $ExpTun->departement ?> 
-                            <a href="#" title="#">Chez <?php echo $ExpTun->ste ; ?> </a>
+                            <a href="#" title="#" >&nbsp;&nbsp;<?php echo  $Pro->poste ?> </a> <?php echo  $Pro->departement ?> 
+                            <a href="#" title="#">Chez <?php echo $Pro->ste ; ?> </a>
                             <br>
-                            <span>Domain :  $ExpTun->steDomain  </span>
+                            <span>Domain :  $Pro->steDomain  </span>
                           </p>
                           <?php } ?>
                       </div>
