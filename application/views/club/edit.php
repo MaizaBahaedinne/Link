@@ -148,6 +148,59 @@
                           </div>
                         </div>
 
+
+                        <br>
+                        <div class="row">
+                          <div class="col-lg-3">
+                            <label>Assistant Ressource Humaine</label>
+                              <select name="ARH" class="form-control" >
+                                <option value="" ></option>
+                                <?php foreach ($members as $key ) {?>
+                                  <option value="<?php echo  $key->userId ?>" 
+                                  <?php if($key->roleId == 6 && $key->cellule == "Ressource Humaine" ){ ?> selected <?php } ?> > 
+                                    <?php echo  $key->name ?> 
+                                  </option>
+                                <?php } ?>
+                              </select>
+                          </div>
+                          <div class="col-lg-3">
+                            <label>Assistant Marketing</label>
+                              <select name="AM" class="form-control" >
+                                <option value="" ></option>
+                                <?php foreach ($members as $key ) {?>
+                                  <option value="<?php echo  $key->userId ?>" 
+                                  <?php if($key->roleId == 6 && $key->cellule == "Marketing" ){ ?> selected <?php } ?> > 
+                                    <?php echo  $key->name ?> 
+                                  </option>
+                                <?php } ?>
+                              </select>
+                          </div>
+                          <div class="col-lg-3">
+                            <label>Assistant Administraion & finance</label>
+                              <select name="AAF" class="form-control" >
+                                <?php foreach ($members as $key ) {?>
+                                  <option value="" ></option>
+                                  <option value="<?php echo  $key->userId ?>" 
+                                  <?php if($key->roleId == 6 && $key->cellule == "Administration et finance" ){ ?> selected <?php } ?> > 
+                                    <?php echo  $key->name ?> 
+                                  </option>
+                                <?php } ?>
+                              </select>
+                          </div>
+                          <div class="col-lg-3">
+                            <label>Assistant Evenmentiel</label>
+                              <select name="AE" class="form-control" >
+                                <option value="" ></option>
+                                <?php foreach ($members as $key ) {?>
+                                  <option value="<?php echo  $key->userId ?>" 
+                                  <?php if($key->roleId == 6 && $key->cellule == "Evenementiel" ){ ?> selected <?php } ?> > 
+                                    <?php echo  $key->name ?> 
+                                  </option>
+                                <?php } ?>
+                              </select>
+                          </div>
+                        </div>
+
                         <hr>
                         <div class="row">
                             <div class="col-lg-6">

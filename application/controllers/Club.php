@@ -139,12 +139,17 @@ class Club extends BaseController {
 			        if( !(empty($OldP)) )
 			        {
 			        	echo("Poste : ".$NewP->userId ." => ".$OldP->userId) ;
-			        	if($OldP->userId != $P)
+			        	if($OldP->userId != $NewP->userId )
 			        	{
 			        		$this->user_model->editUser($OldPU , $OldP->userId);
 			       			$this->user_model->editUser($NewPU , $NewP->userId);
 			       			$this->session->set_flashdata('success', 'Le bureau à été mise à jour enregistrée ');
-			        	}			        	
+			        	}
+			        	else 
+				        {  
+			        		$this->user_model->editUser( $NewPU , $NewP->userId); 
+			        		$this->session->set_flashdata('success', 'Le bureau à été mise à jour enregistrée ');
+				        }			        	
 			        }
 			        else 
 			        {  
@@ -165,20 +170,43 @@ class Club extends BaseController {
 			        $VPE = $this->input->post('VPE')  ;
 			        $VPAF = $this->input->post('VPAF')  ;
 			        $VPRH = $this->input->post('VPRH')  ;
-			        				
+			        $AM = $this->input->post('AM')  ;
+			        $AE = $this->input->post('AE')  ;
+			        $AAF = $this->input->post('AAF')  ;
+			        $ARH = $this->input->post('ARH')  ;
+			        
 
-			      	$this->passationpassation(1,$clubId,'',$P) ; 
-			      	$this->passationpassation(3,$clubId,'Marketing',$VPM) ; 
-			      	$this->passationpassation(3,$clubId,'Evenementiel',$VPE) ; 
-			      	$this->passationpassation(3,$clubId,'Administration et finance',$VPAF) ; 
-			      	$this->passationpassation(3,$clubId,'Ressource Humaine',$VPRH) ; 
+
+			        if($AM != Null  ){
+			      	$this->passation(6,$clubId,'Marketing',$AM) ; }
+			      	 if($AE != Null  ){
+			      	$this->passation(6,$clubId,'Evenementiel',$AE) ;} 
+			      	 if($AAF != Null  ){
+			      	$this->passation(6,$clubId,'Administration et finance',$AAF) ; }
+			      	 if($ARH != Null  ){
+			      	$this->passation(6,$clubId,'Ressource Humaine',$ARH) ; }
+
+			        
+			      	if($VPM != Null ){
+			      	$this->passation(3,$clubId,'Marketing',$VPM) ; }
+			      	if($VPE != Null ){
+			      	$this->passation(3,$clubId,'Evenementiel',$VPE) ; }
+			      	if($VPAF != Null  ){
+			      	$this->passation(3,$clubId,'Administration et finance',$VPAF) ;} 
+			      	 if($VPRH != Null  ){
+			      	$this->passation(3,$clubId,'Ressource Humaine',$VPRH) ; }
+
+			      	if($P != Null ){
+			      	$this->passation(1,$clubId,'',$P) ; 
+			      	}
+
 
 			       
 			      
 
 
 
-			          redirect('/Club/editClub/'.$clubId)  ;
+			         redirect('/Club/editClub/'.$clubId)  ;
 			    }
 
 
