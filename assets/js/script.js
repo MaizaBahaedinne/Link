@@ -212,18 +212,23 @@ $('.audio-call, .video-call').on('click', function () {
 		  	$.ajax({
 		        url: "Like/" + this.id ,
 		        type: "post"
+		    	}).done(function(){
+						$(this).addClass('happy').removeClass('broken');
+						animated = true;
+						counter++;
+						$(this).children('span').text(counter);
+		    		
 		    	});
 
-			$(this).addClass('happy').removeClass('broken');
-			animated = true;
-			counter++;
-			$(this).children('span').text(counter);
+
 		  }
 		  else {
+		  	/*
 			$(this).removeClass('happy').addClass('broken');
 			animated = false; 
 			 counter--;
 			$(this).children('span').text(counter);
+			*/
 		  }
 		});	
 	

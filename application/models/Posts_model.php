@@ -126,6 +126,7 @@ class Posts_model extends CI_Model
         $this->db->from('tbl_like as BaseTbl');
         $this->db->join('tbl_users as User ', 'User.userId = BaseTbl.userId', 'LEFT');
         $this->db->where('BaseTbl.postId  =  ' , $postId ) ;
+        $this->db->group_by('BaseTbl.userId');
         $this->db->order_by('BaseTbl.createDTM ASC');
         $query = $this->db->get();
         $result = $query->result();        

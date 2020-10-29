@@ -136,14 +136,12 @@ class Club extends BaseController {
 		     */
 		    function editBureau($clubId)
 			    {
-
 					//P
 			        $P = $this->input->post('P');
 			        $OldP = $this->user_model->getMemberByRoleAndCelulle($clubId,1,NULL) ;
 			        $OldPU = array('roleId'=> 5 , 'ClubID'=> 2 , 'cellule'=> '' ) ;
 			        $NewP = $this->user_model->getUserInfo($P) ;
 			        $NewPU = array('roleId'=> 1 , 'cellule'=> '' ) ;
-
 			        if( !(empty($OldP)) )
 			        {
 			        	echo("P: ".$NewP->userId ." => ".$OldP->userId) ;
@@ -152,8 +150,7 @@ class Club extends BaseController {
 			        		$this->user_model->editUser($OldP , $OldP->userId);
 			       			$this->user_model->editUser($NewPU , $NewP->userId);
 			       			$this->session->set_flashdata('success', 'Le bureau à été mise à jour enregistrée ');
-			        	}
-			        	
+			        	}			        	
 			        }
 			        else 
 			        {  
@@ -175,11 +172,10 @@ class Club extends BaseController {
 			        		$this->user_model->editUser($OldVPMU , $OldVPM->userId);
 			       			$this->user_model->editUser($NewVPMU , $NewVPM->userId);
 			       			$this->session->set_flashdata('success', 'Le bureau à été mise à jour enregistrée ');
-			        	}
-			        	
+			        	}	
 			        }
 			        else 
-			        {  	
+			        {
 			        		echo("<br>VPM: ".$NewVPM->userId ) ;
 			        		$this->user_model->editUser($NewVPMU , $NewVPM->userId); 
 			        		$this->session->set_flashdata('success', 'Le bureau à été mise à jour enregistrée ');
@@ -188,28 +184,49 @@ class Club extends BaseController {
 
 			        //VPRH
 			        $VPRH = $this->input->post('VPRH');
-			        $OldVPRH = $this->user_model->getMemberByRoleAndCelulle($clubId,3,'Marketing') ;
+			        $OldVPRH=$this->user_model->getMemberByRoleAndCelulle($clubId,3,'Ressource Humaine');
 			        $OldVPRHU = array('roleId'=> 5 , 'ClubID'=> 2 , 'cellule'=> '' ) ;
-			        $NewVPRH = $this->user_model->getUserInfo($VPM) ;
-			        $NewVPRHU = array('roleId'=> 3 , 'cellule'=> 'Marketing' ) ;
+			        $NewVPRH = $this->user_model->getUserInfo($VPRH) ;
+			        $NewVPRHU = array('roleId'=> 3 , 'cellule'=> 'Ressource Humaine' ) ;
 			        if( !(empty($OldVPRH)) )
 			        {
-			        	echo("VPRH: ".$NewVPRH->userId ." => ".$OldVPRH->userId) ;
+			        	echo("<br>VPRH: ".$NewVPRH->userId ." => ".$OldVPRH->userId) ;
 			        	if($OldVPRH->userId != $VPRH)
 			        	{
 			        		$this->user_model->editUser($OldVPRHU , $OldVPRH->userId);
 			       			$this->user_model->editUser($NewVPRHU , $NewVPRH->userId);
 			       			$this->session->set_flashdata('success', 'Le bureau à été mise à jour enregistrée ');
-			        	}
-			        	
+			        	}			        	
 			        }
 			        else 
-			        {  	
+			        {
 			        		echo("<br>VPRH: ".$NewVPRH->userId ) ;
-			        		$this->user_model->editUser($NewVPRH , $NewVPRH->userId); 
+			        		$this->user_model->editUser($NewVPRHU , $NewVPRH->userId); 
 			        		$this->session->set_flashdata('success', 'Le bureau à été mise à jour enregistrée ');
 			        }
 
+			        //VPAF
+			        $VPAF = $this->input->post('VPAF');
+			        $OldVPAF=$this->user_model->getMemberByRoleAndCelulle($clubId,3,'Administration et finance');
+			        $OldVPAFU = array('roleId'=> 5 , 'ClubID'=> 2 , 'cellule'=> '' ) ;
+			        $NewVPAF = $this->user_model->getUserInfo($VPM) ;
+			        $NewVPAFU = array('roleId'=> 3 , 'cellule'=> 'Administration et finance' ) ;
+			        if( !(empty($OldVPRH)) )
+			        {
+			        	echo("<br>VPAF: ".$NewVPAF->userId ." => ".$OldVPAF->userId) ;
+			        	if($OldVPAF->userId != $VPAF)
+			        	{
+			        		$this->user_model->editUser($OldVPAFU , $OldVPAF->userId);
+			       			$this->user_model->editUser($NewVPAFU , $NewVPAF->userId);
+			       			$this->session->set_flashdata('success', 'Le bureau à été mise à jour enregistrée ');
+			        	}			        	
+			        }
+			        else 
+			        {
+			        		echo("<br>VPAF: ".$NewVPAF->userId ) ;
+			        		$this->user_model->editUser($NewVPAFU , $NewVPAF->userId); 
+			        		$this->session->set_flashdata('success', 'Le bureau à été mise à jour enregistrée ');
+			        }
 
 			        //  redirect('/Club/editClub/'.$clubId)  ;
 			    }

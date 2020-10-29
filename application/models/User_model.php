@@ -211,7 +211,6 @@ class User_model extends CI_Model
     {
         $this->db->where('userId', $userId);
         $this->db->update('tbl_users', $userInfo);
-        
         return TRUE;
     }
     
