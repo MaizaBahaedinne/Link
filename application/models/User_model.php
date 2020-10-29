@@ -92,18 +92,17 @@ class User_model extends CI_Model
 
 
 
-     function getMembersByCellule($clubID,$cellule)
+     function getMembersByCellule ($clubID,$cellule)
         {
-            $this->db->select('userId, name ');
+            $this->db->select('*');
             $this->db->from('tbl_users');
-            $this->db->where("isDeleted", 0);
             $this->db->where('cellule =', $cellule );
             $this->db->where('ClubID =', $clubID );
             $query = $this->db->get();         
             return $query->result();
         }
 
-     function getMemberByRoleAndCelulle($ClubID,$roleId,$cellule)
+     function getMemberByRoleAndCelulle ($ClubID,$roleId,$cellule)
         {
             $this->db->select('*');
             $this->db->from('tbl_users');
@@ -112,8 +111,24 @@ class User_model extends CI_Model
             $this->db->where('ClubID =', $ClubID );
             $query = $this->db->get();         
             return $query->row();
-            
         }
+
+
+           /**
+     * This function used to get user information by id
+     * @param number $userId : This is user id
+     * @return array $result : This is user information
+     */
+    function getUserInfo($userId)
+    {
+        $this->db->select('*');
+        $this->db->from('tbl_users');
+        $this->db->where('userId', $userId);
+        $query = $this->db->get();
+        
+        return $query->row();
+    }
+    
 
 
     function getManagers($ClubID)
@@ -123,8 +138,7 @@ class User_model extends CI_Model
             $this->db->where('roleId =', 7 );
             $this->db->where('ClubID =', $ClubID );
             $query = $this->db->get();         
-            return $query->result();
-            
+            return $query->result(); 
         }
 
 
@@ -182,61 +196,11 @@ class User_model extends CI_Model
     }
 
 
-     /**
-     * This function is used to add new user to system
-     * @return number $insert_id : This is last inserted id
-     */
-    function addNewLink($linkInfo)
-    {
-
-        $this->db->trans_start();
-        $this->db->insert('tbl_freinds', $linkInfo);
-        
-        $insert_id = $this->db->insert_id();
-        
-        $this->db->trans_complete();
-        
-        return $insert_id;
-    }
 
 
 
-
-    /**
-     * This function is used to add new user to system
-     * @return number $insert_id : This is last inserted id
-     */
-   /*  function linkRequest($reciver)
-    {
-         $this->db->select(' Sender.userId , Sender.name , Sender.avatar ,  BaseTbl.Addeddate , BaseTbl.statut ');
-        $this->db->from('tbl_freinds as BaseTbl');
-        $this->db->join('tbl_users as Reciver', 'Reciver.userId = BaseTbl.id_tunReciver ' ,'left');
-        $this->db->join('tbl_users as Sender', 'Sender.userId = BaseTbl.id_tunSender  '  ,'left');
-        $this->db->where('BaseTbl.id_tunReciver = '.$reciver.' AND  BaseTbl.statut = 0 ' ) ; 
-
-        $query = $this->db->get();
-        
-        $result = $query->result();        
-        return $result;  
-    }
-    */
-    
-    /**
-     * This function used to get user information by id
-     * @param number $userId : This is user id
-     * @return array $result : This is user information
-     */
-    function getUserInfo($userId)
-    {
-        $this->db->select('userId, name, email, mobile, roleId  , clubID, avatar , isDeleted');
-        $this->db->from('tbl_users');
-
-        $this->db->where('userId', $userId);
-        $query = $this->db->get();
-        
-        return $query->row();
-    }
-    
+ 
+ 
     
     /**
      * This function is used to update the user information
