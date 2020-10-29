@@ -130,105 +130,55 @@ class Club extends BaseController {
 				    }
 
 
-			/**
-		     * This function is used to delete the user using userId
-		     * @return boolean $result : TRUE / FALSE
-		     */
-		    function editBureau($clubId)
-			    {
-					//P
-			        $P = $this->input->post('P');
-			        $OldP = $this->user_model->getMemberByRoleAndCelulle($clubId,1,NULL) ;
+				   function passation($oldPosteroleId , $clubId , $cellule , $NewPosteID) {
+
+				   	$OldP = $this->user_model->getMemberByRoleAndCelulle($clubId,$oldPosteroleId,$cellule) ;
 			        $OldPU = array('roleId'=> 5 , 'ClubID'=> 2 , 'cellule'=> '' ) ;
-			        $NewP = $this->user_model->getUserInfo($P) ;
-			        $NewPU = array('roleId'=> 1 , 'cellule'=> '' ) ;
+			        $NewP = $this->user_model->getUserInfo($NewPosteID) ;
+			        $NewPU = array('roleId'=> $oldPosteroleId , 'cellule'=> $cellule ) ;
 			        if( !(empty($OldP)) )
 			        {
-			        	echo("P: ".$NewP->userId ." => ".$OldP->userId) ;
+			        	echo("Poste : ".$NewP->userId ." => ".$OldP->userId) ;
 			        	if($OldP->userId != $P)
 			        	{
-			        		$this->user_model->editUser($OldP , $OldP->userId);
+			        		$this->user_model->editUser($OldPU , $OldP->userId);
 			       			$this->user_model->editUser($NewPU , $NewP->userId);
 			       			$this->session->set_flashdata('success', 'Le bureau à été mise à jour enregistrée ');
 			        	}			        	
 			        }
 			        else 
 			        {  
-			        		$this->user_model->editUser($NewP->userId , $NewPU); 
-			        		$this->session->set_flashdata('success', 'Le bureau à été mise à jour enregistrée ');
+		        		$this->user_model->editUser( $NewPU , $NewP->userId); 
+		        		$this->session->set_flashdata('success', 'Le bureau à été mise à jour enregistrée ');
 			        }
+				   }
 
-			        //VPM
-			        $VPM = $this->input->post('VPM');
-			        $OldVPM = $this->user_model->getMemberByRoleAndCelulle($clubId,3,'Marketing') ;
-			        $OldVPMU = array('roleId'=> 5 , 'ClubID'=> 2 , 'cellule'=> '' ) ;
-			        $NewVPM = $this->user_model->getUserInfo($VPM) ;
-			        $NewVPMU = array('roleId'=> 3 , 'cellule'=> 'Marketing' );
-			        if( !(empty($OldVPM)) )
-			        {
-			        	echo("VPM: ".$NewVPM->userId ." => ".$OldVPM->userId) ;
-			        	if($OldVPM->userId != $VPM)
-			        	{
-			        		$this->user_model->editUser($OldVPMU , $OldVPM->userId);
-			       			$this->user_model->editUser($NewVPMU , $NewVPM->userId);
-			       			$this->session->set_flashdata('success', 'Le bureau à été mise à jour enregistrée ');
-			        	}	
-			        }
-			        else 
-			        {
-			        		echo("<br>VPM: ".$NewVPM->userId ) ;
-			        		$this->user_model->editUser($NewVPMU , $NewVPM->userId); 
-			        		$this->session->set_flashdata('success', 'Le bureau à été mise à jour enregistrée ');
-			        }
+			/**
+		     * This function is used to delete the user using userId
+		     * @return boolean $result : TRUE / FALSE
+		     */
+		    function editBureau($clubId)
+			    {
+
+			        $P = $this->input->post('P')  ;
+			        $VPM = $this->input->post('VPM')  ;
+			        $VPE = $this->input->post('VPE')  ;
+			        $VPAF = $this->input->post('VPAF')  ;
+			        $VPRH = $this->input->post('VPRH')  ;
+			        				
+
+			      	$this->passationpassation(1,$clubId,'',$P) ; 
+			      	$this->passationpassation(3,$clubId,'Marketing',$VPM) ; 
+			      	$this->passationpassation(3,$clubId,'Evenementiel',$VPE) ; 
+			      	$this->passationpassation(3,$clubId,'Administration et finance',$VPAF) ; 
+			      	$this->passationpassation(3,$clubId,'Ressource Humaine',$VPRH) ; 
+
+			       
+			      
 
 
-			        //VPRH
-			        $VPRH = $this->input->post('VPRH');
-			        $OldVPRH=$this->user_model->getMemberByRoleAndCelulle($clubId,3,'Ressource Humaine');
-			        $OldVPRHU = array('roleId'=> 5 , 'ClubID'=> 2 , 'cellule'=> '' ) ;
-			        $NewVPRH = $this->user_model->getUserInfo($VPRH) ;
-			        $NewVPRHU = array('roleId'=> 3 , 'cellule'=> 'Ressource Humaine' ) ;
-			        if( !(empty($OldVPRH)) )
-			        {
-			        	echo("<br>VPRH: ".$NewVPRH->userId ." => ".$OldVPRH->userId) ;
-			        	if($OldVPRH->userId != $VPRH)
-			        	{
-			        		$this->user_model->editUser($OldVPRHU , $OldVPRH->userId);
-			       			$this->user_model->editUser($NewVPRHU , $NewVPRH->userId);
-			       			$this->session->set_flashdata('success', 'Le bureau à été mise à jour enregistrée ');
-			        	}			        	
-			        }
-			        else 
-			        {
-			        		echo("<br>VPRH: ".$NewVPRH->userId ) ;
-			        		$this->user_model->editUser($NewVPRHU , $NewVPRH->userId); 
-			        		$this->session->set_flashdata('success', 'Le bureau à été mise à jour enregistrée ');
-			        }
 
-			        //VPAF
-			        $VPAF = $this->input->post('VPAF');
-			        $OldVPAF=$this->user_model->getMemberByRoleAndCelulle($clubId,3,'Administration et finance');
-			        $OldVPAFU = array('roleId'=> 5 , 'ClubID'=> 2 , 'cellule'=> '' ) ;
-			        $NewVPAF = $this->user_model->getUserInfo($VPM) ;
-			        $NewVPAFU = array('roleId'=> 3 , 'cellule'=> 'Administration et finance' ) ;
-			        if( !(empty($OldVPRH)) )
-			        {
-			        	echo("<br>VPAF: ".$NewVPAF->userId ." => ".$OldVPAF->userId) ;
-			        	if($OldVPAF->userId != $VPAF)
-			        	{
-			        		$this->user_model->editUser($OldVPAFU , $OldVPAF->userId);
-			       			$this->user_model->editUser($NewVPAFU , $NewVPAF->userId);
-			       			$this->session->set_flashdata('success', 'Le bureau à été mise à jour enregistrée ');
-			        	}			        	
-			        }
-			        else 
-			        {
-			        		echo("<br>VPAF: ".$NewVPAF->userId ) ;
-			        		$this->user_model->editUser($NewVPAFU , $NewVPAF->userId); 
-			        		$this->session->set_flashdata('success', 'Le bureau à été mise à jour enregistrée ');
-			        }
-
-			        //  redirect('/Club/editClub/'.$clubId)  ;
+			          redirect('/Club/editClub/'.$clubId)  ;
 			    }
 
 
