@@ -175,7 +175,18 @@ class Club extends BaseController {
 			        $AAF = $this->input->post('AAF')  ;
 			        $ARH = $this->input->post('ARH')  ;
 			        
+			      	if($P != Null ){
+			      	$this->passation(1,$clubId,'',$P) ; 
+			      	}
 
+					if($VPM != Null ){
+			      	$this->passation(3,$clubId,'Marketing',$VPM) ; }
+			      	if($VPE != Null ){
+			      	$this->passation(3,$clubId,'Evenementiel',$VPE) ; }
+			      	if($VPAF != Null  ){
+			      	$this->passation(3,$clubId,'Administration et finance',$VPAF) ;} 
+			      	 if($VPRH != Null  ){
+			      	$this->passation(3,$clubId,'Ressource Humaine',$VPRH) ; }
 
 			        if($AM != Null  ){
 			      	$this->passation(6,$clubId,'Marketing',$AM) ; }
@@ -187,18 +198,9 @@ class Club extends BaseController {
 			      	$this->passation(6,$clubId,'Ressource Humaine',$ARH) ; }
 
 			        
-			      	if($VPM != Null ){
-			      	$this->passation(3,$clubId,'Marketing',$VPM) ; }
-			      	if($VPE != Null ){
-			      	$this->passation(3,$clubId,'Evenementiel',$VPE) ; }
-			      	if($VPAF != Null  ){
-			      	$this->passation(3,$clubId,'Administration et finance',$VPAF) ;} 
-			      	 if($VPRH != Null  ){
-			      	$this->passation(3,$clubId,'Ressource Humaine',$VPRH) ; }
 
-			      	if($P != Null ){
-			      	$this->passation(1,$clubId,'',$P) ; 
-			      	}
+
+
 
 
 			       
