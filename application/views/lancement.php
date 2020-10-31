@@ -1,42 +1,3 @@
-<script  type="text/javascript">
-    var json ;
-              var gouvernorat = $( '#gouvernorat' );
-              var delegation = $( '#delegation' );
-              
-  
-
-              var d = $.ajax({
-              url: '<?php echo base_url(); ?>assets/json/tunisia.json',
-              type: "GET",
-              dataType: 'json',
-              success: function (data) {
-                  console.log(data);
-                     $.each( data , function (index, value)
-                  {
-                  gouvernorat.append('<option value="' + index + '">' +  index  + '</option>');
-                  });
-
-                  gouvernorat.change( function()
-                  {
-                  var gouv = $(this).val();
-                  var deleg = data[ gouv ];
-
-                  $('option', delegation).remove();
-                  delegation.append('<option value="">-- Delegation --</option>');
-
-                  $.each( deleg, function (index, value)
-                  {
-                  delegation.append('<option value="' + value['cp'] + ' - ' +  value['localite'] + ' - ' + value['delegation'] + '">' + value['cp'] + ' - ' +  value['localite'] + ' - ' + value['delegation'] + '</option>');
-                  });
-                  });    
-
-              } 
-              });
-
-</script>
-
-
-
 <section>
         <div class="gap2 gray-bg">
             <div class="container">
@@ -79,7 +40,7 @@
                                       Tunivisions Foundation est offert par Media Visions Editing. Une communauté de plus de 157 universités et 40 clubs lycéen à travers le pays qui offre des expériences où les jeunes apprennent par la pratique. Les étudiants réalisent des événements et des projets pratiques dans des domaines comme les activités culturelles, artistiques, sportives et la citoyenneté, dans un environnement positif où ils sont encouragés à assumer des rôles de leadership proactifs. Les étudiants font l’expérience des Tunimateurs dans chaque club du pays – par le biais de programmes de formation durable, de clubs universitaires et camp Tunivisions.
                                   </span>
                                 </div><!-- suggested friends -->
-                                <button id="videoEnd"  class="btn btn-danger">Lancer le quiz</button>
+                                <button id="videoEnd"  disabled class="btn btn-danger">Lancer le quiz</button>
                                 </section>
                                 <section id="quiz" hidden >
                                 <h6> Info session et quiz </h6>
@@ -297,7 +258,9 @@
                                   // If the count down is over, write some text 
                                   if (distance < 0) {
                                     clearInterval(x);
-                                   $("#videoEnd").removeAttr("hidden");
+                                   
+                                   $("#videoEnd").prop( "disabled", false );
+                         
                                     
                                   }
                                 }, 1000);
@@ -321,6 +284,7 @@
                 && $("#q5-3").is(':checked') 
                 && $("#q5-4").is(':checked') 
                 && $("#q6-1").is(':checked')
+                && $("#q7-1").is(':checked')
                 
                 ){
                     $("#info").removeAttr("hidden");

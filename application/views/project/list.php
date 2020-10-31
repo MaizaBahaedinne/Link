@@ -370,7 +370,7 @@
                                                             
                                    
                                     <label for="fname">Description</label>
-                                    <textarea class="form-control" name="description"  id="TinyMCE" rows="20" required></textarea>
+                                    <textarea class="form-control" name="description"  id="TinyMCE" rows="20" ></textarea>
 
                                
                                     

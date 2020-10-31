@@ -249,37 +249,47 @@
 
                 <div class="central-meta">
                   <span class="create-post">Activité récente<a href="#" title="">See All</a></span>
-                 
-                  
-                              
-                              <ul class="activitiez">
-                                 <?php 
-                                 if(!(empty($scores))){
-                                 foreach ($scores as $score){  ?>
-                                 <li>
-                                    <div class="activity-meta">
-                                        <b><a href="#" title=""><?php echo $score->points ?> </a>
-                                        &nbsp; points
-                                       </b>
-                                       <span><a href="#" title=""> </a>Participation au <?php echo $score->type ?> : <?php echo $score->titre ?></span>
-                                       <h6>by <a ><?php if ($score->clubID > 5 ) {echo "club ";}  echo 'Tunivisions '.$score->name ; ?></a></h6>
-                                       <i><?php echo xTimeAgo ($score->ValidDTM, date('Y-m-d H:i:s') )  ?></i>
-
-                                    </div>
-
-                                 </li>
-                                 <?php } } ?>
-                              </ul>
-                          
+                      <ul class="activitiez">
+                         <?php 
+                         if(!(empty($scores))){
+                         foreach ($scores as $score){  ?>
+                         <li>
+                            <div class="activity-meta">
+                               <span>
+                                <b>
+                                  <a style="color: green" >
+                                    <?php echo $score->points ?>&nbsp; points 
+                                  </a>
+                               </b>
+                                Participation au  <?php echo $score->type ?> :  
+                                <a href="#" title="">
+                                  <?php echo $score->titre ?>
+                                    
+                                </a>
+                               </span>
+                               <h6>
+                                by 
+                                <a>
+                                  <?php if ($score->clubID > 5 ) {echo "club ";}  echo 'Tunivisions '.$score->name ; ?>
+                                    
+                                </a>
+                               </h6>
+                               <i>
+                                <?php echo xTimeAgo ($score->ValidDTM, date('Y-m-d H:i:s') )  ?>
+                               </i>
+                            </div>
+                         </li>
+                         <?php } } ?>
+                      </ul>
                   </div>
-              </div>
+                </div>
                  
 
 
                 </div>
              </div>
-          </div>     
-            </div>
+            </div>     
+          </div>
          </div>
       </div>   
    </section><!-- content -->

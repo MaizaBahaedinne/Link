@@ -20,6 +20,7 @@ class Scoring_model extends CI_Model
     
         $this->db->where('BaseTbl.userId', $userId);
         $this->db->where('statut = ',0 );
+        $this->db->order_by('BaseTbl.ValidDTM  DESC' );
         $query = $this->db->get();
          
         return $query->result();
@@ -65,7 +66,7 @@ class Scoring_model extends CI_Model
         return $query->row();
     } 
 
-    function addPresence($projectInfo)
+    function addScore($projectInfo)
     {
         $this->db->trans_start();
         $this->db->insert('tbl_scoring', $projectInfo);

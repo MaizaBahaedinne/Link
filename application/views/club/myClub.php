@@ -97,7 +97,7 @@
 
                     </div>
                     <div class="col-md-3">
-                                             <ol class="folw-detail">
+                      <ol class="folw-detail">
                         <li><span>Projets</span><ins><?php echo count($projectRecords) ?></ins></li>
                         <li><span>Membres</span><ins><?php echo count($members) ?></ins></li>
                         <li><span>Points</span><ins>0</ins></li>
@@ -112,116 +112,100 @@
 
              <!-- sidebar -->
               <div class="col-lg-12 tab-content" >
-                                    <div class="tab-pane fade show active"  id="ProjetBlock" >
+                <div class="tab-pane fade show active"  id="ProjetBlock" >
 
-                                    
-                                        <div class="row">
-                                          <div class="col-lg-4">
-                                              <aside class="sidebar static right">
-                                                <div class="widget">
-                                                  <h4 class="widget-title">Mon club</h4>
-                                                  <ul class="fav-community">
-                                                    <li><i class="fa fa-address-card"></i> <?php echo $clubInfo->birthday ?> </li>
-                                                    <li><i class="fa fa-users"></i><a href="#" title="">invitez vos amis</a> pour rejoindre le club</li>
-                                                    <li><i class="fa fa-thumbs-up"></i>13 Membre actif</li>
-                                                    <li><i class="fa fa-rss"></i>13 Tunifans</li>
-                                                    <li><i class="fa fa-globe"></i><a href="<?php echo $clubInfo->email ?>" title="">club Tunivisions <?php echo $clubInfo->name ?></a></li>
-                                                    <li><i class="fa fa-map-marker"></i><?php echo $clubInfo->facebook ?></li>
-                                                  </ul>
-                                                </div>
-                                              </aside>
-                                            </div><!-- sidebar -->
-                                          <div class="col-lg-8">
-                                          <?php foreach ($projectRecords as $projet ) { ?>
-                                           <div class="central-meta">
-                                                <div class="row">
-                                            <div class="col-lg-12">
-                                                
-
-                                                <div class="event-box">
-                                                    <div class="row merged20">
-
-                                                        <div class="col-lg-4 col-md-4 col-sm-5">
-                                                            <img src="<?php echo base_url() ?>uploads/projet/<?php echo $projet->banner ?>" class="alligator-projects " alt="">
-                                                                
-                                                        </div>
-                                                        <div class="col-lg-5 col-md-6 col-sm-5">
-                                                            <div class="event-title">
-                                                                <span class="ba"></span>
-                                                                <h4><a href="<?php echo base_url() ?>Project/projectDetails/<?php echo $projet->projectId ?>" title=""><?php echo $projet->titre ?></a></h4>
-                                                                <label class="text-mute" >by <a href="<?php echo base_url() ?>club/clubInfo/<?php echo $projet->ClubID  ?>"> <?php if ($projet->ClubID > 5 ) {echo "club ";}  echo "Tunivisions ".$projet->ClubName; ?></a></label>
-                                                                <span>de <i class="fa fa-clock-o" style="color: green"></i> <?php echo $projet->startDate ?></span>
-                                                                <span>à <i class="fa fa-clock-o" aria-hidden="true"></i> <?php echo $projet->endDate ?></span>
-                                                                <span><i class="fa fa-map-marker" aria-hidden="true"></i> <?php echo $projet->local ?></span>
-                                                                <span><i class="fa fa-money" aria-hidden="true"></i> <?php echo $projet->prix ?> DT</span>
-                                                                <hr>
-                                                                
-                                                                    <li><a title="" href="<?php echo $projet->eventFB ?>" ><i class="fa fa-facebook"></i>Evenement Facebook</a></li>
-                                                                
-                                                                                                                                
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-3 col-md-2 col-sm-2">
-                                                            <div class="event-time">
-                                                                <span class="event-date"><?php echo $projet->type ?></span>
-                                                            </div>  
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                
-                                             
-                                                
-                                                
-                                            </div>
-                                        </div>
-                                        
+                
+                    <div class="row">
+                      <div class="col-lg-4">
+                          <aside class="sidebar static right">
+                            <div class="widget">
+                              <h4 class="widget-title">Mon club</h4>
+                              <ul class="fav-community">
+                                <li><i class="fa fa-address-card"></i> <?php echo $clubInfo->birthday ?> </li>
+                                <li><i class="fa fa-users"></i><a href="#" title="">invitez vos amis</a> pour rejoindre le club</li>
+                                <li><i class="fa fa-thumbs-up"></i>13 Membre actif</li>
+                                <li><i class="fa fa-rss"></i>13 Tunifans</li>
+                                <li><i class="fa fa-globe"></i><a href="<?php echo $clubInfo->email ?>" title="">club Tunivisions <?php echo $clubInfo->name ?></a></li>
+                                <li><i class="fa fa-map-marker"></i><?php echo $clubInfo->facebook ?></li>
+                              </ul>
+                            </div>
+                          </aside>
+                        </div><!-- sidebar -->
+                      <div class="col-lg-8">
+                      <?php foreach ($projectRecords as $projet ) { ?>
+                       <div class="central-meta">
+                            <div class="row">
+                        <div class="col-lg-12">
+                            <div class="event-box">
+                                <div class="row merged20">
+                                    <div class="col-lg-4 col-md-4 col-sm-5">
+                                        <img src="<?php echo base_url() ?>uploads/projet/<?php echo $projet->banner ?>" class="alligator-projects " alt=""> 
                                     </div>
-                                              <?php  } ?>
-                                      </div>
-                                    </div>
-                                    </div>           
-                                                
-
-                                     <div class="central-meta tab-pane fade " id="membresBlock" >
-                                        <div class="row">
-                                          <?php foreach ($members as $member ) { ?>
-
-                                          <div class="col-lg-4 ">
-                                            <div class="friend-box">
-                                              <figure>
-                                                <img src="<?php echo base_url() ?>assets/images/resources/frnd-cover3.jpg" alt="">
-                                                <span>Followers: 450</span>
-                                              </figure>
-                                              <div class="frnd-meta">
-                                                <img src="<?php echo base_url() ?>uploads/avatar/<?php echo $member->avatar ?>" class="alligator-profile-member" alt="">
-                                                <div class="frnd-name">
-                                                  <a href="#" title=""><?php echo $member->name ?></a>
-                                                  <span><?php echo $member->role ?></span>
-                                                </div>
-                                                <ul class="frnd-info">
-                                                  <li><span>Cellule:</span><?php echo $member->cellule ?></li>
-                                                  <li><span>née le:</span> <?php echo $member->birthday ?></li>
-                                                  <li><span>Sexe :</span> <?php echo $member->sexe ?></li>
-                                                  <li><span>E-Mail:</span><?php echo $member->email ?></li>
-                                                  <li><span>mobile:</span><?php if($SA == 1 ){echo $member->mobile ; } ?></li>
-                                                  
-                                                </ul>
-                                                <a class="btn-main align-left" href="#" title="">Vister</a>
-                                                <a class="send-mesg" href="#" title="">Message</a>
-                                                <div class="more-opotnz">
-                                                  <i class="fa fa-ellipsis-h"></i>
-                                                  <ul>
-                                                    <li><a href="#" title="">Bloquer</a></li>
-                                                  </ul>
-                                                </div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                          
-                                           <?php }  ?>
+                                    <div class="col-lg-5 col-md-6 col-sm-5">
+                                        <div class="event-title">
+                                            <span class="ba"></span>
+                                            <h4><a href="<?php echo base_url() ?>Project/projectDetails/<?php echo $projet->projectId ?>" title=""><?php echo $projet->titre ?></a></h4>
+                                            <label class="text-mute" >by <a href="<?php echo base_url() ?>club/clubInfo/<?php echo $projet->ClubID  ?>"> <?php if ($projet->ClubID > 5 ) {echo "club ";}  echo "Tunivisions ".$projet->ClubName; ?></a></label>
+                                            <span>de <i class="fa fa-clock-o" style="color: green"></i> <?php echo $projet->startDate ?></span>
+                                            <span>à <i class="fa fa-clock-o" aria-hidden="true"></i> <?php echo $projet->endDate ?></span>
+                                            <span><i class="fa fa-map-marker" aria-hidden="true"></i> <?php echo $projet->local ?></span>
+                                            <span><i class="fa fa-money" aria-hidden="true"></i> <?php echo $projet->prix ?> DT</span>
+                                            <hr>
+                                                <li><a title="" href="<?php echo $projet->eventFB ?>" ><i class="fa fa-facebook"></i>Evenement Facebook</a></li>        
                                         </div>
-                         
-                                      </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-2 col-sm-2">
+                                        <div class="event-time">
+                                            <span class="event-date"><?php echo $projet->type ?></span>
+                                        </div>  
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <?php  } ?>
+                </div>
+                </div>
+                </div>           
+                            
+                 <div class="central-meta tab-pane fade " id="membresBlock" >
+                    <div class="row">
+                      <?php foreach ($members as $member ) { ?>
+                      <div class="col-lg-4 ">
+                        <div class="friend-box">
+                          <figure>
+                            <img src="<?php echo base_url() ?>assets/images/resources/frnd-cover3.jpg" alt="">
+                            <span>Followers: 450</span>
+                          </figure>
+                          <div class="frnd-meta">
+                            <img src="<?php echo base_url() ?>uploads/avatar/<?php echo $member->avatar ?>" class="alligator-profile-member" alt="">
+                            <div class="frnd-name">
+                              <a href="#" title=""><?php echo $member->name ?></a>
+                              <span><?php echo $member->role ?></span>
+                            </div>
+                            <ul class="frnd-info">
+                              <li><span>Cellule:</span><?php echo $member->cellule ?></li>
+                              <li><span>née le:</span> <?php echo $member->birthday ?></li>
+                              <li><span>Sexe :</span> <?php echo $member->sexe ?></li>
+                              <li><span>E-Mail:</span><?php echo $member->email ?></li>
+                              <li><span>mobile:</span><?php if($SA == 1 ){echo $member->mobile ; } ?></li>
+                            </ul>
+                            <a class="btn-main align-left" href="#" title="">Vister</a>
+                            <a class="send-mesg" href="#" title="">Message</a>
+                            <div class="more-opotnz">
+                              <i class="fa fa-ellipsis-h"></i>
+                              <ul>
+                                <li><a href="#" title="">Bloquer</a></li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                       <?php }  ?>
+                    </div>
+     
+                  </div>
               </div><!-- centerl meta -->
 
 

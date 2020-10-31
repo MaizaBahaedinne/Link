@@ -329,7 +329,12 @@
 				<div class="user-setting">
 					<span class="seting-title">Parametre <a href="#" title="">afficher tous</a></span>
 					<ul class="log-out">
-						<li><a href="<?php echo base_url() ?>User/ProfileShow/<?php echo $uid ?>" title=""><i class="ti-user"></i> Profile</a></li>
+						<li> <a> <b>Tuni-ID :</b> <?php echo $uid?></a></li>
+						<li>
+							<a href="<?php echo base_url() ?>User/ProfileShow/<?php echo $uid ?>" title="">
+								<i class="ti-user"></i> Profile
+							</a>
+						</li>
 						<li><a href="<?php echo base_url() ?>logout" title=""><i class="ti-power-off"></i>log out</a></li>
 					</ul>
 				</div>

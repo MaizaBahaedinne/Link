@@ -71,17 +71,27 @@
                                 <div class="row ">
                                 <?php 
 
-                               
+                               if ($tache->par == $uid ){
                                 if($affection->status == 0 &&  (time()-(60*60*24)) < strtotime($tache->deadline) )  { ?>
                                   <small>
-                                  <button class="btn btn-warning btn-sm" > <i class="fa fa-check-square"></i> Valider </button>
+                                  <button class="btn btn-warning btn-sm" 
+                                          id="<?php echo $affection->affectationId ?>" 
+                                          onclick="valid(this.id,<?php echo $affection->userAffectatedID ?>)"
+                                          > 
+                                      <i class="fa fa-check-square"></i> Valider 
+                                  </button>
                                   <?php }elseif ($affection->status== 1 )  {  ?>
+
                                   <button class="btn btn-success btn-sm" disabled > <i class="fa fa-check-square"></i> Cloturé </button>
+
                                   <?php }elseif ($affection->status== 0 &&  (time()-(60*60*24)) > strtotime($tache->deadline) ) {  ?>
+
                                   <button class="btn btn-sm" disabled style="color:gray"> <i class="fa fa-check-square"></i> Dépassé </button>
-                                  <?php } ?>
-                                  <?php if ((time()-(60*60*24)) < strtotime($tache->deadline) ) {  ?> 
-                                  <button class="btn btn-danger btn-sm"  > <i class="fa fa-minus-square"></i> Supprimer </button>
+
+                                  <?php }if ((time()-(60*60*24)) < strtotime($tache->deadline)){  ?> 
+
+                                  <button class="btn btn-danger btn-sm" id="S<?php echo $affection->affectationId ?>" onclick="delet(this.id)"  > <i class="fa fa-minus-square"></i> Supprimer </button>
+
                                   <?php } ?>
                                  </small>
                                 </div>
@@ -90,7 +100,7 @@
                                <hr>                                                         
                            
 
-                            <?php }?>      
+                            <?php } } ?>      
                             </ul> 
                             <?php 
                                if (($role == 1 || $role == 3 || $role == 6  ) &&   $projet->ClubID == $clubID  ){ 
@@ -255,3 +265,43 @@
           </div>
         </div>
     </div><!-- fade Modal -->
+
+
+
+    <script type="text/javascript">
+     function  valid(id,userId){ 
+     
+         $.ajax( '<?php echo base_url() ?>Task/editAffect/'+id+'/'+userId )
+                        .done(function() {
+                          $("#"+id).addClass('btn-success').removeClass('btn-warning');
+                          $("#"+id).html('<i class="fa fa-check-square"> Cloturé');
+                          $("#"+id).prop( "disabled", true );
+                          $("#S"+id).prop( "disabled", true );
+                        })
+                        .fail(function() {
+
+                        })
+                        .always(function() {
+
+                        });
+        }
+
+
+
+        function  delet(id){ 
+          
+        id =  id.substring(1);
+
+         $.ajax( '<?php echo base_url() ?>Task/deleteAffect/'+id )
+                        .done(function() {
+                           $("#"+id).hide();
+                          $("#S"+id).hide();
+                        })
+                        .fail(function() {
+
+                        })
+                        .always(function() {
+
+                        });
+        }
+    </script>
