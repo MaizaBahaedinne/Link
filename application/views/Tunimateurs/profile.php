@@ -71,9 +71,14 @@
                   </div>
                   <div class="col-lg-12 col-md-12 col-sm-12">
                     <ul class="job-progres">
-                      <li><span class="main-color"><?php if (count($eff) > 0 ) {echo ((count($eff)*100)/count($tasks))}else{ echo "0" ; } ?>%</span> efficacité</li>
-                      <li><span class="color-blue"><?php if (count($tasks) > 0 ) {echo count($tasks)}else{ echo "0" ; } ?></span> Tâches</li>
-                      <li><span class="color-valvet"><?php if (count($eff) > 0 ) {echo count($eff)}else{ echo "0" ; }  ?></span> Tâches terminées</li>
+                      <li><span class="main-color">
+                        <?php if (count($eff) > 0 ) 
+                        { echo ((count($eff)*100)/count($tasks)) ; } 
+                        else 
+                        { echo "0" ; } ?>%
+                        </span> efficacité</li>
+                      <li><span class="color-blue"><?php if (count($tasks) > 0 ) { echo count($tasks)  ; }else{ echo "0" ; } ?></span> Tâches</li>
+                      <li><span class="color-valvet"><?php if (count($eff) > 0 ) { echo count($eff)  ; }else{ echo "0" ; }  ?></span> Tâches terminées</li>
                     </ul>
                   </div>
                   <div class="col-lg-12 col-md-12 col-sm-12">
