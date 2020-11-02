@@ -29,7 +29,7 @@ class Club_model extends CI_Model
      * @param number $segment : This is pagination limit
      * @return array $result : This is result
      */
-    function clubListing($SA)
+    function clubListing($SA,$clubID)
     {
         $this->db->select('BaseTbl.clubID , BaseTbl.name , BaseTbl.is_Actif , BaseTbl.SenJun , BaseTbl.city ');
         $this->db->from('tbl_club as BaseTbl');
