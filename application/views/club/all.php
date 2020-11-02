@@ -120,7 +120,7 @@
                             <?php if ($record->SenJun == 3 ){ echo 'University' ; }?>
                             <?php if ($record->SenJun == 4 ){ echo 'High School' ; }?>
                         </td>
-                        <?php if($SA== 1){ ?>
+                        <?php if($SA== 1 ||  $uid == 1031 ){ ?>
                         <td>
                              <a href="<?php echo base_url() ?>Club/editClub/<?php echo  $record->clubID ?>">   <i class="ti-pencil"></i>
                         </td>
