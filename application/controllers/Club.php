@@ -19,7 +19,7 @@ class Club extends BaseController {
 
 		public function index()
 		        {
-		                $clubs = $this->club_model->clubListing($this->SA);
+		                $clubs = $this->club_model->clubListing($this->SA, $this->clubID);
 		            
 		                foreach ($clubs as $key ) {
 
