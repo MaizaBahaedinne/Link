@@ -62,7 +62,7 @@ class Club extends BaseController {
 
  		                $this->global['pageTitle'] = 'Clubs';
 		             	$this->global['active'] = 'Clubs';
-		               $this->loadViews("Foundation/family", $this->global, $data, NULL);   
+		               $this->response($data);   
 						
 		        }
 
