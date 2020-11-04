@@ -262,46 +262,38 @@ class Project extends BaseController {
 
                         if($video != '' ){ 
                             $point += 10 ; 
-                             $description .= "<p style="color:green" >Bonus de <b>+10 points</b> pour la video </p> <br>" ;
+                             $description .= "<p style='color:green' >Bonus de <b>+10 points</b> pour la video </p> <br>" ;
                          }
                         if(count($taches) >= 10 )
                         {
                             $point += 5 ; 
-                            $description .= "<p style="color:green" >Bonus de <b>+5 points</b> pour le nombre des taches</p> <br>" ;
+                            $description .= "<p style='color:green' >Bonus de <b>+5 points</b> pour le nombre des taches</p> <br>" ;
                         }
                         if($affP >= 75 )
                          {  
                             $point += 10 ;
-                            $description .= "<p style="color:gold" >Bonus de <b>+10 points</b> pour le TE > 75%</p> <br>" ;
+                            $description .= "<p style='color:gold' >Bonus de <b>+10 points</b> pour le TE > 75%</p> <br>" ;
                          }
                          if($tauxParticipation >= 90 )
                          {  
                             $point += 5 ;
-                            $description .= "<p style="color:gold" >Bonus de <b>+20 points</b> pour le TP > 90%</p> <br>" ;
+                            $description .= "<p style='color:gold' >Bonus de <b>+20 points</b> pour le TP > 90%</p> <br>" ;
                          }
-
-
-
 
                     }else 
                     {
                         $point = 0 ;
-                        $description = "<p style="color:red" >taux d\'éfficacité est  < 45 % </p>" ;
-
+                        $description = "<p style='color:red' >taux d\'éfficacité est  < 45 % </p>" ;
                     }
 
                 }
                 else 
                 {       
                         $point = 0 ;
-                        $description = "<p style="color:red" >taux présence < 25 %</p> " ;
+                        $description = "<p style='color:red' >taux présence < 25 %</p> " ;
 
                 }
 
-
-                
-
-                          
 
                 $projectInfo = array(        
                  'album' => $album ,
