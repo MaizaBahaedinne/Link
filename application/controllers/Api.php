@@ -19,8 +19,6 @@ class Api extends BaseController
         parent::__construct();
         $this->load->model('user_model');
         $this->load->model('club_model');
-        $this->load->model('scores_model');
-        $this->load->model('project_model');
 
     }
 
