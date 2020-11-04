@@ -14,6 +14,7 @@ class Project extends BaseController {
         $this->load->model('club_model'); 
         $this->load->model('project_model'); 
         $this->load->model('scoring_model');
+        $this->load->model('score_club_model');
         $this->isLoggedIn();   
     }
 
@@ -24,9 +25,9 @@ class Project extends BaseController {
 		                $data['projectRecords'] = $this->project_model->projectListing();
                                  $data['projectRecords'] = $this->project_model->projectListing();
                                  $data["clubInfo"] = $this->club_model->getClubInfo($this->clubID);
-                         $data["members"] = $this->user_model->userListingByclub($this->clubID) ;
-                          $data['Projets'] = $this->project_model->projectNationalListing() ;
-                          $this->global['pageTitle'] = 'Projets ';
+                        $data["members"] = $this->user_model->userListingByclub($this->clubID) ;
+                        $data['Projets'] = $this->project_model->projectNationalListing() ;
+                        $this->global['pageTitle'] = 'Projets ';
 		                  $this->global['active'] = 'Projets';
 		                $this->loadViews("project/list", $this->global, $data, NULL);   
 		        }
@@ -35,10 +36,8 @@ class Project extends BaseController {
    		public function projectDetails($projectID)
 		        {
 
-		                $this->load->model('project_model');
-		                $searchText='' ;
 		                $data["projet"] = $this->project_model->getProjectInfo($projectID);
-                                              
+                        $data["Note"] = $this->score_club_model->scoreByProject($projectID);        
                         $this->global['pageTitle'] = "Projet" ;
 		                $this->loadViews("project/view", $this->global, $data, NULL);   
 		        }
@@ -199,6 +198,129 @@ class Project extends BaseController {
                     
 
 
+
+                }
+
+
+
+                public function addNewScore($projectId)
+                {
+
+                $projet = $this->project_model->getProjectInfo($projectId);
+                $taches = $this->Task_model->taskListing($projectId);
+                
+                $aff = 0 ;
+                $affE = 0 ;
+                $affP = 0 ;
+                foreach ($taches as $tache ) 
+                {
+                    $tache->affections = $this->Task_model->AffectationsListing($tache->tacheId);
+                    foreach ($tache->affections as $aff ) {
+                     $aff ++ ;
+                     if( $aff->statut == 1 ){$affE ++ ; }
+                    }
+                }
+                $affP  =  (($affE/$aff)*100) ;
+                $nbMem = $this->user_model->userListingByclub($projet->clubId) ;
+                $participation = $this->Scoring_model->PresenceByProject($projectId);
+                $tauxParticipation = (count($Participation)/count($nbMem))*100 ;
+
+                $album = $this->input->post('album');
+                $video = $this->input->post('video');   
+
+                if($tauxParticipation>25){ 
+
+                    if($affP >= 45 ){
+
+                        if($projet->type =="Evenement" && $projet->cible =="Publique" ){ $points = 40 ;}
+                        if($projet->type =="Evenement" && $projet->cible =="Privé" ){ $points = 10 ;}
+                        if($projet->type =="Evenement" && $projet->cible =="Only tunimateur" ){ $points = 30 ;}
+                        
+                        if($projet->type =="Formation" && $projet->cible =="Publique" ){ $points = 60 ;}
+                        if($projet->type =="Formation" && $projet->cible =="Privé" ){ $points = 40  ;}
+                        if($projet->type =="Formation" && $projet->cible =="Only tunimateur" ){ $points = 50 ;}
+                        
+                        if($projet->type =="Conférence" && $projet->cible =="Publique" ){ $points = 80 ;}
+                        if($projet->type =="Conférence" && $projet->cible =="Only tunimateur" ){ $points = 80 ;}
+                        
+                        if($projet->type =="Action" && $projet->cible =="Publique" ){ $points = 40 ;}
+                        if($projet->type =="Action" && $projet->cible =="Privé" ){ $points = 20 ;}
+                        if($projet->type =="Action" && $projet->cible =="Only tunimateur" ){ $points = 30 ;}
+                        
+                        if($projet->type =="Couverture Mediatique" && $projet->cible =="Publique" ){ $points = 10  ;}
+                        
+                        if($projet->type =="Compétition" && $projet->cible =="Publique" ){ $points = 60 ;}
+                        if($projet->type =="Compétition" && $projet->cible =="Only tunimateur" ){ $points = 50 ;}
+
+                        
+                        if($projet->type =="Soirée" && $projet->cible =="Publique" ){ $points = 20 ;}
+                        if($projet->type =="Soirée" && $projet->cible =="Only tunimateur" ){ $points = 20 ;}
+
+                        if($projet->type =="Team Building" && $projet->cible =="Publique" ){ $points = 10 ;}
+                        if($projet->type =="Team Building" && $projet->cible =="Only tunimateur" ){ $points = 20 ;}
+                        
+
+                        if($video != '' ){ 
+                            $point += 10 ; 
+                             $description .= "<p style="color:green" >Bonus de <b>+10 points</b> pour la video </p> <br>" ;
+                         }
+                        if(count($taches) >= 10 )
+                        {
+                            $point += 5 ; 
+                            $description .= "<p style="color:green" >Bonus de <b>+5 points</b> pour le nombre des taches</p> <br>" ;
+                        }
+                        if($affP >= 75 )
+                         {  
+                            $point += 10 ;
+                            $description .= "<p style="color:gold" >Bonus de <b>+10 points</b> pour le TE > 75%</p> <br>" ;
+                         }
+                         if($tauxParticipation >= 90 )
+                         {  
+                            $point += 5 ;
+                            $description .= "<p style="color:gold" >Bonus de <b>+20 points</b> pour le TP > 90%</p> <br>" ;
+                         }
+
+
+
+
+                    }else 
+                    {
+                        $point = 0 ;
+                        $description = "<p style="color:red" >taux d\'éfficacité est  < 45 % </p>" ;
+
+                    }
+
+                }
+                else 
+                {       
+                        $point = 0 ;
+                        $description = "<p style="color:red" >taux présence < 25 %</p> " ;
+
+                }
+
+
+                
+
+                          
+
+                $projectInfo = array(        
+                 'album' => $album ,
+                 'video' => $video ,
+                 'projectId' => $projectId,
+                 'nbMem' => $nbMem ,
+                 'participation' => $participation,
+                 'tauxParticipation' => $tauxParticipation ,
+                 'taches' => $taches ,
+                 'aff' => $aff,
+                 'affE' => $affE ,
+                 'affP' => $affP ,
+                 'description' => $description ,
+                     );
+                
+                
+      
+                
+                redirect('/Project/projectDetails'.$projet->projectId);
 
                 }
 

@@ -59,7 +59,7 @@
                             </div><!-- user profile banner  -->
                             
                         
-                            <div class="col-lg-9">
+                            <div class="col-lg-7">
 
                                 <div class="central-meta">
                                     <span class="create-post">Détails <a href="#" title=""></a></span>
@@ -77,9 +77,10 @@
 
                                 
                             </div><!-- centerl meta -->
-                            <div class="col-lg-3">
+                            <div class="col-lg-5">
                                 <aside class="sidebar static right">
-                                    <div class="widget">
+
+                                  <div class="widget">
                                         <h4 class="widget-title">Your page</h4> 
                                         <div class="your-page">
                                             <figure>
@@ -169,9 +170,31 @@
                                             </div>
                                         </div>
                                     </div><!-- page like widget -->
-                                   
                                
-                                  
+                                    <div class="widget">
+                                        <h4 class="widget-title">Note du projet</h4> 
+                                        <div class="your-page">
+                                            <h5>Taches (<?php echo "0" ?>) </h6>
+                                            <hr>
+                                            <ul>    
+                                                <li>Nombre des affectaions : <?php echo "0" ?></li>
+                                                <li>Nombre des affectaions validées : <?php echo "0" ?></li>
+                                            </ul>
+                                            <hr>
+                                            <h6>Taux d'éfficacité : <?php echo "0" ?></h6>
+
+                                            <br>
+                                            <h5>Présence</h6>
+                                            <hr>
+                                            <ul>    
+                                                <li>Nombre des membres inscrits : <?php echo "0" ?></li>
+                                                <li>Nombre des participants : <?php echo "0" ?></li>
+                                            </ul>
+                                            <hr>
+                                            <h6>Taux de présence : <?php echo "0" ?></h6>
+
+                                        </div>
+                                    </div><!-- page like widget -->
                                    
                                 </aside>
                             </div><!-- sidebar -->

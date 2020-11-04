@@ -100,7 +100,7 @@
                       <ol class="folw-detail">
                         <li><span>Projets</span><ins><?php echo count($projectRecords) ?></ins></li>
                         <li><span>Membres</span><ins><?php echo count($members) ?></ins></li>
-                        <li><span>Points</span><ins>0</ins></li>
+                        <li><span>Points</span><ins><?php echo $score->points ?></ins></li>
                       </ol>
                     </div>
 
@@ -138,12 +138,12 @@
                         <div class="col-lg-12">
                             <div class="event-box">
                                 <div class="row merged20">
-                                    <div class="col-lg-4 col-md-4 col-sm-5">
+                                    <div class="col-lg-12 col-md-4 col-sm-5">
                                         <img src="<?php echo base_url() ?>uploads/projet/<?php echo $projet->banner ?>" class="alligator-projects " alt=""> 
                                     </div>
-                                    <div class="col-lg-5 col-md-6 col-sm-5">
+                                    <div class="col-lg-9 col-md-6 col-sm-5">
                                         <div class="event-title">
-                                            <span class="ba"></span>
+                                            <span class="ba"><?php echo $projet->type ?></span>
                                             <h4><a href="<?php echo base_url() ?>Project/projectDetails/<?php echo $projet->projectId ?>" title=""><?php echo $projet->titre ?></a></h4>
                                             <label class="text-mute" >by <a href="<?php echo base_url() ?>club/clubInfo/<?php echo $projet->ClubID  ?>"> <?php if ($projet->ClubID > 5 ) {echo "club ";}  echo "Tunivisions ".$projet->ClubName; ?></a></label>
                                             <span>de <i class="fa fa-clock-o" style="color: green"></i> <?php echo $projet->startDate ?></span>
@@ -151,12 +151,48 @@
                                             <span><i class="fa fa-map-marker" aria-hidden="true"></i> <?php echo $projet->local ?></span>
                                             <span><i class="fa fa-money" aria-hidden="true"></i> <?php echo $projet->prix ?> DT</span>
                                             <hr>
-                                                <li><a title="" href="<?php echo $projet->eventFB ?>" ><i class="fa fa-facebook"></i>Evenement Facebook</a></li>        
+                                                <a title="" href="<?php echo $projet->eventFB ?>" ><i class="fa fa-facebook"></i>  Evenement Facebook</a>     
                                         </div>
                                     </div>
                                     <div class="col-lg-3 col-md-2 col-sm-2">
                                         <div class="event-time">
-                                            <span class="event-date"><?php echo $projet->type ?></span>
+                                           <span class="event-date">
+                                             
+                                            <?php if (empty($projet->score )){  ?>
+                                              <button class="btn btn-danger" data-toggle="modal" data-target="#ProjectScore<?php echo $projet->projectId ?>" >Collecter les points</button>
+
+
+                                               <div class="modal fade" id="ProjectScore<?php echo $projet->projectId ?>">
+                                                      <div class="modal-dialog modal-sm">
+                                                        <div class="modal-content">
+
+                                                          <!-- Modal Header -->
+                                                          <div class="modal-header">
+                                                            <h6 class="modal-title">Rapport du projet : <?php echo $projet->titre ?> </h6>
+                                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                          </div>
+
+                                                          <!-- Modal body -->
+                                                          <div class="modal-body">
+                                                            <form class="c-form" action="<?php echo base_url() ?>Project/addNewScore/<?php echo $projet->projectId ?>" method="POST" >
+                                                            
+                                                            
+
+                                                            </form>
+
+                                                          </div>
+
+                                                          <!-- Modal footer -->
+                                                          <div class="modal-footer">
+                                                            <button type="button" class="btn btn-danger" data-dismiss="modal">Fermer</button>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                  </div><!-- fade Modal -->
+
+                                            <?php }else{  $p = $projet->score  ; echo $p->points.' points' ; } ?>
+
+                                           </span> 
                                         </div>  
                                     </div>
                                 </div>

@@ -64,7 +64,17 @@ class Scoring_model extends CI_Model
         $query = $this->db->get();
         
         return $query->row();
-    } 
+    }
+
+
+    function PresenceByProject($projectId)
+    {
+        $this->db->select('*');
+        $this->db->from('tbl_scoring as BaseTbl');
+        $this->db->where('BaseTbl.projectId', $projectId);
+        $query = $this->db->get();
+        return $query->result();
+    }  
 
     function addScore($projectInfo)
     {
