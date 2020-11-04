@@ -24,35 +24,6 @@ class Api extends BaseController
 
     }
 
-    public function Users()
-    {
-            header('Content-Type: application/json');
-            echo json_encode( $this->user_model->userListing(0), JSON_PRETTY_PRINT);
-    }
-
-    public function Clubs()
-    {
-            header('Content-Type: application/json');
-            echo json_encode( $this->club_model->clubListing(), JSON_PRETTY_PRINT);
-    }
-
-    public function RateClubs()
-    {
-            header('Content-Type: application/json');
-            echo json_encode( $this->scores_model->RaitingClub() , JSON_PRETTY_PRINT);
-    }
-
-    public function RateMembers()
-    {
-            header('Content-Type: application/json');
-            echo json_encode( $this->scores_model->RaitingUsers() , JSON_PRETTY_PRINT);
-    }
-
-    public function Projects()
-    {
-            header('Content-Type: application/json');
-            echo json_encode( $this->project_model->projectListing() , JSON_PRETTY_PRINT);
-    } 
 
 
 
