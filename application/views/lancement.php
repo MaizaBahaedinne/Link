@@ -148,12 +148,25 @@
                                      <label>code postale</label>
                                      <input name="delegation" id="delegation" type="number"  ></select>
                                      <hr>
-                                     <label>Facebook</label>
-                                     <input type="url" name="facebook" value="<?php echo $user->facebook ?>" class="form-control" required >
-                                     <label>Instagram</label>
-                                     <input type="url" name="instagram" value="<?php echo $user->instagram ?>" class="form-control"  >
-                                     <label>Linkedin</label>
-                                     <input type="url" name="linkedin" value="<?php echo $user->linkedin ?>" class="form-control" >
+                                     <div class="uzer-nam">
+                                      <label><br>Facebook </label>
+                                      <span>https://www.facebook.com/</span>
+                                        <input type="text"
+                                      placeholder="exemple : Tunivisions.Foundation" name="facebook" width="30%" id="facebook" value="<?php echo $user->facebook ?>"  >
+                                     </div>
+                                     <div class="uzer-nam">
+                                      <label><br>Facebook </label>
+                                      <span>https://www.instgram.com/</span>
+                                        <input type="number" 
+                                      placeholder="exemple : Tunivisions.Foundation" name="instagram" width="30%" id="instagram" value="<?php echo $user->instagram ?>"  >
+                                     </div>
+                                     <div class="uzer-nam">
+                                      <label><br>Linkedin </label>
+                                      <span>https://www.Linkedin.com/</span>
+                                        <input type="number" 
+                                      placeholder="exemple : Tunivisions.Foundation" name="linkedin" width="30%" id="linkedin" value="<?php echo $user->linkedin ?>"  >
+                                     </div>
+                                     
                                      
                                      <hr>
                                      <label>Club/chapitre</label>

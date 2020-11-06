@@ -156,14 +156,14 @@
                                     </div>
                                     <div class="col-lg-3 col-md-2 col-sm-2">
                                         <div class="event-time">
-                                           <span class="event-date">
+                                           <span class="">
                                              
                                             <?php if (empty($projet->score )){  ?>
                                               <button class="btn btn-danger" data-toggle="modal" data-target="#ProjectScore<?php echo $projet->projectId ?>" >Collecter les points</button>
 
 
                                                <div class="modal fade" id="ProjectScore<?php echo $projet->projectId ?>">
-                                                      <div class="modal-dialog modal-sm">
+                                                      <div class="modal-dialog modal-lg">
                                                         <div class="modal-content">
 
                                                           <!-- Modal Header -->
@@ -176,7 +176,30 @@
                                                           <div class="modal-body">
                                                             <form class="c-form" action="<?php echo base_url() ?>Project/addNewScore/<?php echo $projet->projectId ?>" method="POST" >
                                                             
+
+                                                            <div class="uzer-nam">
+                                                            <label><br>Album photos </label>
+                                                            <span>https://www.facebook.com/ClubtunivisionsX/photos/</span>
+                                                              <input type="text" 
+                                                             name="album" width="100%" id="album" pattern="(\w)?(\.)?(\d.*)" required >
+
+                                                           </div>
+                                                           <small><span class="text-mute" >Exemple : a.5619848191981</span></small>
+
+
+                                                        
+                                                        
+                                                           <div class="uzer-nam">
+                                                            <label><br>Video after movie </label>
+                                                            <span>https://www.facebook.com/</span>
+                                                              <input type="text" 
+                                                             name="video" width="100%" id="video"  pattern="ClubTunivisions?(\w.*)?\/videos\/?\d.*"  >
+                                                           </div>
+                                                           <small><span class="text-mute" >Exemple : ClubTunivisionsX/videos/5619848191981</span></small>
                                                             
+
+                                                            <br><br>
+                                                            <input type="submit" name="" value="envoyer" class="btn btn-primary">
 
                                                             </form>
 

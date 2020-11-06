@@ -81,62 +81,27 @@
                                 <aside class="sidebar static right">
 
                                   <div class="widget">
-                                        <h4 class="widget-title">Your page</h4> 
+                                        <h4 class="widget-title">Rapport/h4> 
                                         <div class="your-page">
-                                            <figure>
-                                                <a href="#" title=""><img src="images/resources/friend-avatar9.jpg" alt=""></a>
-                                            </figure>
-                                            <div class="page-meta">
-                                                <a href="#" title="" class="underline">My Creative Page</a>
-                                                <span><i class="ti-comment"></i><a href="insight.html" title="">Messages <em class="bg-blue">9</em></a></span>
-                                                <span><i class="ti-bell"></i><a href="insight.html" title="">Notifications <em class="bg-purple">2</em></a></span>
-                                            </div>
-                                            <ul class="page-publishes">
-                                                <li>
-                                                    <span><i class="ti-pencil-alt"></i>Publish</span>
-                                                </li>
-                                                <li>
-                                                    <span><i class="ti-camera"></i>Photo</span>
-                                                </li>
-                                                <li>
-                                                    <span><i class="ti-video-camera"></i>Live</span>
-                                                </li>
-                                                <li>
-                                                    <span><i class="fa fa-user-plus"></i>Invite</span>
-                                                </li>
-                                            </ul>
+ 
                                             <div class="page-likes">
                                                 <ul class="nav nav-tabs likes-btn">
-                                                    <li class="nav-item"><a class="active" href="#link1" data-toggle="tab" data-ripple="">likes</a></li>
-                                                     <li class="nav-item"><a class="" href="#link2" data-toggle="tab" data-ripple="">views</a></li>
+                                                    <li class="nav-item"><a class="active" href="#link1" data-toggle="tab" data-ripple="">Participants</a></li>
+                                                     <li class="nav-item"><a class="" href="#link2" data-toggle="tab" data-ripple="">Organisateurs</a></li>
+                                                     <li class="nav-item"><a  href="#link3" data-toggle="tab" data-ripple="">Album photo</a></li>
+                                                     <li class="nav-item"><a class="" href="#link4" data-toggle="tab" data-ripple="">aftermovie</a></li>
                                                 </ul>
                                                 <!-- Tab panes -->
                                                 <div class="tab-content">
                                                   <div class="tab-pane active fade show" id="link1">
-                                                    <span><i class="ti-heart"></i>884</span>
-                                                      <a href="#" title="weekly-likes">35 new likes this week</a>
+                                                    <span><i class="ti-heart"></i><?php echo count($part) ?> Participants</span>
+                                                      
                                                       <div class="users-thumb-list">
-                                                        <a href="#" title="" data-toggle="tooltip" data-original-title="Anderw">
-                                                            <img src="images/resources/userlist-1.jpg" alt="">  
+                                                        <?php foreach ($part  as $p ) {?>                                                       
+                                                        <a href="#" title="" data-toggle="tooltip" data-original-title="<?php echo $p->name ?>">
+                                                            <img class="alligator-profile-likes" src="<?php echo base_url() ?>uploads/avatar/<?php echo $p->avatar ?>" alt="">  
                                                         </a>
-                                                        <a href="#" title="" data-toggle="tooltip" data-original-title="frank">
-                                                            <img src="images/resources/userlist-2.jpg" alt="">  
-                                                        </a>
-                                                        <a href="#" title="" data-toggle="tooltip" data-original-title="Sara">
-                                                            <img src="images/resources/userlist-3.jpg" alt="">  
-                                                        </a>
-                                                        <a href="#" title="" data-toggle="tooltip" data-original-title="Amy">
-                                                            <img src="images/resources/userlist-4.jpg" alt="">  
-                                                        </a>
-                                                        <a href="#" title="" data-toggle="tooltip" data-original-title="Ema">
-                                                            <img src="images/resources/userlist-5.jpg" alt="">  
-                                                        </a>
-                                                        <a href="#" title="" data-toggle="tooltip" data-original-title="Sophie">
-                                                            <img src="images/resources/userlist-6.jpg" alt="">  
-                                                        </a>
-                                                        <a href="#" title="" data-toggle="tooltip" data-original-title="Maria">
-                                                            <img src="images/resources/userlist-7.jpg" alt="">  
-                                                        </a>  
+                                                        <?php } ?>
                                                       </div>
                                                   </div>
                                                   <div class="tab-pane fade" id="link2">
@@ -146,25 +111,35 @@
                                                         <a href="#" title="" data-toggle="tooltip" data-original-title="Anderw">
                                                             <img src="images/resources/userlist-1.jpg" alt="">  
                                                         </a>
-                                                        <a href="#" title="" data-toggle="tooltip" data-original-title="frank">
-                                                            <img src="images/resources/userlist-2.jpg" alt="">  
-                                                        </a>
-                                                        <a href="#" title="" data-toggle="tooltip" data-original-title="Sara">
-                                                            <img src="images/resources/userlist-3.jpg" alt="">  
-                                                        </a>
-                                                        <a href="#" title="" data-toggle="tooltip" data-original-title="Amy">
-                                                            <img src="images/resources/userlist-4.jpg" alt="">  
-                                                        </a>
-                                                        <a href="#" title="" data-toggle="tooltip" data-original-title="Ema">
-                                                            <img src="images/resources/userlist-5.jpg" alt="">  
-                                                        </a>
-                                                        <a href="#" title="" data-toggle="tooltip" data-original-title="Sophie">
-                                                            <img src="images/resources/userlist-6.jpg" alt="">  
-                                                        </a>
-                                                        <a href="#" title="" data-toggle="tooltip" data-original-title="Maria">
-                                                            <img src="images/resources/userlist-7.jpg" alt="">  
-                                                        </a>  
+                                                        
                                                       </div>
+                                                  </div>
+
+                                                  <div class="tab-pane fade" id="link3">
+      <div id="fb-root"></div>
+      <script async defer crossorigin="anonymous" src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v8.0" nonce="vwqxXg2L"></script>
+
+       <div class="fb-post" 
+      data-href="https://www.facebook.com/media/set?set=<?php echo  $score->album ?>"
+      data-width="400"></div>
+
+                                                  </div>
+
+                                                  <div class="tab-pane fade " id="link4">
+        <?php if($score->video != '') { ?>                                            
+        <div id="fb-root"></div>
+        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v8.0" nonce="RFPjGo7w"></script>
+                                                      <!-- Your embedded video player code -->
+         <div class="fb-video" data-href="https://www.facebook.com/facebook/videos/<?php echo  $score->video ?>/" data-width="500" data-show-text="false">
+          <div class="fb-xfbml-parse-ignore">
+            <blockquote cite="https://www.facebook.com/facebook/videos/<?php echo  $score->video ?>/">
+              <a href="https://www.facebook.com/facebook/videos/<?php echo  $score->video ?>/">How to Share With Just Friends</a>
+              <p>How to share with just friends.</p>
+          Posted by <a href="https://www.facebook.com/facebook/">Facebook</a> on Friday, December 5, 2014
+            </blockquote>
+         </div>
+        </div>
+          <?php }else{ echo "<h4>Pas de after movie</h4>" ; } ?> 
                                                   </div>
                                                 </div>
                                             </div>
@@ -172,28 +147,33 @@
                                     </div><!-- page like widget -->
                                
                                     <div class="widget">
-                                        <h4 class="widget-title">Note du projet</h4> 
+                                        <h4 class="widget-title">Note du projet </h4>
+                                        <?php if(!(empty($score))) { ?> 
                                         <div class="your-page">
-                                            <h5>Taches (<?php echo "0" ?>) </h6>
+                                            <h6>Taches (<?php echo $score->taches ?>) </h6>
                                             <hr>
                                             <ul>    
-                                                <li>Nombre des affectaions : <?php echo "0" ?></li>
-                                                <li>Nombre des affectaions validées : <?php echo "0" ?></li>
+                                                <li>Nombre des affectaions : <?php echo  $score->aff ?></li>
+                                                <li>Nombre des affectaions validées : <?php echo  $score->affE ?></li>
                                             </ul>
                                             <hr>
-                                            <h6>Taux d'éfficacité : <?php echo "0" ?></h6>
+                                            <b>Taux d'éfficacité : <?php echo  $score->affP ?>%<br><br></b>
 
-                                            <br>
-                                            <h5>Présence</h6>
+                                            
+                                            <h6>Présence</h5>
                                             <hr>
                                             <ul>    
-                                                <li>Nombre des membres inscrits : <?php echo "0" ?></li>
-                                                <li>Nombre des participants : <?php echo "0" ?></li>
+                                                <li>Nombre des membres inscrits : <?php echo  $score->nbMem ?></li>
+                                                <li>Nombre des participants : <?php echo  $score->participation  ?></li>
                                             </ul>
                                             <hr>
-                                            <h6>Taux de présence : <?php echo "0" ?></h6>
+                                            <b>Taux de présence : <?php echo  $score->tauxParticipation ?>%</b>
+                                            <hr>
+                                            <b>Note</b>
+                                            <?php echo  $score->description ?>
 
                                         </div>
+                                    <?php } ?> 
                                     </div><!-- page like widget -->
                                    
                                 </aside>

@@ -71,6 +71,7 @@ class Scoring_model extends CI_Model
     {
         $this->db->select('*');
         $this->db->from('tbl_scoring as BaseTbl');
+        $this->db->join('tbl_users as user', 'user.userId = BaseTbl.userId', 'LEFT');
         $this->db->where('BaseTbl.projectId', $projectId);
         $query = $this->db->get();
         return $query->result();

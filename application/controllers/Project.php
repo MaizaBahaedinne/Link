@@ -12,6 +12,7 @@ class Project extends BaseController {
         $this->load->model('user_model');
         $this->load->model('project_model');
         $this->load->model('club_model'); 
+        $this->load->model('task_model'); 
         $this->load->model('project_model'); 
         $this->load->model('scoring_model');
         $this->load->model('score_club_model');
@@ -37,7 +38,10 @@ class Project extends BaseController {
 		        {
 
 		                $data["projet"] = $this->project_model->getProjectInfo($projectID);
-                        $data["Note"] = $this->score_club_model->scoreByProject($projectID);        
+                        $data["score"] = $this->score_club_model->scoreByProject($projectID); 
+                        $data["part"] = $this->scoring_model->PresenceByProject($projectID); 
+                       
+
                         $this->global['pageTitle'] = "Projet" ;
 		                $this->loadViews("project/view", $this->global, $data, NULL);   
 		        }
@@ -207,27 +211,41 @@ class Project extends BaseController {
                 {
 
                 $projet = $this->project_model->getProjectInfo($projectId);
-                $taches = $this->Task_model->taskListing($projectId);
+                $taches = $this->task_model->taskListing($projectId);
                 
                 $aff = 0 ;
                 $affE = 0 ;
                 $affP = 0 ;
                 foreach ($taches as $tache ) 
                 {
-                    $tache->affections = $this->Task_model->AffectationsListing($tache->tacheId);
-                    foreach ($tache->affections as $aff ) {
+                    $tache->affections = $this->task_model->AffectationsListing($tache->tacheId);
+                    foreach ($tache->affections as $afff ) {
                      $aff ++ ;
-                     if( $aff->statut == 1 ){$affE ++ ; }
+                     if( $afff->status == 1 ){$affE ++ ; }
                     }
                 }
-                $affP  =  (($affE/$aff)*100) ;
-                $nbMem = $this->user_model->userListingByclub($projet->clubId) ;
-                $participation = $this->Scoring_model->PresenceByProject($projectId);
-                $tauxParticipation = (count($Participation)/count($nbMem))*100 ;
-
+                
                 $album = $this->input->post('album');
                 $video = $this->input->post('video');   
 
+
+                if($affE > 0 ){
+                    $affP  =  (($affE/$aff)*100) ;
+                }else
+                {
+                    $affP = 0 ; 
+                }
+
+                $participation = count($this->scoring_model->PresenceByProject($projectId));
+                $nbMem = count($this->user_model->userListingByclub($projet->clubID)) ;
+                $tauxParticipation = ($participation/$nbMem)*100 ;
+
+                    echo($participation.'/'.$nbMem) ;
+
+                if($participation > 0) {
+                
+
+                
                 if($tauxParticipation>25){ 
 
                     if($affP >= 45 ){
@@ -253,30 +271,30 @@ class Project extends BaseController {
                         if($projet->type =="Compétition" && $projet->cible =="Only tunimateur" ){ $points = 50 ;}
 
                         
-                        if($projet->type =="Soirée" && $projet->cible =="Publique" ){ $points = 20 ;}
-                        if($projet->type =="Soirée" && $projet->cible =="Only tunimateur" ){ $points = 20 ;}
+                        if($projet->type =="Soirée" && $projet->cible =="Publique" ){ $points = 10 ;}
+                        if($projet->type =="Soirée" && $projet->cible =="Only tunimateur" ){ $points = 10 ;}
 
-                        if($projet->type =="Team Building" && $projet->cible =="Publique" ){ $points = 10 ;}
+                        if($projet->type =="Team Building" && $projet->cible =="Publique" ){ $points = 20 ;}
                         if($projet->type =="Team Building" && $projet->cible =="Only tunimateur" ){ $points = 20 ;}
                         
-
+                        $description ='' ;    
                         if($video != '' ){ 
-                            $point += 10 ; 
+                            $points += 10 ; 
                              $description .= "<p style='color:green' >Bonus de <b>+10 points</b> pour la video </p> <br>" ;
                          }
-                        if(count($taches) >= 10 )
+                        if(count($taches) >= 20 )
                         {
-                            $point += 5 ; 
+                            $points += 5 ; 
                             $description .= "<p style='color:green' >Bonus de <b>+5 points</b> pour le nombre des taches</p> <br>" ;
                         }
                         if($affP >= 75 )
                          {  
-                            $point += 10 ;
+                            $points += 10 ;
                             $description .= "<p style='color:gold' >Bonus de <b>+10 points</b> pour le TE > 75%</p> <br>" ;
                          }
                          if($tauxParticipation >= 90 )
                          {  
-                            $point += 5 ;
+                            $points += 5 ;
                             $description .= "<p style='color:gold' >Bonus de <b>+20 points</b> pour le TP > 90%</p> <br>" ;
                          }
 
@@ -293,26 +311,38 @@ class Project extends BaseController {
                         $description = "<p style='color:red' >taux présence < 25 %</p> " ;
 
                 }
+                }else
+                {
+                    $point = 0 ;
+                        $description = "<p style='color:red' >taux présence = 0 %</p> " ;
+                }
 
 
-                $projectInfo = array(        
+
+                $scoresInfo = array(        
                  'album' => $album ,
                  'video' => $video ,
-                 'projectId' => $projectId,
+                 'projectId' => $projet->projectId,
                  'nbMem' => $nbMem ,
                  'participation' => $participation,
                  'tauxParticipation' => $tauxParticipation ,
-                 'taches' => $taches ,
+                 'taches' => count($taches) ,
                  'aff' => $aff,
                  'affE' => $affE ,
                  'affP' => $affP ,
-                 'description' => $description ,
+                 'description' => NL2BR($description) ,
+                 'createBy'=> $this->vendorId ,
+                 'createdDate'=> date('Y-m-d H:i:s') ,
+
                      );
+
+
+
                 
-                
+                 $result = $this->score_club_model->addNew($scoresInfo); 
       
                 
-                redirect('/Project/projectDetails'.$projet->projectId);
+                redirect('/Project/projectDetails/'.$projet->projectId);
 
                 }
 
