@@ -32,22 +32,10 @@
                         <td>
                           <a href="<?php echo base_url() ?>club/clubInfo/<?php echo $record->clubID ?>" target="_blank"   >
                            <b><?php echo $record->name ?> </b> 
-                           <?php if ($record->is_Actif=="0"){  ?>
-                               <i class="fa fa-ban" aria-hidden="true"></i>
-                           <?php } ?>
+                           
                          </a>
 
                           <?php $P = $record->P ;  ?>
-                          <?php $VPAF = $record->VPAF ; ?>
-                          <?php $VPRH = $record->VPRH ; ?>
-                          <?php $VPM = $record->VPM ; ?>
-                          <?php $VPE = $record->VPE ; ?>
-
-
-                          <?php $AAF = $record->AAF ; ?>
-                          <?php $ARH = $record->ARH ; ?>
-                          <?php $AM = $record->AM ; ?>
-                          <?php $AE = $record->AE ; ?>
 
                           <div class="row">
                             <div class="col-md-4">
@@ -76,8 +64,12 @@
                             <small><?php echo $record->members ; ?> </small>
                         </td>
                         <td>
-                            <?php if ($record->SenJun == 3 ){ echo 'University' ; }?>
-                            <?php if ($record->SenJun == 4 ){ echo 'High School' ; }?>
+                            <?php if ($record->is_Actif=="0"){  ?>
+                               <i class="fa fa-ban" style="color: red" aria-hidden="true"></i> Inactif
+                            <?php } ?>
+                            <?php if ($record->is_Actif=="1"){  ?>
+                               <i class="fa fa-ban" style="color: green" aria-hidden="true"></i> Actif
+                            <?php } ?>
                         </td>
                         <?php if($SA== 1 ||  $uid == 1031 || $uid == 236 || $uid ==  4962 ){ ?>
                         <td>
