@@ -331,8 +331,8 @@ class Project extends BaseController {
                  'affE' => $affE ,
                  'affP' => $affP ,
                  'description' => NL2BR($description) ,
-                 'createBy'=> $this->vendorId ,
-                 'createdDate'=> date('Y-m-d H:i:s') ,
+                 'createdBy'=> $this->vendorId ,
+                 'createdDTM'=> date('Y-m-d H:i:s') ,
 
                      );
 

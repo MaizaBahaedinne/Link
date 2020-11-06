@@ -191,11 +191,11 @@
                                                         
                                                            <div class="uzer-nam">
                                                             <label><br>Video after movie </label>
-                                                            <span>https://www.facebook.com/</span>
+                                                            <span>https://www.facebook.com/ClubTunivisionsX/videos/</span>
                                                               <input type="text" 
-                                                             name="video" width="100%" id="video"  pattern="ClubTunivisions?(\w.*)?\/videos\/?\d.*"  >
+                                                             name="video" width="100%" id="video"  pattern="\d.*"  >
                                                            </div>
-                                                           <small><span class="text-mute" >Exemple : ClubTunivisionsX/videos/5619848191981</span></small>
+                                                           <small><span class="text-mute" >Exemple : 5619848191981</span></small>
                                                             
 
                                                             <br><br>

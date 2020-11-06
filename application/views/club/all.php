@@ -53,59 +53,18 @@
                             <div class="col-md-4">
                               <small>Président</small>
                             </div>
-                            <div class="col-md-8">
+                            <div class="col-md-12">
                               <div class="users-thumb-list">
                               <?php if($P) { ?>
                               <a href="<?php echo base_url() ?>User/ProfileShow/<?php echo $P->userId ?>" target="_blank"  title="<?php echo $P->name ?>" data-toggle="tooltip" data-placement="left" data-original-title="<?php echo $P->name ?>">
-                                <img alt="" class="alligator-profile-likes" src="<?php echo base_url() ?>uploads/avatar/<?php echo $P->avatar ?>">  
+                                <img alt="" class="alligator-profile-likes" src="<?php echo base_url() ?>uploads/avatar/<?php echo $P->avatar ?>"> <?php echo $P->name ?> 
                               </a>
                               <?php } ?>
                               </div>
                             </div>
                             </div>
 
-                            <div class="row">
-                            <div class="col-md-4">
-                              <small> Vice Président</small>
-                            </div>
-                            <div class="col-md-2">
-                              <div class="users-thumb-list">
-                                <?php if($VPAF) { ?>
 
-                              <a href="<?php echo base_url() ?>User/ProfileShow/<?php echo $VPAF->userId ?>" target="_blank"  title="<?php echo $VPAF->name ?>" data-toggle="tooltip" data-placement="left" data-original-title="<?php echo $VPAF->name ?>">
-                                <img alt="" class="alligator-profile-likes" src="<?php echo base_url() ?>uploads/avatar/<?php echo $VPAF->avatar ?>"> 
-                              </a>
-                               <?php } ?>
-                              </div>
-                            </div>
-                            <div class="col-md-2">
-                              <div class="users-thumb-list">
-                                <?php if($VPRH) { ?>
-                              <a href="<?php echo base_url() ?>User/ProfileShow/<?php echo $VPRH->userId ?>" target="_blank"  title="<?php echo $VPRH->name ?>" data-toggle="tooltip" data-placement="left" data-original-title="<?php echo $VPRH->name ?>">
-                                <img alt="" class="alligator-profile-likes" src="<?php echo base_url() ?>uploads/avatar/<?php echo $VPRH->avatar ?>"> 
-                              </a>
-                               <?php } ?>
-                              </div>
-                            </div>
-                            <div class="col-md-2">
-                              <div class="users-thumb-list">
-                                <?php if($VPM) { ?>
-                              <a href="<?php echo base_url() ?>User/ProfileShow/<?php echo $VPM->userId ?>" target="_blank" title="<?php echo $VPM->name ?>" data-toggle="tooltip" data-placement="left" data-original-title="<?php echo $VPM->name ?>">
-                                <img alt="" class="alligator-profile-likes" src="<?php echo base_url() ?>uploads/avatar/<?php echo $VPM->avatar ?>"> 
-                              </a>
-                               <?php } ?>
-                              </div>
-                            </div>
-                            <div class="col-md-2">
-                              <div class="users-thumb-list">
-                                <?php if($VPE) { ?>
-                              <a href="<?php echo base_url() ?>User/ProfileShow/<?php echo $VPE->userId ?>" target="_blank"  title="<?php echo $VPE->name ?>" data-toggle="tooltip" data-placement="left" data-original-title="<?php echo $VPE->name ?>">
-                                <img alt="" class="alligator-profile-likes" src="<?php echo base_url() ?>uploads/avatar/<?php echo $VPE->avatar ?>"> 
-                              </a>
-                               <?php } ?>
-                              </div>
-                            </div>
-                            </div>
 
                         </td>
                         <td>
@@ -120,7 +79,7 @@
                             <?php if ($record->SenJun == 3 ){ echo 'University' ; }?>
                             <?php if ($record->SenJun == 4 ){ echo 'High School' ; }?>
                         </td>
-                        <?php if($SA== 1 ||  $uid == 1031 ){ ?>
+                        <?php if($SA== 1 ||  $uid == 1031 || $uid == 236 || $uid ==  4962 ){ ?>
                         <td>
                              <a href="<?php echo base_url() ?>Club/editClub/<?php echo  $record->clubID ?>">   <i class="ti-pencil"></i>
                         </td>
