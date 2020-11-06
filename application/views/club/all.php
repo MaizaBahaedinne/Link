@@ -68,7 +68,7 @@
                                <i class="fa fa-ban" style="color: red" aria-hidden="true"></i> Inactif
                             <?php } ?>
                             <?php if ($record->is_Actif=="1"){  ?>
-                               <i class="fa fa-ban" style="color: green" aria-hidden="true"></i> Actif
+                               <i class="fa fa-check" style="color: green" aria-hidden="true"></i> Actif
                             <?php } ?>
                         </td>
                         <?php if($SA== 1 ||  $uid == 1031 || $uid == 236 || $uid ==  4962 ){ ?>
