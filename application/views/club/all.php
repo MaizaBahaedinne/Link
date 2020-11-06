@@ -65,10 +65,10 @@
                         </td>
                         <td>
                             <?php if ($record->is_Actif=="0"){  ?>
-                               <i class="fa fa-ban" style="color: red" aria-hidden="true"></i> Inactif
+                               <i class="btn btn-danger fa fa-ban"  aria-hidden="true"> Inactif</i> 
                             <?php } ?>
                             <?php if ($record->is_Actif=="1"){  ?>
-                               <i class="fa fa-check" style="color: green" aria-hidden="true"></i> Actif
+                               <i class="btn btn-success fa fa-check" aria-hidden="true">Actif</i> 
                             <?php } ?>
                         </td>
                         <?php if($SA== 1 ||  $uid == 1031 || $uid == 236 || $uid ==  4962 ){ ?>
