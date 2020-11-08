@@ -778,7 +778,21 @@ class User extends BaseController
         $data["formations"] = $this->scoring_model->ScoreByUserByType($userId,"Formation");
         $data["conferences"] = $this->scoring_model->ScoreByUserByType($userId,"Conférences");
         $data["missions"]   = null ;
+        $data["visit"] = $this->user_model->visitListingByUser($userId) ;
 
+
+
+        if( $this->vendorId != $userId && $userId != 0 )
+        {
+         $visitInfo = array(
+                            'userId'=>$userId, 
+                            'createdBy'=>$this->vendorId,
+                            'createdDTM'=>date('Y-m-d H:i:s')
+                          );
+          $this->user_model->addVisiteUser($visitInfo) ; 
+        }
+
+       
         
         $this->global['pageTitle'] = $data["userInfo"]->name;
         $this->loadViews("Tunimateurs/profile", $this->global, $data, NULL);

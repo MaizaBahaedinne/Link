@@ -198,7 +198,6 @@ class User_model extends CI_Model
 
 
 
-
  
  
     
@@ -364,6 +363,43 @@ class User_model extends CI_Model
         $query = $this->db->get();
         
         return $query->row();
+    }
+
+
+
+
+        /**
+     * This function is used to add new user to system
+     * @return number $insert_id : This is last inserted id
+     */
+    function addVisiteUser($userInfo)
+    {
+
+        $this->db->trans_start();
+        $this->db->insert('tbl_users_visit', $userInfo);
+        
+        $insert_id = $this->db->insert_id();
+        
+        $this->db->trans_complete();
+        
+        return $insert_id;
+    }
+
+
+    /**
+     * This function is used to check whether email id is already exist or not
+     * @param {string} $email : This is email id
+     * @param {number} $userId : This is user id
+     * @return {mixed} $result : This is searched result
+     */
+    function visitListingByUser($userId)
+    {
+        $this->db->select("*");
+        $this->db->from("tbl_users_visit");
+        $this->db->where("userId", $userId);
+        $this->db->group_by("createdBy");   
+        $query = $this->db->get();
+         return $query->row();
     }
 
 

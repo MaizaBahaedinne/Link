@@ -88,7 +88,7 @@
                           <li>
                             <span class="views" title="views">
                               <i class="fa fa-eye"></i>
-                              <ins>0</ins>
+                              <ins><?php echo count($visit) ?></ins>
                             </span>
                           </li>
                           <li>
