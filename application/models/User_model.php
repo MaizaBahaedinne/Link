@@ -399,7 +399,7 @@ class User_model extends CI_Model
         $this->db->where("userId", $userId);
         $this->db->group_by("createdBy");   
         $query = $this->db->get();
-         return $query->row();
+         return $query->result();
     }
 
 
