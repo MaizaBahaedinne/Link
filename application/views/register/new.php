@@ -97,7 +97,7 @@
              $date = $this->input->get('var4');
             ?>
           <!--begin::Form-->
-          <?php if (date($date) < date() ) { ?>
+          <?php if (date($date) <= date('now') ) { ?>
             <form  role="form" class="we-form" runat="server" action="<?php echo base_url() ?>Register/registerNewUser?var1=<?php echo $var1 ?>&var2=<?php echo $var2 ?>&var3=<?php echo $var3 ?>"     method="post" enctype="multipart/form-data"  >
       
            
