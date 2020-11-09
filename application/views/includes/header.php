@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE HTML>
-<html lang="en" class=""><!-- Mirrored from wpkixx.com/html/pitnik/search-result.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 01 Oct 2020 12:50:46 GMT --><head>
+<html lang="fr" class=""><!-- Mirrored from wpkixx.com/html/pitnik/search-result.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 01 Oct 2020 12:50:46 GMT --><head>
 <?php 
                      function xTimeAgo ($oldTime, $newTime) {
                       $timeCalc = strtotime($newTime) - strtotime($oldTime);
@@ -95,10 +95,10 @@
    <script>
 	  window.fbAsyncInit = function() {
 	    FB.init({
-	      appId      : '{your-app-id}',
+	      appId      : '3b4d628cbd57d33037f43ec8d039562a',
 	      cookie     : true,
 	      xfbml      : true,
-	      version    : '{api-version}'
+	      version    : '8'
 	    });
 	      
 	    FB.AppEvents.logPageView();   
