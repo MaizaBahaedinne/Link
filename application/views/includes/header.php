@@ -92,7 +92,27 @@
         </script>
    <script src="https://cdn.tiny.cloud/1/vqf4xobfz4h7owrwfo1qar98sig5s2yt4cgnuskbexcf8zqh/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 
+   <script>
+	  window.fbAsyncInit = function() {
+	    FB.init({
+	      appId      : '{your-app-id}',
+	      cookie     : true,
+	      xfbml      : true,
+	      version    : '{api-version}'
+	    });
+	      
+	    FB.AppEvents.logPageView();   
+	      
+	  };
 
+	  (function(d, s, id){
+	     var js, fjs = d.getElementsByTagName(s)[0];
+	     if (d.getElementById(id)) {return;}
+	     js = d.createElement(s); js.id = id;
+	     js.src = "https://connect.facebook.net/en_US/sdk.js";
+	     fjs.parentNode.insertBefore(js, fjs);
+	   }(document, 'script', 'facebook-jssdk'));
+	</script>
 </head>
 <body>
 	<div class="wavy-wraper">
@@ -113,6 +133,8 @@
 	<nav id="shoppingbag" class="mm-menu mm-offcanvas mm-right" aria-hidden="true"><div class="mm-panels"><div class="mm-panel mm-hasnavbar mm-opened" id="mm-13"><div class="mm-navbar"><a class="mm-title">General Setting</a></div>
 				<div class="">
 					<a data-toggle="modal" data-target="#qrscanner" > Scanner QR</a>
+					<br><br>
+					
 					<!--
 					<form method="post">
 						<div class="setting-row">

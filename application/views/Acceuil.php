@@ -5,9 +5,32 @@
 
 <div class="col-lg-12">
 <div class="row merged20" id="page-contents">
+
+
               <!-- sidebar -->
               <div class="col-lg-3">
                 <aside class="sidebar static right">
+                  <div class="widget">
+                    <h4 class="widget-title">Authentifier vous via facebook</h4>
+                    <div class="your-page">
+
+                    <fb:login-button 
+                      scope="public_profile,email"
+                      onlogin="checkLoginState();">
+                    </fb:login-button>
+                    </div>
+                  </div>
+                  <div class="widget">
+                     <h4 class="widget-title">Groupe Facebook</h4>
+                    <div class="your-page">
+                   
+                    <div id="fb-root"></div>
+                    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v8.0&appId=2993377220885022&autoLogAppEvents=1" nonce="Jp5mUCF2"></script>
+                    <div class="fb-group" data-href="https://www.facebook.com/groups/1325115014502168"  data-show-social-context="true" data-show-metadata="true"><blockquote cite="https://www.facebook.com/groups/1325115014502168" class="fb-xfbml-parse-ignore">Tunivisions Family</blockquote></div>
+                    <br>
+                    <br>
+                  </div>
+                  </div> 
                   <div class="widget">
                     <h4 class="widget-title">Mon Club</h4> 
                     <div class="your-page">
