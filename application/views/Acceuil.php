@@ -15,7 +15,7 @@
                     <div class="your-page">
                         
                         <div id="fb-root"></div>
-                        <div class="fb-login-button" data-size="small" data-button-type="login_with" data-layout="default" data-auto-logout-link="true" data-use-continue-as="true" data-width=""></div>
+                        <div class="fb-login-button" data-size="small" data-button-type="login_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="true" data-width=""></div>
                     
                     </div>
                   </div>
