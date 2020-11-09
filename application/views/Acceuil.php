@@ -13,9 +13,9 @@
                   <div class="widget">
                     <h4 class="widget-title">Authentifier vous via facebook</h4>
                     <div class="your-page">
-                      <div id="fb-root"></div>
-                        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v8.0&appId=2993377220885022&autoLogAppEvents=1" nonce="0Hef43jb"></script>
-                        <div class="fb-login-button" data-size="large" data-button-type="login_with" data-layout="rounded" data-auto-logout-link="false" data-use-continue-as="true" data-width=""></div>
+                      
+                        
+                        <div class="fb-login-button" data-size="medium" data-button-type="login_with" data-layout="default" data-auto-logout-link="true" data-use-continue-as="false" data-width=""></div>
                     
                     </div>
                   </div>
