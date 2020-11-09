@@ -92,27 +92,24 @@
         </script>
    <script src="https://cdn.tiny.cloud/1/vqf4xobfz4h7owrwfo1qar98sig5s2yt4cgnuskbexcf8zqh/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 
-   <script>
-	  window.fbAsyncInit = function() {
-	    FB.init({
-	      appId      : '2993377220885022',
-	      cookie     : true,
-	      xfbml      : true,
-	      version    : '8.0'
-	    });
-	      
-	    FB.AppEvents.logPageView();   
-	      
-	  };
+  <script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '2993377220885022',
+      xfbml      : true,
+      version    : 'v8.0'
+    });
+    FB.AppEvents.logPageView();
+  };
 
-	  (function(d, s, id){
-	     var js, fjs = d.getElementsByTagName(s)[0];
-	     if (d.getElementById(id)) {return;}
-	     js = d.createElement(s); js.id = id;
-	     js.src = "https://connect.facebook.net/en_US/sdk.js";
-	     fjs.parentNode.insertBefore(js, fjs);
-	   }(document, 'script', 'facebook-jssdk'));
-	</script>
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
 </head>
 <body>
 	<div class="wavy-wraper">
