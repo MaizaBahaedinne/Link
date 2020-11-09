@@ -95,10 +95,10 @@
    <script>
 	  window.fbAsyncInit = function() {
 	    FB.init({
-	      appId      : '3b4d628cbd57d33037f43ec8d039562a',
+	      appId      : '2993377220885022',
 	      cookie     : true,
 	      xfbml      : true,
-	      version    : '8'
+	      version    : '8.0'
 	    });
 	      
 	    FB.AppEvents.logPageView();   
