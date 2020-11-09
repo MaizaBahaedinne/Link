@@ -164,7 +164,7 @@
                     </figure>
                     <div class="newpst-input">
                       
-                        <textarea rows="4" name="postText" placeholder="Partagez ce que vous pensez?"></textarea>
+                        <textarea rows="4" name="postText" placeholder="Partagez ce que vous pensez?" maxlength="265" required></textarea>
                       
                     </div>
                     <div class="attachments">
@@ -278,22 +278,11 @@
                           <?php } ?>                  
                           <div class="description">
                             <p id="Cpntent<?php $post->postId ?>" >
-                              <?php  
+                             <?php echo $post->Content ?>
+                           
                               
                              
-                              $string = strip_tags($post->Content);
-                              if (strlen($string) > 500) {
-
-                                  // truncate string
-                                  $stringCut = substr($string, 0, 500);
-                                  $endPoint = strrpos($stringCut, ' ');
-
-                                  //if the string doesn't contain any space then it will cut without word basis.
-                                  $string = $endPoint? substr($stringCut, 0, $endPoint) : substr($stringCut, 0);
-                                  $string .= '... <a href="'.base_url().'Posts/post/'.$post->postId.'">Afficher la suite</a>';
-                              }
-                              echo $string;
-                              ?>
+                              
                             </p>
                           </div>
                           <div class="we-video-info">

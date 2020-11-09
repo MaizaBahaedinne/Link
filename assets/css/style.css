@@ -7142,7 +7142,7 @@ a.addnewforum {
 	height: 100vh;
 }
 .we-login-register {
-    background: rgb(217 40 41) ;
+    background: #34465d ;
     float: left;
     padding: 40px 55px 50px;
     position: relative;
@@ -7151,7 +7151,7 @@ a.addnewforum {
 	color:#fff;
 }
 .we-login-register::before {
-    border-color:  rgb(217 40 41)  transparent transparent;
+    border-color:  #34465d  transparent transparent;
     border-style: solid;
     border-width: 40px 175px 0;
     bottom: -39px;
@@ -7180,7 +7180,7 @@ a.addnewforum {
 .form-title > span {
     color: #efefef;
     float: left;
-    font-size: 13px;
+    font-size: 10px;
     padding-bottom: 20px;
     padding-top: 20px;
     text-transform: capitalize;
