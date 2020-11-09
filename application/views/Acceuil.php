@@ -15,9 +15,7 @@
                     <div class="your-page">
                         
                         <div id="fb-root"></div>
-                        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v8.0&appId=2993377220885022&autoLogAppEvents=1" nonce="YzGp4IDI"></script>
-                        
-                        <div class="fb-login-button" data-size="medium" data-button-type="login_with" data-layout="default" data-auto-logout-link="true" data-use-continue-as="true" data-width=""></div>
+                        <div class="fb-login-button" data-size="small" data-button-type="login_with" data-layout="default" data-auto-logout-link="true" data-use-continue-as="true" data-width=""></div>
                     
                     </div>
                   </div>
@@ -25,9 +23,11 @@
                      <h4 class="widget-title">Groupe Facebook</h4>
                     <div class="your-page">
                    
-                   
-                    
-                    <div class="fb-group" data-href="https://www.facebook.com/groups/1325115014502168"  data-show-social-context="true" data-show-metadata="true"><blockquote cite="https://www.facebook.com/groups/1325115014502168" class="fb-xfbml-parse-ignore">Tunivisions Family</blockquote></div>
+                     <div id="fb-root"></div>
+
+                    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v8.0&appId=2993377220885022&autoLogAppEvents=1" nonce="YzGp4IDI"></script>
+
+                    <div class="fb-group" data-href="https://www.facebook.com/groups/1325115014502168"  data-show-social-context="true" data-show-metadata="true" data-width="220" ><blockquote cite="https://www.facebook.com/groups/1325115014502168"  class="fb-xfbml-parse-ignore">Tunivisions Family</blockquote></div>
                     <br>
                     <br>
                   </div>
