@@ -21,6 +21,7 @@ class Api extends BaseController
         $this->load->model('club_model');
         $this->load->model('posts_model') ;
         $this->load->model('project_model') ; 
+        $this->load->model('login_model');
 
     }
 
