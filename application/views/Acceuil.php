@@ -14,9 +14,14 @@
                     <h4 class="widget-title">Authentifier vous via facebook</h4>
                     <div class="your-page" style="text-align: center;">
                         <div id="facebookAuth">
-                        <div id="fb-root"></div>
-                        <div class="fb-login-button" data-size="small" data-button-type="login_with" data-layout="default" data-auto-logout-link="true" data-use-continue-as="true" data-width=""></div>
-                        </div>
+                        <!-- Display login status -->
+                        <div id="status"></div>
+
+                        <!-- Facebook login or logout button -->
+                        <a href="javascript:void(0);" onclick="fbLogin();" id="fbLink"><img src="images/fb-login-btn.png"/></a>
+
+                        <!-- Display user's profile info -->
+                        <div class="ac-data" id="userData"></div>
                         <div id="userData" >
                           
                         </div>
