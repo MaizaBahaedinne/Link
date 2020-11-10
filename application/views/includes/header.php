@@ -93,7 +93,7 @@
    <script src="https://cdn.tiny.cloud/1/vqf4xobfz4h7owrwfo1qar98sig5s2yt4cgnuskbexcf8zqh/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 
   <script>
-  	
+
   window.fbAsyncInit = function() {
     FB.init({
       appId      : '2993377220885022',
@@ -110,6 +110,18 @@
      js.src = "https://connect.facebook.net/en_US/sdk.js";
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
+
+
+  FB.api(
+  '/me',
+  'GET',
+  {"fields":"id,last_name,birthday,link,location,groups,likes"},
+  function(response) {
+      // Insert your code here
+  }
+);
+
+
 
 </script>
 </head>
