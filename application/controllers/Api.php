@@ -19,6 +19,7 @@ class Api extends BaseController
         parent::__construct();
         $this->load->model('user_model');
         $this->load->model('club_model');
+        $this->load->model('posts_model') ; 
 
     }
 
@@ -42,6 +43,36 @@ class Api extends BaseController
                $this->response($data);   
                 
         }
+
+
+
+
+    public  function PostsListingAPI()
+    {
+         $data  ['postRecords'] =  $this->posts_model->postsListing();
+        
+            foreach ($data['postRecords'] as $key ) {                
+                        $key->commentsRecords              = $this->posts_model->CommentsListing($key->postId);
+                        $key->likeRecords             = $this->posts_model->likesListing($key->postId);
+                         $key->likeCheck          = $this->posts_model->likeCheck($key->postId,$this->vendorId);
+                  }
+
+         $this->global['pageTitle'] = 'Acceuil' ;
+         $this->response($data); 
+    }
+
+
+
+    public  function ProjectListingAPI()
+    {
+         $data['Projets'] = $this->project_model->projectNationalListing() ;
+        
+         $this->response($data); 
+    }
+  
+                         
+
+
 
 
 
