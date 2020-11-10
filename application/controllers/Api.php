@@ -66,13 +66,9 @@ class Api extends BaseController
          $this->response($data); 
     }
 
-    public  function AuthentificationAPI($data)
+    public  function AuthentificationAPI($email,$password)
     {
 
-         $loginInfo = json_decode($data) ; 
-         
-            $email = $loginInfo->email;
-            $password =$loginInfo->password; 
             $result = $this->login_model->loginMe($email, $password);  
 
          $this->response($result); 
