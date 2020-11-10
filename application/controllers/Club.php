@@ -98,10 +98,8 @@ class Club extends BaseController {
 				        $email = $this->input->post('email');
 				        $facebook = $this->input->post('facebook');
 				        $is_Actif = $this->input->post('is_Actif');
-				      
 
-				            
-				            $clubInfo = array('name'=> $name ,
+				        $clubInfo = array('name'=> $name ,
 				                              'city'=>$city,
 				                               'birthday'=>$birthday,
 				                               'email'=>  $email  ,
