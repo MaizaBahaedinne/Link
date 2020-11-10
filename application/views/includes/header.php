@@ -94,15 +94,7 @@
 
   <script>
 
- 
-  // Check whether the user already logged in
-    FB.getLoginStatus(function(response) {
-        if (response.status === 'connected') {
-            //display user data
-            getFbUserData();
 
-        }
-    });
 window.fbAsyncInit = function() {
     // FB JavaScript SDK configuration and setup
     FB.init({
