@@ -23,11 +23,6 @@
                      <h4 class="widget-title">Groupe Facebook</h4>
                     <div class="your-page">
 
-                      <div class="fb-page" data-href="https://www.facebook.com/Tunivisionsfoundation" data-tabs="" data-width="" data-height="" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/Tunivisionsfoundation" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Tunivisionsfoundation">Tunivisions Foundation</a></blockquote></div>
-                    
-                      <br>
-                      <br>
-
                       <div id="fb-root"></div>
                       <script async defer crossorigin="anonymous" src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v8.0&appId=2993377220885022&autoLogAppEvents=1" nonce="YzGp4IDI"></script>
 
@@ -260,6 +255,10 @@
                   <!-- love post -->
                   <!-- without image -->
                   <!-- map location post -->
+
+                  <div class="central-meta ">
+                    <div class="fb-page" data-href="https://www.facebook.com/Tunivisionsfoundation" data-tabs="" data-width="" data-height="" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/Tunivisionsfoundation" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Tunivisionsfoundation">Tunivisions Foundation</a></blockquote></div>
+                  </div>
 
                   <?php foreach ($postRecords as $post ) { ?>
                                   
