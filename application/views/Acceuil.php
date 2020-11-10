@@ -19,7 +19,7 @@
                     
                     </div>
                   </div>
-                  <div class="widget">
+                  <div class="widget" id="facebookPageGroup" hidden>
                      <h4 class="widget-title">Groupe Facebook</h4>
                     <div class="your-page" style="text-align: center;">
 

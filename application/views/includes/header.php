@@ -117,8 +117,7 @@
   'GET',
   {"fields":"id,last_name,birthday,link,location,groups,likes"},
   function(response) {
-      // Insert your code here
-  }
+      $('#id="facebookPageGroup').show() ; }
 );
 
 
