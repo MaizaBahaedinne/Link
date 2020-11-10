@@ -10,12 +10,12 @@
               <!-- sidebar -->
               <div class="col-lg-3">
                 <aside class="sidebar static right">
-                  <div class="widget">
+                  <div class="widget" id="facebookAuth" >
                     <h4 class="widget-title">Authentifier vous via facebook</h4>
                     <div class="your-page" style="text-align: center;">
                         
                         <div id="fb-root"></div>
-                        <div class="fb-login-button" data-size="small" data-button-type="login_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="true" data-width=""></div>
+                        <div class="fb-login-button" data-size="small" data-button-type="login_with" data-layout="default" data-auto-logout-link="true" data-use-continue-as="true" data-width=""></div>
                     
                     </div>
                   </div>

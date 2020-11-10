@@ -117,7 +117,9 @@
   'GET',
   {"fields":"id,last_name,birthday,link,location,groups,likes"},
   function(response) {
-      $('#id="facebookPageGroup').show() ; }
+      $('#facebookPageGroup').show() ;
+ 		$('#facebookAuth').hide() ; 
+       }
 );
 
 
