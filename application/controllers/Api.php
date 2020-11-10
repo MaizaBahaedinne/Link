@@ -21,7 +21,7 @@ class Api extends BaseController
         $this->load->model('club_model');
         $this->load->model('posts_model') ;
         $this->load->model('project_model') ; 
-        $this->load->model('login_model');
+        $this->load->model('login_model') ;
 
     }
 
@@ -67,10 +67,15 @@ class Api extends BaseController
          $this->response($data); 
     }
 
-    public  function AuthentificationAPI($email,$password)
+    public  function AuthentificationAPI($data)
     {
 
-            $result = $this->login_model->loginMe($email, $password);  
+         $loginInfo = json_decode($data) ; 
+         
+        $email = $loginInfo->email;
+        $password =$loginInfo->password; 
+        $result = $this->login_model->loginMe($email, $password);  
+
 
          $this->response($result); 
     }
