@@ -63,18 +63,12 @@ class Api extends BaseController
     public  function ProjectListingAPI()
     {
          $data = $this->project_model->projectNationalListing() ;
-        
          $this->response($data); 
     }
 
     public  function AuthentificationAPI($email,$password)
     {
-
-         
- 
         $result = $this->login_model->loginMe($email, $password);  
-
-
          $this->response($result); 
     }
   
