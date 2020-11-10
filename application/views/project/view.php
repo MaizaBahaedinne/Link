@@ -81,7 +81,7 @@
                                 <aside class="sidebar static right">
 
                                   <div class="widget">
-                                        <h4 class="widget-title">Rapport/h4> 
+                                        <h4 class="widget-title">Rapport</h4> 
                                         <div class="your-page">
  
                                             <div class="page-likes">
