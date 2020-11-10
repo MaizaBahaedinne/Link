@@ -799,6 +799,26 @@ class User extends BaseController
     }
 
 
+
+    function oauthFB(){
+
+      try {
+        // Returns a `FacebookFacebookResponse` object
+        $response = $fb->get(
+          '/me',
+          'EAAqidfHtZBh4BAFdzktZAxzdLdBf3mCuweBP92trZC791E5jkIen580wIpZBkSoruxmfTHBxLAtOmrTBLCvEgjuH4G4USZBG20ZAmbZBAI25UFApyyhV8RGx6gqqxAyXPsBcMdLPWKjPExTIgYdCWiCi5ZB157zQqW9wMh00QnkkZBK88Gf23teBSvYsGQZB4vC2T79uYyM7uTfiqJJFV5AjhesoWipwZAaXXWmegZBlAHi0WnQFPQc5o3G5'
+        );
+      } catch(FacebookExceptionsFacebookResponseException $e) {
+        echo 'Graph returned an error: ' . $e->getMessage();
+        exit;
+      } catch(FacebookExceptionsFacebookSDKException $e) {
+        echo 'Facebook SDK returned an error: ' . $e->getMessage();
+        exit;
+      }
+      $graphNode = $response->getGraphNode();
+    }
+
+
 }
 
 ?>

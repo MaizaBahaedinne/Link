@@ -12,7 +12,7 @@
                 <aside class="sidebar static right">
                   <div class="widget">
                     <h4 class="widget-title">Authentifier vous via facebook</h4>
-                    <div class="your-page">
+                    <div class="your-page" style="text-align: center;">
                         
                         <div id="fb-root"></div>
                         <div class="fb-login-button" data-size="small" data-button-type="login_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="true" data-width=""></div>
@@ -21,12 +21,19 @@
                   </div>
                   <div class="widget">
                      <h4 class="widget-title">Groupe Facebook</h4>
-                    <div class="your-page">
+                    <div class="your-page" style="text-align: center;">
 
                       <div id="fb-root"></div>
                       <script async defer crossorigin="anonymous" src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v8.0&appId=2993377220885022&autoLogAppEvents=1" nonce="YzGp4IDI"></script>
 
-                      <div class="fb-group" data-href="https://www.facebook.com/groups/1325115014502168"  data-show-social-context="true" data-show-metadata="true" data-width="220" ><blockquote cite="https://www.facebook.com/groups/1325115014502168"  class="fb-xfbml-parse-ignore">Tunivisions Family</blockquote></div>
+                      <style type="text/css">
+                        ._46-i
+                        {
+                          position: center ;
+                        }
+                      </style>
+
+                      <div class="fb-group" data-href="https://www.facebook.com/groups/1325115014502168" data-adapt-container-width="true"  data-show-social-context="true" data-show-metadata="true" data-width="220" ><blockquote cite="https://www.facebook.com/groups/1325115014502168"  class="fb-xfbml-parse-ignore">Tunivisions Family</blockquote></div>
 
                   </div>
                   </div> 
@@ -256,8 +263,15 @@
                   <!-- without image -->
                   <!-- map location post -->
 
-                  <div class="central-meta ">
-                    <div class="fb-page" data-href="https://www.facebook.com/Tunivisionsfoundation" data-tabs="" data-width="" data-height="" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/Tunivisionsfoundation" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Tunivisionsfoundation">Tunivisions Foundation</a></blockquote></div>
+                  <div class="central-meta " style="text-align: center;">
+
+                  <div class="fb-page" 
+                    data-href="https://www.facebook.com/Tunivisionsfoundation"
+                    data-adapt-container-width="true"
+                    data-hide-cover="false"
+                    data-show-facepile="true"
+                    data-lazy="false"></div>
+
                   </div>
 
                   <?php foreach ($postRecords as $post ) { ?>
