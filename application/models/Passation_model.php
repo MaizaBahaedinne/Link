@@ -10,55 +10,7 @@
 class Passation_model extends CI_Model
 {
 
-    public function send_mail($to, $subject  , $data , $content )
-    {       
-
-
-
-                 // Load PHPMailer library
-                    $this->load->library('phpmailer_lib');
-                    
-                    // PHPMailer object
-                    $mail = $this->phpmailer_lib->load();
-                    
-                    // SMTP configuration
-                    $mail->isSMTP();
-                    $mail->Host     = 'tunivisions.link';
-                    $mail->SMTPAuth = true;
-                    $mail->Username = 'no-reply@tunivisions.link';
-                    $mail->Password = 'Tunivisions-Link-2019';
-                    $mail->SMTPSecure = 'tls';
-                    $mail->Port     = 587;
-                    
-                    $mail->setFrom('no-reply@tunivisions.link', 'Tunivisions Link');
-                    $mail->addReplyTo('no-reply@tunivisions.link', 'Tunivisions Link');
-                    
-                    // Add a recipient
-                
-                    $mail->addAddress($to);
-                    
-                    
-                    // Email subject
-                    $mail->Subject = $subject ;
-                    
-                    // Set email format to HTML
-                    $mail->isHTML();
-                    
-                    // Email body content
-                    
-                  $body .='' ;
-
-                    $mail->Body =  $body  ; 
-                    
-                    // Send email
-                    if(!$mail->send()){
-                        echo 'Message could not be sent.';
-                        echo 'Mailer Error: ' . $mail->ErrorInfo;
-                    }else{
-                        echo 'Message has been sent';
-                    }
-    }
-
+   
 
      /**
      * This function is used to add new user to system
