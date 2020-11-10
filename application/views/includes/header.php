@@ -117,8 +117,7 @@ window.fbAsyncInit = function() {
         if (response.status === 'connected') {
             //display user data
             getFbUserData();
-            $('#facebookPageGroup').show() ;
- 			$('#facebookAuth').hide() ; 
+             fbConn() ; 
         }
     });
 };
@@ -148,6 +147,7 @@ function fbLogin() {
 function getFbUserData(){
     FB.api('/me', {locale: 'en_US', fields: 'id,first_name,last_name,email,link,gender,locale,picture'},
     function (response) {
+    	console.log(response) ;
         document.getElementById('fbLink').setAttribute("onclick","fbLogout()");
         document.getElementById('fbLink').innerHTML = 'Logout from Facebook';
         document.getElementById('status').innerHTML = '<p>Thanks for logging in, ' + response.first_name + '!</p>';
