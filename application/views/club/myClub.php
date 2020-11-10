@@ -159,8 +159,9 @@
                                            <span class="">
                                              
                                             <?php if (empty($projet->score )){  ?>
-                                              <button class="btn btn-danger" data-toggle="modal" data-target="#ProjectScore<?php echo $projet->projectId ?>" >Collecter les points</button>
-
+                                              <?php if( (($role == 1 || $role == 2  || $role == 3 || $role == 6 ) && $projet->ClubID == $clubID ) || $SA == 1  ){ ?>
+                                                  <button class="btn btn-danger" data-toggle="modal" data-target="#ProjectScore<?php echo $projet->projectId ?>" >Collecter les points</button>
+                                              <?php } ?>
 
                                                <div class="modal fade" id="ProjectScore<?php echo $projet->projectId ?>">
                                                       <div class="modal-dialog modal-lg">
