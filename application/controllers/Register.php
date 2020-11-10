@@ -35,16 +35,7 @@ class Register extends CI_Controller
 
     
  
-     /**
-     * Index Page for this controller.
-     */
-    public function reglement()
-    {       
-
-
-
-         $this->load->view('reglement');
-    }
+ 
 
 
   function registerNewUser()
@@ -68,7 +59,7 @@ class Register extends CI_Controller
                  'cin'=>$cin,
                  'email'=>$email,
                  'password'=>getHashedPassword($password),
-                 'roleId'=>'11',
+                 'roleId'=>'5',
                  'clubID'=>$this->input->get('var2') ,
                  'name'=> $name,
                  'nom'=> $fname,
@@ -77,7 +68,7 @@ class Register extends CI_Controller
                  'createdBy'=> $this->input->get('var1'),
                  'createdDtm'=>date('Y-m-d H:i:s'),
                  'birthday' =>date($birth) ,
-                 'isDeleted' => 5 
+                 'isDeleted' => 3 
 
                      );
               
