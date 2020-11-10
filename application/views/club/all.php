@@ -73,7 +73,8 @@
                         </td>
                         <?php if($SA== 1 ||  $uid == 1031 || $uid == 236 || $uid ==  4962 ){ ?>
                         <td>
-                             <a href="<?php echo base_url() ?>Club/editClub/<?php echo  $record->clubID ?>">   <i class="ti-pencil"></i>
+                             <a href="<?php echo base_url() ?>Club/editClub/<?php echo  $record->clubID ?>">   <i class="ti-pencil"></i> </a>
+                             <a href="<?php echo base_url() ;?>Register?var1=<?php echo $uid ?>&var4=<?php echo  Date('Y-m-d') ?>&var2=<?php echo $record->clubID ?>&var3=1" target="_blank"><i class="ti-link"></i> </a>
                         </td>
                          <?php    }    ?> 
                     </tr>
