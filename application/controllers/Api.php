@@ -19,7 +19,8 @@ class Api extends BaseController
         parent::__construct();
         $this->load->model('user_model');
         $this->load->model('club_model');
-        $this->load->model('posts_model') ; 
+        $this->load->model('posts_model') ;
+        $this->load->model('project_model') ; 
 
     }
 
@@ -44,9 +45,6 @@ class Api extends BaseController
                 
         }
 
-
-
-
     public  function PostsListingAPI()
     {
          $data  ['postRecords'] =  $this->posts_model->postsListing();
@@ -60,8 +58,6 @@ class Api extends BaseController
          $this->global['pageTitle'] = 'Acceuil' ;
          $this->response($data); 
     }
-
-
 
     public  function ProjectListingAPI()
     {
