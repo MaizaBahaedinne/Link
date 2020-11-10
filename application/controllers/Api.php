@@ -48,7 +48,7 @@ class Api extends BaseController
 
     public  function PostsListingAPI()
     {
-         $data  ['postRecords'] =  $this->posts_model->postsListing();
+         $data   =  $this->posts_model->postsListing();
         
             foreach ($data['postRecords'] as $key ) {                
                         $key->commentsRecords              = $this->posts_model->CommentsListing($key->postId);
