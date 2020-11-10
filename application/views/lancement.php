@@ -296,10 +296,9 @@
                 && $("#q5-2").is(':checked') 
                 && $("#q5-3").is(':checked') 
                 && $("#q5-4").is(':checked') 
-                && $("#q6-1").is(':checked')
-                && $("#q7-1").is(':checked')
-                
-                ){
+                && $("#q6-1").is(':checked')                
+                )
+                 {
                     $("#info").removeAttr("hidden");
                     $("#quiz").hide();
                      
