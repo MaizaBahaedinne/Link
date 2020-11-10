@@ -26,7 +26,7 @@
                                                         <div class="col-lg-6 col-md-4 col-sm-4">
                                                             <div class="select-options">
                                                                <?php 
-                                                              if ($role == 1 || $role == 3 || $role == 6 ) { ?>
+                                                              if ($role == 1 || $role == 2 || $role == 3 || $role == 6 )  || $SA == 1 { ?>
                                                                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Ajouter un projet</button>
                                                                 <?php } ?>
                                                             </div>
