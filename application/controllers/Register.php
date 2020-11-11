@@ -43,7 +43,7 @@ class Register extends BaseController
 
   function registerNewUser()
     {
-                
+                $cin = strtoupper ($this->input->post('cin'));
                 $fname = strtoupper ($this->input->post('fname'));
                 $lname = $this->input->post('lname');
                 $name =  strtoupper ($fname).' '.$lname ;
