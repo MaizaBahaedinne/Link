@@ -531,7 +531,7 @@ $config['allowed_cors_headers'] = [
   'Content-Type',
   'Accept',
   'Access-Control-Request-Method',
-  'Authorization',
+  'Authorization'
 ];
 
 //No change here
