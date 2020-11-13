@@ -132,7 +132,8 @@
                                      <label>Adresse</label>
                                      <input type="text" name="adresse" value="<?php echo $user->adresse ?>" class="form-control" required >
                                      <label>Gouvernourat</label>
-                                     <select  name="gouvernorat" id="gouvernorat" >
+                                     <select  name="gouvernorat" class="form-control" id="gouvernorat"  required>
+                                        <option value=""></option>
                                         <option value="Ariana">Ariana</option>
                                         <option value="Béja">Béja</option>
                                         <option value="Ben Arous">Ben Arous</option>
@@ -164,19 +165,19 @@
                                      <div class="uzer-nam">
                                       <label><br>Facebook </label>
                                       <span>https://www.facebook.com/</span>
-                                        <input type="text"
+                                        <input type="text" class="form-control"  
                                       placeholder="exemple : Tunivisions.Foundation" name="facebook" width="50%" id="facebook" value="<?php echo $user->facebook ?>"  >
                                      </div>
                                      <div class="uzer-nam">
                                       <label><br>Facebook </label>
                                       <span>https://www.instgram.com/</span>
-                                        <input type="text" 
+                                        <input type="text" class="form-control" 
                                       placeholder="exemple : Tunivisions.Foundation" name="instagram" width="50%" id="instagram" value="<?php echo $user->instagram ?>"  >
                                      </div>
                                      <div class="uzer-nam">
                                       <label><br>Linkedin </label>
                                       <span>https://www.Linkedin.com/in/</span>
-                                        <input type="text" 
+                                        <input type="text"  class="form-control" 
                                       placeholder="exemple : Tunivisions.Foundation" name="linkedin" width="50%" id="linkedin" value="<?php echo $user->linkedin ?>"  >
                                      </div>
                                      
