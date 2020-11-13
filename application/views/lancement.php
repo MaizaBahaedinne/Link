@@ -122,6 +122,7 @@
                                      <input type="text" name="prenom" value="<?php echo $user->prenom ?>" class="form-control" required >
                                      <label>Date de naissance</label>
                                      <input type="date" name="birthday" value="<?php echo $user->birthday ?>" class="form-control" required >
+                                     <label>Sexe/label>
                                      <select  name="sexe" id="sexe" required>
                                         <option value=""></option>
                                         <option value="Femme">Femme</option>

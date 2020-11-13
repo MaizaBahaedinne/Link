@@ -68,6 +68,7 @@ class Register extends BaseController
                  'nom'=> $fname,
                  'prenom'=> $lname,
                  'mobile'=>$mobile,
+                 'affectedYear'=>2020
                  'createdBy'=> $this->input->get('var1'),
                  'createdDtm'=>date('Y-m-d H:i:s'),
                  'birthday' =>date($birth) ,

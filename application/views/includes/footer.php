@@ -98,6 +98,7 @@
  
   <div class="setting-row">
         <a data-toggle="modal" data-target="#qrscanner" > Scanner QR</a>
+        <a id="demo" ></a>
       </div>
   <!--
     <h4 class="panel-title">General Setting</h4>
@@ -374,5 +375,10 @@
       tinycomments_author: 'Author name',
     });
   </script>
+
+  
+
+
+
 
 </html>

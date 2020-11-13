@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE HTML>
 <html lang="fr" class=""><!-- Mirrored from wpkixx.com/html/pitnik/search-result.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 01 Oct 2020 12:50:46 GMT --><head>
 <?php 
@@ -92,6 +90,8 @@
         </script>
    <script src="https://cdn.tiny.cloud/1/vqf4xobfz4h7owrwfo1qar98sig5s2yt4cgnuskbexcf8zqh/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 
+
+
   <script>
 
 
@@ -161,13 +161,10 @@ function fbLogout() {
         document.getElementById('status').innerHTML = '<p>You have successfully logout from Facebook.</p>';
     });
 }
-
-
-
-
 </script>
+
 </head>
-<body>
+<body onload="getLocation()">
 	<div class="wavy-wraper">
 		<div class="wavy">
 		  <span style="--i:1;">T</span>
@@ -405,6 +402,7 @@ function fbLogout() {
 					<span class="seting-title">Parametre <a href="#" title="">afficher tous</a></span>
 					<ul class="log-out">
 						<li> <a> <b>Tuni-ID :</b> <?php echo $uid?></a></li>
+						<li> <a id="demo" ></a> </li>
 						<li>
 							<a href="<?php echo base_url() ?>User/ProfileShow/<?php echo $uid ?>" title="">
 								<i class="ti-user"></i> Profile
