@@ -751,8 +751,13 @@ class User extends BaseController
         $this->global['pageTitle'] = $data["userInfo"]->name;
         $this->loadViews("Tunimateurs/profile", $this->global, $data, NULL);
     }
+  
 
-
+    function facebook()
+      {
+            $this->global['pageTitle'] = "facebook";
+          $this->loadViews("register/facebook", $this->global, NULL);
+      }
 
     
 

@@ -1,23 +1,19 @@
 
-<!doctype html>
-<html lang="en">
-   
-<!-- Mirrored from iqonic.design/themes/socialv/html/sign-in.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 01 Apr 2020 17:36:47 GMT -->
-<head>
-      <!-- Required meta tags -->
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <title>Tunivsions Link | Se connecter </title>
-      <!-- Favicon -->
-      <link rel="shortcut icon" href="<?php echo base_url() ;  ?>images/icon.svg" />
-      <!-- Bootstrap CSS -->
-      <link rel="stylesheet" href="<?php echo base_url() ;  ?>assets/css/bootstrap.min.css">
-      <!-- Typography CSS -->
-      <link rel="stylesheet" href="<?php echo base_url() ;  ?>assets/css/typography.css">
-      <!-- Style CSS -->
-      <link rel="stylesheet" href="<?php echo base_url() ;  ?>assets/css/style.css">
-      <!-- Responsive CSS -->
-      <link rel="stylesheet" href="<?php echo base_url() ;  ?>assets/css/responsive.css">
+<html lang="en" class=" "><!-- Mirrored from wpkixx.com/html/pitnik/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 01 Oct 2020 12:52:01 GMT --><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+  <title>Tunivisions Link | Mot de passe</title>
+    <link rel="icon" href="images/fav.png" type="image/png" sizes="16x16"> 
+    
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/main.min.css">
+  <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/weather-icon.css">
+  <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/weather-icons.min.css">
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/style.css">
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/color.css">
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/responsive.css">
+
       <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-151434993-1"></script>
         <script>
@@ -28,76 +24,66 @@
           gtag('config', 'UA-151434993-1');
         </script>
 
-   </head>
-   <body onload="getLocation()">
-      <!-- loader Start -->
-      <div id="loading">
-         <div id="loading-center">
-         </div>
-      </div>
-      <!-- loader END -->
-        <!-- Sign in Start -->
-        <section class="sign-in-page">
-          <div id="container-inside">
-              <div id="circle-small"></div>
-              <div id="circle-medium"></div>
-              <div id="circle-large"></div>
-              <div id="circle-xlarge"></div>
-              <div id="circle-xxlarge"></div>
-          </div>
-            <div class="container p-0">
-                <div class="row no-gutters">
-                    <div class="col-md-6 text-center pt-5">
-                        <div class="sign-in-detail text-white">
-                            <a class="sign-in-logo mb-5" href="#"><img src="<?php echo base_url() ;  ?>images/logo blanc2.svg" class="img-fluid" width="" alt="logo"></a>
-                            <div class="owl-carousel" data-autoplay="true" data-loop="true" data-nav="false" data-dots="true" data-items="1" data-items-laptop="1" data-items-tab="1" data-items-mobile="1" data-items-mobile-sm="1" data-margin="0">
-                                <?php foreach ($ActuRecords as $key ) {
-                                  ?>
+        
+</head>
+<body>
+  <div class="www-layout">
+        <section>
+          <div class="gap no-gap signin whitish medium-opacity">
+                <div class="bg-image" style="background-image:url(<?php echo base_url() ?>assets/images/resources/81382847_979373362434357_6461190259974602752_o.jpg)"></div>
+                <div class="container">
+                  <div class="row">
+                        <div class="col-lg-8">
+                            <div class="big-ad">
+                                <figure><img src="<?php echo base_url() ?>assets/images/logo2.svg" width="25%" alt=""></figure>
+                                <h1>Bienvenue au T-Link</h1>
+                                <p>
+                                     T.Link est une réseau social qui peut être utilisé pour connecter les Tunimateurs. utilisez ce réseau pour des activités associatif polyvalentes telles que les rencontres, la publication, les blogs et bien plus encore. Rejoignez maintenant &amp; Faites-vous des amis sympas dans le monde de Tunivisions Foundation !!!                            
+                                </p>
                                 
-                                <div class="item">
-                                    <img src="<?php echo base_url() ?>uploads/Actu/<?php echo $key->image ?>" class="img-fluid mb-4" alt="logo">
-                                    <h4 class="mb-1 text-white">
-                                    <?php 
-                                                        $string = strip_tags( $key->titre  );
-                                                        if (strlen($string) > 100){
-
-                                                            // truncate string
-                                                            $stringCut = substr($string, 0, 100);
-                                                            $endPoint = strrpos($stringCut, ' ');
-
-                                                            //if the string doesn't contain any space then it will cut without word basis.
-                                                            $string = $endPoint? substr($stringCut, 0, $endPoint) : substr($stringCut, 0);
-                                                            $string .= '... ';
-                                                            }
-
-                                                         echo $string ;
-                                                         ?>  </h4>
-                                    <p><?php 
-                                                        $string = strip_tags( $key->description  );
-                                                        if (strlen($string) > 55){
-
-                                                            // truncate string
-                                                            $stringCut = substr($string, 0, 100);
-                                                            $endPoint = strrpos($stringCut, ' ');
-
-                                                            //if the string doesn't contain any space then it will cut without word basis.
-                                                            $string = $endPoint? substr($stringCut, 0, $endPoint) : substr($stringCut, 0);
-                                                            $string .= '... ';
-                                                            }
-
-                                                         echo $string ;
-                                                         ?>  </p>
+                                <div class="fun-fact">
+                                    <div class="row">
+                                        <div class="col-lg-3 col-md-3 col-sm-4">
+                                            <div class="fun-box">
+                                                <i class="ti-check-box"></i>
+                                                <h6>Personnes inscrites</h6>
+                                                <span>5 000 </span>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3 col-sm-4">
+                                            <div class="fun-box">
+                                                <i class="ti-layout-media-overlay-alt-2"></i>
+                                                <h6>Articles publiés</h6>
+                                                <span>210</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3 col-sm-4">
+                                            <div class="fun-box">
+                                                <i class="ti-user"></i>
+                                                <h6>Utilisateurs en ligne</h6>
+                                                <span>20</span>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                
-                               <?php } ?>
-                                
+                                <div class="barcode">
+                                    <figure><img src="<?php echo base_url() ?>assets/images/resources/Barcode.jpg" alt=""></figure>
+                                    <div class="app-download">
+                                        <span>Patager le T-Link avec vos amis</span>
+                                        <ul class="colla-apps">
+                                            <li><a title="" href="https://play.google.com/store?hl=en"><img src="<?php echo base_url() ?>assets/images/android.png" alt="">android</a></li>
+                                            <li><a title="" href="https://www.apple.com/lae/ios/app-store/"><img src="<?php echo base_url() ?>assets/images/apple.png" alt="">iPhone</a></li>
+                                            <li><a title="" href="https://www.microsoft.com/store/apps"><img src="<?php echo base_url() ?>assets/images/windows.png" alt="">Windows</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-6 bg-white pt-5">
-                        <div class="sign-in-from">
-                            <h1 class="mb-0">Mot de passe oublié </h1>
-                            <p>Cette application est déstiné aux clubs Tunivisions.</p>
+                        <div class="col-lg-4">
+                            <div class="we-login-register">
+                                <div class="form-title">
+                            <h4>Mot de passe oublié </h4>
+                            
 
                               <?php
                                         $this->load->helper('form');
@@ -120,68 +106,35 @@
                                             </div>
                                       <?php } ?>
 
-                            <form class="mt-4" action="<?php echo base_url() ?>Register/QuestionMotDePasse " id="myForm"  method="post">
-                                <div class="form-group">
+                            <form class="we-form" action="<?php echo base_url() ?>Register/QuestionMotDePasse" id="myForm"  method="post">
+                                
                                     <label for="exampleInputEmail1">Email</label>
-                                    <input type="email" class="form-control mb-0" name="mail" placeholder="email">
-                                </div>
-                               
-                                <div class="d-inline-block w-100">
-                                    <div class="custom-control custom-checkbox d-inline-block mt-2 pt-1">
+                                    <input type="email"  name="mail" placeholder="email" required>
+                                
 
-                                    </div>
-                                    <button type="submit" class="btn btn-primary float-right">Se connecter</button>
-                                </div>
-                                <div class="sign-info">
-                                    <span class="dark-color d-inline-block line-height-2">Copyright © 2020 Maiza Bahaedinne & Tunivisions Foundation. All rights reserved </span>
-                                    <ul class="iq-social-media">
-                                        <li><a href="#"><i class="ri-facebook-box-line"></i></a></li>
-                                        <li><a href="#"><i class="ri-twitter-line"></i></a></li>
-                                        <li><a href="#"><i class="ri-instagram-line"></i></a></li>
-                                    </ul>
-                                </div>
+                                    <input  type="submit"  value="Envoyer">
+                            
+                                
                             </form>
+                           
+                                    <a class="forgot underline" href="<?php echo base_url() ?>" title="">Se connecter</a>
+                               <br>
+
+                                <span>vous n'avez pas de compte? <a class="we-account underline" href="<?php echo base_url() ?>" title=""> S'inscrire maintenant</a></span>
+                            </div>
                         </div>
+                        
                     </div>
                 </div>
             </div>
         </section>
-        <!-- Sign in END -->
-      <!-- Optional JavaScript -->
-      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-      <script src="<?php echo base_url() ;  ?>assets/js//jquery.min.js"></script>
-      <script src="<?php echo base_url() ;  ?>assets/js//popper.min.js"></script>
-      <script src="<?php echo base_url() ;  ?>assets/js//bootstrap.min.js"></script>
-      <!-- Appear JavaScript -->
-      <script src="<?php echo base_url() ;  ?>assets/js//jquery.appear.js"></script>
-      <!-- Countdown JavaScript -->
-      <script src="<?php echo base_url() ;  ?>assets/js//countdown.min.js"></script>
-      <!-- Counterup JavaScript -->
-      <script src="<?php echo base_url() ;  ?>assets/js//waypoints.min.js"></script>
-      <script src="<?php echo base_url() ;  ?>assets/js//jquery.counterup.min.js"></script>
-      <!-- Wow JavaScript -->
-      <script src="<?php echo base_url() ;  ?>assets/js//wow.min.js"></script>
-      <!-- Apexcharts JavaScript -->
-      <script src="<?php echo base_url() ;  ?>assets/js//apexcharts.js"></script>
-      <!-- lottie JavaScript -->
-      <script src="<?php echo base_url() ;  ?>assets/js//lottie.js"></script>
-      <!-- Slick JavaScript --> 
-      <script src="<?php echo base_url() ;  ?>assets/js//slick.min.js"></script>
-      <!-- Select2 JavaScript -->
-      <script src="<?php echo base_url() ;  ?>assets/js//select2.min.js"></script>
-      <!-- Owl Carousel JavaScript -->
-      <script src="<?php echo base_url() ;  ?>assets/js//owl.carousel.min.js"></script>
-      <!-- Magnific Popup JavaScript -->
-      <script src="<?php echo base_url() ;  ?>assets/js//jquery.magnific-popup.min.js"></script>
-      <!-- Smooth Scrollbar JavaScript -->
-      <script src="<?php echo base_url() ;  ?>assets/js//smooth-scrollbar.js"></script>
-      <!-- Chart Custom JavaScript -->
-      <script src="<?php echo base_url() ;  ?>assets/js//chart-custom.js"></script>
-      <!-- Custom JavaScript -->
-      <script src="<?php echo base_url() ;  ?>assets/js//custom.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-       <script>
-
+         
+    </div>
+    
+      <script src="<?php echo base_url() ?>assets/js/main.min.js"></script>
+    <script src="<?php echo base_url() ?>assets/js/script.js"></script>
+    <script>
+    
 
              var x = document.getElementById("demo");
 
@@ -234,7 +187,9 @@
 
             }
       </script>
-   </body>
 
-<!-- Mirrored from iqonic.design/themes/socialv/html/sign-in.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 01 Apr 2020 17:36:48 GMT -->
+<!-- Mirrored from wpkixx.com/html/pitnik/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 01 Oct 2020 12:52:09 GMT -->
+</body>
 </html>
+
+      

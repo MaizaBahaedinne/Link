@@ -98,13 +98,19 @@
                                     action="<?php echo base_url() ?>User/MAJUser" 
                                     method="POST" enctype="multipart/form-data" class="c-form"  >
                                     
-                                    <label>Photo de profil</label>
-                                    <div style="height: 200px">
+                                    <label>Photo de profil<br></label>
+                                    
+                                    <div style="height: 200px;width: 200px">
                                     <input type="file" name="fileT"   
                                     class="dropify-fr" 
-                                    data-max-file-size="200K"                                      
-                                    id="input-file-events" required accept="image/*"
-                                    >
+                                    data-max-file-size="200K"
+                                    data-max-width="800" 
+                                    data-max-height="800"                                     
+                                    id="input-file-events"
+                                    data-allowed-file-extensions="png jpg jpeg"
+                                    required accept="image/*"
+                                    ><span>Taille recommandé 800x800 px et une taille de 200 ko</span>
+                                    
                                     </div>
                                      <hr>
                                      <label>CIN</label>
@@ -372,7 +378,11 @@
                         default: 'Glissez-déposez un fichier ici ou cliquez',
                         replace: 'Glissez-déposez un fichier ou cliquez pour remplacer',
                         remove:  'Supprimer',
-                        error:   'Désolé, le fichier trop volumineux'
+                        error:   'Désolé, le fichier trop volumineux',
+                        'fileSize': 'The file size is too big ({{ value }} max).',
+                        'maxWidth': 'The image width is too small ({{ value }}}px min).',
+                        'maxHeight': 'The image height is too big ({{ value }}px max).',
+                        'imageFormat': 'The image format is not allowed ({{ value }} only).'
                     }
                 });
 

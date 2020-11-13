@@ -10,42 +10,7 @@
               <!-- sidebar -->
               <div class="col-lg-3">
                 <aside class="sidebar static right">
-                  <div class="widget"  >
-                    <h4 class="widget-title">Authentifier vous via facebook</h4>
-                    <div class="your-page" style="text-align: center;">
-                        <div id="facebookAuth">
-                        <!-- Display login status -->
-                            <div id="status"></div>
-
-                            <!-- Facebook login or logout button -->
-                            <a href="javascript:void(0);" onclick="fbLogin();" id="fbLink"><img src="images/fb-login-btn.png"/></a>
-
-                            <!-- Display user's profile info -->
-                            <div class="ac-data" id="userData"></div>
-                        </div>
-                        <div id="userData" >
-                          
-                        </div>
-                    </div>
-                  </div>
-                  <div class="widget" id="facebookPageGroup" style="display: none">
-                     <h4 class="widget-title">Groupe Facebook</h4>
-                    <div class="your-page" style="text-align: center;">
-
-                      <div id="fb-root"></div>
-                      <script async defer crossorigin="anonymous" src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v8.0&appId=2993377220885022&autoLogAppEvents=1" nonce="YzGp4IDI"></script>
-
-                      <style type="text/css">
-                        ._46-i
-                        {
-                          position: center ;
-                        }
-                      </style>
-
-                      <div class="fb-group" data-href="https://www.facebook.com/groups/1325115014502168" data-adapt-container-width="true"  data-show-social-context="true" data-show-metadata="true" data-width="220" ><blockquote cite="https://www.facebook.com/groups/1325115014502168"  class="fb-xfbml-parse-ignore">Tunivisions Family</blockquote></div>
-
-                  </div>
-                  </div> 
+                   
                   <div class="widget">
                     <h4 class="widget-title">Mon Club</h4> 
                     <div class="your-page">
@@ -272,16 +237,7 @@
                   <!-- without image -->
                   <!-- map location post -->
 
-                  <div class="central-meta " style="text-align: center;">
 
-                  <div class="fb-page" 
-                    data-href="https://www.facebook.com/Tunivisionsfoundation"
-                    data-adapt-container-width="true"
-                    data-hide-cover="false"
-                    data-show-facepile="true"
-                    data-lazy="false"></div>
-
-                  </div>
 
                   <?php foreach ($postRecords as $post ) { ?>
                                   

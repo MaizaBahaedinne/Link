@@ -113,7 +113,7 @@
                                     
                                 </form>
                                 <br>
-                                    <a class="forgot underline" href="#" title="">Mot de passe oublié ?</a>
+                                    <a class="forgot underline" href="<?php echo base_url() ?>Register/MotDePasse" title="">Mot de passe oublié ?</a>
                                <br>
 
                                 <span>vous n'avez pas de compte? <a class="we-account underline" href="<?php echo base_url() ?>" title=""> S'inscrire maintenant</a></span>

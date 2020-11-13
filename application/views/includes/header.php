@@ -110,6 +110,10 @@ window.fbAsyncInit = function() {
             //display user data
             getFbUserData();
              fbConn() ; 
+        }else{
+        	if (window.location.toString() != "<?php echo base_url()?>User/Facebook" ){
+        	window.location.replace("<?php echo base_url()?>User/Facebook") ;
+        	}
         }
     });
 };

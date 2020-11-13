@@ -72,6 +72,7 @@ class Login extends CI_Controller
 
             if(!empty($result))
             {
+                
                 $lastLogin = $this->login_model->lastLoginInfo($result->userId);
 
                 $sessionArray = array('userId'=>$result->userId,                    

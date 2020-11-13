@@ -221,30 +221,35 @@ class BaseController extends CI_Controller {
 
     	$MyUser["user"] = $this->user_model->getUserInfoWithRole($this->vendorId)  ; 
     	$user = $this->user_model->getUserInfoWithRole($this->vendorId)  ; 
+		
 		$headerInfo['notifRecords'] = $this->notification_model->NotificationListingHome($this->vendorId) ;
         $headerInfo['notifRecordsNumber'] = count($this->notification_model->NotificationNoSeenListing($this->vendorId)) ;     
+        
         $headerInfo['ChatRecords'] = Null ; 
+
         $headerInfo['ConnrectedUser'] =  $this->login_model->lastLogins() ;
 
          
-        if($user->isDeleted == 3 ){
-        if($this->SA == 1 ){	
-        
+        if($user->isDeleted == 3 ){        
         $this->send_mail($user->email , 
         	"Activation compte T-Link" , 
         	Null ,  	
         	"Bonjour ".$user->name.",<br> Votre de code d'activation est : <br> <br> <b>".$user->userId."-".$user->clubID."/2020 </b> <br> <br>" ) ;
-        	        $this->load->view('includes/header', $headerInfo);
+        
+        $this->load->view('includes/header', $headerInfo);
         $this->load->view('lancement', $MyUser );
         $this->load->view('includes/footer', $footerInfo);
         }
-        else {
-        	$this->load->view('soon');
-        }
-        }else {
-			 $this->load->view('includes/header', $headerInfo);
-	        $this->load->view($viewName, $pageInfo);
-	        $this->load->view('includes/footer', $footerInfo);
+        else
+         {
+         	if($user->is_Actif == 1 ){
+				$this->load->view('includes/header', $headerInfo);
+	        	$this->load->view($viewName, $pageInfo);
+	        	$this->load->view('includes/footer', $footerInfo);
+	        }else{
+	        	$this->session->set_flashdata('error', 'Votre club est suspendu');
+                redirect('logout');
+	        }
 		}
     }
 	
