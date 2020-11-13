@@ -394,6 +394,7 @@ class User extends BaseController
                 $delegation = $this->input->post('delegation');
                 $gouvernorat = $this->input->post('gouvernorat');
                 $cellule = $this->input->post('cellule');
+                $sexe = $this->input->post('sexe');
                 
                 
                 
@@ -417,6 +418,9 @@ class User extends BaseController
                                       'instagram'=>$instagram,
                                       'linkedin'=>$linkedin,
                                       'cin'=>$cin,
+                                      'sexe'=>$sexe,
+                                      'gouvernorat'=>$gouvernorat,
+                                      'delegation'=>$delegation,
                                       'cellule'=>$cellule,
                                       'isDeleted'=> 0,
                                       'updatedBy'=>$this->vendorId,
@@ -434,7 +438,7 @@ class User extends BaseController
                 else
                 {
                     $this->session->set_flashdata('error', 'Erreur de mise à jour');
-                    redirect("/") ;
+                    redirect("/logout") ;
                 }
                 }
 

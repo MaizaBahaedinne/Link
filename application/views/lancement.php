@@ -109,9 +109,10 @@
                                     id="input-file-events"
                                     data-allowed-file-extensions="png jpg jpeg"
                                     required accept="image/*"
-                                    ><span>Taille recommandé 800x800 px et une taille de 200 ko</span>
+                                    >
                                     
                                     </div>
+                                    <span>Taille recommandé 800x800 px et une taille de 200 ko</span>
                                      <hr>
                                      <label>CIN</label>
                                      <input type="text" name="cin" value="<?php echo $user->cin ?>" class="form-control" required >
@@ -121,6 +122,11 @@
                                      <input type="text" name="prenom" value="<?php echo $user->prenom ?>" class="form-control" required >
                                      <label>Date de naissance</label>
                                      <input type="date" name="birthday" value="<?php echo $user->birthday ?>" class="form-control" required >
+                                     <select  name="sexe" id="sexe" required>
+                                        <option value=""></option>
+                                        <option value="Femme">Femme</option>
+                                        <option value="Homme">Homme</option>
+                                    </select>
                                      <hr>
                                      <label>Adresse</label>
                                      <input type="text" name="adresse" value="<?php echo $user->adresse ?>" class="form-control" required >
@@ -158,19 +164,19 @@
                                       <label><br>Facebook </label>
                                       <span>https://www.facebook.com/</span>
                                         <input type="text"
-                                      placeholder="exemple : Tunivisions.Foundation" name="facebook" width="30%" id="facebook" value="<?php echo $user->facebook ?>"  >
+                                      placeholder="exemple : Tunivisions.Foundation" name="facebook" width="50%" id="facebook" value="<?php echo $user->facebook ?>"  >
                                      </div>
                                      <div class="uzer-nam">
                                       <label><br>Facebook </label>
                                       <span>https://www.instgram.com/</span>
-                                        <input type="number" 
-                                      placeholder="exemple : Tunivisions.Foundation" name="instagram" width="30%" id="instagram" value="<?php echo $user->instagram ?>"  >
+                                        <input type="text" 
+                                      placeholder="exemple : Tunivisions.Foundation" name="instagram" width="50%" id="instagram" value="<?php echo $user->instagram ?>"  >
                                      </div>
                                      <div class="uzer-nam">
                                       <label><br>Linkedin </label>
-                                      <span>https://www.Linkedin.com/</span>
-                                        <input type="number" 
-                                      placeholder="exemple : Tunivisions.Foundation" name="linkedin" width="30%" id="linkedin" value="<?php echo $user->linkedin ?>"  >
+                                      <span>https://www.Linkedin.com/in/</span>
+                                        <input type="text" 
+                                      placeholder="exemple : Tunivisions.Foundation" name="linkedin" width="50%" id="linkedin" value="<?php echo $user->linkedin ?>"  >
                                      </div>
                                      
                                      
