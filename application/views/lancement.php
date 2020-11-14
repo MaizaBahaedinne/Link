@@ -160,7 +160,7 @@
                                         <option value="Zaghouan">Zaghouan</option>
                                      </select>
                                      <label>code postale</label>
-                                     <input name="delegation" id="delegation" type="number"  >
+                                     <input name="delegation" class="form-control" id="delegation" type="number"  >
                                      <hr>
                                      <div class="uzer-nam">
                                       <label><br>Facebook </label>
