@@ -376,31 +376,18 @@
                   </div><!-- page like widget -->
 
                    <div class="widget stick-widget" style="">
-                    <h4 class="widget-title">Actualité <a title="" href="#" class="see-all">Lire plus</a></h4>
+                    <h4 class="widget-title">Actualités <a title="" href="#" class="see-all">Lire plus</a></h4>
                     <ul class="recent-links">
-                      <!--
+                      <?php foreach ($ActuRecords as $ac ) {?>
                       <li>
                         <figure><img src="images/resources/recentlink-1.jpg" alt=""></figure>
                         <div class="re-links-meta">
-                          <h6><a href="#" title="">moira's fade reaches much farther than you think.</a></h6>
-                          <span>2 weeks ago </span>
+                          <h6><a href="#" title=""><?php echo $ac->titre ?></a></h6>
+                          <span> il y a <?php echo xTimeAgo ($ac->createdDate , date('Y-m-d H:i:s') )  ?> </span>
                         </div>
                       </li>
-                      <li>
-                        <figure><img src="images/resources/recentlink-2.jpg" alt=""></figure>
-                        <div class="re-links-meta">
-                          <h6><a href="#" title="">daniel asks if we want him to do the voice of doomfist</a></h6>
-                          <span>3 months ago </span>
-                        </div>
-                      </li>
-                      <li>
-                        <figure><img src="images/resources/recentlink-3.jpg" alt=""></figure>
-                        <div class="re-links-meta">
-                          <h6><a href="#" title="">the pitnik overwatch scandals.</a></h6>
-                          <span>1 day before</span>
-                        </div>
-                      </li>
-                      -->
+                      <?php } ?>
+                      
                     </ul>
                   </div>
                 </aside>
