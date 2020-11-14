@@ -24,7 +24,9 @@
           gtag('config', 'UA-151434993-1');
         </script>
 
-        
+    <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.js"></script>
+
 </head>
 <body>
 	<div class="www-layout">
@@ -184,7 +186,7 @@
             }
       </script>
 
-<!-- Mirrored from wpkixx.com/html/pitnik/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 01 Oct 2020 12:52:09 GMT -->
+
 </body>
 </html>
 		

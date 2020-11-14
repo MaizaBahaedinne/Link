@@ -93,15 +93,18 @@
 
 
 <div class="side-panel">
-
+    <h4 class="panel-title">Options</h4>
 
  
   <div class="setting-row">
         <a data-toggle="modal" data-target="#qrscanner" > Scanner QR</a>
-        <a id="demo" ></a>
-      </div>
+
+  </div>
+  <div class="setting-row">
+         <a  onclick="getLocation()" >Activer la localisation</a>
+  </div>
   <!--
-    <h4 class="panel-title">General Setting</h4>
+    
     <form method="post">
       <div class="setting-row">
         <span>use night mode</span>
@@ -376,7 +379,54 @@
     });
   </script>
 
+
+    
+
   
+
+  <script>
+  var x = document.getElementById("demo");
+
+  function getLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(showPosition, showError);
+    } else { 
+      x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+  }
+
+  function showPosition(position) {
+    x.innerHTML = "Latitude: " + position.coords.latitude + 
+    "<br>Longitude: " + position.coords.longitude;
+  }
+
+  function showError(error) {
+    switch(error.code) {
+      case error.PERMISSION_DENIED:
+          alert("l'activation de service de géolocalisation est obligatoir") ;
+          window.location.replace("<?php echo base_url() ?>logout")
+        break;
+      case error.POSITION_UNAVAILABLE:
+        x.innerHTML = "Location information is unavailable."
+        break;
+      case error.TIMEOUT:
+        x.innerHTML = "The request to get user location timed out."
+        break;
+      case error.UNKNOWN_ERROR:
+        x.innerHTML = "An unknown error occurred."
+        break;
+    }
+  }
+  </script>
+
+
+       <script type="text/javascript">
+         window.addEventListener("load", function(event) {
+          getLocation();
+            console.log("Toutes les ressources sont chargées !");
+
+          });
+     </script>   
 
 
 

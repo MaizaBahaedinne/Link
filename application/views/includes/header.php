@@ -26,6 +26,8 @@
     <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/responsive.css">
 	<link rel="stylesheet" href="<?php echo base_url() ?>assets/css/calendar.css">    
 	<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
+	<link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.js"></script>
 
 
 
@@ -95,77 +97,77 @@
   <script>
 
 
-window.fbAsyncInit = function() {
-    // FB JavaScript SDK configuration and setup
-    FB.init({
-      appId      : '2993377220885022', // FB App ID
-      cookie     : true,  // enable cookies to allow the server to access the session
-      xfbml      : true,  // parse social plugins on this page
-      version    : 'v3.2' // use graph api version 2.8
-    });
-    
-    // Check whether the user already logged in
-    FB.getLoginStatus(function(response) {
-        if (response.status === 'connected') {
-            //display user data
-            getFbUserData();
-             fbConn() ; 
-        }else{
-        	if (window.location.toString() != "<?php echo base_url()?>User/Facebook" ){
-        	window.location.replace("<?php echo base_url()?>User/Facebook") ;
-        	}
-        }
-    });
-};
+		window.fbAsyncInit = function() {
+		    // FB JavaScript SDK configuration and setup
+		    FB.init({
+		      appId      : '2993377220885022', // FB App ID
+		      cookie     : true,  // enable cookies to allow the server to access the session
+		      xfbml      : true,  // parse social plugins on this page
+		      version    : 'v3.2' // use graph api version 2.8
+		    });
+		    
+		    // Check whether the user already logged in
+		    FB.getLoginStatus(function(response) {
+		        if (response.status === 'connected') {
+		            //display user data
+		            getFbUserData();
+		             fbConn() ; 
+		        }else{
+		        	if (window.location.toString() != "<?php echo base_url()?>User/Facebook" ){
+		    //    	window.location.replace("<?php echo base_url()?>User/Facebook") ;
+		        	}
+		        }
+		    });
+		};
 
-// Load the JavaScript SDK asynchronously
-(function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_US/sdk.js";
-    fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));
+		// Load the JavaScript SDK asynchronously
+		(function(d, s, id) {
+		    var js, fjs = d.getElementsByTagName(s)[0];
+		    if (d.getElementById(id)) return;
+		    js = d.createElement(s); js.id = id;
+		    js.src = "//connect.facebook.net/en_US/sdk.js";
+		    fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
 
-// Facebook login with JavaScript SDK
-function fbLogin() {
-    FB.login(function (response) {
-        if (response.authResponse) {
-            // Get and display the user profile data
-            getFbUserData();
-             fbConn() ; 
-        } else {
-            document.getElementById('status').innerHTML = 'User cancelled login or did not fully authorize.';
-        }
-    }, {scope: 'email'});
-}
+		// Facebook login with JavaScript SDK
+		function fbLogin() {
+		    FB.login(function (response) {
+		        if (response.authResponse) {
+		            // Get and display the user profile data
+		            getFbUserData();
+		             fbConn() ; 
+		        } else {
+		            document.getElementById('status').innerHTML = 'User cancelled login or did not fully authorize.';
+		        }
+		    }, {scope: 'email'});
+		}
 
-// Fetch the user profile data from facebook
-function getFbUserData(){
-    FB.api('/me', {locale: 'en_US', fields: 'id,first_name,last_name,email,link,gender,locale,picture'},
-    function (response) {
-    	console.log(response) ;
-        document.getElementById('fbLink').setAttribute("onclick","fbLogout()");
-        document.getElementById('fbLink').innerHTML = 'Logout from Facebook';
-        document.getElementById('status').innerHTML = '<p>Thanks for logging in, ' + response.first_name + '!</p>';
-        document.getElementById('userData').innerHTML = '<h2>Facebook Profile Details</h2><p><img src="'+response.picture.data.url+'"/></p><p><b>FB ID:</b> '+response.id+'</p><p><b>Name:</b> '+response.first_name+' '+response.last_name+'</p><p><b>Email:</b> '+response.email+'</p><p><b>Gender:</b> '+response.gender+'</p><p><b>FB Profile:</b> <a target="_blank" href="'+response.link+'">click to view profile</a></p>';
-    });
-}
+		// Fetch the user profile data from facebook
+		function getFbUserData(){
+		    FB.api('/me', {locale: 'en_US', fields: 'id,first_name,last_name,email,link,gender,locale,picture'},
+		    function (response) {
+		    	console.log(response) ;
+		        document.getElementById('fbLink').setAttribute("onclick","fbLogout()");
+		        document.getElementById('fbLink').innerHTML = 'Logout from Facebook';
+		        document.getElementById('status').innerHTML = '<p>Thanks for logging in, ' + response.first_name + '!</p>';
+		        document.getElementById('userData').innerHTML = '<h2>Facebook Profile Details</h2><p><img src="'+response.picture.data.url+'"/></p><p><b>FB ID:</b> '+response.id+'</p><p><b>Name:</b> '+response.first_name+' '+response.last_name+'</p><p><b>Email:</b> '+response.email+'</p><p><b>Gender:</b> '+response.gender+'</p><p><b>FB Profile:</b> <a target="_blank" href="'+response.link+'">click to view profile</a></p>';
+		    });
+		}
 
-// Logout from facebook
-function fbLogout() {
-    FB.logout(function() {
-        document.getElementById('fbLink').setAttribute("onclick","fbLogin()");
-        document.getElementById('fbLink').innerHTML = '<img src="images/fb-login-btn.png"/>';
-        document.getElementById('userData').innerHTML = '';
-        document.getElementById('status').innerHTML = '<p>You have successfully logout from Facebook.</p>';
-    });
-}
-</script>
+		// Logout from facebook
+		function fbLogout() {
+		    FB.logout(function() {
+		        document.getElementById('fbLink').setAttribute("onclick","fbLogin()");
+		        document.getElementById('fbLink').innerHTML = '<img src="images/fb-login-btn.png"/>';
+		        document.getElementById('userData').innerHTML = '';
+		        document.getElementById('status').innerHTML = '<p>You have successfully logout from Facebook.</p>';
+		    });
+		}
+	</script>
 
 </head>
-<body onload="getLocation()">
-	<div class="wavy-wraper">
+<body >
+	<div class="wavy-wraper" onload="getLocation()" >
 		<div class="wavy">
 		  <span style="--i:1;">T</span>
 		  <span style="--i:2;">.</span>
@@ -181,9 +183,16 @@ function fbLogout() {
 
 
 	<nav id="shoppingbag" class="mm-menu mm-offcanvas mm-right" aria-hidden="true"><div class="mm-panels"><div class="mm-panel mm-hasnavbar mm-opened" id="mm-13"><div class="mm-navbar"><a class="mm-title">General Setting</a></div>
-				<div class="">
+				<div class="setting-row">
 					<a data-toggle="modal" data-target="#qrscanner" > Scanner QR</a>
-					<br><br>
+				</div>
+			
+					 <div class="setting-row">
+							<span>Activer la localisation</span>
+							<input type="checkbox" id="localisation" onclick="getLocation()"> 
+							<label for="nightmode" data-on-label="ON" data-off-label="OFF"></label>
+						</div>
+				
 					
 					<!--
 					<form method="post">
@@ -322,7 +331,8 @@ function fbLogout() {
 				<li><a href="<?php echo  base_url() ?>" title="Home" data-ripple=""><i class="fa fa-home"></i></a></li>
 				<li>
 					<a href="#" title="Notification" data-ripple="">
-						<i class="fa fa-bell"></i><em class="bg-purple">7</em>
+						<i class="fa fa-bell"></i>
+							<!--<em class="bg-purple">7</em>-->
 					</a>
 					<div class="dropdowns ps-container ps-theme-default ps-active-y" data-ps-id="ffcc5b9a-91d7-35c0-e615-eed1e002b8c0">
 						<span>Notifications </span>
@@ -348,7 +358,7 @@ function fbLogout() {
 				</li>
 				<li>
 					<a href="#" title="Messages" data-ripple=""><i class="fa fa-commenting"></i>
-						<em class="bg-blue">9</em>
+						<!--<em class="bg-blue">9</em>-->
 					</a>
 					<div class="dropdowns ps-container ps-theme-default ps-active-y" data-ps-id="7ee2fd1f-956e-f926-f7f7-8212f43bd51d">
 						<span>New Messages </span>
@@ -531,3 +541,4 @@ function fbLogout() {
 	<a title="" href="shop-cart.html" class="shopping-cart" data-toggle="tooltip" data-original-title="Your Cart Items">Cart <i class="fa fa-shopping-bag"></i><span>02</span></a>
 
 	-->
+

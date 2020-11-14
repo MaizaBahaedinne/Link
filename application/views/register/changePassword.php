@@ -208,61 +208,7 @@
             });
         
       </script>
-       <script>
-
-
-             var x = document.getElementById("demo");
-
-              function getLocation() {
-                if (navigator.geolocation) {
-                  navigator.geolocation.getCurrentPosition(showPosition, showError);
-                } else { 
-                  x.innerHTML = "Geolocation is not supported by this browser.";
-                }
-              }
-
-              function showPosition(position) {
-
-                var  a = document.getElementById("myForm").action ;
-
-                document.getElementById("myForm").action =  a+"?Latitude="+ position.coords.latitude + "&Longitude="+ position.coords.longitude ;
-
-
-                x.innerHTML = "Latitude: " + position.coords.latitude + 
-                "<br>Longitude: " + position.coords.longitude;
-              }
-
-              function showError(error) {
-                switch(error.code) {
-                  case error.PERMISSION_DENIED:
-                                Swal.fire({
-                                  title: 'il est strictement obligatoire d\'activer la géolocalisation.',
-                                  width: 600,
-                                  allowOutsideClick: false,
-                                  padding: '3em',
-                                  background: '#fff url(/images/trees.png)',
-                                  backdrop: `
-                                    rgba(0,0,123,0.4)
-                                    url("/images/nyan-cat.gif")
-                                    left top
-                                    no-repeat
-                                  `
-                                })
-                    break;
-                  case error.POSITION_UNAVAILABLE:
-                    x.innerHTML = "Location information is unavailable."
-                    break;
-                  case error.TIMEOUT:
-                    x.innerHTML = "The request to get user location timed out."
-                    break;
-                  case error.UNKNOWN_ERROR:
-                    x.innerHTML = "An unknown error occurred."
-                    break;
-                }
-
-            }
-      </script>
-
+       
       <script type="text/javascript">
           $( document ).ready( function()
           {
@@ -313,59 +259,4 @@
 </html>
 
 
-<script type="text/javascript">
-             var x = document.getElementById("demo");
 
-              function getLocation() {
-                if (navigator.geolocation) {
-                  navigator.geolocation.getCurrentPosition(showPosition, showError);
-                } else { 
-                  x.innerHTML = "Geolocation is not supported by this browser.";
-                }
-              }
-
-              function showPosition(position) {
-
-                var  a = document.getElementById("myForm").action ;
-
-                document.getElementById("myForm").action =  a+"?Latitude="+ position.coords.latitude + "&Longitude="+ position.coords.longitude ;
-
-
-                x.innerHTML = "Latitude: " + position.coords.latitude + 
-                "<br>Longitude: " + position.coords.longitude;
-              }
-
-              function showError(error) {
-                switch(error.code) {
-                  case error.PERMISSION_DENIED:
-                                Swal.fire({
-                                  title: 'il est strictement obligatoire d\'activer la géolocalisation.',
-                                  width: 600,
-                                  allowOutsideClick: false,
-                                  padding: '3em',
-                                  background: '#fff url(/images/trees.png)',
-                                  backdrop: `
-                                    rgba(0,0,123,0.4)
-                                    url("/images/nyan-cat.gif")
-                                    left top
-                                    no-repeat
-                                  `
-                                })
-                    break;
-                  case error.POSITION_UNAVAILABLE:
-                    x.innerHTML = "Location information is unavailable."
-                    break;
-                  case error.TIMEOUT:
-                    x.innerHTML = "The request to get user location timed out."
-                    break;
-                  case error.UNKNOWN_ERROR:
-                    x.innerHTML = "An unknown error occurred."
-                    break;
-                }
-
-            }
-      </script>
-   </body>
-
-<!-- Mirrored from iqonic.design/themes/socialv/html/sign-in.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 01 Apr 2020 17:36:48 GMT -->
-</html>
