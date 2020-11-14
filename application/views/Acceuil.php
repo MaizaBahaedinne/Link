@@ -323,6 +323,7 @@
                         <span><i class="ti-comment"></i><a href="insight.html" title="">Messages <em>9</em></a></span>
                         <span><i class="ti-bell"></i><a href="insight.html" title="">Notifications <em>2</em></a></span>
                       </div>
+                      <?php if (($role == 1 ||  $role == 3 ||  $role == 6  )|| $SA== 1 ) { ?>
                       <ul class="page-publishes">
                         <li>
                           <span> <a href="<?php echo base_url()?>Club/clubInfo/<?php echo $clubInfo->clubID ?>">  <i class="ti-pencil-alt"></i>Projets</a></span>
@@ -335,8 +336,7 @@
                           </span>
                         </li>
                       </ul>
-
-                     
+                      <?php } ?>
                       <div class="page-likes">
                         <ul class="nav nav-tabs likes-btn">
                           <li class="nav-item"><a class="active" href="#link1" data-toggle="tab" data-ripple="">Membres</a></li>
@@ -364,17 +364,12 @@
                             <a href="#" title="" data-toggle="tooltip" data-original-title="Anderw">
                               <img src="images/resources/userlist-1.jpg" alt="">  
                             </a>
-                            
                             </div>
                           </div>  
                         </div>
-
                       </div>
-
-
                     </div>
                   </div><!-- page like widget -->
-
                    <div class="widget stick-widget" style="">
                     <h4 class="widget-title">Actualités <a title="" href="#" class="see-all">Lire plus</a></h4>
                     <ul class="recent-links">
@@ -387,7 +382,6 @@
                         </div>
                       </li>
                       <?php } ?>
-                      
                     </ul>
                   </div>
                 </aside>
