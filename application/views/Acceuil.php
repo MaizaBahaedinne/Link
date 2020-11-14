@@ -380,7 +380,7 @@
                     <ul class="recent-links">
                       <?php foreach ($ActuRecords as $ac ) {?>
                       <li>
-                        <figure><img src="images/resources/recentlink-1.jpg" alt=""></figure>
+                        <figure><img src="<?php echo base_url() ?>uploads/Actu/<?php echo $ac->image ?>" alt=""></figure>
                         <div class="re-links-meta">
                           <h6><a href="#" title=""><?php echo $ac->titre ?></a></h6>
                           <span> il y a <?php echo xTimeAgo ($ac->createdDate , date('Y-m-d H:i:s') )  ?> </span>
