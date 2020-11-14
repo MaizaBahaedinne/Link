@@ -76,7 +76,7 @@
                     </figure>
                     <div class="newpst-input">
                       
-                        <textarea rows="2" name="postText" placeholder="Partagez ce que vous pensez?" maxlength="265" required></textarea>
+                        <textarea rows="2" name="postText" placeholder="Partagez ce que vous pensez?"  required></textarea>
                       
                     </div>
                     <div class="attachments">
@@ -111,8 +111,11 @@
                       </ul>
                       <div style="display: none" id="FileDown" >
                         <br>
-                      <input type="file" name="fileT"   class="dropify-fr"                                     data-max-file-size="200K"                                      
-                      id="input-file-events"
+                      <input type="file" 
+                              name="fileT"   
+                              class="dropify-fr"  
+                              data-max-file-size="500K"                                      
+                              
                        >
 
                     </div>
