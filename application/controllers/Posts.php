@@ -134,7 +134,8 @@ class Posts extends BaseController {
            'isDeleted' => 1 ,
        );
         $result = $this->posts_model->deletePost($postInfo,$postId);
-        return $result ; 
+        
+        redirect('Posts/Acceuil') 
     }
 
 
