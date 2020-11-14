@@ -132,7 +132,7 @@
                                      <label>Adresse</label>
                                      <input type="text" name="adresse" value="<?php echo $user->adresse ?>" class="form-control" required >
                                      <label>Gouvernourat</label>
-                                     <select  name="gouvernorat" class="form-control" id="gouvernorat"  required>
+                                     <select  name="gouvernorat" class="form-control"  required>
                                         <option value=""></option>
                                         <option value="Ariana">Ariana</option>
                                         <option value="Béja">Béja</option>
@@ -160,7 +160,7 @@
                                         <option value="Zaghouan">Zaghouan</option>
                                      </select>
                                      <label>code postale</label>
-                                     <input name="delegation" id="delegation" type="number"  ></select>
+                                     <input name="delegation" id="delegation" type="number"  >
                                      <hr>
                                      <div class="uzer-nam">
                                       <label><br>Facebook </label>
