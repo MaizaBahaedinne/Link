@@ -166,7 +166,7 @@
                                       <label><br>Facebook </label>
                                       <span>https://www.facebook.com/</span>
                                         <input type="text" class="form-control"  
-                                      placeholder="exemple : Tunivisions.Foundation" name="facebook" width="50%" id="facebook" value="<?php echo $user->facebook ?>"  >
+                                      placeholder="exemple : Tunivisions.Foundation" name="facebook" width="50%" id="facebook"   >
                                      </div>
                                      <div class="uzer-nam">
                                       <label><br>Facebook </label>
