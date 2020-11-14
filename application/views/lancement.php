@@ -262,7 +262,7 @@
             $("#video").removeAttr("hidden");
             $("#activation").hide();
             
-            var countDownDate = new Date().getTime() + 5 * 60000;
+            var countDownDate = new Date().getTime() + 4 * 60000;
 
                                 // Update the count down every 1 second
                                 var x = setInterval(function() {
@@ -318,7 +318,7 @@
                      
                  }else
                  {
-
+                    alert("Vous avez des mauvaise réponses !");
                  }
 
          }) 
