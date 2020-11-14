@@ -161,7 +161,7 @@
                           <div class="more">
                             <div class="more-post-optns"><i class="ti-more-alt"></i>
                               <ul>
-                                <?php if ($uid == $post->createdBy ) { ?>
+                                <?php if ($uid == $post->userId ) { ?>
                                 <li><i class="fa fa-pencil-square-o"></i>Modifier le message</li>
                                 <li><a href="<?php echo base_url() ?>Posts/deletePost/<?php echo $post->postId ?>"><i class="fa fa-trash-o"></i>Supprimer le message</a></li>
                                 <?php } ?>
