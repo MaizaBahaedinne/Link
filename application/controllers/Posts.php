@@ -135,7 +135,7 @@ class Posts extends BaseController {
        );
         $result = $this->posts_model->deletePost($postInfo,$postId);
         
-        redirect('Posts/Acceuil') 
+        redirect('Posts/Acceuil') ;
     }
 
 
