@@ -90,7 +90,7 @@ class Register extends BaseController
                 
                 if($result > 0  )
                 {
-                    $this->session->set_flashdata('success', 'votre dossier est en cours de traitement');
+                    $this->session->set_flashdata('success', 'Merci de se connecter');
                 }
                 else
                 {
