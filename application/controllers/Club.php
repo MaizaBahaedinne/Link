@@ -23,9 +23,7 @@ class Club extends BaseController {
 		                $clubs = $this->club_model->clubListing($this->SA, $this->clubID);
 		            
 		                foreach ($clubs as $key ) {
-
-
-		                	$key->P 	=  	$this->user_model->getMemberByRoleAndCelulle($key->clubID , 1 , '' ) ;
+		                	$key->P = $this->user_model->getMemberByRoleAndCelulle($key->clubID , 1 , Null ) ;
 							$key->members = count($this->user_model->userListingByclub($key->clubID));
 		                }
 
@@ -68,11 +66,9 @@ class Club extends BaseController {
 		        public function editClub($clubId)
 		        {
 					$this->load->model('user_model');
-
 					$data["projectRecords"] = $this->project_model->projectListingByClub($clubId);
                     $data["members"] = $this->user_model->userListingByclubAll($clubId);
 			        $data["clubInfo"] = $this->club_model->getClubInfo($clubId);
-
 			       	$this->global['pageTitle'] = 'Clubs';
 			        $this->loadViews("club/edit", $this->global, $data, NULL);
 		        }
