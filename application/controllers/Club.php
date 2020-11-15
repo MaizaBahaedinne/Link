@@ -26,14 +26,6 @@ class Club extends BaseController {
 
 
 		                	$key->P 	=  	$this->user_model->getMemberByRoleAndCelulle($key->clubID , 1 , '' ) ;
-							$key->VPAF  = 	$this->user_model->getMemberByRoleAndCelulle($key->clubID , 3 , 'Administration et finance' ) ;
-							$key->AAF 	=  	$this->user_model->getMemberByRoleAndCelulle($key->clubID , 6 , 'Administration et finance' ) ;
-							$key->VPRH 	=  	$this->user_model->getMemberByRoleAndCelulle($key->clubID , 3 , 'Ressource Humaine' ) ;
-							$key->ARH 	=  	$this->user_model->getMemberByRoleAndCelulle($key->clubID , 6 , 'Ressource Humaine' ) ;
-							$key->VPM 	=  	$this->user_model->getMemberByRoleAndCelulle($key->clubID , 3 , 'Marketing' ) ;
-							$key->AM 	=  	$this->user_model->getMemberByRoleAndCelulle($key->clubID , 6 , 'Marketing' ) ;
-							$key->VPE 	=  	$this->user_model->getMemberByRoleAndCelulle($key->clubID , 3 , 'Evenementiel' ) ;
-							$key->AE 	=  	$this->user_model->getMemberByRoleAndCelulle($key->clubID , 6 , 'Evenementiel' ) ;
 							$key->members = count($this->user_model->userListingByclub($key->clubID));
 		                }
 
