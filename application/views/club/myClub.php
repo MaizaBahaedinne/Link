@@ -236,12 +236,12 @@
                         <div class="friend-box">
                           <figure>
                             <img src="<?php echo base_url() ?>assets/images/resources/frnd-cover3.jpg" alt="">
-                            <span>Followers: 450</span>
+                            <span></span>
                           </figure>
                           <div class="frnd-meta">
                             <img src="<?php echo base_url() ?>uploads/avatar/<?php echo $member->avatar ?>" class="alligator-profile-member" alt="">
                             <div class="frnd-name">
-                              <a href="#" title=""><?php echo $member->name ?></a>
+                              <a href="<?php echo base_url()?>User/ProfileShow/<?php echo $member->userId?>" title=""><?php echo $member->name ?></a>
                               <span><?php echo $member->role ?></span>
                             </div>
                             <ul class="frnd-info">
