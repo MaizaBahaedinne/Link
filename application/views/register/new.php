@@ -114,6 +114,7 @@
               <input   type="date" placeholder="Date de naissance" name="birth" placeholder="sexe" required>
               <input  type="email" placeholder="Email" name="email"  required>
               <input  type="text" pattern="[0-9]{2}\d{6}" placeholder="mobile" name="mobile" required>
+              <input type="password" name="password" minlength="8" required>
               <input type="checkbox"><label>j'accepte  <a href="<?php echo base_url(); ?>Register/reglement" class="kt-link kt-login__link kt-font-bold">le reglement</a> </label> 
               <br>
              <?php } ?>

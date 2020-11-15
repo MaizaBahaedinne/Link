@@ -49,6 +49,7 @@ class Register extends BaseController
                 $name =  strtoupper ($fname).' '.$lname ;
                 $email = $this->input->post('email');
                 $mobile = $this->security->xss_clean($this->input->post('mobile'));
+                $password = $this->security->xss_clean($this->input->post('password'));
 
 
 
