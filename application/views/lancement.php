@@ -103,10 +103,10 @@
                                     <div style="height: 200px;width: 200px">
                                     <input type="file" name="fileT"   
                                     class="dropify-fr" 
-                                    data-max-file-size="200K"
+                                    data-max-file-size="300K"
                                     data-max-width="800" 
                                     data-max-height="800"                                     
-                                    id="input-file-events"
+                                    
                                     data-allowed-file-extensions="png jpg jpeg"
                                     required accept="image/*"
                                     >
@@ -132,7 +132,7 @@
                                      <label>Adresse</label>
                                      <input type="text" name="adresse" value="<?php echo $user->adresse ?>" class="form-control" required >
                                      <label>Gouvernourat</label>
-                                     <select  name="gouvernorat" class="form-control"  required>
+                                     <select  name="gouvernorat"   required>
                                         <option value=""></option>
                                         <option value="Ariana">Ariana</option>
                                         <option value="Béja">Béja</option>
@@ -165,20 +165,17 @@
                                      <div class="uzer-nam">
                                       <label><br>Facebook </label>
                                       <span>https://www.facebook.com/</span>
-                                        <input type="text" class="form-control"  
-                                      placeholder="exemple : Tunivisions.Foundation" name="facebook" width="50%" id="facebook"   >
+                                        <input type="text" class="form-control" placeholder="exemple : Tunivisions.Foundation" name="facebook" width="30%" id="facebook"   >
                                      </div>
                                      <div class="uzer-nam">
                                       <label><br>Facebook </label>
                                       <span>https://www.instgram.com/</span>
-                                        <input type="text" class="form-control" 
-                                      placeholder="exemple : Tunivisions.Foundation" name="instagram" width="50%" id="instagram" value="<?php echo $user->instagram ?>"  >
+                                        <input type="text" class="form-control" placeholder="exemple : Tunivisions.Foundation" name="instagram" width="30%" value="<?php echo $user->instagram ?>"  >
                                      </div>
                                      <div class="uzer-nam">
                                       <label><br>Linkedin </label>
                                       <span>https://www.Linkedin.com/in/</span>
-                                        <input type="text"  class="form-control" 
-                                      placeholder="exemple : Tunivisions.Foundation" name="linkedin" width="50%" id="linkedin" value="<?php echo $user->linkedin ?>"  >
+                                        <input type="text"  class="form-control"  placeholder="exemple : Tunivisions.Foundation" name="linkedin" width="30%"  value="<?php echo $user->linkedin ?>">
                                      </div>
                                      
                                      
