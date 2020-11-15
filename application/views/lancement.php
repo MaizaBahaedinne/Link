@@ -72,7 +72,7 @@
                                 <input type="radio" name="q4" value="f" > Créativité , Partage , Travail <br>
                                 <input type="radio" name="q4" value="f" > Innovation , Partage , Compétence <br>
                                 <hr>
-                                <b>Q5 . La mission de Tunivisions Foundation:  </b><br><br>
+                                <b>Q5 . Les missions de Tunivisions Foundation:  </b><br><br>
                                 <input type="checkbox" id="q5-1" value="t" > prendre des responsabilités<br>
                                 <input type="checkbox" id="q5-2" value="t" > Promouvoir la culture entrepreneuriale  <br>
                                 <input type="checkbox" id="q5-3" value="t" > La mise en valeur des régions <br>
