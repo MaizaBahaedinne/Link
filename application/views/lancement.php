@@ -122,7 +122,7 @@
                                      <input type="text" name="prenom" value="<?php echo $user->prenom ?>" class="form-control" required >
                                      <label>Date de naissance</label>
                                      <input type="date" name="birthday" value="<?php echo $user->birthday ?>" class="form-control" required >
-                                     <label>Sexe/label>
+                                     <label>Sexe</label>
                                      <select  name="sexe" id="sexe" required>
                                         <option value=""></option>
                                         <option value="Femme">Femme</option>
@@ -132,7 +132,7 @@
                                      <label>Adresse</label>
                                      <input type="text" name="adresse" value="<?php echo $user->adresse ?>" class="form-control" required >
                                      <label>Gouvernourat</label>
-                                     <select  name="gouvernorat"   required>
+                                     <select  name="gouvernorat"  required>
                                         <option value=""></option>
                                         <option value="Ariana">Ariana</option>
                                         <option value="Béja">Béja</option>
@@ -159,7 +159,7 @@
                                         <option value="Tunis">Tunis</option>
                                         <option value="Zaghouan">Zaghouan</option>
                                      </select>
-                                     <label>code postale</label>
+                                     <label> code postale </label>
                                      <input name="delegation" class="form-control" id="delegation" type="number"  >
                                      <hr>
                                      <div class="uzer-nam">
@@ -168,7 +168,7 @@
                                         <input type="text" class="form-control" placeholder="exemple : Tunivisions.Foundation" name="facebook" width="30%" id="facebook"   >
                                      </div>
                                      <div class="uzer-nam">
-                                      <label><br>Facebook </label>
+                                      <label><br>Instgram </label>
                                       <span>https://www.instgram.com/</span>
                                         <input type="text" class="form-control" placeholder="exemple : Tunivisions.Foundation" name="instagram" width="30%" value="<?php echo $user->instagram ?>"  >
                                      </div>
