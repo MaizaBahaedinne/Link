@@ -48,40 +48,41 @@
                                 Vous avez 4 min pour répondre : 
 
                                 <br><br><br>
-                                <b>Q1 . Tunivisions a été fonder en  </b><br><br>
+                                <b>Q1 . Tunivisions a été fondé en  </b><br><br>
                                 <input type="radio" name="q1" value="f"  > 2016<br>
                                 <input type="radio" name="q1" value="f" > 1995 <br>
                                 <input type="radio" name="q1" value="f" > 2017 <br>
-                                <input type="radio" name="q1" id="q1-1" value="t" > 1997 <br>
+                                <input type="radio" name="q1" id="q1-1" value="f" > 1997 <br>
                                 <hr>
                                 <b>Q2 . Tunivisions Foundation est :  </b><br><br>
                                 <input type="radio" name="q2" value="f"  > Magazine <br>
                                 <input type="radio" name="q2" value="f" > Start-Up <br>
-                                <input type="radio" name="q2" id="q2-1" value="t" > Fondation nationale <br>
-                                <input type="radio" name="q2" value="f" > Fondation Internationale <br>
+                                <input type="radio" name="q2" id="q2-1" value="f" > RSE <br>
+                                <input type="radio" name="q2" value="t" > Fondation nationale <br>
                                 <hr>
                                 <b>Q3 . Tunivisions Foundation a des clubs dans :  </b><br><br>
-                                <input type="radio" name="q3" value="f"  > les regions , les écoles , les lycées et les facultées <br>
-                                <input type="radio" name="q3" value="f" > les écoles , les lycées et les facultées <br>
+                                <input type="radio" name="q3" value="f"  > les regions , les écoles primaires , les lycées et les facultées <br>
+                                <input type="radio" name="q3" value="f" > les écoles primaires , les lycées et les facultées <br>
                                 <input type="radio" name="q3" id="q3-1" value="t" > les lycées et les facultées <br>
                                 <input type="radio" name="q3" value="f" > les regions , les lycées et les facultées <br>
                                 <hr>
                                 <b>Q4 . Les valeurs de Tunivisions Foundation:  </b><br><br>
                                 <input type="radio" name="q4" value="f" > Innovation , Partage , Croissance <br>
-                                <input type="radio" name="q4" id="q4-1" value="t" > Innovation , Partage , Travail <br>
-                                <input type="radio" name="q4" value="f" > Créativité , Partage , Travail <br>
-                                <input type="radio" name="q4" value="f" > Innovation , Partage , Compétence <br>
+                                <input type="radio" name="q4" id="q4-1" value="f" > Innovation , Travail , Partage   <br>
+                                <input type="radio" name="q4" value="f" >  Partage , Travail , Créativité  <br>
+                                <input type="radio" name="q4" value="f" > Innovation , Compétence , Partage  <br>
                                 <hr>
                                 <b>Q5 . Les missions de Tunivisions Foundation:  </b><br><br>
-                                <input type="checkbox" id="q5-1" value="t" > prendre des responsabilités<br>
+                                <input type="checkbox" id="q5-1" value="f" > Formation des jeunes en Soft-Skills <br>
                                 <input type="checkbox" id="q5-2" value="t" > Promouvoir la culture entrepreneuriale  <br>
+                                <input type="checkbox" id="q5-4" value="t" > Organiser des actions de charité <br>
                                 <input type="checkbox" id="q5-3" value="t" > La mise en valeur des régions <br>
-                                <input type="checkbox" id="q5-4" value="t" > introduire à la vie professionnelle <br>
                                 <hr>
                                 <b>Q6 . La vision de Tunivisions Foundation:  </b><br><br>
                                 <input type="radio" name="q6" value="f"  > La création des jeunes leaders<br>
-                                <input type="radio" name="q6" value="f" > Organiser des évenements et des conférence <br>
                                 <input type="radio" name="q6" id="q6-1" value="t" > La création des jeunes leaders tunisiens <br>
+                                <input type="radio" name="q6" value="f" > Organiser des évenements et des conférence <br>
+                                
 
 
                                 <br>
@@ -305,8 +306,7 @@
                 && $("#q4-1").is(':checked')
                 && $("#q5-1").is(':checked') 
                 && $("#q5-2").is(':checked') 
-                && $("#q5-3").is(':checked') 
-                && $("#q5-4").is(':checked') 
+                && $("#q5-3").is(':checked')  
                 && $("#q6-1").is(':checked')                
                 )
                  {
