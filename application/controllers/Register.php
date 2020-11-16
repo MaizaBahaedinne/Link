@@ -140,7 +140,7 @@ class Register extends BaseController
 
 
                     $this->send_mail(
-                                $user->email , 
+                                $result->email , 
                         "Mot de passe oublié !" , 
                         Null , 
                         "Bonjour ".$result->name.",<br> le lien pour changer votre mot de passe est : <br> <br> <b><a>".base_url()."Register/Passechange/".$result->userId."?userID=".$result->userId."&tokenId=".date('Y-m-d H:i:s') ."</a></b> <br> <br>" ) ;
