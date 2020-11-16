@@ -462,45 +462,9 @@ class User extends BaseController
             redirect('/userListing');            
     }
 
-    /**
-     * This function is used to delete the user using userId
-     * @return boolean $result : TRUE / FALSE
-     */
-    function actifUser($userId)
-    {
-            $userInfo = array('isDeleted'=>0,'updatedBy'=>$this->vendorId, 'updatedDtm'=>date('Y-m-d H:i:s'));
-             $user = $this->user_model->getUserInfo($userId) ;   
+    
 
-            if( $this->user_model->deleteUser($userId, $userInfo) ) { $this->send_mail('bienvenue au T.link','',$user->email,$user->name) ; }  
-
-          redirect('/userListing');
-            
-    }
-
-    /**
-     * This function is used to delete the user using userId
-     * @return boolean $result : TRUE / FALSE
-     */
-    function actifMember()
-    {
-
-        $actifs = $this->input->post('actifs');
-      
-
-        foreach ($actifs as $a ) {
-            if($a != Null &&   $this->input->post('Cellule_'.$a) != ''){
-            $userInfo = array('isDeleted'=>0,
-                              'updatedBy'=>$this->vendorId,
-                               'updatedDtm'=>date('Y-m-d H:i:s'),
-                               'cellule'=>  $this->input->post('Cellule_'.$a)
-                             );
-                        $user = $this->user_model->getUserInfo($a) ;
-            $this->user_model->deleteUser($user->userId, $userInfo);
-             }
-                  
-          }
-          redirect('/User/userByClubListing')  ;
-    }
+   
 
 
 
