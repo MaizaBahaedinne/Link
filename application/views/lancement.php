@@ -61,8 +61,8 @@
                                 <input type="radio" name="q2" value="t" > Fondation nationale <br>
                                 <hr>
                                 <b>Q3 . Tunivisions Foundation a des clubs dans :  </b><br><br>
-                                <input type="radio" name="q3" value="f"  > les regions , les écoles , les lycées et les facultées <br>
-                                <input type="radio" name="q3" value="f" > les écoles , les lycées et les facultées <br>
+                                <input type="radio" name="q3" value="f"  > les regions , les écoles primaires , les lycées et les facultées <br>
+                                <input type="radio" name="q3" value="f" > les écoles primaires , les lycées et les facultées <br>
                                 <input type="radio" name="q3" id="q3-1" value="t" > les lycées et les facultées <br>
                                 <input type="radio" name="q3" value="f" > les regions , les lycées et les facultées <br>
                                 <hr>
@@ -305,8 +305,7 @@
                 && $("#q4-1").is(':checked')
                 && $("#q5-1").is(':checked') 
                 && $("#q5-2").is(':checked') 
-                && $("#q5-3").is(':checked') 
-                && $("#q5-4").is(':checked') 
+                && $("#q5-3").is(':checked')  
                 && $("#q6-1").is(':checked')                
                 )
                  {
