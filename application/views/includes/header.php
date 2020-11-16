@@ -189,7 +189,7 @@
 			
 					 <div class="setting-row">
 							<span>Activer la localisation</span>
-							<input type="checkbox" id="localisation" onclick="getLocation()"> 
+							<input type="checkbox" id="localisation" onclick="getLocation()" checked> 
 							<label for="nightmode" data-on-label="ON" data-off-label="OFF"></label>
 						</div>
 				
@@ -262,6 +262,13 @@
 		</nav>
 		<nav id="menu" class="res-menu">
 			<ul>
+				<li style="text-align: center; padding-top: 0.5cm" >
+					
+					<img class="alligator-profile"  src="<?php echo base_url() ?>uploads/avatar/<?php echo $avatar ?>"  alt="">
+					
+					<h5><?php echo $name ?></h5>
+
+				</li>
 				<li><span>Foundation</span> 
 					<ul>
 						<li><a href="<?php echo base_url() ?>Club/clubInfo/-1" title="">Board</a></li>
