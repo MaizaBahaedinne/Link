@@ -48,7 +48,7 @@
                                 Vous avez 4 min pour répondre : 
 
                                 <br><br><br>
-                                <b>Q1 . Tunivisions a été fonder en  </b><br><br>
+                                <b>Q1 . Tunivisions a été fondé en  </b><br><br>
                                 <input type="radio" name="q1" value="f"  > 2016<br>
                                 <input type="radio" name="q1" value="f" > 1995 <br>
                                 <input type="radio" name="q1" value="f" > 2017 <br>
@@ -73,8 +73,9 @@
                                 <input type="radio" name="q4" value="f" > Innovation , Compétence , Partage  <br>
                                 <hr>
                                 <b>Q5 . Les missions de Tunivisions Foundation:  </b><br><br>
-                                <input type="checkbox" id="q5-1" value="f" > prendre des responsabilités<br>
+                                <input type="checkbox" id="q5-1" value="f" > Formation des jeunes en Soft-Skills <br>
                                 <input type="checkbox" id="q5-2" value="t" > Promouvoir la culture entrepreneuriale  <br>
+                                <input type="checkbox" id="q5-4" value="t" > Organiser des actions de charité <br>
                                 <input type="checkbox" id="q5-3" value="t" > La mise en valeur des régions <br>
                                 <hr>
                                 <b>Q6 . La vision de Tunivisions Foundation:  </b><br><br>
