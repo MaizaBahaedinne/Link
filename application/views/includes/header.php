@@ -263,11 +263,10 @@
 		<nav id="menu" class="res-menu">
 			<ul>
 				<li style="text-align: center; padding-top: 0.5cm" >
-					
-					<img class="alligator-profile"  src="<?php echo base_url() ?>uploads/avatar/<?php echo $avatar ?>"  alt="">
-					
-					<h5><?php echo $name ?></h5>
-
+					<a  href="<?php echo base_url() ?>User/ProfileShow/<?php echo $uid ?>">
+						<img class="alligator-profile"  src="<?php echo base_url() ?>uploads/avatar/<?php echo $avatar ?>"  alt="">
+						<h5><?php echo $name ?></h5>
+					</a>
 				</li>
 				<li><span>Foundation</span> 
 					<ul>
