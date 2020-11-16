@@ -116,7 +116,7 @@
                         <br> 
                         <?php if ( (time()-(60*60*24)) <= strtotime($date) ) { ?>
                         <div class="user-img">
-                          <img class="alligator-profile-header" src="https://127.0.0.1/Link3/uploads/avatar/<?php echo $user->avatar  ?>" alt="" width="50px">
+                          <img class="alligator-profile-header" src="<?php echo base_url() ?>/uploads/avatar/<?php echo $user->avatar  ?>" alt="" width="50px">
                         <h5><?php echo $user->name  ?></h5>
                         
                        
