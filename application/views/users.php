@@ -39,7 +39,7 @@
                        
                         <th>id</th>
                         <th>Nom et prénom</th>
-                        <th>Club</th>
+                        
                         <th>Contact</th>
                         <th>Inscription </th>
                         <th>Actif</th>
@@ -70,28 +70,29 @@
                                         <small><small> <?php echo $record->name ?> </small></small>
                                         </a>
                                         <br>                              
-                                        <span class="kt-user-card-v2__desc">
-                                        <small>  <small>  <?php echo $record->role ?> <?php echo $record->cellule ?>  </small></small>
-                                        </span>                            
-                                    </div>                      
+                                        
+                                        <small>  
+                                            <small>  
+                                                <?php echo $record->role ?> <?php echo $record->cellule ?> 
+                                                <a class="kt-user-card-v2__name" href="#">
+                                                  <?php echo $record->ClubName ?> 
+                                                </a>    
+                                            </small>
+                                        </small>
+                                                                  
+                                                        
                                 
                           
 
                         </td>
-                        <td>
-                                        <a class="kt-user-card-v2__name" href="#">
-                                          <small> <?php echo $record->ClubName ?> </small> </td>
-                                        </a>                            
-                                                     
-                        </td>
                         
                         
                         <td>
-                            <A HREF="mailto:<?php echo $record->email ?>"><i class="ri-mail-fill"></i></A> 
+                            <A HREF="mailto:<?php echo $record->email ?>"><?php echo $record->email ?></A> 
                             
-                            <a href="<?php echo $record->facebook ?>"><i class="ri-facebook-box-fill"></i></a>
+                            <a href="<?php echo $record->facebook ?>"><i class="fa fa-facebook"></i></a>
                         <br>
-                             <a href="tel:<?php echo $record->mobile ?>"><i class="ri-phone-fill"></i> <?php echo $record->mobile ?></a>        
+                             <a href="tel:<?php echo $record->mobile ?>"><i class="fa fa-phone"></i> <?php echo $record->mobile ?></a>        
                          </td>
 
                         <td>

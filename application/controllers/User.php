@@ -53,25 +53,17 @@ class User extends BaseController
         $this->global['pageTitle'] = 'Dashboard';
 
         $data['MyTFM'] = $this->Tfm_part_model->TFMMyBus($this->vendorId);
-        
-             
         $data["tunimateurs"] = count($this->user_model->userListing($this->vendorId))  ; 
         $data["tunimateursApp"] = count($this->user_model->userListingApprouveF());
         $data["tunimateursAppJ"] = count($this->user_model->userListingApprouveFJ());
         $data["tunimateursAppA"] = count($this->user_model->userListingApprouveFA());
-      
         $data["clubscountS"] = count($this->club_model->clubListingS() )  ;
         $data["clubscountJ"] = count($this->club_model->clubListingJ() )  ;
-     
         $data['ActuRecords'] = $this->actualite_model->actuListing();
         $data['MyclubID'] = $this->clubID;
         $data["membersCount"] = count($this->user_model->userListingByclub($this->vendorId,$this->clubID)) ;
 
-       
-
-         
         $this->global['active'] = 'dashboard';
-    
         $this->loadViews("dashboard", $this->global, $data , NULL);
     }
     
@@ -83,16 +75,12 @@ class User extends BaseController
       
             $searchText = $this->security->xss_clean($this->input->post('searchText'));
             $data['searchText'] = $searchText;
-            
             $this->load->library('pagination');
-            
-             $count = $this->user_model->userListing($this->vendorId);
-             $data['count'] = count($count)  ; 
-             $data['userRecords'] = $this->user_model->userListing($this->vendorId);
-            
+            $count = $this->user_model->userListing($this->vendorId);
+            $data['count'] = count($count)  ; 
+            $data['userRecords'] = $this->user_model->userListing($this->vendorId);
             $this->global['pageTitle'] = 'CodeInsect : User Listing';
             $this->global['active'] = 'users';
-
             $this->loadViews("users", $this->global, $data, NULL);
         
     }
