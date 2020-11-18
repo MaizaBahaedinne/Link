@@ -114,8 +114,11 @@
 		             fbConn() ; 
 		        }else{
 		        	if (window.location.toString() != "<?php echo base_url()?>User/Facebook" ){
+		        		<?php if ($SA != 1) {   ?>
 		      	window.location.replace("<?php echo base_url()?>User/Facebook") ;
-		        	}
+		        	
+		       		<?php } ?>
+		        }
 		        }
 		    });
 		};
