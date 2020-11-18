@@ -8,11 +8,10 @@
 
 
 <style type="text/css">
-    
-    .content-loader tr td {
+.content-loader tr td 
+{
     white-space: nowrap;
 }
-
 </style>
 
 
