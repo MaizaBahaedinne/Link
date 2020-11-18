@@ -472,10 +472,10 @@
 				<li>
 					<a href="<?php echo   base_url()  ?>User/ProfileShow/<?php echo $userCon->userId ?>">
 								<div class="author-thmb">
-									<a title="<?php echo $userCon->name ?>" data-toggle="tooltip" data-placement="left" data-original-title="<?php echo $userCon->name ?>">
-										<img src="<?php echo base_url() ?>uploads/avatar/<?php echo $userCon->avatar ?>" class="alligator-profile-header" alt="">
+									
+										<img src="<?php echo base_url() ?>uploads/avatar/<?php echo $userCon->avatar ?>" class="alligator-profile-header"   title="<?php echo $userCon->name ?>" data-toggle="tooltip" data-placement="left" data-original-title="<?php echo $userCon->name ?>">
 										<span class="status f-online"></span>
-									</a>
+									
 								</div>
 					</a>
 				</li>
