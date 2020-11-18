@@ -470,12 +470,14 @@
 				
 				<?php foreach ($ConnrectedUser as $userCon ) {?>
 				<li>
-					<div class="author-thmb">
-						<a href="<?php echo   base_url()  ?>User/ProfileShow/<?php echo $userCon->userId ?>" title="<?php echo $userCon->name ?>" data-toggle="tooltip" data-placement="left" data-original-title="<?php echo $userCon->name ?>">
-							<img src="<?php echo base_url() ?>uploads/avatar/<?php echo $userCon->avatar ?>" class="alligator-profile-header" alt="">
-							<span class="status f-online"></span>
-						</a>
-					</div>
+					<a href="<?php echo   base_url()  ?>User/ProfileShow/<?php echo $userCon->userId ?>">
+								<div class="author-thmb">
+									<a title="<?php echo $userCon->name ?>" data-toggle="tooltip" data-placement="left" data-original-title="<?php echo $userCon->name ?>">
+										<img src="<?php echo base_url() ?>uploads/avatar/<?php echo $userCon->avatar ?>" class="alligator-profile-header" alt="">
+										<span class="status f-online"></span>
+									</a>
+								</div>
+					</a>
 				</li>
 				<?php } ?>
 			<div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 0px;"><div class="ps-scrollbar-x" tabindex="0" style="left: 0px; width: 0px;"></div></div>
