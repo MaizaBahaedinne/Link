@@ -6,7 +6,7 @@
 						<div class="row merged20" id="page-contents">
 							<div class="col-lg-12">
 								<div class="search-meta">
-									<span>Your search result for " <i>jack carter</i> " 30</span>
+									<span>Votre résultat de recherche pour <i>"<?php echo $SearchText ; ?>"</i> <?php echo count($users)+count($clubs) ; ?></span>
 								</div>
 							</div>
 							
@@ -65,21 +65,19 @@
 
 											</div><!-- searched groups -->
 											<div class="central-meta item">
-												<span class="create-post">Pages<a title="" href="#">See All</a></span>
+												<span class="create-post">Projets<a title="" href="#">See All</a></span>
 
 												<?php foreach ($projets as $projet ) { ?>
 												<div class="pit-pages">
 													<figure><a href="#" title=""><img src="images/resources/jackpage1.jpg" alt=""></a></figure>
 													<div class="pit-pages-meta">
-														<a href="#" title=""><?php echo $user->titre ?></a>
-														<i><?php if ($club->clubID > 5 ) {echo "club ";}  echo 'Tunivisions '.$club->name ; ?></i>
+														<a href="#" title=""><?php echo $projet->titre ?></a>
+														<i><?php if ($projet->ClubID > 5 ) {echo "club ";}  echo 'Tunivisions '.$projet->ClubName ; ?></i>
 														<ul class="add-remove-frnd">
 															<li class="add-tofrndlist">
-																<a title="Like" href="#"><i class="fa fa-thumbs-up"></i> Like</a>
+																<a title="Like" href="#"><i class="fa fa-up"></i> Voir plus</a>
 															</li>
-															<li class="remove-frnd">
-																<a title="Follow" href="#"><i class="fa fa-star"></i></a>
-															</li>
+															
 														</ul>
 													</div>
 												</div>
@@ -89,14 +87,16 @@
 									    </div>
 
 
-									    <div class="tab-pane fade" id="people">
+									    <div class="tab-pane fade" id="tunimateus">
 									    	<div class="central-meta item">
-												<span class="create-post">People<a title="" href="#">See All</a></span>
+												<span class="create-post">Tunimateurs<a title="" href="#">See All</a></span>
+
+												<?php foreach ($users as $user ) { ?>
 												<div class="pit-friends">
 													<figure><a href="#" title=""><img src="images/resources/searching1.jpg" alt=""></a></figure>
 													<div class="pit-frnz-meta">
-														<a href="#" title="">Jack Carter</a>
-														<i>Tornoto</i>
+														<a href="#" title=""><?php echo $user->name ?></a>
+														<i><?php if ($club->clubID > 5 ) {echo "club ";}  echo 'Tunivisions '.$club->name ; ?></i>
 														<ul class="add-remove-frnd">
 															<li class="add-tofrndlist">
 																<a title="Add friend" href="#"><i class="fa fa-user-plus"></i></a>
@@ -107,51 +107,8 @@
 														</ul>
 													</div>
 												</div>
-												<div class="pit-friends">
-													<figure><a href="#" title=""><img src="images/resources/searching2.jpg" alt=""></a></figure>
-													<div class="pit-frnz-meta">
-														<a href="#" title="">Jack Carter jackson</a>
-														<i>Tornoto</i>
-														<ul class="add-remove-frnd">
-															<li class="add-tofrndlist">
-																<a title="Add friend" href="#"><i class="fa fa-user-plus"></i></a>
-															</li>
-															<li class="remove-frnd">
-																<a title="Send Message" href="#"><i class="fa fa-comment"></i></a>
-															</li>
-														</ul>
-													</div>
-												</div>
-												<div class="pit-friends">
-													<figure><a href="#" title=""><img src="images/resources/searching3.jpg" alt=""></a></figure>
-													<div class="pit-frnz-meta">
-														<a href="#" title="">Jack jackson</a>
-														<i>manitoba</i>
-														<ul class="add-remove-frnd">
-															<li class="add-tofrndlist">
-																<a title="Add friend" href="#"><i class="fa fa-user-plus"></i></a>
-															</li>
-															<li class="remove-frnd">
-																<a title="Send Message" href="#"><i class="fa fa-comment"></i></a>
-															</li>
-														</ul>
-													</div>
-												</div>
-												<div class="pit-friends">
-													<figure><a href="#" title=""><img src="images/resources/searching4.jpg" alt=""></a></figure>
-													<div class="pit-frnz-meta">
-														<a href="#" title="">Jack william</a>
-														<i>Nova Scotia</i>
-														<ul class="add-remove-frnd">
-															<li class="add-tofrndlist">
-																<a title="Add friend" href="#"><i class="fa fa-user-plus"></i></a>
-															</li>
-															<li class="remove-frnd">
-																<a title="Send Message" href="#"><i class="fa fa-comment"></i></a>
-															</li>
-														</ul>
-													</div>
-												</div>
+												<?php } ?>
+												
 											</div><!-- searched peoples -->
 									    </div>
 									    <div class="tab-pane fade" id="photos">

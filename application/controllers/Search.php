@@ -25,7 +25,8 @@ class Search extends BaseController {
 		                $data['users'] = $this->search_model->userListingSearch($text);
 		                $data['clubs'] = $this->search_model->clubListingSearch($text);
 		                $data['projets'] = $this->search_model->projectListingSearch($text);
-
+ 						$data['SearchText'] = $text;
+ 						
             			$searchInfo = array(
 		                 'text' =>  $text, 
 		                 'createdBy' => $this->vendorId ,

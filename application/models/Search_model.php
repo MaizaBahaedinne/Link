@@ -36,6 +36,7 @@ class Search_model extends CI_Model
         $this->db->join('tbl_users as Paren', 'Paren.userId = BaseTbl.createdBy', 'LEFT');
        
         $this->db->where('BaseTbl.userId LIKE ' ,  '%'.$search.'%' );
+        $this->db->where('Clubs.name LIKE ' ,  '%'.$search.'%' );
         $this->db->order_by('BaseTbl.userId', 'DESC');
         $query = $this->db->get();
         
@@ -71,6 +72,7 @@ class Search_model extends CI_Model
         $this->db->join('tbl_club as Clubs', 'Clubs.clubID = BaseTbl.ClubID', 'LEFT');
        
        $this->db->where('BaseTbl.titre Like ', '%'.$Search.'%' ) ; 
+       $this->db->where('Clubs.name Like ', '%'.$Search.'%' ) ;
 
         $this->db->order_by('BaseTbl.startDate','ASC');
        
