@@ -28,7 +28,7 @@
 												
 												<?php foreach ($users as $user ) { ?>
 												<div class="pit-friends">
-													<figure><a href="#" title=""><img src="<?php echo base_url()?>uploads/avatar/<?php echo $user->avatar?>" alt=""></a></figure>
+													<figure><a href="#" title=""><img class="alligator-profile-header" src="<?php echo base_url()?>uploads/avatar/<?php echo $user->avatar?>" alt=""></a></figure>
 													<div class="pit-frnz-meta">
 														<a href="#" title=""><?php echo $user->name ?></a>
 														<i><?php echo $user->role.' '.$user->cellule ; ?></i>
@@ -36,7 +36,7 @@
 														<i><?php if ($user->clubID > 5 ) {echo "club ";}  echo 'Tunivisions '.$user->ClubName ; ?></i>
 														<ul class="add-remove-frnd">
 															<li class="add-tofrndlist">
-																<a title="Add friend" href="<?php echo base_url() ?>User/ProfileShow/<?php echo $user->userId ?>"><i class="fa fa-sign-in" aria-hidden="true"></i></i>Visiter</a>
+																<a title="" href="<?php echo base_url() ?>User/ProfileShow/<?php echo $user->userId ?>"><i class="fa fa-sign-in" aria-hidden="true"></i></i>Visiter</a>
 															</li>
 														</ul>
 													</div>
