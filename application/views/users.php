@@ -92,9 +92,9 @@
                             </A> 
                            <br> 
                             <a href="<?php echo $record->facebook ?>">
-                                <i class="fa fa-facebook"></i> <?php echo $record->facebook ?>
+                                <i class="fa fa-facebook"></i> 
                             </a>
-                        <br>
+                         | 
                         <?php if($SA == 1 ) { ?>
                              <a href="tel:<?php echo $record->mobile ?>">
                                 <i class="fa fa-phone"></i> <?php echo $record->mobile ?>
