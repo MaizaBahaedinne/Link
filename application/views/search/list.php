@@ -56,7 +56,7 @@
 														<i>Group · 4.2K members · 510 posts a day</i>
 														<ul class="add-remove-frnd">
 															<li class="add-tofrndlist">
-																<a title="Add friend" href="#"><i class="fa fa-plus"></i> Consulter</a>
+																<a title="Add friend" href="#"><i class="fa fa-plus"></i> Visiter</a>
 															</li>
 														</ul>
 													</div>

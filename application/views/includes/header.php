@@ -312,9 +312,9 @@
 			</span>
 		</div>
 		<div class="mh-head second">
-			<form class="mh-form">
-				<input placeholder="search">
-				<a href="#/" class="fa fa-search"></a>
+			<form class="mh-form" method="post" action="<?php echo base_url() ?>Search" >
+				<input placeholder="Chercher" type="text" name="text">
+				<input type="submit"  class="fa fa-search" value="">
 			</form>
 		</div>
 		
@@ -329,7 +329,7 @@
 			
 			<div class="top-search">
 				<form method="post"  action="<?php echo base_url() ?>Search" >
-					<input type="text" name="text" placeholder="Search People, Pages, Groups etc">
+					<input type="text" name="text" placeholder="Chercher Tunimateurs, Clubs, Projets etc">
 					<button data-ripple=""><i class="ti-search"></i></button>
 				</form>
 			</div>
