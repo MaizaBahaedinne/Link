@@ -29,6 +29,7 @@ class User_model extends CI_Model
         $result = $query->result();        
         return $result;
     }
+
   function getUserId(){
 
    $this->db->select('BaseTbl.userId');

@@ -328,8 +328,8 @@
 		<div class="top-area">
 			
 			<div class="top-search">
-				<form method="post" class="">
-					<input type="text" placeholder="Search People, Pages, Groups etc">
+				<form method="post"  action="<?php echo base_url() ?>Search" >
+					<input type="text" name="text" placeholder="Search People, Pages, Groups etc">
 					<button data-ripple=""><i class="ti-search"></i></button>
 				</form>
 			</div>
