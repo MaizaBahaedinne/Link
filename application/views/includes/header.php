@@ -34,9 +34,24 @@
     <style type="text/css">
     .alligator-profile {
         object-fit: cover;
+        border-radius : 100% ;
         object-position: 20% 50%;
         width: 100px;
         height: 100px;
+    }
+       .alligator-profile-mobile {
+        object-fit: cover;
+        border-radius : 100% ;
+        object-position: 20% 50%;
+        width: 60px;
+        height: 60px;
+    } 
+    .alligator-profile-search {
+        object-fit: cover;
+        border-radius : 100% ;
+        object-position: 20% 50%;
+        width: 50px;
+        height: 50px;
     }
 
     .alligator-profile-header {
@@ -268,12 +283,14 @@
 			<ul>
 				<li style="text-align: center; padding-top: 0.5cm" >
 					<a  href="<?php echo base_url() ?>User/ProfileShow/<?php echo $uid ?>">
-						<img class="alligator-profile"  src="<?php echo base_url() ?>uploads/avatar/<?php echo $avatar ?>"  alt="">
-						<h5><?php echo $name ?></h5>
-						<br>
-						<i><a href="<?php echo base_url() ?>logout" title=""><i class="ti-power-off"></i>Se deconnecter</a></i>
+						<img class="alligator-profile-mobile"  src="<?php echo base_url() ?>uploads/avatar/<?php echo $avatar ?>"  alt="">
+						<h6><?php echo $name ?></h6>
+						<p><?php echo $role_text ?> <?php echo $cellule ?> </p>
+						<p><b>Tuni-ID</b> : <?php echo $uid ?>-<?php echo $clubID ?> </p>
 					</a>
+					<i><a href="<?php echo base_url() ?>logout" title="" class="btn btn-danger btn-sm"><i class="ti-power-off"></i> Se deconnecter</a></i>
 				</li>
+				<br>
 				<li><span>Foundation</span> 
 					<ul>
 						<li><a href="<?php echo base_url() ?>Club/clubInfo/-1" title="">Board</a></li>
