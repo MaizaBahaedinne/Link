@@ -12,7 +12,8 @@
                             <div class="col-lg-8">
                                <div class="central-meta">
                                 <h4> Passage obligatoire </h4>
-                                 <section id="activation" >
+                                <?php if($ClubID > 5 ) { ?>
+                                <section id="activation" >
                                     <h6> Activation de compte </h6>
                                 <hr>
                                 merci d'introduite le code récu par l'adresse :<b> <a class="text-primary"><?php echo $user->email ?></a></b>
@@ -90,7 +91,8 @@
                                  <button>il vous reste : <span id="horloge" ></button></p>
                                 
                                 </section>
-                                <section id="info" hidden  >
+                                <?php } ?>
+                                <section id="info" <?php if($ClubID > 5 ) { ?> hidden <?php } ?>  >
                                 
                                     <h6> Informations Personnelle </h6>
 

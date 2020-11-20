@@ -59,14 +59,6 @@
                         <li><span><?php echo count($conferences) ?></span> Conférences</li>
                         <li><span><?php echo '0' ?></span> Missions</li>
                       </ul>
-                      <ol class="pit-rate">
-                        <li class="rated"><i class="fa fa-star"></i></li>
-                        <li class="rated"><i class="fa fa-star"></i></li>
-                        <li class="rated"><i class="fa fa-star"></i></li>
-                        <li class="rated"><i class="fa fa-star"></i></li>
-                        <li class=""><i class="fa fa-star"></i></li>
-                      </ol>
-                      <span>4.7/5</span>
                     </div>
                   </div>
                   <div class="col-lg-12 col-md-12 col-sm-12">
