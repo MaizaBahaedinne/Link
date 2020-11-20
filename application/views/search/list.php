@@ -94,7 +94,8 @@
 												<div class="pit-friends">
 													<figure><a href="#" title=""><img class="alligator-profile-search" src="<?php echo base_url()?>uploads/avatar/<?php echo $user->avatar?>" alt=""></a></figure>
 													<div class="pit-frnz-meta">
-														<a href="#" title=""><?php echo $user->name ?></a>
+														<a href="#" title=""><?php echo $user->name ?><?php if($user->isDeleted==0) {?><i class="fa fa-check-circle" 
+															style="color:#1fa67; " ></i><?php } ?> </a>
 														<i><?php echo $user->role.' '.$user->cellule ; ?></i>
 														<br>
 														<i><?php if ($user->clubID > 5 ) {echo "club ";}  echo 'Tunivisions '.$user->ClubName ; ?></i>
