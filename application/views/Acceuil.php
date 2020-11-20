@@ -188,12 +188,13 @@
                               
                               <h2><!-- Titre  --></h2>
                             </a>
+                            <!--
                             <ul class="like-dislike">
                               <li><a class="bg-purple" href="#" title="Save to Pin Post"><i class="fa fa-thumb-tack"></i></a></li>
                               <li><a class="bg-blue" href="#" title="Like Post"><i class="ti-thumb-up"></i></a></li>
                               <li><a class="bg-red" href="#" title="dislike Post"><i class="ti-thumb-down"></i></a></li>
                             </ul>
-
+                              -->
                           </figure>     
                           <?php } ?>                  
                           <div class="description">

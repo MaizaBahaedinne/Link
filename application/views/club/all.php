@@ -14,9 +14,10 @@
                     <thead>
                     <tr>
                         <th width="30%">Ecole</th>
-                        <th width="20%">Region</th>
+                        <th width="10%">Region</th>
                         <th width="10%">Membres</th>
                         <th>Contact</th>
+                        <th width="15%">Statut</th>
                         <th width="10%" >Action</th>
                     </tr>
                     </thead>
@@ -61,6 +62,11 @@
                         <td>
                          
                             <small><?php echo $record->members ; ?> </small>
+                        </td>
+                        <td>
+                          <a href="mailto:<?php echo $record->facebook ; ?>"><i class="fa fa-envelope" aria-hidden="true"></i><?php echo $record->facebook ; ?></a>
+                            <br>
+                          <a href="<?php echo $record->email ; ?>" ><i class="fa fa-facebook"></i> Club Tunivisions <?php echo $record->name ; ?> </a>
                         </td>
                         <td>
                             <?php if ($record->is_Actif=="0"){  ?>
