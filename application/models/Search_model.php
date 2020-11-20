@@ -38,8 +38,7 @@ class Search_model extends CI_Model
 
         $this->db->where('BaseTbl.name LIKE ' ,  '%'.$search.'%' );
         $this->db->or_where('Clubs.name LIKE ' ,  '%'.$search.'%' );
-
-        $this->db->order_by('BaseTbl.userId', 'DESC');
+        $this->db->limit(5) ;
         $query = $this->db->get();
         
         $result = $query->result();        
@@ -62,6 +61,8 @@ class Search_model extends CI_Model
         $this->db->where('BaseTbl.clubID != ', -1 ) ; 
         $this->db->where('BaseTbl.name Like ', '%'.$Search.'%' ) ; 
 
+        $this->db->limit(5) ; 
+
         $query = $this->db->get();
         $result = $query->result();        
         return $result;
@@ -77,7 +78,7 @@ class Search_model extends CI_Model
        $this->db->or_where('Clubs.name Like ', '%'.$Search.'%' ) ;
 
         $this->db->order_by('BaseTbl.startDate','ASC');
-       
+       $this->db->limit(5) ;
 
         $query = $this->db->get();
         
