@@ -156,15 +156,15 @@
                                 <p>
                                   <?php echo $userInfo->sexe ?>  
                                 </p>
-                                <span class="f-title"><i class="fa fa-globe"></i> Country:</span>
+                                <span class="f-title"><i class="fa fa-globe"></i> gouvernorat:</span>
                                 <p>
                                   <?php echo $userInfo->gouvernorat ?> 
                                 </p>
-                                <span class="f-title"><i class="fa fa-briefcase"></i> Occupation:</span>
+                                <span class="f-title"><i class="fa fa-briefcase"></i> Poste:</span>
                                 <p>
-                                  UI/UX Designer 
+                                  <?php echo $userInfo->role ?> <?php echo $userInfo->cellule ?>
                                 </p>
-                                <span class="f-title"><i class="fa fa-handshake-o"></i> Joined:</span>
+                                <span class="f-title"><i class="fa fa-handshake-o"></i> Rejoint:</span>
                                 <p>
                                   <?php echo $userInfo->createdDtm ?>  
                                   <br> par <?php echo $userInfo->parrain ?>  
@@ -194,7 +194,7 @@
                      <div class="col-md-8">
                         
                         <div class="central-meta">
-                  <span class="create-post">General Info<a href="#" title="">See All</a></span>
+                  <span class="create-post">Informations générales<a href="#" title=""></a></span>
                   <div class="row">
                     <div class="col-lg-6">
 
@@ -231,7 +231,7 @@
                          <?php } ?>
                       </div>
                       <div class="gen-metabox">
-                        <span><i class="fa fa-certificate"></i>Skills</span>
+                        <span><i class="fa fa-certificate"></i>Compétences</span>
                         
                         <p>
                           <?php foreach ($skills as $skill) { ?>
@@ -255,7 +255,7 @@
 
 
                 <div class="central-meta">
-                  <span class="create-post">Activité récente<a href="#" title="">See All</a></span>
+                  <span class="create-post">Activités récentes<a href="#" title=""></a></span>
                       <ul class="activitiez">
                          <?php 
                          if(!(empty($scores))){

@@ -324,8 +324,7 @@
                       </figure>
                       <div class="page-meta">
                         <a href="#" title="" class="underline"><?php if ($clubInfo->clubID > 5 ) {echo "club Tunivisions ";}  echo $clubInfo->name ; ?></a>
-                        <span><i class="ti-comment"></i><a href="insight.html" title="">Messages <em>9</em></a></span>
-                        <span><i class="ti-bell"></i><a href="insight.html" title="">Notifications <em>2</em></a></span>
+                        
                       </div>
                       <?php if (($role == 1 ||  $role == 3 ||  $role == 6  )|| $SA== 1 ) { ?>
                       <ul class="page-publishes">

@@ -267,14 +267,14 @@
 
             <!-- Modal Header -->
             <div class="modal-header">
-              <h4 class="modal-title">Invitez un tuniFan</h4>
+              <h4 class="modal-title">Invitez des nouveaux membres</h4>
               <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
 
             <!-- Modal body -->
             <div class="modal-body">
-
-              <div id="qrcode" style="align-content: center ; vertical-align: center"></div>
+              <p style="text-align: center;" >merci de scaner ce QR-code avec une application mobile<br> <b>Android / iOS / HarmonyOs</b>.</p>
+              <div id="qrcode" style="text-align: center;"></div>
               <script type="text/javascript">
                   var qrcode = new QRCode(document.getElementById("qrcode"), {
                     width : 350,
@@ -298,6 +298,9 @@
                       }
                     });
                 </script>
+                <br>
+                
+                <p style="text-align: center;">ce code reste valable jusqu'à<br> <b style="color: red"><?php echo date('d/m/Y')?> 23:59:00</b></p>
 
 
 
