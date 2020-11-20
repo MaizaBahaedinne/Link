@@ -13,12 +13,11 @@
                          <table  class="table table-striped table-responsive-xl" id="tableid" style="width: cover" >
                     <thead>
                     <tr>
-                        <th>Ecole</th>
-                        <th>Region</th>
-                       
-                        <th>Membres</th>
+                        <th width="30%">Ecole</th>
+                        <th width="20%">Region</th>
+                        <th width="10%">Membres</th>
                         <th>Contact</th>
-                        <th>Action</th>
+                        <th width="10%" >Action</th>
                     </tr>
                     </thead>
                     <tbody>
