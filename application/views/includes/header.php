@@ -41,6 +41,7 @@
 
     .alligator-profile-header {
         object-fit: cover;
+        border-radius : 100% ;
         object-position: 20% 50%;
         width: 40px;
         height: 40px;
@@ -269,6 +270,8 @@
 					<a  href="<?php echo base_url() ?>User/ProfileShow/<?php echo $uid ?>">
 						<img class="alligator-profile"  src="<?php echo base_url() ?>uploads/avatar/<?php echo $avatar ?>"  alt="">
 						<h5><?php echo $name ?></h5>
+						<br>
+						<i><a href="<?php echo base_url() ?>logout" title=""><i class="ti-power-off"></i>Se deconnecter</a></i>
 					</a>
 				</li>
 				<li><span>Foundation</span> 
@@ -313,7 +316,7 @@
 		</div>
 		<div class="mh-head second">
 			<form class="mh-form" method="post" action="<?php echo base_url() ?>Search" >
-				<input placeholder="Chercher des Tunimateurs,des clubs, des projets etc" type="text" name="text" required>
+				<input placeholder="Chercher" type="text" name="text" required>
 				<input type="submit"  class="fa fa-search" value=""><i class="fa fa-search" aria-hidden="true"></i></input>
 			</form>
 		</div>
@@ -427,7 +430,7 @@
 								<i class="ti-user"></i> Profile
 							</a>
 						</li>
-						<li><a href="<?php echo base_url() ?>logout" title=""><i class="ti-power-off"></i>log out</a></li>
+						<li><a href="<?php echo base_url() ?>logout" title=""><i class="ti-power-off"></i>Se deconnecter</a></li>
 					</ul>
 				</div>
 			</div>
