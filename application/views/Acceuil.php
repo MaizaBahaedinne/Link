@@ -188,12 +188,13 @@
                               
                               <h2><!-- Titre  --></h2>
                             </a>
+                            <!--
                             <ul class="like-dislike">
                               <li><a class="bg-purple" href="#" title="Save to Pin Post"><i class="fa fa-thumb-tack"></i></a></li>
                               <li><a class="bg-blue" href="#" title="Like Post"><i class="ti-thumb-up"></i></a></li>
                               <li><a class="bg-red" href="#" title="dislike Post"><i class="ti-thumb-down"></i></a></li>
                             </ul>
-
+                              -->
                           </figure>     
                           <?php } ?>                  
                           <div class="description">
@@ -266,7 +267,7 @@
                             
                             <li class="post-comment">
                               <div class="comet-avatar">
-                                <img src="<?php echo base_url() ?>uploads/avatar/<?php echo $post->avatar ?>" class="alligator-profile-likes" alt="">
+                                <img src="<?php echo base_url() ?>uploads/avatar/<?php echo $avatar ?>" class="alligator-profile-likes" alt="">
                               </div>
                               <div class="post-comt-box">
                                 <form method="post" action="<?php echo base_url() ?>Posts/addNewComment/<?php echo $post->postId ?>">
@@ -294,7 +295,7 @@
                                       <i class="em em-stuck_out_tongue"></i>
                                     </div>
 
-                                  <input  class="btn  " type="submit" value="" ></input>
+                                  <input  class="btn  " type="submit" value="" ><i class="fa fa-paper-plane" aria-hidden="true"></i></input>
                                   
                                 </div>
                                   
@@ -323,8 +324,7 @@
                       </figure>
                       <div class="page-meta">
                         <a href="#" title="" class="underline"><?php if ($clubInfo->clubID > 5 ) {echo "club Tunivisions ";}  echo $clubInfo->name ; ?></a>
-                        <span><i class="ti-comment"></i><a href="insight.html" title="">Messages <em>9</em></a></span>
-                        <span><i class="ti-bell"></i><a href="insight.html" title="">Notifications <em>2</em></a></span>
+                        
                       </div>
                       <?php if (($role == 1 ||  $role == 3 ||  $role == 6  )|| $SA== 1 ) { ?>
                       <ul class="page-publishes">

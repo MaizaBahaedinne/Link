@@ -33,13 +33,29 @@
     <style type="text/css">
     .alligator-profile {
         object-fit: cover;
+        border-radius : 100% ;
         object-position: 20% 50%;
         width: 100px;
         height: 100px;
     }
+       .alligator-profile-mobile {
+        object-fit: cover;
+        border-radius : 100% ;
+        object-position: 20% 50%;
+        width: 60px;
+        height: 60px;
+    } 
+    .alligator-profile-search {
+        object-fit: cover;
+        border-radius : 100% ;
+        object-position: 20% 50%;
+        width: 50px;
+        height: 50px;
+    }
 
     .alligator-profile-header {
         object-fit: cover;
+        border-radius : 100% ;
         object-position: 20% 50%;
         width: 40px;
         height: 40px;
@@ -203,10 +219,14 @@
 			<ul>
 				<li style="text-align: center; padding-top: 0.5cm" >
 					<a  href="<?php echo base_url() ?>User/ProfileShow/<?php echo $uid ?>">
-						<img class="alligator-profile"  src="<?php echo base_url() ?>uploads/avatar/<?php echo $avatar ?>"  alt="">
-						<h5><?php echo $name ?></h5>
+						<img class="alligator-profile-mobile"  src="<?php echo base_url() ?>uploads/avatar/<?php echo $avatar ?>"  alt="">
+						<h6><?php echo $name ?></h6>
+						<p><?php echo $role_text ?> <?php echo $cellule ?> </p>
+						<p><b>Tuni-ID</b> : <?php echo $uid ?>-<?php echo $clubID ?> </p>
 					</a>
+					<i><a href="<?php echo base_url() ?>logout" title="" class="btn btn-danger btn-sm"><i class="ti-power-off"></i> Se deconnecter</a></i>
 				</li>
+				<br>
 				<li><span>Foundation</span> 
 					<ul>
 						<li><a href="<?php echo base_url() ?>Club/clubInfo/-1" title="">Board</a></li>
@@ -248,9 +268,9 @@
 			</span>
 		</div>
 		<div class="mh-head second">
-			<form class="mh-form">
-				<input placeholder="search">
-				<a href="#/" class="fa fa-search"></a>
+			<form class="mh-form" method="post" action="<?php echo base_url() ?>Search" >
+				<input placeholder="Chercher" type="text" name="text" required>
+				<input type="submit"  class="fa fa-search" value=""><i class="fa fa-search" aria-hidden="true"></i></input>
 			</form>
 		</div>
 		
@@ -264,8 +284,8 @@
 		<div class="top-area">
 			
 			<div class="top-search">
-				<form method="post" class="">
-					<input type="text" placeholder="Search People, Pages, Groups etc">
+				<form method="post"  action="<?php echo base_url() ?>Search" >
+					<input type="text" name="text" placeholder="Chercher des Tunimateurs,des clubs, des projets etc" required="">
 					<button data-ripple=""><i class="ti-search"></i></button>
 				</form>
 			</div>
@@ -363,7 +383,7 @@
 								<i class="ti-user"></i> Profile
 							</a>
 						</li>
-						<li><a href="<?php echo base_url() ?>logout" title=""><i class="ti-power-off"></i>log out</a></li>
+						<li><a href="<?php echo base_url() ?>logout" title=""><i class="ti-power-off"></i>Se deconnecter</a></li>
 					</ul>
 				</div>
 			</div>

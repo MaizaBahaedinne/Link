@@ -31,7 +31,7 @@ class Club_model extends CI_Model
      */
     function clubListing($SA,$clubID)
     {
-        $this->db->select('BaseTbl.clubID , BaseTbl.name , BaseTbl.is_Actif , BaseTbl.SenJun , BaseTbl.city ');
+        $this->db->select('BaseTbl.clubID , BaseTbl.name , BaseTbl.is_Actif , BaseTbl.SenJun , BaseTbl.city , BaseTbl.email , BaseTbl.facebook ');
         $this->db->from('tbl_club as BaseTbl');
          $this->db->where('BaseTbl.clubID > ', 5 ) ;
          $this->db->where('BaseTbl.clubID != ', -1 ) ; 

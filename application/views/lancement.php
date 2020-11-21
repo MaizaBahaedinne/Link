@@ -12,7 +12,8 @@
                             <div class="col-lg-8">
                                <div class="central-meta">
                                 <h4> Passage obligatoire </h4>
-                                 <section id="activation" >
+                                <?php if($clubID > 5 ) { ?>
+                                <section id="activation" >
                                     <h6> Activation de compte </h6>
                                 <hr>
                                 merci d'introduite le code récu par l'adresse :<b> <a class="text-primary"><?php echo $user->email ?></a></b>
@@ -45,7 +46,7 @@
                                 <section id="quiz" hidden >
                                 <h6> Info session et quiz </h6>
                                 
-                                Vous avez 4 min pour répondre : 
+                                Vous avez 8 min pour répondre : 
 
                                 <br><br><br>
                                 <b>Q1 . Tunivisions a été fondé en  </b><br><br>
@@ -90,7 +91,8 @@
                                  <button>il vous reste : <span id="horloge" ></button></p>
                                 
                                 </section>
-                                <section id="info" hidden  >
+                                <?php } ?>
+                                <section id="info" <?php if($clubID > 5 ) { ?> hidden <?php } ?>  >
                                 
                                     <h6> Informations Personnelle </h6>
 
@@ -326,7 +328,7 @@
             $("#video").hide();
 
 
-             var countDownDate = new Date().getTime() + 4 * 60000;
+             var countDownDate = new Date().getTime() + 8 * 60000;
 
                                 // Update the count down every 1 second
                                 var x = setInterval(function() {

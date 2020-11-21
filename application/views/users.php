@@ -66,14 +66,14 @@
                       
                         <td>              
                                         <a class="kt-user-card-v2__name" href="https://tunivisions.link/User/ProfileShow/<?php echo $record->userId ?>" >
-                                        <small><small> <?php echo $record->name ?> </small></small>
+                                        <?php echo $record->name ?> 
                                         </a>
                                         <br>                              
                                         
                                         <small>  
                                             <small>  
                                                 <?php echo $record->role ?> <?php echo $record->cellule ?> 
-                                                <a class="kt-user-card-v2__name" href="#">
+                                                <a  href="<?php echo base_url() ?>Club/clubInfo/<?php echo $record->clubID ?>">
                                                   <?php echo $record->ClubName ?> 
                                                 </a>    
                                             </small>
@@ -87,17 +87,25 @@
                         
                         
                         <td>
-                            <A HREF="mailto:<?php echo $record->email ?>"><?php echo $record->email ?></A> 
-                            
-                            <a href="<?php echo $record->facebook ?>"><i class="fa fa-facebook"></i></a>
-                        <br>
-                             <a href="tel:<?php echo $record->mobile ?>"><i class="fa fa-phone"></i> <?php echo $record->mobile ?></a>        
+                            <A HREF="mailto:<?php echo $record->email ?>">
+                                <i class="fa fa-mail"></i><?php echo $record->email ?>
+                            </A> 
+                           <br> 
+                            <a href="<?php echo $record->facebook ?>">
+                                <i class="fa fa-facebook"></i> 
+                            </a>
+                         | 
+                        <?php if($SA == 1 ) { ?>
+                             <a href="tel:<?php echo $record->mobile ?>">
+                                <i class="fa fa-phone"></i> <?php echo $record->mobile ?>
+                            </a>   
+                        <?php } ?>    
                          </td>
 
                         <td>
                             <small><small>
 
-                           parrin : <a class="kt-user-card-v2__name" href="https://tunivisions.link/User/ProfileShow/<?php echo $record->p_userId ?>" > <?php echo $record->parrain ?></a><br>
+                           parrin : <a class="kt-user-card-v2__name" href="<?php echo base_url() ?>User/ProfileShow/<?php echo $record->p_userId ?>" > <?php echo $record->parrain ?></a><br>
                            date d'inscription :<a> <?php echo $record->createdDtm ?></a>
                        </small></small>
                         </td>
@@ -105,14 +113,14 @@
                         <td> 
                            
                         <?php if($record->isDeleted == 0) { ?>
-                            <span class="btn btn-Info" > <small> Approuvé  </small></span>
+                            <span class="btn btn-primary btn-sm" >Actif</span>
                         <?php }   ?>
-                        <?php if($record->isDeleted == 1) { ?>
-                            <span class="btn btn-warning" > <small> non approuvé </small> </span>
+                        <?php if($record->isDeleted == 3) { ?>
+                            <span class="btn btn-warning btn-sm" >non Actif</span>
                         <?php } ?>
 
                         <?php  if($record->isDeleted == 2) {  ?>
-                            <span class="btn btn-danger" > <small> bloqué </small> </span>
+                            <span class="btn btn-danger btn-sm" >bloqué</span>
                         <?php } ?>
      
                            

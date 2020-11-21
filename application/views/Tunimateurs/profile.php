@@ -59,17 +59,10 @@
                         <li><span><?php echo count($conferences) ?></span> Conférences</li>
                         <li><span><?php echo '0' ?></span> Missions</li>
                       </ul>
-                      <ol class="pit-rate">
-                        <li class="rated"><i class="fa fa-star"></i></li>
-                        <li class="rated"><i class="fa fa-star"></i></li>
-                        <li class="rated"><i class="fa fa-star"></i></li>
-                        <li class="rated"><i class="fa fa-star"></i></li>
-                        <li class=""><i class="fa fa-star"></i></li>
-                      </ol>
-                      <span>4.7/5</span>
                     </div>
                   </div>
                   <div class="col-lg-12 col-md-12 col-sm-12">
+                    <?php if($userInfo->roleId == 5 ) { ?>
                     <ul class="job-progres">
                       <li><span class="main-color">
                         <?php if (count($eff) > 0 ) 
@@ -80,6 +73,7 @@
                       <li><span class="color-blue"><?php if (count($tasks) > 0 ) { echo count($tasks)  ; }else{ echo "0" ; } ?></span> Tâches</li>
                       <li><span class="color-valvet"><?php if (count($eff) > 0 ) { echo count($eff)  ; }else{ echo "0" ; }  ?></span> Tâches terminées</li>
                     </ul>
+                    <?php } ?>
                   </div>
                   <div class="col-lg-12 col-md-12 col-sm-12">
                     <div class="sharing-tools">
@@ -154,15 +148,15 @@
                                 <p>
                                   <?php echo $userInfo->sexe ?>  
                                 </p>
-                                <span class="f-title"><i class="fa fa-globe"></i> Country:</span>
+                                <span class="f-title"><i class="fa fa-globe"></i> gouvernorat:</span>
                                 <p>
                                   <?php echo $userInfo->gouvernorat ?> 
                                 </p>
-                                <span class="f-title"><i class="fa fa-briefcase"></i> Occupation:</span>
+                                <span class="f-title"><i class="fa fa-briefcase"></i> Poste:</span>
                                 <p>
-                                  UI/UX Designer 
+                                  <?php echo $userInfo->role ?> <?php echo $userInfo->cellule ?>
                                 </p>
-                                <span class="f-title"><i class="fa fa-handshake-o"></i> Joined:</span>
+                                <span class="f-title"><i class="fa fa-handshake-o"></i> Rejoint:</span>
                                 <p>
                                   <?php echo $userInfo->createdDtm ?>  
                                   <br> par <?php echo $userInfo->parrain ?>  
@@ -192,7 +186,7 @@
                      <div class="col-md-8">
                         
                         <div class="central-meta">
-                  <span class="create-post">General Info<a href="#" title="">See All</a></span>
+                  <span class="create-post">Informations générales<a href="#" title=""></a></span>
                   <div class="row">
                     <div class="col-lg-6">
 
@@ -229,7 +223,7 @@
                          <?php } ?>
                       </div>
                       <div class="gen-metabox">
-                        <span><i class="fa fa-certificate"></i>Skills</span>
+                        <span><i class="fa fa-certificate"></i>Compétences</span>
                         
                         <p>
                           <?php foreach ($skills as $skill) { ?>
@@ -253,7 +247,7 @@
 
 
                 <div class="central-meta">
-                  <span class="create-post">Activité récente<a href="#" title="">See All</a></span>
+                  <span class="create-post">Activités récentes<a href="#" title=""></a></span>
                       <ul class="activitiez">
                          <?php 
                          if(!(empty($scores))){
