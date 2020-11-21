@@ -74,6 +74,14 @@ class BaseController extends CI_Controller {
 			$this->global ['loginId']  =  $this->loginId ;
 			$this->global ['Latitude']  =  $this->Latitude ;
 			$this->global ['Longitude']  =  $this->Longitude ;
+
+			$loginInfo = array(
+                    "lastActDTM" => date('Y-m-d H:i:s') ,
+                    'Latitude' =>  $this->Latitude ,
+                    'Longitude' => $this->Longitude  
+                     );
+
+        	$this->login_model->updateLogin($loginInfo, $this->loginId) ;
 		}
 	}
 
@@ -238,13 +246,7 @@ class BaseController extends CI_Controller {
         $headerInfo['ConnrectedUser'] =  $this->login_model->lastLogins() ;
 
 
-                 $loginInfo = array(
-                    "lastActDTM" => date('Y-m-d H:i:s') ,
-                    'Latitude' =>  $Latitude ,
-                    'Longitude' => $Longitude  
-                     );
 
-        $this->login_model->updateLogin($loginInfo, $this->loginId) ;
          
         if($user->isDeleted == 3 ){        
         $this->send_mail($user->email , 
