@@ -98,9 +98,9 @@ class Login extends CI_Controller
 
                 $this->session->set_userdata($sessionArray);
 
-                echo $sessionArray->loginId  ; 
+              
 
-              //  redirect('Posts');
+                redirect('Posts');
             }
             else
             {
