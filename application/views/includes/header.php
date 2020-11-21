@@ -262,7 +262,7 @@
 				<a class="" href="#menu"><i class="fa fa-align-justify"></i></a>
 			</span>
 			<span class="mh-text">
-				<a href="<?php echo base_url() ?>" title=""><img src="<?php echo base_url()?>assets/images/logo.svg" width="30%" alt=""></a>
+				<a href="<?php echo base_url() ?>Posts" title=""><img src="<?php echo base_url()?>assets/images/logo.svg" width="30%" alt=""></a>
 			</span>
 			<span class="mh-btns-right">
 				<a class="fa fa-sliders" href="#shoppingbag"></a>
@@ -280,7 +280,7 @@
 	
 	<div class="topbar stick" style="">
 		<div class="logo">
-			<a title="" href="<?php echo base_url() ?>"><img src="<?php echo base_url()?>assets/images/logo.svg" width="45%" alt=""></a>
+			<a title="" href="<?php echo base_url() ?>Posts"><img src="<?php echo base_url()?>assets/images/logo.svg" width="45%" alt=""></a>
 		</div>
 		<div class="top-area">
 			
