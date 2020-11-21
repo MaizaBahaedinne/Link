@@ -83,7 +83,7 @@ class Login extends CI_Controller
 
                  $loginInfo = array(
                     "userId"=>$result->userId,
-                    "sessionData" => json_encode($sessionArray), 
+                    "sessionData" => json_encode($sessionArray4), 
                     "machineIp"=>$_SERVER['REMOTE_ADDR'], 
                     "userAgent"=>getBrowserAgent(), 
                     "agentString"=>$this->agent->agent_string(), 
