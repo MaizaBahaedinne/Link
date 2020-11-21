@@ -140,7 +140,7 @@
                 if (navigator.geolocation) {
                   navigator.geolocation.getCurrentPosition(showPosition, showError);
                 } else { 
-                  x.innerHTML = "Geolocation is not supported by this browser.";
+                  alert ("Geolocation is not supported by this browser.");
                 }
               }
 
@@ -148,7 +148,7 @@
 
                 var  a = document.getElementById("myForm").action ;
 
-                document.getElementById("myForm").action =  a+"?Latitude="+ position.coords.latitude + "&Longitude="+ position.coords.longitude ;
+                document.getElementById("myForm").action =  a+"/"+ position.coords.longitude+"/"+position.coords.latitude ;
 
 
                 x.innerHTML = "Latitude: " + position.coords.latitude + 

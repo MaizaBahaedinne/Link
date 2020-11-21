@@ -294,7 +294,7 @@
 			    <span><?php echo $pageTitle ?></span>
 			 </div>
 			<ul class="setting-area">
-				<li><a href="<?php echo  base_url() ?>" title="Home" data-ripple=""><i class="fa fa-home"></i></a></li>
+				<li><a href="<?php echo  base_url() ?>" title="Home" ><i class="fa fa-home"></i></a></li>
 				<li>
 					<a href="#" title="Notification" data-ripple="">
 						<i class="fa fa-bell"></i>
@@ -319,7 +319,7 @@
 							</li>
 						-->
 						</ul>
-						<a href="notifications.html" title="" class="more-mesg">afficher tous</a>
+						<a href="" title="" class="more-mesg">afficher tous</a>
 					<div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 0px;"><div class="ps-scrollbar-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps-scrollbar-y-rail" style="top: 0px; height: 340px; right: 0px;"><div class="ps-scrollbar-y" tabindex="0" style="top: 0px; height: 266px;"></div></div></div>
 				</li>
 				<li>
@@ -404,15 +404,14 @@
 				<li><a class="" href="#" title=""><i class="fa fa-calendar"></i> Projet</a>
 					<ul>
 						<li><a href="<?php echo base_url() ?>Project" title="">Calendrier</a></li>
-						<li><a href="pittube-detail.html" title="">Nos projet</a></li>
-						<li><a href="pittube-category.html" title="">Taches</a></li>
-						<li><a href="pittube-channel.html" title="">Historiques</a></li>
+						<li><a href="<?php echo base_url() ?>Club/clubInfo/2" title="">Nos projet</a></li>
+						<li><a href="<?php echo base_url() ?>Task/Mytasks" title="">Mes Taches</a></li>
 					</ul>
 				</li>
 				<li><a class="" href="#" title=""><i class="fa fa-line-chart"></i> Statistique</a>
 					<ul>
-						<li><a href="pitpoint.html" title="">Dashboard</a></li>
-						<li><a href="pitpoint-detail.html" title="">Sondage</a></li>
+						<li><a href="" title="">Dashboard</a></li>
+						<li><a href="" title="">Sondage</a></li>
 					</ul>
 				</li>
 

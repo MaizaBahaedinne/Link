@@ -17,6 +17,11 @@ class BaseController extends CI_Controller {
 	protected $clubID = '';
 	protected $global = array ();
 	protected $lastLogin = '';
+	protected $loginId = '';
+	protected $Latitude = '';
+	protected $Longitude = '';
+
+
 	
 	/**
 	 * Takes mixed data and optionally a status code, then creates the response
@@ -51,6 +56,9 @@ class BaseController extends CI_Controller {
 			$this->isBlocked = $this->session->userdata ( 'isDeleted' );
 			$this->SA = $this->session->userdata ( 'SA' );
 			$this->HUA  =  $this->session->userdata ( 'HUA' )  ;
+			$this->loginId  =  $this->session->userdata ( 'loginId' )  ;
+			$this->Latitude  =  $this->session->userdata ( 'Latitude' )  ;
+			$this->Longitude  =  $this->session->userdata ( 'Longitude' )  ;
 
 			$this->global ['uid'] = $this->vendorId;
 			$this->global ['name'] = $this->name;
@@ -63,6 +71,9 @@ class BaseController extends CI_Controller {
 			$this->global ['isBlocked'] = $this->isBlocked;
 			$this->global ['SA'] = $this->SA;
 			$this->global ['HUA']  =  $this->HUA ;
+			$this->global ['loginId']  =  $this->loginId ;
+			$this->global ['Latitude']  =  $this->Latitude ;
+			$this->global ['Longitude']  =  $this->Longitude ;
 		}
 	}
 
@@ -98,17 +109,14 @@ class BaseController extends CI_Controller {
 			$this->global ['HUA'] = $this->HUA;
 			$this->global ['isBlocked'] = $this->isBlocked;
 			$this->global ['SA'] = $this->SA;
-
-
-
+			$this->global ['Latitude']  =  $this->Latitude ;
+			$this->global ['Longitude']  =  $this->Longitude ;
 		}
 	}
 
 
 	public function send_mail($to, $subject  , $data , $content )
     {       
-
-
 
                  // Load PHPMailer library
                     $this->load->library('phpmailer_lib');

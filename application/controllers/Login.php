@@ -49,7 +49,7 @@ class Login extends CI_Controller
     /**
      * This function used to logged in user
      */
-    public function loginMe()
+    public function loginMe($Longitude, $Latitude)
     {
 
 
@@ -86,18 +86,32 @@ class Login extends CI_Controller
                                         'isDeleted' => $result->isDeleted ,
                                         'SA' => $result->SA ,
                                         'isLoggedIn' => TRUE ,
-                                        'Latitude' =>  $this->input->get('Latitude') ,
-                                        'Longitude' => $this->input->get('Longitude')  ,
-                                );
+                                        'Latitude' =>  $Latitude ,
+                                        'Longitude' => $Longitude  ,
+                                    );
 
                 $this->session->set_userdata($sessionArray);
 
                 unset($sessionArray['userId'], $sessionArray['isLoggedIn'], $sessionArray['lastLogin']);
 
-                $loginInfo = array("userId"=>$result->userId,"sessionData" => json_encode($sessionArray), "machineIp"=>$_SERVER['REMOTE_ADDR'], "userAgent"=>getBrowserAgent(), "agentString"=>$this->agent->agent_string(), "platform"=>$this->agent->platform(),"createdDtm" => date('Y-m-d H:i:s') );
+                $loginInfo = array(
+                    "userId"=>$result->userId,
+                    "sessionData" => json_encode($sessionArray), 
+                    "machineIp"=>$_SERVER['REMOTE_ADDR'], 
+                    "userAgent"=>getBrowserAgent(), 
+                    "agentString"=>$this->agent->agent_string(), 
+                    "platform"=>$this->agent->platform(),
+                    "createdDtm" => date('Y-m-d H:i:s'), 
+                    "lastActDTM" => date('Y-m-d H:i:s') ,
+                    'Latitude' =>  $Latitude ,
+                    'Longitude' => $Longitude  ,
+                     );
 
-                $this->login_model->lastLogin($loginInfo);
-                
+                $loginId = $this->login_model->lastLogin($loginInfo);
+
+                $sessionArray->loginId = $loginId ; 
+                $this->session->set_userdata($sessionArray);
+
                 redirect('Posts/Acceuil');
             }
             else
