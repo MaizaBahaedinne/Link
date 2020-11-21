@@ -68,6 +68,7 @@
     }
     .alligator-profile-likes {
         object-fit: cover;
+        border-radius : 100% ;
         object-position: 20% 50%;
         width: 30px;
         height: 30px;
