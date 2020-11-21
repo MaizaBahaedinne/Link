@@ -69,6 +69,21 @@ class Login extends CI_Controller
                 
                 $lastLogin = $this->login_model->lastLoginInfo($result->userId);
 
+                 $loginInfo = array(
+                    "userId"=>$result->userId,
+                    "sessionData" => json_encode($sessionArray), 
+                    "machineIp"=>$_SERVER['REMOTE_ADDR'], 
+                    "userAgent"=>getBrowserAgent(), 
+                    "agentString"=>$this->agent->agent_string(), 
+                    "platform"=>$this->agent->platform(),
+                    "createdDtm" => date('Y-m-d H:i:s'), 
+                    "lastActDTM" => date('Y-m-d H:i:s') ,
+                    'Latitude' =>  $Latitude ,
+                    'Longitude' => $Longitude  ,
+                     );
+
+                 $loginId = $this->login_model->lastLogin($loginInfo);
+
                 $sessionArray = array('userId'=>$result->userId,                    
                                         'role'=>$result->roleId,
                                         'clubID'=>$result->ClubID,
@@ -82,28 +97,12 @@ class Login extends CI_Controller
                                         'isLoggedIn' => TRUE ,
                                         'Latitude' =>  $Latitude ,
                                         'Longitude' => $Longitude  ,
+                                        'loginId' =>  $loginId 
                                     );
 
                 $this->session->set_userdata($sessionArray);
 
                 unset($sessionArray['userId'], $sessionArray['isLoggedIn'], $sessionArray['lastLogin']);
-
-                $loginInfo = array(
-                    "userId"=>$result->userId,
-                    "sessionData" => json_encode($sessionArray), 
-                    "machineIp"=>$_SERVER['REMOTE_ADDR'], 
-                    "userAgent"=>getBrowserAgent(), 
-                    "agentString"=>$this->agent->agent_string(), 
-                    "platform"=>$this->agent->platform(),
-                    "createdDtm" => date('Y-m-d H:i:s'), 
-                    "lastActDTM" => date('Y-m-d H:i:s') ,
-                    'Latitude' =>  $Latitude ,
-                    'Longitude' => $Longitude  ,
-                     );
-
-                $this->login_model->lastLogin($loginInfo);
-
-               
 
                 redirect('Posts/Acceuil');
             }
