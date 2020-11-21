@@ -49,13 +49,8 @@ class Login extends CI_Controller
     /**
      * This function used to logged in user
      */
-    public function loginMe($Longitude, $Latitude)
+    public function loginMe($Longitude,$Latitude)
     {
-
-
-       
-        
-       
       
             $email = $this->input->post('mail');
             $password = $this->input->post('password');
@@ -103,9 +98,9 @@ class Login extends CI_Controller
 
                 $this->session->set_userdata($sessionArray);
 
-                unset($sessionArray['userId'], $sessionArray['isLoggedIn'], $sessionArray['lastLogin']);
+                echo $sessionArray->loginId  ; 
 
-                redirect('Posts/Acceuil');
+              //  redirect('Posts');
             }
             else
             {
