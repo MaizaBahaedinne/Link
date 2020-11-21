@@ -131,60 +131,56 @@
     
     	<script src="<?php echo base_url() ?>assets/js/main.min.js"></script>
 		<script src="<?php echo base_url() ?>assets/js/script.js"></script>
-		<script>
-		
 
-             var x = document.getElementById("demo");
+        <script>
+          var x = document.getElementById("demo");
 
-              function getLocation() {
-                if (navigator.geolocation) {
-                  navigator.geolocation.getCurrentPosition(showPosition, showError);
-                } else { 
-                  alert ("Geolocation is not supported by this browser.");
-                }
-              }
-
-              function showPosition(position) {
-
-                var  a = document.getElementById("myForm").action ;
-
-                document.getElementById("myForm").action =  a+"/"+ position.coords.longitude+"/"+position.coords.latitude ;
-
-
-                x.innerHTML = "Latitude: " + position.coords.latitude + 
-                "<br>Longitude: " + position.coords.longitude;
-              }
-
-              function showError(error) {
-                switch(error.code) {
-                  case error.PERMISSION_DENIED:
-                                Swal.fire({
-                                  title: 'il est strictement obligatoire d\'activer la géolocalisation.',
-                                  width: 600,
-                                  allowOutsideClick: false,
-                                  padding: '3em',
-                                  background: '#fff url(/images/trees.png)',
-                                  backdrop: `
-                                    rgba(0,0,123,0.4)
-                                    url("/images/nyan-cat.gif")
-                                    left top
-                                    no-repeat
-                                  `
-                                })
-                    break;
-                  case error.POSITION_UNAVAILABLE:
-                    x.innerHTML = "Location information is unavailable."
-                    break;
-                  case error.TIMEOUT:
-                    x.innerHTML = "The request to get user location timed out."
-                    break;
-                  case error.UNKNOWN_ERROR:
-                    x.innerHTML = "An unknown error occurred."
-                    break;
-                }
-
+          function getLocation() {
+            if (navigator.geolocation) {
+              navigator.geolocation.getCurrentPosition(showPosition, showError);
+            } else { 
+              x.innerHTML = "Geolocation is not supported by this browser.";
             }
-      </script>
+          }
+
+          function showPosition(position) {
+                         var  a = document.getElementById("myForm").action ;
+
+                        document.getElementById("myForm").action =  a+"/"+ position.coords.longitude+"/"+position.coords.latitude ;
+
+
+                        x.innerHTML = "Latitude: " + position.coords.latitude + 
+                        "<br>Longitude: " + position.coords.longitude;
+          }
+
+          function showError(error) {
+            switch(error.code) {
+              case error.PERMISSION_DENIED:
+                  alert("l'activation de service de géolocalisation est obligatoir") ;
+                  window.location.replace("<?php echo base_url() ?>logout")
+                break;
+              case error.POSITION_UNAVAILABLE:
+                x.innerHTML = "Location information is unavailable."
+                break;
+              case error.TIMEOUT:
+                x.innerHTML = "The request to get user location timed out."
+                break;
+              case error.UNKNOWN_ERROR:
+                x.innerHTML = "An unknown error occurred."
+                break;
+            }
+          }
+        </script>
+
+  <script type="text/javascript">
+         window.addEventListener("load", function(event) {
+          getLocation();
+            console.log("Toutes les ressources sont chargées !");
+
+          });
+     </script>   
+
+		
 
 
 </body>
