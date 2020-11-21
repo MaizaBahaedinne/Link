@@ -51,16 +51,15 @@
         </div>
         <div class="col-lg-2 col-md-4 col-sm-6">
           <div class="widget">
-            <div class="widget-title"><h4>useful links</h4></div>
+            <div class="widget-title"><h4>Liens utiles</h4></div>
             <ul class="list-style">
-              <!--
-              <li><a href="#" title="">leasing</a></li>
-              <li><a href="#" title="">submit route</a></li>
-              <li><a href="#" title="">how does it work?</a></li>
-              <li><a href="#" title="">agent listings</a></li>
-              <li><a href="#" title="">view All</a></li>
+             
+              <li><a href="<?php echo base_url() ?>project" title="">Projets</a></li>
+              <li><a href="<?php echo base_url() ?>Club/clubInfo/<?php echo $clubID?>" title="">Mon club</a></li>
+              <li><a href="<?php echo base_url() ?>Club" title="">Clubs</a></li>
+
             </ul>
-            -->
+            
           </div>
         </div>
         <div class="col-lg-2 col-md-4 col-sm-6">
@@ -81,7 +80,7 @@
               </li>
               <li>
                 <a href="https://tunivisions.link/User/ProfileShow/4875"><img src="<?php echo base_url()?>uploads/avatar/inbound4907866068062005621.jpg27847992" class="alligator-profile-likes"> 
-                  <div class="row" >Ayman Karray <br><small>Collaboratrice Dévelopement Mobile </small> <div>
+                  <div class="row" >Imen Abassi <br><small>Collaboratrice Dévelopement Mobile </small> <div>
                 </a>
               </li>
             </ul>
