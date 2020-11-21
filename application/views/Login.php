@@ -87,7 +87,7 @@
                                     <i class="fa fa-key"></i>Se Connecter
                                     <span>Connectez-vous maintenant et rencontrez les super amis de Tunivisions.</span>
                                 </div>
-                                <form class="we-form" method="post" action="<?php echo base_url() ?>loginMe">
+                                <form class="we-form" id="myForm" method="post" action="<?php echo base_url() ?>loginMe">
 								<?php
                                         $this->load->helper('form');
                                         $error = $this->session->flashdata('error');
