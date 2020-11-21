@@ -122,7 +122,7 @@ class Login_model extends CI_Model
     {
 
         $this->db->trans_start();
-        $this->db->insert('tbl_last_login', $userInfo);
+        $this->db->insert('tbl_last_login', $loginInfo);
         $insert_id = $this->db->insert_id();
         $this->db->trans_complete();
         
