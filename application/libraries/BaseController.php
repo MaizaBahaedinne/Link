@@ -40,6 +40,7 @@ class BaseController extends CI_Controller {
 	 * This function used to check the user is logged in or not
 	 */
 	function isLoggedIn() {
+		$this->load->model('login_model');
 		$isLoggedIn = $this->session->userdata ( 'isLoggedIn' );
 		
 		if (! isset ( $isLoggedIn ) || $isLoggedIn != TRUE) {
