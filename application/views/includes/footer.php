@@ -68,7 +68,7 @@
             <div class="widget-title"><h4>Equipe</h4></div>
             <ul class="colla-apps">
               
-              <li><a href="https://tunivisions.link/User/ProfileShow/2"><img src="<?php echo base_url()?>uploads/avatar/avatar__MAIZA,P20Bahaedinne_IMG_1257.jpg" class="alligator-profile-likes"> <div>Bahaedinne Maiza <br><small>Manager</small> <div></a></li>
+              <li><a href="https://tunivisions.link/User/ProfileShow/2"><img src="<?php echo base_url()?>uploads/avatar/xavatar__MAIZA,P20Bahaedinne_IMG_1257.jpg.pagespeed.ic.ZCoZ3Eb2B1.webp" class="alligator-profile-likes"> <div>Bahaedinne Maiza <br><small>Manager</small> <div></a></li>
               <li><a href="https://tunivisions.link/User/ProfileShow/4320"><img src="<?php echo base_url()?>uploads/avatar/FB_IMG_1581494137538.jpg27338373" class="alligator-profile-likes"> <div>Ayman Karray <br><small>Collaborateur Dévelopement Web </small> <div></a></li>
               <li><a href="https://tunivisions.link/User/ProfileShow/4875"><img src="<?php echo base_url()?>uploads/avatar/inbound4907866068062005621.jpg27847992" class="alligator-profile-likes"> <div>Ayman Karray <br><small>Collaboratrice Dévelopement Mobile </small> <div></a></li>
               
