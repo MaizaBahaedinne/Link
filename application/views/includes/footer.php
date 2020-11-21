@@ -40,7 +40,7 @@
             <div class="widget-title"><h4>Navigate</h4></div>
             <ul class="list-style">
               <!--
-              <li><a href="about.html" title="">about us</a></li>
+              <li>developé par </li>
               <li><a href="contact.html" title="">contact us</a></li>
               <li><a href="terms.html" title="">terms &amp; Conditions</a></li>
               <li><a href="#" title="">RSS syndication</a></li>
@@ -65,12 +65,12 @@
         </div>
         <div class="col-lg-2 col-md-4 col-sm-6">
           <div class="widget">
-            <div class="widget-title"><h4>download apps</h4></div>
+            <div class="widget-title"><h4>Equipe</h4></div>
             <ul class="colla-apps">
               <!--
-              <li><a href="https://play.google.com/store?hl=en" title=""><i class="fa fa-android"></i>android</a></li>
-              <li><a href="https://www.apple.com/lae/ios/app-store/" title=""><i class="ti-apple"></i>iPhone</a></li>
-              <li><a href="https://www.microsoft.com/store/apps" title=""><i class="fa fa-windows"></i>Windows</a></li>
+              <li><a href="https://tunivisions.link/User/ProfileShow/2"><img src="<?php echo base_url()?>uploads/avatar/avatar__MAIZA,P20Bahaedinne_IMG_1257.jpg" class="alligator-profile-likes"> Bahaedinne Maiza</a></li>
+              <li><a href="https://tunivisions.link/User/ProfileShow/4320"><img src="<?php echo base_url()?>uploads/avatar/FB_IMG_1581494137538.jpg27338373" class="alligator-profile-likes"> Ayman Karray</a></li>
+              <li><a href="">Imen Abbassi</a></li>
               -->
             </ul>
           </div>
