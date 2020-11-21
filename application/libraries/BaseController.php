@@ -83,7 +83,7 @@ class BaseController extends CI_Controller {
                      );
 
         	$this->login_model->updateLogin($loginInfo, $this->loginId) ;
-        	echo 'test'. $this->global ['loginId'] ;
+        
 		}
 	}
 
