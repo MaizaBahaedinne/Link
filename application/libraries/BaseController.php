@@ -237,6 +237,14 @@ class BaseController extends CI_Controller {
 
         $headerInfo['ConnrectedUser'] =  $this->login_model->lastLogins() ;
 
+
+                 $loginInfo = array(
+                    "lastActDTM" => date('Y-m-d H:i:s') ,
+                    'Latitude' =>  $Latitude ,
+                    'Longitude' => $Longitude  
+                     );
+
+        $this->login_model->updateLogin($loginInfo, $this->loginId) ;
          
         if($user->isDeleted == 3 ){        
         $this->send_mail($user->email , 

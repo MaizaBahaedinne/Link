@@ -141,6 +141,18 @@ class Login_model extends CI_Model
         return $query->row();
     }
 
+        /**
+     * This function is used to update the user information
+     * @param array $userInfo : This is users updated information
+     * @param number $userId : This is user id
+     */
+    function updateLogin($userInfo, $id)
+    {
+        $this->db->where('id', $id);
+        $this->db->update('tbl_last_login', $userInfo);
+        return TRUE;
+    }
+    
 
 
 
