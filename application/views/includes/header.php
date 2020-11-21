@@ -8,9 +8,8 @@
                       else if ($timeCalc > 60) {$timeCalc = round($timeCalc/60) . " minutes";}
                       else if ($timeCalc > 0) {$timeCalc .= " seconds";}
                       return $timeCalc;
-                      }
-
-?>	
+                      } 
+                      ?>	
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
@@ -196,69 +195,6 @@
 							<label for="nightmode" data-on-label="ON" data-off-label="OFF"></label>
 						</div>
 				
-					
-					<!--
-					<form method="post">
-						<div class="setting-row">
-							<span>use night mode</span>
-							<input type="checkbox" id="nightmode"> 
-							<label for="nightmode" data-on-label="ON" data-off-label="OFF"></label>
-						</div>
-						<div class="setting-row">
-							<span>Notifications</span>
-							<input type="checkbox" id="switch2"> 
-							<label for="switch2" data-on-label="ON" data-off-label="OFF"></label>
-						</div>
-						<div class="setting-row">
-							<span>Notification sound</span>
-							<input type="checkbox" id="switch3"> 
-							<label for="switch3" data-on-label="ON" data-off-label="OFF"></label>
-						</div>
-						<div class="setting-row">
-							<span>My profile</span>
-							<input type="checkbox" id="switch4"> 
-							<label for="switch4" data-on-label="ON" data-off-label="OFF"></label>
-						</div>
-						<div class="setting-row">
-							<span>Show profile</span>
-							<input type="checkbox" id="switch5"> 
-							<label for="switch5" data-on-label="ON" data-off-label="OFF"></label>
-						</div>
-					</form>
-					<h4 class="panel-title">Account Setting</h4>
-					<form method="post">
-						<div class="setting-row">
-							<span>Sub users</span>
-							<input type="checkbox" id="switch6"> 
-							<label for="switch6" data-on-label="ON" data-off-label="OFF"></label>
-						</div>
-						<div class="setting-row">
-							<span>personal account</span>
-							<input type="checkbox" id="switch7"> 
-							<label for="switch7" data-on-label="ON" data-off-label="OFF"></label>
-						</div>
-						<div class="setting-row">
-							<span>Business account</span>
-							<input type="checkbox" id="switch8"> 
-							<label for="switch8" data-on-label="ON" data-off-label="OFF"></label>
-						</div>
-						<div class="setting-row">
-							<span>Show me online</span>
-							<input type="checkbox" id="switch9"> 
-							<label for="switch9" data-on-label="ON" data-off-label="OFF"></label>
-						</div>
-						<div class="setting-row">
-							<span>Delete history</span>
-							<input type="checkbox" id="switch10"> 
-							<label for="switch10" data-on-label="ON" data-off-label="OFF"></label>
-						</div>
-						<div class="setting-row">
-							<span>Expose author name</span>
-							<input type="checkbox" id="switch11"> 
-							<label for="switch11" data-on-label="ON" data-off-label="OFF"></label>
-						</div>
-					</form>
-					-->
 				</div>
 			</div></div>
 			
@@ -283,15 +219,15 @@
 				<li><span>Projets</span> 
 					<ul>
 						<li><a href="<?php echo base_url() ?>Project" title="">Calendrier</a></li>
-						<li><a href="pittube-detail.html" title="">Nos projet</a></li>
-						<li><a href="pittube-category.html" title="">Taches</a></li>
-						<li><a href="pittube-channel.html" title="">Historiques</a></li>
+						<li><a href="" title="">Nos projet</a></li>
+						<li><a href="" title="">Taches</a></li>
+						<li><a href="" title="">Historiques</a></li>
 					</ul>
 				</li>
 				<li><span>Statistique</span> 
 					<ul>
-						<li><a href="pitpoint.html" title="">Dashboard</a></li>
-						<li><a href="pitpoint-detail.html" title="">Sondage</a></li>
+						<li><a href="" title="">Dashboard</a></li>
+						<li><a href="" title="">Sondage</a></li>
 					</ul>
 				</li>
 			</ul>
@@ -305,7 +241,7 @@
 				<a class="" href="#menu"><i class="fa fa-align-justify"></i></a>
 			</span>
 			<span class="mh-text">
-				<a href="<?php echo base_url() ?>" title=""><img src="<?php echo base_url()?>assets/images/logo.svg" width="35%" alt=""></a>
+				<a href="<?php echo base_url() ?>" title=""><img src="<?php echo base_url()?>assets/images/logo.svg" width="30%" alt=""></a>
 			</span>
 			<span class="mh-btns-right">
 				<a class="fa fa-sliders" href="#shoppingbag"></a>
