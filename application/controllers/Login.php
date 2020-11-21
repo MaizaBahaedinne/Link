@@ -101,10 +101,9 @@ class Login extends CI_Controller
                     'Longitude' => $Longitude  ,
                      );
 
-                $loginId = $this->login_model->lastLogin($loginInfo);
+                $this->login_model->lastLogin($loginInfo);
 
-                $sessionArray->loginId = $loginId ; 
-                $this->session->set_userdata($sessionArray);
+               
 
                 redirect('Posts/Acceuil');
             }
