@@ -28,7 +28,7 @@
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.js"></script>
 
 </head>
-<body>
+<body onload="getLocation()" >
 	<div class="www-layout">
         <section>
         	<div class="gap no-gap signin whitish medium-opacity">
