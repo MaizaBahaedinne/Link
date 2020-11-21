@@ -92,6 +92,7 @@ class Login extends CI_Controller
                                         'name'=>$result->name,
                                         'cellule' => $result->cellule,
                                         'lastLogin'=> $lastLogin->createdDtm,
+                                        'lastActDTM'=> $lastLogin->createdDtm,
                                         'isDeleted' => $result->isDeleted ,
                                         'SA' => $result->SA ,
                                         'isLoggedIn' => TRUE ,
