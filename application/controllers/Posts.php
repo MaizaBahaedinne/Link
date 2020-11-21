@@ -41,7 +41,7 @@ class Posts extends BaseController {
 
           
          $this->global['pageTitle'] = 'Acceuil' ;
-         $this->loadViews("Acceuil", $this->global, $data, NULL);   
+      //   $this->loadViews("Acceuil", $this->global, $data, NULL);   
     }
 
 
