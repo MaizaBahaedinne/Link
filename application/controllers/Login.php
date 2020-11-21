@@ -57,7 +57,7 @@ class Login extends CI_Controller
             
             $result = $this->login_model->loginMe($email, $password);
             
-            echo $result ;
+            
 
             if(!empty($result))
             {
