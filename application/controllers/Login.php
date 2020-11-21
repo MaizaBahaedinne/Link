@@ -64,6 +64,23 @@ class Login extends CI_Controller
                 
                 $lastLogin = $this->login_model->lastLoginInfo($result->userId);
 
+                $sessionArray4 = array('userId'=>$result->userId,                    
+                                        'role'=>$result->roleId,
+                                        'clubID'=>$result->ClubID,
+                                        'avatar'=>$result->avatar,
+                                        'roleText'=>$result->role,
+                                        'name'=>$result->name,
+                                        'cellule' => $result->cellule,
+                                        'lastLogin'=> $lastLogin->createdDtm,
+                                        'lastActDTM'=> $lastLogin->createdDtm,
+                                        'isDeleted' => $result->isDeleted ,
+                                        'SA' => $result->SA ,
+                                        'isLoggedIn' => TRUE ,
+                                        'Latitude' =>  $Latitude ,
+                                        'Longitude' => $Longitude  ,
+                                    );
+
+
                  $loginInfo = array(
                     "userId"=>$result->userId,
                     "sessionData" => json_encode($sessionArray), 
