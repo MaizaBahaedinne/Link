@@ -8,7 +8,7 @@
                 <a href="<?php echo base_url()?>" title=""><img src="<?php echo base_url() ?>assets/images/logo2.svg" width="150" alt=""></a>
               </div>  
               <p>
-                The trio took this simple idea and built it into the world’s leading students network platform.
+                Le trio a pris cette simple idée et l'a intégrée dans la plate-forme du premier réseau estudiantin en Tunisie.
               </p>
             </div>
             <ul class="location">
@@ -37,7 +37,7 @@
         </div>
         <div class="col-lg-2 col-md-4 col-sm-6">
           <div class="widget">
-            <div class="widget-title"><h4>Navigate</h4></div>
+            <div class="widget-title"><h4>Naviguer</h4></div>
             <ul class="list-style">
               <!--
               <li>developé par </li>
@@ -69,18 +69,18 @@
               
               <li>
                 <a href="https://tunivisions.link/User/ProfileShow/2"><img src="<?php echo base_url()?>uploads/avatar/xavatar__MAIZA,P20Bahaedinne_IMG_1257.jpg.pagespeed.ic.ZCoZ3Eb2B1.webp" class="alligator-profile-likes"> 
-                  <div class="row">Bahaedinne Maiza <br><small>Manager</small> <div>
+                  <div >Bahaedinne Maiza <br><small>Manager</small> <div>
                 </a>
               </li>
               <li>
                 <a href="https://tunivisions.link/User/ProfileShow/4320">
                   <img src="<?php echo base_url()?>uploads/avatar/FB_IMG_1581494137538.jpg27338373" class="alligator-profile-likes"> 
-                  <div class="row" >Ayman Karray <br><small>Collaborateur Dévelopement Web </small> <div>
+                  <div  >Ayman Karray <br><small>Collaborateur Dévelopement Web </small> <div>
                 </a>
               </li>
               <li>
                 <a href="https://tunivisions.link/User/ProfileShow/4875"><img src="<?php echo base_url()?>uploads/avatar/inbound4907866068062005621.jpg27847992" class="alligator-profile-likes"> 
-                  <div class="row" >Imen Abassi <br><small>Collaboratrice Dévelopement Mobile </small> <div>
+                  <div  >Imen Abassi <br><small>Collaboratrice Dévelopement Mobile </small> <div>
                 </a>
               </li>
             </ul>
