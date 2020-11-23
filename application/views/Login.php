@@ -113,7 +113,7 @@
                                     <input type="text" name="mail" placeholder="E-Mail">
                                     <input type="password" name="password" placeholder="Mot de passe">
                                     <!--<input type="checkbox"><label>remember me</label>-->
-                                    <input type="submit" id="login" data-ripple="" value="Login">
+                                    <input type="submit" disabled id="login" data-ripple="" value="Login">
                                     <div id="alert"></div>
                                     
                                 </form>
