@@ -45,6 +45,12 @@ class Posts extends BaseController {
     }
 
 
+      public function Acceuil()
+      {
+        $this->index() ;
+      }
+
+
 
     public function post($postId)
     {   

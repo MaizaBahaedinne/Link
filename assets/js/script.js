@@ -215,7 +215,7 @@ $('.audio-call, .video-call').on('click', function () {
 		  if(!animated){
 
 		  	$.ajax({
-		        url: "Like/" + this.id ,
+		        url: "Posts/Like/" + this.id ,
 		        type: "post"
 		    	}).done(function(){
 						$(this).addClass('happy').removeClass('broken');
