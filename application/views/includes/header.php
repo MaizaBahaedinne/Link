@@ -463,7 +463,7 @@
 					</a>
 				</li>
 				<li>
-					<a href="<?php echo base_url() ?>Club/clubInfo/<?php echo $clubID ?>" title="" data-toggle="tooltip" data-placement="right" data-original-title="<?php if ($userInfo->clubID > 5 ) {echo "club ";}  echo 'Tunivisions '.$userInfo->ClubName ; ?>">
+					<a href="<?php echo base_url() ?>Club/clubInfo/<?php echo $clubID ?>" title="" data-toggle="tooltip" data-placement="right" data-original-title="<?php if ($userC->clubID > 5 ) {echo "club ";}  echo 'Tunivisions '.$userC->ClubName ; ?>">
 						<i class="ti-heart"></i>
 					</a>
 				</li>
