@@ -69,6 +69,7 @@
                                     </div>
                                 </div>
                                 <div class="barcode">
+                                    <!--
                                     <figure><img src="<?php echo base_url() ?>assets/images/resources/Barcode.jpg" alt=""></figure>
                                     <div class="app-download">
                                         <span>Patager le T-Link avec vos amis</span>
@@ -78,6 +79,7 @@
                                             <li><a title="" href="https://www.microsoft.com/store/apps"><img src="<?php echo base_url() ?>assets/images/windows.png" alt="">Windows</a></li>
                                         </ul>
                                     </div>
+                                    -->
                                 </div>
                             </div>
                         </div>
@@ -110,8 +112,9 @@
                                       <?php } ?>
                                     <input type="text" name="mail" placeholder="E-Mail">
                                     <input type="password" name="password" placeholder="Mot de passe">
-                                    <input type="checkbox"><label>remember me</label>
-                                    <input type="submit" data-ripple="" value="Login">
+                                    <!--<input type="checkbox"><label>remember me</label>-->
+                                    <input type="submit" id="login" data-ripple="" value="Login">
+                                    <div id="alert"></div>
                                     
                                 </form>
                                 <br>
@@ -133,7 +136,7 @@
 		<script src="<?php echo base_url() ?>assets/js/script.js"></script>
 
         <script>
-          var x = document.getElementById("demo");
+          var x = document.getElementById("alert");
 
           function getLocation() {
             if (navigator.geolocation) {
@@ -147,26 +150,24 @@
                          var  a = document.getElementById("myForm").action ;
 
                         document.getElementById("myForm").action =  a+"/"+ position.coords.longitude+"/"+position.coords.latitude ;
+                        document.getElementById("login").disabled = false; ; 
 
-
-                        x.innerHTML = "Latitude: " + position.coords.latitude + 
-                        "<br>Longitude: " + position.coords.longitude;
+                        
           }
 
           function showError(error) {
             switch(error.code) {
               case error.PERMISSION_DENIED:
-                  alert("l'activation de service de géolocalisation est obligatoir") ;
-                  window.location.replace("<?php echo base_url() ?>logout")
+                  alert("l'activation de service de géolocalisation est obligatoire") ;
                 break;
               case error.POSITION_UNAVAILABLE:
-                x.innerHTML = "Location information is unavailable."
+                x.innerHTML = "Les informations de localisation ne sont pas disponibles."
                 break;
               case error.TIMEOUT:
-                x.innerHTML = "The request to get user location timed out."
+                x.innerHTML = "La demande d’obtention de l’emplacement de l’utilisateur a expiré."
                 break;
               case error.UNKNOWN_ERROR:
-                x.innerHTML = "An unknown error occurred."
+                x.innerHTML = "Une erreur inconnue est survenue."
                 break;
             }
           }
