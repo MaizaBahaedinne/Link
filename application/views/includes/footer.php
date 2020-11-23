@@ -444,5 +444,54 @@
 
 
 
+     <div class="modal fade" id="AlumniGO">
+        <div class="modal-dialog ">
+          <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title">Formulaire d'integration des nouveaux Alumni </h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+             
+              <form class="c-form" method="post" action="<?php echo base_url()?>User/goAlumni" >
+              <label> Choisir une unité : </label>
+              <select class="form-control"  name="cellule" required>
+                   <option value="" ></option>
+                   <option value="Unité developement T-Link" >Unité developement T-Link </option>
+                   <option value="Unité developement site web" >Unité developement site web </option>
+                   <option value="Unité developement strategique" >Unité developement strategique </option>
+                   <option value="Unité création de contenu" >Unité création de contenu </option>
+                   <option value="Unité communication" >Unité communication </option>
+                   <option value="Unité reglementation et proccess" >Unité reglementation et proccess </option>
+                   <option value="Unité juridique" >Unité juridique </option>
+                   <option value="Unité accadémique" >Unité accadémique </option>
+                   <option value="Unité des partenariats" >Unité des partenariats </option>
+                   <option value="Unité des relations internationale" >Unité des relations internationale </option>
+                   <option value="Unité we are campers" >Unité we are campers </option>
+                   <option value="Unité we are carthage" >Unité we are carthage </option>
+                    <option value="Unité incubateur" >Unité incubateur </option>
+                </select>
+                <hr>
+                <span><input type="checkbox" name="" required > &nbsp;Je suis <?php echo $name ?> je quitte mon club et je rejoins l'Alumni Chapter </span>
+                <br><br>
+                <input type="submit" value="valider">
+              </form>
+
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Fermer</button>
+            </div>
+          </div>
+        </div>
+    </div><!-- fade Modal -->
+
+
+
 
 </html>

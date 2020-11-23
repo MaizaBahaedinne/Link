@@ -104,11 +104,9 @@
             
 
             <?php if ($var1!=Null &&   $var2 != Null  &&  $var3 == 1  ) { ?> 
-
-            
-       
                 
-              <input  type="text" placeholder="cin" name="cin" maxlength="8" minlength="8" required>
+              <input  type="text" placeholder="cin" name="cin"  value="" 
+              <?php if($club->SenJun != 4 ){ ?>maxlength="8" minlength="8" required <?php } ?> >
               <input  type="text" placeholder="Nom" name="fname" required>
               <input   type="text" placeholder="Prenom" name="lname" required> 
               <input   type="date" placeholder="Date de naissance" name="birth" placeholder="sexe" required>

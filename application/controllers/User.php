@@ -362,7 +362,21 @@ class User extends BaseController
         }
     }
 
+  public function goAlumni()
+    { 
+      $cellule = $this->input->post('cellule');
+      $userInfo = array(
+                        'cellule'=>$cellule,
+                        'roleId'=>5
+                         ) ;
 
+       $result = $this->user_model->editUser($userInfo, $this->vendorId);
+                  if($result == true){
+                    $this->session->set_flashdata('success', 'Votre profile a été mise à jour <br> merci de se connecter !');
+                    redirect("/logout") ; 
+       }
+    
+    }
 
 
     /**

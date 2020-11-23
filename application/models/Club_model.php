@@ -60,7 +60,7 @@ class Club_model extends CI_Model
      */
     function getClubInfo($clubID)
     {
-        $this->db->select('BaseTbl.clubID , BaseTbl.name , BaseTbl.birthday , BaseTbl.city ,BaseTbl.email ,BaseTbl.facebook , BaseTbl.is_Actif , BaseTbl.charte ' );
+        $this->db->select('*' );
         $this->db->from('tbl_club as BaseTbl');
         $this->db->where('BaseTbl.clubID', $clubID);
         $query = $this->db->get();
