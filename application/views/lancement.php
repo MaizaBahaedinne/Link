@@ -43,7 +43,7 @@
                                       Tunivisions Foundation est offert par Media Visions Editing. Une communauté de plus de 157 universités et 40 clubs lycéen à travers le pays qui offre des expériences où les jeunes apprennent par la pratique. Les étudiants réalisent des événements et des projets pratiques dans des domaines comme les activités culturelles, artistiques, sportives et la citoyenneté, dans un environnement positif où ils sont encouragés à assumer des rôles de leadership proactifs. Les étudiants font l’expérience des Tunimateurs dans chaque club du pays – par le biais de programmes de formation durable, de clubs universitaires et camp Tunivisions.
                                   </span>
                                 </div><!-- suggested friends -->
-                                <button id="videoEnd"  hidden class="btn btn-danger">Lancer le quiz</button>
+                                <button id="videoEnd"  disabled class="btn btn-danger">Lancer le quiz</button>
                                 </section>
                                 <section id="quiz" hidden >
                                 <h6> Info session et quiz </h6>
@@ -283,7 +283,7 @@
                                     clearInterval(x);
                                    
                                    
-                                    $("#videoEnd").removeAttr("hidden");
+                                    $("#videoEnd").removeAttr("disabled");
                                     
                                   }
                                 }, 1000);
