@@ -83,7 +83,7 @@ class BaseController extends CI_Controller {
                      );
 
         	$this->login_model->updateLogin($loginInfo, $this->loginId) ;
-        
+
 		}
 	}
 
@@ -239,13 +239,15 @@ class BaseController extends CI_Controller {
 
     	$MyUser["user"] = $this->user_model->getUserInfoWithRole($this->vendorId)  ; 
     	$user = $this->user_model->getUserInfoWithRole($this->vendorId)  ; 
+
+    	$headerInfo['userC'] = $this->user_model->getUserInfoWithRole($this->vendorId)  ;
 		
 		$headerInfo['notifRecords'] = $this->notification_model->NotificationListingHome($this->vendorId) ;
         $headerInfo['notifRecordsNumber'] = count($this->notification_model->NotificationNoSeenListing($this->vendorId)) ;     
         
         $headerInfo['ChatRecords'] = Null ; 
 
-        $headerInfo['ConnrectedUser'] =  $this->login_model->lastLogins() ;
+        $headerInfo['ConnrectedUser'] =  $this->login_model->lastLogins($this->vendorId) ;
 
 
 

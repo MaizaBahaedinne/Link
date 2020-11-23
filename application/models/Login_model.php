@@ -165,16 +165,16 @@ class Login_model extends CI_Model
      * @param number $userId : This is user id
      * @return number $result : This is query result
      */
-    function lastLogins()
+    function lastLogins($userId)
     {
         $this->db->select('BaseTbl.id , Users.userId ,Users.avatar , Users.name  , BaseTbl.platform , Max(BaseTbl.lastActDTM)  lastActDTM ');
         $this->db->from('tbl_last_login as BaseTbl ');
         $this->db->join('tbl_users as Users', 'Users.userId = BaseTbl.userId','left');
         $this->db->where(' BaseTbl.lastActDTM >= ADDTIME(NOW() , - 20000)  ');
+        $this->db->where(' BaseTbl.userid !=  ',$userId);
         $this->db->group_by('BaseTbl.userId');
         $this->db->order_by('BaseTbl.lastActDTM', 'DESC');
         $query = $this->db->get();
-
         return $query->result();  
     }
 
