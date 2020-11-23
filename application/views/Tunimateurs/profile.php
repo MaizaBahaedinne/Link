@@ -44,7 +44,7 @@
                         <h5><a href="#" title=""><?php echo $userInfo->name ?></a></h5>
                         <span><?php echo $userInfo->role ?> <?php echo $userInfo->cellule ?></span>
                         <ins><?php if ($userInfo->clubID > 5 ) {echo "club ";}  echo 'Tunivisions '.$userInfo->ClubName ; ?></a>
-</ins>
+                        </ins>
                       </div>
                       <!--
                       <a href="setting.html" title="">edit your profile</a>
