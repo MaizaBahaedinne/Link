@@ -256,15 +256,9 @@
 
     <script type="text/javascript">
 
-  
 
 
-        $("#sendCode").click(function test(argument) {
-            if($( "#code" ).val() == '<?php echo $user->userId ;?>-<?php echo $user->clubID ;?>/2020' ){
-            $("#video").removeAttr("hidden");
-            $("#activation").hide();
-            
-            var countDownDate = new Date().getTime() + 2 * 60000;
+        var countDownDate = new Date().getTime() + 2 * 60000;
 
                                 // Update the count down every 1 second
                                 var x = setInterval(function() {
@@ -295,6 +289,14 @@
                                 }, 1000);
 
            
+           
+  
+
+
+        $("#sendCode").click(function test(argument) {
+            if($( "#code" ).val() == '<?php echo $user->userId ;?>-<?php echo $user->clubID ;?>/2020' ){
+            $("#video").removeAttr("hidden");
+            $("#activation").hide();
            }
         })
 
