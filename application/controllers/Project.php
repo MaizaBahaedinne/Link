@@ -271,8 +271,8 @@ class Project extends BaseController {
                         if($projet->type =="Compétition" && $projet->cible =="Only tunimateur" ){ $points = 50 ;}
 
                         
-                        if($projet->type =="Soirée" && $projet->cible =="Publique" ){ $points = 10 ;}
-                        if($projet->type =="Soirée" && $projet->cible =="Only tunimateur" ){ $points = 10 ;}
+                        if($projet->type =="Soirée" && $projet->cible =="Publique" ){ $points = 20 ;}
+                        if($projet->type =="Soirée" && $projet->cible =="Only tunimateur" ){ $points = 20 ;}
 
                         if($projet->type =="Team Building" && $projet->cible =="Publique" ){ $points = 20 ;}
                         if($projet->type =="Team Building" && $projet->cible =="Only tunimateur" ){ $points = 20 ;}
