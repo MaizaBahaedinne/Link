@@ -67,7 +67,7 @@ class Club extends BaseController {
 			        $data["projectRecords"] = $this->project_model->projectListingByClub($clubId);
 			        foreach ($data["projectRecords"] as $proj ) 
 			        {
-			        	$proj->score = $this->Score_club_model->scoreByProject ($proj->projectId) ;
+			        	$proj->score = $this->Score_club_model->scoreByProject($proj->projectId) ;
 			        }
 			        $data['cl'] = $clubId;
 

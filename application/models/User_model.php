@@ -114,10 +114,12 @@ class User_model extends CI_Model
 
      function getMembersByCellule ($clubID,$cellule)
         {
-            $this->db->select('*');
-            $this->db->from('tbl_users');
-            $this->db->where('cellule =', $cellule );
-            $this->db->where('ClubID =', $clubID );
+            $this->db->select('BaseTbl.userId, BaseTbl.gouvernorat , BaseTbl.delegation , BaseTbl.CLubID as club , BaseTbl.cin, BaseTbl.email, BaseTbl.name, BaseTbl.mobile, BaseTbl.createdDtm, Role.role , Role.roleId , BaseTbl.cellule , Clubs.name as ClubName , Clubs.city as ClubCity ,BaseTbl.sexe ,BaseTbl.isDeleted , BaseTbl.avatar , BaseTbl.birthday ');
+            $this->db->from('tbl_users as BaseTbl');
+            $this->db->join('tbl_roles as Role', 'Role.roleId = BaseTbl.roleId','left');
+            $this->db->join('tbl_club as Clubs', 'Clubs.clubID = BaseTbl.ClubID', 'LEFT');
+            $this->db->where('BaseTbl.cellule =', $cellule );
+            $this->db->where('BaseTbl.ClubID =', $clubID );
             $query = $this->db->get();         
             return $query->result();
         }
