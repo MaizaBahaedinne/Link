@@ -311,7 +311,7 @@
                       }
                     });
 
-
+                    $(".messenger").click(function() {
                     FB.ui(
                       {
                         method: 'send',
@@ -325,6 +325,7 @@
                           alert('Error while posting.');
                         }
                       }
+                    }
 );
                    
                 </script>
@@ -332,7 +333,7 @@
                 
                 <p style="text-align: center;">ce code reste valable jusqu'à<br> <b style="color: red"><?php echo date('d/m/Y')?> 23:59:00</b></p>
 
-                <a href="fb-messenger://share?link=<?php echo base_url() ;?>Register?var4=<?php echo  Date('Y-m-d') ?>&var1=<?php echo $uid ?>&var2=<?php echo $clubID ?>&var3=1"> Envoyer avec messenger </a>
+                <a class="messenger"> Envoyer avec messenger </a>
 
 
 
