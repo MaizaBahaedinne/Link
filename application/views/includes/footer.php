@@ -311,10 +311,21 @@
                       }
                     });
 
-                    FB.ui({
+
+                    FB.ui(
+                      {
                         method: 'send',
-                        href: '?php echo base_url() ;?>Register?var4=<?php echo  Date('Y-m-d') ?>&var1=<?php echo $uid ?>&var2=<?php echo $clubID ?>&var3=1'
-                      }, function(response){});
+                        href: '<?php echo base_url() ;?>Register?var1=<?php echo $uid ?>&var4=<?php echo  Date('Y-m-d') ?>&var2=<?php echo $clubID ?>&var3=1',
+                      },
+                      // callback
+                      function(response) {
+                        if (response && !response.error_message) {
+                          alert('Posting completed.');
+                        } else {
+                          alert('Error while posting.');
+                        }
+                      }
+);
                    
                 </script>
                 <br>
