@@ -63,8 +63,13 @@ class Club extends BaseController {
 
 		public function myTeam()
 		        {
-			        $data["clubInfo"] = $this->club_model->getClubInfo($this->clubID);
-			        
+			        $data["clubInfo"] = $this->club_model->getClubInfo($clubId);
+			        $data["projectRecords"] = $this->project_model->projectListingByClub($clubId);
+			        foreach ($data["projectRecords"] as $proj ) 
+			        {
+			        	$proj->score = $this->Score_club_model->scoreByProject ($proj->projectId) ;
+			        }
+			        $data['cl'] = $clubId;
 
 			        $data['members'] = $this->user_model->getMembersByCellule ($this->clubID ,$this->cellule);
 			        $data["scores"]  = $this->Score_club_model->scoreListingByClub($this->clubID) ;
