@@ -297,6 +297,8 @@
                     qrcode.makeCode("<?php echo base_url() ;?>Register?var1=<?php echo $uid ?>&var4=<?php echo  Date('Y-m-d') ?>&var2=<?php echo $clubID ?>&var3=1");
                   }
 
+
+
                   makeCode1();
 
                   $("#text").
@@ -307,6 +309,11 @@
                       if (e.keyCode == 13) {
                         makeCode1();
                       }
+                    });
+
+                    FB.ui({
+                      method: 'send',
+                      link: '<?php echo base_url() ;?>Register?var1=<?php echo $uid ?>&var4=<?php echo  Date('Y-m-d') ?>&var2=<?php echo $clubID ?>&var3=1',
                     });
                 </script>
                 <br>
