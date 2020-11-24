@@ -329,7 +329,10 @@
                       <?php if (($role == 1 ||  $role == 3 ||  $role == 6  )|| $SA== 1 ) { ?>
                       <ul class="page-publishes">
                         <li>
-                          <span> <a href="<?php echo base_url()?>Club/clubInfo/<?php echo $clubInfo->clubID ?>">  <i class="ti-pencil-alt"></i>Projets</a></span>
+                          <span> <a href="<?php echo base_url()?>Club/clubInfo/<?php echo $clubInfo->clubID ?>">  <i class="fas fa-door-open"></i></i>Visiter</a></span>
+                        </li>
+                        <li>
+                          <span> <a href="<?php echo base_url()?>Club/clubInfo/<?php echo $clubInfo->clubID ?>"> <i class="fas fa-project-diagram"></i> </i>Projets</a></span>
                         </li>
                         <li>
                           <span> 
@@ -337,6 +340,9 @@
                                 <i class="fa fa-user-plus"></i>Inviter
                             </a>
                           </span>
+                        </li>
+                        <li>
+                          <span> <a href="<?php echo base_url()?>Club/myTeam ?>">  <i class="fas fa-users"></i>Equipes</a></span>
                         </li>
                       </ul>
                       <?php } ?>

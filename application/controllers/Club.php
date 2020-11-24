@@ -41,7 +41,7 @@ class Club extends BaseController {
 		        
 
 
-			public function clubInfo($clubId)
+		public function clubInfo($clubId)
 		        {
 			        $data["clubInfo"] = $this->club_model->getClubInfo($clubId);
 			        $data["projectRecords"] = $this->project_model->projectListingByClub($clubId);
@@ -58,6 +58,21 @@ class Club extends BaseController {
 			    	$this->global['pageTitle'] = 'Mon club';   
 			    	$this->global['clubN'] = $clubId;    
 			       $this->loadViews("club/myClub", $this->global, $data, NULL);
+		        }
+
+
+		public function myTeam()
+		        {
+			        $data["clubInfo"] = $this->club_model->getClubInfo($this->clubID);
+			        
+
+			        $data['members'] = $this->user_model->getMembersByCellule ($this->clubID ,$this->cellule);
+			        $data["scores"]  = $this->Score_club_model->scoreListingByClub($this->clubID) ;
+		            $data["score"]  = $this->Score_club_model->scoreByClub($this->clubID) ; 
+
+			    	$this->global['pageTitle'] = 'Mon club';   
+			    	$this->global['clubN'] = $clubId;    
+			       $this->loadViews("club/myTeam", $this->global, $data, NULL);
 		        }
 
 
