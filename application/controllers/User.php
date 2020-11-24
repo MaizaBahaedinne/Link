@@ -367,7 +367,8 @@ class User extends BaseController
       $cellule = $this->input->post('cellule');
       $userInfo = array(
                         'cellule'=>$cellule,
-                        'roleId'=>5
+                        'roleId'=>5 ,
+                        'clubID' => 2
                          ) ;
 
        $result = $this->user_model->editUser($userInfo, $this->vendorId);

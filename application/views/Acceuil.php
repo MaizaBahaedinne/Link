@@ -197,7 +197,7 @@
                               -->
                           </figure>     
                           <?php } ?>                  
-                          <div class="description">
+                          <div class="description" >
                             <p id="Cpntent<?php $post->postId ?>" >
                              <?php echo $post->Content ?>
                             </p>
