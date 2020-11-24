@@ -342,7 +342,7 @@
                           </span>
                         </li>
                         <li>
-                          <span> <a href="<?php echo base_url()?>Club/myTeam">  <i class="fas fa-users"></i>Equipes</a></span>
+                          <span> <a href="<?php echo base_url()?>Club/myTeam">  <i class="fa fa-users"></i>Equipes</a></span>
                         </li>
                       </ul>
                       <?php } ?>

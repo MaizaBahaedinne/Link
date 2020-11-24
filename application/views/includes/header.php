@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/color.css">
     <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/responsive.css">
 	<link rel="stylesheet" href="<?php echo base_url() ?>assets/css/calendar.css">    
-	<link rel="stylesheet" href="<?php echo base_url() ?>assets/css/font-awesome.min.css">
+	<link rel="stylesheet" href="<?php echo base_url() ?>assets/css/all.css">
 	<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
 	<link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.js"></script>
