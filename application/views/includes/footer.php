@@ -311,29 +311,27 @@
                       }
                     });
 
-                    $(".messenger").click(function() {
-                    FB.ui(
-                      {
-                        method: 'send',
-                        href: '<?php echo base_url() ;?>Register?var1=<?php echo $uid ?>&var4=<?php echo  Date('Y-m-d') ?>&var2=<?php echo $clubID ?>&var3=1',
-                      },
-                      // callback
-                      function(response) {
-                        if (response && !response.error_message) {
-                          alert('Posting completed.');
-                        } else {
-                          alert('Error while posting.');
-                        }
-                      }
-                    }
-);
+
                    
+                </script>
+
+                <script type="text/javascript">
+                  function FB_post_feed(method,name,link,picture,caption,description){
+                        FB.ui({
+                            method: 'send',
+                            name: name,
+                            link: link,
+                            picture: picture,
+                            caption: caption,
+                            description: description
+                        });
+                    }
                 </script>
                 <br>
                 
                 <p style="text-align: center;">ce code reste valable jusqu'à<br> <b style="color: red"><?php echo date('d/m/Y')?> 23:59:00</b></p>
 
-                <a class="messenger"> Envoyer avec messenger </a>
+                <a id="messenger" onclick="FB_post_feed('send','T.Link','<?php echo base_url() ;?>Register?var1=<?php echo $uid ?>&var4=<?php echo  Date('Y-m-d') ?>&var2=<?php echo $clubID ?>&var3=1','','','')" class="btn btn-danger"> Envoyer avec messenger </a>
 
 
 
