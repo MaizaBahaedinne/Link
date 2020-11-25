@@ -328,14 +328,12 @@
                     }
                 </script>
                 <br>
+                <a class="btn btn-block btn-primary" href="fb-messenger://share/?link=<?php echo base_url() ;?>Register?var1=<?php echo $uid ?>%26var4=<?php echo  Date('Y-m-d') ?>%26var2=<?php echo $clubID ?>%26var3=1" target="_blank" ><i class="fab fa-facebook-messenger"></i> Envoyer avec messenger</a>
                 
                 <p style="text-align: center;">ce code reste valable jusqu'à<br> <b style="color: red"><?php echo date('d/m/Y')?> 23:59:00</b></p>
 
-                <a href="mailto:?subject=Inscription T.Link
-                          &body=Bonjour, Merci de faire l`inscription 
-                          <a href='<?php echo base_url() ;?>Register?var1=<?php echo $uid ?>%26var4=<?php echo  Date('Y-m-d') ?>%26var2=<?php echo $clubID ?>%26var3=1' >Inscription</a> " target="_blank" >Envoie par mail</a>
 
-              <a href="fb-messenger://share/?link=<?php echo base_url() ;?>Register?var1=<?php echo $uid ?>%26var4=<?php echo  Date('Y-m-d') ?>%26var2=<?php echo $clubID ?>%26var3=1" target="_blank" >Messenger</a>
+              
    
 
 
