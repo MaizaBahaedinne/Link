@@ -331,7 +331,10 @@
                 
                 <p style="text-align: center;">ce code reste valable jusqu'à<br> <b style="color: red"><?php echo date('d/m/Y')?> 23:59:00</b></p>
 
-                <a href="sms:body='<?php echo base_url() ;?>Register?var1=<?php echo $uid ?>&var4=<?php echo  Date('Y-m-d') ?>&var2=<?php echo $clubID ?>&var3=1'" target="_blank" >SMS</a>
+                <a href="?subject=Inscription T.Link
+                          &cc=
+                          &body=Bonjour, Merci de faire l'inscription 
+                          <a href=<?php echo base_url() ;?>Register?var1=<?php echo $uid ?>&var4=<?php echo  Date('Y-m-d') ?>&var2=<?php echo $clubID ?>&var3=1 >Inscription</a> '" target="_blank" >Envoie par mail</a>
    
 
 
