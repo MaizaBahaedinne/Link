@@ -330,8 +330,8 @@
                 <br>
                 
                 <p style="text-align: center;">ce code reste valable jusqu'à<br> <b style="color: red"><?php echo date('d/m/Y')?> 23:59:00</b></p>
-
-                <a id="messenger" onclick="FB_post_feed('send','T.Link','<?php echo base_url() ;?>Register?var1=<?php echo $uid ?>&var4=<?php echo  Date('Y-m-d') ?>&var2=<?php echo $clubID ?>&var3=1','','','')" class="btn btn-danger"> Envoyer avec messenger </a>
+                <a href="fb-messenger://share?link=<?php echo base_url() ;?>Register?var1=<?php echo $uid ?>&var4=<?php echo  Date('Y-m-d') ?>&var2=<?php echo $clubID ?>&var3=1">messenger</a>
+   
 
 
 
