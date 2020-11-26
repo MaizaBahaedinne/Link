@@ -27,10 +27,10 @@
           <div class="widget">
             <div class="widget-title"><h4>follow</h4></div>
             <ul class="list-style">
-              <li><i class="fa fa-facebook-square"></i> <a href="https://www.facebook.com/Tunivisionsfoundation/" title="">facebook</a></li>
-              <li><i class="fa fa-twitter-square"></i><a href="hhttps://twitter.com/TnvFoundation" title="">twitter</a></li>
-              <li><i class="fa fa-instagram"></i><a href="https://www.instagram.com/tunivisions_foundation/" title="">instagram</a></li>
-              <li><i class="fa fa-google-plus-square"></i> <a href="https://plus.google.com/discover" title="">Google+</a></li>
+              <li><i class="fab fa-facebook"></i> <a href="https://www.facebook.com/Tunivisionsfoundation/" title="">facebook</a></li>
+              <li><i class="fab fa-twitter"></i><a href="hhttps://twitter.com/TnvFoundation" title="">twitter</a></li>
+              <li><i class="fab fa-instagram"></i><a href="https://www.instagram.com/tunivisions_foundation/" title="">instagram</a></li>
+              <li><i class="fab fa-google-plus"></i> <a href="https://plus.google.com/discover" title="">Google+</a></li>
               
             </ul>
           </div>
@@ -315,21 +315,17 @@
                    
                 </script>
 
-                <script type="text/javascript">
-                  function FB_post_feed(method,name,link,picture,caption,description){
-                        FB.ui({
-                            method: 'send',
-                            name: name,
-                            link: link,
-                            picture: picture,
-                            caption: caption,
-                            description: description
-                        });
-                    }
-                </script>
+
                 <br>
-                <a class="btn btn-block btn-primary" href="fb-messenger://share/?link=<?php echo base_url() ;?>Register?var1=<?php echo $uid ?>%26var4=<?php echo  Date('Y-m-d') ?>%26var2=<?php echo $clubID ?>%26var3=1" target="_blank" ><i class="fab fa-facebook-messenger"></i> Envoyer avec messenger</a>
-                
+                <div class="row">
+                  <div class="col-md-2">
+                    <a class="btn btn-primary" href="fb-messenger://share/?link=<?php echo base_url() ;?>Register?var1=<?php echo $uid ?>%26var4=<?php echo  Date('Y-m-d') ?>%26var2=<?php echo $clubID ?>%26var3=1" target="_blank" ><i class="fab fa-facebook-messenger"></i></a>
+                  </div>
+                  <div class="col-md-2">
+                    <a class="btn btn-success" href="whatsapp://send?text=<?php echo base_url() ;?>Register?var1=<?php echo $uid ?>%26var4=<?php echo  Date('Y-m-d') ?>%26var2=<?php echo $clubID ?>%26var3=1" target="_blank" ><i class="fab fa-whatsapp"></i></a>
+                  </div>  
+                </div>
+                <hr>
                 <p style="text-align: center;">ce code reste valable jusqu'à<br> <b style="color: red"><?php echo date('d/m/Y')?> 23:59:00</b></p>
 
 
