@@ -110,7 +110,7 @@
                                                 <?php echo $success; ?>                    
                                             </div>
                                       <?php } ?>
-
+                                    <input type="text" name="mail" placeholder="E-Mail" hidden >
                                     <style type="text/css">
                                         .alligator-profile {
                                             object-fit: cover;
@@ -119,25 +119,12 @@
                                             width: 100px;
                                             height: 100px;
                                         }</style>
-
-                                    <?php
-                                        $this->load->helper('form');
-                                        $user = $this->session->flashdata('user');
-                                        if($user)
-                                        {
-                                            ?>
-                                        <div style="text-align: center">
-                                            <img src="<?php echo base_url() ?>uploads/avatar/<?php echo $user->avatar ?>" class="alligator-profile">
-                                            <h4><?php echo $user->name ?></h4>
-                                        </div>
-                                        <input type="text" name="mail" placeholder="E-Mail"   value="<?php echo $user->email ?>" >
-                                      <?php }else{ ?>
-                                        <input type="text" name="mail" placeholder="E-Mail" >
-
-                                      <?php } ?>
-                                    
-
-                                    
+                                    <div style="text-align: center">
+                                        <img src="<?php echo base_url() ?>uploads/avatar/<?php echo $user->avatar ?>" class="alligator-profile">
+                                        <h4><?php echo $user->name ?></h4>
+                                        <?php echo $user->email ?>
+                                    </div>
+                                    <br>
                                     <input type="password" name="password" placeholder="Mot de passe">
                                     <!--<input type="checkbox"><label>remember me</label>-->
                                     <input type="submit" disabled id="login" data-ripple="" value="Login">
@@ -176,7 +163,7 @@
           function showPosition(position) {
                          var  a = document.getElementById("myForm").action ;
 
-                        document.getElementById("myForm").action =  a+"/"+ position.coords.longitude+"/"+position.coords.latitude ;
+                        document.getElementById("myForm").action =  a+"/"+ position.coords.longitude+"/"+position.coords.latitude+"?email=<?php echo $user->email ?>" ;
                         document.getElementById("login").disabled = false; ; 
 
                         

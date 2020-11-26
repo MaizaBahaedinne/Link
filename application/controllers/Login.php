@@ -16,6 +16,7 @@ class Login extends CI_Controller
     {
         parent::__construct();
         $this->load->model('login_model');
+        $this->load->model('user_model');
     }
 
     /**
@@ -121,7 +122,17 @@ class Login extends CI_Controller
             }
             else
             {
-                $this->session->set_flashdata('error', 'Email et mot de passe erroné ');
+                if($this->user_model->checkEmailExists($email)){
+                $this->session->set_flashdata('error', 'mot de passe erroné <a href="'.base_url().'Register/MotDePasse" >Mot de passe oublié ? </a>');
+                $data['user'] = $this->user_model->checkEmailExists($email) ; 
+                $this->session->set_flashdata('user', $data['user']);
+                    
+                   
+                }
+                else
+                {
+                     $this->session->set_flashdata('error', 'adresse e-mail introuvable');
+                }
                 
                 $this->index();
             }
@@ -129,8 +140,7 @@ class Login extends CI_Controller
     }
 
 
-
-
+  
 
    
 

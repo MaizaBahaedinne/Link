@@ -42,6 +42,10 @@ class User_model extends CI_Model
 
   }
 
+
+
+    
+
     /**
      * This function is used to get the user listing count
      * @return array $result : This is result
@@ -174,7 +178,7 @@ class User_model extends CI_Model
      */
     function checkEmailExists($email)
     {
-        $this->db->select("name");
+        $this->db->select("*");
         $this->db->from("tbl_users");
         $this->db->where("email", $email);   
         $query = $this->db->get();
