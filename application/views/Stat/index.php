@@ -125,7 +125,7 @@
 										<div class="static-meta"> 
 											<i class="fas fa-archway"></i>
 											<div class="info-meta">
-												<h4><?php  echo count($clubA) ?></h4>
+												<h4><?php  echo $clubA ?></h4>
 												<i></i>
 											</div>
 											<div class="spark">
