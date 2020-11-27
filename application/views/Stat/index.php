@@ -72,7 +72,7 @@
 				</div>
 
 
-				<div class="col-lg-3">
+				<div class="col-lg-4">
 								<aside class="sidebar static">
 									<div class="widget">
 									<h4 class="widget-title">Membres Alumni</h4>
