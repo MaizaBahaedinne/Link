@@ -118,6 +118,52 @@
 								</aside>
 							</div>
 
+							<div class="col-lg-4">
+								<aside class="sidebar static">
+									<div class="widget">
+									<h4 class="widget-title">Unité Alumni</h4>
+										<div class="static-meta"> 
+											<i class="fas fa-archway"></i>
+											<div class="info-meta">
+												<h4><?php  echo count($clubA) ?></h4>
+												<i></i>
+											</div>
+											<div class="spark">
+				                            <div class="sparkline12"><canvas width="158" height="40" style="display: inline-block; width: 158px; height: 40px; vertical-align: top;"></canvas></div>
+				                          </div>
+										</div>
+									</div>
+									<div class="widget">
+									<h4 class="widget-title">Clubs University</h4>
+										<div class="static-meta"> 
+											<i class="fas fa-university"></i>
+											<div class="info-meta">
+												<h4><?php  echo count($clubsU) ?></h4>
+												<i></i>
+											</div>
+											<div class="spark">
+				                            <div class="sparkline12"><canvas width="158" height="40" style="display: inline-block; width: 158px; height: 40px; vertical-align: top;"></canvas></div>
+				                          </div>
+										</div>
+									</div>
+									<div class="widget">
+									<h4 class="widget-title">Membres High School</h4>
+										<span>This week</span>
+										<div class="static-meta"> 
+											<i class="fas fa-school"></i>
+											<div class="info-meta">
+												<h4><?php  echo count($clubsHS) ?></h4>
+												<i></i>
+											</div>
+											<div class="spark">
+				                            <div class="sparkline_three"><canvas width="200" height="40" style="display: inline-block; width: 200px; height: 40px; vertical-align: top;"></canvas></div>
+				                          </div>
+										</div>
+									</div>
+																		
+								</aside>
+							</div>
+
 				</div>
 			</div>
 		</div>
