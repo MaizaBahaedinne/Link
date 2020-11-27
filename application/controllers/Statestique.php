@@ -24,7 +24,7 @@ class Statestique extends BaseController {
         $data["clubHS"] = $this->club_model->clubListingCount(4) ;
         $data["clubsU"] = $this->club_model->clubListingCount(3) ;
         $this->global['pageTitle'] = 'Statestique';
-        $this->loadViews("Stat/index", $this->global, $data , NULL);
+        $this->loadViews("stat/index", $this->global, $data , NULL);
 	}
 	
 		
