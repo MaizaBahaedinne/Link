@@ -215,6 +215,7 @@
                                          <option value="Unité we are campers" >Unité we are campers </option>
                                          <option value="Unité we are carthage" >Unité we are carthage </option>
                                          <option value="Unité incubateur" >Unité incubateur </option>
+                                         <option value="Unité Fund raising" >Unité Fund raising </option>
                                      </select>
                                      <?php } }  ?>
                                      <br>
