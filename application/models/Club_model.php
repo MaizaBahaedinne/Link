@@ -10,11 +10,15 @@ class Club_model extends CI_Model
      * @param string $searchText : This is optional search text
      * @return number $count : This is row count
      */
-    function clubListingCount()
+    function clubListingCount($type)
     {
         $this->db->select('BaseTbl.clubID , BaseTbl.name , BaseTbl.birthday , BaseTbl.city ,BaseTbl.email , BaseTbl.is_Actif ');
         $this->db->from('tbl_club as BaseTbl');
-           
+        $this->db->where('BaseTbl.clubID > ', 5 ) ;
+        if($type !=  0)
+        {
+            $this->db->where('BaseTbl.SenJun = ', $type ) ;   
+        }
         $query = $this->db->get();
         
         return $query->num_rows();
