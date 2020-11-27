@@ -80,7 +80,7 @@
 											<i class="fa fa-user"></i>
 											<div class="info-meta">
 												<h4><?php  echo count($TunimateursA) ?></h4>
-												<i>30%</i>
+												<i><?php echo (count($TunimateursA)/$tuni)*100 ?>%</i>
 											</div>
 											<div class="spark">
 				                            <div class="sparkline12"><canvas width="158" height="40" style="display: inline-block; width: 158px; height: 40px; vertical-align: top;"></canvas></div>
@@ -93,7 +93,7 @@
 											<i class="fa fa-user"></i>
 											<div class="info-meta">
 												<h4><?php  echo count($TunimateursU) ?></h4>
-												<i>30%</i>
+												<i><?php echo (count($TunimateursU)/$tuni)*100 ?>%</i>
 											</div>
 											<div class="spark">
 				                            <div class="sparkline12"><canvas width="158" height="40" style="display: inline-block; width: 158px; height: 40px; vertical-align: top;"></canvas></div>
@@ -107,7 +107,7 @@
 											<i class="fa fa-user"></i>
 											<div class="info-meta">
 												<h4><?php  echo count($TunimateursHS) ?></h4>
-												<i>10%</i>
+												<i><?php echo (count($TunimateursHS)/$tuni)*100 ?>%</i>
 											</div>
 											<div class="spark">
 				                            <div class="sparkline_three"><canvas width="200" height="40" style="display: inline-block; width: 200px; height: 40px; vertical-align: top;"></canvas></div>
