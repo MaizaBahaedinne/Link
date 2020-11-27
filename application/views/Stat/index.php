@@ -40,7 +40,7 @@
 								<div class="stat-box">
 									<i class="fa fa-user"></i>
 									<div class="anlytc-meta">
-										<h4><?php echo count($TunimateursA) + count($TunimateursHS) + count($TunimateursU) ?></h4>
+										<h4><?php echo (count($TunimateursA) + count($TunimateursHS) + count($TunimateursU)) ?></h4>
 										<p>40%</p>
 										<span>Tunimateurs</span> 
 									</div>
@@ -54,7 +54,7 @@
 								<div class="stat-box">
 									<i class="fas fa-users"></i>
 									<div class="anlytc-meta">
-										<h4><?php echo count($clubHS) + count($clubsU)  ?></h4>
+										<h4><?php echo (count($clubsU) + count($clubsHS))  ?></h4>
 										<p>40%</p>
 										<span>Clubs </span> 
 									</div>
