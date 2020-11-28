@@ -102,7 +102,7 @@
 									</div>
 									<div class="widget">
 									<h4 class="widget-title">Membres High School</h4>
-										<span>This week</span>
+										
 										<div class="static-meta"> 
 											<i class="fa fa-user"></i>
 											<div class="info-meta">
@@ -148,7 +148,7 @@
 									</div>
 									<div class="widget">
 									<h4 class="widget-title">Membres High School</h4>
-										<span>This week</span>
+										
 										<div class="static-meta"> 
 											<i class="fas fa-school"></i>
 											<div class="info-meta">
