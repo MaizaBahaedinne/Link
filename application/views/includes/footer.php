@@ -27,10 +27,10 @@
           <div class="widget">
             <div class="widget-title"><h4>follow</h4></div>
             <ul class="list-style">
-              <li><i class="fa fa-facebook-square"></i> <a href="https://www.facebook.com/Tunivisionsfoundation/" title="">facebook</a></li>
-              <li><i class="fa fa-twitter-square"></i><a href="hhttps://twitter.com/TnvFoundation" title="">twitter</a></li>
-              <li><i class="fa fa-instagram"></i><a href="https://www.instagram.com/tunivisions_foundation/" title="">instagram</a></li>
-              <li><i class="fa fa-google-plus-square"></i> <a href="https://plus.google.com/discover" title="">Google+</a></li>
+              <li><i class="fab fa-facebook"></i> <a href="https://www.facebook.com/Tunivisionsfoundation/" title="">facebook</a></li>
+              <li><i class="fab fa-twitter"></i><a href="hhttps://twitter.com/TnvFoundation" title="">twitter</a></li>
+              <li><i class="fab fa-instagram"></i><a href="https://www.instagram.com/tunivisions_foundation/" title="">instagram</a></li>
+              <li><i class="fab fa-google-plus"></i> <a href="https://plus.google.com/discover" title="">Google+</a></li>
               
             </ul>
           </div>
@@ -297,6 +297,8 @@
                     qrcode.makeCode("<?php echo base_url() ;?>Register?var1=<?php echo $uid ?>&var4=<?php echo  Date('Y-m-d') ?>&var2=<?php echo $clubID ?>&var3=1");
                   }
 
+
+
                   makeCode1();
 
                   $("#text").
@@ -308,10 +310,27 @@
                         makeCode1();
                       }
                     });
+
+
+                   
                 </script>
+
+
                 <br>
-                
+                <div class="row">
+                  <div class="col-md-2">
+                    <a class="btn btn-primary" href="fb-messenger://share/?link=<?php echo base_url() ;?>Register?var1=<?php echo $uid ?>%26var4=<?php echo  Date('Y-m-d') ?>%26var2=<?php echo $clubID ?>%26var3=1" target="_blank" ><i class="fab fa-facebook-messenger"></i></a>
+                  </div>
+                  <div class="col-md-2">
+                    <a class="btn btn-success" href="whatsapp://send?text=<?php echo base_url() ;?>Register?var1=<?php echo $uid ?>%26var4=<?php echo  Date('Y-m-d') ?>%26var2=<?php echo $clubID ?>%26var3=1" target="_blank" ><i class="fab fa-whatsapp"></i></a>
+                  </div>  
+                </div>
+                <hr>
                 <p style="text-align: center;">ce code reste valable jusqu'à<br> <b style="color: red"><?php echo date('d/m/Y')?> 23:59:00</b></p>
+
+
+              
+   
 
 
 
@@ -382,14 +401,14 @@
     </div><!-- fade Modal -->
 
 
-    <script>
+
+
+
+  <script>
     tinymce.init({
       selector: '#TinyMCE',
-      plugins: 'a11ychecker advcode casechange formatpainter linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tinycomments tinymcespellchecker',
-      toolbar: 'a11ycheck addcomment showcomments casechange checklist code formatpainter pageembed permanentpen table',
+      plugins: 'advlist autolink lists link image charmap print preview hr anchor pagebreak',
       toolbar_mode: 'floating',
-      tinycomments_mode: 'embedded',
-      tinycomments_author: 'Author name',
     });
   </script>
 
@@ -473,7 +492,8 @@
                    <option value="Unité des relations internationale" >Unité des relations internationale </option>
                    <option value="Unité we are campers" >Unité we are campers </option>
                    <option value="Unité we are carthage" >Unité we are carthage </option>
-                    <option value="Unité incubateur" >Unité incubateur </option>
+                  <option value="Unité incubateur" >Unité incubateur </option>
+                  <option value="Unité Fund raising" >Unité Fund raising </option>
                 </select>
                 <hr>
                 <span><input type="checkbox" name="" required > &nbsp;Je suis <?php echo $name ?> je quitte mon club et je rejoins l'Alumni Chapter </span>

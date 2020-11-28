@@ -326,7 +326,7 @@
                         <a href="#" title="" class="underline"><?php if ($clubInfo->clubID > 5 ) {echo "club Tunivisions ";}  echo $clubInfo->name ; ?></a>
                         
                       </div>
-                      <?php if (($role == 1 ||  $role == 3 ||  $role == 6  )|| $SA== 1 ) { ?>
+                      <?php if (($role == 1 ||  $role == 3 ||  $role == 6 ||  $role == 7  )|| $SA== 1 ) { ?>
                       <ul class="page-publishes">
                         <li>
                           <span> <a href="<?php echo base_url()?>Club/clubInfo/<?php echo $clubInfo->clubID ?>">  <i class="fas fa-door-open"></i></i>Visiter</a></span>
@@ -342,7 +342,7 @@
                           </span>
                         </li>
                         <li>
-                          <span> <a href="<?php echo base_url()?>Club/myTeam">  <i class="fas fa-users"></i>Equipes</a></span>
+                          <span> <a href="<?php echo base_url()?>Club/myTeam">  <i class="fa fa-users"></i>Equipes</a></span>
                         </li>
                       </ul>
                       <?php } ?>

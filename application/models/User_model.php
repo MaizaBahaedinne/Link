@@ -30,6 +30,29 @@ class User_model extends CI_Model
         return $result;
     }
 
+
+
+        /**
+     * This function is used to get the user listing count
+     * @return array $result : This is result
+     */
+    function userListingType($type)
+    {
+         $this->db->select('BaseTbl.userId, BaseTbl.gouvernorat , BaseTbl.delegation , BaseTbl.CLubID as club , BaseTbl.cin, BaseTbl.email, BaseTbl.name, BaseTbl.mobile, BaseTbl.createdDtm, Role.role , Clubs.name as ClubName ,  Clubs.clubID , Clubs.city as ClubCity ,BaseTbl.sexe ,BaseTbl.isDeleted , BaseTbl.avatar , BaseTbl.cellule , Paren.name parrain , Paren.userId p_userId , BaseTbl.facebook ,  Clubs.SenJun  ');
+        $this->db->from('tbl_users as BaseTbl');
+        $this->db->join('tbl_roles as Role', 'Role.roleId = BaseTbl.roleId','left');
+        $this->db->join('tbl_club as Clubs', 'Clubs.clubID = BaseTbl.ClubID', 'LEFT');
+         $this->db->join('tbl_users as Paren', 'Paren.userId = BaseTbl.createdBy', 'LEFT');
+       
+        $this->db->where('BaseTbl.isDeleted =', 0 );
+        $this->db->where('Clubs.SenJun =', $type );
+        
+        $query = $this->db->get();
+        
+        $result = $query->result();        
+        return $result;
+    }
+
   function getUserId(){
 
    $this->db->select('BaseTbl.userId');
@@ -41,6 +64,10 @@ class User_model extends CI_Model
         return $result;
 
   }
+
+
+
+    
 
     /**
      * This function is used to get the user listing count
@@ -174,7 +201,7 @@ class User_model extends CI_Model
      */
     function checkEmailExists($email)
     {
-        $this->db->select("name");
+        $this->db->select("*");
         $this->db->from("tbl_users");
         $this->db->where("email", $email);   
         $query = $this->db->get();

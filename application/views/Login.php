@@ -110,7 +110,34 @@
                                                 <?php echo $success; ?>                    
                                             </div>
                                       <?php } ?>
-                                    <input type="text" name="mail" placeholder="E-Mail">
+
+                                    <style type="text/css">
+                                        .alligator-profile {
+                                            object-fit: cover;
+                                            border-radius : 100% ;
+                                            object-position: 20% 50%;
+                                            width: 100px;
+                                            height: 100px;
+                                        }</style>
+
+                                    <?php
+                                        $this->load->helper('form');
+                                        $user = $this->session->flashdata('user');
+                                        if($user)
+                                        {
+                                            ?>
+                                        <div style="text-align: center">
+                                            <img src="<?php echo base_url() ?>uploads/avatar/<?php echo $user->avatar ?>" class="alligator-profile">
+                                            <h4><?php echo $user->name ?></h4>
+                                        </div>
+                                        <input type="text" name="mail" placeholder="E-Mail"   value="<?php echo $user->email ?>" >
+                                      <?php }else{ ?>
+                                        <input type="text" name="mail" placeholder="E-Mail" >
+
+                                      <?php } ?>
+                                    
+
+                                    
                                     <input type="password" name="password" placeholder="Mot de passe">
                                     <!--<input type="checkbox"><label>remember me</label>-->
                                     <input type="submit" disabled id="login" data-ripple="" value="Login">
@@ -121,7 +148,7 @@
                                     <a class="forgot underline" href="<?php echo base_url() ?>Register/MotDePasse" title="">Mot de passe oublié ?</a>
                                <br>
 
-                                <span>vous n'avez pas de compte? <a class="we-account underline" href="<?php echo base_url() ?>" title=""> S'inscrire maintenant</a></span>
+                                <span>vous n'avez pas de compte? <a class="we-account underline"  title=""> Contacter un membre de bureau executif </a></span>
                             </div>
                         </div>
                         

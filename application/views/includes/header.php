@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/color.css">
     <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/responsive.css">
 	<link rel="stylesheet" href="<?php echo base_url() ?>assets/css/calendar.css">    
+	<link rel="stylesheet" href="<?php echo base_url() ?>assets/css/all.css">
 	<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
 	<link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.js"></script>
@@ -106,7 +107,7 @@
 
           gtag('config', 'UA-151434993-1');
         </script>
-   <script src="https://cdn.tiny.cloud/1/vqf4xobfz4h7owrwfo1qar98sig5s2yt4cgnuskbexcf8zqh/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+     <script src="https://cdn.tiny.cloud/1/vqf4xobfz4h7owrwfo1qar98sig5s2yt4cgnuskbexcf8zqh/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 
 
 
@@ -201,9 +202,9 @@
 	</div>
 
 
-	<nav id="shoppingbag" class="mm-menu mm-offcanvas mm-right" aria-hidden="true"><div class="mm-panels"><div class="mm-panel mm-hasnavbar mm-opened" id="mm-13"><div class="mm-navbar"><a class="mm-title">General Setting</a></div>
+	<nav id="shoppingbag" class="mm-menu mm-offcanvas mm-right" aria-hidden="true"><div class="mm-panels"><div class="mm-panel mm-hasnavbar mm-opened" id="mm-13"><div class="mm-navbar"><a class="mm-title">Réglage général</a></div>
 				<div class="setting-row">
-					<a data-toggle="modal" data-target="#qrscanner" > Scanner QR</a>
+					<a data-toggle="modal" data-target="#qrscanner" >Scanner QR</a>
 				</div>
 			
 					 <div class="setting-row">

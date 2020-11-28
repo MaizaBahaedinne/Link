@@ -92,15 +92,15 @@
                           <ul>
                             <?php if($userInfo->facebook != '' ){ ?>
                             <li>
-                              <a title="" href="<?php echo $userInfo->facebook  ?>" class="facebook-color"><i class="fa fa-facebook-square"></i></a></li>
+                              <a title="" href="<?php echo $userInfo->facebook  ?>" class="facebook-color"><i class="fab fa-facebook-square"></i></a></li>
                             <li>
                             <?php }if($userInfo->linkedin != '' ){ ?>
                             <li>
-                              <a title="" href="<?php echo $userInfo->linkedin  ?>" class="dribble-color"><i class="fa fa-linkedin-square"></i></a>
+                              <a title="" href="<?php echo $userInfo->linkedin  ?>" class="dribble-color"><i class="fab fa-linkedin-square"></i></a>
                             </li>
                             <?php }if($userInfo->instagram != '' ){ ?>
                             <li>
-                              <a title="" href="<?php echo $userInfo->instagram  ?>" class="instagram-color"><i class="fa fa-instagram"></i></a>
+                              <a title="" href="<?php echo $userInfo->instagram  ?>" class="instagram-color"><i class="fab fa-instagram"></i></a>
                             </li>
                             <?php } ?>
 
