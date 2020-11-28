@@ -26,16 +26,18 @@
                                                 <a href="#" title="" class="btn" data-ripple="">Participation
                                                 </a>
                                                 <ul class="more-dropdown">
+                                                  <!--
                                                     <li>
                                                         <a href="#">J'y vais</a>
                                                     </li>
                                                     <li>
                                                         <a href="#">Peut ètre</a>
                                                     </li>
+                                                  -->
                                                 </ul>
                                             </li>
                                             <?php 
-                                            if ((($role == 1 || $role == 2  || $role == 3 || $role == 6 || $role == 7  ) && $projet->ClubID == $clubID  ) || $SA == 1 ){
+                                            if ((($role == 1 || $role == 2  || $role == 3 || $role == 6 || $role == 7  ) && $projet->ClubID == $clubID  ) || $SA == 1 || $SA == 2 ){
                                             if ( (time()-(60*60*24)) < strtotime($projet->startDate) ){ ?>
                                             <li>
                                                 <a href="#" title="Folow us" class="main-btn" data-ripple=""  data-toggle="modal" data-target="#myModal" >Modifier</a>
