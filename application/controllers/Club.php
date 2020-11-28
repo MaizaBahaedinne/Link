@@ -50,7 +50,6 @@ class Club extends BaseController {
 			        	$proj->score = $this->Score_club_model->scoreByProject ($proj->projectId) ;
 			        }
 			        $data['cl'] = $clubId;
-
 			        $data['members'] = $this->user_model->userListingByclub($clubId);
 			        $data["scores"]  = $this->Score_club_model->scoreListingByClub($clubId) ;
 		            $data["score"]  = $this->Score_club_model->scoreByClub($clubId) ; 
