@@ -87,7 +87,7 @@ class User extends BaseController
             $data['userRecords'] = $this->user_model->userListingBlock();
             $this->global['pageTitle'] = 'Blocage';
             $this->global['active'] = 'Blocage';
-            $this->loadViews("tunimateurs/blocage", $this->global, $data, NULL);
+            $this->loadViews("Tunimateurs/blocage", $this->global, $data, NULL);
     }
 
 
