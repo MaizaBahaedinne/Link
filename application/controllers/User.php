@@ -72,60 +72,31 @@ class User extends BaseController
      */
     function userListing()
     {
-      
-            $searchText = $this->security->xss_clean($this->input->post('searchText'));
-            $data['searchText'] = $searchText;
-            $this->load->library('pagination');
-            $count = $this->user_model->userListing($this->vendorId);
-            $data['count'] = count($count)  ; 
             $data['userRecords'] = $this->user_model->userListing($this->vendorId);
-            $this->global['pageTitle'] = 'CodeInsect : User Listing';
+            $this->global['pageTitle'] = 'Users';
             $this->global['active'] = 'users';
             $this->loadViews("users", $this->global, $data, NULL);
-        
     }
 
 
-
-
-    function userListing2()
+    /**
+     * This function is used to load the user list
+     */
+    function userBlockListing()
     {
-
-          
-            $searchText = $this->security->xss_clean($this->input->post('searchText'));
-            $data['searchText'] = $searchText;
-            
-            $this->load->library('pagination');
-            
-            $count = $this->user_model->userListingApprouve($searchText,$this->vendorId);
-            $data['count'] = count($count)  ; 
-            $data['userRecords'] = $this->user_model->userListingApprouve($searchText,$this->vendorId);
-            $this->global['active'] = 'members';
-            $this->global['pageTitle'] = 'CodeInsect : User Listing';
-            
-            $this->loadViews("Tunimateurs/list", $this->global, $data, NULL);
-        
+            $data['userRecords'] = $this->user_model->userListingBlock();
+            $this->global['pageTitle'] = 'Blocage';
+            $this->global['active'] = 'Blocage';
+            $this->loadViews("tunimateurs/blocage", $this->global, $data, NULL);
     }
 
 
 
 
 
-    function userByClubListingToApprove()
-    {
-        
-            $searchText = $this->security->xss_clean($this->input->post('searchText'));
-            $data['searchText'] = $searchText;
-            $this->load->library('pagination');
-            $count = $this->user_model->userListingByclubToApprouve($this->vendorId,$this->clubID);
-            $data['count'] = count($count)  ; 
-            $data['userRecords'] = $this->user_model->userListingByclubToApprouve($this->vendorId,$this->clubID);
-            $this->global['pageTitle'] = 'CodeInsect : User Listing';
-            $this->global['active'] = 'users';
-            $this->loadViews("club/approuve", $this->global, $data, NULL);
-        
 
-    }
+
+   
     
 
     /**
