@@ -367,21 +367,13 @@ class User extends BaseController
                 $adresse =$this->input->post('adresse');
                 $delegation = $this->input->post('delegation');
                 $gouvernorat = $this->input->post('gouvernorat');
-                $cellule = $this->input->post('cellule');
                 $sexe = $this->input->post('sexe');
-                
-                
-                
 
                 $file_name = 'avatar__'.$name.'_'.$_FILES['fileT']['name'];
+                $cellule = $this->input->post('cellule');
                 $file_tmp = $_FILES['fileT']['tmp_name'];
-                
                 $file_destination = 'uploads/avatar/' . $file_name;
-                
-
-
-                   
-                    $userInfo = array(
+                $userInfo = array(
                                       'avatar' => $file_name ,
                                       'name'=>$name,
                                       'prenom'=>$prenom,
@@ -420,6 +412,60 @@ class User extends BaseController
               
             
         
+    }
+
+
+     public function AvatarEdit($userId)
+    { 
+
+      $userInfo = $this->user_model->getUserInfoWithRole($userId);
+                $file_name = 'avatar__'.$userInfo->name.'_'.$_FILES['fileT']['name'];
+                $cellule = $this->input->post('cellule');
+                $file_tmp = $_FILES['fileT']['tmp_name'];
+                $file_destination = 'uploads/avatar/' . $file_name;
+                $userInfo = array('avatar' => $file_name );
+                
+                if(move_uploaded_file($file_tmp, $file_destination))
+                {
+                  $result = $this->user_model->editUser($userInfo, $this->vendorId);
+                  redirect("/logout") ;
+                }
+
+                
+              
+            
+        
+    }
+
+
+
+    /**
+     * This function is used to edit the user information
+     */
+    public function  InfoPersoEdit($userId)
+    { 
+                $about = $this->input->post('about');
+                $birthday = $this->input->post('birthday');
+                $adresse =$this->input->post('adresse');
+                $delegation = $this->input->post('delegation');
+                $gouvernorat = $this->input->post('gouvernorat');
+                $sexe = $this->input->post('sexe');
+                
+
+                $userInfo = array(
+                                  'about' => $about,
+                                  'adresse' => $adresse,
+                                  'birthday'=>$birthday,
+                                  'sexe'=>$sexe,
+                                  'gouvernorat'=>$gouvernorat,
+                                  'delegation'=>$delegation,
+                                  'updatedBy'=>$this->vendorId,
+                                  'updatedDtm'=>date('Y-m-d H:i:s')
+                                    );
+
+        $result = $this->user_model->editUser($userInfo, $userId );
+        redirect('/User/ProfileShow/'.$userId);  
+                        
     }
 
 

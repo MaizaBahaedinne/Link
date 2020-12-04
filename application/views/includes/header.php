@@ -242,8 +242,7 @@
 					<ul>
 						<li><a href="<?php echo base_url() ?>Project" title="">Calendrier</a></li>
 						<li><a href="" title="">Nos projet</a></li>
-						<li><a href="" title="">Taches</a></li>
-						<li><a href="" title="">Historiques</a></li>
+
 					</ul>
 				</li>
 				<li><span>Statistique</span> 

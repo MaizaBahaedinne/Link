@@ -39,7 +39,18 @@
                 <div class="row">
                   <div class="col-lg-6 col-md-6 col-sm-3">
                     <div class="user-figure">
-                      <figure><img class="alligator-profile"  src="<?php echo base_url() ?>uploads/avatar/<?php echo $userInfo->avatar ?>" alt=""></figure>
+                      <figure><img class="alligator-profile"  src="<?php echo base_url() ?>uploads/avatar/<?php echo $userInfo->avatar ?>" alt="">
+                        <br>
+                        <?php if($uid == $userInfo->userId || $SA == 1  ) { ?>
+                        <a data-toggle="modal" data-target="#EditAvatar"   >
+                              <i class="fa fa-camera"></i> Modifier
+                              
+                        </a>
+                        
+                        </form>
+                      <?php } ?>
+                      </figure>
+
                       <div class="author-meta">
                         <h5><a href="#" title=""><?php echo $userInfo->name ?></a></h5>
                         <span><?php echo $userInfo->role ?> <?php echo $userInfo->cellule ?></span>
@@ -119,7 +130,7 @@
                <div class="col-lg-4">
                         <aside class="sidebar static left">
                            <div class="widget">
-                              <h4 class="widget-title">Badges <a class="see-all" href="#" title="">See All</a></h4>
+                              <h4 class="widget-title">Badges <a class="see-all" href="#" title=""></a></h4>
                               <ul class="badgez-widget">
                                  <li>
                                  <a href="#" title="" data-toggle="tooltip" data-original-title="Male User"><img src="images/badges/badge2.png" alt=""></a>
@@ -128,11 +139,16 @@
                               </ul>
                            </div><!-- badges -->
                            <div class="central-meta ">
-                              <span class="create-post">Personal Info</span>
+                              <span class="create-post">Information Pesonnelle 
+                                <?php if($uid == $userInfo->userId || $SA == 1  ) { ?>
+                                  <a class="see-all" data-toggle="modal" data-target="#EditPersonelInfo" >
+                                  <i class="ti-pencil"></i> </a>
+                                <?php } ?>
+                               </span>
                               <div class="personal-head">
-                                <span class="f-title"><i class="fa fa-user"></i> About Me:</span>
+                                <span class="f-title"><i class="fa fa-user"></i> A propos:</span>
                                 <p>
- 
+                                  <?php echo $userInfo->about ?>
                                 </p>
                                 <span class="f-title"><i class="fa fa-birthday-cake"></i> Anniversaire:</span>
                                 <p>
@@ -186,7 +202,7 @@
                      <div class="col-md-8">
                         
                         <div class="central-meta">
-                  <span class="create-post">Informations générales<a href="#" title=""></a></span>
+                  <span class="create-post">Informations générales <b>[Prochainement Disponible]</b> <a href="#" title=""></a></span>
                   <div class="row">
                     <div class="col-lg-6">
 
@@ -292,3 +308,186 @@
          </div>
       </div>   
    </section><!-- content -->
+
+
+
+
+    <div class="modal fade" id="EditPersonelInfo">
+        <div class="modal-dialog ">
+          <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title">Mise à jour des données personnelle</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+             
+              <form class="c-form" method="post" action="<?php echo base_url()?>User/InfoPersoEdit/<?php echo $userInfo->userId ?>" >
+
+                <label>A propos</label>
+                <textarea  name="about"  ><?php echo $userInfo->about ?></textarea>
+                <label>Anniversaire</label>
+                <input type="date" required name="birthday" value="<?php echo $userInfo->birthday ?>">
+               
+                <label>Sexe</label>
+                <select name="sexe" required >
+                  <option value=""></option>
+                  <option value="Homme" <?php if($userInfo->sexe == "Homme" ){ ?> selected <?php } ?> >Homme</option>
+                  <option value="Femme"  <?php if($userInfo->sexe == "Femme" ){ ?> selected <?php } ?>  >Femme</option>
+                </select>
+
+                <label>adresse</label>
+                <input type="text" required name="adresse" value="<?php echo $userInfo->adresse ?>" >
+                <label>Gouvernourat</label>
+                 <select  name="gouvernorat"  required>
+                    <option value=""></option>
+                    <option value="Ariana" <?php if($userInfo->gouvernorat == "Ariana" ){ ?> selected <?php } ?> >Ariana</option>
+                    <option value="Béja" <?php if($userInfo->gouvernorat == "Béja" ){ ?> selected <?php } ?>>Béja</option>
+                    <option value="Ben Arous" <?php if($userInfo->gouvernorat == "Ben Arous" ){ ?> selected <?php } ?> >Ben Arous</option>
+                    <option value="Bizerte" <?php if($userInfo->gouvernorat == "Bizerte" ){ ?> selected <?php } ?> >Bizerte</option>
+                    <option value="Gabes" <?php if($userInfo->gouvernorat == "Gabès" ){ ?> selected <?php } ?> >Gabès</option>
+                    <option value="Gafsa" <?php if($userInfo->gouvernorat == "Gafsa" ){ ?> selected <?php } ?> >Gafsa</option>
+                    <option value="Jendouba"  <?php if($userInfo->gouvernorat == "Jendouba" ){ ?> selected <?php } ?>  >Jendouba</option>
+                    <option value="Kairouan" <?php if($userInfo->gouvernorat == "Kairouan" ){ ?> selected <?php } ?>   >Kairouan</option>
+                    <option value="Kasserine"  <?php if($userInfo->gouvernorat == "Kasserine" ){ ?> selected <?php } ?>  >Kasserine</option>
+                    <option value="Kébili"  <?php if($userInfo->gouvernorat == "Kébili" ){ ?> selected <?php } ?> >Kébili</option>
+                    <option value="Kef"   <?php if($userInfo->gouvernorat == "Kef" ){ ?> selected <?php } ?> >Kef</option>
+                    <option value="Mahdia" <?php if($userInfo->gouvernorat == "Mahdia" ){ ?> selected <?php } ?> >Mahdia</option>
+                    <option value="Manouba"  <?php if($userInfo->gouvernorat == "Manouba" ){ ?> selected <?php } ?>  >Manouba</option>
+                    <option value="Médenine" <?php if($userInfo->gouvernorat == "Médenine" ){ ?> selected <?php } ?>  >Médenine</option>
+                    <option value="Monastir" <?php if($userInfo->gouvernorat == "Monastir" ){ ?> selected <?php } ?> >Monastir</option>
+                    <option value="Nabeul" <?php if($userInfo->gouvernorat == "Nabeul" ){ ?> selected <?php } ?> >Nabeul</option>
+                    <option value="Sfax"  <?php if($userInfo->gouvernorat == "Sfax" ){ ?> selected <?php } ?>  >Sfax</option>
+                    <option value="Sidi Bouzid" <?php if($userInfo->gouvernorat == "Sidi Bouzid" ){ ?> selected <?php } ?>  >Sidi Bouzid</option>
+                    <option value="Siliana" <?php if($userInfo->gouvernorat == "Siliana" ){ ?> selected <?php } ?>  >Siliana</option>
+                    <option value="Sousse" <?php if($userInfo->gouvernorat == "Sousse" ){ ?> selected <?php } ?>   >Sousse</option>
+                    <option value="Tataouine"  <?php if($userInfo->gouvernorat == "Tataouine" ){ ?> selected <?php } ?>  >Tataouine</option>
+                    <option value="Tozeur" <?php if($userInfo->gouvernorat == "Tozeur" ){ ?> selected <?php } ?> >Tozeur</option>
+                    <option value="Tunis"  <?php if($userInfo->gouvernorat == "Tunis" ){ ?> selected <?php } ?>  >Tunis</option>
+                    <option value="Zaghouan"  <?php if($userInfo->gouvernorat == "Zaghouan" ){ ?> selected <?php } ?> >Zaghouan</option>
+                 </select>
+                <label>code Postal</label>
+                <input type="number" required name="delegation" value="<?php echo $userInfo->delegation ?>" > 
+                <hr>
+                <label>Mobile :<br> <?php echo $userInfo->mobile ?> </label>
+                <br>
+                <label>Mail :<br> <?php echo $userInfo->email ?></label>
+              
+                <hr>
+                <p>Veuillez envoyer un mail à <b><a href="mailto:tunivisions.link@gmail.com">tunivisions.link@gmail.com</a></b> si vous volez changer votre <b>numéro de téléphone</b> ou votre <b>E-mail</b>
+                <hr>
+                <input type="submit"  value="Envoyer">
+
+              </form>
+
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Fermer</button>
+            </div>
+          </div>
+        </div>
+    </div>
+
+
+
+    <div class="modal fade" id="EditAvatar">
+        <div class="modal-dialog modal-sm ">
+          <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title">Avatar</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body"  style=" text-align: center ; vertical-align: center">
+             
+              <form action="<?php echo base_url()?>User/AvatarEdit/<?php echo $userInfo->userId ?>" method="POST" enctype="multipart/form-data" class="c-form" >
+
+               
+               
+                    <div style="height: 200px;width: 200px;  
+                    align-items: center;
+                    justify-content:center;
+                     position: relative;" >
+                                        <input 
+                                       
+                                        type="file" 
+                                        name="fileT"   
+                                        class="dropify-fr" 
+                                        data-max-file-size="300K"
+                                        data-max-width="800" 
+                                        data-max-height="800"                                     
+                                        
+                                        data-allowed-file-extensions="png jpg jpeg"
+                                        required accept="image/*"
+                                        >
+                                        
+                     </div>
+                    
+           
+                <span>Taille recommandé 800x800 px et une taille de 200 ko</span><br>
+                
+                <hr>
+                 <input type="submit"  name="" value="envoyer">
+                 <span>une re-authentification obligatoire sera faite aprés la modification de votre avatar</span>
+                </form>
+
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Fermer</button>
+            </div>
+          </div>
+        </div>
+    </div>
+
+
+
+
+    <script>
+            $(document).ready(function(){
+                
+              // Translated
+                $('.dropify-fr').dropify({
+                    messages: {
+                        default: 'Glissez-déposez un fichier ici ou cliquez',
+                        replace: 'Glissez-déposez un fichier ou cliquez pour remplacer',
+                        remove:  'Supprimer',
+                        error:   'Désolé, le fichier trop volumineux',
+                        'fileSize': 'The file size is too big ({{ value }} max).',
+                        'maxWidth': 'The image width is too small ({{ value }}}px min).',
+                        'maxHeight': 'The image height is too big ({{ value }}px max).',
+                        'imageFormat': 'The image format is not allowed ({{ value }} only).'
+                    }
+                });
+
+                // Used events
+                var drEvent = $('#input-file-events').dropify();
+
+                drEvent.on('dropify.beforeClear', function(event, element){
+                    return confirm("Do you really want to delete \"" + element.file.name + "\" ?");
+                });
+
+                drEvent.on('dropify.afterClear', function(event, element){
+                    alert('File deleted');
+                });
+
+                drEvent.on('dropify.errors', function(event, element){
+                    console.log('Has Errors');
+                });
+
+
+
+                
+
+
+            });
+        </script>

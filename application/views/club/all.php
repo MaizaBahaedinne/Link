@@ -7,7 +7,11 @@
               <div class="col-lg-12 col-md-12 col-sm-6">
                 <aside class="sidebar">
                    <div class="widget">
-                    <h4 class="widget-title">Liste des clubs <a class="align-right main-btn" data-toggle="modal" data-target="#myModal" >Ajouter un club</a> </h4>
+                    <h4 class="widget-title">Liste des clubs 
+                       <?php if($SA == 1 || $SA == 2  ){ ?>
+                      <a class="align-right main-btn" data-toggle="modal" data-target="#myModal" >Ajouter un club</a>
+                      <?php } ?> 
+                       </h4>
 
                     <ul class="faved-page">
                          <table  class="table table-striped table-responsive-xl" id="tableid" style="width: cover" >
@@ -66,7 +70,7 @@
                         <td>
                           <a href="mailto:<?php echo $record->facebook ; ?>"><i class="fa fa-envelope" aria-hidden="true"></i><?php echo $record->facebook ; ?></a>
                             <br>
-                          <a href="<?php echo $record->email ; ?>" ><i class="fa fa-facebook"></i> Club Tunivisions <?php echo $record->name ; ?> </a>
+                          <a href="<?php echo $record->email ; ?>" ><i class="fab fa-facebook-square"></i> Club Tunivisions <?php echo $record->name ; ?> </a>
                         </td>
                         <td>
                             <?php if ($record->is_Actif=="0"){  ?>
@@ -78,10 +82,8 @@
                         </td>
                         <td>
                         <?php if($SA == 1 || $SA == 2  ){ ?>
-                        
                              <a href="<?php echo base_url() ?>Club/editClub/<?php echo  $record->clubID ?>">   <i class="ti-pencil"></i> </a>
                              <a href="<?php echo base_url() ;?>Register?var1=<?php echo $uid ?>&var4=<?php echo  Date('Y-m-d') ?>&var2=<?php echo $record->clubID ?>&var3=1" target="_blank"><i class="ti-link"></i> </a>
-                        
                          <?php } ?> 
                          </td>
                     </tr>

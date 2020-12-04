@@ -216,6 +216,7 @@
                                          <option value="Unité we are carthage" >Unité we are carthage </option>
                                          <option value="Unité incubateur" >Unité incubateur </option>
                                          <option value="Unité Fund raising" >Unité Fund raising </option>
+                                         <option value="Unité statistique" >Unité statistique </option>
                                      </select>
                                      <?php } }  ?>
                                      <br>

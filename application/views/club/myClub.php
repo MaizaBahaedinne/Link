@@ -87,7 +87,7 @@
 
                       <ul class="nav nav-tabs  nav-tabs--left" >
                         <li class="nav-item">
-                          <a href="#ProjetBlock" class="nav-link active" data-toggle="tab" ><i class="fa fa-gear"></i> Projets</a>
+                          <a href="#ProjetBlock" class="nav-link active" data-toggle="tab" ><i class="fas fa-project-diagram"></i> Projets</a>
                         </li>
                         <li class="nav-item">
                           <a href="#membresBlock" class="nav-link" data-toggle="tab" ><i class="fa fa-users"></i> Membres</a>
@@ -122,8 +122,10 @@
                               <h4 class="widget-title">Mon club</h4>
                               <ul class="fav-community">
                                 <li><i class="fa fa-address-card"></i> <?php echo $clubInfo->birthday ?> </li>
-                                <li><i class="fa fa-users"></i><a href="#" title="">invitez vos amis</a> pour rejoindre le club</li>
-                                <li><i class="fa fa-thumbs-up"></i>13 Membre actif</li>
+                                <?php if ($role == 1 || $role == 3  || $role == 6 ){ ?>
+                                <li><i class="fa fa-users"></i><a data-toggle="modal" data-target="#TuniFan" >invitez vos amis</a> pour rejoindre le club</li>
+                                <?php } ?>
+                                <li><i class="fa fa-thumbs-up"></i><?php echo count($members) ?> Membre actif</li>
                                 <li><i class="fa fa-rss"></i>13 Tunifans</li>
                                 <li><i class="fa fa-globe"></i><a href="<?php echo $clubInfo->email ?>" title="">club Tunivisions <?php echo $clubInfo->name ?></a></li>
                                 <li><i class="fa fa-map-marker"></i><?php echo $clubInfo->facebook ?></li>
@@ -159,7 +161,7 @@
                                            <span class="">
                                              
                                             <?php if (empty($projet->score )){  ?>
-                                              <?php if( (($role == 1 || $role == 2  || $role == 3 || $role == 6 ) && $projet->ClubID == $clubID ) || $SA == 1  ){ ?>
+                                              <?php if( (($role == 1 || $role == 2  || $role == 3 || $role == 6 || $SA == 1 || $role == 2  ) && $projet->ClubID == $clubID ) || $SA == 1  ){ ?>
                                                   <button class="btn btn-danger" data-toggle="modal" data-target="#ProjectScore<?php echo $projet->projectId ?>" >Collecter les points</button>
                                               <?php } ?>
 
@@ -251,8 +253,10 @@
                               <li><span>E-Mail:</span><?php echo $member->email ?></li>
                               <li><span>mobile:</span><?php if($SA == 1 ){echo $member->mobile ; } ?></li>
                             </ul>
+                            <!--
                             <a class="btn-main align-left" href="#" title="">Vister</a>
                             <a class="send-mesg" href="#" title="">Message</a>
+                            -->
                             <div class="more-opotnz">
                               <i class="fa fa-ellipsis-h"></i>
                               <ul>
