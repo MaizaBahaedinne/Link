@@ -495,7 +495,7 @@
 
 
 
-         <div class="modal fade" id="presence">
+         <div class="modal fade" id="participationProjet">
         <div class="modal-dialog ">
           <div class="modal-content">
 
@@ -522,6 +522,12 @@
                 <input type="" name="" value="<?php echo $user->sexe ?>" disabled>
                 <label>Club Tunivisions</label>
                 <input type="" name="" value="<?php echo $user->clubName ?>" disabled>
+                <label>Motorisé</label>
+                <select required>
+                  <option value="" ></option>
+                  <option value="Oui" >Oui</option>
+                  <option value="Non" >Non</option>
+                </select>
 
 
               </div>
