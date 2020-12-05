@@ -491,3 +491,49 @@
           </div>
         </div>
     </div><!-- fade Modal -->
+
+
+
+
+         <div class="modal fade" id="presence">
+        <div class="modal-dialog ">
+          <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title"></h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+              <div >
+                <h2>Regelement de participation au <?php echo $projet->titre ?></h2>
+                <span></span> 
+              </div>
+
+              <div>
+                <h2>Fiche de participation</h2>
+                <label>Nom et prénom</label>
+                <input type="" name="" value="<?php echo $user->name ?>" disabled>
+                <label>CIN</label>
+                <input type="" name="" value="<?php echo $user->cin ?>" disabled>
+                <label>Sexe</label>
+                <input type="" name="" value="<?php echo $user->sexe ?>" disabled>
+                <label>Club Tunivisions</label>
+                <input type="" name="" value="<?php echo $user->clubName ?>" disabled>
+
+
+              </div>
+              <div>
+                
+              </div>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Fermer</button>
+            </div>
+          </div>
+        </div>
+    </div><!-- fade Modal -->
