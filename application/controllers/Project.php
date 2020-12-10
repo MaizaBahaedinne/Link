@@ -36,7 +36,7 @@ class Project extends BaseController {
 
    		public function projectDetails($projectID)
 		        {
-
+                        $data["user"] = $this->user_model->getUserInfoWithRole($this->vendorId);
 		                $data["projet"] = $this->project_model->getProjectInfo($projectID);
                         $data["score"] = $this->score_club_model->scoreByProject($projectID); 
                         $data["part"] = $this->scoring_model->PresenceByProject($projectID); 

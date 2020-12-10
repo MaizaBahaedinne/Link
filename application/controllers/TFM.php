@@ -137,7 +137,7 @@ class TFM extends BaseController {
 		        
 
 
-		public function partanTfm (){
+		public function partanTfm ($TFMId){
 
 				//club
 		/*		if($this->role == 1 || $this->SA==1  ){
@@ -162,13 +162,10 @@ class TFM extends BaseController {
 		*/	
 
 				$partanTfm = array(
-		          'tfmId'=>'7',
+		          'tfmId'=>$TFMId ,
 		          'dateInscrip'=>date('Y-m-d H:i:s'),
 		          'userId'=>$this->vendorId ,
 		          'statut'=>2 ,
-		          'moto'=> 1 ,
-		          'sysMobile'=> 'Android' ,
-		          'remb'=> 0 ,
 		        );
 
 		         $result = $this->tfm_model->addNewPartTFM($partanTfm) ;

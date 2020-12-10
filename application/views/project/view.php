@@ -12,30 +12,28 @@
                                 <div class="profile-section">
                                     <br>
                                     <div class="row">
-                                        <div class="col-lg-5">
+                                        <div class="col-lg-4">
                                              <a style="color: red" >DU 
                                                 <?php echo date('d/m/Y H:i',strtotime('+0 hours',strtotime($projet->startDate))) ; ?> 
                                                 AU <?php echo date('d/m/Y H:i',strtotime('+0 hours',strtotime($projet->endDate))) ; ?>   
                                                 </a><br>
                                              <h4><?php echo $projet->type ?> : <?php echo $projet->titre ?></h4>
                                         </div>
-                                        <div class="col-lg-7">
+                                        <div class="col-lg-8">
                                             <ul class="align-right user-ben">
-                                        
-                                            <li class="more">
-                                                <a href="#" title="" class="btn" data-ripple="">Participation
+                                           
+                                           <?php if ($HUA == 1 || $SA == 1 ){ ?>
+                                            <li >
+                                                <a class="btn main-btn btn-sm"  >Statistique
                                                 </a>
-                                                <ul class="more-dropdown">
-                                                  <!--
-                                                    <li>
-                                                        <a href="#">J'y vais</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">Peut ètre</a>
-                                                    </li>
-                                                  -->
-                                                </ul>
                                             </li>
+                                          <?php } ?>
+                                          <?php if ($HUA == 3 || $SA == 1 ){ ?>
+                                            <li >
+                                                <a class="btn main-btn btn-sm" data-ripple=""  data-toggle="modal" data-target="#participationProjet" >Participation
+                                                </a>
+                                            </li>
+                                          <?php } ?>
                                             <?php 
                                             if ((($role == 1 || $role == 2  || $role == 3 || $role == 6 || $role == 7  ) && $projet->ClubID == $clubID  ) || $SA == 1 || $SA == 2 ){
                                             if ( (time()-(60*60*24)) < strtotime($projet->startDate) ){ ?>
@@ -501,36 +499,48 @@
 
             <!-- Modal Header -->
             <div class="modal-header">
-              <h4 class="modal-title"></h4>
+              <h4 class="modal-title">Fiche de participation au <?php echo $projet->titre ?></h4>
               <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
 
             <!-- Modal body -->
             <div class="modal-body">
-              <div >
-                <h2>Regelement de participation au <?php echo $projet->titre ?></h2>
-                <span></span> 
+              
+              <form class="c-form" action="<?php echo base_url() ?>TFM/partanTfm/8" method="post" >
+            )
+                <h5>Règlement</h5>
+                <hr>
+                <div style="border-color: red ; border-style: groove; border-width:1px ; border-color: #757a95 ; ">
+                <h6 style=" margin: 10px">R1</h6>
+                <p style=" margin: 15px">Bla Bla Bla<br>
+                <input type="checkbox" required>  Lu & approuvé </input>
+                </p>
+                </div>
+             
+
+              <div hidden>
+                <h5>Fiche de participation</h5>
+                
+                  <label>Nom et prénom</label>
+                  <input  value="<?php echo $user->name ?>" disabled>
+                  <label>CIN</label>
+                  <input  value="<?php echo $user->cin ?>" disabled>
+                  <label>Sexe</label>
+                  <input  value="<?php echo $user->sexe ?>" disabled>
+                  <label>Club Tunivisions</label>
+                  <input  value="<?php echo $user->ClubName ?>" disabled>
+                  <label>Motorisé</label>
+                  <select required>
+                    <option value="" ></option>
+                    <option value="Oui" >Oui</option>
+                    <option value="Non" >Non</option>
+                  </select>
+                  <hr>
+                  <input type="submit" name="" value="Envoyer">
+                
+
               </div>
-
-              <div>
-                <h2>Fiche de participation</h2>
-                <label>Nom et prénom</label>
-                <input type="" name="" value="<?php echo $user->name ?>" disabled>
-                <label>CIN</label>
-                <input type="" name="" value="<?php echo $user->cin ?>" disabled>
-                <label>Sexe</label>
-                <input type="" name="" value="<?php echo $user->sexe ?>" disabled>
-                <label>Club Tunivisions</label>
-                <input type="" name="" value="<?php echo $user->clubName ?>" disabled>
-                <label>Motorisé</label>
-                <select required>
-                  <option value="" ></option>
-                  <option value="Oui" >Oui</option>
-                  <option value="Non" >Non</option>
-                </select>
-
-
-              </div>
+              </form>
               <div>
                 
               </div>
