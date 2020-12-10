@@ -28,15 +28,8 @@
                                                 </a>
                                             </li>
                                           <?php } ?>
-                                          <?php if ( $HUA == 3 || $SA == 1 ){ 
-                                            if( empty($partProject) ){
-                                            ?>
-                                            <li >
-                                                <a class="btn main-btn btn-sm" data-ripple=""  data-toggle="modal" data-target="#participationProjet" >Participation
-                                                </a>
-                                            </li>
-                                          <?php } }  ?>
-                                            <?php 
+                                          
+                                          <?php 
                                             if ((($role == 1 || $role == 2  || $role == 3 || $role == 6 || $role == 7  ) && $projet->ClubID == $clubID  ) || $SA == 1 || $SA == 2 ){
                                             if ( (time()-(60*60*24)) < strtotime($projet->startDate) ){ ?>
                                             <li>
@@ -52,6 +45,14 @@
                                                 <a href="<?php echo base_url() ?>Task/tasksListing/<?php echo $projet->projectId ?>"  class="align-right user-ben main-btn " >Liste des taches</a>
                                             </li>
                                             -->
+                                            <?php if ( $HUA == 3 || $SA == 1 ){ 
+                                            if( empty($partProject) ){
+                                            ?>
+                                            <li >
+                                                <a class="btn main-btn btn-sm" data-ripple=""  data-toggle="modal" data-target="#participationProjet" >Participation
+                                                </a>
+                                            </li>
+                                          <?php } }  ?>
                                             
                                         </ul>
                                         
