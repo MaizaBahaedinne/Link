@@ -109,8 +109,7 @@
         </script>
      <script src="https://cdn.tiny.cloud/1/vqf4xobfz4h7owrwfo1qar98sig5s2yt4cgnuskbexcf8zqh/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 
-
-
+<!--
   <script>
 
 
@@ -184,7 +183,7 @@
 		    });
 		}
 	</script>
-
+ !-->
 </head>
 <body >
 	<div class="wavy-wraper" onload="getLocation()" >
