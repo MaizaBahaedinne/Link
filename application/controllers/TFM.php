@@ -160,20 +160,21 @@ class TFM extends BaseController {
 				$moto = $this->input->post('bus');
 				$sys = $this->input->post('sys');
 		*/	
-
+				$moto = $this->input->post('bus');
 				$partanTfm = array(
 		          'tfmId'=>$TFMId ,
 		          'dateInscrip'=>date('Y-m-d H:i:s'),
 		          'userId'=>$this->vendorId ,
 		          'statut'=>2 ,
+		          'moto'=> $moto 
 		        );
 
 		         $result = $this->tfm_model->addNewPartTFM($partanTfm) ;
 
 
 				
-		if ( $result){	
-		   			redirect('TFM') ; 		
+		if ($result){	
+		   			redirect('/Project/projectDetails/'.$TFMId) ; 		
 		   }
 		
 		}
@@ -221,18 +222,13 @@ class TFM extends BaseController {
             $data['searchText'] = $searchText;
             
             $this->load->library('pagination');
-						$data['partParReg'] = $this->Tfm_part_model->TFMPartConfirmedByCityListing();
-						$data['partParclub'] = $this->Tfm_part_model->TFMPartConfirmedByClubListing();
-
-						$data['partParsexeH'] = $this->Tfm_part_model->TFMPartConfirmedBySexeHListing();
-						$data['partParsexeF'] = $this->Tfm_part_model->TFMPartConfirmedBySexeFListing();
-
-						$data['countINS'] = $this->Tfm_part_model->TFMPartListing();
-
-					
-
-		
-						$data['countTotal'] = count($this->Tfm_part_model->TFMPartListing());
+			$data['partParReg'] = $this->Tfm_part_model->TFMPartConfirmedByCityListing();
+			$data['partParclub'] = $this->Tfm_part_model->TFMPartConfirmedByClubListing();
+			$data['partParsexeH'] = $this->Tfm_part_model->TFMPartConfirmedBySexeHListing();
+			$data['partParsexeF'] = $this->Tfm_part_model->TFMPartConfirmedBySexeFListing();
+			$data['countINS'] = $this->Tfm_part_model->TFMPartListing();
+			$data['countTotal'] = count($this->Tfm_part_model->TFMPartListing());
+		                
 		                $this->global['pageTitle'] = 'CodeInsect : club  Listing';
 		             	$this->global['active'] = 'TFMC';
 		                $this->loadViews("TFM/stat", $this->global, $data, NULL);   

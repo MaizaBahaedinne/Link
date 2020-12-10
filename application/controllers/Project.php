@@ -16,6 +16,7 @@ class Project extends BaseController {
         $this->load->model('project_model'); 
         $this->load->model('scoring_model');
         $this->load->model('score_club_model');
+        $this->load->model('tfm_model');
         $this->isLoggedIn();   
     }
 
@@ -24,8 +25,8 @@ class Project extends BaseController {
 		               
 		                $searchText='' ;
 		                $data['projectRecords'] = $this->project_model->projectListing();
-                                 $data['projectRecords'] = $this->project_model->projectListing();
-                                 $data["clubInfo"] = $this->club_model->getClubInfo($this->clubID);
+                        
+                        $data["clubInfo"] = $this->club_model->getClubInfo($this->clubID);
                         $data["members"] = $this->user_model->userListingByclub($this->clubID) ;
                         $data['Projets'] = $this->project_model->projectNationalListing() ;
                         $this->global['pageTitle'] = 'Projets ';
@@ -40,7 +41,7 @@ class Project extends BaseController {
 		                $data["projet"] = $this->project_model->getProjectInfo($projectID);
                         $data["score"] = $this->score_club_model->scoreByProject($projectID); 
                         $data["part"] = $this->scoring_model->PresenceByProject($projectID); 
-                       
+                        $data["partProject"] =  $this->tfm_model->TFMPId($this->vendorId,$projectID);
 
                         $this->global['pageTitle'] = "Projet" ;
 		                $this->loadViews("project/view", $this->global, $data, NULL);   
@@ -48,15 +49,15 @@ class Project extends BaseController {
 				
 		public function addNew()
 			    {
-			            $this->load->model('user_model');
-			            $data['roles'] = $this->user_model->getUserRoles();
-			            $data['clubs'] = $this->user_model->getClubs();
-                        $data['members'] = $this->user_model->userListingByclub($this->vendorId,$this->clubID);
+	            $this->load->model('user_model');
+	            $data['roles'] = $this->user_model->getUserRoles();
+	            $data['clubs'] = $this->user_model->getClubs();
+                $data['members'] = $this->user_model->userListingByclub($this->vendorId,$this->clubID);
 
-                       $this->global['pageTitle'] = 'Ajouter un projet ';
+               $this->global['pageTitle'] = 'Ajouter un projet ';
 
 
-			            $this->loadViews("project/New", $this->global, $data, NULL);
+	            $this->loadViews("project/New", $this->global, $data, NULL);
 			    }
 
         public function addNewP()

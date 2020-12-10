@@ -84,7 +84,7 @@
         object-fit: cover;
         object-position: 50% 50%;
         width: 250px;
-        height: 350px;
+        height: 400px;
     }
 
 </style>

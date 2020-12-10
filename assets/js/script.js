@@ -4,6 +4,11 @@ $(window).load(function(){
     $('.wavy-wraper').addClass('hidden');
 });
 
+
+   
+
+
+
 function fbConn() {
 	$('#facebookPageGroup').show() ;
  			$('#facebookAuth').hide() ; 

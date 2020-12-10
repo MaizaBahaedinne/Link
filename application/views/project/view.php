@@ -28,12 +28,14 @@
                                                 </a>
                                             </li>
                                           <?php } ?>
-                                          <?php if ( $SA == 1 ){ ?>
+                                          <?php if ( $SA == 1 ){ 
+                                            if( empty($partProject) ){
+                                            ?>
                                             <li >
                                                 <a class="btn main-btn btn-sm" data-ripple=""  data-toggle="modal" data-target="#participationProjet" >Participation
                                                 </a>
                                             </li>
-                                          <?php } ?>
+                                          <?php } }  ?>
                                             <?php 
                                             if ((($role == 1 || $role == 2  || $role == 3 || $role == 6 || $role == 7  ) && $projet->ClubID == $clubID  ) || $SA == 1 || $SA == 2 ){
                                             if ( (time()-(60*60*24)) < strtotime($projet->startDate) ){ ?>
@@ -45,10 +47,11 @@
                                                 <a href="#" title="Folow us" class="main-btn" data-ripple=""  data-toggle="modal" data-target="#presence" >Présence</a>
                                             </li>
                                             <?php  } ?>
+                                            <!--
                                             <li>
                                                 <a href="<?php echo base_url() ?>Task/tasksListing/<?php echo $projet->projectId ?>"  class="align-right user-ben main-btn " >Liste des taches</a>
                                             </li>
-                                            
+                                            -->
                                             
                                         </ul>
                                         
@@ -60,7 +63,29 @@
                             
                         
                             <div class="col-lg-7">
-
+                                <?php if ($partProject){ ?>
+                                  <div class="central-meta">
+                                     <span class="create-post">Statut de participation <a href="#" title=""></a></span>
+                                     <?php if ($partProject->statut == 2 ){ ?>
+                                    <div class="btn btn-block btn-warning">
+                                      <b>Votre participation est en cours de validation !</b>  <br><br>
+                                      1. Le paiement sera effectué en une seule tranche : 160 dt. <br><b>Deadline de paiement : Mardi 15/12/2020</b><br>
+                                      2. Le président est le seul vis à vis avec la fondation pour le paiement des frais d'inscription des membres de son club.<br>
+                                      3. Le deadline du formulaire d’inscription est le lundi 15 décembre 2020.<br>
+                                      4. Les frais d’inscription pour les non-résidents sont à 90dt.<br>
+                                      5. Il est strictement obligatoire de lire et de respecter le reglement du TUM.<br>
+                                      6. Aucun paiement ne sera  effectué après le 15 décembre.<br>
+                                      7. Toute tentative de fraude engendra des sanctions au club concerné
+                                    </div>
+                                     <?php } ?>
+                                    <?php if ($partProject->statut == 1 ){ ?>
+                                    <div class="btn btn-block btn-success">
+                                      Votre participation a été validé <br>
+                                      code de  participation : <b><?php echo $partProject->id ?></b>
+                                    </div>
+                                     <?php } ?>
+                                  </div>
+                                <?php } ?>
                                 <div class="central-meta">
                                     <span class="create-post">Détails <a href="#" title=""></a></span>
                                     <i class="fa fa-clock-o" aria-hidden="true" ></i> DU <?php echo $projet->startDate ?> AU <?php echo $projet->endDate ?> <br><br>
@@ -494,7 +519,7 @@
 
 
          <div class="modal fade" id="participationProjet">
-        <div class="modal-dialog ">
+        <div class="modal-dialog modal-sm ">
           <div class="modal-content">
 
             <!-- Modal Header -->
@@ -506,20 +531,87 @@
             <!-- Modal body -->
             <div class="modal-body">
               
-              <div>
-              <form class="c-form" action="<?php echo base_url() ?>TFM/partanTfm/8" method="post" >
-            )
-                <h5>Règlement</h5>
+              <div id="Regelement">
+              <form class="c-form" action="<?php echo base_url() ?>TFM/partanTfm/<?php echo $projet->projectId ?>" method="post" >
+            
+                <h5>REGLEMENTS &laquo; TUNIVISIONS UNIVERSITY MEETING &raquo;</h5>
                 <hr>
                 <div style="border-color: red ; border-style: groove; border-width:1px ; border-color: #757a95 ; ">
-                <h6 style=" margin: 10px">R1</h6>
-                <p style=" margin: 15px">Bla Bla Bla<br>
-                <input type="checkbox" required>  Lu & approuvé </input>
-                </p>
+                  <div style="margin: 25px ">
+                   
+                   <p>Chers participants,</p>
+                    <p style="margin-left: 20px;">❖ Afin d&rsquo;assurer un bon d&eacute;roulement de notre s&eacute;minaire &laquo; Tunivisions University Meeting &raquo; comportant 1200 participants, nous avons proc&eacute;d&eacute; &agrave; la mise en place de ce r&egrave;glement qui a pour but de favoriser toutes les conditions qui m&egrave;nent &agrave; la bonne conduite de ce s&eacute;minaire.</p>
+                    <p style="margin-left: 20px;">❖ Nous vous invitons &agrave; prendre conscience du pr&eacute;sent r&egrave;glement qui impose le respect des lieux, des normes de s&eacute;curit&eacute;, des relations entre les Tunimateurs.</p>
+                    <p style="margin-left: 20px;">❖ Les articles du pr&eacute;sent r&egrave;glement s&rsquo;appliquent &agrave; chaque participant et doivent &ecirc;tre lus et approuv&eacute;s.</p>
+                    <h3>ARTICLE 1 : ORGANISATION ET PROTOCOLE SANITAIRE</h3>
+                    <h4>A. Respect du fonctionnement de la proc&eacute;dure d&rsquo;inscription :</h4>
+                    <p>Afin de finaliser son inscription, chaque participant est demand&eacute; &agrave; :</p>
+                    <p style="margin-left: 20px;">&bull; Effectuer son paiement</p>
+                    <p style="margin-left: 20px;">&bull; Lire, approuver et signer le pr&eacute;sent r&egrave;glement ci-dessous</p>
+                    <p style="margin-left: 20px;">&bull; Se munir de sa carte d&rsquo;identit&eacute; durant les jours du s&eacute;minaire</p>
+                    <h4>B. Respect du protocole sanitaire lors du TUM :</h4>
+                    <p><strong>B.1. Port du masque obligatoire</strong></p>
+                    <p style="margin-left: 20px;">&bull; Le port d&rsquo;un masque est obligatoire &agrave; l&rsquo;h&ocirc;tel et durant toutes les phases de votre journ&eacute;e : R&eacute;unions, c&eacute;r&eacute;monies d&rsquo;ouverture et de cl&ocirc;ture, formations etc..</p>
+                    <p style="margin-left: 20px;">&bull; Assurez-vous d&apos;avoir suffisamment des masques pour votre journ&eacute;e.</p>
+                    <p style="margin-left: 20px;">&bull; Vous pouvez &eacute;galement apporter du d&eacute;sinfectant pour les mains si vous le souhaitez (flacon de moins de 100ml).</p>
+                    <p><strong>B.2. Acc&egrave;s aux formations / workshop et conf&eacute;rences :</strong></p>
+                    <p>Pour acc&eacute;der aux activit&eacute;s du s&eacute;minaire, chaque membre doit imp&eacute;rativement :</p>
+                    <p style="margin-left: 20px;">&bull; Porter son badge.</p>
+                    <p style="margin-left: 20px;">&bull; Se munir de son bloc note et son stylo.</p>
+                    <p style="margin-left: 20px;">&bull; Porter votre PC si c&rsquo;est possible.</p>
+                    <p style="margin-left: 20px;">&bull; Respecter le dress code (un document vous sera communiqu&eacute; &agrave; propos le Dress code)</p>
+                    <p>Remarque : Un bloc note, un stylo et votre badge vous seront soumis d&egrave;s votre arriv&eacute;e sous forme de welcome pack.</p>
+                    <p><strong>B.3. Conf&eacute;rences et formations/workshop :</strong></p>
+                    <p>Durant les formations :</p>
+                    <p style="margin-left: 20px;">- Vous &ecirc;tes amen&eacute;s &agrave; signer la de pr&eacute;sence qui sera circul&eacute;e entre participants. - L&rsquo;utilisation des t&eacute;l&eacute;phones portables est interdite - Vous devez respecter la dur&eacute;e des formations et des conf&eacute;rences (Pas de retard) - L&rsquo;absence et le retard ne sont pas tol&eacute;r&eacute;s et le fait de ne pas assister &agrave; l&rsquo;int&eacute;gralit&eacute; du Programme auquel vous &ecirc;tes affect&eacute; risque de vous faire perdre un de vos droits.</p>
+                    <h3>ARTICLE 2 : RESPECT DES LIEUX</h3>
+                    <h4>II.1. Locaux :</h4>
+                    <p style="margin-left: 20px;">- Ce s&eacute;minaire &eacute;tant r&eacute;serv&eacute; aux Tunimateurs, il est strictement interdit de faire introduire des</p>
+                    <p style="margin-left: 20px;">personnes &eacute;trang&egrave;res aux mouvement &agrave; l&rsquo;espace de l&rsquo;h&ocirc;tel.</p>
+                    <p style="margin-left: 20px;">- Chaque participant doit veiller &agrave; la propret&eacute; des salles.</p>
+                    <p style="margin-left: 20px;">- Tout incident doit &ecirc;tre signal&eacute; &agrave; un responsable (Membre du comit&eacute; organisateur).</p>
+                    <p style="margin-left: 20px;">- Chaque membre s&rsquo;engage &agrave; ne rien faire qui puisse porter pr&eacute;judice de quelque fa&ccedil;on &agrave; l&rsquo;int&eacute;grit&eacute;</p>
+                    <p style="margin-left: 20px;">de l&rsquo;h&ocirc;tel.</p>
+                    <h4>II.2. Hygi&egrave;ne et s&eacute;curit&eacute; :</h4>
+                    <p style="margin-left: 20px;">- Il est strictement interdit de prendre son repas,de fumer ou d&rsquo;introduire des boissons Alcoolis&eacute;es</p>
+                    <p style="margin-left: 20px;">dans les salles de formations(Seules sont autoris&eacute;es les petites collations)</p>
+                    <h4>II.3. Vol :</h4>
+                    <p style="margin-left: 20px;">- Vous &ecirc;tes amen&eacute;s &agrave; bien garder et surveiller vos affaires,la Fondation n&rsquo;assumera aucune</p>
+                    <p style="margin-left: 20px;">cons&eacute;quence en cas de vol.</p>
+                    <h3>ARTICLE 3 : DISCIPLINE</h3>
+                    <h4>III.1.Sanctions</h4>
+                    <p>Tout manquement du participant &agrave; l&rsquo;une des prescriptions du pr&eacute;sent r&egrave;glement int&eacute;rieur pourra</p>
+                    <p>faire l&rsquo;objet d&rsquo;une sanction.</p>
+                    <p>Constitue une sanction toute mesure, autre que les observations verbales, prises par le comit&eacute;</p>
+                    <p>organisateur, &agrave; la suite d&rsquo;un agissement du participant consid&eacute;r&eacute; comme fautif, que cette mesure</p>
+                    <p>soit de nature &agrave; affecter imm&eacute;diatement ou non la pr&eacute;sence de l&rsquo;int&eacute;ress&eacute; dans le s&eacute;minaire ou &agrave;</p>
+                    <p>mettre en cause la continuit&eacute; de la formation qu&rsquo;il re&ccedil;oit.</p>
+                    <p>Selon la gravit&eacute; du manquement constat&eacute;, la sanction pourra consister :</p>
+                    <p style="margin-left: 20px;">- Soit un avertissement. - Soit un bl&acirc;me ou un rappel &agrave; l&rsquo;ordre.</p>
+                    <p style="margin-left: 20px;">- Soit une mesure d&rsquo;exclusion temporaire ou d&eacute;finitive du s&eacute;minaire.</p>
+                    <p style="margin-left: 20px;">- Soit un retrait du certificat</p>
+                    <p style="margin-left: 20px;">Plus particuli&egrave;rement, les raisons pouvant motiver l&rsquo;exclusion temporaire ou d&eacute;finitive d&rsquo;un stagiaire</p>
+                    <p style="margin-left: 20px;">sont, par exemple:</p>
+                    <p style="margin-left: 20px;">- Le non-respect r&eacute;current des r&egrave;gles de bon fonctionnement du s&eacute;minaire telles que d&eacute;finies par le</p>
+                    <p style="margin-left: 20px;">pr&eacute;sent r&egrave;glement int&eacute;rieur.</p>
+                    <p style="margin-left: 20px;">- Toute perturbation du bon d&eacute;roulement d&rsquo;une formation/conf&eacute;rence</p>
+                    <p style="margin-left: 20px;">- Le non-respect r&eacute;current des consignes p&eacute;dagogiques dispens&eacute;es parles formateurs</p>
+                    <p style="margin-left: 20px;">- Les comportements p&eacute;nalisant la progression des autres participants</p>
+                    <p style="margin-left: 20px;">- Les comportements portant atteinte au respect moral ou physique des participants ou des</p>
+                    <p style="margin-left: 20px;">formateurs.</p>
+                    <p><strong>Notez bien :</strong></p>
+                    <p>chaque club tunivisions est appel&eacute;e &agrave; faire passer ce pr&eacute;sent r&egrave;glement &agrave; l&rsquo;ensemble de ses</p>
+                    <p>participants.</p>
+                    <p>Une copie sign&eacute;e et scann&eacute;e par tous les participants du club doit &ecirc;tre envoy&eacute;e au p&ocirc;le logistique du</p>
+                    <p>TUM d&eacute;cembre 2020 &agrave; l&rsquo;adresse mail de la fondation .</p>
+                    <p><strong>ACCEPTATION DU REGLEMENT INTERIEUR :</strong></p>
+                    <p>Apr&egrave;s lecture compl&egrave;te de ce r&egrave;glement, les participants peuvent poser toutes les questions qu&rsquo;ils</p>
+                    <p>jugent n&eacute;cessaires au comit&eacute; organisateur(le contact se fait via la boite mail du comit&eacute;).</p>
+                    <p>D&egrave;s la r&eacute;ception de ce r&egrave;glement, la personne a la possibilit&eacute; de ne pas finaliser son inscription .</p>
+                    </div>
                 </div>
-             
-
-              <div hidden>
+                <hr>
+              <div >
                 <h5>Fiche de participation</h5>
                 
                   <label>Nom et prénom</label>
@@ -531,24 +623,30 @@
                   <label>Club Tunivisions</label>
                   <input  value="<?php echo $user->ClubName ?>" disabled>
                   <label>Motorisé</label>
-                  <select required>
+                  <select name="bus" required>
                     <option value="" ></option>
-                    <option value="Oui" >Oui</option>
-                    <option value="Non" >Non</option>
+                    <option value="0" >Oui</option>
+                    <option value="1" >Non</option>
                   </select>
+
+                  <div>
+                    <div class="checkbox">
+                      <label>
+                      <input type="checkbox"  required><i class="check-box"></i>Je suis <b><?php echo $name ?></b> j'ai lu et j'approuve le reglement de participation au <b><?php echo $projet->titre ?></b>
+                      </label>
+                    </div>
+                  </div>
+                
                   <hr>
                   <input type="submit" name="" value="Envoyer">
                 
 
               </div>
+              
               </form>
               </div>
-              <div hidden>
-                Votre participation est en cours de validation ! 
-                Deadline de paiement  :   14/12/2020 
 
-                
-              </div>
+              
             </div>
 
             <!-- Modal footer -->
