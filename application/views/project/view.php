@@ -22,7 +22,7 @@
                                         <div class="col-lg-8">
                                             <ul class="align-right user-ben">
                                            
-                                           <?php if ($HUA == 1 || $SA == 1 ){ ?>
+                                           <?php if ($SA == 1 ){ ?>
                                             <li >
                                                 <a class="btn main-btn btn-sm"  >Statistique
                                                 </a>
