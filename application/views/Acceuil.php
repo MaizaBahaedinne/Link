@@ -11,12 +11,7 @@
               <div class="col-lg-3">
                 <aside class="sidebar static right">
 
-                   <div class="advertisment-box">
-                              <h4 class="">publicité</h4>
-                              <figure>
-                                 <a  title="Advertisment" data-toggle="modal" data-target="#AlumniGO" ><img src="<?php echo base_url() ;?>/assets/images/resources/anigif.gif"  ></a>
-                              </figure>
-                  </div>
+                   
 
                    <div class="widget">
                     <h4 class="widget-title">Ma calendarier</h4>
@@ -142,6 +137,12 @@
                   </div>  
                 </form>
                 </div><!-- add post new box -->
+                <div class="advertisment-box">
+                              <h4 class="">publicité</h4>
+                              <figure>
+                                 <a href="<?php echo base_url() ?>Project/projectDetails/1269" ><img src="<?php echo base_url() ;?>/uploads/projet/Projet_TUM 2020_TUM2020.jpg"  ></a>
+                              </figure>
+                  </div>
                 <!-- top stories -->
                 <div class="loadMore">
                   <!-- album post -->
