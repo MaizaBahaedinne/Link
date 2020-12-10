@@ -45,7 +45,7 @@
                                                 <a href="<?php echo base_url() ?>Task/tasksListing/<?php echo $projet->projectId ?>"  class="align-right user-ben main-btn " >Liste des taches</a>
                                             </li>
                                             -->
-                                            <?php if ( $HUA == 3 || $SA == 1 ){ 
+                                            <?php if ( $user->SenJun == 3 || $SA == 1 ){ 
                                             if( empty($partProject) ){
                                             ?>
                                             <li >
