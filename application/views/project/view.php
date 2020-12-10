@@ -519,7 +519,7 @@
 
 
          <div class="modal fade" id="participationProjet">
-        <div class="modal-dialog  ">
+        <div class="modal-dialog modal-sm ">
           <div class="modal-content">
 
             <!-- Modal Header -->
