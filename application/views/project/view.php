@@ -28,7 +28,7 @@
                                                 </a>
                                             </li>
                                           <?php } ?>
-                                          <?php if ( $SA == 1 ){ 
+                                          <?php if ( $HUA == 3 && $SA == 1 ){ 
                                             if( empty($partProject) ){
                                             ?>
                                             <li >
