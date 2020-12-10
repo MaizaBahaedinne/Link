@@ -28,7 +28,7 @@
                                                 </a>
                                             </li>
                                           <?php } ?>
-                                          <?php if ($HUA == 3 || $SA == 1 ){ ?>
+                                          <?php if ( $SA == 1 ){ ?>
                                             <li >
                                                 <a class="btn main-btn btn-sm" data-ripple=""  data-toggle="modal" data-target="#participationProjet" >Participation
                                                 </a>
@@ -506,6 +506,7 @@
             <!-- Modal body -->
             <div class="modal-body">
               
+              <div>
               <form class="c-form" action="<?php echo base_url() ?>TFM/partanTfm/8" method="post" >
             )
                 <h5>Règlement</h5>
@@ -541,7 +542,11 @@
 
               </div>
               </form>
-              <div>
+              </div>
+              <div hidden>
+                Votre participation est en cours de validation ! 
+                Deadline de paiement  :   14/12/2020 
+
                 
               </div>
             </div>
