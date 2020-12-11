@@ -72,7 +72,7 @@
                                       <b>Votre participation est en cours de validation !</b>  <br><br>
                                       1. Le paiement sera effectué en une seule tranche : 160 dt. <br><b>Deadline de paiement : Mardi 15/12/2020</b><br>
                                       2. Le président est le seul vis à vis avec la fondation pour le paiement des frais d'inscription des membres de son club.<br>
-                                      3. Le deadline du formulaire d’inscription est le lundi 15 décembre 2020.<br>
+                                      3. Le deadline du formulaire d’inscription est le mardi 15 décembre 2020.<br>
                                       4. Les frais d’inscription pour les non-résidents sont à 90dt.<br>
                                       5. Il est strictement obligatoire de lire et de respecter le reglement du TUM.<br>
                                       6. Aucun paiement ne sera  effectué après le 15 décembre.<br>
