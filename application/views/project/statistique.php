@@ -87,12 +87,13 @@
 													<canvas id="timeSeriesChart" width="400" height="200"></canvas>
 													<script>
 														const ctx = document.getElementById('timeSeriesChart').getContext('2d');
+														/*
 														const startDate = new Date(2020, 0, 1);
 														const labels = [];
 														for (let i = 0; i < 6; i++) {
 														  const date = moment(startDate).add(i, 'days').format('YYYY-MM-DD');
 														  labels.push(date.toString());
-														}
+														}*/
 
 														const chart = new Chart(ctx, {
 														  type: 'line',
