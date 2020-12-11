@@ -100,7 +100,9 @@
 														    labels,
 														    datasets: [{
 														      label: '# d\'inscription',
-														      data: [12, 19, 3, 5, 2, 3],
+														      data: [<?php foreach ($countRythme as $key ) {
+														         echo 	$key->dateInscrip.','
+														      }?>],
 														      borderWidth: 5,
 														      fill: false,
 														      borderColor: 'green'

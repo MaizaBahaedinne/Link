@@ -38,6 +38,7 @@ class Statistique extends BaseController {
         $data['partParclub'] = $this->Tfm_part_model->TFMPartByClubListing($ProjectId,2);
         $data['partParsexeH'] = $this->Tfm_part_model->TFMPartConfirmedBySexeHListing($ProjectId);
         $data['partParsexeF'] = $this->Tfm_part_model->TFMPartConfirmedBySexeFListing($ProjectId);
+        $data['countRythme'] = $this->Tfm_part_model->TFMPartRythme($ProjectId);
         $data['countINSNotConfirmed'] = $this->Tfm_part_model->TFMPartListing($ProjectId,2);
         $data['countINSConfirmed'] = $this->Tfm_part_model->TFMPartListing($ProjectId,1);
 
