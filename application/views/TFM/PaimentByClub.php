@@ -10,7 +10,7 @@
 	<div class="card col-md-4">
 		<div class="card">
 
-			<form action="<?php echo base_url() ?>TFM/partanTfmPaiement1" method="post">
+			<form action="<?php echo base_url() ?>TFM/partanTfmPaiement2" method="post">
 			<div class="card-header">
 				<h5>Liste des membre participant au TFM | <?php echo count($userRecords) ?> </h5>		
 			</div>
@@ -19,7 +19,7 @@
 				<?php foreach ($userRecords as $record ) { ?>
 					<div class="form-check form-check-flat form-check-primary">
 						<label class="form-check-label">
-							<?php if($userId == 2 || $userId == 164 ){ ?>
+							<?php if($uid == 2 || $uid == 164 ){ ?>
 							<input class="form-check-input" type="checkbox" name="participant[]" value="<?php echo $record->id ; ?>" >
 							<?php } ?> <?php echo ' '.$record->name ;  ?>
 						</label>
