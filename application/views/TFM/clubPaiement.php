@@ -8,13 +8,8 @@
 <div class="row" >
 
     <div class="card col-md-12">
-            <div class="card-header">
-         
-        <h5> Tranche 1 :   | Tranche 2 :  </h5>
-        <label> inscription  :  <?php echo $count ?>  </label>
-        <?php if($clubID == 0 ){ ?>
-            <a href="<?php echo base_url() ?>TFM/stats">statistiques</a>
-        <?php } ?>
+        <div class="card-header">
+        <label> inscription  :  <?php echo count($clubRecords) ?>  </label>
     </div>
         <div class="card-body">
 
