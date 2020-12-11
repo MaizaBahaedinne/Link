@@ -36,7 +36,7 @@ class Tfm_part_model extends CI_Model
      * @param number $segment : This is pagination limit
      * @return array $result : This is result
      */
-    function TFMPartListing( $projetId )
+    function TFMPartListing($projetId , $statut = '' )
     {
         $this->db->select(' Users.userId ,BaseTbl.id , Users.name , Clubs.name ClubName , Role.role , Users.cellule , Users.gouvernorat , BaseTbl.p_tranch1 , BaseTbl.p_tranch2 , BaseTbl.moto , BaseTbl.sysMobile , BaseTbl.statut , Usersr1.name as recp1 , BaseTbl.dateP_tranch1 as dateTranche1 , Usersr2.name as recp2 , BaseTbl.dateP_tranch2 as dateTranche2 ');
         $this->db->from('tbl_tfm_part as BaseTbl');
@@ -47,6 +47,10 @@ class Tfm_part_model extends CI_Model
         $this->db->join('tbl_club as Clubs', 'Clubs.clubID = Users.ClubID', 'LEFT');
         $this->db->join('tbl_roles as Role', 'Role.roleId = Users.roleId','left');
         $this->db->where('BaseTbl.tfmId =',$projetId );
+        if($statut != '' )
+        {
+            $this->db->where('BaseTbl.statut =', $statut  );
+        }
  
         $query = $this->db->get();
         $result = $query->result();        
@@ -275,14 +279,14 @@ class Tfm_part_model extends CI_Model
      * @param number $segment : This is pagination limit
      * @return array $result : This is result
      */
-    function TFMPartConfirmedByCityListing($ProjectId)
+    function TFMPartByCityListing($ProjectId,$statut)
     {
         $this->db->select('  Clubs.city , count(BaseTbl.id) as countPart');
         $this->db->from('tbl_tfm_part as BaseTbl');
         $this->db->join('tbl_users as Users', 'Users.userId = BaseTbl.userId', 'LEFT');
         $this->db->join('tbl_club as Clubs', 'Clubs.clubID = Users.ClubID', 'LEFT');
 
-        $this->db->where('BaseTbl.tfmId ='.$ProjectId.' and  BaseTbl.p_tranch1 > 0 ');
+        $this->db->where('BaseTbl.tfmId ='.$ProjectId.' and  BaseTbl.statut ='.$statut );
        
 
          $this->db->group_by('Clubs.city');
@@ -301,7 +305,7 @@ class Tfm_part_model extends CI_Model
      * @param number $segment : This is pagination limit
      * @return array $result : This is result
      */
-    function TFMPartConfirmedByClubListing($ProjectId)
+    function TFMPartByClubListing($ProjectId,$statut)
     {
         $this->db->select('  Clubs.name , count(BaseTbl.id) as countPart , count(FEMME.userId) as femme , count(HOMME.userId) as homme ');
         $this->db->from('tbl_tfm_part as BaseTbl');
@@ -310,7 +314,7 @@ class Tfm_part_model extends CI_Model
         $this->db->join('tbl_users as HOMME', 'HOMME.userId = BaseTbl.userId and HOMME.sexe = "homme" ', 'LEFT');
         $this->db->join('tbl_club as Clubs', 'Clubs.clubID = Users.ClubID', 'LEFT');
 
-        $this->db->where('BaseTbl.tfmId = '.$ProjectId.' and  BaseTbl.p_tranch1 > 0'  );
+        $this->db->where('BaseTbl.tfmId ='.$ProjectId.' and  BaseTbl.statut ='.$statut  );
      
 
          $this->db->group_by('Clubs.name');
@@ -336,7 +340,7 @@ class Tfm_part_model extends CI_Model
         $this->db->join('tbl_users as HOMME', 'HOMME.userId = BaseTbl.userId and HOMME.sexe = "homme" ', 'LEFT');
 
 
-        $this->db->where('BaseTbl.tfmId = '.$ProjectId.' and  BaseTbl.p_tranch1 > 0 ');
+        $this->db->where('BaseTbl.tfmId = '.$ProjectId.' and  BaseTbl.statut = 1 ');
      
 
        
