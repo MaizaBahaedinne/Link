@@ -69,7 +69,7 @@ class Tfm_part_model extends CI_Model
      */
     function TFMPartRythme($projetId  )
     {
-        $this->db->select(' count(BaseTbl.id) , BaseTbl.dateInscrip ');
+        $this->db->select(' count(BaseTbl.id) nbr , BaseTbl.dateInscrip ');
         $this->db->from('tbl_tfm_part as BaseTbl');
         $this->db->group_by('  hour( BaseTbl.dateInscrip ) , day( BaseTbl.dateInscrip )  ');
         $this->db->order_by('  hour( BaseTbl.dateInscrip ) , day( BaseTbl.dateInscrip )  ');

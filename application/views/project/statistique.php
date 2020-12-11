@@ -101,7 +101,7 @@
 														    datasets: [{
 														      label: '# d\'inscription',
 														      data: [<?php foreach ($countRythme as $key ) {
-														         echo 	$key->dateInscrip.',' ;
+														         echo 	$key->nbr.',' ;
 														      }?>],
 														      borderWidth: 5,
 														      fill: false,
