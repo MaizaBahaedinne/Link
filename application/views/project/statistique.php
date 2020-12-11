@@ -81,7 +81,7 @@
 								<div class="col-lg-12">
 								<aside class="sidebar ">
 									<div class="widget">
-		                                        <h4 class="widget-title"></h4>
+		                                        <h4 class="widget-title">Rythme des inscription</h4>
 		                                        <div class="your-page">	
 													<canvas id="timeSeriesChart" > </canvas>
 													<script>
