@@ -84,7 +84,7 @@
 									<div class="widget">
 		                                        <h4 class="widget-title">Rythme des inscription</h4>
 		                                        <div class="your-page">	
-													<canvas id="timeSeriesChart" width="400" height="400"></canvas>
+													<canvas id="timeSeriesChart" width="400" height="200"></canvas>
 													<script>
 														const ctx = document.getElementById('timeSeriesChart').getContext('2d');
 														const startDate = new Date(2020, 0, 1);
@@ -99,7 +99,7 @@
 														  data: {
 														    labels,
 														    datasets: [{
-														      label: '# of Votes',
+														      label: '# d\'inscription',
 														      data: [12, 19, 3, 5, 2, 3],
 														      borderWidth: 5,
 														      fill: false,
