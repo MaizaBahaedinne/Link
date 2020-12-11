@@ -31,71 +31,56 @@
                                 </div>  
                             </div><!-- user profile banner  -->
 
-                            <div class="row"> 
-                            	<div class="col-md-12">
-                            		<div class="row"> 
-	                            		<div class="col-lg-4 col-md-12 col-sm-12">
-											<div class="stat-box">
-												<i class="fa fa-user"></i>
-												<div class="anlytc-meta">
-													<h4><?php echo count($countINSNotConfirmed) + count($countINSConfirmed)  ?></h4>
+                            
+                    		
+                        		<div class="col-lg-4 ">
+									<div class="stat-box">
+										<i class="fa fa-user"></i>
+										<div class="anlytc-meta">
+											<h4><?php echo count($countINSNotConfirmed) + count($countINSConfirmed)  ?></h4>
 
-														<?php  $PatNC  = round(((count($countINSNotConfirmed)/(count($countINSNotConfirmed) + count($countINSConfirmed))) *100)) ?>
+												<?php  $PatNC  = round(((count($countINSNotConfirmed)/(count($countINSNotConfirmed) + count($countINSConfirmed))) *100)) ?>
 
-														<?php  $PatC  = round(((count($countINSConfirmed)/(count($countINSNotConfirmed) + count($countINSConfirmed))) *100)) ?>
-													<span>iscriptions</span> 
-												</div>
-												<div class="progress" style="height:6px">
-												</div>
-											</div>
+												<?php  $PatC  = round(((count($countINSConfirmed)/(count($countINSNotConfirmed) + count($countINSConfirmed))) *100)) ?>
+											<span>iscriptions</span> 
 										</div>
-										<div class="col-lg-4 col-md-4 col-sm-4">
-											<div class="stat-box">
-												<i class="fa fa-user"></i>
-												<div class="anlytc-meta">
-													<h4><?php echo count($countINSConfirmed) ?></h4>
-													<p> <?php echo $PatC ?>% </p>
-													<span>iscriptions validées</span> 
-												</div>
-												<div class="progress" style="height:6px">
-													<div class="progress-bar" style="background-color: green;width:<?php echo $PatC ?>%"></div>
-												</div> 
-											
-											</div>
-										</div>
-										<div class="col-lg-4 col-md-4 col-sm-4">	
-											<div class="stat-box">
-												<i class="fa fa-user"></i>
-												<div class="anlytc-meta">
-													<h4><?php echo count($countINSNotConfirmed) ?></h4>
-													<p><?php echo $PatNC ?>%</p>
-													<span>iscriptions non validées</span> 
-												</div>
-												<div class="progress" style="height:6px">
-													<div class="progress-bar" style="background-color: red;width:<?php echo $PatNC ?>%"></div>
-												</div> 
-											
-											</div>
+										<div class="progress" style="height:6px">
 										</div>
 									</div>
-                            	</div>
-                            </div>
-                            <div class="row">
-                            	<div class="col-lg-12 col-md-12 col-sm-12">
-                            		<aside class="sidebar ">
-	                                 	 <div class="widget">
-	                                        <h4 class="widget-title">Rythme des inscriptions</h4>
-	                                        <div class="your-page">
-				                        	<canvas id="myChart" height="300" ></canvas>
-											<hr>
-											<span>les chiffre sont trés confidentiels merci de ne pas faire des capture d'écran </span>
-											</div>
+								</div>
+								<div class="col-lg-4 ">
+									<div class="stat-box">
+										<i class="fa fa-user"></i>
+										<div class="anlytc-meta">
+											<h4><?php echo count($countINSConfirmed) ?></h4>
+											<p> <?php echo $PatC ?>% </p>
+											<span>iscriptions validées</span> 
 										</div>
-									</aside>
+										<div class="progress" style="height:6px">
+											<div class="progress-bar" style="background-color: green;width:<?php echo $PatC ?>%"></div>
+										</div> 
+									
 									</div>
-							</div>
+								</div>
+								<div class="col-lg-4 ">	
+									<div class="stat-box">
+										<i class="fa fa-user"></i>
+										<div class="anlytc-meta">
+											<h4><?php echo count($countINSNotConfirmed) ?></h4>
+											<p><?php echo $PatNC ?>%</p>
+											<span>iscriptions non validées</span> 
+										</div>
+										<div class="progress" style="height:6px">
+											<div class="progress-bar" style="background-color: red;width:<?php echo $PatNC ?>%"></div>
+										</div> 
+									
+									</div>
+								</div>
+							
+      
+                   
 
-							<div class="row">
+							
 								<div class="col-lg-6 col-md-6 col-sm-6" >
 									<aside class="sidebar ">
 									<div class="widget">
@@ -131,7 +116,55 @@
 										</div>
 									</aside>
 									</div>
-								</div>
+
+									<div class="col-lg-6 col-md-6 col-sm-6" >
+									<aside class="sidebar ">
+									<div class="widget">
+		                                        <h4 class="widget-title">Statistique de participant par Club (<?php echo count($partParclub) ?>)</h4>
+		                                        <div class="your-page">
+		                                        	<table class="table dataTable no-footer" style="width: cover" >
+									                     <thead>
+									                                  <th>
+									                                      Club
+									                                  </th>
+									                                  <th>
+									                                      Homme
+									                                  </th>
+									                                  <th>
+									                                      Femme
+									                                  </th>
+									                                  <th>
+									                                      nombre
+									                                  </th>
+									                              </thead>
+									                              <tbody>
+									                                  <?php foreach ($partParclub as $reg ) {
+									                                  ?>
+									                                  <tr>
+									                                      <td>
+									                                          <?php echo $reg->name ?>
+									                                      </td>
+									                                      <td>
+									                                          <?php echo $reg->homme ?>
+									                                      </td>
+									                                     <td>
+									                                          <?php echo $reg->femme ?>
+									                                      </td>
+									                                      <td>
+									                                          <?php echo $reg->countPart ?>
+									                                      </td>
+									                                  </tr>
+									                                  <?php
+									                                  }?>
+									                              </tbody>
+
+									                          </table>
+												<span>les chiffre sont trés confidentiels merci de ne pas faire des capture d'écran </span>
+											</div>
+										</div>
+									</aside>
+									</div>
+						
 
 
 
