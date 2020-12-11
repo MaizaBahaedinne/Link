@@ -43,6 +43,7 @@
 												<?php  $PatNC  = round(((count($countINSNotConfirmed)/(count($countINSNotConfirmed) + count($countINSConfirmed))) *100)) ?>
 
 												<?php  $PatC  = round(((count($countINSConfirmed)/(count($countINSNotConfirmed) + count($countINSConfirmed))) *100)) ?>
+											<p> <a  class="btn btn-primary" href="<?php echo base_url() ?>TFM/partantF/<?php echo $projet->projectId ?>" >List</a> </p>
 											<span>iscriptions</span> 
 										</div>
 										<div class="progress" style="height:6px">
