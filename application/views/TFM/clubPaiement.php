@@ -21,7 +21,7 @@
                        
                         <th>Club</th>
                        
-                        <th>Paiment</th>
+                        <th>Nombre des participants</th>
                   
                         
                         <th>paiement </th>
@@ -80,7 +80,7 @@
 
                     <td> 
                           <?php if ( ($role == 2 && $clubID == 0) ||  $uid == 2 ) { ?>
-                                <a href="<?php echo base_url().'TFM/PaimentByClub/'.$record->clubID ?>" class="btn btn-warning" >Paiement</a>
+                                <a href="<?php echo base_url() ?>TFM/PaimentByClub/<?php echo $record->clubID ?>/<?php echo $record->clubID ?>" class="btn btn-warning" >Paiement</a>
                          <?php } ?>   
                     </tr>
 
@@ -110,11 +110,4 @@
 </div>
 
 
-            <link rel="stylesheet" href="<?php echo base_url() ?>assets/vendors/datatables.net-bs4/dataTables.bootstrap4.css">
-  <script defer src="<?php echo base_url() ?>assets/vendors/datatables.net/jquery.dataTables.js"></script>
-  <script defer src="<?php echo base_url() ?>assets/vendors/datatables.net-bs4/dataTables.bootstrap4.js"></script>
-  <script type="text/javascript">
-      $(document).ready( function () {
-    $('table').DataTable();
-} );
-  </script>
+            
