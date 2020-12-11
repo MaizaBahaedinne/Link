@@ -98,11 +98,14 @@
 														const chart = new Chart(ctx, {
 														  type: 'line',
 														  data: {
-														    labels,
+														    labels,YYY-MM-DD
 														    datasets: [{
 														      label: '# d\'inscription',
 														      labels: [<?php foreach ($countRythme as $key ) {
-														         echo 	$key->dateInscrip.',' ;
+
+														      	
+
+														         echo 	date_format($key->dateInscrip, 'Y-m-d H:i:s').',' ;
 														      }?>]
 														      data: [<?php foreach ($countRythme as $key ) {
 														         echo 	$key->nbr.',' ;
