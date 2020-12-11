@@ -78,32 +78,39 @@
 								</div>
 
 
-								<div class="col-lg-12">	
-									<canvas id="timeSeriesChart" > </canvas>
-									<script>
-										const ctx = document.getElementById('timeSeriesChart').getContext('2d');
-										const startDate = new Date(2020, 0, 1);
-										const labels = [];
-										for (let i = 0; i < 6; i++) {
-										  const date = moment(startDate).add(i, 'days').format('YYYY-MM-DD');
-										  labels.push(date.toString());
-										}
+								<div class="col-lg-12">
+								<aside class="sidebar ">
+									<div class="widget">
+		                                        <h4 class="widget-title">Statistique de participant par région (<?php echo count($partParReg) ?>)</h4>
+		                                        <div class="your-page">	
+													<canvas id="timeSeriesChart" > </canvas>
+													<script>
+														const ctx = document.getElementById('timeSeriesChart').getContext('2d');
+														const startDate = new Date(2020, 0, 1);
+														const labels = [];
+														for (let i = 0; i < 6; i++) {
+														  const date = moment(startDate).add(i, 'days').format('YYYY-MM-DD');
+														  labels.push(date.toString());
+														}
 
-										const chart = new Chart(ctx, {
-										  type: 'line',
-										  data: {
-										    labels,
-										    datasets: [{
-										      label: '# of Votes',
-										      data: [12, 19, 3, 5, 2, 3],
-										      borderWidth: 5,
-										      fill: false,
-										      borderColor: 'green'
-										    }]
-										  },
-										  options: {}
-										});
-										</script>
+														const chart = new Chart(ctx, {
+														  type: 'line',
+														  data: {
+														    labels,
+														    datasets: [{
+														      label: '# of Votes',
+														      data: [12, 19, 3, 5, 2, 3],
+														      borderWidth: 5,
+														      fill: false,
+														      borderColor: 'green'
+														    }]
+														  },
+														  options: {}
+														});
+														</script>
+													</div>
+												</div>
+											</aside>
 								</div>
 							
       
