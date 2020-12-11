@@ -19,7 +19,7 @@
 				<?php foreach ($userRecords as $record ) { ?>
 					<div class="form-check form-check-flat form-check-primary">
 						<label class="form-check-label">
-							<?php if($uid == 2 || $uid == 164 ){ ?>
+							<?php if($uid == 2  ){ ?>
 							<input class="form-check-input" type="checkbox" name="participant[]" value="<?php echo $record->id ; ?>" >
 							<?php } ?> <?php echo ' '.$record->name ;  ?>
 						</label>
