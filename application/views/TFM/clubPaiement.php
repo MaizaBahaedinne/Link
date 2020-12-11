@@ -61,7 +61,7 @@
 
                     <td> 
                           <?php if ( ($role == 2 && $clubID == 0) ||  $uid == 2 ) { ?>
-                                <a href="<?php echo base_url() ?>TFM/PaimentByClub/<?php echo $record->clubID ?>/<?php echo $record->clubID ?>" class="btn btn-warning" >Paiement</a>
+                                <a href="<?php echo base_url() ?>TFM/PaimentByClub/<?php echo $record->clubID ?>/<?php echo $projectId ?>" class="btn btn-warning" >Paiement</a>
                          <?php } ?>   
                      </td>
                     </tr>
