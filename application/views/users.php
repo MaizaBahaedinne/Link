@@ -38,8 +38,9 @@
                        
                         <th>id</th>
                         <th>Nom et prénom</th>
-                        
+                        <?php if($SA == 1  ) { ?>
                         <th>Contact</th>
+                        <?php }?>
                         <th>Inscription </th>
                         <th>Actif</th>
                         
@@ -85,7 +86,7 @@
 
                         </td>
                         
-                        
+                        <?php if($SA == 1  ) { ?>
                         <td>
                             <A HREF="mailto:<?php echo $record->email ?>">
                                 <i class="fa fa-mail"></i><?php echo $record->email ?>
@@ -101,7 +102,9 @@
                             </a>   
                         <?php } ?>    
                          </td>
+                         <?php } ?>   
 
+                         
                         <td>
                             <small><small>
 
