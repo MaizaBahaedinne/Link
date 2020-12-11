@@ -71,7 +71,7 @@ class Tfm_part_model extends CI_Model
     {
         $this->db->select(' count(BaseTbl.id) , BaseTbl.dateInscrip ');
         $this->db->from('tbl_tfm_part as BaseTbl');
-        $this->db->groupe_by('  hour( BaseTbl.dateInscrip ) , day( BaseTbl.dateInscrip )  ');
+        $this->db->group_by('  hour( BaseTbl.dateInscrip ) , day( BaseTbl.dateInscrip )  ');
         $this->db->order_by('  hour( BaseTbl.dateInscrip ) , day( BaseTbl.dateInscrip )  ');
  
         $query = $this->db->get();
