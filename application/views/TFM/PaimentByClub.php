@@ -7,7 +7,7 @@
 <div class="row">
 	
 
-	<div class="card col-md-4">
+	<div class="card col-md-6">
 		<div class="card">
 
 			<form action="<?php echo base_url() ?>TFM/partanTfmPaiement2" method="post">
@@ -40,7 +40,7 @@
 	
 	
 
-	<div class="card col-md-4">
+	<div class="card col-md-6">
 		<div class="card">
 			
 			<div class="card-header">
