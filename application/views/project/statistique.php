@@ -98,13 +98,13 @@
 														const chart = new Chart(ctx, {
 														  type: 'line',
 														  data: {
-														    labels,
-														    datasets: [{
-														      label: '# d\'inscription',
-														      labels: [<?php foreach ($countRythme as $key ) {
+														    labels: [<?php foreach ($countRythme as $key ) {
 														      	 $date = 	date_create($key->dateInscrip);
 														         echo 	"'".date_format($date, 'Y-m-d')."'," ;
 														      }?>],
+														    datasets: [{
+														      label: '# d\'inscription',
+														      
 														      data: [<?php foreach ($countRythme as $key ) {
 														         echo 	$key->nbr.',' ;
 														      }?>],
@@ -113,7 +113,15 @@
 														      borderColor: 'green'
 														    }]
 														  },
-														  options: {}
+														      options: {
+																        scales: {
+																            yAxes: [{
+																                ticks: {
+																                    beginAtZero: true
+																                }
+																            }]
+																        }
+																    }
 														});
 														</script>
 													</div>
