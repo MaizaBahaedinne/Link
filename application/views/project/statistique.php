@@ -128,7 +128,7 @@
 							</div>
 							
 							<div class="widget">
-                                        <h4 class="widget-title">Statistique de participant par région</h4>
+                                        <h4 class="widget-title">Statistique de participant par région (<?php echo count($partParReg) ?>)</h4>
                                         <div class="your-page">
                                         	<table class="table dataTable no-footer" style="width: cover" >
 							                      <thead>
