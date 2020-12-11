@@ -39,9 +39,9 @@
                 </style>
                     
                     <?php
-                    if(!empty($userRecords))
+                    if(!empty($clubRecords))
                     {
-                        foreach($userRecords as $record)
+                        foreach($clubRecords as $record)
                         {
                     ?>
                     <tr>
