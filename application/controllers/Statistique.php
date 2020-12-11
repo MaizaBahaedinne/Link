@@ -30,7 +30,7 @@ class Statistique extends BaseController {
 	}
 	
 
-    public function ProjectStatestique ($ProjectId){
+    public function ProjectStatistique ($ProjectId){
                      
 
         $data["projet"] = $this->project_model->getProjectInfo($ProjectId);
