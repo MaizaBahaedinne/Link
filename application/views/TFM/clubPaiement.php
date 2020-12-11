@@ -18,21 +18,12 @@
         <table id="example" class="table dataTable no-footer" style="width:cover" >
                     <thead>
                     <tr>
-                       
                         <th>Club</th>
-                       
                         <th>Nombre des participants</th>
-                  
-                        
                         <th>paiement </th>
-                        
                     </tr>
                     </thead>
-
-                    <tbody>
-                              
-                </style>
-                    
+                    <tbody>                    
                     <?php
                     if(!empty($clubRecords))
                     {
@@ -40,27 +31,17 @@
                         {
                     ?>
                     <tr>
-
-                       
-                      
-                           
-                            
-                          
-                          
-
                         <td>
 
                             <span style="width: 145px;">
                                 <div class="kt-user-card-v2">
-                                    <div class="kt-user-card-v2__pic">
-                                        
-                                    </div>                          
+                         
                                     <div class="kt-user-card-v2__details">                              
                                         <a class="kt-user-card-v2__name" href="#">
                                          <?php
                                             if ($record->ClubName != "Foundation"  && $record->ClubName != "Foundation Junior" && $record->ClubName != "Alumni")
                                             echo "club ";
-                                            ?>   Tunivisions  <?php echo $record->ClubName ?></td>
+                                            ?>   Tunivisions  <?php echo $record->ClubName ?>
                                         </a>                              
                                     </div>                      
                                 </div>
@@ -82,6 +63,7 @@
                           <?php if ( ($role == 2 && $clubID == 0) ||  $uid == 2 ) { ?>
                                 <a href="<?php echo base_url() ?>TFM/PaimentByClub/<?php echo $record->clubID ?>/<?php echo $record->clubID ?>" class="btn btn-warning" >Paiement</a>
                          <?php } ?>   
+                     </td>
                     </tr>
 
                     <?php
