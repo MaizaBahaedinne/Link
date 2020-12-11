@@ -83,7 +83,7 @@
 									<div class="widget">
 		                                        <h4 class="widget-title">Rythme des inscription</h4>
 		                                        <div class="your-page">	
-													<canvas id="timeSeriesChart" > </canvas>
+													<canvas id="timeSeriesChart" width="400" height="400"></canvas>
 													<script>
 														const ctx = document.getElementById('timeSeriesChart').getContext('2d');
 														const startDate = new Date(2020, 0, 1);
