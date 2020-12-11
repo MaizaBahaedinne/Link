@@ -103,7 +103,7 @@
 														      label: '# d\'inscription',
 														      labels: [<?php foreach ($countRythme as $key ) {
 														      	 $date = 	date_create($key->dateInscrip);
-														         echo 	date_format($date, 'YYYY-mm-dd').',' ;
+														         echo 	date_format($date, 'Y-m-d').',' ;
 														      }?>]
 														      data: [<?php foreach ($countRythme as $key ) {
 														         echo 	$key->nbr.',' ;
