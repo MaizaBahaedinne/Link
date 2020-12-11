@@ -92,7 +92,7 @@ class Tfm_part_model extends CI_Model
      * @param number $segment : This is pagination limit
      * @return array $result : This is result
      */
-    function TFMClubPartListing($ProjectId)
+    function TFMClubPartListing($ProjectId,$statut = '')
     {
         $this->db->select(' count(Users.userId) partant ,BaseTbl.id , Users.name , Clubs.name ClubName , Clubs.clubID , Role.role , Users.cellule , Users.gouvernorat , BaseTbl.p_tranch1 , BaseTbl.p_tranch2 , BaseTbl.moto , BaseTbl.sysMobile , BaseTbl.statut , Usersr1.name as recp1 , BaseTbl.dateP_tranch1 as dateTranche1 , Usersr2.name as recp2 , BaseTbl.dateP_tranch2 as dateTranche2 ');
         $this->db->from('tbl_tfm_part as BaseTbl');
@@ -105,8 +105,11 @@ class Tfm_part_model extends CI_Model
 
         $this->db->group_by('Clubs.clubID');
 
-        $this->db->where('BaseTbl.tfmId = '.$ProjectId.'  and statut = 1   ' );
- 
+        $this->db->where('BaseTbl.tfmId = '.$ProjectId );
+        if ($statut != '' ) {
+            $this->db->where('BaseTbl.statut = '.$statut );
+        }
+
         $query = $this->db->get();
         $result = $query->result();        
         return $result;
