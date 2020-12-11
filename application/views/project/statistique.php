@@ -1,4 +1,5 @@
-<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js'></script>
 
 <section>
         <div class="gap2 gray-bg">
