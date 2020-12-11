@@ -38,7 +38,7 @@ class Tfm_part_model extends CI_Model
      */
     function TFMPartListing($projetId , $statut = '' )
     {
-        $this->db->select(' Users.userId ,BaseTbl.id , Users.name , Clubs.name ClubName , Role.role , Users.cellule , Users.gouvernorat , BaseTbl.p_tranch1 , BaseTbl.p_tranch2 , BaseTbl.moto , BaseTbl.sysMobile , BaseTbl.statut , Usersr1.name as recp1 , BaseTbl.dateP_tranch1 as dateTranche1 , Usersr2.name as recp2 , BaseTbl.dateP_tranch2 as dateTranche2 ');
+        $this->db->select(' Users.userId ,BaseTbl.id , Users.name , Clubs.name ClubName , Role.role , Users.cellule , Users.gouvernorat , BaseTbl.p_tranch1 , BaseTbl.p_tranch2 , BaseTbl.moto , BaseTbl.sysMobile , BaseTbl.statut , Usersr1.name as recp1 , BaseTbl.dateP_tranch1 as dateTranche1 , Usersr2.name as recp2 , BaseTbl.dateP_tranch2 as dateTranche2 , BaseTbl.dateInscrip ');
         $this->db->from('tbl_tfm_part as BaseTbl');
         $this->db->join('tbl_users as Users', 'Users.userId = BaseTbl.userId', 'LEFT');
         $this->db->join('tbl_users as Usersr2', 'Usersr2.userId = BaseTbl.recepteurTranche2', 'LEFT');
@@ -56,6 +56,31 @@ class Tfm_part_model extends CI_Model
         $result = $query->result();        
         return $result;
     }
+
+
+
+
+    /**
+     * This function is used to get the user listing count
+     * @param string $searchText : This is optional search text
+     * @param number $page : This is pagination offset
+     * @param number $segment : This is pagination limit
+     * @return array $result : This is result
+     */
+    function TFMPartRythme($projetId  )
+    {
+        $this->db->select(' BaseTbl.id , BaseTbl.dateInscrip ');
+        $this->db->from('tbl_tfm_part as BaseTbl');
+        $this->db->groupe_by('  hour( BaseTbl.dateInscrip ) , day( BaseTbl.dateInscrip )  ');
+ 
+        $query = $this->db->get();
+        $result = $query->result();        
+        return $result;
+    }
+
+
+
+
 
 
     /**
