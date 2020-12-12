@@ -161,6 +161,7 @@ class TFM extends BaseController {
 									  'p_tranch1' => '160', 
 							          'dateP_tranch1'=>date('Y-m-d H:i:s'),
 							          'recepteurTranche1'=>$this->vendorId ,
+							          'statut'=> 1 
 								     	);
 					$result = $this->tfm_model->editTFMPart($partanTfm, $r) ;
 
