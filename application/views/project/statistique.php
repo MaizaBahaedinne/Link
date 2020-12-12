@@ -56,7 +56,7 @@
 										<div class="anlytc-meta">
 											<h4><?php echo count($countINSConfirmed) ?></h4>
 											<p> <?php echo $PatC ?>% </p>
-											<span>iscriptions validées</span> 
+											<span>inscriptions validées</span> 
 										</div>
 										<div class="progress" style="height:6px">
 											<div class="progress-bar" style="background-color: green;width:<?php echo $PatC ?>%"></div>
@@ -70,7 +70,7 @@
 										<div class="anlytc-meta">
 											<h4><?php echo count($countINSNotConfirmed) ?></h4>
 											<p><?php echo $PatNC ?>%</p>
-											<span>iscriptions non validées</span> 
+											<span>inscriptions non validées</span> 
 										</div>
 										<div class="progress" style="height:6px">
 											<div class="progress-bar" style="background-color: red;width:<?php echo $PatNC ?>%"></div>
