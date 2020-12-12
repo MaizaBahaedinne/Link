@@ -139,7 +139,7 @@
 									<div class="widget">
 		                                        <h4 class="widget-title">Statistique de participant par région (<?php echo count($partParReg) ?>)</h4>
 		                                        <div class="your-page">
-		                                        	<table class="table dataTable no-footer" style="width: cover" >
+		                                        	<table class="table table-striped table-responsive-xl" style="width: cover" >
 									                      <thead>
 									                          <th>
 									                              Region
@@ -175,7 +175,7 @@
 									<div class="widget">
 		                                        <h4 class="widget-title">Statistique de participant par Club (<?php echo count($partParclub) ?>)</h4>
 		                                        <div class="your-page">
-		                                        	<table class="table dataTable no-footer" style="width: cover" >
+		                                        	<table class="table table-striped table-responsive-xl" style="width: cover" >
 									                     <thead>
 									                                  <th>
 									                                      Club
