@@ -21,7 +21,7 @@
                                         <div class="col-lg-8">
                                             <ul class="align-right user-ben">
                                            
-                                           <?php if ($SA == 1 || $SA == 2 || $role == 2  ||  ($cellule == 'Ressource Humaine' && $role == 7) ){ ?>
+                                           <?php if ($SA == 1 || $SA == 2 || $role == 2  ||  $clubID == 0 ){ ?>
                                             <li >
                                                 <a href="<?php echo base_url() ?>Statistique/ProjectStatistique/<?php echo $projet->projectId ?>" class="btn main-btn btn-sm"  >Statistique
                                                 </a>
