@@ -1,8 +1,18 @@
 
-<div id="content-page" class="content-page">
-            <div class="container">
-               <div class="row justify-content-center">
-                  <div class="col-sm-12">
+<section>
+    <div class="gap gray-bg">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="row widget-page merged20">
+              <div class="col-lg-12 col-md-12 col-sm-6">
+                <aside class="sidebar">
+                   <div class="widget">
+                    <h4 class="widget-title">Liste des clubs 
+                       
+                    </h4>
+            <!--begin: Datatable -->
+                        <ul class="faved-page">
 
 <div class="row">
 	
@@ -10,7 +20,7 @@
 	<div class="card col-md-6">
 		<div class="card">
 
-			<form action="<?php echo base_url() ?>TFM/partanTfmPaiement2" method="post">
+			<form action="<?php echo base_url() ?>TFM/partanTfmPaiement1" method="post">
 			<div class="card-header">
 				<h5>Liste des membre participant au TFM | <?php echo count($userRecords) ?> </h5>		
 			</div>
@@ -71,7 +81,4 @@
 		
 </div>
 
-</div>
-</div>
-</div>
-</div>
+</ul></div></aside></div></div></div></div></div></div></section>
