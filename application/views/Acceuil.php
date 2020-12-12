@@ -14,7 +14,8 @@
                   <div class="advertisment-box">
                               <h4 class="">publicité</h4>
                               <figure>
-                                 <a href="<?php echo base_url() ?>Project/projectDetails/1269" ><img src="<?php echo base_url() ;?>/uploads/projet/Projet_TUM 2020_TUM2020.jpg"  ></a>
+                                 <a  title="Advertisment"><img src="<?php echo base_url() ;?>/assets/images/resources/ad-widget.gif" alt=""></a>
+                                 <a  title="Advertisment" data-toggle="modal" data-target="#AlumniGO" ><img src="<?php echo base_url() ;?>/assets/images/resources/anigif.gif"  ></a>
                               </figure>
                   </div>
                    
