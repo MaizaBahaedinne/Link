@@ -59,7 +59,7 @@
 			</div>
 			<div class="card-body">
 				<?php foreach ($userRecordsT1 as $record ) { ?>
-					 <?php echo ' '.$record->name ;  ?> 
+					 <?php echo ' '.$record->name ;  ?>  #<?php echo ' '.$record->id ;  ?>
 					 
 					 <br>
 				<small><small> 
