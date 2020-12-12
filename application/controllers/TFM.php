@@ -52,7 +52,7 @@ class TFM extends BaseController {
 					$data['projectId'] = $projectId; 
 					
 	                $data['userRecords'] = $this->Tfm_part_model->TFMPartListinByclubToP($projectId,$clubID);
-	                $data['userRecordsT2'] = $this->Tfm_part_model->TFMPartListinByclubT2($clubID,$projectId);
+	               
 	                $this->global['pageTitle'] = 'Paiement';
 	             	$this->global['active'] = 'TFM';
 	                $this->loadViews("TFM/PaimentByClub", $this->global, $data, NULL);   
