@@ -1,18 +1,16 @@
 
-<div id="content-page" class="content-page">
-            <div class="container">
-               <div class="row justify-content-center">
-                  <div class="col-sm-12">
-
-
-<div class="row" >
-
-    <div class="card col-md-12">
-        <div class="card-header">
-        <label> inscription  :  <?php echo count($clubRecords) ?>  </label>
-    </div>
-        <div class="card-body">
-
+<section>
+    <div class="gap gray-bg">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="row widget-page merged20">
+              <div class="col-lg-12 col-md-12 col-sm-6">
+                <aside class="sidebar">
+                   <div class="widget">
+                    <h4 class="widget-title">Liste des clubs 
+                       
+                    </h4>
             <!--begin: Datatable -->
 
         <table id="example" class="table dataTable no-footer" style="width:cover" >
@@ -60,8 +58,8 @@
  
 
                     <td> 
-                          <?php if ( ($role == 2 && $clubID == 0) || $role == 10 ||  $uid == 2 ) { ?>
-                                <a href="<?php echo base_url() ?>TFM/PaimentByClub/<?php echo $record->clubID ?>/<?php echo $projectId ?>" class="btn btn-warning" >Paiement</a>
+                          <?php if ( $clubID == 0 || $role == 10 ||  $uid == 2 || $SA == 1 || $SA == 2   ) { ?>
+                                <a href="<?php echo base_url() ?>TFM/PaimentByClub/<?php echo $record->clubID ?>/<?php echo $projectId ?>" class="btn btn-sm btn-primary" >Paiement</a>
                          <?php } ?>   
                      </td>
                     </tr>
@@ -76,20 +74,15 @@
                   </table>
 
         
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </div>
     </div>
-        <div class="card-footer">
-        
-    </div>
-        
-    </div>
-    
-
-</div>
-
 </div>
 </div>
-</div>
-</div>
+</section>
 
 
             
