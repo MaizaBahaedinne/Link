@@ -60,14 +60,11 @@
 			<div class="card-body">
 				<?php foreach ($userRecordsT1 as $record ) { ?>
 					 <?php echo ' '.$record->name ;  ?> 
-					 <?php if($record->remb == 2 ){ ?>
-								<i class="ri-checkbox-circle-fill" style="color:#05BD53 "></i>
-						   	<?php } ?>
-							<?php if($record->remb == 1 ){ ?>
-								<i class="ri-checkbox-circle-fill" style="color:#ff1a1a "></i>
-						   	<?php } ?>
+					 
 					 <br>
-				<small><small> <?php echo ' '.$record->recp2 ;  ?> le  <?php echo ' '.$record->dateTranche2 ;  ?>  </small></small>
+				<small><small> 
+					<?php echo ' '.$record->recp1 ;  ?> le  <?php echo ' '.$record->dateTranche1 ;  ?>  
+				</small></small>
 				<br>
 				<?php } ?>
 			</div>
