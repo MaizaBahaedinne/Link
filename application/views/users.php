@@ -1,4 +1,4 @@
-<?php if ($SA== 1 && $SA == 2   ) {  ?>
+<?php if ($SA== 1 || $SA == 2   ) {  ?>
 <section>
     <div class="gap gray-bg">
       <div class="container">
