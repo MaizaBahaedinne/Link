@@ -232,7 +232,7 @@ class Tfm_part_model extends CI_Model
      * @param number $segment : This is pagination limit
      * @return array $result : This is result
      */
-    function TFMPartListinByclubT2($projectId,$clubId)
+    function TFMPartListinByclubT2($clubId,$projectId)
     {
         $this->db->select(' BaseTbl.id , Users.name , Clubs.name ClubName , Role.role , Users.cellule , Users.gouvernorat , BaseTbl.p_tranch1 , BaseTbl.p_tranch2 , BaseTbl.moto , BaseTbl.sysMobile , BaseTbl.statut , Usersr1.name as recp1 , BaseTbl.dateP_tranch1 as dateTranche1  ');
         $this->db->from('tbl_tfm_part as BaseTbl');
