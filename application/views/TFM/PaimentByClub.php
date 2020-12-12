@@ -20,7 +20,7 @@
 	<div class="card col-md-6">
 		<div class="card">
 
-			<form action="<?php echo base_url() ?>TFM/partanTfmPaiement1" method="post">
+		<form action="<?php echo base_url() ?>TFM/partanTfmPaiement1/<?php echo $clubID ?>/<?php echo $projectId ?>" method="post">
 			<div class="card-header">
 				<h5>Liste des membre participant au TFM | <?php echo count($userRecords) ?> </h5>		
 			</div>

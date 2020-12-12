@@ -48,6 +48,9 @@ class TFM extends BaseController {
 
 		    public function PaimentByClub($clubID,$projectId)
 				{		
+					$data['clubID'] = $clubID; 
+					$data['projectId'] = $projectId; 
+					
 	                $data['userRecords'] = $this->Tfm_part_model->TFMPartListinByclubToP($projectId,$clubID);
 	                $data['userRecordsT2'] = $this->Tfm_part_model->TFMPartListinByclubT2($clubID,$projectId);
 	                $this->global['pageTitle'] = 'Paiement';
@@ -103,18 +106,6 @@ class TFM extends BaseController {
 		        }    
 
 
-		public function TFMCountByClubV()
-		   {	
-		        	$searchText = $this->security->xss_clean($this->input->post('searchText'));
-            		$data['searchText'] = $searchText;
-            		$this->load->library('pagination');
-		        	$data['count'] = count($this->Tfm_part_model->TFMCountByClub());
-	                $searchText='' ;
-	                $data['userRecords'] = $this->Tfm_part_model->TFMCountByClub();
-	                $this->global['pageTitle'] = 'CodeInsect : club  Listing';
-	             	$this->global['active'] = 'TFMC';
-	                $this->loadViews("TFM/countByClub", $this->global, $data, NULL);   
-		        }    
 
 		        
 
