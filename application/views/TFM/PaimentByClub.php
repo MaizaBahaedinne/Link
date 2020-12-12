@@ -32,7 +32,7 @@
 							<?php if($uid == 2 || $uid ==  181 || $uid ==  556 
 							                   || $uid ==  1031 || $uid ==  2616   ){ ?>
 							<input class="form-check-input" type="checkbox" name="participant[]" value="<?php echo $record->id ; ?>" >
-							<?php } ?> <?php echo ' '.$record->name ;  ?>
+							<?php } ?> <?php echo ' '.$record->name ;  ?><small><small> #<?php echo ' '.$record->id ;  ?></small></small>
 						</label>
 					</div>
 				<?php } ?>
@@ -59,7 +59,7 @@
 			</div>
 			<div class="card-body">
 				<?php foreach ($userRecordsT1 as $record ) { ?>
-					 <?php echo ' '.$record->name ;  ?>  #<?php echo ' '.$record->id ;  ?>
+					 <?php echo ' '.$record->name ;  ?>  <small><small> #<?php echo ' '.$record->id ;  ?></small></small>
 					 
 					 <br>
 				<small><small> 
