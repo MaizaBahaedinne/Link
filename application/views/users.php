@@ -26,8 +26,9 @@
                         <?php if($SA == 1  ) { ?>
                         <th>Contact</th>
                         <?php }?>
-                        <th>Inscription </th>
+                       
                         <th>Actif</th>
+                        <th>Action</th>
                         
                     </tr>
                     </thead>
@@ -51,9 +52,9 @@
                         </td>
                       
                         <td>              
-                                        <a class="kt-user-card-v2__name" href="https://tunivisions.link/User/ProfileShow/<?php echo $record->userId ?>" >
+                                        
                                         <?php echo $record->name ?> 
-                                        </a>
+                                        
                                         <br>                              
                                         
                                         <small>  
@@ -78,7 +79,7 @@
                             </A> 
                            <br> 
                             <a href="<?php echo $record->facebook ?>">
-                                <i class="fa fa-facebook"></i> 
+                                <i class="fab fa-facebook"></i> 
                             </a>
                          | 
                         <?php if($SA == 1 ) { ?>
@@ -90,13 +91,7 @@
                          <?php } ?>   
 
                          
-                        <td>
-                            <small><small>
-
-                           parrin : <a class="kt-user-card-v2__name" href="<?php echo base_url() ?>User/ProfileShow/<?php echo $record->p_userId ?>" > <?php echo $record->parrain ?></a><br>
-                           date d'inscription :<a> <?php echo $record->createdDtm ?></a>
-                       </small></small>
-                        </td>
+                        
                         
                         <td> 
                            
@@ -112,6 +107,13 @@
                         <?php } ?>
      
                            
+                        </td>
+
+                        <td>
+                            <a  href="https://tunivisions.link/User/ProfileShow/<?php echo $record->userId ?>" ></a>
+                            <a  href="https://tunivisions.link/User/editUser/<?php echo $record->userId ?>" ></a>
+                            <a  href="https://tunivisions.link/User/blockUser/<?php echo $record->userId ?>" ></a>    
+
                         </td>
                        
 
