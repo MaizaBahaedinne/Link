@@ -96,14 +96,14 @@
                         <td> 
                            
                         <?php if($record->isDeleted == 0) { ?>
-                            <span class="btn btn-primary btn-sm" >Actif</span>
+                            <span class="btn btn-sm btn-primary" > Actif</span>
                         <?php }   ?>
                         <?php if($record->isDeleted == 3) { ?>
-                            <span class="btn btn-warning btn-sm" >non Actif</span>
+                            <span class="btn btn-sm btn-warning " > non Actif</span>
                         <?php } ?>
 
                         <?php  if($record->isDeleted == 2) {  ?>
-                            <span class="btn btn-danger btn-sm" >bloqué</span>
+                            <span class="btn btn-sm btn-danger"  > bloqué</span>
                         <?php } ?>
      
                            
