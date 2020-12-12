@@ -110,9 +110,9 @@
                         </td>
 
                         <td>
-                            <a  href="https://tunivisions.link/User/ProfileShow/<?php echo $record->userId ?>" ></a>
-                            <a  href="https://tunivisions.link/User/editUser/<?php echo $record->userId ?>" ></a>
-                            <a  href="https://tunivisions.link/User/blockUser/<?php echo $record->userId ?>" ></a>    
+                            <a  href="https://tunivisions.link/User/ProfileShow/<?php echo $record->userId ?>" ><i class="fas fa-eye"></i></a>
+                            <a   ><i class="fas fa-pencil-alt"></i></a>
+                            <a  ><i class="fas fa-ban"></i></a>    
 
                         </td>
                        
