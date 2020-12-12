@@ -55,10 +55,10 @@
 		<div class="card">
 			
 			<div class="card-header">
-				<h5>Liste des membre validé   | <?php echo count($userRecordsT2) ?> </h5>				
+				<h5>Liste des membre validé   | <?php echo count($userRecordsT1) ?> </h5>				
 			</div>
 			<div class="card-body">
-				<?php foreach ($userRecordsT2 as $record ) { ?>
+				<?php foreach ($userRecordsT1 as $record ) { ?>
 					 <?php echo ' '.$record->name ;  ?> 
 					 <?php if($record->remb == 2 ){ ?>
 								<i class="ri-checkbox-circle-fill" style="color:#05BD53 "></i>
