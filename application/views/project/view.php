@@ -170,10 +170,10 @@
                                             </div>
                                         </div>
                                     </div><!-- page like widget -->
-                               
+                                      <?php if(!(empty($score))) { ?> 
                                     <div class="widget">
                                         <h4 class="widget-title">Note du projet </h4>
-                                        <?php if(!(empty($score))) { ?> 
+                                        
                                         <div class="your-page">
                                             <h6>Taches (<?php echo $score->taches ?>) </h6>
                                             <hr>
@@ -198,9 +198,9 @@
                                             <?php echo  $score->description ?>
 
                                         </div>
-                                    <?php } ?> 
+                                    
                                     </div><!-- page like widget -->
-                                   
+                                   <?php } ?> 
                                 </aside>
                             </div><!-- sidebar -->
                         </div>  
