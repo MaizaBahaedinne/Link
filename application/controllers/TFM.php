@@ -74,8 +74,8 @@ class TFM extends BaseController {
 		        {	
 
 			       $data['userRecords'] = $this->Tfm_part_model->TFMPartListinByclub($clubId,$projectId);
-	                $this->global['pageTitle'] = 'CodeInsect : club  Listing'
-;	             	$this->global['active'] = 'TFMP';
+	                $this->global['pageTitle'] = 'Liste des Participants';
+	             	$this->global['active'] = 'TFMP';
 	                $this->loadViews("TFM/listpf", $this->global, $data, NULL);   
 
 		        }    

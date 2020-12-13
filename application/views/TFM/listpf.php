@@ -51,7 +51,7 @@
 
                             <?php if ($record->statut == 2 ) { ?>
                                 <span class="btn btn-warning btn-sm">en attente</span>
-                            <?php } elseif($record->statut == 2 ) {} ?>
+                            <?php } elseif($record->statut == 1 ) { ?>
                                 <span class="btn btn-primary btn-sm">Validée</span>
                             <?php }  ?>
                         
