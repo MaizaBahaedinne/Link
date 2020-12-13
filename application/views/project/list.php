@@ -46,10 +46,11 @@
                                             </div>
                                         </div>
                                     </div><!-- title block -->
+                                    <?php foreach ($projectRecords as $projet ) { ?>
                                     <div class="central-meta">
                                         <div class="row">
                                             <div class="col-lg-12">
-                                                <?php foreach ($projectRecords as $projet ) { ?>
+                                                
 
                                                 <div class="event-box">
                                                     <div class="row merged20">
@@ -62,7 +63,7 @@
                                                             <div class="event-title">
                                                                 <span class="ba"></span>
                                                                 <h3><a href="<?php echo base_url() ?>Project/projectDetails/<?php echo $projet->projectId ?>" title=""><?php echo $projet->titre ?></a></h3>
-                                                                <a class="btn btn-primary btn-sm " href="<?php echo base_url() ?>TFM/partantByClub/<?php echo $clubID ?>/<?php echo $projet->projectId ?>" > My Team </a>
+
                                                                 <label class="text-mute" >by <a href="<?php echo base_url() ?>club/clubInfo/<?php echo $projet->ClubID  ?>"> <?php if ($projet->ClubID > 5 ) {echo "club ";}  echo "Tunivisions ".$projet->ClubName; ?></a></label>
                                                                 <span>de <i class="fa fa-clock-o" style="color: green"></i> <?php echo $projet->startDate ?></span>
                                                                 <span>à <i class="fa fa-clock-o" aria-hidden="true"></i> <?php echo $projet->endDate ?></span>
@@ -70,7 +71,8 @@
                                                                 <span><i class="fa fa-money" aria-hidden="true"></i> <?php echo $projet->prix ?> DT</span>
                                                                 <hr>
                                                                 
-                                                                    <li><a title="" href="<?php echo $projet->eventFB ?>" ><i class="fa fa-facebook"></i>  Evenement Facebook</a></li>
+                                                                    
+                                                                    <li><a class="btn btn-primary btn-sm " href="<?php echo base_url() ?>TFM/partantByClub/<?php echo $clubID ?>/<?php echo $projet->projectId ?>" ><i class="fa fa-user"></i> My Team </a></li>
                                                                 
                                                                 
                                                                                                                                 
@@ -84,13 +86,14 @@
                                                     </div>
                                                 </div>
                                                 
-                                               <?php  } ?>
+                                               
                                                 
                                                 
                                             </div>
                                         </div>
                                         
                                     </div>
+                                    <?php  } ?>
                             </div><!-- centerl meta -->
                             <div class="col-lg-4">
                 <aside class="sidebar static right">
