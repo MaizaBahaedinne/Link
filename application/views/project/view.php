@@ -35,15 +35,19 @@
                                                 <a href="#" title="Folow us" class="main-btn" data-ripple=""  data-toggle="modal" data-target="#myModal" >Modifier</a>
                                             </li>
                                             <?php } ?>
+                                            <!--
                                             <li>
                                                 <a href="#" title="Folow us" class="main-btn" data-ripple=""  data-toggle="modal" data-target="#presence" >Présence</a>
                                             </li>
                                             <?php  } ?>
-                                            <!--
+                                            
                                             <li>
                                                 <a href="<?php echo base_url() ?>Task/tasksListing/<?php echo $projet->projectId ?>"  class="align-right user-ben main-btn " >Liste des taches</a>
                                             </li>
                                             -->
+                                            <?php if ( $role == 1 || $role == 3 || $role == 6 || $SA==1 || $SA==2  ) { ?>
+                                                <li><a class="btn btn-primary btn-sm " href="<?php echo base_url() ?>TFM/partantByClub/<?php echo $clubID ?>/<?php echo $projet->projectId ?>" ><i class="fa fa-user"></i>My Team</a></li>
+                                            <?php } ?>
                                             <?php if ( $user->SenJun == 3 || $SA == 1 ){ 
                                             if( empty($partProject) ){
                                             ?>

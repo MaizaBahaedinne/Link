@@ -129,7 +129,7 @@
                                 
                                 <li><i class="fa fa-globe"></i><a href="<?php echo $clubInfo->email ?>" title="">club Tunivisions <?php echo $clubInfo->name ?></a></li>
                                 <li><i class="fa fa-map-marker"></i><?php echo $clubInfo->facebook ?></li>
-                                <li><a class="btn btn-primary btn-sm " href="<?php echo base_url() ?>TFM/partantByClub/<?php echo $clubID ?>/1269" ><i class="fa fa-user"></i> My Team for TUM 2020 </a></li>
+                                
                               </ul>
                             </div>
                           </aside>
