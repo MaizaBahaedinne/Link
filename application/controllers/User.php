@@ -279,7 +279,7 @@ class User extends BaseController
                 $delegation = $this->input->post('delegation');
                 $gouvernorat = $this->input->post('gouvernorat');
                 $sexe = $this->input->post('sexe') ; 
-                          
+                $cellule = $this->input->post('cellule');          
             
                 $userInfo = array(
                                       
@@ -295,8 +295,7 @@ class User extends BaseController
                                       'sexe'=>$sexe,
                                       'gouvernorat'=>$gouvernorat,
                                       'delegation'=>$delegation,
-                                      'cellule'=>NULL,
-                                      'isDeleted'=>3,
+                                      'cellule'=>$cellule ,
                                       'updatedBy'=>$this->vendorId,
                                       'updatedDtm'=>date('Y-m-d H:i:s'), 
                                        );
