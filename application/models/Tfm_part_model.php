@@ -73,7 +73,7 @@ class Tfm_part_model extends CI_Model
         $this->db->from('tbl_tfm_part as BaseTbl');
         $this->db->where('BaseTbl.tfmId =',$projetId );
         $this->db->group_by('    day( BaseTbl.dateInscrip ) , hour(BaseTbl.dateInscrip)  ');
-        $this->db->order_by('   day(BaseTbl.dateInscrip) ,    ');
+        $this->db->order_by('   day(BaseTbl.dateInscrip)    ');
  
         $query = $this->db->get();
         $result = $query->result();        
