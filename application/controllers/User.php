@@ -264,7 +264,7 @@ class User extends BaseController
 
             $this->global['pageTitle'] = 'Modification';
             
-            $this->loadViews("tunimateurs/edit", $this->global, $data, NULL);
+            $this->loadViews("Tunimateurs/edit", $this->global, $data, NULL);
         
     }
     
