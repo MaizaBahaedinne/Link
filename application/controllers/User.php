@@ -50,7 +50,7 @@ class User extends BaseController
      */
     public function index()
     {
-        $this->global['pageTitle'] = 'Dashboard';
+        
 
         $data['MyTFM'] = $this->Tfm_part_model->TFMMyBus($this->vendorId);
         $data["tunimateurs"] = count($this->user_model->userListing($this->vendorId))  ; 
@@ -72,7 +72,8 @@ class User extends BaseController
      */
     function userListing()
     {
-            $data['userRecords'] = $this->user_model->userListing($this->vendorId);
+
+            $data['userRecords'] = $this->user_model->userListingType(3)  ;
             $this->global['pageTitle'] = 'Users';
             $this->global['active'] = 'users';
             $this->loadViews("users", $this->global, $data, NULL);
@@ -253,7 +254,7 @@ class User extends BaseController
      */
     function editOld($userId)
     {
-            if($this->SA != 1   )
+            if($this->SA != 1   || $this->SA != 2 )
             {
                 redirect('/');
             }
