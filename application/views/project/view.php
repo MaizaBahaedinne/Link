@@ -139,32 +139,7 @@
                                                       </div>
                                                   </div>
 
-                                                  <div class="tab-pane fade" id="link3">
-      <div id="fb-root"></div>
-      <script async defer crossorigin="anonymous" src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v8.0" nonce="vwqxXg2L"></script>
-
-       <div class="fb-post" 
-      data-href="https://www.facebook.com/media/set?set=<?php echo  $score->album ?>"
-      data-width="400"></div>
-
-                                                  </div>
-
-                                                  <div class="tab-pane fade " id="link4">
-        <?php if($score->video != '') { ?>                                            
-        <div id="fb-root"></div>
-        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v8.0" nonce="RFPjGo7w"></script>
-                                                      <!-- Your embedded video player code -->
-         <div class="fb-video" data-href="https://www.facebook.com/facebook/videos/<?php echo  $score->video ?>/" data-width="500" data-show-text="false">
-          <div class="fb-xfbml-parse-ignore">
-            <blockquote cite="https://www.facebook.com/facebook/videos/<?php echo  $score->video ?>/">
-              <a href="https://www.facebook.com/facebook/videos/<?php echo  $score->video ?>/">How to Share With Just Friends</a>
-              <p>How to share with just friends.</p>
-          Posted by <a href="https://www.facebook.com/facebook/">Facebook</a> on Friday, December 5, 2014
-            </blockquote>
-         </div>
-        </div>
-          <?php }else{ echo "<h4>Pas de after movie</h4>" ; } ?> 
-                                                  </div>
+                                                  
                                                 </div>
                                             </div>
                                         </div>
