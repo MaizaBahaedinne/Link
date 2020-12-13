@@ -18,7 +18,7 @@
                        
                         <th>ID</th>
                         <th>Nom et prénom</th>
-                    
+                        <th>Club</th>
                         <th>statut</th>
                         
                     </tr>
@@ -39,16 +39,16 @@
                        
                         <td><?php echo $record->id ?></td>
                         <td>               
-                                    
-                                     <?php echo $record->name ?> 
-                                    <br>                              
-                                    
-                                    <?php echo $record->role ?> <?php echo $record->cellule ?>  
-                                                          
+                               <?php echo $record->name ?> 
+                              <br>                              
+                              <?php echo $record->role ?> <?php echo $record->cellule ?>            
                         </td>
+
+                        <td> 
+                              <?php echo $record->ClubName ?>
+                        </td> 
  
                         <td> 
-
                             <?php if ($record->statut == 2 ) { ?>
                                 <span class="btn btn-warning btn-sm">en attente</span>
                             <?php } elseif($record->statut == 1 ) { ?>

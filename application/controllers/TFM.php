@@ -14,6 +14,7 @@ class TFM extends BaseController {
         $this->load->model('Tfm_part_model');
         $this->load->model('club_model');
         $this->load->model('tfm_model');
+        $this->load->model('project_model');
         $this->isLoggedIn();   
     }
     
@@ -72,7 +73,7 @@ class TFM extends BaseController {
 
 		 public function partantByClub($clubId,$projectId)
 		        {	
-
+		        	$data["projet"] = $this->project_model->getProjectInfo($projectID);
 			       $data['userRecords'] = $this->Tfm_part_model->TFMPartListinByclub($clubId,$projectId);
 	                $this->global['pageTitle'] = 'Liste des Participants';
 	             	$this->global['active'] = 'TFMP';
