@@ -73,7 +73,7 @@ class TFM extends BaseController {
 
 		 public function partantByClub($clubId,$projectId)
 		        {	
-		        	$data["projet"] = $this->project_model->getProjectInfo($projectID);
+		        	$data["projet"] = $this->project_model->getProjectInfo($projectId);
 			       $data['userRecords'] = $this->Tfm_part_model->TFMPartListinByclub($clubId,$projectId);
 	                $this->global['pageTitle'] = 'Liste des Participants';
 	             	$this->global['active'] = 'TFMP';
