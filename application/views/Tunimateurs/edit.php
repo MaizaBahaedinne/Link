@@ -121,7 +121,7 @@
                                      <label>Club/chapitre</label>
                                      <select name="clubID" >
                                         <?php foreach ($clubs as $club) {?>
-                                            <option value="<?php echo $club->ClubID ?>" 
+                                            <option value="<?php echo $club->clubID ?>" 
                                                 <?php if($club->clubID == $userInfo->clubID){ ?> 
                                                     selected 
                                                 <?php } ?> >
