@@ -122,7 +122,7 @@
                                      <select>
                                         <?php foreach ($clubs as $club) {?>
                                             <option value="<?php echo $club->name ?>" 
-                                                <?php if($club->clubID == $clubID){ ?> 
+                                                <?php if($club->clubID == $userInfo->clubID){ ?> 
                                                     selected 
                                                 <?php } ?> >
                                                 <?php echo $club->name ?>
@@ -169,9 +169,9 @@
                                     <?php if($SA == 1){ ?>  
                                     <select class="form-control" name="statut" 
                                      required>
-                                        <option value="0"   >Actif</option>
-                                        <option value="3"  >Non Actif</option>
-                                        <option value="2"  >Bloqué</option> 
+                                        <option value="0" <?php if($userInfo->isDeleted == 0 ){ ?> selected <?php } ?> >Actif</option>
+                                        <option value="3" <?php if($userInfo->isDeleted == 3 ){ ?> selected <?php } ?> >Non Actif</option>
+                                        <option value="2" <?php if($userInfo->isDeleted == 2 ){ ?> selected <?php } ?>>Bloqué</option> 
                                     </select>
                                     <?php  } ?>
                                     <?php if($SA == 2){ ?>  
