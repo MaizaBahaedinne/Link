@@ -7,10 +7,8 @@
               <div class="col-lg-12 col-md-12 col-sm-6">
                 <aside class="sidebar">
                    <div class="widget">
-                    <h4 class="widget-title">Liste des clubs 
-                       <?php if($SA == 1 || $SA == 2  ){ ?>
-                      <a class="align-right main-btn" data-toggle="modal" data-target="#myModal" >Ajouter un club</a>
-                      <?php } ?> 
+                    <h4 class="widget-title">Liste des participant au <?php echo $projet->titre ?> 
+                       
                        </h4>
 
                     <ul class="faved-page">
@@ -41,19 +39,12 @@
                        
                         <td><?php echo $record->id ?></td>
                         <td>               
-                                    <a class="kt-user-card-v2__name" href="#">
+                                    
                                      <?php echo $record->name ?> 
-                                     <?php if($record->remb == 2 ){ ?>
-                                    <i class="ri-checkbox-circle-fill" style="color:#05BD53 "></i>
-                                    <?php } ?>
-                                  <?php if($record->remb == 1 ){ ?>
-                                    <i class="ri-checkbox-circle-fill" style="color:#ff1a1a "></i>
-                                    <?php } ?>
-                                    </a>
                                     <br>                              
-                                    <span class="kt-user-card-v2__desc">
+                                    
                                     <?php echo $record->role ?> <?php echo $record->cellule ?>  
-                                    </span>                            
+                                                          
                         </td>
  
                         <td> 
