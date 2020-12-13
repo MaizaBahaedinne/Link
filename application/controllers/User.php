@@ -279,7 +279,8 @@ class User extends BaseController
                 $delegation = $this->input->post('delegation');
                 $gouvernorat = $this->input->post('gouvernorat');
                 $sexe = $this->input->post('sexe') ; 
-                $cellule = $this->input->post('cellule');          
+                $cellule = $this->input->post('cellule');  
+                $clubId = $this->input->post('clubID');         
             
                 $userInfo = array(
                                       
@@ -293,6 +294,7 @@ class User extends BaseController
                                       'linkedin'=>$linkedin,
                                       'cin'=>$cin,
                                       'sexe'=>$sexe,
+                                      'clubID' => $clubId  , 
                                       'gouvernorat'=>$gouvernorat,
                                       'delegation'=>$delegation,
                                       'cellule'=>$cellule ,
