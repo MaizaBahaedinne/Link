@@ -263,7 +263,64 @@ class User extends BaseController
             $this->loadViews("Tunimateurs/edit", $this->global, $data, NULL);   
     }
     
+
+     /**
+     * This function is used to edit the user information
+     */
+    function editUserAdmin($userId)
+    {
+     $cin = $this->input->post('cin');
+                $nom = strtoupper ($this->input->post('nom'));
+                $prenom = $this->input->post('prenom');
+                $name =  $nom.' '.$prenom ;
+                $birthday = $this->input->post('birthday');
+                $facebook = $this->input->post('facebook');
+                $instagram = $this->input->post('instagram');
+                $linkedin = $this->input->post('linkedin');
+                $adresse =$this->input->post('adresse');
+                $delegation = $this->input->post('delegation');
+                $gouvernorat = $this->input->post('gouvernorat');
+                $sexe = $this->input->post('sexe') ; 
+                          
+            
+                $userInfo = array(
+                                      
+                                      'name'=>$name,
+                                      'prenom'=>$prenom,
+                                      'nom'=>$nom,
+                                      'adresse' => $adresse,
+                                      'birthday'=>$birthday,
+                                      'facebook'=>$facebook,
+                                      'instagram'=>$instagram,
+                                      'linkedin'=>$linkedin,
+                                      'cin'=>$cin,
+                                      'sexe'=>$sexe,
+                                      'gouvernorat'=>$gouvernorat,
+                                      'delegation'=>$delegation,
+                                      'cellule'=>NULL,
+                                      'isDeleted'=>3,
+                                      'updatedBy'=>$this->vendorId,
+                                      'updatedDtm'=>date('Y-m-d H:i:s'), 
+                                       );
+                
+                $result = $this->user_model->editUser($userInfo, $userId);
+                
+                if($result == true)
+                {
+                    $this->session->set_flashdata('success', 'User updated successfully');
+                }
+                else
+                {
+                    $this->session->set_flashdata('error', 'User updation failed');
+                }
+                
+                redirect('User/editOld/'.$userId);
+      
+        
+    }
     
+
+
     /**
      * This function is used to edit the user information
      */
@@ -292,11 +349,18 @@ class User extends BaseController
             }
             else
             {
-                $name = ucwords(strtolower($this->security->xss_clean($this->input->post('fname'))));
-                $email = strtolower($this->security->xss_clean($this->input->post('email')));
-                $password = $this->input->post('password');
-                $roleId = $this->input->post('role');
-                $mobile = $this->security->xss_clean($this->input->post('mobile'));
+                $cin = $this->input->post('cin');
+                $nom = strtoupper ($this->input->post('nom'));
+                $prenom = $this->input->post('prenom');
+                $name =  $nom.' '.$prenom ;
+                $birthday = $this->input->post('birthday');
+                $facebook = $this->input->post('facebook');
+                $instagram = $this->input->post('instagram');
+                $linkedin = $this->input->post('linkedin');
+                $adresse =$this->input->post('adresse');
+                $delegation = $this->input->post('delegation');
+                $gouvernorat = $this->input->post('gouvernorat');
+                $sexe = $this->input->post('sexe');
                 
                 $userInfo = array();
                 

@@ -16,7 +16,26 @@
 
                                     <section>
                                     <h6> Informations Personnelle </h6>
-
+                                    <?php
+                                        $this->load->helper('form');
+                                        $error = $this->session->flashdata('error');
+                                        if($error)
+                                        {
+                                            ?>
+                                            <div class="alert alert-danger alert-dismissable">
+                                                
+                                                <?php echo $error; ?>                    
+                                            </div>
+                                        <?php }
+                                        $success = $this->session->flashdata('success');
+                                        if($success)
+                                        {
+                                            ?>
+                                            <div class="alert alert-success alert-dismissable">
+                                                
+                                                <?php echo $success; ?>                    
+                                            </div>
+                                      <?php } ?>
                                     <form  
                                    
                                     action="<?php echo base_url() ?>User/editUserAdmin/<?php echo $userInfo->userId ?>" 
@@ -25,13 +44,15 @@
                                     <label>Photo de profil<br></label>
                                     
                                     <div style="height: 200px;width: 200px">
-                                    <img src="<?php echo $userInfo->cin ?>" >
+                                    <img src="<?php echo base_url() ?>uploads/avatar/<?php echo $userInfo->avatar ?>" >
                                     
                                     </div>
                                     <span>Taille recommandé 800x800 px et une taille de 200 ko</span>
                                      <hr>
                                      <label>CIN</label>
                                      <input type="text" name="cin" value="<?php echo $userInfo->cin ?>" class="form-control" required >
+                                     <label>username</label>
+                                     <input type="text" name="nom" value="<?php echo $userInfo->name ?>" class="form-control" required disabled>
                                      <label>Nom</label>
                                      <input type="text" name="nom" value="<?php echo $userInfo->nom ?>" class="form-control" required >
                                      <label>Prenom</label>
@@ -42,10 +63,8 @@
                                      <select  name="sexe" id="sexe" required>
                                         <option value=""></option>
                                         <option value="Femme" 
-                                        <?php if ($userInfo->birthday=="Femme" )
-                                        { echo "selected" ; }  ?>  >  Femme</option>
-                                        <option value="Homme" <?php if ($userInfo->birthday=="Homme" )
-                                        { echo "selected" ; }  ?> >Homme</option>
+                                        <?php if ($userInfo->birthday=="Femme" ) { echo "selected" ; }  ?>  >  Femme</option>
+                                        <option value="Homme" <?php if ($userInfo->birthday=="Homme" ) { echo "selected" ; }  ?> >Homme</option>
                                     </select>
                                      <hr>
                                      <label>Adresse</label>
@@ -79,22 +98,22 @@
                                         <option value="Zaghouan"  <?php if($userInfo->gouvernorat == "Zaghouan" ){ ?> selected <?php } ?> >Zaghouan</option>
                                      </select>
                                      <label> code postale </label>
-                                     <input name="delegation" class="form-control" id="delegation" type="number"  >
+                                     <input name="delegation" value="<?php echo $userInfo->delegation ?>" class="form-control" id="delegation" type="number"  >
                                      <hr>
                                      <div class="uzer-nam">
                                       <label><br>Facebook </label>
                                       <span>https://www.facebook.com/</span>
-                                        <input type="url" class="form-control" placeholder="exemple : Tunivisions.Foundation" name="facebook" width="30%" id="facebook"   >
+                                        <input type="url" class="form-control" name="facebook" width="30%" id="facebook" value="<?php echo $userInfo->facebook ?>"    required >
                                      </div>
                                      <div class="uzer-nam">
                                       <label><br>Instgram </label>
                                       <span>https://www.instgram.com/</span>
-                                        <input type="url" class="form-control" placeholder="exemple : Tunivisions.Foundation" name="instagram" width="30%" value="<?php echo $user->instagram ?>"  >
+                                        <input type="url" class="form-control" name="instagram" width="30%" value="<?php echo $userInfo->instagram ?>"  >
                                      </div>
                                      <div class="uzer-nam">
                                       <label><br>Linkedin </label>
                                       <span>https://www.Linkedin.com/in/</span>
-                                        <input type="url"  class="form-control"  placeholder="exemple : Tunivisions.Foundation" name="linkedin" width="30%"  value="<?php echo $user->linkedin ?>">
+                                        <input type="url"  class="form-control"  name="linkedin" width="30%"  value="<?php echo $userInfo->linkedin ?>">
                                      </div>
                                      
                                      
@@ -105,22 +124,24 @@
                                             <option value="<?php echo $club->name ?>" 
                                                 <?php if($club->clubID == $clubID){ ?> 
                                                     selected 
-                                                <?php }?> >
+                                                <?php } ?> >
                                                 <?php echo $club->name ?>
                                             </option>
                                         <?php } ?>
                                      </select>
                                      <label>Poste</label>
-                                     <input type="text"  value="<?php echo $user->role ?>" class="form-control" readonly >
-                                     <?php if ($user->roleId != 1 ) { ?>
+                                     <input type="text"  value="<?php echo $userInfo->role ?>" class="form-control" readonly >
+                                     <?php if ($userInfo->roleId != 1 || $userInfo->roleId != 2 ) { ?>
                                      <label>Departement/Unité</label>
-                                     <?php if($clubID != 2) { ?>
-                                         <select class="form-control" name="cellule" required>
+                                     <?php if($userInfo->clubID != 2) { ?>
+                                         <select class="form-control" name="cellule" 
+                                         <?php if($serInfo->role != 5) { ?> disabled <?php } ?>
+                                          required>
                                             <option value=""  ></option>
-                                             <option value="Ressource humaine" >Ressource humaine </option>
-                                             <option value="Marketing" >Marketing </option>
-                                             <option value="Evenmentiel" >Evenmentiel </option>
-                                             <option value="Administration et finance" >Administration et finance </option>
+                                             <option <?php if($userInfo->cellule == "Ressource humaine" ){ ?> selected <?php } ?>  value="Ressource humaine" >Ressource humaine </option>
+                                             <option <?php if($userInfo->cellule == "Marketing" ){ ?> selected <?php } ?> value="Marketing" >Marketing </option>
+                                             <option <?php if($userInfo->cellule == "Evenmentiel" ){ ?> selected <?php } ?> value="Evenmentiel" >Evenmentiel </option>
+                                             <option <?php if($userInfo->cellule == "Administration et finance" ){ ?> selected <?php } ?> value="Administration et finance" >Administration et finance </option>
                                          </select>
                                      <?php } else { ?>
                                         <select class="form-control"  name="cellule" required>
@@ -144,6 +165,19 @@
                                      <?php } }  ?>
                                      <br>
 
+                                    <label>Statut</label>
+                                    <?php if($SA == 1){ ?>  
+                                    <select class="form-control" name="statut" 
+                                     required>
+                                        <option value="0"   >Actif</option>
+                                        <option value="3"  >Non Actif</option>
+                                        <option value="2"  >Bloqué</option> 
+                                    </select>
+                                    <?php  } ?>
+                                    <?php if($SA == 2){ ?>  
+                                        <input type="" value="<?php  ?>" name="" readonly>
+                                    <?php  } ?>
+
                                         <hr>
                                         <div class="row">
                                             <div class="col-lg-6">
@@ -166,3 +200,5 @@
     </div>
 </div>
 </section>
+
+<?php } ?>

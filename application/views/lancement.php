@@ -121,6 +121,9 @@
                                      <hr>
                                      <label>CIN</label>
                                      <input type="text" name="cin" value="<?php echo $user->cin ?>" class="form-control" required >
+                                     <label>username</label>
+                                     <input type="text" name="nom" value="<?php echo $user->name ?>" class="form-control" required readonly >
+                                     <label>Prenom</label>
                                      <label>Nom</label>
                                      <input type="text" name="nom" value="<?php echo $user->nom ?>" class="form-control" required >
                                      <label>Prenom</label>
@@ -170,17 +173,17 @@
                                      <div class="uzer-nam">
                                       <label><br>Facebook </label>
                                       <span>https://www.facebook.com/</span>
-                                        <input type="text" class="form-control" placeholder="exemple : Tunivisions.Foundation" name="facebook" width="30%" id="facebook"   >
+                                        <input type="url" class="form-control" placeholder="exemple : Tunivisions.Foundation" name="facebook" width="30%" id="facebook"  required >
                                      </div>
                                      <div class="uzer-nam">
                                       <label><br>Instgram </label>
                                       <span>https://www.instgram.com/</span>
-                                        <input type="text" class="form-control" placeholder="exemple : Tunivisions.Foundation" name="instagram" width="30%" value="<?php echo $user->instagram ?>"  >
+                                        <input type="url" class="form-control" placeholder="exemple : Tunivisions.Foundation" name="instagram" width="30%" value="<?php echo $user->instagram ?>"  >
                                      </div>
                                      <div class="uzer-nam">
                                       <label><br>Linkedin </label>
                                       <span>https://www.Linkedin.com/in/</span>
-                                        <input type="text"  class="form-control"  placeholder="exemple : Tunivisions.Foundation" name="linkedin" width="30%"  value="<?php echo $user->linkedin ?>">
+                                        <input type="url"  class="form-control"  placeholder="exemple : Tunivisions.Foundation" name="linkedin" width="30%"  value="<?php echo $user->linkedin ?>">
                                      </div>
                                      
                                      
@@ -189,7 +192,8 @@
                                      <input type="text"  value="<?php echo $user->ClubName ?>" class="form-control" readonly >
                                      <label>Poste</label>
                                      <input type="text"  value="<?php echo $user->role ?>" class="form-control" readonly >
-                                     <?php if ($user->roleId != 1 ) { ?>
+
+                                     <?php if ($user->roleId != 1 || $user->roleId != 2 ) { ?>
                                      <label>Departement/Unité</label>
                                      <?php if($clubID != 2) { ?>
                                          <select class="form-control" name="cellule" required>
@@ -219,6 +223,8 @@
                                          <option value="Unité statistique" >Unité statistique </option>
                                      </select>
                                      <?php } }  ?>
+
+
                                      <br>
 
                                         <hr>
