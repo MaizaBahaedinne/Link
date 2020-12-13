@@ -97,7 +97,7 @@
 														}*/
 
 														const chart = new Chart(ctx, {
-														  type: 'line',
+														  type: 'bar',
 														  data: {
 														    labels: [<?php foreach ($countRythme as $key ) {
 														      	 $date = 	date_create($key->dateInscrip);
