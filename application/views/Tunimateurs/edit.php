@@ -1,3 +1,19 @@
+<?php if ($SA== 1 || $SA == 2   ) {  ?>
+<section>
+    <div class="gap gray-bg">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="row widget-page merged20">
+              <div class="col-lg-12 col-md-12 col-sm-6">
+                <aside class="sidebar">
+                   <div class="widget">
+                    <h4 class="widget-title">Liste des utilisateurs 
+                       
+                       </h4>
+
+                    <ul class="faved-page">                                    
+
                                     <section>
                                     <h6> Informations Personnelle </h6>
 
@@ -138,3 +154,13 @@
 
                                      </form>
                                     </section>
+                                </ul>
+                            </div>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
