@@ -254,10 +254,7 @@ class User extends BaseController
      */
     function editOld($userId)
     {
-            if($this->SA != 1   || $this->SA != 2 )
-            {
-                redirect('/');
-            }
+            
             $data["userInfo"] = $this->user_model->getUserInfoWithRole($userId);
             $data['clubs']  = $this->club_model->clubListing($this->SA, $this->clubID);
             $this->global['pageTitle'] = 'Modification';
