@@ -36,18 +36,21 @@
                                             </li>
                                             <?php } } ?>
                                             
-                                            <?php if ( $user->SenJun == 3 || $SA == 1 ){ 
+
+
+                                          <?php if ( $role == 1 || $role == 3 || $role == 6 || $SA==1 || $SA==2  ) { ?>
+                                                <li><a class="btn main-btn btn-sm" href="<?php echo base_url() ?>TFM/partantByClub/<?php echo $clubID ?>/<?php echo $projet->projectId ?>" ><i class="fa fa-user"></i> My Team</a></li>
+                                            <?php } ?>
+
+
+                                         <?php if ( $user->SenJun == 3 || $SA == 1 ){ 
                                             if( empty($partProject) ){
                                             ?>
                                             <li >
-                                                <a class="btn main-btn btn-sm" data-ripple=""  data-toggle="modal" data-target="#participationProjet" >Participation
+                                                <a class="btn main-btn btn-sm" data-ripple=""  data-toggle="modal" data-target="#participationProjet" ><i class="fa fa-user-plus"></i> Participation
                                                 </a>
                                             </li>
                                           <?php } }  ?>
-
-                                          <?php if ( $role == 1 || $role == 3 || $role == 6 || $SA==1 || $SA==2  ) { ?>
-                                                <li><a class="btn main-btn btn-sm" href="<?php echo base_url() ?>TFM/partantByClub/<?php echo $clubID ?>/<?php echo $projet->projectId ?>" ><i class="fa fa-user"></i>My Team</a></li>
-                                            <?php } ?>
                                             
                                         </ul>
                                         
