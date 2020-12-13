@@ -8,10 +8,8 @@
               <div class="col-lg-12 col-md-12 col-sm-6">
                 <aside class="sidebar">
                    <div class="widget">
-                    <h4 class="widget-title">Liste des clubs 
-                       <?php if($SA == 1 || $SA == 2  ){ ?>
-                      <a class="align-right main-btn" data-toggle="modal" data-target="#myModal" >Ajouter un club</a>
-                      <?php } ?> 
+                    <h4 class="widget-title">Liste des utilisateurs 
+                       
                        </h4>
 
                     <ul class="faved-page">
@@ -110,8 +108,8 @@
                         </td>
 
                         <td>
-                            <a  href="https://tunivisions.link/User/ProfileShow/<?php echo $record->userId ?>" ><i class="fas fa-eye"></i></a>
-                            <a   ><i class="fas fa-pencil-alt"></i></a>
+                            <a  href="<?php echo base_url() ?>User/ProfileShow/<?php echo $record->userId ?>" ><i class="fas fa-eye"></i></a>
+                            <a  href="<?php echo base_url() ?>User/editOld/<?php echo $record->userId ?>"  ><i class="fas fa-pencil-alt"></i></a>
                             <a  ><i class="fas fa-ban"></i></a>    
 
                         </td>

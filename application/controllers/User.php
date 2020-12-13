@@ -254,17 +254,17 @@ class User extends BaseController
     function editOld($userId)
     {
 
-            if($this->SA != 1 || $this->vendorId != $userId  )
+            if($this->SA != 1   )
             {
-                redirect('userListing');
+                redirect('/');
             }
+
+            $data["userInfo"] = $this->user_model->getUserInfoWithRole($userId);
+            $data['clubs']  = $this->club_model->clubListing($this->SA, $this->clubID);
+
+            $this->global['pageTitle'] = 'Modification';
             
-            $data['roles'] = $this->user_model->getUserRoles();
-            $data['userInfo'] = $this->user_model->getUserInfoWithRole($userId);
-            
-            $this->global['pageTitle'] = 'CodeInsect : Edit User';
-            
-            $this->loadViews("editOld", $this->global, $data, NULL);
+            $this->loadViews("tunimateurs/edit", $this->global, $data, NULL);
         
     }
     
