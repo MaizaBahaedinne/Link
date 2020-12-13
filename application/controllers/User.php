@@ -73,7 +73,7 @@ class User extends BaseController
     function userListing()
     {
 
-            $data['userRecords'] = $this->user_model->userListingType(3)  ;
+            $data['userRecords'] = $this->user_model->userListingTypeAll(3)  ;
             $this->global['pageTitle'] = 'Users';
             $this->global['active'] = 'users';
             $this->loadViews("users", $this->global, $data, NULL);
