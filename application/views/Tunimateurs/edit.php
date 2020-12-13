@@ -103,7 +103,9 @@
                                      <select>
                                         <?php foreach ($clubs as $club) {?>
                                             <option value="<?php echo $club->name ?>" 
-                                                <?php if($club->clubID == $clubID){ ?> selected <?php }?> >
+                                                <?php if($club->clubID == $clubID){ ?> 
+                                                    selected 
+                                                <?php }?> >
                                                 <?php echo $club->name ?>
                                             </option>
                                         <?php } ?>

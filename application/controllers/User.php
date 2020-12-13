@@ -253,19 +253,14 @@ class User extends BaseController
      */
     function editOld($userId)
     {
-
             if($this->SA != 1   )
             {
                 redirect('/');
             }
-
             $data["userInfo"] = $this->user_model->getUserInfoWithRole($userId);
             $data['clubs']  = $this->club_model->clubListing($this->SA, $this->clubID);
-
             $this->global['pageTitle'] = 'Modification';
-            
-            $this->loadViews("Tunimateurs/edit", $this->global, $data, NULL);
-        
+            $this->loadViews("Tunimateurs/edit", $this->global, $data, NULL);   
     }
     
     
@@ -683,16 +678,7 @@ class User extends BaseController
         return $return;
     }
 
-    /**
-     * This function is used to check whether email already exist or not
-     * @param {string} $email : This is users email
-     */
-    function usersConnected()
-    {   
-            header('Content-Type: application/json');
-            echo json_encode( $this->login_model->lastLogins() , JSON_PRETTY_PRINT);
-         
-    }
+
 
 
 
