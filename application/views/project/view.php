@@ -69,7 +69,7 @@
                                     <div class="btn btn-block btn-danger">
 
                                       <b>Votre participation est en cours de validation !</b>  <br>
-                                      Le paiement sera effectué en une deux tranches : 160 dt.<br> <br><b>Deadline de paiement : Jeudi 17/12/2020</b><br>
+                                      Le paiement sera effectué en deux tranches : 160 dt.<br> <br><b>Deadline de paiement : Jeudi 17/12/2020</b><br>
                                        100 DT : Mardi 15<br>
                                        60 DT : Jeudi 17 Décembre <br><br>
 
