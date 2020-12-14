@@ -269,7 +269,6 @@
 		<div class="mh-head second">
 			<form class="mh-form" method="post" action="<?php echo base_url() ?>Search" >
 				<input placeholder="Chercher" type="text" name="text" required>
-				<input type="submit"  class="fa fa-search" value=""><i class="fa fa-search" aria-hidden="true"></i></input>
 			</form>
 		</div>
 		
