@@ -260,7 +260,7 @@
 				<a class="" href="#menu"><i class="fa fa-align-justify"></i></a>
 			</span>
 			<span class="mh-text">
-				<a href="<?php echo base_url() ?>Posts" title=""><img src="<?php echo base_url()?>assets/images/logo.svg" width="75%" alt=""></a>
+				<a href="<?php echo base_url() ?>Posts" title=""><img src="<?php echo base_url()?>assets/images/logo.svg" alt=""></a>
 			</span>
 			<span class="mh-btns-right">
 				<a class="fa fa-sliders" href="#shoppingbag"></a>
