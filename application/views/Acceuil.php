@@ -15,7 +15,6 @@
                               <h4 class="">publicité</h4>
                               <figure>
                                  <a  title="Advertisment"><img src="<?php echo base_url() ;?>/assets/images/resources/ad-widget.gif" alt=""></a>
-                                 <a  title="Advertisment" data-toggle="modal" data-target="#AlumniGO" ><img src="<?php echo base_url() ;?>/assets/images/resources/anigif.gif"  ></a>
                               </figure>
                   </div>
                    
@@ -62,7 +61,13 @@
                     </div>
                   </div><!-- calendar -->
 
-
+                  <div class="advertisment-box">
+                              <h4 class="">publicité</h4>
+                              <figure>
+                                 
+                                 <a  title="Advertisment" data-toggle="modal" data-target="#AlumniGO" ><img src="<?php echo base_url() ;?>/assets/images/resources/anigif.gif"  ></a>
+                              </figure>
+                  </div>
                  
                  
                   
