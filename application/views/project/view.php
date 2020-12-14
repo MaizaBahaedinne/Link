@@ -69,9 +69,9 @@
                                     <div class="btn btn-block btn-danger">
 
                                       <b>Votre participation est en cours de validation !</b>  <br>
-                                      Le paiement sera effectué en une deux tranches : 160 dt. <br><b>Deadline de paiement : Jeudi 17/12/2020</b><br>
+                                      Le paiement sera effectué en une deux tranches : 160 dt.<br> <br><b>Deadline de paiement : Jeudi 17/12/2020</b><br>
                                        100 DT : Mardi 15<br>
-                                       60 DT : Jeudi 17 Décembre <br>
+                                       60 DT : Jeudi 17 Décembre <br><br>
 
                                       Les présidents peuvent contacter directement nos représentants dans ces régions :<br>
 
@@ -82,7 +82,7 @@
                                       ✅ SOUSSE - MONASTIR : Enis Hachicha : 99630965<br>
                                       <br>
                                       ⚠️ Si votre region ne figure pas dans la liste ci dessus, les présidents concernés devront collecter les frais des participants et les enverront via mandat minute au nom de Ahmed Ben Ghanem et merci de scanner le rendu et l'envoyer par mail<br>
-                                      tunivisionsfoundation@gmail.com<br>
+                                      <b>tunivisionsfoundation@gmail.com</b><br>
                                       <br>
                                       ⚠️ Pour le bon déroulement du paiement, les présidents des clubs seront nos vis à vis financière.
                                       <br>
