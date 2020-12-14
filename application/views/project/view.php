@@ -66,15 +66,27 @@
                                   <div class="central-meta">
                                      <span class="create-post">Statut de participation <a href="#" title=""></a></span>
                                      <?php if ($partProject->statut == 2 ){ ?>
-                                    <div class="btn btn-block btn-warning">
-                                      <b>Votre participation est en cours de validation !</b>  <br><br>
-                                      1. Le paiement sera effectué en une seule tranche : 160 dt. <br><b>Deadline de paiement : Mardi 15/12/2020</b><br>
-                                      2. Le président est le seul vis à vis avec la fondation pour le paiement des frais d'inscription des membres de son club.<br>
-                                      3. Le deadline du formulaire d’inscription est le mardi 15 décembre 2020.<br>
-                                      4. Les frais d’inscription pour les non-résidents sont à 90dt.<br>
-                                      5. Il est strictement obligatoire de lire et de respecter le reglement du TUM.<br>
-                                      6. Aucun paiement ne sera  effectué après le 15 décembre.<br>
-                                      7. Toute tentative de fraude engendra des sanctions au club concerné
+                                    <div class="btn btn-block btn-danger">
+                                      
+                                      <b>Votre participation est en cours de validation !</b>  <br>
+                                      Le paiement sera effectué en une deux tranches : 160 dt. <br><b>Deadline de paiement : Mardi 15/12/2020</b><br>
+                                       100 DT : Mardi 15<br>
+                                       60 DT : Jeudi 17 Décembre <br>
+
+                                      Les présidents peuvent contacter directement nos représentants dans ces régions :<br>
+
+                                      ✅ GABES : Azza Abouda : 56749190<br>
+                                      ✅ SFAX : Nour Jallouli : 44343676<br>
+                                      ✅ TUNIS : Malek Chennoufi : 54623069<br>
+                                      ✅ NABEUL : Yasmine Gharbi : 27792844<br>
+                                      ✅ SOUSSE - MONASTIR : Enis Hachicha : 99630965<br>
+                                      <br>
+                                      ⚠️ Si votre region ne figure pas dans la liste ci dessus, les présidents concernés devront collecter les frais des participants et les enverront via mandat minute au nom de Ahmed Ben Ghanem et merci de scanner le rendu et l'envoyer par mail<br>
+                                      tunivisionsfoundation@gmail.com<br>
+                                      <br>
+                                      ⚠️ Pour le bon déroulement du paiement, les présidents des clubs seront nos vis à vis financière.
+                                      <br>
+                                      ⚠️ Veuillez noter qu'en cas d'annulation de la participation d'un Tunimateur, les deux tranches sont non remboursables.
                                     </div>
                                      <?php } ?>
                                     <?php if ($partProject->statut == 1 ){ ?>
