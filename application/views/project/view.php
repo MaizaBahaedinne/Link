@@ -86,7 +86,7 @@
                                       <br>
                                       ⚠️ Pour le bon déroulement du paiement, les présidents des clubs seront nos vis à vis financière.
                                       <br>
-                                      ⚠️ Veuillez noter qu'en cas d'annulation de la participation d'un Tunimateur, les deux tranches sont non remboursables.
+                                      ⚠️ Veuillez noter qu'en cas d'annulation de la participation d'un Tunimateur, les deux tranches sont non remboursable.
                                     </div>
                                      <?php } ?>
                                     <?php if ($partProject->statut == 1 ){ ?>
