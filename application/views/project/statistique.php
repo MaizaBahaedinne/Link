@@ -230,16 +230,17 @@
 														// And for a doughnut chart
 															var myDoughnutChart = new Chart(ctx, {
 															    type: 'pie',
-															    data: {
-														    labels: ['Homme','Femme'],
-														    datasets: [{
-														      label: '# Sexe',
-														      data: [<?php echo $partParsexeH->hommec ?> , <?php echo $partParsexeF->femmec ?> ],
-														      backgroundColor : 'green'
-														    }]
-														  }
-														      
-														});
+															    data = {
+															    datasets: [{
+															        data:[<?php echo $partParsexeH->hommec ?> , <?php echo $partParsexeF->femmec ?> ]
+															    }],
+
+															    // These labels appear in the legend and in the tooltips when hovering different arcs
+															    labels:['Homme','Femme']
+															};
+															   
+														      }) ;
+														
 														
 														</script>
 
