@@ -138,9 +138,9 @@ class TFM extends BaseController {
 				 foreach ( $part as $r)
 				{
 					$partanTfm = array(  	  
-									  'p_tranch1' => '60', 
-							          'dateP_tranch1'=>date('Y-m-d H:i:s'),
-							          'recepteurTranche1'=>$this->vendorId ,
+									  'p_tranch2' => '60', 
+							          'dateP_tranch2'=>date('Y-m-d H:i:s'),
+							          'recepteurTranche2'=>$this->vendorId ,
 							          'statut'=> 1 
 								     	);
 					$result = $this->tfm_model->editTFMPart($partanTfm, $r) ;
