@@ -29,7 +29,7 @@
 				<?php foreach ($userRecordsT1 as $record ) { ?>
 					<div class="form-check form-check-flat form-check-primary">
 						<label class="form-check-label">
-							<?php if($uid == 2 || $uid ==  181 || $uid ==  556 
+							<?php if($uid == 2 || $uid == 3933 || $uid ==  181 || $uid ==  556 
 							                   || $uid ==  1031 || $uid ==  2616 || $uid ==  237    ){ ?>
 							<input class="form-check-input" type="checkbox" name="participant[]" value="<?php echo $record->id ; ?>" >
 							<?php } ?> <?php echo ' '.$record->name ;  ?><small><small> #<?php echo ' '.$record->id ;  ?></small></small>
@@ -62,7 +62,7 @@
 				<?php foreach ($userRecordsT2 as $record ) { ?>
 					<div class="form-check form-check-flat form-check-primary">
 						<label class="form-check-label">
-							<?php if($uid == 2 || $uid ==  181 || $uid ==  556 
+							<?php if($uid == 2 || $uid == 3933  || $uid ==  181 || $uid ==  556 
 							                   || $uid ==  1031 || $uid ==  2616 || $uid ==  237    ){ ?>
 							<input class="form-check-input" type="checkbox" name="participant[]" value="<?php echo $record->id ; ?>" >
 							<?php } ?> <?php echo ' '.$record->name ;  ?><small><small> #<?php echo ' '.$record->id ;  ?></small></small>
