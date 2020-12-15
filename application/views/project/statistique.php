@@ -224,25 +224,33 @@
 		                                        <h4 class="widget-title">Statistique de participant par Sexe </h4>
 		                                        <div class="your-page">
 		                                        		<canvas id="timeSeriesChart1" width="400" height="200"></canvas>
-													<script>
-														const ctx = document.getElementById('timeSeriesChart1').getContext('2d');
 
-														// And for a doughnut chart
-															var myDoughnutChart = new Chart(ctx, {
-															    type: 'pie',
-															    data = {
-															    datasets: [{
-															        data:[<?php echo $partParsexeH->hommec ?> , <?php echo $partParsexeF->femmec ?> ]
-															    }],
+		                                        		<script>
+		                                        		new Chart(document.getElementById("chartjs-4"),
+		                                        		{"type":"doughnut",
+		                                        			"data":{"labels":["Red","Blue","Yellow"],
+		                                        			"datasets":[{"label":"My First Dataset",
+		                                        			"data":[<?php echo $partParsexeH->hommec ?> , <?php echo $partParsexeF->femmec ?>],"backgroundColor":["rgb(255, 99, 132)","rgb(54, 162, 235)",]}]}});</script>
 
-															    // These labels appear in the legend and in the tooltips when hovering different arcs
-															    labels:['Homme','Femme']
-															};
-															   
-														      }) ;
-														
-														
-														</script>
+
+
+							<script>
+								const ctx = document.getElementById('timeSeriesChart1').getContext('2d');
+
+								// And for a doughnut chart
+									var myDoughnutChart = new Chart(ctx, {
+									    type: 'pie',
+									    data = {
+									    	datasets: [{
+									        	data:[<?php echo $partParsexeH->hommec ?> , <?php echo $partParsexeF->femmec ?> ]
+									    			}]
+
+										};
+									   
+								      }) ;
+								
+								
+								</script>
 
 		    
 												<span>les chiffre sont trés confidentiels merci de ne pas faire des capture d'écran </span>
