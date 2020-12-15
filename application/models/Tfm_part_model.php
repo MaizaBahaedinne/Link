@@ -226,7 +226,7 @@ class Tfm_part_model extends CI_Model
         $this->db->where('p_tranch1 = ','0' );
         $this->db->where('Users.clubID =', $clubId);    
      
-        $this->db->order_by('Users.name','DESC');
+        $this->db->order_by('Users.name','ASC');
 
         $query = $this->db->get();
         $result = $query->result();        
@@ -258,7 +258,7 @@ class Tfm_part_model extends CI_Model
         $this->db->where('p_tranch1 > ','0' );
         $this->db->where('Users.clubID =', $clubId);    
       
-        $this->db->order_by('Users.name','DESC');
+        $this->db->order_by('Users.name','ASC');
 
         $query = $this->db->get();
         $result = $query->result();        
@@ -286,8 +286,8 @@ class Tfm_part_model extends CI_Model
         $this->db->where('BaseTbl.tfmId = '. $projectId.' and  BaseTbl.p_tranch2 > 0 ');
         $this->db->where('Users.clubID =', $clubId);    
         
-        $this->db->order_by('Users.name','DESC');
-         
+        $this->db->order_by('Users.name','ASC');
+
         $query = $this->db->get();
         $result = $query->result();        
         return $result;
