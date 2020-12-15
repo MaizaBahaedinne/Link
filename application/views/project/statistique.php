@@ -230,7 +230,7 @@
 		                                        		{"type":"doughnut",
 		                                        			"data":{"labels":["Homme","Femme"],
 		                                        			"datasets":[{"label":"My First Dataset",
-		                                        			"data":[<?php echo $partParsexeH->hommec ?> , <?php echo $partParsexeF->femmec ?>],"backgroundColor":[,"rgb(54, 162, 235)","rgb(255, 99, 132)"]}]}});</script>
+		                                        			"data":[<?php echo $partParsexeH->hommec ?> , <?php echo $partParsexeF->femmec ?>],"backgroundColor":["rgb(54, 162, 235)","rgb(255, 99, 132)"]}]}});</script>
 
 
 
