@@ -67,6 +67,11 @@
 							<input class="form-check-input" type="checkbox" name="participant[]" value="<?php echo $record->id ; ?>" >
 							<?php } ?> <?php echo ' '.$record->name ;  ?><small><small> #<?php echo ' '.$record->id ;  ?></small></small>
 						</label>
+						<br>
+						<small><small> 
+							<?php echo ' '.$record->recp2 ;  ?> le  <?php echo ' '.$record->dateTranche2 ;  ?>  
+						</small></small>
+						<br>
 					</div>
 				<?php } ?>
 
@@ -96,7 +101,7 @@
 					 
 					 <br>
 				<small><small> 
-					<?php echo ' '.$record->recp1 ;  ?> le  <?php echo ' '.$record->dateTranche1 ;  ?>  
+					<?php echo ' '.$record->recp2 ;  ?> le  <?php echo ' '.$record->dateTranche2 ;  ?>  
 				</small></small>
 				<br>
 				<?php } ?>
