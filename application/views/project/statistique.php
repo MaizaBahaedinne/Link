@@ -228,7 +228,7 @@
 		                                        		<script>
 		                                        		new Chart(document.getElementById("chartjs-4"),
 		                                        		{"type":"doughnut",
-		                                        			"data":{"labels":["Red","Blue","Yellow"],
+		                                        			"data":{"labels":["Homme","Femme"],
 		                                        			"datasets":[{"label":"My First Dataset",
 		                                        			"data":[<?php echo $partParsexeH->hommec ?> , <?php echo $partParsexeF->femmec ?>],"backgroundColor":["rgb(255, 99, 132)","rgb(54, 162, 235)",]}]}});</script>
 
