@@ -223,7 +223,7 @@
 									<div class="widget">
 		                                        <h4 class="widget-title">Statistique de participant par Sexe </h4>
 		                                        <div class="your-page">
-		                                        		<canvas id="timeSeriesChart1" width="400" height="200"></canvas>
+		                                        		<canvas id="chartjs-4" width="400" height="200"></canvas>
 
 		                                        		<script>
 		                                        		new Chart(document.getElementById("chartjs-4"),
