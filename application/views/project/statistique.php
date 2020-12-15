@@ -54,7 +54,7 @@
 									<div class="stat-box">
 										<i class="fa fa-user"></i>
 										<div class="anlytc-meta">
-											<h4><?php echo count($countINSConfirmed1) ?> | <?php echo count($countINSConfirmed) ?></h4>
+											<h4><?php echo count($countINSConfirmed1) ?> | <?php echo count($countINSConfirmed) ?> = <?php echo count($countINSConfirmed) + count($countINSConfirmed1) ?></h4>
 											<p> <?php echo $PatC ?>% </p>
 											<span>inscriptions validées</span> 
 										</div>
