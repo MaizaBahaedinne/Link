@@ -419,12 +419,7 @@ class Tfm_part_model extends CI_Model
         $this->db->from('tbl_tfm_part as BaseTbl');     
         $this->db->join('tbl_users as HOMME', 'HOMME.userId = BaseTbl.userId and HOMME.sexe = "homme" ', 'LEFT');
 
-
         $this->db->where('BaseTbl.tfmId = '.$ProjectId.' and  BaseTbl.statut = 1 ');
-     
-
-       
-        
 
         $query = $this->db->get();
         $result = $query->row();        

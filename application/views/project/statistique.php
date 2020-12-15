@@ -234,7 +234,7 @@
 														    labels: ['Homme','Femme'],
 														    datasets: [{
 														      label: '# Sexe',
-														      data: [<?php echo $partParsexeH ?> , <?php echo $partParsexeF ?> ],
+														      data: [<?php echo $partParsexeH->hommec ?> , <?php echo $partParsexeF->femmec ?> ],
 														      backgroundColor : 'green'
 														    }]
 														  }
