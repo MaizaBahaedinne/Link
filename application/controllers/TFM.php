@@ -53,7 +53,7 @@ class TFM extends BaseController {
 					$data['projectId'] = $projectId; 
 					
 	                $data['userRecords'] = $this->Tfm_part_model->TFMPartListinByclubToP($projectId,$clubID);
-	                $data['userRecordsT1'] = $this->Tfm_part_model->TFMPartListinByclubT2($clubID,$projectId);
+	                $data['userRecordsT2'] = $this->Tfm_part_model->TFMPartListinByclubT2($clubID,$projectId);
 	                $this->global['pageTitle'] = 'Paiement';
 	             	$this->global['active'] = 'TFM';
 	                $this->loadViews("TFM/PaimentByClub", $this->global, $data, NULL);   
@@ -74,7 +74,8 @@ class TFM extends BaseController {
 		 public function partantByClub($clubId,$projectId)
 		        {	
 		        	$data["projet"] = $this->project_model->getProjectInfo($projectId);
-			       $data['userRecords'] = $this->Tfm_part_model->TFMPartListinByclub($clubId,$projectId);
+			       $data['userRecords'] = $this->Tfm_part_model->TFMPartListinByclub($clubId,$projectId,$part);
+			      
 	                $this->global['pageTitle'] = 'Liste des Participants';
 	             	$this->global['active'] = 'TFMP';
 	                $this->loadViews("TFM/listpf", $this->global, $data, NULL);   
