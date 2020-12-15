@@ -69,7 +69,7 @@
 						</label>
 						<br>
 						<small><small> 
-							<?php echo ' '.$record->recp2 ;  ?> le  <?php echo ' '.$record->dateTranche2 ;  ?>  
+							<?php echo ' '.$record->recp1 ;  ?> le  <?php echo ' '.$record->dateTranche1 ;  ?>  
 						</small></small>
 						<br>
 					</div>
