@@ -52,8 +52,10 @@ class TFM extends BaseController {
 					$data['clubID'] = $clubID; 
 					$data['projectId'] = $projectId; 
 					
-	                $data['userRecords'] = $this->Tfm_part_model->TFMPartListinByclubToP($projectId,$clubID);
-	                $data['userRecordsT1'] = $this->Tfm_part_model->TFMPartListinByclubT2($clubID,$projectId);
+	                $data['userRecordsT1'] = $this->Tfm_part_model->TFMPartListinByclubT1($clubID,$projectId);
+	                $data['userRecordsT2'] = $this->Tfm_part_model->TFMPartListinByclubT2($clubID,$projectId);
+	                $data['userRecordsC'] = $this->Tfm_part_model->TFMPartListinByclubC($clubID,$projectId);
+
 	                $this->global['pageTitle'] = 'Paiement';
 	             	$this->global['active'] = 'TFM';
 	                $this->loadViews("TFM/PaimentByClub", $this->global, $data, NULL);   
@@ -75,6 +77,7 @@ class TFM extends BaseController {
 		        {	
 		        	$data["projet"] = $this->project_model->getProjectInfo($projectId);
 			       $data['userRecords'] = $this->Tfm_part_model->TFMPartListinByclub($clubId,$projectId);
+			      
 	                $this->global['pageTitle'] = 'Liste des Participants';
 	             	$this->global['active'] = 'TFMP';
 	                $this->loadViews("TFM/listpf", $this->global, $data, NULL);   
@@ -114,9 +117,33 @@ class TFM extends BaseController {
 				 foreach ( $part as $r)
 				{
 					$partanTfm = array(  	  
-									  'p_tranch1' => '160', 
+									  'p_tranch1' => '100', 
 							          'dateP_tranch1'=>date('Y-m-d H:i:s'),
 							          'recepteurTranche1'=>$this->vendorId ,
+							          
+								     	);
+					$result = $this->tfm_model->editTFMPart($partanTfm, $r) ;
+
+					
+				}
+
+			redirect('/TFM/PaimentByClub/'.$clubId.'/'.$projectId) ;
+
+		
+		}
+
+
+
+				public function partanTfmPaiement2 ($clubId,$projectId){
+
+				$part = $this->input->post('participant') ;
+
+				 foreach ( $part as $r)
+				{
+					$partanTfm = array(  	  
+									  'p_tranch2' => '60', 
+							          'dateP_tranch2'=>date('Y-m-d H:i:s'),
+							          'recepteurTranche2'=>$this->vendorId ,
 							          'statut'=> 1 
 								     	);
 					$result = $this->tfm_model->editTFMPart($partanTfm, $r) ;
