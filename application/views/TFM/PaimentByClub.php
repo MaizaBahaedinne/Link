@@ -22,11 +22,11 @@
 
 		<form action="<?php echo base_url() ?>TFM/partanTfmPaiement1/<?php echo $clubID ?>/<?php echo $projectId ?>" method="post">
 			<div class="card-header">
-				<h5>Tranche 1 | <?php echo count($userRecords) ?> </h5>		
+				<h5>Tranche 1 | <?php echo count($userRecordsT1) ?> </h5>		
 			</div>
 			<div class="card-body">
 				
-				<?php foreach ($userRecords as $record ) { ?>
+				<?php foreach ($userRecordsT1 as $record ) { ?>
 					<div class="form-check form-check-flat form-check-primary">
 						<label class="form-check-label">
 							<?php if($uid == 2 || $uid ==  181 || $uid ==  556 
@@ -55,11 +55,11 @@
 
 		<form action="<?php echo base_url() ?>TFM/partanTfmPaiement2/<?php echo $clubID ?>/<?php echo $projectId ?>" method="post">
 			<div class="card-header">
-				<h5>Tranche 2  | <?php echo count($userRecords2) ?> </h5>		
+				<h5>Tranche 2  | <?php echo count($userRecordsT2) ?> </h5>		
 			</div>
 			<div class="card-body">
 				
-				<?php foreach ($userRecords2 as $record ) { ?>
+				<?php foreach ($userRecordsT2 as $record ) { ?>
 					<div class="form-check form-check-flat form-check-primary">
 						<label class="form-check-label">
 							<?php if($uid == 2 || $uid ==  181 || $uid ==  556 
