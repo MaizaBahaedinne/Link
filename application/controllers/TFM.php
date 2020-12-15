@@ -114,7 +114,31 @@ class TFM extends BaseController {
 				 foreach ( $part as $r)
 				{
 					$partanTfm = array(  	  
-									  'p_tranch1' => '160', 
+									  'p_tranch1' => '100', 
+							          'dateP_tranch1'=>date('Y-m-d H:i:s'),
+							          'recepteurTranche1'=>$this->vendorId ,
+							          
+								     	);
+					$result = $this->tfm_model->editTFMPart($partanTfm, $r) ;
+
+					
+				}
+
+			redirect('/TFM/PaimentByClub/'.$clubId.'/'.$projectId) ;
+
+		
+		}
+
+
+
+				public function partanTfmPaiement2 ($clubId,$projectId){
+
+				$part = $this->input->post('participant') ;
+
+				 foreach ( $part as $r)
+				{
+					$partanTfm = array(  	  
+									  'p_tranch1' => '60', 
 							          'dateP_tranch1'=>date('Y-m-d H:i:s'),
 							          'recepteurTranche1'=>$this->vendorId ,
 							          'statut'=> 1 
