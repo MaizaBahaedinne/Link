@@ -279,7 +279,7 @@
 	
 	<div class="topbar stick" style="">
 		<div class="logo">
-			<a title="" href="<?php echo base_url() ?>Posts"><img src="<?php echo base_url()?>assets/images/logo.svg"  width="75%" alt=""></a>
+			<a title="" href="<?php echo base_url() ?>Posts"><img src="<?php echo base_url()?>assets/images/logo.svg"  width="90%" alt=""></a>
 		</div>
 		<div class="top-area">
 			
