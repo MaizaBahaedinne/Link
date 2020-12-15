@@ -88,10 +88,10 @@
 		<div class="card">
 			
 			<div class="card-header">
-				<h5>Liste des membre validé   | <?php echo count($userRecordsT1) ?> </h5>				
+				<h5>Liste des membre validé   | <?php echo count($userRecordsC) ?> </h5>				
 			</div>
 			<div class="card-body">
-				<?php foreach ($userRecordsT1 as $record ) { ?>
+				<?php foreach ($userRecordsC as $record ) { ?>
 					 <?php echo ' '.$record->name ;  ?>  <small><small> #<?php echo ' '.$record->id ;  ?></small></small>
 					 
 					 <br>
