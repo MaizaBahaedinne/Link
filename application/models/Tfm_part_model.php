@@ -250,6 +250,7 @@ class Tfm_part_model extends CI_Model
 
 
         $this->db->where('BaseTbl.tfmId = ', $projectId);
+        $this->db->where('statut = ','2' );
         $this->db->where('p_tranch1 > ','0' );
         $this->db->where('Users.clubID =', $clubId);    
 
@@ -275,7 +276,7 @@ class Tfm_part_model extends CI_Model
        
         $this->db->join('tbl_users as Usersr1', 'Usersr1.userId = BaseTbl.recepteurTranche1', 'LEFT');
         $this->db->join('tbl_users as Usersr2', 'Usersr2.userId = BaseTbl.recepteurTranche2', 'LEFT');
-        
+
         $this->db->where('BaseTbl.tfmId = '. $projectId.' and  BaseTbl.p_tranch2 > 0 ');
         $this->db->where('Users.clubID =', $clubId);    
 
