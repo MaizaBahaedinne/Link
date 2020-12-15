@@ -111,7 +111,7 @@
 														      }?>],
 														      borderWidth: 5,
 														      fill: false,
-														      borderColor: 'green'
+														      backgroundColor : 'green'
 														    }]
 														  },
 														      options: {
@@ -212,6 +212,49 @@
 									                              </tbody>
 
 									                          </table>
+												<span>les chiffre sont trés confidentiels merci de ne pas faire des capture d'écran </span>
+											</div>
+										</div>
+									</aside>
+									</div>
+
+									<div class="col-lg-6 col-md-6 col-sm-6" >
+									<aside class="sidebar ">
+									<div class="widget">
+		                                        <h4 class="widget-title">Statistique de participant par Sexe </h4>
+		                                        <div class="your-page">
+		                                        		<canvas id="timeSeriesChart" width="400" height="200"></canvas>
+													<script>
+														const ctx = document.getElementById('timeSeriesChart').getContext('2d');
+
+														// And for a doughnut chart
+															var myDoughnutChart = new Chart(ctx, {
+															    type: 'doughnut',
+															    data: {
+														    labels: ['Homme','Femme'],
+														    datasets: [{
+														      label: '# Sexe',
+														      
+														      data: [<?php echo $partParsexeH ?> , <?php echo $partParsexeF ?> ],
+														      borderWidth: 5,
+														      fill: false,
+														      
+														    }]
+														  },
+														      options: {
+																        scales: {
+																            yAxes: [{
+																                ticks: {
+																                    beginAtZero: true
+																                }
+																            }]
+																        }
+																    }
+														});
+														
+														</script>
+
+		    
 												<span>les chiffre sont trés confidentiels merci de ne pas faire des capture d'écran </span>
 											</div>
 										</div>
