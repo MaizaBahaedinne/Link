@@ -36,7 +36,7 @@ class Tfm_part_model extends CI_Model
      * @param number $segment : This is pagination limit
      * @return array $result : This is result
      */
-    function TFMPartListing($projetId , $statut = '',$part = 1 )
+    function TFMPartListing($projetId , $statut = '',$part = 2 )
     {
         $this->db->select(' Users.userId ,BaseTbl.id , Users.name , Clubs.name ClubName , Role.role , Users.cellule , Users.gouvernorat , BaseTbl.p_tranch1 , BaseTbl.p_tranch2 , BaseTbl.moto , BaseTbl.sysMobile , BaseTbl.statut , Usersr1.name as recp1 , BaseTbl.dateP_tranch1 as dateTranche1 , Usersr2.name as recp2 , BaseTbl.dateP_tranch2 as dateTranche2 , BaseTbl.dateInscrip ');
         $this->db->from('tbl_tfm_part as BaseTbl');
@@ -51,7 +51,7 @@ class Tfm_part_model extends CI_Model
         {
             $this->db->where('BaseTbl.statut =', $statut  );
         }
-        if( $part = 1 )
+        if( $part == 1 )
         {
             $this->db->where('BaseTbl.p_tranch2 !=', 0 );
         }
