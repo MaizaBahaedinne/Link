@@ -117,33 +117,7 @@ class Tfm_part_model extends CI_Model
         
         
             /**
-     * This function is used to get the user listing count
-     * @param string $searchText : This is optional search text
-     * @param number $page : This is pagination offset
-     * @param number $segment : This is pagination limit
-     * @return array $result : This is result
-     */
-    function TFMClubPartListing2()
-    {
-        $this->db->select(' count(Users.userId) partant ,BaseTbl.id , Users.name , Clubs.name ClubName , Clubs.clubID , Role.role , Users.cellule , Users.gouvernorat , BaseTbl.p_tranch1 , BaseTbl.p_tranch2 , BaseTbl.moto , BaseTbl.sysMobile , BaseTbl.statut , Usersr1.name as recp1 , BaseTbl.dateP_tranch1 as dateTranche1 , Usersr2.name as recp2 , BaseTbl.dateP_tranch2 as dateTranche2 , BaseTbl.remb  ');
-        $this->db->from('tbl_tfm_part as BaseTbl');
-        $this->db->join('tbl_users as Users', 'Users.userId = BaseTbl.userId', 'LEFT');
-        $this->db->join('tbl_users as Usersr2', 'Usersr2.userId = BaseTbl.recepteurTranche2', 'LEFT');
-        $this->db->join('tbl_users as Usersr1', 'Usersr1.userId = BaseTbl.recepteurTranche1', 'LEFT');
-        
-        $this->db->join('tbl_club as Clubs', 'Clubs.clubID = Users.ClubID', 'LEFT');
-        $this->db->join('tbl_roles as Role', 'Role.roleId = Users.roleId','left');
-
-        $this->db->group_by('Clubs.clubID');
-
-        $this->db->where('BaseTbl.tfmId = 7 and BaseTbl.p_tranch1 > 0    ' );
- 
-        $query = $this->db->get();
-        $result = $query->result();        
-        return $result;
-    }
-
-
+  
 
      /**
      * This function is used to get the user listing count
@@ -169,7 +143,9 @@ class Tfm_part_model extends CI_Model
         if($clubId > 5){
         $this->db->where('Users.clubID =', $clubId);    
         }
-        
+
+
+
         $this->db->order_by('BaseTbl.name ASC'); 
 
         $query = $this->db->get();
