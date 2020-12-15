@@ -178,7 +178,7 @@ class Tfm_part_model extends CI_Model
 
 
 
-        $this->db->order_by('BaseTbl.name ASC'); 
+        $this->db->order_by('Users.name ','DESC'); 
 
         $query = $this->db->get();
         $result = $query->result();        
