@@ -51,6 +51,10 @@ class Tfm_part_model extends CI_Model
         {
             $this->db->where('BaseTbl.statut =', $statut  );
         }
+        if( $part = 1 )
+        {
+            $this->db->where('BaseTbl.p_tranch2 =', 0 );
+        }
  
         $query = $this->db->get();
         $result = $query->result();        
