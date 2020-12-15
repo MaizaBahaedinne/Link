@@ -68,7 +68,7 @@
 									<div class="stat-box">
 										<i class="fa fa-user"></i>
 										<div class="anlytc-meta">
-											<h4><?php echo count($countINSNotConfirmed) ?></h4>
+											<h4><?php echo count($countINSNotConfirmed1) ?> | <?php echo count($countINSNotConfirmed) ?> </h4>
 											<p><?php echo $PatNC ?>%</p>
 											<span>inscriptions non validées</span> 
 										</div>

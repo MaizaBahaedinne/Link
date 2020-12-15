@@ -152,7 +152,7 @@ class Tfm_part_model extends CI_Model
      * @param number $segment : This is pagination limit
      * @return array $result : This is result
      */
-    function TFMPartListinByclub($clubId,$projectId,$part)
+    function TFMPartListinByclub($clubId,$projectId)
     {
         $this->db->select(' BaseTbl.id , Users.name , Clubs.name ClubName , Role.role , Users.cellule , Users.gouvernorat , BaseTbl.p_tranch1 , BaseTbl.p_tranch2 , BaseTbl.moto , BaseTbl.sysMobile , BaseTbl.statut , Usersr1.name as recp1 , BaseTbl.dateP_tranch1 as dateTranche1 , Usersr2.name as recp2 , BaseTbl.dateP_tranch2 as dateTranche2, BaseTbl.remb ');
         $this->db->from('tbl_tfm_part as BaseTbl');
@@ -169,6 +169,8 @@ class Tfm_part_model extends CI_Model
         if($clubId > 5){
         $this->db->where('Users.clubID =', $clubId);    
         }
+        
+        $this->db->order_by('BaseTbl.name ASC'); 
 
         $query = $this->db->get();
         $result = $query->result();        
@@ -223,6 +225,8 @@ class Tfm_part_model extends CI_Model
         $this->db->where('BaseTbl.tfmId = ' , $projectId );
         $this->db->where('p_tranch1 = ','0' );
         $this->db->where('Users.clubID =', $clubId);    
+         $this->db->order_by('BaseTbl.name DESC'); 
+
 
         $query = $this->db->get();
         $result = $query->result();        
@@ -253,6 +257,7 @@ class Tfm_part_model extends CI_Model
         $this->db->where('statut = ','2' );
         $this->db->where('p_tranch1 > ','0' );
         $this->db->where('Users.clubID =', $clubId);    
+         $this->db->order_by('BaseTbl.name DESC'); 
 
         $query = $this->db->get();
         $result = $query->result();        
@@ -279,6 +284,7 @@ class Tfm_part_model extends CI_Model
 
         $this->db->where('BaseTbl.tfmId = '. $projectId.' and  BaseTbl.p_tranch2 > 0 ');
         $this->db->where('Users.clubID =', $clubId);    
+         $this->db->order_by('BaseTbl.name DESC'); 
 
         $query = $this->db->get();
         $result = $query->result();        
