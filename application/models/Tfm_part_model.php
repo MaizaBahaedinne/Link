@@ -477,7 +477,7 @@ class Tfm_part_model extends CI_Model
         $this->db->where('BaseTbl.recepteurTranche2 = BaseTbl.recepteurTranche1 ');
 
     
-        
+        $this->db->group_by('Usersr1.name ') ; 
         
 
 
