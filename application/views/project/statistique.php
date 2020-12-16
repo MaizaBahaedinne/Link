@@ -284,7 +284,9 @@
 									                                  </th>
 									                              </thead>
 									                              <tbody>
-									                                  <?php foreach ($paiement as $reg ) {
+									                                  <?php
+									                                  	$somme1=0 ; $somme2=0 ; $sommeT=0 ;  
+									                                   foreach ($paiement as $reg ) {
 									                                  ?>
 									                                  <tr>
 									                                      <td>
@@ -292,17 +294,35 @@
 
 									                                      </td>
 									                                      <td>
-									                                          <?php echo $reg->p_tranch1 ?>
+									                                          <?php echo $reg->p_tranch1 ; 
+									                                           $somme1+= $reg->p_tranch1; ?>
 									                                      </td>
 									                                     <td>
-									                                          <?php echo $reg->p_tranch2 ?>
+									                                          <?php echo $reg->p_tranch2; 
+									                                           $somme2+= $reg->p_tranch2; ?>
 									                                      </td>
 									                                      <td>
-									                                          <?php echo $reg->p_tranch1 + $reg->p_tranch2 ?>
+									                                          <?php echo $reg->p_tranch1 + $reg->p_tranch2 ; 
+									                                           $sommeT+= $reg->p_tranch1 + $reg->p_tranch2 ; ?>
 									                                      </td>
 									                                  </tr>
 									                                  <?php
 									                                  }?>
+									                                  <tr>
+									                                      <td>
+									                                          <b>Totale</b>
+
+									                                      </td>
+									                                      <td>
+									                                          <b><?php echo $somme1 ?></b>
+									                                      </td>
+									                                     <td>
+									                                          <b><?php echo $somme2 ?></b>
+									                                      </td>
+									                                      <td>
+									                                          <b><?php echo $sommeT ?></b>
+									                                      </td>									                                  	
+									                                  </tr>
 									                              </tbody>
 
 									                          </table>
