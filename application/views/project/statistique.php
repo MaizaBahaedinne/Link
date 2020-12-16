@@ -258,6 +258,59 @@
 										</div>
 									</aside>
 									</div>
+
+
+
+
+
+									<div class="col-lg-6 col-md-6 col-sm-6" >
+									<aside class="sidebar ">
+									<div class="widget">
+		                                        <h4 class="widget-title">Statistique de participant par Club (<?php echo count($partParclub) ?>)</h4>
+		                                        <div class="your-page">
+		                                        	<table class="table table-striped table-responsive-xl" style="width: cover" >
+									                     <thead>
+									                                  <th>
+									                                      Recepteur
+									                                  </th>
+									                                  <th>
+									                                      Tranche 1
+									                                  </th>
+									                                  <th>
+									                                      Tranche 2
+									                                  </th>
+									                                  <th>
+									                                      Totale
+									                                  </th>
+									                              </thead>
+									                              <tbody>
+									                                  <?php foreach ($paiement as $reg ) {
+									                                  ?>
+									                                  <tr>
+									                                      <td>
+									                                          <?php echo $reg->recp1 ?> <?php echo $reg->recp2 ?>
+
+									                                      </td>
+									                                      <td>
+									                                          <?php echo $reg->p_tranch1 ?>
+									                                      </td>
+									                                     <td>
+									                                          <?php echo $reg->p_tranch2 ?>
+									                                      </td>
+									                                      <td>
+									                                          <?php echo $reg->p_tranch1 + $reg->p_tranch2 ?>
+									                                      </td>
+									                                  </tr>
+									                                  <?php
+									                                  }?>
+									                              </tbody>
+
+									                          </table>
+												<span>les chiffre sont trés confidentiels merci de ne pas faire des capture d'écran </span>
+											</div>
+										</div>
+									</aside>
+									</div>
 						
 
 
