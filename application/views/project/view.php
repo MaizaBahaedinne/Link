@@ -43,7 +43,7 @@
                                             <?php } ?>
 
 
-                                         <?php if (  $SA == 1 ){ 
+                                         <?php if ( $user->SenJun == 3 || $SA == 1 ){ 
                                             if( empty($partProject) ){
                                             ?>
                                             <li >
