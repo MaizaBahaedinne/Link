@@ -464,7 +464,7 @@ class Tfm_part_model extends CI_Model
      */
     function TFMPaiementByUser($projectId)
     {
-        $this->db->select(' BaseTbl.id ,  sum(BaseTbl.p_tranch1) , sum(BaseTbl.p_tranch2) ,  Usersr1.name as recp1 , BaseTbl.dateP_tranch1 as dateTranche1 , Usersr2.name as recp2 , BaseTbl.dateP_tranch2 as dateTranche2, BaseTbl.remb ');
+        $this->db->select(' BaseTbl.id ,  sum(BaseTbl.p_tranch1) p_tranch1 , sum(BaseTbl.p_tranch2) p_tranch2 ,  Usersr1.name as recp1 , BaseTbl.dateP_tranch1 as dateTranche1 , Usersr2.name as recp2 , BaseTbl.dateP_tranch2 as dateTranche2, BaseTbl.remb ');
         $this->db->from('tbl_tfm_part as BaseTbl');
         $this->db->join('tbl_users as Users', 'Users.userId = BaseTbl.userId', 'LEFT');
         $this->db->join('tbl_club as Clubs', 'Clubs.clubID = Users.ClubID', 'LEFT');
