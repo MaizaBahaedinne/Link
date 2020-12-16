@@ -42,6 +42,7 @@ class Statistique extends BaseController {
         $data['countINSNotConfirmed'] = $this->Tfm_part_model->TFMPartListing($ProjectId,2);
         $data['countINSConfirmed'] = $this->Tfm_part_model->TFMPartListing($ProjectId,1);
         $data['countINSConfirmed1'] = $this->Tfm_part_model->TFMPartListing1($ProjectId,2);
+        $data['paiement'] =  $this->Tfm_part_model->TFMPaiementByUser($projectId) ; 
 
         $this->global['pageTitle'] = 'Statistique projet';
         $this->global['active'] = 'TFMC';
