@@ -308,7 +308,10 @@
 									                                  </tr>
 									                                  <?php
 									                                  }?>
-									                                  <tr>
+									                                  
+									                              </tbody>
+									                              <tfoot>
+									                              	<tr>
 									                                      <td>
 									                                          <b>Totale</b>
 
@@ -323,7 +326,7 @@
 									                                          <b><?php echo $sommeT ?></b>
 									                                      </td>									                                  	
 									                                  </tr>
-									                              </tbody>
+									                              </tfoot>
 
 									                          </table>
 												<span>les chiffre sont trés confidentiels merci de ne pas faire des capture d'écran </span>
