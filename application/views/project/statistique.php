@@ -288,7 +288,7 @@
 									                                  ?>
 									                                  <tr>
 									                                      <td>
-									                                          <?php echo $reg->recp1 ?> <?php echo $reg->recp2 ?>
+									                                          <?php echo $reg->recp1 ?> 
 
 									                                      </td>
 									                                      <td>
