@@ -451,31 +451,10 @@ class Tfm_part_model extends CI_Model
     }
 
 
-    /**
-     * This function is used to get the user listing count
-     * @param string $searchText : This is optional search text
-     * @param number $page : This is pagination offset
-     * @param number $segment : This is pagination limit
-     * @return array $result : This is result
-     */
-    function TFMMyBus($userId)
-    { 
-        $this->db->select('Buspart.id  , Buspart.region , Buspart.num , Buspart.depart , Buspart.type  , Buspart.arrive , Users.userId , Users.name responsable ,  Users.mobile cont   ');
-        $this->db->from('BusPart as BaseTbl');
-        $this->db->join('tbl_tfm_bus as Buspart', 'Buspart.id = BaseTbl.busId' , 'LEFT');
-        $this->db->join('tbl_users as Users', 'Users.userId = Buspart.responsable ', 'LEFT');
-        $this->db->where('BaseTbl.userId =' , $userId);
-        $query = $this->db->get();
-        $result = $query->result();        
-        return $query->row();
-    }
-
-
-
-    
  
 
 
+
     /**
      * This function is used to get the user listing count
      * @param string $searchText : This is optional search text
@@ -483,39 +462,35 @@ class Tfm_part_model extends CI_Model
      * @param number $segment : This is pagination limit
      * @return array $result : This is result
      */
-    function TFMMyBuss()
-    { 
-        $this->db->select(' BaseTbl.id , BaseTbl.region , BaseTbl.num , BaseTbl.type , BaseTbl.depart  , BaseTbl.arrive , BaseTbl.capacite , Users.name responsable , Users.mobile contact  ');
-        $this->db->from('tbl_tfm_bus as BaseTbl');
-        $this->db->join('tbl_users as Users', 'Users.userId = BaseTbl.responsable ', 'LEFT');
-        $this->db->join('tbl_tfm_bus_part as Buspart', 'Buspart.busId = BaseTbl.id ', 'LEFT');
-        $this->db->group_by('BaseTbl.id');
-        $query = $this->db->get();
-        $result = $query->result();        
-        return $result ; 
-    }
+    function TFMPaiementByUser($projectId , $tranch)
+    {
+        $this->db->select(' BaseTbl.id ,  BaseTbl.p_tranch1 , BaseTbl.p_tranch2 ,  Usersr1.name as recp1 , BaseTbl.dateP_tranch1 as dateTranche1 , Usersr2.name as recp2 , BaseTbl.dateP_tranch2 as dateTranche2, BaseTbl.remb ');
+        $this->db->from('tbl_tfm_part as BaseTbl');
+        $this->db->join('tbl_users as Users', 'Users.userId = BaseTbl.userId', 'LEFT');
+        $this->db->join('tbl_club as Clubs', 'Clubs.clubID = Users.ClubID', 'LEFT');
+        $this->db->join('tbl_roles as Role', 'Role.roleId = Users.roleId','left');
+        $this->db->join('tbl_users as Usersr2', 'Usersr2.userId = BaseTbl.recepteurTranche2', 'LEFT');
+        $this->db->join('tbl_users as Usersr1', 'Usersr1.userId = BaseTbl.recepteurTranche1', 'LEFT');
+        
+        $this->db->where('BaseTbl.tfmId =  ',$projectId );
 
-  
-          
-     /**
-     * This function is used to get the user listing count
-     * @param string $searchText : This is optional search text
-     * @param number $page : This is pagination offset
-     * @param number $segment : This is pagination limit
-     * @return array $result : This is result
-     */
-    function BusPartList($id)
-    { 
-        $this->db->select('') ;
-        $this->db->from('BusPart as BaseTbl');
-         $this->db->where('BaseTbl.busId=',$id ) ;
+        if($tranch == 1){
+            $this->db->group_by('Usersr1.name') ; 
+        }
+
+
+        if($tranch == 2){
+            $this->db->group_by('Usersr2.name') ; 
+        }
+
+     
+
 
 
         $query = $this->db->get();
         $result = $query->result();        
-        return $result ; 
+        return $result;
     }
 
 
 }
-
