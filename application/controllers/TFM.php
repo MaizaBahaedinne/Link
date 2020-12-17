@@ -114,10 +114,11 @@ class TFM extends BaseController {
 
 				$part = $this->input->post('participant') ;
 
+				if($this->vendorId){
 				 foreach ( $part as $r)
 				{
 					$partanTfm = array(  	  
-									  'p_tranch1' => '100', 
+									  'p_tranch2' => '90', 
 							          'dateP_tranch1'=>date('Y-m-d H:i:s'),
 							          'recepteurTranche1'=>$this->vendorId ,
 							          
@@ -126,6 +127,24 @@ class TFM extends BaseController {
 
 					
 				}
+			}else
+			{
+
+				 foreach ( $part as $r)
+				{
+					$partanTfm = array(  	  
+									  'p_tranch1' => '100', 
+							          'dateP_tranch1'=>date('Y-m-d H:i:s'),
+							          'dateP_tranch2'=>date('Y-m-d H:i:s'),
+							          'recepteurTranche1'=>$this->vendorId ,
+							          'recepteurTranche2'=>$this->vendorId ,
+							          'statut'=> 1 
+								     	);
+					$result = $this->tfm_model->editTFMPart($partanTfm, $r) ;
+				}
+			}
+
+
 
 			redirect('/TFM/PaimentByClub/'.$clubId.'/'.$projectId) ;
 
@@ -138,7 +157,9 @@ class TFM extends BaseController {
 
 				$part = $this->input->post('participant') ;
 
+				
 				 foreach ( $part as $r)
+				
 				{
 					$partanTfm = array(  	  
 									  'p_tranch2' => '60', 
@@ -150,6 +171,8 @@ class TFM extends BaseController {
 
 					
 				}
+				
+
 
 			redirect('/TFM/PaimentByClub/'.$clubId.'/'.$projectId) ;
 
