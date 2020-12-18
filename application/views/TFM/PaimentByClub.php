@@ -97,7 +97,8 @@
 			</div>
 			<div class="card-body">
 				<?php foreach ($userRecordsC as $record ) { ?>
-					 <?php echo ' '.$record->name ;  ?>  <small><small> #<?php echo ' '.$record->id ;  ?></small></small>
+					 
+					 <b style="<?php if ($record->p_tranche2 == 2 ){ echo "color:red" } ?>" ><?php echo ' '.$record->name ;  ?> </b> <small><small> #<?php echo ' '.$record->id ;  ?></small></small>
 					 
 					 <br>
 				<small><small> 
