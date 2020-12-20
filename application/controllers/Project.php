@@ -42,6 +42,8 @@ class Project extends BaseController {
                         $data["score"] = $this->score_club_model->scoreByProject($projectID); 
                         $data["part"] = $this->scoring_model->PresenceByProject($projectID); 
                         $data["partProject"] =  $this->tfm_model->TFMPId($this->vendorId,$projectID);
+                         $data["ateliers"] =  $this->tfm_model->AtelierListing();
+                        
 
                         $this->global['pageTitle'] = "Projet" ;
 		                $this->loadViews("project/view", $this->global, $data, NULL);   

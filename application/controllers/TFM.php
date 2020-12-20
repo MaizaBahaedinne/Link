@@ -169,7 +169,29 @@ class TFM extends BaseController {
 					
 		
 
+public function ChoixAtelier ($TFMId,$projet){
+				$formation = $this->input->post('formation');
 
+				$atelier = $this->tfm_model->AtelierById($formation) ;
+
+				$partanTfm = array(
+		          'formationId'=>$formation 
+		        );
+
+		        $result = $this->tfm_model->editTFMPart($partanTfm, $TFMId) ;
+				
+
+				$atelierL = array(
+		          'capacite' =>  $atelier->capacite - 1 
+		        );
+
+				$result = $this->tfm_model->editAtelier($atelierL, $formation) ;
+				
+		if ($result){	
+		   			redirect('/Project/projectDetails/'.$projet) ; 		
+		   }
+		
+		}
 	
 
 

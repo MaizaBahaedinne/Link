@@ -93,7 +93,33 @@
                                     <div class="btn btn-block btn-success">
                                       Votre participation a été validé <br>
                                       code de  participation : <b><?php echo $partProject->id ?></b>
-                                    </div>
+                                      </div>
+                                      <?php if($partProject->formationId != 0 ){ ?>
+                                      
+                                      <h4><?php echo $partProject->formation_name ?> <?php echo $partProject->time ?> <?php echo $partProject->salle ?></h4>
+                                      
+
+                                      <?php } else { ?>
+
+                                        <form class="c-form" method="post" action="<?php echo base_url() ?>TFM/ChoixAtelier/<?php echo $partProject->id ?>/<?php echo $projet->projectId ?>" >
+                                        <h5>Choix de formation :</h5>
+                                      <select name="formation" >
+                                      <?php foreach ($ateliers as $atelier ) {?>
+                                       <option value="<?php echo $atelier->atelierId ?>" > 
+                                         <?php echo $atelier->nom ?> <?php echo $atelier->time ?>
+                                       </option>
+                                      <?php  
+                                       }  
+                                      ?>
+                                      </select>
+                                      <br>
+                                      <hr>
+                                      <input type="submit" class="btn btn-block btn-primary" name="">
+                                    </form> 
+
+                                      <?php  } ?>
+
+                                    
                                      <?php } ?>
                                   </div>
                                 <?php } ?>
