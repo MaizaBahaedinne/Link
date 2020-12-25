@@ -163,7 +163,7 @@
                                              
                                             <?php if (empty($projet->score )){  ?>
                                               <?php if( (($role == 1 || $role == 2  || $role == 3 || $role == 6 || $SA == 1 || $role == 2  ) && $projet->ClubID == $clubID ) || $SA == 1  ){ ?>
-                                                <?php if( strtotime($projet->endDate)  < strtotime("2020-09-15") ) { ?>
+                                                <?php if( strtotime($projet->endDate)  > strtotime("2020-09-15") ) { ?>
                                                   <button class="btn btn-danger" data-toggle="modal" data-target="#ProjectScore<?php echo $projet->projectId ?>" >Collecter les points</button>
                                               <?php } } ?>
 
