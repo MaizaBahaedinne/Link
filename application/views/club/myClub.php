@@ -178,7 +178,7 @@
 
                                                           <!-- Modal body -->
                                                           <div class="modal-body">
-                                                            <form class="c-form" action="<?php echo base_url() ?>Project/addNewScore/<?php echo $projet->projectId ?>" method="POST" >
+                                                            <form class="c-form" action="<?php echo base_url() ?>Project/addNewScore1/<?php echo $projet->projectId ?>" method="POST" >
                                                             
 
                                                             <div class="uzer-nam">
@@ -188,7 +188,7 @@
                                                              name="album" width="100%" id="album" pattern="(\w)?(\.)?(\d.*)" required >
 
                                                            </div>
-                                                           <small><span class="text-mute" >Exemple : a.5619848191981</span></small>
+                                                           <small><span class="text-mute" >Exemple : <b>a.5619848191981</b></span></small>
 
 
                                                         
@@ -199,7 +199,7 @@
                                                               <input type="text" 
                                                              name="video" width="100%" id="video"  pattern="\d.*"  >
                                                            </div>
-                                                           <small><span class="text-mute" >Exemple : 5619848191981</span></small>
+                                                           <small><span class="text-mute" >Exemple : <b>5619848191981</b></span></small>
                                                             
                                                             <label>Objectif du projet</label>
                                                             <select name="objectif">

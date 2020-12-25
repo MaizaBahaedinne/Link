@@ -287,7 +287,7 @@
 			
 			<div class="top-search">
 				<form method="post"  action="<?php echo base_url() ?>Search" >
-					<input type="text" name="text" placeholder="Chercher des Tunimateurs,des clubs, des projets etc" required="">
+					<input type="text" name="text" placeholder="Tunimateurs,des clubs, des projets etc" required>
 					<button data-ripple=""><i class="ti-search"></i></button>
 				</form>
 			</div>

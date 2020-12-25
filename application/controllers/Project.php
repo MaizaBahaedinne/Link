@@ -370,6 +370,7 @@ class Project extends BaseController {
                 
                 $album = $this->input->post('album');
                 $video = $this->input->post('video');   
+                $objectif = $this->input->post('objectif'); 
 
 
                 if($affE > 0 ){
@@ -457,7 +458,7 @@ class Project extends BaseController {
                  'description' => NL2BR($description) ,
                  'createdBy'=> $this->vendorId ,
                  'createdDTM'=> date('Y-m-d H:i:s') ,
-
+                 'objectif'=> $objectif
                      );
 
 
