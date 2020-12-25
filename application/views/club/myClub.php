@@ -201,6 +201,67 @@
                                                            </div>
                                                            <small><span class="text-mute" >Exemple : 5619848191981</span></small>
                                                             
+                                                            <label>Objectif du projet</label>
+                                                            <select name="objectif">
+                                                              <option value="Pas de pauvreté" >
+                                                                Pas de pauvreté
+                                                              </option>
+                                                              <option value="Zéro faim">
+                                                                Zéro faim
+                                                              </option>
+                                                              <option value="Bonne santé et bien-être">
+                                                                Bonne santé et bien-être
+                                                              </option>
+                                                              <option value="Éducation de qualité">
+                                                                Éducation de qualité
+                                                              </option>
+                                                              <option value="Égalité des sexes">
+                                                                Égalité des sexes
+                                                              </option>
+                                                              <option value="Eau propre et assainissement">
+                                                               Eau propre et assainissement
+                                                              </option>
+                                                              <option value="Énergie propre et abordable">
+                                                                Énergie propre et abordable
+                                                              </option>
+                                                              <option value="Travail décent et croissance économique">
+                                                                Travail décent et croissance économique
+                                                              </option>
+                                                              <option value="Industries, innovation et infrastructure">
+                                                                Industries, innovation et infrastructure
+                                                              </option>
+                                                              <option value="Réduction des inégalités">
+                                                                Réduction des inégalités
+                                                              </option>
+                                                              <option value="Réduction des inégalités">
+                                                                Réduction des inégalités
+                                                              </option>
+                                                              <option value="Villes et communautés durables">
+                                                                Villes et communautés durables
+                                                              </option>
+                                                              <option value="Consommation et production responsables">
+                                                                Consommation et production responsables
+                                                              </option>
+                                                              <option value="Action climatique">
+                                                                Action climatique
+                                                              </option>
+                                                              <option value="La vie sous l'eau">
+                                                                La vie sous l'eau
+                                                              </option>
+                                                              <option value="La vie sur terre">
+                                                                La vie sur terre
+                                                              </option>
+                                                              <option value="Paix, justice et institutions solides">
+                                                                Paix, justice et institutions solides
+                                                              </option>
+                                                              <option value="Partenariats pour les objectifs">
+                                                                Partenariats pour les objectifs
+                                                              </option>
+                                                              <option value="Autre">
+                                                                Autre
+                                                              </option>
+                                                          </select>
+                                          
 
                                                             <br><br>
                                                             <input type="submit" name="" value="envoyer" class="btn btn-primary">

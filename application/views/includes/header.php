@@ -261,7 +261,9 @@
 			</span>
 			<span class="mh-text">
 
-				<a href="<?php echo base_url() ?>Posts" title=""><img src="<?php echo base_url()?>assets/images/logo2.svg" alt=""></a>
+				<a href="<?php echo base_url() ?>Posts" title="">
+					<img src="<?php echo base_url()?>assets/images/logo2.svg" width="75%" alt="">
+				</a>
 
 			</span>
 			<span class="mh-btns-right">
