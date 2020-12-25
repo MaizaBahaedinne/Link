@@ -194,7 +194,7 @@
                                                 <li><i class="fas fa-tasks"></i>Nombre des affectaions validées : <?php echo  $score->affE ?></li>
                                             </ul>
                                             <hr>
-                                            <b><i class="fas fa-chart-line"></i>Taux d'éfficacité : <?php echo  $score->affP ?>%<br><br></b>
+                                            <b><i class="fas fa-chart-line"></i> Taux d'éfficacité : <?php echo  $score->affP ?>%<br><br></b>
 
                                             
                                             <h6>Présence</h5>
@@ -204,7 +204,7 @@
                                                 <li><i class="fas fa-file-powerpoint"></i>Nombre des participants : <?php echo  $score->participation  ?></li>
                                             </ul>
                                             <hr>
-                                            <b><i class="fas fa-percent"></i>Taux de présence : <?php echo  $score->tauxParticipation ?>%</b>
+                                            <b><i class="fas fa-percent"></i> Taux de présence : <?php echo  $score->tauxParticipation ?>%</b>
                                             <hr>
                                             <b>Note</b>
                                             <?php echo  $score->description ?>
