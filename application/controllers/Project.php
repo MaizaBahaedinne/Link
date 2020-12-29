@@ -201,6 +201,35 @@ class Project extends BaseController {
 
                         }*/
                         
+                        if($projet->type =="Evenement" && $projet->cible =="Publique" ){ $points = 5 ;}
+                        if($projet->type =="Evenement" && $projet->cible =="Privé" ){ $points = 5 ;}
+                        if($projet->type =="Evenement" && $projet->cible =="Only tunimateur" ){ $points = 5 ;}
+                        
+                        if($projet->type =="Formation" && $projet->cible =="Publique" ){ $points = 8 ;}
+                        if($projet->type =="Formation" && $projet->cible =="Privé" ){ $points = 8  ;}
+                        if($projet->type =="Formation" && $projet->cible =="Only tunimateur" ){ $points = 8 ;}
+                        
+                        if($projet->type =="Conférence" && $projet->cible =="Publique" ){ $points = 8 ;}
+                        if($projet->type =="Conférence" && $projet->cible =="Only tunimateur" ){ $points = 8 ;}
+                        
+                        if($projet->type =="Action" && $projet->cible =="Publique" ){ $points = 5 ;}
+                        if($projet->type =="Action" && $projet->cible =="Privé" ){ $points = 5 ;}
+                        if($projet->type =="Action" && $projet->cible =="Only tunimateur" ){ $points = 5 ;}
+                        
+                      
+                        
+                        if($projet->type =="Compétition" && $projet->cible =="Publique" ){ $points = 8 ;}
+                        if($projet->type =="Compétition" && $projet->cible =="Only tunimateur" ){ $points = 8 ;}
+
+                        
+                        if($projet->type =="Soirée" && $projet->cible =="Publique" ){ $points = 2 ;}
+                        if($projet->type =="Soirée" && $projet->cible =="Only tunimateur" ){ $points = 2 ;}
+
+                        if($projet->type =="Team Building" && $projet->cible =="Publique" ){ $points = 2 ;}
+                        if($projet->type =="Team Building" && $projet->cible =="Only tunimateur" ){ $points = 2 ;}
+
+
+
 
                           $PresenceInfo = array(   
                                      "projectId" =>    $projectId ,
@@ -208,7 +237,8 @@ class Project extends BaseController {
                                      "createdDTM"   => date('Y-m-d H:i:s') , 
                                      "ValidDTM"   => date('Y-m-d H:i:s') ,
                                      "userId" => $userId , 
-                                     "statut" => 0 
+                                     "statut" => 0 , 
+                                     "points" => $points
                                 ); 
 
                                 if(empty($participation)){
