@@ -279,7 +279,7 @@
                         
                            
                                     <label for="fname">Banner</label>
-                                    <input type="file" name="file" id="file" class="dropify-fr" required accept="image/*"  />                                                                          
+                                    <input type="file" name="file" id="file" class="dropify-fr" required accept="image/*"  />                                                                        
                                     <p >le format de fichier doit etre JPG ou JPEG avec une taile maximale de 500 ko </p>
                                     <p id="error1" style="display:none; color:#FF0000;">
                                           Format d'image invalide! Le format d'image doit être JPG, JPEG.
@@ -287,8 +287,6 @@
                                           <p id="error2" style="display:none; color:#FF0000;">
                                           La taille maximale du fichier est de 500 ko.
                                           </p>
-                                 
-
                                     <script type="text/javascript">
                                           $('#submitt').prop("disabled", true);
                                             var a=0;
@@ -318,16 +316,26 @@
                                             }
                                         });
                                     </script>
-                                    
-
                                     <br>
                                     <b for="fname">Cible  &nbsp; &nbsp; <br> </b>
-                                        
-                                    <input type="radio" name="cible" id="Publique" value="Publique" required> Publique
-                                    <input type="radio" name="cible" id="Only" value="Only tunimateur" > Intra-Tunivisions
-                                    <input type="radio" name="cible" id="prive" value="Privé"> Inter-club
-                           
 
+                                    <div class="form-radio">
+                                  <div class="radio">
+                                  <label>
+                                   <input type="radio" name="cible" id="Publique" value="Publique" required><i class="check-box"></i>Publique
+                                  </label>
+                                  </div>
+                                  <div class="radio">
+                                  <label>
+                                    <input type="radio" name="cible" id="Only" value="Only tunimateur" ><i class="check-box"></i>Intra-Tunivisions
+                                  </label>
+                                  </div>
+                                  <div class="radio">
+                                  <label>
+                                    <input type="radio" name="cible" id="prive" value="Privé"><i class="check-box"></i>Inter-club
+                                  </label>
+                                  </div>
+                                </div>
                                         <script type="text/javascript">
                                           $( "#Publique" ).click(function() {
                                               $("#facebook").prop("required", true);
@@ -339,7 +347,6 @@
                                               $("#uzer-nam").prop("required", false);
                                             });
                                         </script>
-
                                    <br>
                                     <div class="uzer-nam">
                                       <label><br>Lien d'évenement facebook :</label>
@@ -348,10 +355,6 @@
                                       placeholder="exemple : 235643091127564" name="facebook" width="30%" id="facebook"  >
                                       
                                     </div>
-                                    
-                            
-                                    
-
                                     <label for="fname">Type</label>
                                     <select class="form-control" id="type" name="type" >
                                             <option value="Evenement">Evenement</option>
@@ -363,7 +366,6 @@
                                             <option value="Soirée">Soirée</option>
                                             <option value="Team Building">Team Building</option>
                                     </select>
-
                                     <hr>
                                     <label for="fname">Titre</label>
                                     <input type="text" class="form-control required" id="Titre" name="Titre" maxlength="255" required >
