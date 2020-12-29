@@ -37,12 +37,23 @@
                                             <?php } } ?>
                                             
 
+                                            <?php 
+                                            if ((($role == 1 || $role == 2  || $role == 3 || $role == 6 || $role == 7  ) && $projet->ClubID == $clubID  ) || $SA == 1 || $SA == 2 ){
+                                            if ( (time()-(60*60*24)) < strtotime($projet->startDate) ){ ?>
+                                            <li>
+                                                <a href="#" title="Folow us" class="main-btn btn-success" data-ripple=""  data-toggle="modal" data-target="#presence" >Présence</a>
+                                            </li>
+                                            <?php } } ?>
 
+
+                                            <!--
                                           <?php if ( $role == 1 || $role == 3 || $role == 6 || $SA==1 || $SA==2  ) { ?>
                                                 <li><a class="btn main-btn btn-sm" href="<?php echo base_url() ?>TFM/partantByClub/<?php echo $clubID ?>/<?php echo $projet->projectId ?>" ><i class="fa fa-user"></i> My Team</a></li>
                                             <?php } ?>
+                                            --> 
 
- 
+
+                                          <!--
                                          <?php if (  $SA == 1 ){ 
                                             if( empty($partProject) ){
                                             ?>
@@ -51,7 +62,7 @@
                                                 </a>
                                             </li>
                                           <?php } }  ?>
-                                            
+                                            -->
                                         </ul>
                                         
                                         </div>
