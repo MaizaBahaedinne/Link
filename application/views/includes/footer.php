@@ -367,13 +367,14 @@
                   
                   $.ajax( "<?php echo base_url() ?>"+qrCodeMessage+"/<?php echo $uid ?>" )
                         .done(function() {
-                          alert( "Votre participation a été valider avec succée" );
+                          alert( "Votre participation a été validée avec succée" );
                         })
                         .fail(function() {
                           alert( "error" );
                         })
                         .always(function() {
-                          alert( "complete" );
+                          alert( "On va actuliser cette page" );
+                          location.reload();
                         });
 
                                
