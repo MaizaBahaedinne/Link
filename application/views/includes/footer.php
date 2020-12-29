@@ -367,6 +367,7 @@
                   
                   $.ajax( "<?php echo base_url() ?>"+qrCodeMessage+"/<?php echo $uid ?>" )
                         .done(function() {
+                          alert("<?php echo base_url() ?>"+qrCodeMessage+"/<?php echo $uid ?>") ;
                           alert( "Votre participation a été validée avec succée" );
                           alert( "On va actuliser cette page" );
                           location.reload();
