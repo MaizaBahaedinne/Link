@@ -486,9 +486,10 @@
 
               if ( (($now-$start) >= 0 ) &&  (($now-$end) <= 0 ) ){ ?>
               -->
-              <?php if( strtotime($projet->endDate)  > strtotime("2020-09-15") 
+              <?php if( 
+                   strtotime($projet->endDate)  > strtotime("2020-09-15") 
                 && strtotime($projet->endDate)  < strtotime("2020-12-30") 
-                && empty($score)
+                && (empty($score))
                 && strtotime($projet->endDate)  < strtotime('now') 
                  ) { ?>
                   <div id="qrcode1" style="height: 350px ; width: 350px"></div>
