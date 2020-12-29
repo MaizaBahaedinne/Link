@@ -170,7 +170,7 @@ class Project extends BaseController {
                           $start  =  strtotime($projet->startDate) ;
                           $end =     strtotime('+3 hours',strtotime($projet->endDate)) ;
 
-                        if(  (($now-$start) >= 0 ) )
+                      /*  if(  (($now-$start) >= 0 ) )
                         {
                            if( (($now-$end) <= 0 ))
                            {
@@ -199,9 +199,25 @@ class Project extends BaseController {
                                 return "Participation non validé <b>Vous avez dépassé le deadline</b> à la prochainne " ;
                             }
 
-                        }
+                        }*/
                         
 
+                          $PresenceInfo = array(   
+                                     "projectId" =>    $projectId ,
+                                     "createdBy"  => $createdBy ,
+                                     "createdDTM"   => date('Y-m-d H:i:s') , 
+                                     "ValidDTM"   => date('Y-m-d H:i:s') ,
+                                     "userId" => $userId , 
+                                     "statut" => 0 
+                                ); 
+
+                                if(empty($participation)){
+                                $result = $this->scoring_model->addScore($PresenceInfo) ;
+                                $this->response("votre participation a été valider pour le projet ".$projet->titre ); ;
+                                }else{
+                                $result = $this->scoring_model->editPresence($PresenceInfo,$participation->scoringId) ;
+                                 $this->response("votre participation a été mise à jour pour le projet ".$projet->titre); ;
+                                }  
                     
 
 

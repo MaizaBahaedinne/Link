@@ -365,10 +365,10 @@
   
                 function onScanSuccess(qrCodeMessage) {
                   
-                  $.ajax( "<?php echo base_url() ?>"+qrCodeMessage )
-                        .done(function() {
+                  $.ajax( "<?php echo base_url() ?>"+qrCodeMessage+"/<?php echo $uid ?>" )
+                        .done(function(data) {
                           alert("<?php echo base_url() ?>"+qrCodeMessage+"/<?php echo $uid ?>") ;
-                          alert( "Votre participation a été validée avec succée" );
+                          alert( data );
                           alert( "On va actuliser cette page" );
                           location.reload();
                         })
