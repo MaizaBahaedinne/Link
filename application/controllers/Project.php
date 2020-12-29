@@ -417,7 +417,7 @@ class Project extends BaseController {
                         if($projet->type =="Team Building" && $projet->cible =="Publique" ){ $points = 20 ;}
                         if($projet->type =="Team Building" && $projet->cible =="Only tunimateur" ){ $points = 20 ;}
                         
-                        $description ='' ;    
+                        $description ='Note du projet = '.$points ;    
                         if($video != '' ){ 
                             $points += 10 ; 
                              $description .= "<p style='color:green' >Bonus de <b>+10 points</b> pour la video </p> <br>" ;
