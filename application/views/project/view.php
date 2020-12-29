@@ -39,7 +39,8 @@
 
                                             <?php 
                                             if ((($role == 1 || $role == 2  || $role == 3 || $role == 6 || $role == 7  ) && $projet->ClubID == $clubID  ) || $SA == 1 || $SA == 2 ){
-                                            if ( (time()-(60*60*24)) < strtotime($projet->startDate) ){ ?>
+
+                                           if( strtotime($projet->endDate)  > strtotime("2020-09-15") &&  strtotime($projet->endDate)  < strtotime("2020-12-30") ) { ?>
                                             <li>
                                                 <a href="#" title="Folow us" class="main-btn btn-success" data-ripple=""  data-toggle="modal" data-target="#presence" >Présence</a>
                                             </li>
@@ -477,12 +478,16 @@
             <div class="modal-body">
               <h5>Patager ce code avec les tunimateurs partants</h5>
               <br>
+              <!--
               <?php 
               $now  =    strtotime('now') ;
               $start  =   strtotime($projet->startDate) ;
               $end =  strtotime('+3 hours',strtotime($projet->endDate)) ;
 
-              if ( (($now-$start) >= 0 ) &&  (($now-$end) <= 0 ) ){ ?>
+              if ( (($now-$start) >= 0 ) &&  (($now-$end) <= 0 ) ){ ?>-->
+                <?php if( strtotime($projet->endDate)  > strtotime("2020-09-15") && 
+                 strtotime($projet->endDate)  < strtotime("2020-12-30") && empty($score) ) { ?>
+
               <div id="qrcode1" style="height: 350px ; width: 350px"></div>
               <script type="text/javascript">
                   var qrcode = new QRCode(document.getElementById("qrcode1"), {
