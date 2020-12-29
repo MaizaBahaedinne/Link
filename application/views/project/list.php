@@ -324,8 +324,8 @@
                                     <b for="fname">Cible  &nbsp; &nbsp; <br> </b>
                                         
                                     <input type="radio" name="cible" id="Publique" value="Publique" required> Publique
-                                    <input type="radio" name="cible" id="prive" value="Privé"> Privé
-                                    <input type="radio" name="cible" id="Only" value="Only tunimateur" > Only tunimateur
+                                    <input type="radio" name="cible" id="Only" value="Only tunimateur" > Intra-Tunivisions
+                                    <input type="radio" name="cible" id="prive" value="Privé"> Inter-club
                            
 
                                         <script type="text/javascript">
@@ -363,46 +363,25 @@
                                             <option value="Soirée">Soirée</option>
                                             <option value="Team Building">Team Building</option>
                                     </select>
-                          
 
                                     <hr>
-                               
                                     <label for="fname">Titre</label>
                                     <input type="text" class="form-control required" id="Titre" name="Titre" maxlength="255" required >
-                              
-                                    
-                                                            
-                                   
                                     <label for="fname">Description</label>
                                     <textarea class="form-control" name="description"  id="TinyMCE" rows="20" ></textarea>
-
-                               
-                                    
-
                                     <label for="fname">Date debut</label>
                                         <!-- min="<?php echo date('Y-m-d').'T00:00' ?>" -->
-                                    <input type="datetime-local" class="form-control "  min="<?php echo date('Y-m-d').'T00:00' ?>"   id="debut" name="debut"  required >
- 
-
-                              
+                                    <input type="datetime-local" class="form-control "  min="2020-09-15T00:00"  max="2020-12-31T00:00"   id="debut" name="debut"  required >
                                     <label for="fname">Date fin</label>
                                         <!-- min="<?php echo date('Y-m-d').'T00:00' ?>" -->
-                                    <input type="datetime-local" class="form-control"  min="<?php echo date('Y-m-d').'T00:00' ?>"   id="fin" name="fin"  required >
-
-                            
+                                    <input type="datetime-local" class="form-control" min="2020-09-15T01:00"  max="2020-12-31T23:00"   id="fin" name="fin"  required >
                                     <hr>
-                             
-                                    <label for="fname">Local</label>
+                                    <label for="fname">Lieu</label>
                                     <input type="text" class="form-control " id="local" name="local" maxlength="255" required >      
-
-                             
                                     <label for="fname">Capacité</label>
                                     <input type="number" class="form-control " id="capacite" name="capacite"  required >      
-
                                     <label for="fname">Prix</label>
                                     <input type="number" class="form-control" id="prix" name="prix"  required >      
-
-
                                     <hr>
                         <div class="row">
                             <div class="col-lg-6">
@@ -412,7 +391,8 @@
                             <input type="reset" class="btn btn-secondary" value="Reset" />
                             </div>
                         </div>  
-
+                        <br>
+                        <small style="color: red" >Toute tentative de tricherie risque de pénaliser le club jusqu'à  x-10  du note de projet </small>
 
 
                         </div>
