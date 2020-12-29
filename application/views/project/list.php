@@ -18,15 +18,15 @@
                                                 <div class="col-lg-6">
                                                     <div class="row">
                                                         <div class="col-lg-5 ">
-                                                            <form method="post">
+                                                          <!--  <form method="post">
                                                                 <input type="text" placeholder="chercher ..">
                                                                 <button type="submit"><i class="fa fa-search"></i></button>
-                                                            </form>
+                                                            </form> -->
                                                         </div>
                                                         <div class="col-lg-6 col-md-4 col-sm-4">
                                                             <div class="select-options">
                                                                <?php 
-                                                              if ( $SA == 1 ) { ?>
+                                                              if ( ($role == 1 || $role == 2 || $role == 3 || $role== 6 || $role== 7)  && $SA == 1 ) { ?>
                                                                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Ajouter un projet</button>
                                                                 <?php } ?>
                                                             </div>
