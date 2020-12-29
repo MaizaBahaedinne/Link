@@ -159,11 +159,11 @@
                                                     <span><i class="ti-heart"></i><?php echo count($part) ?> Participants</span>
                                                       
                                                       <div class="users-thumb-list">
-                                                        <?php foreach ($part  as $p ) {?>                                                       
+                                                        <?php $i=0 ; foreach ($part  as $p ) {?>                                                       
                                                         <a href="#" title="" data-toggle="tooltip" data-original-title="<?php echo $p->name ?>">
                                                             <img class="alligator-profile-likes" src="<?php echo base_url() ?>uploads/avatar/<?php echo $p->avatar ?>" alt="">  
                                                         </a>
-                                                        <?php } ?>
+                                                        <?php $i++ ; if($i==5){break;} } ?>
                                                       </div>
                                                   </div>
                                                   <div class="tab-pane fade" id="link2">
