@@ -365,7 +365,7 @@
   
                 function onScanSuccess(qrCodeMessage) {
                   
-                  $.ajax( "<?php echo base_url() ?>"+qrCodeMessage+"/<?php echo $uid ?>" )
+                  $.ajax( "<?php echo base_url() ?>"+qrCodeMessage )
                         .done(function() {
                           alert("<?php echo base_url() ?>"+qrCodeMessage+"/<?php echo $uid ?>") ;
                           alert( "Votre participation a été validée avec succée" );
