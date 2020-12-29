@@ -478,43 +478,43 @@
             <div class="modal-body">
               <h5>Patager ce code avec les tunimateurs partants</h5>
               <br>
-              <!--
               <?php 
               $now  =    strtotime('now') ;
               $start  =   strtotime($projet->startDate) ;
               $end =  strtotime('+3 hours',strtotime($projet->endDate)) ;
 
-              if ( (($now-$start) >= 0 ) &&  (($now-$end) <= 0 ) ){ ?>
-              -->
-              <?php if( 
+              //if ( (($now-$start) >= 0 ) &&  (($now-$end) <= 0 ) ){
+
+
+             if( 
                    strtotime($projet->endDate)  > strtotime("2020-09-15") 
                 && strtotime($projet->endDate)  < strtotime("2020-12-30") 
                 && (empty($score))
                 && strtotime($projet->endDate)  < strtotime('now') 
-                 ) { ?>
-                  <div id="qrcode1" style="height: 350px ; width: 350px"></div>
-                  <script type="text/javascript">
-                      var qrcode = new QRCode(document.getElementById("qrcode1"), {
-                        width : 350,
-                        height : 350
-                      });
+                 ) { ?> 
+              <div id="qrcode1" style="text-align: center; height: 350px ; width: 350px"></div>
+              <script type="text/javascript">
+                  var qrcode = new QRCode(document.getElementById("qrcode1"), {
+                    width : 350,
+                    height : 350
+                  });
 
-                      function makeCode () {    
-                        qrcode.makeCode("Project/addPresence\/<?php echo $projet->projectId ?>\/<?php echo $uid ?>");
-                      }
+                  function makeCode () {    
+                    qrcode.makeCode("Project/addPresence\/<?php echo $projet->projectId ?>\/<?php echo $uid ?>");
+                  }
 
+                  makeCode();
+
+                  $("#text").
+                    on("blur", function () {
                       makeCode();
-
-                      $("#text").
-                        on("blur", function () {
-                          makeCode();
-                        }).
-                        on("keydown", function (e) {
-                          if (e.keyCode == 13) {
-                            makeCode();
-                          }
-                        });
-                    </script>
+                    }).
+                    on("keydown", function (e) {
+                      if (e.keyCode == 13) {
+                        makeCode();
+                      }
+                    });
+                </script>
                 <?php } ?>
                 <br>
                 <p>Ce code reste valable du 
