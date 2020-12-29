@@ -336,6 +336,7 @@ class Project extends BaseController {
                  'description' => NL2BR($description) ,
                  'createdBy'=> $this->vendorId ,
                  'createdDTM'=> date('Y-m-d H:i:s') ,
+                 'points'=>$points
 
                      );
 
@@ -384,7 +385,7 @@ class Project extends BaseController {
                 $nbMem = count($this->user_model->userListingByclub($projet->clubID)) ;
                 $tauxParticipation = ($participation/$nbMem)*100 ;
 
-                    echo($participation.'/'.$nbMem) ;
+                
 
                 if($participation > 0) {
                 
@@ -421,15 +422,15 @@ class Project extends BaseController {
                             $points += 10 ; 
                              $description .= "<p style='color:green' >Bonus de <b>+10 points</b> pour la video </p> <br>" ;
                          }
-                        if(count($taches) >= 20 )
+                        if(count($taches) >= 30 )
                         {
-                            $points += 5 ; 
-                            $description .= "<p style='color:green' >Bonus de <b>+5 points</b> pour le nombre des taches</p> <br>" ;
+                            $points += 15 ; 
+                            $description .= "<p style='color:green' >Bonus de <b>+15 points</b> pour le nombre des taches</p> <br>" ;
                         }
                         if($affP >= 75 )
                          {  
-                            $points += 10 ;
-                            $description .= "<p style='color:gold' >Bonus de <b>+10 points</b> pour le TE > 75%</p> <br>" ;
+                            $points += 15 ;
+                            $description .= "<p style='color:gold' >Bonus de <b>+15 points</b> pour le TE > 75%</p> <br>" ;
                          }
                          if($tauxParticipation >= 90 )
                          {  
@@ -458,7 +459,8 @@ class Project extends BaseController {
                  'description' => NL2BR($description) ,
                  'createdBy'=> $this->vendorId ,
                  'createdDTM'=> date('Y-m-d H:i:s') ,
-                 'objectif'=> $objectif
+                 'objectif'=> $objectif,
+                 'points'=>$points
                      );
 
 

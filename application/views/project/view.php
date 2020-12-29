@@ -163,12 +163,12 @@
                                                         <a href="#" title="" data-toggle="tooltip" data-original-title="<?php echo $p->name ?>">
                                                             <img class="alligator-profile-likes" src="<?php echo base_url() ?>uploads/avatar/<?php echo $p->avatar ?>" alt="">  
                                                         </a>
-                                                        <?php $i++ ; if($i==5){break;} } ?>
+                                                        <?php $i++ ; if($i==10){break;} } ?>
                                                       </div>
                                                   </div>
                                                   <div class="tab-pane fade" id="link2">
-                                                      <span><i class="fa fa-eye"></i>440</span>
-                                                      <a href="#" title="weekly-likes">440 new views this week</a>
+                                                      <span><i class="fa fa-eye"></i>x</span>
+                                                      <a href="#" title="weekly-likes">x </a>
                                                       <div class="users-thumb-list">
                                                         <a href="#" title="" data-toggle="tooltip" data-original-title="Anderw">
                                                             <img src="images/resources/userlist-1.jpg" alt="">  
