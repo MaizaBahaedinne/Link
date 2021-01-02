@@ -13,7 +13,8 @@ class Club extends BaseController {
 			        $this->load->model('notification_model');
 			        $this->load->model('club_model');
 					$this->load->model('project_model');
-					$this->load->model('Score_club_model');					
+					$this->load->model('Score_club_model');
+					$this->load->model('scoring_model');					
         			$this->isLoggedIn();   
     }
     
@@ -53,7 +54,7 @@ class Club extends BaseController {
 			        $data['members'] = $this->user_model->userListingByclub($clubId);
 			        $data["scores"]  = $this->Score_club_model->scoreListingByClub($clubId) ;
 		            $data["score"]  = $this->Score_club_model->scoreByClub($clubId) ; 
-
+		            $data['RateMember'] =  $this->scoring_model->RankByUsersClub($clubId) ;
 			    	$this->global['pageTitle'] = 'Mon club';   
 			    	$this->global['clubN'] = $clubId;    
 			       $this->loadViews("club/myClub", $this->global, $data, NULL);

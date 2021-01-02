@@ -26,6 +26,24 @@ class Scoring_model extends CI_Model
         return $query->result();
     } 
 
+
+
+     function RankByUsersClub($clubId) 
+     {
+        $this->db->select(' user.name , user.avatar , club.name clubName , sum(BaseTbl.points) scores  ');
+        $this->db->from('tbl_scoring as BaseTbl');
+        $this->db->join('tbl_users as user', 'user.userId = BaseTbl.userId', 'LEFT');
+        $this->db->join('tbl_club as club', 'user.clubId = club.clubID', 'LEFT');
+      
+    
+        $this->db->where('user.clubID', $clubId);
+        $this->db->where('statut = ',0 );
+        $this->db->order_by('scores  DESC' );
+        $query = $this->db->get();
+         
+        return $query->result();
+    } 
+
     function ScoreByUserByPart($userId) 
      {
         $this->db->select('BaseTbl.points , BaseTbl.ValidDTM , proj.titre , proj.type , club.name  , club.clubID ');
