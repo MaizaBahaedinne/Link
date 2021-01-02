@@ -38,15 +38,7 @@ class Task extends BaseController {
     }
 
 
-    public function addNew()
-      {
-        $this->load->model('user_model');
-        $data['roles'] = $this->user_model->getUserRoles();
-        $data['clubs'] = $this->user_model->getClubs();
-        $data['members'] = $this->user_model->userListingByclub($this->vendorId,$this->clubID);
-        $this->global['pageTitle'] = 'Ajouter une tache ';
-        $this->loadViews("task/New", $this->global, $data, NULL);
-      }
+
 
     public function addNewT($projectId)
         {
@@ -93,8 +85,9 @@ class Task extends BaseController {
        */
       public function editAffect($affectID,$userId)
         {
-              $affectationInfo = array('status' => 1 );
+              $affectationInfo = array('status' => 1 , 'validDTM'  => date('Y-m-d H:i:s') , 'validBy'  => $this->vendorId   );
               $result = $this->Task_model->editAffect($affectationInfo, $affectID); 
+
               $scoreInfo = array('createdBy' => $this->vendorId ,
                                  'userId' => $this->vendorId ,
                                  'createdDTM' => date('Y-m-d H:i:s') , 

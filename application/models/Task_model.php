@@ -126,7 +126,7 @@ class Task_model extends CI_Model
     
 
 
-     function DisponibleMembreAffected($dateStart,$deadline,$clubID)
+     function DisponibleMembreAffected($dateStart,$deadline,$clubID,$userId)
     {   
 
           $ds= date_create($dateStart);
@@ -140,6 +140,7 @@ class Task_model extends CI_Model
           $this->db->from('tbl_users as us');
           $this->db->join('tbl_affectation as BaseTbl', 'BaseTbl.userAffectatedID = us.userId', 'right');
           $this->db->join('tbl_task as t', 't.tacheId = BaseTbl.tacheId', 'right');
+          $this->db->where('us.userId != ',  $userId );
           $this->db->where('us.ClubID = ',$clubID);
           $this->db->where('us.isDeleted = ', 0 );
           $this->db->where('t.startedDate < ',$deadline);
@@ -151,6 +152,8 @@ class Task_model extends CI_Model
           //tous les utilisateurs 
           $this->db->select('us.userId , us.name ');
           $this->db->from('tbl_users as us');
+          $this->db->where('us.userId != ',  $userId );
+          $this->db->where('us.isDeleted = ', 0 );
           $this->db->where('us.ClubID = ',$clubID);
           $tab = $this->db->get();
           $array2 = $tab->result(); 

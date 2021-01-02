@@ -47,6 +47,13 @@
                                             <?php } } ?>
 
 
+                                          <?php 
+                                            if ((($role == 1 || $role == 2  || $role == 3 || $role == 6 || $role == 7  ) && $projet->ClubID == $clubID  ) || $SA == 1 || $SA == 2 ){ ?>
+                                                <li><a class="btn main-btn btn-sm" href="<?php echo base_url() ?>Task/tasksListing/<?php echo $projet->projectId ?>" ><i class="fa fa-user"></i> Taches </a></li>
+                                            <?php } ?>
+                                            
+
+
                                             <!--
                                           <?php if ( $role == 1 || $role == 3 || $role == 6 || $SA==1 || $SA==2  ) { ?>
                                                 <li><a class="btn main-btn btn-sm" href="<?php echo base_url() ?>TFM/partantByClub/<?php echo $clubID ?>/<?php echo $projet->projectId ?>" ><i class="fa fa-user"></i> My Team</a></li>

@@ -13,7 +13,7 @@
 							</div>
               <div class="col-md-4">
               <?php 
-               if (($role == 1 || $role == 3 || $role == 6  ) &&   $projet->ClubID == $clubID  ){ 
+               if ((($role == 1 || $role == 3 || $role == 6 || $role == 7  ) &&   $projet->ClubID == $clubID ) || $SA == 1 ){ 
                 if ( (time()-(60*60*24)) < strtotime($projet->endDate) ){ ?> 
               <a class="align-right main-btn" data-toggle="modal" data-target="#myModal" >Ajouter une tache</a> 
               <?php } } ?>

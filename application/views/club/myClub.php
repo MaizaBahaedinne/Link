@@ -162,7 +162,8 @@
                                            <span class="">
                                              
                                             <?php if (empty($projet->score )){  ?>
-                                              <?php if( (($role == 1 || $role == 2  || $role == 3  || $SA == 1 || $role == 2  ) && $projet->ClubID == $clubID ) || $SA == 1  ){ ?>
+                                              <?php/* if( (($role == 1 || $role == 2  || $role == 3  || $SA == 1 || $role == 2  ) && $projet->ClubID == $clubID ) || $SA == 1  ){*/
+                                              if( $SA == 1  ){  ?>
                                                 <?php if( strtotime($projet->endDate)  > strtotime("2020-09-15") &&  strtotime($projet->endDate)  < strtotime("2020-12-30") ) { ?>
                                                   <a class="btn main-btn btn-sm" data-toggle="modal" data-target="#ProjectScore<?php echo $projet->projectId ?>" >Collecter les points</a>
                                               <?php } } ?>
