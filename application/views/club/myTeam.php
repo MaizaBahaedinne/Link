@@ -117,7 +117,7 @@
                       <div class="col-lg-4 ">
                         <div class="friend-box">
                           <figure>
-                            <img src="<?php echo base_url() ?>assets/images/resources/frnd-cover3.jpg" alt="">
+                            <img src="<?php echo base_url() ?>assets/images/resources/frnd-cover3.jpg" style="height: 50px" alt="">
                             <span></span>
                           </figure>
                           <div class="frnd-meta">
@@ -128,10 +128,10 @@
                             </div>
                             <ul class="frnd-info">
                               <li><span>Cellule:</span><?php echo $member->cellule ?></li>
-                              <li><span>née le:</span> <?php echo $member->birthday ?></li>
+                              <li><span>née le:</span><?php echo $member->birthday ?></li>
                               <li><span>Sexe :</span> <?php echo $member->sexe ?></li>
                               <li><span>E-Mail:</span><?php echo $member->email ?></li>
-                              <li><span>mobile:</span><?php if($SA == 1 ){echo $member->mobile ; } ?></li>
+                              <li><span>mobile:</span><?php echo $member->mobile ;  ?></li>
                             </ul>
                             <a class="btn-main align-left" href="#" title="">Vister</a>
                             <a class="send-mesg" href="#" title="">Message</a>

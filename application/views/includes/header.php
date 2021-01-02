@@ -411,7 +411,7 @@
 				</li>
 				<li><a class="" href="#" title=""><i class="fa fa-line-chart"></i> Statistique</a>
 					<ul>
-						<li><a href="" title="">Dashboard</a></li>
+						<li><a href="<?php echo base_url() ?>Statistique" title="">Dashboard</a></li>
 						<li><a href="" title="">Sondage</a></li>
 					</ul>
 				</li>
@@ -474,7 +474,7 @@
 		</div>
 		<div class="left-menu-full">
 			<ul class="menu-slide ps-container ps-theme-default" data-ps-id="c2e36ecf-88c9-df82-fa23-4f736ae2d32b">
-				<li><a class="closd-f-menu" href="#" title=""><i class="ti-close"></i> close Menu</a></li>
+				<li><a class="closd-f-menu" href="#" title=""><i class="ti-close"></i> Fermer le menu</a></li>
 				<li class="menu-item-has-children"><a class="" href="#" title=""><i class="fa fa-home"></i> Fondation</a>
 					<ul class="submenu">
 						<li><a href="<?php echo base_url() ?>Club/clubInfo/-1" title="">Board</a></li>
@@ -486,16 +486,21 @@
 				</li>
 				<li class="menu-item-has-children"><a class="" href="#" title=""><i class="fa fa-calendar"></i> Projets</a>
 					<ul class="submenu">
-						<li><a  title="">Calendrier</a></li>
-						<li><a  title="">Nos projet</a></li>
-						<li><a  title="">Taches</a></li>
-						<li><a title="">Historiques</a></li>
+						<li><a  href="<?php echo base_url() ?>Project" >Calendrier</a></li>
+						<li><a href="<?php echo base_url() ?>Club/clubInfo/<?php echo $clubID ?>" >Nos projet</a></li>
 					</ul>
 				</li>
-				<li class="menu-item-has-children"><a class="" href="#" title=""><i class="fa fa-line-chart"></i>Statestique</a>
+				<li class="menu-item-has-children"><a class="" href="#" title=""><i class="fa fa-line-chart"></i>Statistique</a>
 					<ul class="submenu">
-						<li><a href="pitpoint.html" title="">Dashboard</a></li>
-						<li><a href="pitpoint-detail.html" title="">Sondage</a></li>
+						<li><a href="<?php echo base_url() ?>Statistique" title="">Dashboard</a></li>
+						<li><a href="" title="">Sondage</a></li>
+					</ul>
+				</li>
+				<li class="menu-item-has-children"><a class="" href="#" title=""><i class="fa fa-line-chart"></i>Classement</a>
+					<ul class="submenu">
+						<li><a href="" title="">University</a></li>
+						<li><a href="" title="">High school</a></li>
+						<li><a href="" title="">We are carthage</a></li>
 					</ul>
 				</li>
 			</ul>

@@ -55,7 +55,7 @@
             <ul class="list-style">
              
               <li><a href="<?php echo base_url() ?>project" title="">Projets</a></li>
-              <li><a href="<?php echo base_url() ?>Club/clubInfo/<?php echo $clubID?>" title="">Mon club</a></li>
+              <li><a href="<?php echo base_url() ?>Club/clubInfo/<?php echo $clubID?>" title=""><?php if ($userC->clubID > 5 ) {echo "club ";}  echo 'Tunivisions '.$userC->ClubName ; ?></a></li>
               <li><a href="<?php echo base_url() ?>Club" title="">Clubs</a></li>
 
             </ul>
