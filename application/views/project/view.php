@@ -40,7 +40,7 @@
                                             <?php 
                                             if ((($role == 1 || $role == 2  || $role == 3 || $role == 6 || $role == 7  ) && $projet->ClubID == $clubID  ) || $SA == 1 || $SA == 2 ){
 
-                                           if( strtotime($projet->endDate)  > strtotime("2020-09-15") &&  strtotime($projet->endDate)  < strtotime("2020-12-30") ) { ?>
+                                           if( strtotime($projet->endDate)  > strtotime("2020-09-15") &&  strtotime($projet->endDate)  < strtotime("2021-01-15") ) { ?>
                                             <li>
                                                 <a href="#" title="Folow us" class="main-btn btn-success" data-ripple=""  data-toggle="modal" data-target="#presence" >Présence</a>
                                             </li>
@@ -495,9 +495,9 @@
 
              if( 
                    strtotime($projet->endDate)  > strtotime("2020-09-15") 
-                && strtotime($projet->endDate)  < strtotime("2020-12-30") 
+                && strtotime($projet->endDate)  < strtotime("2021-01-15") 
                 && (empty($score))
-                && strtotime($projet->endDate)  < strtotime('now') 
+                && strtotime($projet->startDate)  < strtotime('now') 
                  ) { ?> 
               <div id="qrcode1" style="text-align: center; height: 350px ; width: 350px"></div>
               <script type="text/javascript">

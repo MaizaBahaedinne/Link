@@ -30,7 +30,7 @@ class Task extends BaseController {
       foreach ($taches as $tache ) 
         {
           $tache->affections= $this->Task_model->AffectationsListing($tache->tacheId);
-          $tache->membresDispo = $this->Task_model->DisponibleMembreAffected($tache->startedDate,$tache->deadline,$this->clubID); 
+          $tache->membresDispo = $this->Task_model->DisponibleMembreAffected($tache->startedDate,$tache->deadline,$this->clubID,$this->vendorId); 
         }
       $data["taches"] = $taches;
       $this->global['pageTitle'] = 'Taches';
