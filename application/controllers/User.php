@@ -764,8 +764,7 @@ class User extends BaseController
         $data["tasks"] = $this->task_model->taskListingByUser($userId);
         $data["eff"] = $this->task_model->taskListingByUserValid($userId);
 
-        $data["participations"] = $this->scoring_model->ScoreByUserByPart($userId) ;
-        $data["formations"] = $this->scoring_model->ScoreByUserByType($userId,"Formation");
+        $data["participations"] = $this->scoring_model->ScoreByUserByPart($userId) ;    
         $data["formations"] = $this->scoring_model->ScoreByUserByType($userId,"Formation");
         $data["conferences"] = $this->scoring_model->ScoreByUserByType($userId,"Conférences");
         $data["missions"]   = null ;

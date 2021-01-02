@@ -65,10 +65,10 @@
                   <div class="col-lg-6 col-md-6 col-sm-9">
                     <div class="user-inf-meta">
                       <ul class="user-info">
-                        <li><span><?php echo count($participations) ?></span> Participations</li>
+                        <li><span><?php echo count($participations) ?></span> Activités</li>
                         <li><span><?php echo count($formations) ?></span> Formations</li>
                         <li><span><?php echo count($conferences) ?></span> Conférences</li>
-                        <li><span><?php echo '0' ?></span> Missions</li>
+                        <li><span><?php echo '0' ?></span> Missions T.Link</li>
                       </ul>
                     </div>
                   </div>

@@ -349,7 +349,7 @@
                                             height: 40px;
                                         }
                                     </style> 
-                    <table  class="table " >
+                    <table  class="table table-striped table-responsive-xl" id="tableid" style="width: cover" >
                       <thead>
                           <th width="10%" >Rang
                           </th>
@@ -377,7 +377,7 @@
                                         <?php  if(!empty($RateMember)){ $c=1 ;   foreach ($RateMember as $membre ) { ?>
                                           <tr>
 
-                                            <td  ><h2> <?php echo   $c   ?> </h2> </td>
+                                            <td  ><h4> <?php echo   $c   ?> </h4> </td>
 
                                         
                                             <td>
@@ -385,9 +385,9 @@
 
                                             
                                             <span>
-                                             <h6> <img src="<?php echo base_url() ?>uploads/avatar/<?php echo $membre->avatar ?>" class="pro-turtle " alt="user">
+                                             <p> <img src="<?php echo base_url() ?>uploads/avatar/<?php echo $membre->avatar ?>" class="pro-turtle " alt="user">
                                             <?php echo $membre->name ?> 
-                                            </h6> 
+                                            </p> 
                                             
                                             </span>
                                             </td>
