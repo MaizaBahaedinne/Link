@@ -121,14 +121,14 @@
                             <div class="widget">
                               <h4 class="widget-title">Mon club</h4>
                               <ul class="fav-community">
-                                <li><i class="fa fa-address-card"></i> <?php echo $clubInfo->birthday ?> </li>
+                                <li><i class="fas fa-birthday-cake"></i> <?php echo $clubInfo->birthday ?> </li>
                                 <?php if ($role == 1 || $role == 3  || $role == 6 ){ ?>
-                                <li><i class="fa fa-users"></i><a data-toggle="modal" data-target="#TuniFan" >invitez vos amis</a> pour rejoindre le club</li>
+                                <li><i class="fas fa-user-plus"></i><a data-toggle="modal" data-target="#TuniFan" >invitez vos amis</a> pour rejoindre le club</li>
                                 <?php } ?>
-                                <li><i class="fa fa-thumbs-up"></i><?php echo count($members) ?> Membre actif</li>
+                                <li><i class="fas fa-users"></i><?php echo count($members) ?> Membre actif</li>
                                 
-                                <li><i class="fa fa-globe"></i><a href="<?php echo $clubInfo->email ?>" title="">club Tunivisions <?php echo $clubInfo->name ?></a></li>
-                                <li><i class="fa fa-map-marker"></i><?php echo $clubInfo->facebook ?></li>
+                                <li><i class="fab fa-facebook-square"></i><a href="<?php echo $clubInfo->email ?>" title="">club Tunivisions <?php echo $clubInfo->name ?></a></li>
+                                <li><i class="fas fa-at"></i><?php echo $clubInfo->facebook ?></li>
                                 
                               </ul>
                             </div>
