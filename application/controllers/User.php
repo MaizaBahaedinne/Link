@@ -766,7 +766,7 @@ class User extends BaseController
 
         $data["participations"] = $this->scoring_model->ScoreByUserByPart($userId) ;    
         $data["formations"] = $this->scoring_model->ScoreByUserByType($userId,"Formation");
-        $data["conferences"] = $this->scoring_model->ScoreByUserByType($userId,"Conférences");
+        $data["conferences"] = $this->scoring_model->ScoreByUserByType($userId,"Conférence");
         $data["missions"]   = null ;
         $data["visit"] = $this->user_model->visitListingByUser($userId) ;
 
