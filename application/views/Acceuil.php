@@ -41,6 +41,7 @@
                            ?> 
                           <div 
                             class="added-event"
+                            data-type="task"
                             data-date="<?php echo  $dateF ?>" 
                             data-time="<?php echo  $timeF ?>"
                             data-link="<?php echo base_url() ?>task/tasksListing/<?php echo  $tache->projectId ?>" 
@@ -59,6 +60,7 @@
                            ?> 
 
                           <div class="added-event"
+                          data-type="event"
                           data-date="<?php echo  $dateF ?>" 
                           data-time="<?php echo  $timeF ?>"
                           data-link="<?php echo base_url() ?>Project/projectDetails/<?php echo  $Projet->projectId ?>" 

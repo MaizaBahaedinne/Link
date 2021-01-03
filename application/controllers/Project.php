@@ -468,7 +468,7 @@ class Project extends BaseController {
                             $points += 10 ; 
                              $description .= "<p style='color:green' >Bonus de <b>+10 points</b> pour la video </p> <br>" ;
                          }
-                        if(count($taches) >= 30 )
+                        if(count($taches) >= 20 )
                         {
                             $points += 15 ; 
                             $description .= "<p style='color:green' >Bonus de <b>+15 points</b> pour le nombre des taches</p> <br>" ;
@@ -480,7 +480,7 @@ class Project extends BaseController {
                          }
                          if($tauxParticipation >= 90 )
                          {  
-                            $points += 5 ;
+                            $points += 10 ;
                             $description .= "<p style='color:gold' >Bonus de <b>+20 points</b> pour le TP > 90%</p> <br>" ;
                          }
 

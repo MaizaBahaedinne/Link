@@ -38,9 +38,9 @@
                             <?php echo $tache->tacheId?>
                         </td> 
                         <td>
-                          <h4>
+                          <h5>
                             <?php echo $tache->titre ?>
-                          </h4>
+                          </h5>
                           <span>
                             <?php echo $tache->description ?>
 
@@ -54,7 +54,10 @@
 
                         <td>
                            <ul>
-                        <?php foreach ($tache->affections as $affection ) { ?>
+                        <?php
+
+                       
+                         foreach ($tache->affections as $affection ) {  ?>
   
                                <li  class="<?php  if ($affection->status== 1 )  {   ?> badges-success <?php } ?>" > 
                                   <div class="row  ">
@@ -163,6 +166,7 @@
                                     </div>
                                 </div><!-- fade Modal -->
                         </td>
+
                         <td>
                           <a href=""><i class="fa fa-pencil"></i></a>
                           <a href=""><i class="fa fa-eye"></i></a>
@@ -230,13 +234,39 @@
                       </div>
                       <div class="col-md-6">
                         <label>debut</label>
-                        <input type="datetime-local"   min="<?php echo date('Y-m-d').'T00:00' ?>"  required name="startedDate">     
+                        <input type="date"   min="<?php echo date('Y-m-d') ?>"
+
+                           max="<?php $date = date_create($projet->endDate);
+                                           echo date_format($date, 'Y-m-d'); ?>"
+
+                            required name="startedDate" id="StartDate">     
                       </div>
                       <div class="col-md-6">
                         <label>Fin</label>
-                        <input type="datetime-local"  min="<?php echo date('Y-m-d').'T00:00' ?>" required  name="deadline">
+                        <input type="date"  min="<?php echo date('Y-m-d') ?>" 
+
+                        max="<?php $date = date_create($projet->endDate);
+                                           echo date_format($date, 'Y-m-d'); ?>" 
+
+                        required  name="deadline" id="EndDate">
                       </div>
-                    </div>                
+                    </div>  
+
+                    <script >
+                      
+                       
+
+                        $("#EndDate").change(function () {
+                            var startDate = document.getElementById("StartDate").value;
+                            var endDate = document.getElementById("EndDate").value;
+                         
+                            if ((Date.parse(endDate) <= Date.parse(startDate))) {
+                                alert("End date should be greater than Start date");
+                                document.getElementById("EndDate").value = "";
+                            }
+});
+
+                    </script>              
 
                     <br>
 
