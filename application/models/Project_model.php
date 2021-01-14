@@ -54,8 +54,8 @@ class Project_model extends CI_Model
                 $this->db->from('tbl_project as BaseTbl');
                 $this->db->join('tbl_club as Clubs', 'Clubs.clubID = BaseTbl.ClubID', 'LEFT');
                 
-
-                $this->db->where('Clubs.SenJun' , $SenJun ) ; 
+                $this->db->where('Clubs.SenJun' , $SenJun ) ;
+                $this->db->where('BaseTbl.startDate > ' , '2020-09-15' ) ; 
 
                 $this->db->order_by('BaseTbl.startDate','ASC');
                

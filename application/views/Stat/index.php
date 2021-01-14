@@ -168,7 +168,7 @@
 							<div class="col-lg-4">
 								<aside class="sidebar static">
 									<div class="widget">
-									<h4 class="widget-title">Projet Alumni</h4>
+									<h4 class="widget-title">Projet National</h4>
 										<div class="static-meta"> 
 											<i class="fas fa-project-diagram"></i>
 											<div class="info-meta">
