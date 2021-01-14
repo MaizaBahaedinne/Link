@@ -25,7 +25,7 @@ class Support extends BaseController {
 		        {
                 	$this->global['pageTitle'] = 'Support';
 			        $this->global['active'] = 'Clubs';
-			         $this->loadViews("Support/projet", $this->global, NULL , NULL);   
+			         $this->loadViews("support/projet", $this->global, NULL , NULL);   
 			    
 		        }
 
