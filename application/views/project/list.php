@@ -35,9 +35,8 @@
                                                             <div class="option-list">
                                                                 <i class="fa fa-ellipsis-v"></i>
                                                                 <ul>
-                                                                    <!--
-                                                                    <li><a title="" href="#">Show Friends Public</a></li>
-                                                                    -->
+                                                                    
+                                                                    <li><a href="<?php  echo base_url() ?>Support/projet" title=""><i class="fa fa-book">   </i> &nbsp;&nbsp;&nbsp;Gestion de projet </a> </li>
                                                                 </ul>
                                                             </div>
                                                         </div>
@@ -97,7 +96,7 @@
                             </div><!-- centerl meta -->
                             <div class="col-lg-4">
                 <aside class="sidebar static right">
-                  <div class="widget">
+                                    <div class="widget">
                     <h4 class="widget-title">Mon Club</h4> 
                     <div class="your-page">
                       <figure>
@@ -105,91 +104,62 @@
                       </figure>
                       <div class="page-meta">
                         <a href="#" title="" class="underline"><?php if ($clubInfo->clubID > 5 ) {echo "club Tunivisions ";}  echo $clubInfo->name ; ?></a>
-                        <span><i class="ti-comment"></i><a href="insight.html" title="">Messages <em>9</em></a></span>
-                        <span><i class="ti-bell"></i><a href="insight.html" title="">Notifications <em>2</em></a></span>
+                        
                       </div>
+                      <?php if (($role == 1 ||  $role == 3 ||  $role == 6 ||  $role == 7  )|| $SA== 1 ) { ?>
                       <ul class="page-publishes">
                         <li>
-                          <span> <a href="<?php echo base_url()?>Club/clubInfo/<?php echo $clubInfo->clubID ?>">  <i class="ti-pencil-alt"></i>Projets</a></span>
+                          <span> <a href="<?php echo base_url()?>Club/clubInfo/<?php echo $clubInfo->clubID ?>">  <i class="fas fa-door-open"></i></i>Visiter</a></span>
+                        </li>
+                        <li>
+                          <span> <a href="<?php echo base_url()?>Club/clubInfo/<?php echo $clubInfo->clubID ?>"> <i class="fas fa-project-diagram"></i> </i>Projets</a></span>
                         </li>
                         <li>
                           <span> 
-                            <a  data-toggle="modal" data-target="#tuniFan">
-                                <i class="fa fa-user-plus"></i>Invite
+                             <a  data-toggle="modal" data-target="#TuniFan">
+                                <i class="fa fa-user-plus"></i>Inviter
                             </a>
                           </span>
                         </li>
+                        <li>
+                          <span> <a href="<?php echo base_url()?>Club/myTeam">  <i class="fa fa-users"></i>Equipes</a></span>
+                        </li>
                       </ul>
-
-
-
-                      <!--
+                      <?php } ?>
                       <div class="page-likes">
                         <ul class="nav nav-tabs likes-btn">
-                          <li class="nav-item"><a class="active" href="#link1" data-toggle="tab" data-ripple="">likes</a></li>
-                           <li class="nav-item"><a class="" href="#link2" data-toggle="tab" data-ripple="">views</a></li>
+                          <li class="nav-item"><a class="active" href="#link1" data-toggle="tab" data-ripple="">Membres</a></li>
+                           <li class="nav-item"><a class="" href="#link2" data-toggle="tab" data-ripple="">Projets</a></li>
                         </ul>
                         
                         <div class="tab-content">
                           <div class="tab-pane active fade show" id="link1">
-                          <span><i class="ti-heart"></i>884</span>
-                            <a href="#" title="weekly-likes">35 new likes this week</a>
+                          <span><i class="ti-heart"></i><?php echo count($members)?></span>
+                           <!-- <a href="#" title="weekly-likes">35 new likes this week</a> -->
                             <div class="users-thumb-list">
+                            
                             <a href="#" title="" data-toggle="tooltip" data-original-title="Anderw">
                               <img src="images/resources/userlist-1.jpg" alt="">  
                             </a>
-                            <a href="#" title="" data-toggle="tooltip" data-original-title="frank">
-                              <img src="images/resources/userlist-2.jpg" alt="">  
-                            </a>
-                            <a href="#" title="" data-toggle="tooltip" data-original-title="Sara">
-                              <img src="images/resources/userlist-3.jpg" alt="">  
-                            </a>
-                            <a href="#" title="" data-toggle="tooltip" data-original-title="Amy">
-                              <img src="images/resources/userlist-4.jpg" alt="">  
-                            </a>
-                            <a href="#" title="" data-toggle="tooltip" data-original-title="Ema">
-                              <img src="images/resources/userlist-5.jpg" alt="">  
-                            </a>
-                            <a href="#" title="" data-toggle="tooltip" data-original-title="Sophie">
-                              <img src="images/resources/userlist-6.jpg" alt="">  
-                            </a>
-                            <a href="#" title="" data-toggle="tooltip" data-original-title="Maria">
-                              <img src="images/resources/userlist-7.jpg" alt="">  
-                            </a>  
+                            
                             </div>
                           </div>
                           <div class="tab-pane fade" id="link2">
-                            <span><i class="fa fa-eye"></i>440</span>
+                            <span><i class="fa fa-eye"></i><?php echo count($Projets)?></span>
+                           <!--
                             <a href="#" title="weekly-likes">440 new views this week</a>
+                          -->
                             <div class="users-thumb-list">
                             <a href="#" title="" data-toggle="tooltip" data-original-title="Anderw">
                               <img src="images/resources/userlist-1.jpg" alt="">  
                             </a>
-                            <a href="#" title="" data-toggle="tooltip" data-original-title="frank">
-                              <img src="images/resources/userlist-2.jpg" alt="">  
-                            </a>
-                            <a href="#" title="" data-toggle="tooltip" data-original-title="Sara">
-                              <img src="images/resources/userlist-3.jpg" alt="">  
-                            </a>
-                            <a href="#" title="" data-toggle="tooltip" data-original-title="Amy">
-                              <img src="images/resources/userlist-4.jpg" alt="">  
-                            </a>
-                            <a href="#" title="" data-toggle="tooltip" data-original-title="Ema">
-                              <img src="images/resources/userlist-5.jpg" alt="">  
-                            </a>
-                            <a href="#" title="" data-toggle="tooltip" data-original-title="Sophie">
-                              <img src="images/resources/userlist-6.jpg" alt="">  
-                            </a>
-                            <a href="#" title="" data-toggle="tooltip" data-original-title="Maria">
-                              <img src="images/resources/userlist-7.jpg" alt="">  
-                            </a>  
                             </div>
                           </div>  
                         </div>
-
-                      </div>-->
+                      </div>
                     </div>
                   </div><!-- page like widget -->
+                  
                   <!-- explore events -->
                   <div class="widget">
                     <h4 class="widget-title">Calendar</h4>
