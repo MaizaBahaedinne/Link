@@ -356,17 +356,16 @@
 						<span>Quick Help</span>
 						<form method="post">
 							<input type="text" placeholder="How can we help you?">
-						</form>
-						<span>Help with this page</span>
+						</form>-->
+						<span>Guide d'utilisation</span>
 						<ul class="help-drop">
-							<li><a href="forum.html" title=""><i class="fa fa-book"></i>Community &amp; Forum</a></li>
-							<li><a href="faq.html" title=""><i class="fa fa-question-circle-o"></i>FAQs</a></li>
+							<li><a href="<?php echo base_url() ?>Support/projet" title=""><i class="fa fa-book"></i>Gestion de projet</a></li>
+							<!--<li><a href="faq.html" title=""><i class="fa fa-question-circle-o"></i>FAQs</a></li>
 							<li><a href="career.html" title=""><i class="fa fa-building-o"></i>Carrers</a></li>
 							<li><a href="privacy.html" title=""><i class="fa fa-pencil-square-o"></i>Terms &amp; Policy</a></li>
 							<li><a href="#" title=""><i class="fa fa-map-marker"></i>Contact</a></li>
-							<li><a href="#" title=""><i class="fa fa-exclamation-triangle"></i>Report a Problem</a></li>
-						</ul>d
-					-->
+							<li><a href="#" title=""><i class="fa fa-exclamation-triangle"></i>Report a Problem</a></li>-->
+					
 					<div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 0px;">
 						<div class="ps-scrollbar-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps-scrollbar-y-rail" style="top: 0px; right: 0px;"><div class="ps-scrollbar-y" tabindex="0" style="top: 0px; height: 0px;"></div></div></div>
 				</li>
@@ -468,6 +467,12 @@
 						<i class="ti-heart"></i>
 					</a>
 				</li>
+				<li>
+					<a href="<?php echo base_url() ?>Support/projet" title="" data-toggle="tooltip" data-placement="right" data-original-title="Support">
+						<i class="ti-help">
+						</i>
+					</a>
+				</li> 
 
 				
 			<div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 0px;"><div class="ps-scrollbar-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps-scrollbar-y-rail" style="top: 0px; height: 502px; right: 0px;"><div class="ps-scrollbar-y" tabindex="0" style="top: 0px; height: 442px;"></div></div></ul>

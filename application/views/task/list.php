@@ -252,21 +252,17 @@
                       </div>
                     </div>  
 
-                    <script >
-                      
-                       
+                   <script>
+                        $("#EndDate").change(function() {
+                          var startDate = document.getElementById("StartDate").value;
+                          var endDate = document.getElementById("EndDate").value;
 
-                        $("#EndDate").change(function () {
-                            var startDate = document.getElementById("StartDate").value;
-                            var endDate = document.getElementById("EndDate").value;
-                         
-                            if ((Date.parse(endDate) <= Date.parse(startDate))) {
-                                alert("End date should be greater than Start date");
-                                document.getElementById("EndDate").value = "";
-                            }
-});
-
-                    </script>              
+                          if ((Date.parse(ed_endtimedate) <= Date.parse(ed_starttimedate))) {
+                            alert("End date should be greater than Start date");
+                            document.getElementById("EndDate").value = "";
+                          }
+                        });
+                    </script>          
 
                     <br>
 
