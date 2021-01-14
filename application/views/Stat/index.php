@@ -53,7 +53,7 @@
 								<div class="stat-box">
 									<i class="fas fa-project-diagram"></i>
 									<div class="anlytc-meta">
-										<h4>0</h4>
+										<h4><?php  echo (count($projetA) + count($projetU) + count($projetHS) ) ?></h4>
 										<p>40%</p>
 										<span>Projets </span> 
 									</div>
