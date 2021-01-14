@@ -308,10 +308,10 @@
                                 </div>
                                         <script type="text/javascript">
                                           $( "#Publique" ).click(function() {
-                                              $("#facebook").prop("required", true);
+                                              $("#facebook").prop("required", false);
                                             });
                                           $( "#Only" ).click(function() {
-                                              $("#facebook").prop("required", true);
+                                              $("#facebook").prop("required", false);
                                             });
                                           $( "#prive" ).click(function() {
                                               $("#uzer-nam").prop("required", false);
