@@ -319,7 +319,7 @@
                                         </script>
                                    <br>
                                     <div class="uzer-nam">
-                                      <label><br>Lien d'évenement facebook :</label>
+                                      <label><br>Code d'évenement facebook :</label>
                                       <span>https://www.facebook.com/events/</span>
                                         <input type="number" 
                                       placeholder="exemple : 235643091127564" name="facebook" width="30%" id="facebook"  >

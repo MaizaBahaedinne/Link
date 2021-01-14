@@ -22,9 +22,15 @@ class Statistique extends BaseController {
         $data["TunimateursA"] =$this->user_model->userListingByclub($this->vendorId,2)  ;
         $data["TunimateursHS"] =$this->user_model->userListingType(4)  ;
         $data["TunimateursU"] =$this->user_model->userListingType(3)  ;
+        
         $data["clubA"] = 17 ;
         $data["clubsHS"] = $this->club_model->clubListingCount(4) ;
         $data["clubsU"] = $this->club_model->clubListingCount(3) ;
+        
+        $data["projetA"] = $this->project_model->projectStats(2);
+        $data["projetU"] = $this->project_model->projectStats(3);
+        $data["projetHS"] = $this->project_model->projectStats(4);
+
         $this->global['pageTitle'] = 'Statestique';
         $this->loadViews("Stat/index", $this->global, $data , NULL);
 	}
