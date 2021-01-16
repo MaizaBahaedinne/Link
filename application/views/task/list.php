@@ -91,7 +91,7 @@
 
                                   <button class="btn btn-sm" disabled style="color:gray"> <i class="fa fa-check-square"></i> Dépassé </button>
 
-                                  <?php }if ((time()-(60*60*24)) < strtotime($tache->deadline)){  ?> 
+                                  <?php }if (((time()-(60*60*24)) < strtotime($tache->deadline)) && $affection->status != 1){  ?> 
 
                                   <button class="btn btn-danger btn-sm" id="S<?php echo $affection->affectationId ?>" onclick="delet(this.id)"  > <i class="fa fa-minus-square"></i> Supprimer </button>
 
@@ -106,7 +106,7 @@
                             <?php } } ?>      
                             </ul> 
                             <?php 
-                               if (($role == 1 || $role == 3 || $role == 6  ) &&   $projet->ClubID == $clubID  ){ 
+                               if ( (($role == 1 || $role == 3 || $role == 6 || $role == 7 || $role == 2   ) &&   $projet->ClubID == $clubID ) || $SA == 1  ){ 
                                 if ( (time()-(60*60*24)) < strtotime($projet->endDate) ){ ?>  
                                 <small>                        
                             <a  class="align-center main-btn btn-sm" data-toggle="modal" data-target="#addMembersToTask<?php echo $tache->tacheId?>" >
@@ -257,8 +257,8 @@
                           var startDate = document.getElementById("StartDate").value;
                           var endDate = document.getElementById("EndDate").value;
 
-                          if ((Date.parse(ed_endtimedate) <= Date.parse(ed_starttimedate))) {
-                            alert("End date should be greater than Start date");
+                          if ((Date.parse(startDate) > Date.parse(endDate))) {
+                            alert("La date de fin doit être postérieure à la date de début");
                             document.getElementById("EndDate").value = "";
                           }
                         });

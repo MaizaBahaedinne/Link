@@ -50,7 +50,7 @@ class Task extends BaseController {
           $user=$this->vendorId ; 
           $taskInfo = array(        
            'startedDate' => $startedDate ,
-           'deadline' => $deadline , 
+           'deadline' => $deadline.' 23:59:59' , 
            'description' => NL2BR($Description) , 
            'titre' => $titre , 
            'type' => $type ,
@@ -89,7 +89,7 @@ class Task extends BaseController {
               $result = $this->Task_model->editAffect($affectationInfo, $affectID); 
 
               $scoreInfo = array('createdBy' => $this->vendorId ,
-                                 'userId' => $this->vendorId ,
+                                 'userId' => $userId ,
                                  'createdDTM' => date('Y-m-d H:i:s') , 
                                  'ValidDTM' => date('Y-m-d H:i:s') , 
                                  'affectId' => $affectID , 
@@ -97,6 +97,16 @@ class Task extends BaseController {
                                  'points' => 3 
                                 ) ;  
               $result2 = $this->scoring_model->addScore($scoreInfo);
+
+               $scoreInfo = array('createdBy' => $this->vendorId ,
+                                 'userId' => $this->vendorId ,
+                                 'createdDTM' => date('Y-m-d H:i:s') , 
+                                 'ValidDTM' => date('Y-m-d H:i:s') , 
+                                 'affectId' => $affectID , 
+                                 'statut' => 0 ,
+                                 'points' => 1 
+                                ) ;  
+              $result3 = $this->scoring_model->addScore($scoreInfo);
         }
               
       /**
