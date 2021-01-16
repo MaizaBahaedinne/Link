@@ -220,6 +220,7 @@ class Project extends BaseController {
                         
                         if($projet->type =="Compétition" && $projet->cible =="Publique" ){ $points = 8 ;}
                         if($projet->type =="Compétition" && $projet->cible =="Only tunimateur" ){ $points = 8 ;}
+                        if($projet->type =="Compétition" && $projet->cible =="Privé" ){ $points = 6 ;}
 
                         
                         if($projet->type =="Soirée" && $projet->cible =="Publique" ){ $points = 2 ;}
@@ -227,6 +228,7 @@ class Project extends BaseController {
 
                         if($projet->type =="Team Building" && $projet->cible =="Publique" ){ $points = 2 ;}
                         if($projet->type =="Team Building" && $projet->cible =="Only tunimateur" ){ $points = 2 ;}
+                         if($projet->type =="Team Building" && $projet->cible =="Privé" ){ $points = 2 ;}
 
 
 
