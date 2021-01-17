@@ -61,22 +61,13 @@
                                          
 
                                          <td>
-                                        <span>
+                                      
                                          <a href="<?php echo base_url() ?>User/ProfileShow/<?php echo $membre->userId ?>"> <img src="<?php echo base_url() ?>uploads/avatar/<?php echo $membre->avatar ?>" class="pro-turtle " alt="user">
-                                        <?php echo $membre->name ?> 
-                              
-                                       
-                                        
-                                        
-                                   
+                                        <?php echo $membre->name ?>                                    
                                         </td>
                                         <td>
                                         	<?php echo $membre->club ?>
                                         </td>
-
-                                        <td>
-                                        
-                                                                             
 
                                         <td> <b ><?php echo $membre->scores ?> Points</b> </td>
                                       </tr>
