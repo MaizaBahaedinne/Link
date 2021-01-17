@@ -13,7 +13,7 @@ class Scoring_model extends CI_Model
 
      function ClassementMembres($roleId,$SenJun,$cellule,$limit) 
      {
-        $this->db->select('user.userId , user.name  , sum(BaseTbl.points) scores , BaseTbl.ValidDTM , club.name club  , club.clubID ');
+        $this->db->select('user.userId , user.avatar , user.name  , sum(BaseTbl.points) scores , BaseTbl.ValidDTM , club.name club  , club.clubID ');
         $this->db->from('tbl_scoring as BaseTbl');
         
         $this->db->join('tbl_users as user', 'user.userId = BaseTbl.userId', 'LEFT');
