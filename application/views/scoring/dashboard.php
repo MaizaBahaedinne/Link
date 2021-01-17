@@ -5,7 +5,10 @@
                     <div class="col-lg-12">
                         <div class="row merged20" id="page-contents">
                         	<!-- scoring membres -->
-                        	<div class="col-lg-6 central-meta" >
+                        	<div class="col-lg-6 " >
+                        		<aside class="sidebar static right" >
+                        		<div class="widget">
+                        		<h4 class="widget-title">TOP 10 Tunimateurs</h4>
                         		 <style type="text/css">
                                         .pro-turtle {
                                             object-fit: cover;
@@ -73,13 +76,18 @@
                                  
                                     <?php $c= $c + 1 ;  }   }else { echo "Il y a pas de données";} ?>
 				                </table>
-
+				            </div>
+							</aside>
                         	</div>
+
                         	<!-- end scoring membres -->
 
 
                         	<!-- scoring clubs -->
-                        	<div class="col-lg-6 central-meta" >
+                        	<div class="col-lg-6 " >
+                        		<aside class="sidebar static right" >
+                        		<div class="widget">
+                        		<h4 class="widget-title">Classement des clubs</h4>
                         		 <style type="text/css">
                                         .pro-turtle {
                                             object-fit: cover;
@@ -136,7 +144,8 @@
                                  
                                     <?php $c= $c + 1 ;  }   }else { echo "Il y a pas de données";} ?>
 				                </table>
-
+					            </div>
+					        </aside>
                         	</div>
                         	<!-- end scoring clubs -->
 
