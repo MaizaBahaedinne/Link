@@ -343,7 +343,7 @@
                                     <textarea class="form-control" name="description"  id="TinyMCE" rows="20" ></textarea>
                                     <label for="fname">Date debut</label>
                                         <!-- min="<?php echo date('Y-m-d').'T00:00' ?>" -->
-                                    <input type="datetime-local" class="form-control "  min="2020-09-15T00:00"  max="2021-01-17T00:00"   id="debut" name="debut"  required >
+                                    <input type="datetime-local" class="form-control "  min="2020-09-15T00:00"  max="2021-06-29T00:00"   id="debut" name="debut"  required >
                                     <label for="fname">Date fin</label>
                                         <!-- min="<?php echo date('Y-m-d').'T00:00' ?>" -->
                                     <input type="datetime-local" class="form-control" min="2020-09-15T01:00"  max="2021-06-30T23:00"   id="fin" name="fin"  required >
