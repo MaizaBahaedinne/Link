@@ -10,7 +10,23 @@
 class Score_club_model extends CI_Model
 {
 
+    function ClassementClub($SenJun)
+    {
+        $this->db->select('sum(BaseTbl.points) scores , BaseTbl.ValidDTM , club.name club ');
+        $this->db->from('tbl_club_scores as BaseTbl');
+        $this->db->join('tbl_project as proj', 'proj.projectId = BaseTbl.projectId', 'LEFT');
+        $this->db->join('tbl_club as club', 'proj.clubId = club.clubID', 'LEFT');
 
+        $this->db->where(' club.SenJun = ', $SenJun ) ;
+        $this->db->where(' proj.startDate > ','2020-09-15') ;
+        $this->db->where(' BaseTbl.statut = ','0') ;
+        $this->db->group_by('user.userId' );
+        $this->db->order_by('scores  DESC' );
+        
+        $query = $this->db->get(); 
+        $result = $query->result();        
+        return $result;
+    }
     
 
     function scoreListingByClub($clubID)
