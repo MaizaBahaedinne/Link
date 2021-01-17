@@ -163,14 +163,14 @@ class Project extends BaseController {
                 function addPresence ($projectId,$createdBy ,$userId)
                 {
 
-                        $projet = $this->project_model->getProjectInfo($projectId);
-                        $participation = $this->scoring_model->PresenceCheck($projectId,$userId) ;
-                        echo $participation ;
+                    $projet = $this->project_model->getProjectInfo($projectId);
+                    $participation = $this->scoring_model->PresenceCheck($projectId,$userId) ;
+                    echo $participation ;
 
 
-                          $now  =    strtotime('now') ;
-                          $start  =  strtotime($projet->startDate) ;
-                          $end =     strtotime('+3 hours',strtotime($projet->endDate)) ;
+                      $now  =    strtotime('now') ;
+                      $start  =  strtotime($projet->startDate) ;
+                      $end =     strtotime('+3 hours',strtotime($projet->endDate)) ;
 
                       /*  if(  (($now-$start) >= 0 ) )
                         {
