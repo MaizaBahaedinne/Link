@@ -534,7 +534,7 @@
             <!-- Modal body -->
             <div class="modal-body">
               <h5>Patager ce code avec les tunimateurs partants</h5>
-              <p><?php echo $projet->titre ?> by <?php if ($projet->ClubID > 5 ) {echo "club ";}  echo "Tunivisions ".$projet->ClubName; ?>
+              <p><?php echo $projet->titre ?> by <?php if ($projet->ClubID > 5 ) {echo "club ";}  echo "Tunivisions ".$projet->ClubName; ?></p>
               <br>
               <?php 
               $now  =    strtotime('now') ;
