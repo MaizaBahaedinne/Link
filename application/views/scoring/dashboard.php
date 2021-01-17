@@ -14,13 +14,13 @@
                                             object-fit: cover;
                                             border-radius : 100% ;
                                             object-position: 50% 50%;
-                                            width: 40px;
-                                            height: 40px;
+                                            width: 30px;
+                                            height: 30px;
                                         }
                                     </style> 
 				                    <table  class="table table-striped table-responsive" id="tableid" style="width: cover" >
 				                      <thead>
-				                          <th width="10%" >Rang
+				                          <th width="5%" >#
 				                          </th>
 				                          <th width="10%" >
 				                            Badge
@@ -63,10 +63,10 @@
                                          <td>
                                       
                                          <a href="<?php echo base_url() ?>User/ProfileShow/<?php echo $membre->userId ?>"> <img src="<?php echo base_url() ?>uploads/avatar/<?php echo $membre->avatar ?>" class="pro-turtle " alt="user">
-                                        <?php echo $membre->name ?>                                    
+                                            <small><?php echo $membre->name ?></small>                        
                                         </td>
                                         <td>
-                                        	<?php echo $membre->club ?>
+                                        	<small><?php echo $membre->club ?></small>
                                         </td>
 
                                         <td> <b ><?php echo $membre->scores ?> Points</b> </td>
