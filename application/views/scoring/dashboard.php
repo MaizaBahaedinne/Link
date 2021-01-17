@@ -30,7 +30,7 @@
 				                            Score
 				                          </th>
 				                          </thead>
-                                    <?php  if(!empty($RateMember)){ $c=1 ;   foreach ($RateMember as $membre ) { ?>
+                                    <?php  if(!empty($Mm)){ $c=1 ;   foreach ($Mm as $membre ) { ?>
                                       <tr>
 
                                         <td  ><h4> <?php echo   $c   ?> </h4> </td>
