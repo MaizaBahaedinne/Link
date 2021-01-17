@@ -367,7 +367,7 @@
                   
                   $.ajax( "<?php echo base_url() ?>"+qrCodeMessage+"/<?php echo $uid ?>" )
                         .done(function(data) {
-                          alert("<?php echo base_url() ?>"+qrCodeMessage+"/<?php echo $uid ?>") ;
+                          
                           alert( data );
                           alert( "On va actuliser cette page" );
                           location.reload();
