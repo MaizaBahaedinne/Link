@@ -14,7 +14,7 @@ class Scoring extends BaseController {
         $this->load->model('club_model'); 
         $this->load->model('project_model');   
         $this->load->model('scoring_model');   
-        
+        $this->load->model('Score_club_model');  
         
         $this->isLoggedIn();   
     }    
@@ -24,7 +24,7 @@ class Scoring extends BaseController {
         
 
 
-        $data["clubs"] = $this->scoring_model->ClassementMembres(1,$SenJun,Null,3) ;
+        $data["clubs"] = $this->scoring_model->ClassementClub($SenJun) ;
 
         $data["presidents"] = $this->scoring_model->ClassementMembres(1,$SenJun,Null,3) ;
         
