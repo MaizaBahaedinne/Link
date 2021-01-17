@@ -285,7 +285,7 @@
                                <h6>
                                 by 
                                 <a>
-                                  <?php if ($score->clubID > 5 ) {echo "club ";}  echo 'Tunivisions '.$score->name ; ?>
+                                  <?php if ($score->clubID > 5 ) {echo "club ";}  echo 'Tunivisions '.$score->name ; ?> <small>valider par : <a href="<?php echo base_url() ?>User/ProfileShow/<?php $score->validerId ?>"><?php $score->validBy ?></a> #<?php $score->scoringId ?> </small>
                                     
                                 </a>
                                </h6>
