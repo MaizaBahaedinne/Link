@@ -47,7 +47,7 @@
                                          <a href="<?php echo base_url() ?>User/ProfileShow/<?php echo $membre->userId ?>"> <img src="<?php echo base_url() ?>uploads/avatar/<?php echo $membre->avatar ?>" class="pro-turtle " alt="user">
                                         <?php echo $membre->name ?> 
                                         <br>
-                                        <small>Club Tunivisions <?php echo $membre->club ?></small>
+                                        <small> <?php echo $membre->club ?></small>
                                         </p> 
                                         
                                         
