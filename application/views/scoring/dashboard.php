@@ -165,7 +165,7 @@
                                             height: 30px;
                                         }
                                     </style> 
-                                    <table  class="table table-striped table-responsive" id="tableid" style="width: cover" >
+                                    <table  class="table " id="tableid" style="width: cover" >
                                       <thead>
                                           <th width="5%" >#
                                           </th>
@@ -242,7 +242,7 @@
                                             height: 30px;
                                         }
                                     </style> 
-                                    <table  class="table table-striped table-responsive" id="tableid" style="width: cover" >
+                                    <table  class="table " id="tableid" style="width: cover" >
                                       <thead>
                                           <th width="5%" >#
                                           </th>
@@ -319,7 +319,7 @@
                                             height: 30px;
                                         }
                                     </style> 
-                                    <table  class="table table-striped table-responsive" id="tableid" style="width: cover" >
+                                    <table  class="table" id="tableid" style="width: cover" >
                                       <thead>
                                           <th width="5%" >#
                                           </th>
