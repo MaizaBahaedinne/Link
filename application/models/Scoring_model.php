@@ -10,6 +10,27 @@
 class Scoring_model extends CI_Model
 {
 
+
+     function ClassementMembres($roleId,$SenJun) 
+     {
+        $this->db->select('user.userId , user.name  , sum(BaseTbl.points) points , BaseTbl.ValidDTM , club.name club  , club.clubID ');
+        $this->db->from('tbl_scoring as BaseTbl');
+        
+        $this->db->join('tbl_users as user', 'user.userId = BaseTbl.userId', 'LEFT');
+        $this->db->join('tbl_club as club', 'user.clubId = club.clubID', 'LEFT');
+        
+        $this->db->where('user.roleId =  ', $roleId);
+        $this->db->where('user.isDeleted = ', 0);
+        $this->db->where('club.SenJun =  ', $SenJun);
+
+        $this->db->where('BaseTbl.statut = ',0 );
+        $this->db->group_by('user.userId  DESC' );
+        $this->db->order_by('BaseTbl.points  DESC' );
+        $query = $this->db->get();
+         
+        return $query->result();
+    } 
+
      function ScoreByUser($userId) 
      {
         $this->db->select('BaseTbl.points , BaseTbl.ValidDTM , proj.titre , proj.type , club.name  , club.clubID ');
@@ -60,7 +81,7 @@ class Scoring_model extends CI_Model
     } 
 
 
-     function ScoreByUserByType($userId,$type) 
+     function ScoreByUserByType($userId,$type,$SenJun) 
      {
         $this->db->select('BaseTbl.points , BaseTbl.ValidDTM , proj.titre , proj.type , club.name  , club.clubID ');
         $this->db->from('tbl_scoring as BaseTbl');

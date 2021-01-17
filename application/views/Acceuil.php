@@ -311,7 +311,7 @@
                               <ul>
                                 <?php if ($uid == $post->userId || $SA == 1  ) { ?>
                                 <li><i class="fa fa-pencil-square-o"></i>Modifier le message</li>
-                                <li><a href="<?php echo base_url() ?>Posts/deletePost/<?php echo $post->postId ?>"><i class="fa fa-trash-o"></i>Supprimer le message</a></li>
+                                <li><a href="<?php echo base_url() ?>Posts/deletePost/<?php echo $post->postId ?>"><i class="fa fa-trash"></i>Supprimer le message</a></li>
                                 <?php } ?>
                               </ul>
                             </div>
