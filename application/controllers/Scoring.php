@@ -48,7 +48,7 @@ class Scoring extends BaseController {
 
         $this->global['pageTitle'] = 'Classement';
         
-        if($this->SA == 1) {
+        if($this->SA == 1 || $this->SA == 2 ) {
         $this->loadViews("scoring/dashboard", $this->global, $data, NULL);   
         }
         }
