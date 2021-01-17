@@ -107,6 +107,7 @@
 				                          <th width="10%" >
 				                            Badge
 				                          </th>
+				                       
 				                     
 				                          <th>
 				                            Score
@@ -119,7 +120,7 @@
 
                                     
                                         <td>
-                           
+                           					<?php echo   $club->club   ?>
                                         </td>
                                         <td>
                                           <?php   if ($c== 1) { ?>

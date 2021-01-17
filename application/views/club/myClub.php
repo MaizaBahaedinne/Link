@@ -215,6 +215,9 @@
                                                               <img src="https://www.undp.org/content/dam/undp/sdg/sdg-header-fr.png" width="20%"  >
                                                             </a>
                                                             <select name="objectif" required>
+                                                               <option value="">
+                                                                
+                                                              </option>
                                                               <option value="Autre">
                                                                 Autre
                                                               </option>
@@ -286,7 +289,7 @@
 
                                                           <br><br>
                                                           <b>nom de formateur</b>
-                                                          <input id="myInput" type="text" name="nomF" placeholder="formateur" list="suggests">
+                                                          <input id="myInput" type="text" name="nomF" placeholder="formateur" list="suggests"  <?php if($projet->type == "Formation" ) {echo "required" ;} ?> >
                                                             <datalist id="suggests">
                                                                 <option value="Dorra Eltaief Baltagi">
                                                                 <option value="Ahmed Ben ghanem">
