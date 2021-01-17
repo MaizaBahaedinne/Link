@@ -12,7 +12,7 @@ class Score_club_model extends CI_Model
 
     function ClassementClub($SenJun)
     {
-        $this->db->select('sum(BaseTbl.points) scores , BaseTbl.ValidDTM , club.name club ');
+        $this->db->select('sum(BaseTbl.points) scores , club.name club ');
         $this->db->from('tbl_club_scores as BaseTbl');
         $this->db->join('tbl_project as proj', 'proj.projectId = BaseTbl.projectId', 'LEFT');
         $this->db->join('tbl_club as club', 'proj.clubId = club.clubID', 'LEFT');
