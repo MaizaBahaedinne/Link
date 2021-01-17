@@ -175,7 +175,57 @@
                                                 <!-- Tab panes -->
                                                 <div class="tab-content">
                                                   <div class="tab-pane active fade show" id="link1">
-                                                    <span><i class="ti-heart"></i><?php echo count($part) ?> Participants</span>
+                                                    <span><i class="ti-heart"></i>
+                                                      <a data-toggle="modal" data-target="#partant" ><?php echo count($part) ?> Participants</a></span>
+                                                      <div class="modal fade" id="partant">
+                                                        <div class="modal-dialog modal-lg">
+                                                          <div class="modal-content">
+
+                                                            <!-- Modal Header -->
+                                                            <div class="modal-header">
+                                                              <h4 class="modal-title">Liste des participants</h4>
+                                                              <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                            </div>
+
+                                                            <!-- Modal body -->
+                                                            <div class="modal-body">
+                                                                <?php $this->load->helper("form"); ?>
+                                                                <div>
+                                                                <table  class="table table-responsive-xl" id="tableid" style="width: cover" >
+                                                                  <thead>
+                                                                    <th>#</th>
+                                                                    <th>nom</th>
+                                                                    <th>validé par</th>
+                                                                  </thead>
+                                                                  <tbody>
+                                                                    <?php $i=0 ; foreach ($part  as $p ) {?>
+                                                                    <tr>
+                                                                      <td><?php echo $p->scoringId ?></td>
+                                                                      <td><?php echo $p->name ?>
+                                                                        <br><small> <?php echo $p->role ?> du <?php echo $p->club ?></small>
+                                                                      </td>
+                                                                      <td><?php echo $p->valider ?> <br> <?php echo $p->createdDTM ?>  </td>
+                                                                    </tr>
+                                                                  <?php } ?>
+                                                                  </tbody>
+
+                                                                          
+                                                                      
+                                                            </table>
+
+                                                          </div>
+
+
+
+                                                            </div>
+
+                                                            <!-- Modal footer -->
+                                                            <div class="modal-footer">
+                                                              <button type="button" class="btn btn-danger" data-dismiss="modal">Fermer</button>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                    </div><!-- fade Modal -->
                                                       
                                                       <div class="users-thumb-list">
                                                         <?php $i=0 ; foreach ($part  as $p ) {?>                                                       
