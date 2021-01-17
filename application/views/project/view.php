@@ -40,7 +40,7 @@
                                             <?php 
                                             if ((($role == 1 || $role == 2  || $role == 3 || $role == 6 || $role == 7  ) && $projet->ClubID == $clubID  ) || $SA == 1 || $SA == 2 ){
 
-                                           if( strtotime($projet->endDate)  > strtotime("2020-09-15") &&  strtotime($projet->endDate)  < strtotime("2021-01-15") ) { ?>
+                                           if( strtotime($projet->endDate)  > strtotime("2020-09-15") &&  strtotime($projet->endDate)  < strtotime("2021-01-17") ) { ?>
                                             <li>
                                                 <a href="#" title="Folow us" class="main-btn btn-success" data-ripple=""  data-toggle="modal" data-target="#presence" >Présence</a>
                                             </li>
