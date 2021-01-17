@@ -199,7 +199,7 @@
                                                                   </thead>
                                                                   <tbody>
                                                                     <?php $i=0 ; foreach ($part  as $p ) {?>
-                                                                    <tr <?php if($p->clubId != $projet->clubID ) {?> style="background-color: #fefbd8;">
+                                                                    <tr <?php if($p->clubId != $projet->clubID ) { ?> style="background-color: #fefbd8;" <?php } ?> >
                                                                       <td><?php echo $p->scoringId ?></td>
                                                                       <td><?php echo $p->name ?>
                                                                         <br><small> <?php echo $p->role ?> du <?php echo $p->club ?></small>
