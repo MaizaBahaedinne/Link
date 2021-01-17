@@ -287,10 +287,10 @@
                                 <a>
                                   <?php if ($score->clubID > 5 ) {echo "club ";}  echo 'Tunivisions '.$score->name ; ?> 
                                     
-                                </a><small>valider par : <a href="<?php echo base_url() ?>User/ProfileShow/<?php $score->validerId ?>"><?php $score->validBy ?></a> #<?php $score->scoringId ?> </small>
+                                </a>
                                </h6>
                                <i>
-                                <?php echo xTimeAgo ($score->ValidDTM, date('Y-m-d H:i:s') )  ?>
+                                <?php echo xTimeAgo ($score->ValidDTM, date('Y-m-d H:i:s') )  ?> <small>valider par : <a href="<?php echo base_url() ?>User/ProfileShow/<?php $score->validerId ?>"><?php $score->validBy ?></a> #<?php $score->scoringId ?> </small>
                                </i>
                             </div>
                          </li>
