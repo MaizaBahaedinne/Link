@@ -24,7 +24,7 @@ class Scoring_model extends CI_Model
         $this->db->where('user.cellule =  ', $cellule);
         }
         $this->db->where('user.isDeleted = ', 0);
-        $this->db->where('club.isActif =  ', 1);
+        $this->db->where('club.is_Actif =  ', 1);
         $this->db->where('club.SenJun =  ', $SenJun);
 
         $this->db->where('BaseTbl.statut = ',0 );
