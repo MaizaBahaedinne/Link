@@ -69,7 +69,7 @@
                                         	<small><?php echo $membre->club ?></small>
                                         </td>
 
-                                        <td> <b ><?php echo $membre->scores ?> Points</b> </td>
+                                        <td> <b ><?php echo $membre->scores ?></b> </td>
                                       </tr>
                                       
                                  
@@ -138,7 +138,7 @@
                                         </td>
                                                                              
 
-                                        <td> <b ><?php echo $club->scores ?> Points</b> </td>
+                                        <td> <b ><?php echo $club->scores ?></b> </td>
                                       </tr>
                                       
                                  
