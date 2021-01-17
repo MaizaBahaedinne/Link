@@ -473,6 +473,7 @@ class Project extends BaseController {
 
                         if($projet->type =="Team Building" && $projet->cible =="Publique" ){ $points = 20 ;}
                         if($projet->type =="Team Building" && $projet->cible =="Only tunimateur" ){ $points = 20 ;}
+                        if($projet->type =="Team Building" && $projet->cible =="Privé" ){ $points = 20 ;}
                         
                         $description ='Note du projet = '.$points ;    
                         if($video != '' ){ 
