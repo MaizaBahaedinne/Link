@@ -304,7 +304,8 @@
                                                             <br><br>
                                                             <input type="submit" name="" value="envoyer" class="btn btn-primary">
                                                             <br>
-                                                            <small style="color: red" >Faite attention à la déclaration de ce rapport <br>
+                                                            <small style="color: red" >
+                                                              Faite attention la déclaration la garde de ce rapport se fait une seule fois <br>
                                                               Toute tentative de tricherie risque de pénaliser le club jusqu'à  x-10  du note de projet<br> 
                                                               
                                                              
