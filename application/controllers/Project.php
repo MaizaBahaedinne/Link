@@ -235,7 +235,7 @@ class Project extends BaseController {
 
                             $data["score"] = $this->score_club_model->scoreByProject($projectId); 
 
-                        if (!(empty($data["score"]))) {
+                        if (empty($data["score"])) {
 
                           $PresenceInfo = array(   
                                      "projectId" =>    $projectId ,
