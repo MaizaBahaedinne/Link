@@ -20,7 +20,7 @@ class Score_club_model extends CI_Model
         $this->db->where(' club.SenJun = ', $SenJun ) ;
         $this->db->where(' proj.startDate > ','2020-09-15') ;
         $this->db->where(' BaseTbl.statut = ','0') ;
-        $this->db->group_by('user.userId' );
+        $this->db->group_by('club.clubID' );
         $this->db->order_by('scores  DESC' );
         
         $query = $this->db->get(); 
