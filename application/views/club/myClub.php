@@ -141,7 +141,7 @@
                           </aside>
                         </div><!-- sidebar -->
                       <div class="col-lg-8">
-                      <?php foreach ($projectRecords as $projet ) { ?>
+                      <?php  foreach ($projectRecords as $projet ) { ?>
                        <div class="central-meta">
                             <div class="row">
                         <div class="col-lg-12">
