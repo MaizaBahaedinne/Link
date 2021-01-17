@@ -290,7 +290,7 @@
                                 </a>
                                </h6>
                                <i>
-                                <?php echo xTimeAgo ($score->ValidDTM, date('Y-m-d H:i:s') )  ?> <small>valider par : <a href="<?php echo base_url() ?>User/ProfileShow/<?php $score->validerId ?>"><?php echo $score->validBy ?></a> #<?php echo $score->scoringId ?> </small>
+                                <?php echo xTimeAgo ($score->ValidDTM, date('Y-m-d H:i:s') )  ?> <small>valider par : <a href="<?php echo base_url() ?>User/ProfileShow/<?php echo $score->validerId ?>"><?php echo $score->validBy ?></a> #<?php echo $score->scoringId ?> </small>
                                </i>
                             </div>
                          </li>
