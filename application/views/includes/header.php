@@ -503,7 +503,7 @@
 				</li>
 				<li class="menu-item-has-children"><a class="" href="#" title=""><i class="fa fa-line-chart"></i>Classement</a>
 					<ul class="submenu">
-						<li><a href="" title="">University</a></li>
+						<li><a href="<?php echo base_url() ?>Scoring/Classement/3" title="">University</a></li>
 						<li><a href="" title="">High school</a></li>
 						<li><a href="" title="">We are carthage</a></li>
 					</ul>

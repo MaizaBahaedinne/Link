@@ -11,21 +11,25 @@ class Scoring_model extends CI_Model
 {
 
 
-     function ClassementMembres($roleId,$SenJun) 
+     function ClassementMembres($roleId,$SenJun,$cellule,$limit) 
      {
-        $this->db->select('user.userId , user.name  , sum(BaseTbl.points) points , BaseTbl.ValidDTM , club.name club  , club.clubID ');
+        $this->db->select('user.userId , user.name  , sum(BaseTbl.points) scores , BaseTbl.ValidDTM , club.name club  , club.clubID ');
         $this->db->from('tbl_scoring as BaseTbl');
         
         $this->db->join('tbl_users as user', 'user.userId = BaseTbl.userId', 'LEFT');
         $this->db->join('tbl_club as club', 'user.clubId = club.clubID', 'LEFT');
         
         $this->db->where('user.roleId =  ', $roleId);
+        if($cellule != 'All' ){
+        $this->db->where('user.cellule =  ', $cellule);
+        }
         $this->db->where('user.isDeleted = ', 0);
         $this->db->where('club.SenJun =  ', $SenJun);
 
         $this->db->where('BaseTbl.statut = ',0 );
-        $this->db->group_by('user.userId  DESC' );
-        $this->db->order_by('BaseTbl.points  DESC' );
+        $this->db->limit($limit );
+        $this->db->group_by('user.userId' );
+        $this->db->order_by('scores  DESC' );
         $query = $this->db->get();
          
         return $query->result();
