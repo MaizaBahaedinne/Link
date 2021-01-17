@@ -110,15 +110,7 @@
 
                                     
                                         <td>
-                                         
-
-                                        
-                                        <span>
-                                         <p> <img src="<?php echo base_url() ?>uploads/avatar/<?php echo $membre->avatar ?>" class="pro-turtle " alt="user">
-                                        <?php echo $club->club ?> 
-                                        </p> 
-                                        
-                                        </span>
+                           
                                         </td>
                                         <td>
                                           <?php   if ($c== 1) { ?>
