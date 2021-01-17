@@ -85,7 +85,7 @@ class Scoring_model extends CI_Model
     } 
 
 
-     function ScoreByUserByType($userId,$type,$SenJun) 
+     function ScoreByUserByType($userId,$type) 
      {
         $this->db->select('BaseTbl.points , BaseTbl.ValidDTM , proj.titre , proj.type , club.name  , club.clubID ');
         $this->db->from('tbl_scoring as BaseTbl');
