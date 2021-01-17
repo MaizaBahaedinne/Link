@@ -31,19 +31,19 @@ class Scoring extends BaseController {
         $data["vpM"] = $this->scoring_model->ClassementMembres(3,$SenJun,'Marketing',3) ;
         $data["vpAF"] = $this->scoring_model->ClassementMembres(3,$SenJun,'Administration et finance',3) ; 
         $data["vpRH"] = $this->scoring_model->ClassementMembres(3,$SenJun,'Ressource Humaine',3) ; 
-        $data["vpE"] = $this->scoring_model->ClassementMembres(3,$SenJun,'Evenementiel',3) ;
+        $data["vpE"] = $this->scoring_model->ClassementMembres(3,$SenJun,'Evenmentiel',3) ;
 
         $data["aM"] = $this->scoring_model->ClassementMembres(6,$SenJun,'Marketing',3) ;
         $data["aAF"] = $this->scoring_model->ClassementMembres(6,$SenJun,'Administration et finance',3) ; 
         $data["aRH"] = $this->scoring_model->ClassementMembres(6,$SenJun,'Ressource Humaine',3) ; 
-        $data["aE"] = $this->scoring_model->ClassementMembres(6,$SenJun,'Evenementiel',3) ;
+        $data["aE"] = $this->scoring_model->ClassementMembres(6,$SenJun,'Evenmentiel',3) ;
 
 
         $data["membres"] = $this->scoring_model->ClassementMembres(5,$SenJun,'All',10) ;
         $data["mM"] = $this->scoring_model->ClassementMembres(5,$SenJun,'Marketing',3) ;
         $data["mAF"] = $this->scoring_model->ClassementMembres(5,$SenJun,'Administration et finance',3) ; 
         $data["mRH"] = $this->scoring_model->ClassementMembres(5,$SenJun,'Ressource Humaine',3) ; 
-        $data["mE"] = $this->scoring_model->ClassementMembres(5,$SenJun,'Evenementiel',3) ;
+        $data["mE"] = $this->scoring_model->ClassementMembres(5,$SenJun,'Evenmentiel',3) ;
        
 
         $this->global['pageTitle'] = 'Classement';
