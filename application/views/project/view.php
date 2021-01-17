@@ -495,7 +495,7 @@
 
              if( 
                    strtotime($projet->endDate)  > strtotime("2020-09-15") 
-                && strtotime($projet->endDate)  < strtotime("2021-01-15") 
+                && strtotime($projet->endDate)  < strtotime("2021-01-17") 
                 && (empty($score))
                 && strtotime($projet->startDate)  < strtotime('now') 
                  ) { ?> 
