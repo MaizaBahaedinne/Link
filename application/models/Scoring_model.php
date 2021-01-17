@@ -115,7 +115,7 @@ class Scoring_model extends CI_Model
 
     function PresenceByProject($projectId)
     {
-        $this->db->select('BaseTbl.scoringId ,valider.name validby , user.name , user.avatar , role.role , club.name club , valider.name  valider  , BaseTbl.createdDTM');
+        $this->db->select('BaseTbl.scoringId ,valider.name validby , user.name , user.avatar , user.clubId , role.role , club.name club , valider.name  valider  , BaseTbl.createdDTM');
         $this->db->from('tbl_scoring as BaseTbl');
         $this->db->join('tbl_users as user', 'user.userId = BaseTbl.userId', 'LEFT');
         $this->db->join('tbl_roles as role', 'role.roleId = user.roleId', 'LEFT');

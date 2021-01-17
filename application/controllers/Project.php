@@ -166,6 +166,8 @@ class Project extends BaseController {
                         $projet = $this->project_model->getProjectInfo($projectId);
                         $participation = $this->scoring_model->PresenceCheck($projectId,$userId) ;
                         echo $participation ;
+
+
                           $now  =    strtotime('now') ;
                           $start  =  strtotime($projet->startDate) ;
                           $end =     strtotime('+3 hours',strtotime($projet->endDate)) ;
@@ -228,10 +230,12 @@ class Project extends BaseController {
 
                         if($projet->type =="Team Building" && $projet->cible =="Publique" ){ $points = 2 ;}
                         if($projet->type =="Team Building" && $projet->cible =="Only tunimateur" ){ $points = 2 ;}
-                         if($projet->type =="Team Building" && $projet->cible =="Privé" ){ $points = 2 ;}
+                        if($projet->type =="Team Building" && $projet->cible =="Privé" ){ $points = 2 ;}
 
 
+                            $data["score"] = $this->score_club_model->scoreByProject($projectId); 
 
+                        if (!(empty($data["score"]))) {
 
                           $PresenceInfo = array(   
                                      "projectId" =>    $projectId ,
@@ -250,7 +254,10 @@ class Project extends BaseController {
                                 $result = $this->scoring_model->editPresence($PresenceInfo,$participation->scoringId) ;
                                  $this->response("votre participation a été mise à jour pour le projet ".$projet->titre); ;
                                 }  
-                    
+                    }else {
+                        $this->response("ce projet à été cloturé le ".$data["score"]->createdDTM ); ;
+
+                    }
 
 
 
