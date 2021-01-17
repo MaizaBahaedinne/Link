@@ -41,6 +41,7 @@ class Scoring_model extends CI_Model
         $this->db->from('tbl_scoring as BaseTbl');
         $this->db->join('tbl_project as proj', 'proj.projectId = BaseTbl.projectId', 'LEFT');
         $this->db->join('tbl_club as club', 'proj.clubId = club.clubID', 'LEFT');
+        
         $this->db->join('tbl_users as valider', 'BaseTbl.createdBy = valider.userId', 'LEFT');
       
     
