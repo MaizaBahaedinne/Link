@@ -39,7 +39,7 @@ class Scoring extends BaseController {
         $data["aE"] = $this->scoring_model->ClassementMembres(6,$SenJun,'Evenmentiel',3) ;
 
 
-        $data["membres"] = $this->scoring_model->ClassementMembres(5,$SenJun,'All',10) ;
+        $data["membres"] = $this->scoring_model->ClassementMembres(5,$SenJun,'All',100) ;
         $data["mM"] = $this->scoring_model->ClassementMembres(5,$SenJun,'Marketing',3) ;
         $data["mAF"] = $this->scoring_model->ClassementMembres(5,$SenJun,'Administration et finance',3) ; 
         $data["mRH"] = $this->scoring_model->ClassementMembres(5,$SenJun,'Ressource Humaine',3) ; 

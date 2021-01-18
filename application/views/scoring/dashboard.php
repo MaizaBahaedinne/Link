@@ -61,8 +61,9 @@
                                          
 
                                          <td>
-                                      
+                                        <?php if ($c < 10 ){ ?>
                                          <a href="<?php echo base_url() ?>User/ProfileShow/<?php echo $membre->userId ?>"> <img src="<?php echo base_url() ?>uploads/avatar/<?php echo $membre->avatar ?>" class="pro-turtle " alt="user">
+                                         <?php } ?>
                                             <small><?php echo $membre->name ?></small>                        
                                         </td>
                                         <td>
