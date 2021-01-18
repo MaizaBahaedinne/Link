@@ -68,7 +68,12 @@ class Scoring_model extends CI_Model
         $this->db->from('tbl_scoring as BaseTbl');
         $this->db->join('tbl_users as user', 'user.userId = BaseTbl.userId', 'LEFT');
         $this->db->join('tbl_club as club', 'user.clubId = club.clubID', 'LEFT');
-      
+        $this->db->join('tbl_project as proj', 'proj.projectId = BaseTbl.projectId', 'LEFT');
+
+        $this->db->join('tbl_club_scores as scoreProj ', 'BaseTbl.projectId = scoreProj.projectId', 'LEFT');
+        $this->db->where('scoreProj.statut =  ', 0 );
+
+        $this->db->where('proj.clubId', $clubId);
     
         $this->db->where('user.clubID', $clubId);
         $this->db->where('statut = ',0 );
