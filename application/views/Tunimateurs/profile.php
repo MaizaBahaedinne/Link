@@ -272,9 +272,15 @@
                             <div class="activity-meta">
                                <span>
                                 <b>
+                                  <?php if( $score->statutProj == 0 ) { ?>
                                   <a style="color: green" >
                                     <?php echo $score->points ?>&nbsp; points 
+                                  </a><?php } else { ?>
+                                  <a style="color: orange" >
+                                    <?php echo $score->points ?>&nbsp; points 
                                   </a>
+                                  <?php } ?>
+
                                </b>
                                 Participation au  <?php echo $score->type ?> :  
                                 <a href="<?php echo base_url() ?>Project/projectDetails/<?php echo $score->projectId ?>" title="">
