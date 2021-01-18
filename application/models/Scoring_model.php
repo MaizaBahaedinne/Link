@@ -76,7 +76,7 @@ class Scoring_model extends CI_Model
         $this->db->where('proj.clubId', $clubId);
     
         $this->db->where('user.clubID', $clubId);
-        $this->db->where('statut = ',0 );
+        $this->db->where('BaseTbl.statut = ',0 );
         $this->db->group_by('user.userId' );
         $this->db->order_by('scores  DESC' );
         $query = $this->db->get();
