@@ -51,7 +51,7 @@ class Scoring_model extends CI_Model
 
         $this->db->join('tbl_users as valider', 'BaseTbl.createdBy = valider.userId', 'LEFT');
       
-         $this->db->where('scoreProj.statut =  ', 0 );
+         
         $this->db->where('BaseTbl.userId', $userId);
         $this->db->where('BaseTbl.statut = ',0 );
         $this->db->order_by('BaseTbl.ValidDTM  DESC' );
