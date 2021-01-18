@@ -310,7 +310,7 @@ class Project extends BaseController {
 
                 
 
-                if($participation > 0) {
+       
                 
                         if($projet->type =="Couverture Mediatique" && $projet->cible =="Publique" ){ $points = 10 ;}
                         if($projet->type =="Couverture Mediatique" && $projet->cible =="Privé" ){ $points = 10 ;}
@@ -365,7 +365,7 @@ class Project extends BaseController {
                             $description .= "<p style='color:gold' >Bonus de <b>+20 points</b> pour le TP > 90%</p> <br>" ;
                          }
 
-                    }
+                    
 
             
             
