@@ -18,7 +18,10 @@ class Scoring_model extends CI_Model
         
         $this->db->join('tbl_users as user', 'user.userId = BaseTbl.userId', 'LEFT');
         $this->db->join('tbl_club as club', 'user.clubId = club.clubID', 'LEFT');
-        
+        $this->db->join('tbl_club_scores as scoreProj ', 'BaseTbl.projectId = scoreProj.projectId', 'LEFT');
+
+        $this->db->where('scoreProj.statut =  ', 0 );
+
         $this->db->where('user.roleId =  ', $roleId);
         if($cellule != 'All' ){
         $this->db->where('user.cellule =  ', $cellule);
@@ -42,10 +45,13 @@ class Scoring_model extends CI_Model
         $this->db->from('tbl_scoring as BaseTbl');
         $this->db->join('tbl_project as proj', 'proj.projectId = BaseTbl.projectId', 'LEFT');
         $this->db->join('tbl_club as club', 'proj.clubId = club.clubID', 'LEFT');
-        
+        $this->db->join('tbl_club_scores as scoreProj ', 'BaseTbl.projectId = scoreProj.projectId', 'LEFT');
+
+       
+
         $this->db->join('tbl_users as valider', 'BaseTbl.createdBy = valider.userId', 'LEFT');
       
-    
+         $this->db->where('scoreProj.statut =  ', 0 );
         $this->db->where('BaseTbl.userId', $userId);
         $this->db->where('statut = ',0 );
         $this->db->order_by('BaseTbl.ValidDTM  DESC' );

@@ -17,6 +17,7 @@ class Score_club_model extends CI_Model
         $this->db->join('tbl_project as proj', 'proj.projectId = BaseTbl.projectId', 'LEFT');
         $this->db->join('tbl_club as club', 'proj.clubId = club.clubID', 'LEFT');
 
+        
         $this->db->where(' club.SenJun = ', $SenJun ) ;
         $this->db->where(' proj.startDate > ','2020-09-15') ;
         $this->db->where(' BaseTbl.statut = ','0') ;
