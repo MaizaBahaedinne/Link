@@ -204,6 +204,8 @@ class Project extends BaseController {
                         }*/
                         
                         if($projet->type =="Couverture Mediatique" && $projet->cible =="Publique" ){ $points = 2 ;}
+                         if($projet->type =="Couverture Mediatique" && $projet->cible =="Privé" ){ $points = 1 ;}
+                         if($projet->type =="Evenement" && $projet->cible =="Only tunimateur" ){ $points = 2 ;}
 
                         if($projet->type =="Evenement" && $projet->cible =="Publique" ){ $points = 5 ;}
                         if($projet->type =="Evenement" && $projet->cible =="Privé" ){ $points = 5 ;}
@@ -311,6 +313,8 @@ class Project extends BaseController {
                 if($participation > 0) {
                 
                         if($projet->type =="Couverture Mediatique" && $projet->cible =="Publique" ){ $points = 10 ;}
+                        if($projet->type =="Couverture Mediatique" && $projet->cible =="Privé" ){ $points = 10 ;}
+                        if($projet->type =="Couverture Mediatique" && $projet->cible =="Only tunimateur" ){ $points = 10 ;}
 
                         if($projet->type =="Evenement" && $projet->cible =="Publique" ){ $points = 40 ;}
                         if($projet->type =="Evenement" && $projet->cible =="Privé" ){ $points = 10 ;}
