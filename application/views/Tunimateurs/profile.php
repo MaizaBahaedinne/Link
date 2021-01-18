@@ -272,7 +272,7 @@
                             <div class="activity-meta">
                                <span>
                                 <b>
-                                  <?php if( $score->clubID == $clubID ) { ?>
+                                  <?php if( $score->clubID == $userInfo->clubID ) { ?>
                                   <a style="color: green" >
                                     <?php echo $score->points ?>&nbsp; points 
                                   </a><?php } else { ?>
