@@ -308,10 +308,10 @@
                                 </div>
                                         <script type="text/javascript">
                                           $( "#Publique" ).click(function() {
-                                              $("#facebook").prop("required", false);
+                                              $("#facebook").prop("required", true);
                                             });
                                           $( "#Only" ).click(function() {
-                                              $("#facebook").prop("required", false);
+                                              $("#facebook").prop("required", true);
                                             });
                                           $( "#prive" ).click(function() {
                                               $("#uzer-nam").prop("required", false);
@@ -338,7 +338,8 @@
                                     </select>
                                     <hr>
                                     <label for="fname">Titre</label>
-                                    <input type="text" class="form-control required" id="Titre" name="Titre" maxlength="255" required >
+                                    <input type="text" class="form-control required" id="Titre" name="Titre" maxlength="255" 
+                                    pattern="^[A-Za-z0-9 _]*[A-Za-z0-9][A-Za-z0-9 _]*$" required >
                                     <label for="fname">Description</label>
                                     <textarea class="form-control" name="description"  id="TinyMCE" rows="20" ></textarea>
                                     <label for="fname">Date debut</label>
