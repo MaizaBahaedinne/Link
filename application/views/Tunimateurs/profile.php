@@ -272,7 +272,7 @@
                             <div class="activity-meta">
                                <span>
                                 <b>
-                                  <?php if( $score->statutProj == 0 ) { ?>
+                                  <?php if( $score->clubID == $clubID ) { ?>
                                   <a style="color: green" >
                                     <?php echo $score->points ?>&nbsp; points 
                                   </a><?php } else { ?>
