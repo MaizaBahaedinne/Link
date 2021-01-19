@@ -98,7 +98,7 @@ class Task extends BaseController {
                                 ) ;  
               $result2 = $this->scoring_model->addScore($scoreInfo);
 
-               $scoreInfo = array('createdBy' => $this->vendorId ,
+               $scoreInfo1 = array('createdBy' => $this->vendorId ,
                                  'userId' => $this->vendorId ,
                                  'createdDTM' => date('Y-m-d H:i:s') , 
                                  'ValidDTM' => date('Y-m-d H:i:s') , 
@@ -106,7 +106,7 @@ class Task extends BaseController {
                                  'statut' => 0 ,
                                  'points' => 1 
                                 ) ;  
-              $result3 = $this->scoring_model->addScore($scoreInfo);
+              $result3 = $this->scoring_model->addScore($scoreInfo1);
         }
               
       /**
