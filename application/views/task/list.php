@@ -47,7 +47,7 @@
                           </span>
                           <hr>
                           Crée par : <a data-toggle="tooltip" title="" href="#" data-original-title="<?php echo $tache->parname?>">
-                                <img alt="" class="alligator-profile-likes" src="<?php echo base_url() ?>uploads/avatar/<?php echo $tache->avatar ?>" style="border-radius: 50%;" >  <?php echo $tache->parname?>
+                               <!--  <img alt="" class="alligator-profile-likes" src="<?php echo base_url() ?>uploads/avatar/<?php echo $tache->avatar ?>" style="border-radius: 50%;" >-->  <b><?php echo $tache->parname?></b> 
                            </a> 
                         </td> 
                         <td><b>Debut : </b><?php echo $tache->startedDate ?> <hr> <b>Fin : </b><?php echo $tache->deadline ?></td>                                     
@@ -63,7 +63,8 @@
                                   <div class="row  ">
                                     <div class="col-md-3">
                                       <a data-toggle="tooltip" title="" href="#" data-original-title="<?php echo $affection->name  ;  ?>">
-                                      <img alt="" class="alligator-profile-likes" src="<?php echo base_url() ?>uploads/avatar/<?php echo $affection->avatar ?>" style="border-radius: 50%;"> 
+                                      <!-- 
+                                        <img alt="" class="alligator-profile-likes" src="<?php echo base_url() ?>uploads/avatar/<?php echo $affection->avatar ?>" style="border-radius: 50%;">--> 
                                        </a> 
                                   </div>
 
