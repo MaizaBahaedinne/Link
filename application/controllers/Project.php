@@ -365,11 +365,6 @@ class Project extends BaseController {
                             $description .= "<p style='color:gold' >Bonus de <b>+20 points</b> pour le TP > 90%</p> <br>" ;
                          }
 
-                    
-
-            
-            
-
 
 
                 $scoresInfo = array(        
@@ -392,12 +387,7 @@ class Project extends BaseController {
                  'points'=>$points
                      );
 
-
-
-                
-                 $result = $this->score_club_model->addNew($scoresInfo); 
-      
-                
+                $result = $this->score_club_model->addNew($scoresInfo); 
                 redirect('/Project/projectDetails/'.$projet->projectId);
 
                 }
