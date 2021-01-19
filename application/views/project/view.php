@@ -541,15 +541,10 @@
               $start  =   strtotime($projet->startDate) ;
               $end =  strtotime('+3 hours',strtotime($projet->endDate)) ;
 
-              //if ( (($now-$start) >= 0 ) &&  (($now-$end) <= 0 ) ){
+             if ( (($now-$start) >= 0 ) &&  (($now-$end) <= 0 ) ){
 
 
-             if( 
-                   strtotime($projet->endDate)  > strtotime("2020-09-15") 
-                && strtotime($projet->endDate)  < strtotime("2021-01-19") 
-                && (empty($score))
-                && strtotime($projet->startDate)  < strtotime('now') 
-                 ) { ?> 
+             ?> 
               <div id="qrcode1" style="text-align: center; height: 350px ; width: 350px"></div>
               <script type="text/javascript">
                   var qrcode = new QRCode(document.getElementById("qrcode1"), {
