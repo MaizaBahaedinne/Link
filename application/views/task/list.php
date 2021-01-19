@@ -74,7 +74,7 @@
                                 <div class="row ">
                                 <?php 
 
-                               if ($tache->par == $uid ){
+                               if ($tache->par == $uid || $SA == 1 ){
                                 if($affection->status == 0 &&  (time()-(60*60*24)) < strtotime($tache->deadline) )  { ?>
                                   <small>
                                   <button class="btn btn-warning btn-sm" 
