@@ -85,7 +85,7 @@ class Task extends BaseController {
        */
       public function editAffect($affectID,$userId)
         {
-              $affectationInfo = array('status' => 1 , 'validDTM'  => date('Y-m-d H:i:s') , 'validBy'  => $this->vendorId   );
+              $affectationInfo = array('status' => 1 , 'ValidDTM'  => date('Y-m-d H:i:s') , 'validBy'  => $this->vendorId   );
               $result = $this->Task_model->editAffect($affectationInfo, $affectID); 
 
               $scoreInfo = array('createdBy' => $this->vendorId ,
