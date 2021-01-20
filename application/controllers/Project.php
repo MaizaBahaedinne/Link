@@ -203,7 +203,7 @@ class Project extends BaseController {
 
                         }*/
                         
-                         if(  (($now-$start) >= 0 ) )
+                        if(  (($now-$start) >= 0 ) )
                         {
                            if( (($now-$end) <= 0 ))
                            {
