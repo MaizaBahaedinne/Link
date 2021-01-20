@@ -242,6 +242,12 @@ class Project extends BaseController {
 
                             $data["score"] = $this->score_club_model->scoreByProject($projectId); 
 
+
+                         if(  (($now-$start) >= 0 ) )
+                        {
+                           if( (($now-$end) <= 0 ))
+                           {
+
                         if (empty($data["score"])) {
 
                           $PresenceInfo = array(   
@@ -267,13 +273,18 @@ class Project extends BaseController {
                         $this->response("ce projet à été cloturé le ".$data["score"]->createdDTM ); ;
                     }
                   
-                
-              
-      
 
 
-
+                } 
                 }
+                else 
+                    {
+                        $this->response("ce QR code est expiré " ); ;
+                    }
+
+                     
+                }
+
 
 
 
