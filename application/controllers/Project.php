@@ -203,7 +203,13 @@ class Project extends BaseController {
 
                         }*/
                         
-                        if($projet->type =="Couverture Mediatique" && $projet->cible =="Publique" ){ $points = 2 ;}
+                         if(  (($now-$start) >= 0 ) )
+                        {
+                           if( (($now-$end) <= 0 ))
+                           {
+
+
+                         if($projet->type =="Couverture Mediatique" && $projet->cible =="Publique" ){ $points = 2 ;}
                          if($projet->type =="Couverture Mediatique" && $projet->cible =="Privé" ){ $points = 1 ;}
                          if($projet->type =="Evenement" && $projet->cible =="Only tunimateur" ){ $points = 2 ;}
 
@@ -260,6 +266,11 @@ class Project extends BaseController {
                                 }  
                     }else {
                         $this->response("ce projet à été cloturé le ".$data["score"]->createdDTM ); ;
+
+                    }
+                }
+                else {
+                        $this->response("Le QR code du projet ".$projet->type." à été expiré" ); ;
 
                     }
 
