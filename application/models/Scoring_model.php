@@ -53,6 +53,8 @@ class Scoring_model extends CI_Model
         
         if ($type = 'project'){
         $this->db->where('BaseTbl.projectId != ', Null );
+        $this->db->where('BaseTbl.affectId = ', Null );
+        $this->db->where('BaseTbl.reunionID = ', Null );
         }
 
         $this->db->where('BaseTbl.userId', $userId);
