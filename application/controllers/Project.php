@@ -203,10 +203,7 @@ class Project extends BaseController {
 
                         }*/
                         
-                        if(  (($now-$start) >= 0 ) )
-                        {
-                           if( (($now-$end) <= 0 ))
-                           {
+                       
 
 
                          if($projet->type =="Couverture Mediatique" && $projet->cible =="Publique" ){ $points = 2 ;}
@@ -264,15 +261,15 @@ class Project extends BaseController {
                                 $result = $this->scoring_model->editPresence($PresenceInfo,$participation->scoringId) ;
                                  $this->response("votre participation a été mise à jour pour le projet ".$projet->titre); ;
                                 }  
-                    }else {
+                    }
+                    else 
+                    {
                         $this->response("ce projet à été cloturé le ".$data["score"]->createdDTM ); ;
-
                     }
-                }
-                else {
-                        $this->response("Le QR code du projet ".$projet->type." à été expiré" ); ;
-
-                    }
+                  
+                
+              
+      
 
 
 
