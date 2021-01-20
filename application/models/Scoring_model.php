@@ -140,6 +140,7 @@ class Scoring_model extends CI_Model
         $this->db->join('tbl_club as club', 'user.clubId = club.clubID', 'LEFT');
         $this->db->join('tbl_users as valider', 'valider.userId = BaseTbl.createdBy', 'LEFT');
         $this->db->where('BaseTbl.projectId', $projectId);
+        $this->db->where('BaseTbl.statut = ', 0);
         $query = $this->db->get();
         return $query->result();
     }  
