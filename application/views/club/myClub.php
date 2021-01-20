@@ -148,7 +148,7 @@
                             <div class="event-box">
                                 <div class="row merged20">
                                     <div class="col-lg-12 col-md-4 col-sm-5">
-                                        <img src="<?php echo base_url() ?>uploads/projet/<?php echo $projet->banner ?>" class="alligator-projects " alt=""> 
+                                       <!-- <img src="<?php echo base_url() ?>uploads/projet/<?php echo $projet->banner ?>" class="alligator-projects " alt=""> -->
                                     </div>
                                     <div class="col-lg-9 col-md-6 col-sm-5">
                                         <div class="event-title">
