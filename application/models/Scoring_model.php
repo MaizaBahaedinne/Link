@@ -59,7 +59,7 @@ class Scoring_model extends CI_Model
 
         $this->db->where('BaseTbl.userId', $userId);
         $this->db->where('BaseTbl.statut = ',0 );
-        $this->db->order_by('BaseTbl.projectId' );
+        $this->db->group_by('BaseTbl.projectId' );
         $this->db->order_by('BaseTbl.ValidDTM  DESC' );
         $query = $this->db->get();
          
