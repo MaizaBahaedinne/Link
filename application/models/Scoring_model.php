@@ -39,7 +39,7 @@ class Scoring_model extends CI_Model
         return $query->result();
     } 
 
-     function ScoreByUser($userId) 
+     function ScoreByUser($userId,$type) 
      {
         $this->db->select('BaseTbl.scoringId  , BaseTbl.points , BaseTbl.ValidDTM , proj.projectId , proj.titre , proj.type , club.name  , club.clubID , valider.name validBy , valider.userId validerId ');
         $this->db->from('tbl_scoring as BaseTbl');
@@ -50,8 +50,11 @@ class Scoring_model extends CI_Model
        
 
         $this->db->join('tbl_users as valider', 'BaseTbl.createdBy = valider.userId', 'LEFT');
-      
-         
+        
+        if ($type = 'project'){
+        $this->db->where('BaseTbl.projectId != ', Null );
+        }
+
         $this->db->where('BaseTbl.userId', $userId);
         $this->db->where('BaseTbl.statut = ',0 );
         $this->db->order_by('BaseTbl.ValidDTM  DESC' );
