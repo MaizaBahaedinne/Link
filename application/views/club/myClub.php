@@ -334,7 +334,7 @@
                                                 echo "<b style='color:yellow'>tentative de tricherie</b>" ;
                                               }else
                                               {
-                                                echo '<b>'$p->points.' points</b>' ;
+                                                echo '<b>'.$p->points.' points</b>' ;
                                               } 
                                             } 
                                             ?>
