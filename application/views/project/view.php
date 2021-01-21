@@ -248,13 +248,13 @@
 
 
                                                   <div class="tab-pane fade" id="link3">
-                                                     <?php if(!(empty($score->album))) { ?> 
+                                                     <?php if(!(empty($score))) { ?> 
                                                       <div class="fb-post" data-href="https://www.facebook.com/media/set?set=<?php $score->album ?>" data-width="500" data-show-text="false"></div>
                                                     <?php } ?> 
                                                   </div>
 
                                                   <div class="tab-pane fade" id="link4">
-                                                     <?php if(!(empty($score->video))) { ?> 
+                                                     <?php if(!(empty($score))) { ?> 
                                                       <div id="fb-root"></div>
                                                       <script async defer src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2"></script>
 
