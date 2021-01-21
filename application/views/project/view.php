@@ -145,7 +145,7 @@
                                 <div class="central-meta">
                                     <span class="create-post">Détails <a href="#" title=""></a></span>
                                     <i class="fa fa-clock-o" aria-hidden="true" ></i> DU <?php echo $projet->startDate ?> AU <?php echo $projet->endDate ?> <br><br>
-                                    <i class="fa fa-users" aria-hidden="true"></i> Participants<br><br>
+                                    <i class="fa fa-users" aria-hidden="true"></i> <?php echo $projet->cible ?><br><br>
                                     <i class="fa fa-globe" aria-hidden="true"></i> <?php echo $projet->type ?> <br><br>
                                     <i class="fa fa-map-marker" aria-hidden="true"></i> <?php echo $projet->local ?><br><br>
                                     <?php echo $projet->description ?> 
@@ -244,6 +244,27 @@
                                                         </a>
                                                         
                                                       </div>
+                                                  </div>
+
+
+                                                  <div class="tab-pane fade" id="link3">
+                                                     <?php if(!(empty($score->album))) { ?> 
+                                                      <div class="fb-post" data-href="https://www.facebook.com/media/set?set=<?php $score->album ?>" data-width="500" data-show-text="false"></div>
+                                                    <?php } ?> 
+                                                  </div>
+
+                                                  <div class="tab-pane fade" id="link4">
+                                                     <?php if(!(empty($score->video))) { ?> 
+                                                      <div id="fb-root"></div>
+                                                      <script async defer src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2"></script>
+
+                                                      <div class="fb-video" data-href="https://www.facebook.com/facebook/videos/<?php $score->video ?>/" data-width="500" data-show-text="false">
+                                                        <div class="fb-xfbml-parse-ignore">
+                                                          <blockquote cite="https://www.facebook.com/facebook/videos/<?php $score->video ?>/">
+                                                            
+                                                        </div>
+                                                      </div>
+                                                    <?php } ?> 
                                                   </div>
 
                                                   
