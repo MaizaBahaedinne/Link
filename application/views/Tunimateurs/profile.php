@@ -272,7 +272,7 @@
                             <div class="activity-meta"  
                               <?php if ($score->statutS == 1){
                                 echo "style='background-color: yellow'" ; 
-                              } ?> >
+                              } ?> 
                               <?php if ($score->statutS == 2){
                                 echo "style='background-color: red'" ; 
                               } ?> >
