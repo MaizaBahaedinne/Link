@@ -171,7 +171,7 @@
                                               <?php if( (($role == 1 || $role == 2  || $role == 3  || $SA == 1 || $role == 2  ) && $projet->ClubID == $clubID ) || $SA == 1  ){
                                                if( strtotime('+24 hours',strtotime($projet->endDate))  < strtotime("now")  && strtotime('+24 hours',strtotime($projet->endDate)) >  strtotime("15-09-2020")  ) { ?>
                                                   <a class="btn main-btn" data-toggle="modal" data-target="#ProjectScore<?php echo $projet->projectId ?>" >Collecter les points</a>
-                                              <?php } } if($projet->statut == 1 ){echo "<b style='color:yellow'>En cours de validation manuelle</b>"}elseif($projet->statut == 2 ){echo "<b style='color:yellow'>tentative de tricherie</b>"} ?>
+                                              <?php } } if($projet->statut == 1 ){echo "<b style='color:yellow'>En cours de validation manuelle</b>" ;}elseif($projet->statut == 2 ){echo "<b style='color:yellow'>tentative de tricherie</b>" ;} ?>
 
 
                                                <div class="modal fade" id="ProjectScore<?php echo $projet->projectId ?>">
