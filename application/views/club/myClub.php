@@ -328,7 +328,7 @@
 
                                             <?php }else{  $p = $projet->score  ;
 
-                                               if($projet->statut == 1 ){echo "<b style='color:yellow'>En cours de validation manuelle</b>" ;}elseif($projet->statut == 2 ){echo "<b style='color:yellow'>tentative de tricherie</b>" ;}else{echo '<b>'$p->points.' points</b>' ;} } ?>
+                                               if($p->statut == 1 ){echo "<b style='color:yellow'>En cours de validation manuelle</b>" ;}elseif($p->statut == 2 ){echo "<b style='color:yellow'>tentative de tricherie</b>" ;}else{echo '<b>'$p->points.' points</b>' ;} } ?>
 
                                            </span> 
                                         </div>  
