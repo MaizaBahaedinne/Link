@@ -269,7 +269,7 @@
                          if(!(empty($scores))){
                          foreach ($scores as $score){  ?>
                          <li>
-                            <div class="activity-meta"  >
+                            <div class="activity-meta"  
                               <?php if ($score->statutS == 1){
                                 echo "style='background-color: yellow'" ; 
                               } ?> >
