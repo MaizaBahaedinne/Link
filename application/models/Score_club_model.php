@@ -69,7 +69,7 @@ class Score_club_model extends CI_Model
         $this->db->join('tbl_project as proj', 'proj.projectId = BaseTbl.projectId', 'LEFT');
         $this->db->where(' BaseTbl.projectId = ', $project ) ;
         $this->db->where(' proj.startDate > ','2020-09-15') ;
-        $this->db->where(' BaseTbl.statut = ','0') ;
+     
         $this->db->order_by('BaseTbl.createdDTM','ASC');
         
         $query = $this->db->get(); 
