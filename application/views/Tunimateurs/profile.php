@@ -269,7 +269,13 @@
                          if(!(empty($scores))){
                          foreach ($scores as $score){  ?>
                          <li>
-                            <div class="activity-meta">
+                            <div class="activity-meta"  >
+                              <?php if ($score->statutS == 1){
+                                echo "style='background-color: yellow'" ; 
+                              } ?> >
+                              <?php if ($score->statutS == 2){
+                                echo "style='background-color: red'" ; 
+                              } ?> >
                                <span>
                                 <b>
                                   <?php if( $score->clubID == $userInfo->clubID ) { ?>
