@@ -275,7 +275,7 @@
                               } ?> 
                               <?php if ($score->statutS == 2){
                                 echo "style='background-color: red'" ; 
-                              }if ($score->type=='privé' && $score->clubId == $userInfo->clubID ) 
+                              }if ($score->type=='Privé' && $score->clubId == $userInfo->clubID ) 
                               { echo "style='background-color: red'" ;  }?>  >
                                <span>
                                 <b>
