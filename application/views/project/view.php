@@ -248,22 +248,27 @@
 
 
                                                   <div class="tab-pane fade" id="link3">
-                                                     <?php if(!(empty($score))) { ?> 
-                                                      <div class="fb-post" data-href="https://www.facebook.com/media/set?set=<?php $score->album ?>" data-width="500" data-show-text="false"></div>
+                                                     <?php if($score->album) { ?> 
+                                                      <div class="fb-post" data-href="https://www.facebook.com/media/set?set=<?php echo $score->album ?>" data-width="500" data-show-text="false"></div>
+
+                                                        <a href="https://www.facebook.com/media/set?set=<?php $score->album ?>" 
+                                                           class="btn btn-primary btn-sm">Go Facebook</a>
                                                     <?php } ?> 
                                                   </div>
 
                                                   <div class="tab-pane fade" id="link4">
-                                                     <?php if(!(empty($score))) { ?> 
+                                                     <?php if($score->video) { ?> 
                                                       <div id="fb-root"></div>
                                                       <script async defer src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2"></script>
 
                                                       <div class="fb-video" data-href="https://www.facebook.com/facebook/videos/<?php $score->video ?>/" data-width="500" data-show-text="false">
                                                         <div class="fb-xfbml-parse-ignore">
-                                                          <blockquote cite="https://www.facebook.com/facebook/videos/<?php $score->video ?>/">
+                                                          <blockquote cite="https://www.facebook.com/facebook/videos/<?php echo $score->video ?>/">
                                                             
                                                         </div>
                                                       </div>
+                                                      <a href="https://www.facebook.com/facebook/videos/<?php echo $score->video ?>/" 
+                                                           class="btn btn-primary btn-sm">Go Facebook</a>
                                                     <?php } ?> 
                                                   </div>
 
