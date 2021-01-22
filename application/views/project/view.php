@@ -567,7 +567,7 @@
               $start  =   strtotime($projet->startDate) ;
               $end =  strtotime('+3 hours',strtotime($projet->endDate)) ;
 
-           
+             if ( (($now-$start) >= 0 ) &&  (($now-$end) <= 0 ) ){
 
 
              ?> 
@@ -594,7 +594,7 @@
                       }
                     });
                 </script>
-                <?php  ?>
+                <?php } ?>
                 <br>
                 <p>Ce code reste valable du 
                  <b style="color: green "> <?php echo date( 'd/m/Y H:i' , strtotime('+0 hours',strtotime($projet->startDate))) ; ?> </b>
