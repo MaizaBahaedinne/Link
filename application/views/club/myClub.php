@@ -106,7 +106,7 @@
                       <ol class="folw-detail">
                         <li><span>Projets</span><ins><?php echo count($projectRecords) ?></ins></li>
                         <li><span>Membres</span><ins><?php echo count($members) ?></ins></li>
-                        <li><span>Points</span><ins><?php echo $score->points ?></ins></li>
+                        <!--<li><span>Points</span><ins><?php echo $score->points ?></ins></li>-->
                       </ol>
                     </div>
 
@@ -334,7 +334,7 @@
                                                 echo "<b style='color:yellow'>tentative de tricherie</b>" ;
                                               }else
                                               {
-                                                echo '<b>'.$p->points.' points</b>' ;
+                                               // echo '<b>'.$p->points.' points</b>' ;
                                               } 
                                             } 
                                             ?>
