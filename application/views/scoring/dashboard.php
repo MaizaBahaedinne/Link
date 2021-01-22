@@ -149,7 +149,7 @@
 					        </aside>
                         	</div>
                         	<!-- end scoring clubs -->
-<br><br>
+<hr>
 
 
                             <!-- scoring vp Marketing -->
@@ -462,13 +462,13 @@
 
                             <!-- end scoring vp -->
 
-<br><br>
+<hr>
 
                             <!-- scoring membres Event -->
                             <div class="col-lg-3 " >
                                 <aside class="sidebar static right" >
                                 <div class="widget">
-                                <h4 class="widget-title">TOP 3 Assitant Marketing</h4>
+                                <h4 class="widget-title">TOP 3 Assistant Marketing</h4>
                                  <style type="text/css">
                                         .pro-turtle {
                                             object-fit: cover;
@@ -546,7 +546,7 @@
                             <div class="col-lg-3 " >
                                 <aside class="sidebar static right" >
                                 <div class="widget">
-                                <h4 class="widget-title">TOP 3 Assitant Evenementiel</h4>
+                                <h4 class="widget-title">TOP 3 Assistant Evenementiel</h4>
                                  <style type="text/css">
                                         .pro-turtle {
                                             object-fit: cover;
@@ -623,7 +623,7 @@
                             <div class="col-lg-3 " >
                                 <aside class="sidebar static right" >
                                 <div class="widget">
-                                <h4 class="widget-title">TOP 3 Assitant AF</h4>
+                                <h4 class="widget-title">TOP 3 Assistant AF</h4>
                                  <style type="text/css">
                                         .pro-turtle {
                                             object-fit: cover;
@@ -701,7 +701,7 @@
                             <div class="col-lg-3 " >
                                 <aside class="sidebar static right" >
                                 <div class="widget">
-                                <h4 class="widget-title">TOP 3 Assitant RH</h4>
+                                <h4 class="widget-title">TOP 3 Assistant RH</h4>
                                  <style type="text/css">
                                         .pro-turtle {
                                             object-fit: cover;
@@ -773,7 +773,7 @@
                             </div>
 
                             <!-- end scoring vp -->
-<br><br>
+<hr>
 
                             <!-- scoring membres Marketing -->
                             <div class="col-lg-3 " >
