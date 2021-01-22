@@ -160,7 +160,7 @@
                                             <span><i class="fa fa-map-marker" aria-hidden="true"></i> <?php echo $projet->local ?></span>
                                             <span><i class="fa fa-money" aria-hidden="true"></i> <?php echo $projet->prix ?> DT</span>
                                             <hr>
-                                                <a title="" href="<?php echo $projet->eventFB ?>" ><i class="fa fa-facebook"></i>  Evenement Facebook</a>     
+                                                <a title="" href="<?php echo $projet->eventFB ?>" ><i class="fab fa-facebook"></i>  Evenement Facebook</a>     
                                         </div>
                                     </div>
                                     <div class="col-lg-3 col-md-2 col-sm-2">
@@ -329,7 +329,7 @@
                                             <?php }else{  $p = $projet->score  ;
 
                                                if($p->statut == 1 ){
-                                                echo "<b style='color:yellow'>En cours de validation manuelle</b>" ;
+                                                echo "<b style='color:white;background-color: yellow'>En cours de validation manuelle</b>" ;
                                               }elseif($p->statut == 2 ){
                                                 echo "<b style='color:yellow'>tentative de tricherie</b>" ;
                                               }else
@@ -339,7 +339,7 @@
                                             } 
                                             ?>
 
-                                           </span> 
+                                           </span > 
                                         </div>  
                                     </div>
                                 </div>
