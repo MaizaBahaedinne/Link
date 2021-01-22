@@ -251,7 +251,7 @@
                                                      <?php if($score->album) { ?> 
                                                       <div class="fb-post" data-href="https://www.facebook.com/media/set?set=<?php echo $score->album ?>" data-width="500" data-show-text="false"></div>
 
-                                                        <a href="https://www.facebook.com/media/set?set=<?php $score->album ?>" 
+                                                        <a href="https://www.facebook.com/media/set?set=<?php echo $score->album ?>" 
                                                            class="btn btn-primary btn-sm">Go Facebook</a>
                                                     <?php } ?> 
                                                   </div>
