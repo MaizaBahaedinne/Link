@@ -152,7 +152,7 @@
                                     </div>
                                     <div class="col-lg-9 col-md-6 col-sm-5">
                                         <div class="event-title">
-                                            <span class="ba"><?php echo $projet->type ?></span>
+                                            <span class="ba"><?php echo $projet->type ?> <?php echo $projet->cible ?></span>
                                             <h4><a href="<?php echo base_url() ?>Project/projectDetails/<?php echo $projet->projectId ?>" title=""><?php echo $projet->titre ?></a></h4>
                                             <label class="text-mute" >by <a href="<?php echo base_url() ?>club/clubInfo/<?php echo $projet->ClubID  ?>"> <?php if ($projet->ClubID > 5 ) {echo "club ";}  echo "Tunivisions ".$projet->ClubName; ?></a></label>
                                             <span>de <i class="fa fa-clock-o" style="color: green"></i> <?php echo $projet->startDate ?></span>
