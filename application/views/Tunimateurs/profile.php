@@ -291,7 +291,7 @@
                                </b>
                                 Participation au  <?php echo $score->type ?> :  
                                 <a href="<?php echo base_url() ?>Project/projectDetails/<?php echo $score->projectId ?>" title="">
-                                  <?php echo $score->titre ?>
+                                  <?php echo $score->titre ?> [  <?php echo $score->cible ?> ]
                                     
                                 </a>
                                </span>
