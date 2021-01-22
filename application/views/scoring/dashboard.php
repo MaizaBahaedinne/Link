@@ -61,7 +61,7 @@
                                          
 
                                          <td>
-                                        <?php if ($c < 10 ){ ?>
+                                        <?php if ($c <= 10 ){ ?>
                                          <a href="<?php echo base_url() ?>User/ProfileShow/<?php echo $membre->userId ?>"> <img src="<?php echo base_url() ?>uploads/avatar/<?php echo $membre->avatar ?>" class="pro-turtle " alt="user">
                                          <?php } ?>
                                             <small><?php echo $membre->name ?></small>                        
@@ -149,7 +149,7 @@
 					        </aside>
                         	</div>
                         	<!-- end scoring clubs -->
-
+<br><br>
 
 
                             <!-- scoring vp Marketing -->
@@ -462,7 +462,7 @@
 
                             <!-- end scoring vp -->
 
-
+<br><br>
 
                             <!-- scoring membres Event -->
                             <div class="col-lg-3 " >
@@ -773,6 +773,7 @@
                             </div>
 
                             <!-- end scoring vp -->
+<br><br>
 
                             <!-- scoring membres Marketing -->
                             <div class="col-lg-3 " >
