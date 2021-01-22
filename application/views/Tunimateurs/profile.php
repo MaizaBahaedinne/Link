@@ -265,10 +265,10 @@
                 <div class="central-meta">
                   <span class="create-post">Activités récentes<a href="#" title=""></a></span>
                       <ul class="activitiez">
-                         <?php
-                         if(!($SA == 1 || $SA == 2  )){
+                         <!--
 
-                         elseif(!(empty($scores))){
+                         <?php
+                         if(!(empty($scores))){
                          foreach ($scores as $score){  ?>
                          <li>
                             <div class="activity-meta"  
@@ -309,7 +309,9 @@
                                </i>
                             </div>
                          </li>
-                         <?php } } }else{?> <img src="<?php echo base_url() ?>assets/images/topT.jpg"> <?php} ?>
+                         <?php } }  ?> -->
+
+                          <img src="<?php echo base_url() ?>assets/images/topT.jpg"> 
                       </ul>
                   </div>
                 </div>
