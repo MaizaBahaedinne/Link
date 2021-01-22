@@ -329,7 +329,7 @@
                                             <?php }else{  $p = $projet->score  ;
 
                                                if($p->statut == 1 ){
-                                                echo "<b style='color:white;background-color: yellow'>En cours de validation manuelle</b>" ;
+                                                echo "<b style='color:white;background-color: orange'>En cours de validation manuelle</b>" ;
                                               }elseif($p->statut == 2 ){
                                                 echo "<b style='color:yellow'>tentative de tricherie</b>" ;
                                               }else
