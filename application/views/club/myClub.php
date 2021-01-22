@@ -404,6 +404,7 @@
                                             height: 40px;
                                         }
                                     </style> 
+                                    <!--
                     <table  class="table table-striped table-responsive-xl" id="tableid" style="width: cover" >
                       <thead>
                           <th width="10%" >Rang
@@ -474,7 +475,8 @@
                                      
                                         <?php $c= $c + 1 ;  }   }else { echo "Il y a pas de données";} ?>
                 </table>
-
+                -->
+                <img src="<?php echo base_url() ?>assets/images/topT.jpg"> 
      
                   </div>
               </div><!-- centerl meta -->
