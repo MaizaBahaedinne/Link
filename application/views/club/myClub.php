@@ -193,9 +193,9 @@
 
                                                             <div class="uzer-nam">
                                                             <label><br>Album photos </label>
-                                                            <small>https://www.facebook.com/ClubtunivisionsX/photos/</small>
+                                                            <small>https://www.facebook.com/media/set/?vanity=X&set=</small>
                                                               <input type="text" 
-                                                             name="album" width="100%" id="album" pattern="(\w)?(\.)?(\d.*)" required placeholder="a.5619848191981" >
+                                                             name="album" width="100%" id="album" pattern="a.?(\d.*)" required placeholder="a.5619848191981" >
 
                                                            </div>
                                                            
@@ -206,7 +206,7 @@
                                                            <div class="uzer-nam">
                                                             <label><br>Video after movie </label>
                                                             <small>https://www.facebook.com/ClubTunivisionsX/videos/</small>
-                                                              <input type="text" 
+                                                              <input type="number" 
                                                              name="video" width="100%" id="video"  pattern="\d.*"  placeholder="5619848191981" >
                                                            </div>
                                                            
