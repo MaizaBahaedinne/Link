@@ -157,8 +157,19 @@ class Project extends BaseController {
 
                 }
 
+                
+                function SignalPresence ($ScoringId)
+                {
+                        $PresenceInfo = array(   
+                                     "SignalDTM"   => date('Y-m-d H:i:s') ,
+                                     "SignalBy"   => $this->vendorId ,
+                                     "statut" => 1 
+                                ); 
+
+                        return $this->scoring_model->editPresence($PresenceInfo,$ScoringId) ;
 
 
+                }
 
                 function addPresence ($projectId,$createdBy ,$userId)
                 {

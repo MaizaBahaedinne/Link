@@ -265,7 +265,7 @@
                 <div class="central-meta">
                   <span class="create-post">Activités récentes<a href="#" title=""></a></span>
                       <ul class="activitiez">
-                         <!--
+                      
 
                          <?php
                          if(!(empty($scores))){
@@ -309,9 +309,9 @@
                                </i>
                             </div>
                          </li>
-                         <?php } }  ?> -->
+                         <?php } }  ?> 
 
-                          <img src="<?php echo base_url() ?>assets/images/topT.jpg"> 
+                         
                       </ul>
                   </div>
                 </div>
@@ -433,19 +433,16 @@
                     align-items: center;
                     justify-content:center;
                      position: relative;" >
-                                        <input 
-                                       
+                                    <input 
                                         type="file" 
                                         name="fileT"   
                                         class="dropify-fr" 
                                         data-max-file-size="300K"
                                         data-max-width="800" 
                                         data-max-height="800"                                     
-                                        
                                         data-allowed-file-extensions="png jpg jpeg"
                                         required accept="image/*"
-                                        >
-                                        
+                                    >       
                      </div>
                     
            

@@ -241,6 +241,11 @@ $('.audio-call, .video-call').on('click', function () {
 			*/
 		  }
 		});	
+
+
+
+
+	
 	
 // search fadein out at navlist area	
 	$('.search-data').on('click', function () {
@@ -1248,6 +1253,10 @@ jQuery(".post-comt-box textarea").on("keydown", function(event) {
 		$( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
 		  " - $" + $( "#slider-range" ).slider( "values", 1 ) );
 	  } );
+
+
+
+
 		
 	
 });//document ready end

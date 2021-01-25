@@ -106,7 +106,7 @@
                       <ol class="folw-detail">
                         <li><span>Projets</span><ins><?php echo count($projectRecords) ?></ins></li>
                         <li><span>Membres</span><ins><?php echo count($members) ?></ins></li>
-                        <!--<li><span>Points</span><ins><?php echo $score->points ?></ins></li>-->
+                        <li><span>Points</span><ins><?php echo $score->points ?></ins></li>
                       </ol>
                     </div>
 
@@ -187,10 +187,82 @@
                                                           <!-- Modal body -->
                                                           <div class="modal-body">
 
-                                                          
-                                                            <form class="c-form" action="<?php echo base_url() ?>Project/addNewScore1/<?php echo $projet->projectId ?>" method="POST" >
+                                                            <ul class="nav nav-tabs btn-group btn-group-justified">
+                                                              <li class="btn btn-primary  nav-item"><a class="btn btn-primary   active" href="#link1" data-toggle="tab" data-ripple="">1 . Participants</a></li>
+                                                              <li class="btn btn-primary nav-item"><a class="btn btn-primary " href="#link2" data-toggle="tab" data-ripple="">2 . Rapport</a></li>
+                                                            </ul>
+
+
+                                                          <div class="tab-content">
+                                                            <div class="tab-pane active fade show" id="link1">
+
+                                                            <table  class="table table-responsive-xl" id="tableid" style="width: cover" >
+                                                                  <thead>
+                                                                    <th>#</th>
+                                                                    <th>nom</th>
+                                                                    <th>validé par</th>
+                                                                    <th>Action</th>
+                                                                  </thead>
+                                                                  <tbody>
+                                                                    <?php $i=0 ; foreach ($projet->part  as $p ) {?>
+                                                                    <tr 
+                                                                    <?php if($p->clubId != $clubInfo->clubID ) { 
+                                                                      ?> style="background-color: #fefbd8;" 
+                                                                      <?php } ?>
+                                                                       >
+                                                                      <td><?php echo $p->scoringId ?></td>
+                                                                      <td><?php echo $p->name ?>
+                                                                        <br><small> <?php echo $p->role ?> du <?php echo $p->club ?></small>
+                                                                      </td>
+                                                                      <td><?php echo $p->valider ?> <br> <?php echo $p->createdDTM ?>  </td>
+                                                                      <td><button id="<?php echo $p->scoringId ?>" class="btns btn btn-danger btn-sm" onclick="delet(this.id)" >Signaler</button> 
+
+        <script type="text/javascript">
+
+
+
+                function  delet(id){ 
+                          
+               
+
+                 $.ajax( '<?php echo base_url() ?>Project/SignalPresence/'+id )
+                                .done(function() {
+                                   $("#"+id).hide();
+                                 
+                                })
+                                .fail(function() {
+
+                                })
+                                .always(function() {
+
+                                });
+                }
+            </script>
+
+                                                                      </td>
+                                                                    </tr>
+                                                                  <?php } ?>
+                                                                  </tbody>
+
+                                                                          
+                                                                      
+                                                            </table>
+
                                                             
 
+                                                            
+                                                            
+                                                          </div>
+                                                          
+                                                            
+                                                            
+
+                                                    
+                                                      
+                                                    <!-- Tab panes -->
+                                                   
+                                                      <div class="tab-pane " id="link2">
+                                                          <form class="c-form" action="<?php echo base_url() ?>Project/addNewScore1/<?php echo $projet->projectId ?>" method="POST" >
                                                             <div class="uzer-nam">
                                                             <label><br>Album photos </label>
                                                             <small>https://www.facebook.com/media/set/?vanity=X&set=</small>
@@ -209,6 +281,17 @@
                                                               <input type="number" 
                                                              name="video" width="100%" id="video"  pattern="\d.*"  placeholder="5619848191981" >
                                                            </div>
+
+
+                                                           <div class="uzer-nam">
+                                                            <label><br>Video Teaser </label>
+                                                            <small>https://www.facebook.com/ClubTunivisionsX/videos/</small>
+                                                              <input type="number" 
+                                                             name="teaser" width="100%" id="video"  pattern="\d.*"  placeholder="5619848191981" >
+                                                           </div>
+
+
+
                                                            
                                                             <br><br>
                                                             <b>Objectif du projet</b>
@@ -288,31 +371,60 @@
                                                             <option value="En ligne" >En ligne</option>
                                                           </select>
 
+
+                                                          
+                                                            <label><br>Lien d'enregistrement</label>
+                                                            
+                                                              <input type="url" 
+                                                             name="video"  id="video"   >
+                                                             <small>
+                                                                Champ obligatoire pour toute lesp projets en ligne
+                                                                (Drive ou live facebook)
+                                                              </small>
+                                                           
+                                                           
+
+
                                                           <br><br>
                                                           <b>nom de formateur</b>
                                                           <input id="myInput" type="text" name="nomF" placeholder="formateur" list="suggests"  <?php if($projet->type == "Formation" ) {echo "required" ;} ?> >
                                                             <datalist id="suggests">
-                                                                <option value="Dorra Eltaief Baltagi">
-                                                                <option value="Ahmed Ben ghanem">
-                                                                <option value="Malek Belghaib">
-                                                                <option value="Wael Ayadi">
-                                                                <option value="Ala Mesfar">
-                                                                <option value="Ahmed Kilani Hafi">
-                                                                <option value="Houssem Eddine Hammami">
+                                                                <option value="Dorra Eltaief Baltagi"></option>
+                                                                <option value="Ahmed Ben ghanem"></option>
+                                                                <option value="Malek Belghaib"></option>
+                                                                <option value="Wael Ayadi"></option>
+                                                                <option value="Ala Mesfar"></option>
+                                                                <option value="Ahmed Kilani Hafi"></option>
+                                                                <option value="Houssem Eddine Hammami"></option>
                                                             </datalist>
-                                          
+                                                              
 
-                                                            <br><br>
-                                                            <input type="submit" name="" value="envoyer" class="btn btn-primary">
+
+                                                              <input type="submit" name="" value="envoyer" class="btn btn-primary">
                                                             <br>
+                                                        </form>
+                                                            
+                                                     
+                                                         
+
+                                                           
+                                                        </div>
+                                                        </div>
+                                                            <br><br> 
+                                                            
+                                                            <small style="color: red" >
+
+                                                             <b> Nouvelle décision :</b> Si votre projet a fait <b>un TP > 90% ou un TE > 75%</b> il va être valider manuellement <br> 
+                                                            </small>
                                                             <small style="color: red" >
                                                               Faite attention la déclaration la garde de ce rapport se fait une seule fois <br>
                                                               Toute tentative de tricherie risque de pénaliser le club jusqu'à  x-10  du note de projet<br> 
                                                               
                                                              
                                                             </small>
-
-                                                            </form>
+                                                            
+                                                            
+                                                            
 
                                                           </div>
 
@@ -334,7 +446,7 @@
                                                 echo "<b style='color:yellow'>tentative de tricherie</b>" ;
                                               }else
                                               {
-                                               // echo '<b>'.$p->points.' points</b>' ;
+                                               echo '<b>'.$p->points.' points</b>' ;
                                               } 
                                             } 
                                             ?>
@@ -404,7 +516,7 @@
                                             height: 40px;
                                         }
                                     </style> 
-                                    <!--
+                             
                     <table  class="table table-striped table-responsive-xl" id="tableid" style="width: cover" >
                       <thead>
                           <th width="10%" >Rang
@@ -475,8 +587,8 @@
                                      
                                         <?php $c= $c + 1 ;  }   }else { echo "Il y a pas de données";} ?>
                 </table>
-                -->
-                <img src="<?php echo base_url() ?>assets/images/topT.jpg"> 
+               
+                <!-- <img src="<?php echo base_url() ?>assets/images/topT.jpg">  -->
      
                   </div>
               </div><!-- centerl meta -->
