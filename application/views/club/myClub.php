@@ -267,7 +267,7 @@
                                                             <label><br>Album photos </label>
                                                             <small>https://www.facebook.com/media/set/?vanity=X&set=</small>
                                                               <input type="text" 
-                                                             name="album" width="100%" id="album" pattern="a.?(\d.*)" required placeholder="a.5619848191981" >
+                                                             name="album" width="100%" pattern="a.?(\d.*)" required placeholder="a.5619848191981" >
 
                                                            </div>
                                                            
@@ -279,7 +279,7 @@
                                                             <label><br>Video after movie </label>
                                                             <small>https://www.facebook.com/ClubTunivisionsX/videos/</small>
                                                               <input type="number" 
-                                                             name="video" width="100%" id="video"  pattern="\d.*"  placeholder="5619848191981" >
+                                                             name="video" width="100%"   pattern="\d.*"  placeholder="5619848191981" >
                                                            </div>
 
 
@@ -287,7 +287,7 @@
                                                             <label><br>Video Teaser </label>
                                                             <small>https://www.facebook.com/ClubTunivisionsX/videos/</small>
                                                               <input type="number" 
-                                                             name="teaser" width="100%" id="video"  pattern="\d.*"  placeholder="5619848191981" >
+                                                             name="teaser" width="100%"   pattern="\d.*"  placeholder="5619848191981" >
                                                            </div>
 
 
