@@ -217,27 +217,27 @@
                                                                       <td><?php echo $p->valider ?> <br> <?php echo $p->createdDTM ?>  </td>
                                                                       <td><button id="<?php echo $p->scoringId ?>" class="btns btn btn-danger btn-sm" onclick="delet(this.id)" >Signaler</button> 
 
-        <script type="text/javascript">
+          <script type="text/javascript">
 
 
 
-                function  delet(id){ 
-                          
-               
+                  function  delet(id){ 
+                            
+                 
 
-                 $.ajax( '<?php echo base_url() ?>Project/SignalPresence/'+id )
-                                .done(function() {
-                                   $("#"+id).hide();
-                                 
-                                })
-                                .fail(function() {
+                   $.ajax( '<?php echo base_url() ?>Project/SignalPresence/'+id )
+                                  .done(function() {
+                                     $("#"+id).hide();
+                                   
+                                  })
+                                  .fail(function() {
 
-                                })
-                                .always(function() {
+                                  })
+                                  .always(function() {
 
-                                });
-                }
-            </script>
+                                  });
+                  }
+              </script>
 
                                                                       </td>
                                                                     </tr>
@@ -376,7 +376,7 @@
                                                             <label><br>Lien d'enregistrement</label>
                                                             
                                                               <input type="url" 
-                                                             name="video"  id="video"   >
+                                                             name="record"    >
                                                              <small>
                                                                 Champ obligatoire pour toute lesp projets en ligne
                                                                 (Drive ou live facebook)

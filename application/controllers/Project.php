@@ -323,8 +323,10 @@ class Project extends BaseController {
                 $album = $this->input->post('album');
                 $video = $this->input->post('video');   
                 $objectif = $this->input->post('objectif'); 
-                 $typeP = $this->input->post('typeP'); 
-                  $nomF = $this->input->post('nomF'); 
+                $typeP = $this->input->post('typeP'); 
+                $nomF = $this->input->post('nomF'); 
+                $teaser = $this->input->post('teaser'); 
+                $record = $this->input->post('record'); 
 
 
                 if($affE > 0 ){
@@ -337,7 +339,7 @@ class Project extends BaseController {
                 $participation = count($this->scoring_model->PresenceByProject($projectId));
                 $nbMem = count($this->user_model->userListingByclub($projet->clubID)) ;
                 $tauxParticipation = ($participation/$nbMem)*100 ;
-
+                    $s = 0 ;
                 
 
        
@@ -388,11 +390,13 @@ class Project extends BaseController {
                          {  
                             $points += 15 ;
                             $description .= "<p style='color:gold' >Bonus de <b>+15 points</b> pour le TE > 75%</p> <br>" ;
+                            $s = 1 ;
                          }
                          if($tauxParticipation >= 90 )
                          {  
                             $points += 10 ;
                             $description .= "<p style='color:gold' >Bonus de <b>+20 points</b> pour le TP > 90%</p> <br>" ;
+                            $s = 1 ;
                          }
 
 
@@ -414,7 +418,10 @@ class Project extends BaseController {
                  'objectif'=> $objectif,
                  'typeP' => $typeP,
                  'nomF' => $nomF,
-                 'points'=>$points
+                 'teaser' => $teaser,
+                 'record' => $record ,
+                 'points'=>$points,
+                 'statut' => $s 
                      );
 
                 $result = $this->score_club_model->addNew($scoresInfo); 
