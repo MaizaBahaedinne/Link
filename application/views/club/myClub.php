@@ -188,13 +188,13 @@
                                                           <div class="modal-body">
 
                                                             <ul class="nav nav-tabs btn-group btn-group-justified">
-                                                              <li class="btn btn-primary  nav-item"><a class="btn btn-primary   active" href="#link1" data-toggle="tab" data-ripple="">1 . Participants</a></li>
-                                                              <li class="btn btn-primary nav-item"><a class="btn btn-primary " href="#link2" data-toggle="tab" data-ripple="">2 . Rapport</a></li>
+                                                              <li class="btn btn-primary  nav-item"><a class="btn btn-primary   active" href="#link1-<?php echo $projet->projectId  ?>" data-toggle="tab" data-ripple="">1 . Participants</a></li>
+                                                              <li class="btn btn-primary nav-item"><a class="btn btn-primary " href="#link2-<?php echo $projet->projectId  ?>" data-toggle="tab" data-ripple="">2 . Rapport</a></li>
                                                             </ul>
 
 
                                                           <div class="tab-content">
-                                                            <div class="tab-pane active fade show" id="link1">
+                                                            <div class="tab-pane active fade show" id="link1-<?php echo $projet->projectId  ?>">
 
                                                             <table  class="table table-responsive-xl" id="tableid" style="width: cover" >
                                                                   <thead>
@@ -261,7 +261,7 @@
                                                       
                                                     <!-- Tab panes -->
                                                    
-                                                      <div class="tab-pane " id="link2">
+                                                      <div class="tab-pane " id="link2-<?php echo $projet->projectId  ?>">
                                                           <form class="c-form" action="<?php echo base_url() ?>Project/addNewScore1/<?php echo $projet->projectId ?>" method="POST" >
                                                             <div class="uzer-nam">
                                                             <label><br>Album photos </label>
@@ -387,7 +387,7 @@
 
                                                           <br><br>
                                                           <b>nom de formateur</b>
-                                                          <input id="myInput" type="text" name="nomF" placeholder="formateur" list="suggests"  <?php if($projet->type == "Formation" ) {echo "required" ;} ?> >
+                                                          <input  type="text" name="nomF" placeholder="formateur" list="suggests"  <?php if($projet->type == "Formation" ) {echo "required" ;} ?> >
                                                             <datalist id="suggests">
                                                                 <option value="Dorra Eltaief Baltagi"></option>
                                                                 <option value="Ahmed Ben ghanem"></option>
