@@ -34,7 +34,7 @@
 				                          </th>
 				                       
 				                     
-				                          <th>
+				                          <th width="10%" >
 				                            Score
 				                          </th>
 				                          </thead>
