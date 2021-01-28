@@ -165,8 +165,10 @@
 							</div>
 
 
-							<div class="col-lg-4">
-								<aside class="sidebar static">
+							
+
+
+
 									<div class="widget">
 									<h4 class="widget-title">Projet National</h4>
 										<div class="static-meta"> 
@@ -209,6 +211,15 @@
 									</div>
 																		
 								</aside>
+
+
+								<div class="col-lg-6">
+									<aside class="sidebar static">
+
+									</aside>
+								</div>
+
+
 							</div>
 
 				</div>
