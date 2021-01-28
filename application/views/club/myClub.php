@@ -380,7 +380,7 @@
                                                             $start  =   strtotime($projet->startDate) ;
                                                             
 
-                                                           if ( $recordDate<$start  ){
+                                                           if ( $recordDate>$start  ){
 
                                                               ?>
                                                               <input type="url" 
