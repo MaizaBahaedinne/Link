@@ -164,7 +164,7 @@ class Register extends BaseController
     {   
          
          $data['user'] = $this->user_model->getUserInfo($userId) ;
-         $this->load->view('register/changePassword',$data   );
+//         $this->load->view('register/changePassword',$data   );
     }
 
 
