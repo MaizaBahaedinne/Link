@@ -126,7 +126,7 @@
                                                                       
                                           </td>
                                           <td>
-                                              <?php echo $membre->name ?>
+                                              <b><?php echo $membre->name ?></b><br>
                                               <small><?php echo $membre->club ?></small>
                                           </td>
 
@@ -183,7 +183,7 @@
                                                                       
                                           </td>
                                           <td>
-                                              <?php echo $membre->name ?>
+                                              <b><?php echo $membre->name ?></b><br>
                                               <small><?php echo $membre->club ?></small>
                                           </td>
 
@@ -240,7 +240,7 @@
                                                                       
                                           </td>
                                           <td>
-                                              <?php echo $membre->name ?>
+                                              <b><?php echo $membre->name ?></b><br>
                                               <small><?php echo $membre->club ?></small>
                                           </td>
 
@@ -297,7 +297,7 @@
                                                                       
                                           </td>
                                           <td>
-                                              <?php echo $membre->name ?>
+                                              <b><?php echo $membre->name ?></b><br>
                                               <small><?php echo $membre->club ?></small>
                                           </td>
 
