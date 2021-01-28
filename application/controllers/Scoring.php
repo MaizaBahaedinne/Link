@@ -26,7 +26,7 @@ class Scoring extends BaseController {
 
         $data["clubs"] = $this->score_club_model->ClassementClub($SenJun) ;
 
-        $data["presidents"] = $this->scoring_model->ClassementMembres(1,$SenJun,Null,10) ;
+        $data["presidents"] = $this->scoring_model->ClassementMembres(1,$SenJun,Null,20) ;
         
         $data["vpM"] = $this->scoring_model->ClassementMembres(3,$SenJun,'Marketing',3) ;
         $data["vpAF"] = $this->scoring_model->ClassementMembres(3,$SenJun,'Administration et finance',3) ; 

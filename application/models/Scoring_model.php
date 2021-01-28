@@ -35,7 +35,11 @@ class Scoring_model extends CI_Model
         $this->db->where('club.SenJun =  ', $SenJun);
 
         $this->db->where('BaseTbl.statut = ',0 );
+        
+        if($limit>0){
         $this->db->limit($limit );
+        }
+        
         $this->db->group_by('user.userId' );
         $this->db->order_by('scores  DESC' );
         $query = $this->db->get();

@@ -91,7 +91,7 @@
                                           }
                                       </style> 
                                        <div class="your-page" >
-                                      <table  class="table-responsive-xl" id="tableid" style="width: 100%" >
+                                      <table  class="table table-responsive-xl" id="tableid" style="width: 100%" >
                                         <thead>
                                             
                                             <th >
@@ -116,8 +116,8 @@
                                                                       
                                           </td>
                                           <td>
-                                              <small><b><?php echo $membre->name ?></b><br>
-                                              <?php echo $membre->club ?></small>
+                                              <b><?php echo $membre->name ?></b><br>
+                                              <small><?php echo $membre->club ?></small>
                                           </td>
 
                                           <td> <b ><?php echo $membre->scores ?></b> </td>
