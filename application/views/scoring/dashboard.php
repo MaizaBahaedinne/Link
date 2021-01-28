@@ -181,8 +181,8 @@
                                                                       
                                           </td>
                                           <td>
-                                              <b><?php echo $membre->name ?></b><br>
-                                              <small><?php echo $membre->club ?></small>
+                                              <small><b><?php echo $membre->name ?></b><br>
+                                              <?php echo $membre->club ?></small>
                                           </td>
 
                                           <td> <b ><?php echo $membre->scores ?></b> </td>
@@ -237,8 +237,8 @@
                                                                       
                                           </td>
                                           <td>
-                                              <b><?php echo $membre->name ?></b><br>
-                                              <small><?php echo $membre->club ?></small>
+                                              <small><b><?php echo $membre->name ?></b><br>
+                                              <?php echo $membre->club ?></small>
                                           </td>
 
                                           <td> <b ><?php echo $membre->scores ?></b> </td>
@@ -292,8 +292,8 @@
                                                                       
                                           </td>
                                           <td>
-                                              <b><?php echo $membre->name ?></b><br>
-                                              <small><?php echo $membre->club ?></small>
+                                              <small><b><?php echo $membre->name ?></b><br>
+                                              <?php echo $membre->club ?></small>
                                           </td>
 
                                           <td> <b ><?php echo $membre->scores ?></b> </td>
