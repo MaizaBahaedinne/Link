@@ -374,14 +374,29 @@
 
                                                           
                                                             <label><br>Lien d'enregistrement</label>
+                                                            <?php
+
+                                                            $recordDate  =    strtotime('2020-01-15') ;
+                                                            $start  =   strtotime($projet->startDate) ;
                                                             
+
+                                                           if ( $recordDate<$start ) ){
+
+                                                              ?>
                                                               <input type="url" 
                                                              name="record"    >
                                                              <small>
                                                                 Champ obligatoire pour toute lesp projets en ligne
                                                                 (Drive ou live facebook)
                                                               </small>
-                                                           
+                                                            <?php }else{  ?>
+                                                                <input type="url" 
+                                                                    name="record"  required >
+                                                                <small>
+                                                                  Champ obligatoire pour toute lesp projets en ligne
+                                                                  (Drive ou live facebook)
+                                                                </small>
+                                                            <?php }  ?>
                                                            
 
 
