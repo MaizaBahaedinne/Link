@@ -100,7 +100,7 @@
                                           }
                                       </style> 
                                        <div class="your-page" >
-                                      <table  class="table-responsive-xl" id="tableid" style="width: cover" >
+                                      <table  class="table-responsive-xl" id="tableid" style="width: 100%" >
                                         <thead>
                                             
                                             <th >
@@ -156,7 +156,7 @@
                                           }
                                       </style> 
                                        <div class="your-page" >
-                                      <table  class="table-responsive-xl" id="tableid" style="width: cover" >
+                                      <table  class="table-responsive-xl" id="tableid" style="width: 100%" >
                                         <thead>
                                             
                                             <th >
@@ -212,7 +212,7 @@
                                           }
                                       </style> 
                                        <div class="your-page" >
-                                      <table  class="table-responsive-xl" id="tableid" style="width: cover" >
+                                      <table  class="table-responsive-xl" id="tableid" style="width: 100%" >
                                         <thead>
                                             
                                             <th >
@@ -268,7 +268,7 @@
                                           }
                                       </style> 
                                        <div class="your-page" >
-                                      <table  class="table-responsive-xl" id="tableid" style="width: cover" >
+                                      <table  class="table-responsive-xl" id="tableid" style="width: 100%" >
                                         <thead>
                                            
                                             <th >
