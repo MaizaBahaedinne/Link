@@ -125,8 +125,8 @@
                                                                       
                                           </td>
                                           <td>
-                                              <b><?php echo $membre->name ?></b><br>
-                                              <small><?php echo $membre->club ?></small>
+                                              <small><b><?php echo $membre->name ?></b><br>
+                                              <?php echo $membre->club ?></small>
                                           </td>
 
                                           <td> <b ><?php echo $membre->scores ?></b> </td>
@@ -354,8 +354,8 @@
                                                                       
                                           </td>
                                           <td>
-                                              <b><?php echo $membre->name ?></b><br>
-                                              <small><?php echo $membre->club ?></small>
+                                              <small><b><?php echo $membre->name ?></b><br>
+                                              <?php echo $membre->club ?></small>
                                           </td>
 
                                           <td> <b ><?php echo $membre->scores ?></b> </td>
@@ -538,7 +538,239 @@
                               <!-- end scoring vp Marketing -->
                 </div>
 
-                 <!-- end scoring membre -->
+                 <!-- end scoring assistant -->
+
+
+                                  <!-- end scoring membre -->
+
+                 <hr>
+                <div class="row"> 
+
+                              <!-- scoring vp Marketing -->
+                              <div class="col-lg-3 " >
+                                  <aside class="sidebar static right" >
+                                  <div class="widget">
+                                  <h4 class="widget-title">TOP 3 membre Marketing</h4>
+                                   <style type="text/css">
+                                          .pro-turtle {
+                                              object-fit: cover;
+                                              border-radius : 100% ;
+                                              object-position: 50% 50%;
+                                              width: 30px;
+                                              height: 30px;
+                                          }
+                                      </style> 
+                                       <div class="your-page" >
+                                      <table  class="table-responsive-xl" id="tableid" style="width: 100%" >
+                                        <thead>
+                                            
+                                            <th >
+                                            </th>
+                                            <th>
+                                              Tunimateurs
+                                            </th>
+                                            
+                                       
+                                            <th>
+                                              S
+                                            </th>
+                                            </thead>
+                                      <?php  if(!empty($mM)){ $c=1 ;   foreach ($mM as $membre ) { ?>
+                                        <tr>
+
+                                          
+
+                                           <td>
+                                        
+                                           <a href="<?php echo base_url() ?>User/ProfileShow/<?php echo $membre->userId ?>"> <img src="<?php echo base_url() ?>uploads/avatar/<?php echo $membre->avatar ?>" class="pro-turtle " alt="user"></a>
+                                                                      
+                                          </td>
+                                          <td>
+                                              <small><b><?php echo $membre->name ?></b><br>
+                                              <?php echo $membre->club ?></small>
+                                          </td>
+
+                                          <td> <b ><?php echo $membre->scores ?></b> </td>
+                                        </tr>
+                                        
+                                   
+                                      <?php $c= $c + 1 ;  }   }else { echo "Il y a pas de données";} ?>
+                                  </table>
+                              </div>
+                              </div>
+                              </aside>
+                              </div>
+                              <!-- end scoring vp Marketing -->
+
+                              <!-- scoring vp Marketing -->
+                              <div class="col-lg-3 " >
+                                  <aside class="sidebar static right" >
+                                  <div class="widget">
+                                  <h4 class="widget-title">TOP 3 membre Evenementiel</h4>
+                                   <style type="text/css">
+                                          .pro-turtle {
+                                              object-fit: cover;
+                                              border-radius : 100% ;
+                                              object-position: 50% 50%;
+                                              width: 30px;
+                                              height: 30px;
+                                          }
+                                      </style> 
+                                       <div class="your-page" >
+                                      <table  class="table-responsive-xl" id="tableid" style="width: 100%" >
+                                        <thead>
+                                            
+                                            <th >
+                                            </th>
+                                            <th>
+                                              Tunimateurs
+                                            </th>
+                                            
+                                       
+                                            <th>
+                                              S
+                                            </th>
+                                            </thead>
+                                      <?php  if(!empty($mE)){ $c=1 ;   foreach ($mE as $membre ) { ?>
+                                        <tr>
+
+                                         
+
+                                           <td>
+                                        
+                                           <a href="<?php echo base_url() ?>User/ProfileShow/<?php echo $membre->userId ?>"> <img src="<?php echo base_url() ?>uploads/avatar/<?php echo $membre->avatar ?>" class="pro-turtle " alt="user"></a>
+                                                                      
+                                          </td>
+                                          <td>
+                                              <small><b><?php echo $membre->name ?></b><br>
+                                              <?php echo $membre->club ?></small>
+                                          </td>
+
+                                          <td> <b ><?php echo $membre->scores ?></b> </td>
+                                        </tr>
+                                        
+                                   
+                                      <?php $c= $c + 1 ;  }   }else { echo "Il y a pas de données";} ?>
+                                  </table>
+                              </div>
+                              </div>
+                              </aside>
+                              </div>
+                              <!-- end scoring vp Marketing -->
+
+                              <!-- scoring vp Marketing -->
+                              <div class="col-lg-3 " >
+                                  <aside class="sidebar static right" >
+                                  <div class="widget">
+                                  <h4 class="widget-title">TOP 3 membre AF</h4>
+                                   <style type="text/css">
+                                          .pro-turtle {
+                                              object-fit: cover;
+                                              border-radius : 100% ;
+                                              object-position: 50% 50%;
+                                              width: 30px;
+                                              height: 30px;
+                                          }
+                                      </style> 
+                                       <div class="your-page" >
+                                      <table  class="table-responsive-xl" id="tableid" style="width: 100%" >
+                                        <thead>
+                                            
+                                            <th >
+                                            </th>
+                                            <th>
+                                              Tunimateurs
+                                            </th>
+                                            
+                                       
+                                            <th>
+                                              S
+                                            </th>
+                                            </thead>
+                                      <?php  if(!empty($mAF)){ $c=1 ;   foreach ($mAF as $membre ) { ?>
+                                        <tr>
+
+                                         
+
+                                           <td>
+                                        
+                                           <a href="<?php echo base_url() ?>User/ProfileShow/<?php echo $membre->userId ?>"> <img src="<?php echo base_url() ?>uploads/avatar/<?php echo $membre->avatar ?>" class="pro-turtle " alt="user"></a>
+                                                                      
+                                          </td>
+                                          <td>
+                                              <small><b><?php echo $membre->name ?></b><br>
+                                              <?php echo $membre->club ?></small>
+                                          </td>
+
+                                          <td> <b ><?php echo $membre->scores ?></b> </td>
+                                        </tr>
+                                        
+                                   
+                                      <?php $c= $c + 1 ;  }   }else { echo "Il y a pas de données";} ?>
+                                  </table>
+                              </div>
+                              </div>
+                              </aside>
+                              </div>
+                              <!-- end scoring vp Marketing -->
+
+                              <!-- scoring vp Marketing -->
+                              <div class="col-lg-3 " >
+                                  <aside class="sidebar static right" >
+                                  <div class="widget">
+                                  <h4 class="widget-title">TOP 3 membre RH</h4>
+                                   <style type="text/css">
+                                          .pro-turtle {
+                                              object-fit: cover;
+                                              border-radius : 100% ;
+                                              object-position: 50% 50%;
+                                              width: 30px;
+                                              height: 30px;
+                                          }
+                                      </style> 
+                                       <div class="your-page" >
+                                      <table  class="table-responsive-xl" id="tableid" style="width: 100%" >
+                                        <thead>
+                                           
+                                            <th >
+                                            </th>
+                                            <th>
+                                              Tunimateurs
+                                            </th>
+                                            
+                                       
+                                            <th>
+                                              S
+                                            </th>
+                                            </thead>
+                                      <?php  if(!empty($mRH)){ $c=1 ;   foreach ($mRH as $membre ) { ?>
+                                        <tr>
+ 
+
+                                           <td>
+                                        
+                                           <a href="<?php echo base_url() ?>User/ProfileShow/<?php echo $membre->userId ?>"> <img src="<?php echo base_url() ?>uploads/avatar/<?php echo $membre->avatar ?>" class="pro-turtle " alt="user"></a>
+                                                                      
+                                          </td>
+                                          <td>
+                                              <small><b><?php echo $membre->name ?></b><br>
+                                              <?php echo $membre->club ?></small>
+                                          </td>
+
+                                          <td> <b ><?php echo $membre->scores ?></b> </td>
+                                        </tr>
+                                        
+                                   
+                                      <?php $c= $c + 1 ;  }   }else { echo "Il y a pas de données";} ?>
+                                  </table>
+                              </div>
+                              </div>
+                              </aside>
+                              </div>
+                              <!-- end scoring vp Marketing -->
+                </div>
+
+                 <!-- end scoring assistant -->
 
             </div>
         </div>
