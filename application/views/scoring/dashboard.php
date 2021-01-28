@@ -188,11 +188,11 @@
 
                                            <td>
                                         
-                                           <a href="<?php echo base_url() ?>User/ProfileShow/<?php echo $membre->userId ?>"> <img src="<?php echo base_url() ?>uploads/avatar/<?php echo $membre->avatar ?>" class="pro-turtle " alt="user">
+                                           <a href="<?php echo base_url() ?>User/ProfileShow/<?php echo $membre->userId ?>"> <img src="<?php echo base_url() ?>uploads/avatar/<?php echo $membre->avatar ?>" class="pro-turtle " alt="user"></a>
                                                                       
                                           </td>
                                           <td>
-                                              <?php echo $membre->name ?></small>
+                                              <?php echo $membre->name ?>
                                               <small><?php echo $membre->club ?></small>
                                           </td>
 
