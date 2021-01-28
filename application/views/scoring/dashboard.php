@@ -102,8 +102,7 @@
                                        <div class="your-page" >
                                       <table  class="table-responsive-xl" id="tableid" style="width: cover" >
                                         <thead>
-                                            <th width="5%" >#
-                                            </th>
+                                            
                                             <th >
                                             </th>
                                             <th>
@@ -118,7 +117,7 @@
                                       <?php  if(!empty($vpM)){ $c=1 ;   foreach ($vpM as $membre ) { ?>
                                         <tr>
 
-                                          <td  ><h5> <?php echo   $c   ?> </h5> </td>
+                                          
 
                                            <td>
                                         
@@ -159,8 +158,7 @@
                                        <div class="your-page" >
                                       <table  class="table-responsive-xl" id="tableid" style="width: cover" >
                                         <thead>
-                                            <th width="5%" >#
-                                            </th>
+                                            
                                             <th >
                                             </th>
                                             <th>
@@ -175,7 +173,7 @@
                                       <?php  if(!empty($vpE)){ $c=1 ;   foreach ($vpE as $membre ) { ?>
                                         <tr>
 
-                                          <td  ><h5> <?php echo   $c   ?> </h5> </td>
+                                         
 
                                            <td>
                                         
@@ -216,8 +214,7 @@
                                        <div class="your-page" >
                                       <table  class="table-responsive-xl" id="tableid" style="width: cover" >
                                         <thead>
-                                            <th width="5%" >#
-                                            </th>
+                                            
                                             <th >
                                             </th>
                                             <th>
@@ -232,7 +229,7 @@
                                       <?php  if(!empty($vpAF)){ $c=1 ;   foreach ($vpAF as $membre ) { ?>
                                         <tr>
 
-                                          <td  ><h5> <?php echo   $c   ?> </h5> </td>
+                                         
 
                                            <td>
                                         
@@ -273,8 +270,7 @@
                                        <div class="your-page" >
                                       <table  class="table-responsive-xl" id="tableid" style="width: cover" >
                                         <thead>
-                                            <th width="5%" >#
-                                            </th>
+                                           
                                             <th >
                                             </th>
                                             <th>
@@ -288,8 +284,7 @@
                                             </thead>
                                       <?php  if(!empty($vpRH)){ $c=1 ;   foreach ($vpRH as $membre ) { ?>
                                         <tr>
-
-                                          <td  ><h5> <?php echo   $c   ?> </h5> </td>
+ 
 
                                            <td>
                                         
