@@ -170,7 +170,7 @@
                                         <thead>
                                             <th width="5%" >#
                                             </th>
-                                            <th width="10%">
+                                            <th >
                                             </th>
                                             <th>
                                               Tunimateurs
