@@ -22,7 +22,7 @@
                                         }
                                     </style> 
                                     <div class="your-page" >
-				                    <table  class="table table-striped table-responsive" id="tableid" style="width: cover" >
+				                    <table  class="table table-striped table-responsive" id="tableid" style="width: 100%" >
 				                      <thead>
 				                          <th width="10%" >Rang
 				                          </th>
