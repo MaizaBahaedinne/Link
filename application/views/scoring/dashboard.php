@@ -112,7 +112,7 @@
                                             
                                        
                                             <th>
-                                              Score
+                                              S
                                             </th>
                                             </thead>
                                       <?php  if(!empty($vpM)){ $c=1 ;   foreach ($vpM as $membre ) { ?>
@@ -169,7 +169,7 @@
                                             
                                        
                                             <th>
-                                              Score
+                                              S
                                             </th>
                                             </thead>
                                       <?php  if(!empty($vpE)){ $c=1 ;   foreach ($vpE as $membre ) { ?>
@@ -226,7 +226,7 @@
                                             
                                        
                                             <th>
-                                              Score
+                                              S
                                             </th>
                                             </thead>
                                       <?php  if(!empty($vpAF)){ $c=1 ;   foreach ($vpAF as $membre ) { ?>
@@ -283,7 +283,7 @@
                                             
                                        
                                             <th>
-                                              Score
+                                              S
                                             </th>
                                             </thead>
                                       <?php  if(!empty($vpRH)){ $c=1 ;   foreach ($vpRH as $membre ) { ?>
