@@ -139,13 +139,15 @@ class Register extends BaseController
                     $content  = $this->load->view('email/resetPassword' , $data ) ; 
 
 
-                    $this->send_mail(
+                 /*   $this->send_mail(
                                 $result->email , 
                         "Mot de passe oublie !" , 
                         Null , 
                         "Bonjour ".$result->name.",<br> le lien pour changer votre mot de passe est : <br> <br> <b><a href ='".base_url()."Register/Passechange/".$result->userId."?userID=".$result->userId."&tokenId=".date('Y-m-d H:i:s') ."'>Modifier votre mot de passe</a></b> <br> <br>" ) ;
 
-                    $this->session->set_flashdata('success', 'on a envoyé un mail à '.$email);
+                    $this->session->set_flashdata('success', 'on a envoyé un mail à '.$email); */
+
+                    $this->session->set_flashdata('error', 'Service temporairement en maintenance');
                     redirect('/login') ; 
                     
                 }
