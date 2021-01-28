@@ -376,7 +376,7 @@
                                                             <label><br>Lien d'enregistrement</label>
                                                             <?php
 
-                                                            $recordDate  =    strtotime('2021-01-15') ;
+                                                            $recordDate  =    strtotime('2021-01-25') ;
                                                             $start  =   strtotime($projet->startDate) ;
                                                             
 
