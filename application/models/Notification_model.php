@@ -56,7 +56,7 @@ class Notification_model extends CI_Model
 
         $this->db->where('BaseTbl.userId =', $userID );
         $this->db->order_by('BaseTbl.dateNotif DESC'  );
-        $this->db->limit(5);
+        $this->db->limit(10);
 
         $query = $this->db->get();
         

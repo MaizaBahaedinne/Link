@@ -304,7 +304,9 @@
 					<div class="dropdowns ps-container ps-theme-default ps-active-y" data-ps-id="ffcc5b9a-91d7-35c0-e615-eed1e002b8c0">
 						<span>Notifications </span>
 						<ul class="drops-menu">
-							<!-- Notification
+
+							<?php foreach ($notifRecords as $notif ) {	?> 
+							
 							<li>
 								<a href="notifications.html" title="">
 									<figure>
@@ -312,13 +314,14 @@
 										<span class="status f-online"></span>
 									</figure>
 									<div class="mesg-meta">
-										<h6>sarah Loren</h6>
-										<span>commented on your new profile status</span>
-										<i>2 min ago</i>
+										<h6><?php  echo $notif->name	?></h6>
+										<span><?php echo $notif->text	?></span>
+										<i>il y a <?php echo xTimeAgo ($notif->dateNotif, date('Y-m-d H:i:s') )  ?></i>
 									</div>
 								</a>
 							</li>
-						-->
+						
+						<?php 	} ?>
 						</ul>
 						<a href="" title="" class="more-mesg">afficher tous</a>
 					<div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 0px;"><div class="ps-scrollbar-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps-scrollbar-y-rail" style="top: 0px; height: 340px; right: 0px;"><div class="ps-scrollbar-y" tabindex="0" style="top: 0px; height: 266px;"></div></div></div>
