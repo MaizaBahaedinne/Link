@@ -314,7 +314,7 @@
 										<span class="status f-online"></span>
 									</figure>
 									<div class="mesg-meta">
-										<h6><?php  echo $notif->name	?></h6>
+										<h6><?php // echo $notif->name	?></h6>
 										<span><?php echo $notif->text	?></span>
 										<i>il y a <?php echo xTimeAgo ($notif->dateNotif, date('Y-m-d H:i:s') )  ?></i>
 									</div>
