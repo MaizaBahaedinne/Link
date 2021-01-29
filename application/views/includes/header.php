@@ -299,7 +299,9 @@
 				<li>
 					<a href="#" title="Notification" data-ripple="">
 						<i class="fa fa-bell"></i>
-							<!--<em class="bg-purple">7</em>-->
+							<?php if ($notifRecordsNumber > 0){ ?>
+								<em class="bg-purple"><?php echo $notifRecordsNumber  ?></em>
+							<?php } ?>
 					</a>
 					<div class="dropdowns ps-container ps-theme-default ps-active-y" data-ps-id="ffcc5b9a-91d7-35c0-e615-eed1e002b8c0">
 						<span>Notifications </span>
