@@ -74,7 +74,7 @@ class Notification_model extends CI_Model
         $this->db->from('tbl_notif as BaseTbl');
 
         $this->db->where('BaseTbl.userId =', $userID );
-        $this->db->where('BaseTbl.seen = ', 'no' );
+        $this->db->where('BaseTbl.seen = ', '0' );
         $this->db->order_by('BaseTbl.dateNotif ASC'  );
 
         $query = $this->db->get();
