@@ -15,7 +15,7 @@ class Score_club_model extends CI_Model
         $this->db->select('sum(BaseTbl.points) scores , club.name club ');
         $this->db->from('tbl_club_scores as BaseTbl');
         $this->db->join('tbl_project as proj', 'proj.projectId = BaseTbl.projectId', 'LEFT');
-        $this->db->join('tbl_club as club', 'proj.clubId = club.clubID', 'LEFT');
+        $this->db->join('tbl_club as club', 'proj.clubId = club.clubID', 'RIGHT');
 
         
         $this->db->where(' club.SenJun = ', $SenJun ) ;
