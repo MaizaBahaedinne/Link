@@ -1,8 +1,18 @@
 
-<div id="content-page" class="content-page">
-            <div class="container">
-               <div class="row justify-content-center">
-                  <div class="col-sm-12">
+<section>
+    <div class="gap gray-bg">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="row widget-page merged20">
+              <div class="col-lg-12 col-md-12 col-sm-6">
+                <aside class="sidebar">
+                   <div class="widget">
+                    <h4 class="widget-title">Liste des clubs 
+                       
+                    </h4>
+            <!--begin: Datatable -->
+                        <ul class="faved-page">
 
 <div class="row">
 	
@@ -10,18 +20,19 @@
 	<div class="card col-md-4">
 		<div class="card">
 
-			<form action="<?php echo base_url() ?>TFM/partanTfmPaiement1" method="post">
+		<form action="<?php echo base_url() ?>TFM/partanTfmPaiement1/<?php echo $clubID ?>/<?php echo $projectId ?>" method="post">
 			<div class="card-header">
-				<h5>Liste des membre participant au TFM | <?php echo count($userRecords) ?> </h5>		
+				<h5>Tranche 1 | <?php echo count($userRecordsT1) ?> </h5>		
 			</div>
 			<div class="card-body">
 				
-				<?php foreach ($userRecords as $record ) { ?>
+				<?php foreach ($userRecordsT1 as $record ) { ?>
 					<div class="form-check form-check-flat form-check-primary">
 						<label class="form-check-label">
-							<?php if($userId == 2 || $userId == 164 ){ ?>
+							<?php if($uid == 2 || $uid == 4962  || $uid == 3933 || $uid ==  181 || $uid ==  556 
+							                   || $uid ==  1031 || $uid ==  2616 || $uid ==  237    ){ ?>
 							<input class="form-check-input" type="checkbox" name="participant[]" value="<?php echo $record->id ; ?>" >
-							<?php } ?> <?php echo ' '.$record->name ;  ?>
+							<?php } ?> <?php echo ' '.$record->name ;  ?><small><small> #<?php echo ' '.$record->id ;  ?></small></small>
 						</label>
 					</div>
 				<?php } ?>
@@ -37,57 +48,62 @@
 			</form>
 		</div>
 	</div>
-	
+
+
 	<div class="card col-md-4">
 		<div class="card">
-			<?php if($userId == 2 || $userId == 164  || $userId == 162 ){ ?>
-			<form action="<?php echo base_url() ?>TFM/partanTfmPaiement2" method="post">
-			<?php } ?>
+
+		<form action="<?php echo base_url() ?>TFM/partanTfmPaiement2/<?php echo $clubID ?>/<?php echo $projectId ?>" method="post">
 			<div class="card-header">
-				<h5>Liste des membre validé TRANCHE 1 | <?php echo count($userRecordsT1) ?> </h5>				
+				<h5>Tranche 2  | <?php echo count($userRecordsT2) ?> </h5>		
 			</div>
 			<div class="card-body">
-				<?php foreach ($userRecordsT1 as $record ) { ?>
+				
+				<?php foreach ($userRecordsT2 as $record ) { ?>
 					<div class="form-check form-check-flat form-check-primary">
 						<label class="form-check-label">
-							<input class="form-check-input" type="checkbox" name="participant[]" value="<?php echo $record->id ; ?>" > <?php echo ' '.$record->name ;  ?> 
-
-
+							<?php if($uid == 2 || $uid == 4962    || $uid == 3933  || $uid ==  181 || $uid ==  556 
+							                   || $uid ==  1031 || $uid ==  2616 || $uid ==  237    ){ ?>
+							<input class="form-check-input" type="checkbox" name="participant[]" value="<?php echo $record->id ; ?>" >
+							<?php } ?> <?php echo ' '.$record->name ;  ?><small><small> #<?php echo ' '.$record->id ;  ?></small></small>
 						</label>
+						<br>
+						<small><small> 
+							<?php echo ' '.$record->recp1 ;  ?> le  <?php echo ' '.$record->dateTranche1 ;  ?>  
+						</small></small>
+						<br>
 					</div>
-				<small><small> <?php echo ' '.$record->recp1 ;  ?> le  <?php echo ' '.$record->dateTranche1 ;  ?>  </small></small>
 				<?php } ?>
+
+
+
+				
 			</div>
 			<div class="card-footer">
-				<?php if($userId == 2 || $userId == 164 || $userId == 162   ){ ?>
 				<input type="submit" class="btn btn-primary" value="Valider">
-				<input type="reset" class="btn btn-danger" value="Anuler">	
-				<?php } ?>			
+				<input type="reset" class="btn btn-danger" value="Anuler">
 			</div>
-			<?php if($userId == 2 || $userId == 164 || $userId == 162   ){ ?>
 			</form>
-			<?php } ?>
 		</div>
-
-	</div>	
+	</div>
+	
+	
 
 	<div class="card col-md-4">
 		<div class="card">
 			
 			<div class="card-header">
-				<h5>Liste des membre validé TRANCHE 2  | <?php echo count($userRecordsT2) ?> </h5>				
+				<h5>Liste des membre validé   | <?php echo count($userRecordsC) ?> </h5>				
 			</div>
 			<div class="card-body">
-				<?php foreach ($userRecordsT2 as $record ) { ?>
-					 <?php echo ' '.$record->name ;  ?> 
-					 <?php if($record->remb == 2 ){ ?>
-								<i class="ri-checkbox-circle-fill" style="color:#05BD53 "></i>
-						   	<?php } ?>
-							<?php if($record->remb == 1 ){ ?>
-								<i class="ri-checkbox-circle-fill" style="color:#ff1a1a "></i>
-						   	<?php } ?>
+				<?php foreach ($userRecordsC as $record ) { ?>
+					 
+					 <b style="<?php if ($record->p_tranch2 == 90 ){ echo "color:red" ; } ?>" ><?php echo ' '.$record->name ;  ?> </b> <small><small> #<?php echo ' '.$record->id ;  ?></small></small>
+					 
 					 <br>
-				<small><small> <?php echo ' '.$record->recp2 ;  ?> le  <?php echo ' '.$record->dateTranche2 ;  ?>  </small></small>
+				<small><small> 
+					<?php echo ' '.$record->recp2 ;  ?> le  <?php echo ' '.$record->dateTranche2 ;  ?>  
+				</small></small>
 				<br>
 				<?php } ?>
 			</div>
@@ -101,7 +117,4 @@
 		
 </div>
 
-</div>
-</div>
-</div>
-</div>
+</ul></div></aside></div></div></div></div></div></div></section>

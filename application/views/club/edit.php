@@ -32,7 +32,7 @@
                                             </div>
                                       <?php } ?>
                               <?php $this->load->helper("form"); ?>
-                    <form role="form"  id="editClub" action="<?php echo base_url() ?>Club/edit/<?php echo $clubInfo->clubID ?>" method="post" role="form"  enctype="multipart/form-data">
+                    <form role="form"  id="editClub" action="<?php echo base_url() ?>Club/edit/<?php echo $clubInfo->clubID ?>" method="post" class="c-form" enctype="multipart/form-data">
                         
 
 
@@ -58,20 +58,159 @@
                         </select>
 
 
-                        <label>Président</label>
-                        <select name="President" class="form-control" >
-                          <?php foreach ($members as $key ) {?>
 
-                          <option value="<?php echo  $key->userId ?>" > <?php echo  $key->name ?> </option>
-                            <?php } ?>
-                        </select>
 
+
+
+                        <hr>
+                        <div class="row">
+                            <div class="col-lg-6">
                             <input type="submit" class="btn btn-primary" value="Envoyer" />
-                            <input type="reset" class="btn btn-secondry" value="Reset" />
+                            </div>
+                            <div class="col-lg-6">
+                            <input type="reset" class="btn btn-secondary" value="Annuler" />
+                            </div>
+                        </div> 
                    
                        
                     </form>
 
+
+
+                    
+
+                    </ul>
+                  </div>
+                  <div class="widget">
+                    <h4 class="widget-title">Bureau du club </h4>
+                    <ul class="faved-page">
+                    <form action="<?php echo base_url() ?>Club/editBureau/<?php echo $clubInfo->clubID ?>" method="post" class="c-form" enctype="multipart/form-data">
+                      
+                        <label>Président</label>
+                        <select name="P" class="form-control" <?php if($key->roleId == 1 && $key->cellule == "" ){ ?> selected <?php } ?> >
+                          <option value="" ></option>
+                          <?php foreach ($members as $key ) {?>
+                            <option value="<?php echo  $key->userId ?>" 
+                            <?php if($key->roleId == 1 ){ ?> selected <?php } ?> > 
+                              <?php echo  $key->name ?> 
+                            </option>
+                          <?php } ?>
+                        </select>
+                        <br>
+                        <div class="row">
+                          <div class="col-lg-3">
+                            <label>VP Ressource Humaine</label>
+                              <select name="VPRH" class="form-control" >
+                                <option value="" ></option>
+                                <?php foreach ($members as $key ) {?>
+                                  <option value="<?php echo  $key->userId ?>" 
+                                  <?php if($key->roleId == 3 && $key->cellule == "Ressource Humaine" ){ ?> selected <?php } ?> > 
+                                    <?php echo  $key->name ?> 
+                                  </option>
+                                <?php } ?>
+                              </select>
+                          </div>
+                          <div class="col-lg-3">
+                            <label>VP Marketing</label>
+                              <select name="VPM" class="form-control" >
+                                <option value="" ></option>
+                                <?php foreach ($members as $key ) {?>
+                                  <option value="<?php echo  $key->userId ?>" 
+                                  <?php if($key->roleId == 3 && $key->cellule == "Marketing" ){ ?> selected <?php } ?> > 
+                                    <?php echo  $key->name ?> 
+                                  </option>
+                                <?php } ?>
+                              </select>
+                          </div>
+                          <div class="col-lg-3">
+                            <label>VP Administraion & finance</label>
+                              <select name="VPAF" class="form-control" >
+                                <?php foreach ($members as $key ) {?>
+                                  <option value="" ></option>
+                                  <option value="<?php echo  $key->userId ?>" 
+                                  <?php if($key->roleId == 3 && $key->cellule == "Administration et finance" ){ ?> selected <?php } ?> > 
+                                    <?php echo  $key->name ?> 
+                                  </option>
+                                <?php } ?>
+                              </select>
+                          </div>
+                          <div class="col-lg-3">
+                            <label>VP Evenmentiel</label>
+                              <select name="VPE" class="form-control" >
+                                <option value="" ></option>
+                                <?php foreach ($members as $key ) {?>
+                                  <option value="<?php echo  $key->userId ?>" 
+                                  <?php if($key->roleId == 3 && $key->cellule == "Evenementiel" ){ ?> selected <?php } ?> > 
+                                    <?php echo  $key->name ?> 
+                                  </option>
+                                <?php } ?>
+                              </select>
+                          </div>
+                        </div>
+
+
+                        <br>
+                        <div class="row">
+                          <div class="col-lg-3">
+                            <label>Assistant Ressource Humaine</label>
+                              <select name="ARH" class="form-control" >
+                                <option value="" ></option>
+                                <?php foreach ($members as $key ) {?>
+                                  <option value="<?php echo  $key->userId ?>" 
+                                  <?php if($key->roleId == 6 && $key->cellule == "Ressource Humaine" ){ ?> selected <?php } ?> > 
+                                    <?php echo  $key->name ?> 
+                                  </option>
+                                <?php } ?>
+                              </select>
+                          </div>
+                          <div class="col-lg-3">
+                            <label>Assistant Marketing</label>
+                              <select name="AM" class="form-control" >
+                                <option value="" ></option>
+                                <?php foreach ($members as $key ) {?>
+                                  <option value="<?php echo  $key->userId ?>" 
+                                  <?php if($key->roleId == 6 && $key->cellule == "Marketing" ){ ?> selected <?php } ?> > 
+                                    <?php echo  $key->name ?> 
+                                  </option>
+                                <?php } ?>
+                              </select>
+                          </div>
+                          <div class="col-lg-3">
+                            <label>Assistant Administraion & finance</label>
+                              <select name="AAF" class="form-control" >
+                                <?php foreach ($members as $key ) {?>
+                                  <option value="" ></option>
+                                  <option value="<?php echo  $key->userId ?>" 
+                                  <?php if($key->roleId == 6 && $key->cellule == "Administration et finance" ){ ?> selected <?php } ?> > 
+                                    <?php echo  $key->name ?> 
+                                  </option>
+                                <?php } ?>
+                              </select>
+                          </div>
+                          <div class="col-lg-3">
+                            <label>Assistant Evenmentiel</label>
+                              <select name="AE" class="form-control" >
+                                <option value="" ></option>
+                                <?php foreach ($members as $key ) {?>
+                                  <option value="<?php echo  $key->userId ?>" 
+                                  <?php if($key->roleId == 6 && $key->cellule == "Evenementiel" ){ ?> selected <?php } ?> > 
+                                    <?php echo  $key->name ?> 
+                                  </option>
+                                <?php } ?>
+                              </select>
+                          </div>
+                        </div>
+
+                        <hr>
+                        <div class="row">
+                            <div class="col-lg-6">
+                            <input type="submit" class="btn btn-primary" value="Envoyer" />
+                            </div>
+                            <div class="col-lg-6">
+                            <input type="reset" class="btn btn-secondary" value="Annuler" />
+                            </div>
+                        </div> 
+                    </form>
                     </ul>
                   </div>
                 </aside>

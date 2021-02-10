@@ -10,14 +10,18 @@ class Club_model extends CI_Model
      * @param string $searchText : This is optional search text
      * @return number $count : This is row count
      */
-    function clubListingCount()
+    function clubListingCount($type)
     {
         $this->db->select('BaseTbl.clubID , BaseTbl.name , BaseTbl.birthday , BaseTbl.city ,BaseTbl.email , BaseTbl.is_Actif ');
         $this->db->from('tbl_club as BaseTbl');
-           
+        $this->db->where('BaseTbl.clubID > ', 5 ) ;
+        if($type !=  0)
+        {
+            $this->db->where('BaseTbl.SenJun = ', $type ) ;   
+        }
         $query = $this->db->get();
         
-        return $query->num_rows();
+        return $query->result();
     }
     
 
@@ -29,18 +33,19 @@ class Club_model extends CI_Model
      * @param number $segment : This is pagination limit
      * @return array $result : This is result
      */
-    function clubListing($SA)
+    function clubListing($SA,$clubID)
     {
-        $this->db->select('BaseTbl.clubID , BaseTbl.name , BaseTbl.is_Actif , BaseTbl.SenJun , BaseTbl.city ');
+        $this->db->select('BaseTbl.clubID , BaseTbl.name , BaseTbl.is_Actif , BaseTbl.SenJun , BaseTbl.city , BaseTbl.email , BaseTbl.facebook ');
         $this->db->from('tbl_club as BaseTbl');
-
+         $this->db->where('BaseTbl.clubID > ', 5 ) ;
+         $this->db->where('BaseTbl.clubID != ', -1 ) ; 
         if($SA!=1){
-                $this->db->where('BaseTbl.clubID > ', 5 ) ;
-                $this->db->where('BaseTbl.clubID != ', -1 ) ; 
-                if($clubId == 0 ){
+               
+                
+                if($clubID == 0 ){
                     $this->db->where('BaseTbl.SenJun = ', 3 ) ;      
                 }
-                if($clubId == 1 ){
+                if($clubID == 1 ){
                     $this->db->where('BaseTbl.SenJun = ', 4 ) ;      
                 }
         }
@@ -59,7 +64,7 @@ class Club_model extends CI_Model
      */
     function getClubInfo($clubID)
     {
-        $this->db->select('BaseTbl.clubID , BaseTbl.name , BaseTbl.birthday , BaseTbl.city ,BaseTbl.email ,BaseTbl.facebook , BaseTbl.is_Actif , BaseTbl.charte ' );
+        $this->db->select('*' );
         $this->db->from('tbl_club as BaseTbl');
         $this->db->where('BaseTbl.clubID', $clubID);
         $query = $this->db->get();

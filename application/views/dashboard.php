@@ -186,7 +186,7 @@
                     }
                 </style> 
                <?php if($clubID == 0){  ?>
-                <table  class="table table-dark table-hover" >
+                <table  class="table table-dark " >
                           <th>
                           </th>
 

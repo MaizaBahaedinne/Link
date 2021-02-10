@@ -57,8 +57,10 @@ class Tfm_model extends CI_Model
      */
     function TFMPId($userID,$TfmId)
     {
-        $this->db->select(' BaseTbl.Id , BaseTbl.tfmId , BaseTbl.dateInscrip , BaseTbl.statut ,  BaseTbl.remb ');
+        $this->db->select(' BaseTbl.id , BaseTbl.tfmId , BaseTbl.dateInscrip , BaseTbl.statut ,  BaseTbl.remb , BaseTbl.formationId , Atelier.nom formation_name , Atelier.time , Atelier.salle ');
         $this->db->from('tbl_tfm_part as BaseTbl');
+
+         $this->db->join('tbl_atelier as Atelier ', 'Atelier.atelierId = BaseTbl.formationId', 'LEFT');
 
         $this->db->where('BaseTbl.userId =',$userID);
         $this->db->where('BaseTbl.tfmId =',$TfmId);
@@ -103,7 +105,68 @@ class Tfm_model extends CI_Model
         
         return TRUE;
     }
-    
+
+
+
+    /**
+     * This function is used to get the user listing count
+     * @param string $searchText : This is optional search text
+     * @param number $page : This is pagination offset
+     * @param number $segment : This is pagination limit
+     * @return array $result : This is result
+     */
+    function AtelierListing()
+    {
+        $this->db->select('BaseTbl.atelierId , BaseTbl.nom , BaseTbl.time ,  BaseTbl.capacite , BaseTbl.salle  ');
+        $this->db->from('tbl_atelier as BaseTbl');
+        $this->db->where('BaseTbl.capacite >', 0 );
+
+
+        $query = $this->db->get();
+        
+        $result = $query->result();        
+        return $result;
+    }
+
+
+
+
+    /**
+     * This function is used to get the user listing count
+     * @param string $searchText : This is optional search text
+     * @param number $page : This is pagination offset
+     * @param number $segment : This is pagination limit
+     * @return array $result : This is result
+     */
+    function AtelierById($atelierId)
+    {
+        $this->db->select('BaseTbl.atelierId , BaseTbl.nom , BaseTbl.time ,  BaseTbl.capacite , BaseTbl.salle  ');
+        $this->db->from('tbl_atelier as BaseTbl');
+        $this->db->where('BaseTbl.atelierId =', $atelierId );
+
+
+        $query = $this->db->get();
+        
+        $result = $query->row();        
+        return $result;
+    }
+
+
+               /**
+     * This function is used to update the user information
+     * @param array $userInfo : This is users updated information
+     * @param number $userId : This is user id
+     */
+    function editAtelier($atelierInfo, $atelierId)
+    {
+        $this->db->where('atelierId', $atelierId);
+        $this->db->update('tbl_atelier', $atelierInfo);
+        
+        return TRUE;
+    }
+
+
+   
 
 }
 

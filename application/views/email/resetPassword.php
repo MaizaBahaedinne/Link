@@ -42,7 +42,7 @@
 
                   <center>
                         </br>
-                        <a href="<?php echo base_url() ?>Register/Passechange/<?php echo $userId ?>?userID=<?php echo $userId ?>" style="border-radius:50px;background-color:#d92829;display:inline-block;font-size:13px;border:none;margin:0px;font-family:Circular,&quot;Helvetica Neue&quot;,Helvetica,Arial,sans-serif;text-align:left;text-decoration:none;padding:12px 45px!important;color:white!important;font-weight:bold!important" bgcolor="#1ED760" align="center" target="_blank" >
+                        <a href="<?php echo base_url() ?>Register/Passechange/<?php echo $userId ?>?userID=<?php echo $userId ?>&tokenId=<?php echo date('Y-m-d H:i:s') ?>" style="border-radius:50px;background-color:#d92829;display:inline-block;font-size:13px;border:none;margin:0px;font-family:Circular,&quot;Helvetica Neue&quot;,Helvetica,Arial,sans-serif;text-align:left;text-decoration:none;padding:12px 45px!important;color:white!important;font-weight:bold!important" bgcolor="#1ED760" align="center" target="_blank" >
                               DÉFINIR UN NOUVEAU MOT DE <span class="il">PASSE</span>
                         </a>
                         </br>

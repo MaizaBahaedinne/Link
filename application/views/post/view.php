@@ -22,7 +22,7 @@
                     <div class="user-post">
                       <div class="friend-info">
                         <figure>
-                          <img src="<?php echo base_url() ?>uploads/avatar/<?php echo $post->avatar ?>" class="alligator-profile" alt="">
+                          <img src="<?php echo base_url() ?>uploads/avatar/<?php echo $post->avatar ?>" class="alligator-profile-header" alt="">
                         </figure>
                         <div class="friend-name">
                           <div class="more">
@@ -137,7 +137,7 @@
                             
                             <li class="post-comment">
                               <div class="comet-avatar">
-                                <img src="<?php echo base_url() ?>uploads/avatar/<?php echo $post->avatar ?>" class="alligator-profile" alt="">
+                                <img src="<?php echo base_url() ?>uploads/avatar/<?php echo $post->avatar ?>" class="alligator-profile-likes" alt="">
                               </div>
                               <div class="post-comt-box">
                                 <form method="post" action="<?php echo base_url() ?>Posts/addNewComment/<?php echo $post->postId ?>">
@@ -164,10 +164,11 @@
                                       <i class="em em-rage"></i>
                                       <i class="em em-stuck_out_tongue"></i>
                                     </div>
+                                    <input  class="btn  " type="submit" value="" ><i class="fa fa-paper-plane" aria-hidden="true"></i></input>
                                   </div>
-                                  <div class="text-right">
-                                  <input  class="btn btn-primary " type="submit">
-                                  </div>
+                                  
+                                  
+                                 
                                 </form> 
                               </div>
                             </li>

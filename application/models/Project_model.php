@@ -29,22 +29,42 @@ class Project_model extends CI_Model
         return $result;
     }
 
+    function projectNationalListing()
+            {
+                 $this->db->select('BaseTbl.projectId , BaseTbl.startDate , BaseTbl.endDate , BaseTbl.titre , BaseTbl.type , BaseTbl.cible , Clubs.name as ClubName , Clubs.ClubID  ,  BaseTbl.prix , BaseTbl.capacite , BaseTbl.description descP ,  BaseTbl.local ,BaseTbl.banner , BaseTbl.eventFB ');
+                $this->db->from('tbl_project as BaseTbl');
+                $this->db->join('tbl_club as Clubs', 'Clubs.clubID = BaseTbl.ClubID', 'LEFT');
+               
 
-    function projectListingOldNew()
-    {
-         $this->db->select('BaseTbl.projectId , BaseTbl.startDate , BaseTbl.endDate , BaseTbl.titre , BaseTbl.type , BaseTbl.cible , Clubs.name as ClubName , Clubs.ClubID  ,  BaseTbl.prix , BaseTbl.capacite , BaseTbl.description descP ,  BaseTbl.local ,BaseTbl.banner , BaseTbl.eventFB ');
-        $this->db->from('tbl_project as BaseTbl');
-        $this->db->join('tbl_club as Clubs', 'Clubs.clubID = BaseTbl.ClubID', 'LEFT');
-       
+                $this->db->order_by('BaseTbl.startDate','ASC');
+               
 
-        $this->db->order_by('BaseTbl.startDate','ASC');
-       
+                $query = $this->db->get();
+                
+                $result = $query->result();        
+                return $result;
+            }
 
-        $query = $this->db->get();
-        
-        $result = $query->result();        
-        return $result;
-    }
+
+
+
+    function projectStats($SenJun)
+            {
+                 $this->db->select('BaseTbl.projectId , BaseTbl.startDate , BaseTbl.endDate , BaseTbl.titre , BaseTbl.type , BaseTbl.cible , Clubs.name as ClubName , Clubs.ClubID  ,  BaseTbl.prix , BaseTbl.capacite , BaseTbl.description descP ,  BaseTbl.local ,BaseTbl.banner , BaseTbl.eventFB ');
+                $this->db->from('tbl_project as BaseTbl');
+                $this->db->join('tbl_club as Clubs', 'Clubs.clubID = BaseTbl.ClubID', 'LEFT');
+                
+                $this->db->where('Clubs.SenJun' , $SenJun ) ;
+                $this->db->where('BaseTbl.startDate > ' , '2020-09-15' ) ; 
+
+                $this->db->order_by('BaseTbl.startDate','ASC');
+               
+
+                $query = $this->db->get();
+                
+                $result = $query->result();        
+                return $result;
+            }
 
 
     function projectListingByClub($clubID)
@@ -53,7 +73,8 @@ class Project_model extends CI_Model
         $this->db->from('tbl_project as BaseTbl');
         $this->db->join('tbl_club as Clubs', 'Clubs.clubID = BaseTbl.ClubID', 'LEFT');
         $this->db->join('tbl_users as Users', 'Users.userId = BaseTbl.createBy', 'LEFT');
-        $this->db->where('Clubs.clubID' , $clubID ) ;        
+        $this->db->where('Clubs.clubID' , $clubID ) ;   
+        $this->db->where(' BaseTbl.startDate > ','2020-09-15') ;     
         $this->db->order_by('BaseTbl.endDate','DESC');
 
         $query = $this->db->get();
@@ -63,10 +84,7 @@ class Project_model extends CI_Model
     }
    
 
-
-   
-
-        function projectListingByType($type,$clubID)
+    function projectListingByType($type,$clubID)
     {
          $this->db->select('BaseTbl.projectId , BaseTbl.startDate , BaseTbl.endDate , BaseTbl.titre , BaseTbl.type , BaseTbl.cible , Clubs.name as ClubName ,  BaseTbl.prix , BaseTbl.capacite , BaseTbl.description ,  BaseTbl.local ,BaseTbl.banner ');
         $this->db->from('tbl_project as BaseTbl');
@@ -99,7 +117,7 @@ class Project_model extends CI_Model
 
     function getProjectInfo($projectID)
     {
-        $this->db->select('BaseTbl.projectId , BaseTbl.startDate , BaseTbl.endDate , BaseTbl.titre , BaseTbl.banner , BaseTbl.type , BaseTbl.cible , Clubs.name as ClubName ,  BaseTbl.prix , BaseTbl.capacite , BaseTbl.description ,  BaseTbl.local , BaseTbl.eventFB  ,  BaseTbl.createdDate ');
+        $this->db->select('BaseTbl.projectId , BaseTbl.startDate , BaseTbl.endDate , BaseTbl.titre , BaseTbl.banner , BaseTbl.type , BaseTbl.cible , Clubs.clubID , Clubs.name as ClubName ,  BaseTbl.prix ,  BaseTbl.clubId  , BaseTbl.capacite , BaseTbl.description ,  BaseTbl.local , BaseTbl.eventFB  ,  BaseTbl.createdDate  , BaseTbl.ClubID ');
         $this->db->from('tbl_project as BaseTbl');
         $this->db->join('tbl_club as Clubs', 'Clubs.clubID = BaseTbl.ClubID', 'LEFT');
         $this->db->where('BaseTbl.projectID', $projectID);
@@ -107,6 +125,26 @@ class Project_model extends CI_Model
         
         return $query->row();
     }
+
+   /**
+     * This function is used to update the user information
+     * @param array $userInfo : This is users updated information
+     * @param number $userId : This is user id
+     */
+    function editProject($projectInfo, $projectId)
+    {
+        $this->db->where('projectId', $projectId);
+        $this->db->update('tbl_project', $projectInfo);
+        
+        return TRUE;
+    }
+    
+
+
+
+
+
+
 
     
 

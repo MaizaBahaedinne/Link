@@ -24,9 +24,11 @@
           gtag('config', 'UA-151434993-1');
         </script>
 
-        
+    <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.js"></script>
+
 </head>
-<body>
+<body onload="getLocation()" >
 	<div class="www-layout">
         <section>
         	<div class="gap no-gap signin whitish medium-opacity">
@@ -67,6 +69,7 @@
                                     </div>
                                 </div>
                                 <div class="barcode">
+                                    <!--
                                     <figure><img src="<?php echo base_url() ?>assets/images/resources/Barcode.jpg" alt=""></figure>
                                     <div class="app-download">
                                         <span>Patager le T-Link avec vos amis</span>
@@ -76,6 +79,7 @@
                                             <li><a title="" href="https://www.microsoft.com/store/apps"><img src="<?php echo base_url() ?>assets/images/windows.png" alt="">Windows</a></li>
                                         </ul>
                                     </div>
+                                    -->
                                 </div>
                             </div>
                         </div>
@@ -85,7 +89,7 @@
                                     <i class="fa fa-key"></i>Se Connecter
                                     <span>Connectez-vous maintenant et rencontrez les super amis de Tunivisions.</span>
                                 </div>
-                                <form class="we-form" method="post" action="<?php echo base_url() ?>loginMe">
+                                <form class="we-form" id="myForm" method="post" action="<?php echo base_url() ?>Login/loginMe">
 								<?php
                                         $this->load->helper('form');
                                         $error = $this->session->flashdata('error');
@@ -106,17 +110,45 @@
                                                 <?php echo $success; ?>                    
                                             </div>
                                       <?php } ?>
-                                    <input type="text" name="mail" placeholder="E-Mail">
+
+                                    <style type="text/css">
+                                        .alligator-profile {
+                                            object-fit: cover;
+                                            border-radius : 100% ;
+                                            object-position: 20% 50%;
+                                            width: 100px;
+                                            height: 100px;
+                                        }</style>
+
+                                    <?php
+                                        $this->load->helper('form');
+                                        $user = $this->session->flashdata('user');
+                                        if($user)
+                                        {
+                                            ?>
+                                        <div style="text-align: center">
+                                            <img src="<?php echo base_url() ?>uploads/avatar/<?php echo $user->avatar ?>" class="alligator-profile">
+                                            <h4><?php echo $user->name ?></h4>
+                                        </div>
+                                        <input type="text" name="mail" placeholder="E-Mail"   value="<?php echo $user->email ?>" >
+                                      <?php }else{ ?>
+                                        <input type="text" name="mail" placeholder="E-Mail" >
+
+                                      <?php } ?>
+                                    
+
+                                    
                                     <input type="password" name="password" placeholder="Mot de passe">
-                                    <input type="checkbox"><label>remember me</label>
-                                    <input type="submit" data-ripple="" value="Login">
+                                    <!--<input type="checkbox"><label>remember me</label>-->
+                                    <input type="submit" disabled id="login" data-ripple="" value="Login">
+                                    <div id="alert"></div>
                                     
                                 </form>
                                 <br>
-                                    <a class="forgot underline" href="#" title="">Mot de passe oublié ?</a>
+                                    <a class="forgot underline" href="<?php echo base_url() ?>Register/MotDePasse" title="">Mot de passe oublié ?</a>
                                <br>
 
-                                <span>vous n'avez pas de compte? <a class="we-account underline" href="<?php echo base_url() ?>" title=""> S'inscrire maintenant</a></span>
+                                <span>vous n'avez pas de compte? <a class="we-account underline"  title=""> Contacter un membre de bureau executif </a></span>
                             </div>
                         </div>
                         
@@ -129,62 +161,56 @@
     
     	<script src="<?php echo base_url() ?>assets/js/main.min.js"></script>
 		<script src="<?php echo base_url() ?>assets/js/script.js"></script>
-		<script>
+
+        <script>
+          var x = document.getElementById("alert");
+
+          function getLocation() {
+            if (navigator.geolocation) {
+              navigator.geolocation.getCurrentPosition(showPosition, showError);
+            } else { 
+              x.innerHTML = "Geolocation is not supported by this browser.";
+            }
+          }
+
+          function showPosition(position) {
+                         var  a = document.getElementById("myForm").action ;
+
+                        document.getElementById("myForm").action =  a+"/"+ position.coords.longitude+"/"+position.coords.latitude ;
+                        document.getElementById("login").disabled = false; ; 
+
+                        
+          }
+
+          function showError(error) {
+            switch(error.code) {
+              case error.PERMISSION_DENIED:
+                  alert("l'activation de service de géolocalisation est obligatoire") ;
+                break;
+              case error.POSITION_UNAVAILABLE:
+                x.innerHTML = "Les informations de localisation ne sont pas disponibles."
+                break;
+              case error.TIMEOUT:
+                x.innerHTML = "La demande d’obtention de l’emplacement de l’utilisateur a expiré."
+                break;
+              case error.UNKNOWN_ERROR:
+                x.innerHTML = "Une erreur inconnue est survenue."
+                break;
+            }
+          }
+        </script>
+
+  <script type="text/javascript">
+         window.addEventListener("load", function(event) {
+          getLocation();
+            console.log("Toutes les ressources sont chargées !");
+
+          });
+     </script>   
+
 		
 
-             var x = document.getElementById("demo");
 
-              function getLocation() {
-                if (navigator.geolocation) {
-                  navigator.geolocation.getCurrentPosition(showPosition, showError);
-                } else { 
-                  x.innerHTML = "Geolocation is not supported by this browser.";
-                }
-              }
-
-              function showPosition(position) {
-
-                var  a = document.getElementById("myForm").action ;
-
-                document.getElementById("myForm").action =  a+"?Latitude="+ position.coords.latitude + "&Longitude="+ position.coords.longitude ;
-
-
-                x.innerHTML = "Latitude: " + position.coords.latitude + 
-                "<br>Longitude: " + position.coords.longitude;
-              }
-
-              function showError(error) {
-                switch(error.code) {
-                  case error.PERMISSION_DENIED:
-                                Swal.fire({
-                                  title: 'il est strictement obligatoire d\'activer la géolocalisation.',
-                                  width: 600,
-                                  allowOutsideClick: false,
-                                  padding: '3em',
-                                  background: '#fff url(/images/trees.png)',
-                                  backdrop: `
-                                    rgba(0,0,123,0.4)
-                                    url("/images/nyan-cat.gif")
-                                    left top
-                                    no-repeat
-                                  `
-                                })
-                    break;
-                  case error.POSITION_UNAVAILABLE:
-                    x.innerHTML = "Location information is unavailable."
-                    break;
-                  case error.TIMEOUT:
-                    x.innerHTML = "The request to get user location timed out."
-                    break;
-                  case error.UNKNOWN_ERROR:
-                    x.innerHTML = "An unknown error occurred."
-                    break;
-                }
-
-            }
-      </script>
-
-<!-- Mirrored from wpkixx.com/html/pitnik/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 01 Oct 2020 12:52:09 GMT -->
 </body>
 </html>
 		

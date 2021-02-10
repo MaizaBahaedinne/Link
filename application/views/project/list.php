@@ -18,23 +18,25 @@
                                                 <div class="col-lg-6">
                                                     <div class="row">
                                                         <div class="col-lg-5 ">
-                                                            <form method="post">
+                                                          <!--  <form method="post">
                                                                 <input type="text" placeholder="chercher ..">
                                                                 <button type="submit"><i class="fa fa-search"></i></button>
-                                                            </form>
+                                                            </form> -->
                                                         </div>
                                                         <div class="col-lg-6 col-md-4 col-sm-4">
                                                             <div class="select-options">
+                                                               <?php 
+                                                              if ( ($role == 1 || $role == 2 || $role == 3 || $role== 6 || $role== 7) ||   $SA == 1 ) { ?>
                                                                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Ajouter un projet</button>
+                                                                <?php } ?>
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-1 col-md-1 col-sm-1">
                                                             <div class="option-list">
                                                                 <i class="fa fa-ellipsis-v"></i>
                                                                 <ul>
-                                                                    <!--
-                                                                    <li><a title="" href="#">Show Friends Public</a></li>
-                                                                    -->
+                                                                    
+                                                                    <li><a href="<?php  echo base_url() ?>Support/projet" title=""><i class="fa fa-book">   </i> &nbsp;&nbsp;&nbsp;Gestion de projet </a> </li>
                                                                 </ul>
                                                             </div>
                                                         </div>
@@ -43,22 +45,24 @@
                                             </div>
                                         </div>
                                     </div><!-- title block -->
+                                    <?php foreach ($projectRecords as $projet ) { ?>
                                     <div class="central-meta">
                                         <div class="row">
                                             <div class="col-lg-12">
-                                                <?php foreach ($projectRecords as $projet ) { ?>
+                                                
 
                                                 <div class="event-box">
                                                     <div class="row merged20">
 
-                                                        <div class="col-lg-4 col-md-4 col-sm-5">
+                                                        <div class="col-lg-12 col-md-4 col-sm-5">
                                                             <img src="<?php echo base_url() ?>uploads/projet/<?php echo $projet->banner ?>" class="alligator-projects " alt="">
                                                                 
                                                         </div>
-                                                        <div class="col-lg-5 col-md-6 col-sm-5">
+                                                        <div class="col-lg-9 col-md-6 col-sm-5">
                                                             <div class="event-title">
                                                                 <span class="ba"></span>
-                                                                <h4><a href="<?php echo base_url() ?>Project/projectDetails/<?php echo $projet->projectId ?>" title=""><?php echo $projet->titre ?></a></h4>
+                                                                <h3><a href="<?php echo base_url() ?>Project/projectDetails/<?php echo $projet->projectId ?>" title=""><?php echo $projet->titre ?></a></h3>
+
                                                                 <label class="text-mute" >by <a href="<?php echo base_url() ?>club/clubInfo/<?php echo $projet->ClubID  ?>"> <?php if ($projet->ClubID > 5 ) {echo "club ";}  echo "Tunivisions ".$projet->ClubName; ?></a></label>
                                                                 <span>de <i class="fa fa-clock-o" style="color: green"></i> <?php echo $projet->startDate ?></span>
                                                                 <span>à <i class="fa fa-clock-o" aria-hidden="true"></i> <?php echo $projet->endDate ?></span>
@@ -66,7 +70,8 @@
                                                                 <span><i class="fa fa-money" aria-hidden="true"></i> <?php echo $projet->prix ?> DT</span>
                                                                 <hr>
                                                                 
-                                                                    <li><a title="" href="<?php echo $projet->eventFB ?>" ><i class="fa fa-facebook"></i>  Evenement Facebook</a></li>
+                                                                    
+                                                                    <li><a class="btn btn-primary btn-sm " href="<?php echo base_url() ?>TFM/partantByClub/<?php echo $clubID ?>/<?php echo $projet->projectId ?>" ><i class="fa fa-user"></i> My Team </a></li>
                                                                 
                                                                 
                                                                                                                                 
@@ -80,17 +85,18 @@
                                                     </div>
                                                 </div>
                                                 
-                                               <?php  } ?>
+                                               
                                                 
                                                 
                                             </div>
                                         </div>
                                         
                                     </div>
+                                    <?php  } ?>
                             </div><!-- centerl meta -->
                             <div class="col-lg-4">
                 <aside class="sidebar static right">
-                  <div class="widget">
+                                    <div class="widget">
                     <h4 class="widget-title">Mon Club</h4> 
                     <div class="your-page">
                       <figure>
@@ -98,91 +104,62 @@
                       </figure>
                       <div class="page-meta">
                         <a href="#" title="" class="underline"><?php if ($clubInfo->clubID > 5 ) {echo "club Tunivisions ";}  echo $clubInfo->name ; ?></a>
-                        <span><i class="ti-comment"></i><a href="insight.html" title="">Messages <em>9</em></a></span>
-                        <span><i class="ti-bell"></i><a href="insight.html" title="">Notifications <em>2</em></a></span>
+                        
                       </div>
+                      <?php if (($role == 1 ||  $role == 3 ||  $role == 6 ||  $role == 7  )|| $SA== 1 ) { ?>
                       <ul class="page-publishes">
                         <li>
-                          <span> <a href="<?php echo base_url()?>Club/clubInfo/<?php echo $clubInfo->clubID ?>">  <i class="ti-pencil-alt"></i>Projets</a></span>
+                          <span> <a href="<?php echo base_url()?>Club/clubInfo/<?php echo $clubInfo->clubID ?>">  <i class="fas fa-door-open"></i></i>Visiter</a></span>
+                        </li>
+                        <li>
+                          <span> <a href="<?php echo base_url()?>Club/clubInfo/<?php echo $clubInfo->clubID ?>"> <i class="fas fa-project-diagram"></i> </i>Projets</a></span>
                         </li>
                         <li>
                           <span> 
-                             <a href="<?php echo base_url()?>Club/clubInfo/<?php echo $clubInfo->clubID ?>">
-                                <i class="fa fa-user-plus"></i>Invite
+                             <a  data-toggle="modal" data-target="#TuniFan">
+                                <i class="fa fa-user-plus"></i>Inviter
                             </a>
                           </span>
                         </li>
+                        <li>
+                          <span> <a href="<?php echo base_url()?>Club/myTeam">  <i class="fa fa-users"></i>Equipes</a></span>
+                        </li>
                       </ul>
-
-
-
-                      <!--
+                      <?php } ?>
                       <div class="page-likes">
                         <ul class="nav nav-tabs likes-btn">
-                          <li class="nav-item"><a class="active" href="#link1" data-toggle="tab" data-ripple="">likes</a></li>
-                           <li class="nav-item"><a class="" href="#link2" data-toggle="tab" data-ripple="">views</a></li>
+                          <li class="nav-item"><a class="active" href="#link1" data-toggle="tab" data-ripple="">Membres</a></li>
+                           <li class="nav-item"><a class="" href="#link2" data-toggle="tab" data-ripple="">Projets</a></li>
                         </ul>
                         
                         <div class="tab-content">
                           <div class="tab-pane active fade show" id="link1">
-                          <span><i class="ti-heart"></i>884</span>
-                            <a href="#" title="weekly-likes">35 new likes this week</a>
+                          <span><i class="ti-heart"></i><?php echo count($members)?></span>
+                           <!-- <a href="#" title="weekly-likes">35 new likes this week</a> -->
                             <div class="users-thumb-list">
+                            
                             <a href="#" title="" data-toggle="tooltip" data-original-title="Anderw">
                               <img src="images/resources/userlist-1.jpg" alt="">  
                             </a>
-                            <a href="#" title="" data-toggle="tooltip" data-original-title="frank">
-                              <img src="images/resources/userlist-2.jpg" alt="">  
-                            </a>
-                            <a href="#" title="" data-toggle="tooltip" data-original-title="Sara">
-                              <img src="images/resources/userlist-3.jpg" alt="">  
-                            </a>
-                            <a href="#" title="" data-toggle="tooltip" data-original-title="Amy">
-                              <img src="images/resources/userlist-4.jpg" alt="">  
-                            </a>
-                            <a href="#" title="" data-toggle="tooltip" data-original-title="Ema">
-                              <img src="images/resources/userlist-5.jpg" alt="">  
-                            </a>
-                            <a href="#" title="" data-toggle="tooltip" data-original-title="Sophie">
-                              <img src="images/resources/userlist-6.jpg" alt="">  
-                            </a>
-                            <a href="#" title="" data-toggle="tooltip" data-original-title="Maria">
-                              <img src="images/resources/userlist-7.jpg" alt="">  
-                            </a>  
+                            
                             </div>
                           </div>
                           <div class="tab-pane fade" id="link2">
-                            <span><i class="fa fa-eye"></i>440</span>
+                            <span><i class="fa fa-eye"></i><?php echo count($Projets)?></span>
+                           <!--
                             <a href="#" title="weekly-likes">440 new views this week</a>
+                          -->
                             <div class="users-thumb-list">
                             <a href="#" title="" data-toggle="tooltip" data-original-title="Anderw">
                               <img src="images/resources/userlist-1.jpg" alt="">  
                             </a>
-                            <a href="#" title="" data-toggle="tooltip" data-original-title="frank">
-                              <img src="images/resources/userlist-2.jpg" alt="">  
-                            </a>
-                            <a href="#" title="" data-toggle="tooltip" data-original-title="Sara">
-                              <img src="images/resources/userlist-3.jpg" alt="">  
-                            </a>
-                            <a href="#" title="" data-toggle="tooltip" data-original-title="Amy">
-                              <img src="images/resources/userlist-4.jpg" alt="">  
-                            </a>
-                            <a href="#" title="" data-toggle="tooltip" data-original-title="Ema">
-                              <img src="images/resources/userlist-5.jpg" alt="">  
-                            </a>
-                            <a href="#" title="" data-toggle="tooltip" data-original-title="Sophie">
-                              <img src="images/resources/userlist-6.jpg" alt="">  
-                            </a>
-                            <a href="#" title="" data-toggle="tooltip" data-original-title="Maria">
-                              <img src="images/resources/userlist-7.jpg" alt="">  
-                            </a>  
                             </div>
                           </div>  
                         </div>
-
-                      </div>-->
+                      </div>
                     </div>
                   </div><!-- page like widget -->
+                  
                   <!-- explore events -->
                   <div class="widget">
                     <h4 class="widget-title">Calendar</h4>
@@ -268,11 +245,11 @@
             <!-- Modal body -->
             <div class="modal-body">
                 <?php $this->load->helper("form"); ?>
-                <form role="form"  id="addproject" action="<?php echo base_url() ?>Project/addNewP" method="post" role="form"  enctype="multipart/form-data">
+                <form role="form" class="c-form"  id="addproject" action="<?php echo base_url() ?>Project/addNewP" method="post" role="form"  enctype="multipart/form-data">
                         
                            
                                     <label for="fname">Banner</label>
-                                    <input type="file" name="file" id="file" class="dropify" required accept="image/*"  />                                                                          
+                                    <input type="file" name="file" id="file" class="dropify-fr" required accept="image/*"  />                                                                        
                                     <p >le format de fichier doit etre JPG ou JPEG avec une taile maximale de 500 ko </p>
                                     <p id="error1" style="display:none; color:#FF0000;">
                                           Format d'image invalide! Le format d'image doit être JPG, JPEG.
@@ -280,8 +257,6 @@
                                           <p id="error2" style="display:none; color:#FF0000;">
                                           La taille maximale du fichier est de 500 ko.
                                           </p>
-                                 
-
                                     <script type="text/javascript">
                                           $('#submitt').prop("disabled", true);
                                             var a=0;
@@ -311,16 +286,26 @@
                                             }
                                         });
                                     </script>
-                                    
-
                                     <br>
-                                    <label for="fname">Cible  &nbsp; &nbsp; <br> </label>
-                                        
-                                    <input type="radio" name="cible" id="Publique" value="Publique" required> Publique
-                                    <input type="radio" name="cible" id="prive" value="Privé"> Privé
-                                    <input type="radio" name="cible" id="Only" value="Only tunimateur" > Only tunimateur
-                           
+                                    <b for="fname">Cible  &nbsp; &nbsp; <br> </b>
 
+                                    <div class="form-radio">
+                                  <div class="radio">
+                                  <label>
+                                   <input type="radio" name="cible" id="Publique" value="Publique" required><i class="check-box"></i>Publique
+                                  </label>
+                                  </div>
+                                  <div class="radio">
+                                  <label>
+                                    <input type="radio" name="cible" id="Only" value="Only tunimateur" ><i class="check-box"></i>Intra-Tunivisions
+                                  </label>
+                                  </div>
+                                  <div class="radio">
+                                  <label>
+                                    <input type="radio" name="cible" id="prive" value="Privé"><i class="check-box"></i>Inter-club
+                                  </label>
+                                  </div>
+                                </div>
                                         <script type="text/javascript">
                                           $( "#Publique" ).click(function() {
                                               $("#facebook").prop("required", true);
@@ -329,17 +314,17 @@
                                               $("#facebook").prop("required", true);
                                             });
                                           $( "#prive" ).click(function() {
-                                              $("#facebook").prop("required", false);
+                                              $("#uzer-nam").prop("required", false);
                                             });
                                         </script>
-
-                                    <br>
-
-                                    <label for="fname">Lien d'évenement facebook : </label>
-                                    <input type="url" name="facebook" id="facebook" class="form-control" >
-                            
-                                    
-
+                                   <br>
+                                    <div class="uzer-nam">
+                                      <label><br>Code d'évenement facebook :</label>
+                                      <span>https://www.facebook.com/events/</span>
+                                        <input type="number" 
+                                      placeholder="exemple : 235643091127564" name="facebook" width="30%" id="facebook"  >
+                                      
+                                    </div>
                                     <label for="fname">Type</label>
                                     <select class="form-control" id="type" name="type" >
                                             <option value="Evenement">Evenement</option>
@@ -349,55 +334,42 @@
                                             <option value="Couverture Mediatique">Couverture Mediatique</option>
                                             <option value="Compétition">Compétition</option>
                                             <option value="Soirée">Soirée</option>
+                                            <option value="Team Building">Team Building</option>
                                     </select>
-                          
-
                                     <hr>
-                               
                                     <label for="fname">Titre</label>
-                                    <input type="text" class="form-control required" id="Titre" name="Titre" maxlength="255" required >
-                              
-                                    
-                                                            
-                                   
+                                    <input type="text" class="form-control required" id="Titre" name="Titre" maxlength="255" 
+                                    pattern="^[A-Za-z0-9 _]*[A-Za-z0-9][A-Za-z0-9 _]*$" required >
                                     <label for="fname">Description</label>
-                                    <textarea class="form-control" name="description" id="tinymceExample" rows="20" required></textarea>
-
-                               
-                                    
-
+                                    <textarea class="form-control" name="description"  id="TinyMCE" rows="20" ></textarea>
                                     <label for="fname">Date debut</label>
-                                        <!-- min="<?php echo date('Y-m-d').'T00:00' ?>" -->
-                                    <input type="datetime-local" class="form-control "  min="<?php echo date('Y-m-d').'T00:00' ?>"   id="debut" name="debut"  required >
- 
-
-                              
+                                        <!-- min="<?php echo date('Y-m-d\TH:i') ?>" -->
+                                    <input type="datetime-local" class="form-control "  min="<?php echo date('Y-m-d\TH:i') ?>"  max="2021-06-29T00:00"   id="debut" name="debut"  required >
                                     <label for="fname">Date fin</label>
                                         <!-- min="<?php echo date('Y-m-d').'T00:00' ?>" -->
-                                    <input type="datetime-local" class="form-control"  min="<?php echo date('Y-m-d').'T00:00' ?>"   id="fin" name="fin"  required >
-
-                            
+                                    <input type="datetime-local" class="form-control" min="<?php echo date('Y-m-d\TH:i') ?>"  max="2021-06-30T23:00"   id="fin" name="fin"  required >
                                     <hr>
-                             
-                                    <label for="fname">Local</label>
+                                    <label for="fname">Lieu</label>
                                     <input type="text" class="form-control " id="local" name="local" maxlength="255" required >      
-
-                             
                                     <label for="fname">Capacité</label>
                                     <input type="number" class="form-control " id="capacite" name="capacite"  required >      
-
                                     <label for="fname">Prix</label>
                                     <input type="number" class="form-control" id="prix" name="prix"  required >      
-
-
-
-
+                                    <hr>
+                        <div class="row">
+                            <div class="col-lg-6">
+                            <input type="submit" class="btn btn-primary" value="Envoyer" />
+                            </div>
+                            <div class="col-lg-6">
+                            <input type="reset" class="btn btn-secondary" value="Reset" />
+                            </div>
+                        </div>  
+                        <br>
+                        <small style="color: red" >Toute tentative de tricherie risque de pénaliser le club jusqu'à  x-10  du note de projet </small>
 
 
                         </div>
-                       
-                            <input type="submit" class="btn btn-primary" value="Envoyer" />
-                            <input type="reset" class="btn btn-secondary" value="Reset" />
+
  
                        
                     </form>
@@ -410,8 +382,46 @@
 
             <!-- Modal footer -->
             <div class="modal-footer">
-              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Fermer</button>
             </div>
           </div>
         </div>
     </div><!-- fade Modal -->
+
+
+  
+<script>
+            $(document).ready(function(){
+                
+              // Translated
+                $('.dropify-fr').dropify({
+                    messages: {
+                        default: 'Glissez-déposez un fichier ici ou cliquez',
+                        replace: 'Glissez-déposez un fichier ou cliquez pour remplacer',
+                        remove:  'Supprimer',
+                        error:   'Désolé, le fichier trop volumineux'
+                    }
+                });
+
+                // Used events
+                var drEvent = $('#input-file-events').dropify();
+
+                drEvent.on('dropify.beforeClear', function(event, element){
+                    return confirm("Do you really want to delete \"" + element.file.name + "\" ?");
+                });
+
+                drEvent.on('dropify.afterClear', function(event, element){
+                    alert('File deleted');
+                });
+
+                drEvent.on('dropify.errors', function(event, element){
+                    console.log('Has Errors');
+                });
+
+
+
+                
+
+
+            });
+        </script>

@@ -2668,7 +2668,7 @@ footer {
 }
 
 footer::before {
-    background: rgba(0, 0, 0, 0) linear-gradient(to right, #ffffff 0%, #fa6342 50%, #ffffff 100%) repeat scroll 0 0;
+    background: rgba(0, 0, 0, 0) linear-gradient(to right, #ffffff 0%, #34465d 50%, #ffffff 100%) repeat scroll 0 0;
     content: "";
     height: 5px;
     position: absolute;
@@ -4674,7 +4674,7 @@ canvas {
 }
 
 .mh-head {
-    background: #4bb5ef;
+    background: #34465d;
     color: #fff;
     height: auto;
 }
@@ -7142,7 +7142,7 @@ a.addnewforum {
 	height: 100vh;
 }
 .we-login-register {
-    background: rgb(217 40 41) ;
+    background: #34465d ;
     float: left;
     padding: 40px 55px 50px;
     position: relative;
@@ -7151,7 +7151,7 @@ a.addnewforum {
 	color:#fff;
 }
 .we-login-register::before {
-    border-color:  rgb(217 40 41)  transparent transparent;
+    border-color:  #34465d  transparent transparent;
     border-style: solid;
     border-width: 40px 175px 0;
     bottom: -39px;
@@ -7180,7 +7180,7 @@ a.addnewforum {
 .form-title > span {
     color: #efefef;
     float: left;
-    font-size: 13px;
+    font-size: 10px;
     padding-bottom: 20px;
     padding-top: 20px;
     text-transform: capitalize;
@@ -7537,7 +7537,9 @@ input[type="checkbox"]:checked + label{color: #000;}
     border: 1px solid #e4e4e4;
 }
 .c-form > div.uzer-nam > input {
-    width: 81%;
+
+    width: 30%;
+
 }
 .c-form > div:last-child {
     margin-bottom: 0;
@@ -10393,7 +10395,7 @@ span.ttl {
 .stat-box > i {
     color: #b5bad5;
     display: inline-block;
-    font-size: 35px;
+    font-size: 33px;
     vertical-align: middle;
 }
 .anlytc-meta {
@@ -10493,7 +10495,7 @@ span.ttl {
     border-radius: 100%;
     display: inline-block;
     vertical-align: middle;
-    width: 45px;
+   
 }
 .pit-frnz-meta,
 .pit-groups-meta, 
@@ -17853,7 +17855,7 @@ nav .main-btn{margin-left: 20px;}
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: rgb(217 40 41) ;
+  background: #34465d ;
 	width: 100%;
   position: fixed;
 	z-index: 9999999;

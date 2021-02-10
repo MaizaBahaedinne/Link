@@ -36,7 +36,7 @@ class Actualite_model extends CI_Model
         $this->db->from('tbl_actu as BaseTbl');
         $this->db->join('tbl_users as Users','Users.UserId = BaseTbl.createdBy');
         $this->db->order_by('BaseTbl.createdDate','DESC'); 
-        $this->db->limit(10);      
+        $this->db->limit(4);      
         $query = $this->db->get();
         
         $result = $query->result();        

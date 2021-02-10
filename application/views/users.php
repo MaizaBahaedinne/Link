@@ -1,48 +1,32 @@
-<?php if ($SA== 1  ) {  ?>
-<div id="content-page" class="content-page">
-            <div class="container">
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
-<script defer type="text/javascript"  src="https://code.jquery.com/jquery-3.5.1.js"></script>  
-<script defer type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script>
+<?php if ($SA== 1 || $SA == 2   ) {  ?>
+<section>
+    <div class="gap gray-bg">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="row widget-page merged20">
+              <div class="col-lg-12 col-md-12 col-sm-6">
+                <aside class="sidebar">
+                   <div class="widget">
+                    <h4 class="widget-title">Liste des utilisateurs 
+                       
+                       </h4>
 
-
-
-<style type="text/css">
-    
-    .content-loader tr td {
-    white-space: nowrap;
-}
-
-</style>
-
-
-
-
-
-                <nav class="page-breadcrumb">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">Systeme</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">utilisateurs</li>
-                    </ol>
-                </nav>
-
-                <div class="row">
-                   
-            <div class="card col-md-12">
-              <div class="card-body">
-                                <h6 class="card-title"></h6>
+                    <ul class="faved-page">
                                    
                 
-                    <table  class="display table dataTable no-footer" id="tableid" style="width: cover" >
+                    <table  class="table table-striped table-responsive-xl" id="tableid" style="width: cover" >
                     <thead>
                     <tr>
                        
                         <th>id</th>
                         <th>Nom et prénom</th>
-                        <th>Club</th>
+                        <?php if($SA == 1  ) { ?>
                         <th>Contact</th>
-                        <th>Inscription </th>
+                        <?php }?>
+                       
                         <th>Actif</th>
+                        <th>Action</th>
                         
                     </tr>
                     </thead>
@@ -66,56 +50,70 @@
                         </td>
                       
                         <td>              
-                                        <a class="kt-user-card-v2__name" href="https://tunivisions.link/User/ProfileShow/<?php echo $record->userId ?>" >
-                                        <small><small> <?php echo $record->name ?> </small></small>
-                                        </a>
+                                        
+                                        <?php echo $record->name ?> 
+                                        
                                         <br>                              
-                                        <span class="kt-user-card-v2__desc">
-                                        <small>  <small>  <?php echo $record->role ?> <?php echo $record->cellule ?>  </small></small>
-                                        </span>                            
-                                    </div>                      
+                                        
+                                        <small>  
+                                            <small>  
+                                                <?php echo $record->role ?> <?php echo $record->cellule ?> 
+                                                <a  href="<?php echo base_url() ?>Club/clubInfo/<?php echo $record->clubID ?>">
+                                                  <?php echo $record->ClubName ?> 
+                                                </a>    
+                                            </small>
+                                        </small>
+                                                                  
+                                                        
                                 
                           
 
                         </td>
-                        <td>
-                                        <a class="kt-user-card-v2__name" href="#">
-                                          <small> <?php echo $record->ClubName ?> </small> </td>
-                                        </a>                            
-                                                     
-                        </td>
                         
-                        
+                        <?php if($SA == 1  ) { ?>
                         <td>
-                            <A HREF="mailto:<?php echo $record->email ?>"><i class="ri-mail-fill"></i></A> 
-                            
-                            <a href="<?php echo $record->facebook ?>"><i class="ri-facebook-box-fill"></i></a>
-                        <br>
-                             <a href="tel:<?php echo $record->mobile ?>"><i class="ri-phone-fill"></i> <?php echo $record->mobile ?></a>        
+                            <A HREF="mailto:<?php echo $record->email ?>">
+                                <i class="fa fa-mail"></i><?php echo $record->email ?>
+                            </A> 
+                           <br> 
+                            <a href="<?php echo $record->facebook ?>">
+                                <i class="fab fa-facebook"></i> 
+                            </a>
+                         | 
+                        <?php if($SA == 1 ) { ?>
+                             <a href="tel:<?php echo $record->mobile ?>">
+                                <i class="fa fa-phone"></i> <?php echo $record->mobile ?>
+                            </a>   
+                        <?php } ?>    
                          </td>
+                         <?php } ?>   
 
-                        <td>
-                            <small><small>
-
-                           parrin : <a class="kt-user-card-v2__name" href="https://tunivisions.link/User/ProfileShow/<?php echo $record->p_userId ?>" > <?php echo $record->parrain ?></a><br>
-                           date d'inscription :<a> <?php echo $record->createdDtm ?></a>
-                       </small></small>
-                        </td>
+                         
+                        
                         
                         <td> 
                            
                         <?php if($record->isDeleted == 0) { ?>
-                            <span class="btn btn-Info" > <small> Approuvé  </small></span>
+                            <span class="btn btn-sm btn-primary" > Actif</span>
                         <?php }   ?>
-                        <?php if($record->isDeleted == 1) { ?>
-                            <span class="btn btn-warning" > <small> non approuvé </small> </span>
+                        <?php if($record->isDeleted == 3) { ?>
+                            <span class="btn btn-sm btn-warning " > non Actif</span>
                         <?php } ?>
 
                         <?php  if($record->isDeleted == 2) {  ?>
-                            <span class="btn btn-danger" > <small> bloqué </small> </span>
+                            <span class="btn btn-sm btn-danger"  > bloqué</span>
                         <?php } ?>
      
                            
+                        </td>
+
+                        <td>
+                            <a  href="<?php echo base_url() ?>User/ProfileShow/<?php echo $record->userId ?>" ><i class="fas fa-eye"></i></a>
+                            <?php if(($record->isDeleted == 0 && $SA == 2) || $SA== 1 ){ ?>
+                            <a  href="<?php echo base_url() ?>User/editOld/<?php echo $record->userId ?>"  ><i class="fas fa-pencil-alt"></i></a>
+                            <?php } ?>
+                            <a  ><i class="fas fa-ban"></i></a>    
+
                         </td>
                        
 
@@ -129,22 +127,16 @@
 
                   </table>
 
-
-               
-              </div>
-            </div>
-                
+                    </ul>
                 </div>
-
-
-             <!-- begin::Global Config(global config for global JS sciprts) -->
-            <link rel="stylesheet" href="<?php echo base_url() ?>assets/vendors/datatables.net-bs4/dataTables.bootstrap4.css">
-  <script defer src="<?php echo base_url() ?>assets/vendors/datatables.net/jquery.dataTables.js"></script>
-  <script defer src="<?php echo base_url() ?>assets/vendors/datatables.net-bs4/dataTables.bootstrap4.js"></script>
-  <script type="text/javascript">
-            $(document).ready( function () {
-                $('#example').DataTable();
-            } );
-  </script>
-</div></div>
+            </aside>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+               
+            
 <?php } ?>

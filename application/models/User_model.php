@@ -16,7 +16,7 @@ class User_model extends CI_Model
      */
     function userListing($userID)
     {
-         $this->db->select('BaseTbl.userId, BaseTbl.gouvernorat , BaseTbl.delegation , BaseTbl.CLubID as club , BaseTbl.cin, BaseTbl.email, BaseTbl.name, BaseTbl.mobile, BaseTbl.createdDtm, Role.role , Clubs.name as ClubName , Clubs.city as ClubCity ,BaseTbl.sexe ,BaseTbl.isDeleted , BaseTbl.avatar , BaseTbl.cellule , Paren.name parrain , Paren.userId p_userId , BaseTbl.facebook ');
+         $this->db->select('BaseTbl.userId, BaseTbl.gouvernorat , BaseTbl.delegation , BaseTbl.CLubID as club , BaseTbl.cin, BaseTbl.email, BaseTbl.name, BaseTbl.mobile, BaseTbl.createdDtm, Role.role , Clubs.name as ClubName ,  Clubs.clubID , Clubs.city as ClubCity ,BaseTbl.sexe ,BaseTbl.isDeleted , BaseTbl.avatar , BaseTbl.cellule , Paren.name parrain , Paren.userId p_userId , BaseTbl.facebook ');
         $this->db->from('tbl_users as BaseTbl');
         $this->db->join('tbl_roles as Role', 'Role.roleId = BaseTbl.roleId','left');
         $this->db->join('tbl_club as Clubs', 'Clubs.clubID = BaseTbl.ClubID', 'LEFT');
@@ -29,6 +29,71 @@ class User_model extends CI_Model
         $result = $query->result();        
         return $result;
     }
+
+    /**
+     * This function is used to get the user listing count
+     * @return array $result : This is result
+     */
+    function userListingBlock()
+    {
+        $this->db->select('BaseTbl.userId, BaseTbl.gouvernorat , BaseTbl.delegation , BaseTbl.CLubID as club , BaseTbl.cin, BaseTbl.email, BaseTbl.name, BaseTbl.mobile, BaseTbl.createdDtm , BaseTbl.updatedBy , BaseTbl.updatedDtm  , Role.role , Clubs.name as ClubName ,  Clubs.clubID , Clubs.city as ClubCity ,BaseTbl.sexe ,BaseTbl.isDeleted , BaseTbl.avatar , BaseTbl.cellule , Paren.name parrain , Paren.userId p_userId , BaseTbl.facebook , BaseTbl.blockText ');
+        $this->db->from('tbl_users as BaseTbl');
+        $this->db->join('tbl_roles as Role', 'Role.roleId = BaseTbl.roleId','left');
+        $this->db->join('tbl_club as Clubs', 'Clubs.clubID = BaseTbl.ClubID', 'LEFT');
+        $this->db->join('tbl_users as Paren', 'Paren.userId = BaseTbl.updatedBy', 'LEFT');
+        $this->db->where('BaseTbl.isDeleted =', 2 );
+        $this->db->order_by('BaseTbl.userId', 'DESC');
+        $query = $this->db->get();
+        
+        $result = $query->result();        
+        return $result;
+    }
+
+
+
+        /**
+     * This function is used to get the user listing count
+     * @return array $result : This is result
+     */
+    function userListingType($type)
+    {
+         $this->db->select('BaseTbl.userId, BaseTbl.gouvernorat , BaseTbl.delegation , BaseTbl.CLubID as club , BaseTbl.cin, BaseTbl.email, BaseTbl.name, BaseTbl.mobile, BaseTbl.createdDtm, Role.role , Clubs.name as ClubName ,  Clubs.clubID , Clubs.city as ClubCity ,BaseTbl.sexe ,BaseTbl.isDeleted , BaseTbl.avatar , BaseTbl.cellule , Paren.name parrain , Paren.userId p_userId , BaseTbl.facebook ,  Clubs.SenJun  ');
+        $this->db->from('tbl_users as BaseTbl');
+        $this->db->join('tbl_roles as Role', 'Role.roleId = BaseTbl.roleId','left');
+        $this->db->join('tbl_club as Clubs', 'Clubs.clubID = BaseTbl.ClubID', 'LEFT');
+         $this->db->join('tbl_users as Paren', 'Paren.userId = BaseTbl.createdBy', 'LEFT');
+       
+        $this->db->where('BaseTbl.isDeleted =', 0 );
+        $this->db->where('Clubs.SenJun =', $type );
+        
+        $query = $this->db->get();
+        
+        $result = $query->result();        
+        return $result;
+    }
+
+
+        /**
+     * This function is used to get the user listing count
+     * @return array $result : This is result
+     */
+    function userListingTypeAll($type)
+    {
+         $this->db->select('BaseTbl.userId, BaseTbl.gouvernorat , BaseTbl.delegation , BaseTbl.CLubID as club , BaseTbl.cin, BaseTbl.email, BaseTbl.name, BaseTbl.mobile, BaseTbl.createdDtm, Role.role , Clubs.name as ClubName ,  Clubs.clubID , Clubs.city as ClubCity ,BaseTbl.sexe ,BaseTbl.isDeleted , BaseTbl.avatar , BaseTbl.cellule , Paren.name parrain , Paren.userId p_userId , BaseTbl.facebook ,  Clubs.SenJun  ');
+        $this->db->from('tbl_users as BaseTbl');
+        $this->db->join('tbl_roles as Role', 'Role.roleId = BaseTbl.roleId','left');
+        $this->db->join('tbl_club as Clubs', 'Clubs.clubID = BaseTbl.ClubID', 'LEFT');
+         $this->db->join('tbl_users as Paren', 'Paren.userId = BaseTbl.createdBy', 'LEFT');
+       
+    
+        $this->db->where('Clubs.SenJun =', $type );
+        
+        $query = $this->db->get();
+        
+        $result = $query->result();        
+        return $result;
+    }
+
   function getUserId(){
 
    $this->db->select('BaseTbl.userId');
@@ -41,19 +106,42 @@ class User_model extends CI_Model
 
   }
 
+
+
+    
+
     /**
      * This function is used to get the user listing count
      * @return array $result : This is result
      */
     function userListingByclub($clubID)
     {
-         $this->db->select('BaseTbl.userId, BaseTbl.gouvernorat , BaseTbl.delegation , BaseTbl.CLubID as club , BaseTbl.cin, BaseTbl.email, BaseTbl.name, BaseTbl.mobile, BaseTbl.createdDtm, Role.role , BaseTbl.cellule , Clubs.name as ClubName , Clubs.city as ClubCity ,BaseTbl.sexe ,BaseTbl.isDeleted , BaseTbl.avatar , BaseTbl.birthday ');
+         $this->db->select('BaseTbl.userId, BaseTbl.gouvernorat , BaseTbl.delegation , BaseTbl.CLubID as club , BaseTbl.cin, BaseTbl.email, BaseTbl.name, BaseTbl.mobile, BaseTbl.createdDtm, Role.role , Role.roleId , BaseTbl.cellule , Clubs.name as ClubName , Clubs.city as ClubCity ,BaseTbl.sexe ,BaseTbl.isDeleted , BaseTbl.avatar , BaseTbl.birthday ');
         $this->db->from('tbl_users as BaseTbl');
         $this->db->join('tbl_roles as Role', 'Role.roleId = BaseTbl.roleId','left');
         $this->db->join('tbl_club as Clubs', 'Clubs.clubID = BaseTbl.ClubID', 'LEFT');
-
-        $this->db->where('BaseTbl.cLubID =', $clubID);
         $this->db->where('BaseTbl.isDeleted =', 0);
+        $this->db->where('BaseTbl.CLubID =', $clubID);
+        
+        $query = $this->db->get();
+        
+        $result = $query->result();        
+        return $result;
+    }
+
+
+        /**
+     * This function is used to get the user listing count
+     * @return array $result : This is result
+     */
+    function userListingByclubAll($clubID)
+    {
+         $this->db->select('BaseTbl.userId, BaseTbl.gouvernorat , BaseTbl.delegation , BaseTbl.CLubID as club , BaseTbl.cin, BaseTbl.email, BaseTbl.name, BaseTbl.mobile, BaseTbl.createdDtm, Role.role , Role.roleId , BaseTbl.cellule , Clubs.name as ClubName , Clubs.city as ClubCity ,BaseTbl.sexe ,BaseTbl.isDeleted , BaseTbl.avatar , BaseTbl.birthday ');
+        $this->db->from('tbl_users as BaseTbl');
+        $this->db->join('tbl_roles as Role', 'Role.roleId = BaseTbl.roleId','left');
+        $this->db->join('tbl_club as Clubs', 'Clubs.clubID = BaseTbl.ClubID', 'LEFT');
+        $this->db->where('(BaseTbl.isDeleted = 3 Or BaseTbl.isDeleted = 0) AND  BaseTbl.CLubID =', $clubID );
+
         $query = $this->db->get();
         
         $result = $query->result();        
@@ -92,18 +180,19 @@ class User_model extends CI_Model
 
 
 
-     function getMembersByCellule($clubID,$cellule)
+     function getMembersByCellule ($clubID,$cellule)
         {
-            $this->db->select('userId, name ');
-            $this->db->from('tbl_users');
-            $this->db->where("isDeleted", 0);
-            $this->db->where('cellule =', $cellule );
-            $this->db->where('ClubID =', $clubID );
+            $this->db->select('BaseTbl.userId, BaseTbl.gouvernorat , BaseTbl.delegation , BaseTbl.CLubID as club , BaseTbl.cin, BaseTbl.email, BaseTbl.name, BaseTbl.mobile, BaseTbl.createdDtm, Role.role , Role.roleId , BaseTbl.cellule , Clubs.name as ClubName , Clubs.city as ClubCity ,BaseTbl.sexe ,BaseTbl.isDeleted , BaseTbl.avatar , BaseTbl.birthday ');
+            $this->db->from('tbl_users as BaseTbl');
+            $this->db->join('tbl_roles as Role', 'Role.roleId = BaseTbl.roleId','left');
+            $this->db->join('tbl_club as Clubs', 'Clubs.clubID = BaseTbl.ClubID', 'LEFT');
+            $this->db->where('BaseTbl.cellule =', $cellule );
+            $this->db->where('BaseTbl.ClubID =', $clubID );
             $query = $this->db->get();         
             return $query->result();
         }
 
-     function getMemberByRoleAndCelulle($ClubID,$roleId,$cellule)
+     function getMemberByRoleAndCelulle ($ClubID,$roleId,$cellule)
         {
             $this->db->select('*');
             $this->db->from('tbl_users');
@@ -112,7 +201,34 @@ class User_model extends CI_Model
             $this->db->where('ClubID =', $ClubID );
             $query = $this->db->get();         
             return $query->row();
-            
+        }
+
+
+           /**
+     * This function used to get user information by id
+     * @param number $userId : This is user id
+     * @return array $result : This is user information
+     */
+    function getUserInfo($userId)
+    {
+        $this->db->select('*');
+        $this->db->from('tbl_users');
+        $this->db->where('userId', $userId);
+        $query = $this->db->get();
+        
+        return $query->row();
+    }
+    
+
+
+    function getManagers($ClubID)
+        {
+            $this->db->select('*');
+            $this->db->from('tbl_users');
+            $this->db->where('roleId =', 7 );
+            $this->db->where('ClubID =', $ClubID );
+            $query = $this->db->get();         
+            return $query->result(); 
         }
 
 
@@ -126,7 +242,7 @@ class User_model extends CI_Model
      */
     function checkEmailExists($email)
     {
-        $this->db->select("name");
+        $this->db->select("*");
         $this->db->from("tbl_users");
         $this->db->where("email", $email);   
         $query = $this->db->get();
@@ -170,61 +286,10 @@ class User_model extends CI_Model
     }
 
 
-     /**
-     * This function is used to add new user to system
-     * @return number $insert_id : This is last inserted id
-     */
-    function addNewLink($linkInfo)
-    {
-
-        $this->db->trans_start();
-        $this->db->insert('tbl_freinds', $linkInfo);
-        
-        $insert_id = $this->db->insert_id();
-        
-        $this->db->trans_complete();
-        
-        return $insert_id;
-    }
 
 
-
-
-    /**
-     * This function is used to add new user to system
-     * @return number $insert_id : This is last inserted id
-     */
-   /*  function linkRequest($reciver)
-    {
-         $this->db->select(' Sender.userId , Sender.name , Sender.avatar ,  BaseTbl.Addeddate , BaseTbl.statut ');
-        $this->db->from('tbl_freinds as BaseTbl');
-        $this->db->join('tbl_users as Reciver', 'Reciver.userId = BaseTbl.id_tunReciver ' ,'left');
-        $this->db->join('tbl_users as Sender', 'Sender.userId = BaseTbl.id_tunSender  '  ,'left');
-        $this->db->where('BaseTbl.id_tunReciver = '.$reciver.' AND  BaseTbl.statut = 0 ' ) ; 
-
-        $query = $this->db->get();
-        
-        $result = $query->result();        
-        return $result;  
-    }
-    */
-    
-    /**
-     * This function used to get user information by id
-     * @param number $userId : This is user id
-     * @return array $result : This is user information
-     */
-    function getUserInfo($userId)
-    {
-        $this->db->select('userId, name, email, mobile, roleId  , clubID, avatar , isDeleted');
-        $this->db->from('tbl_users');
-
-        $this->db->where('userId', $userId);
-        $query = $this->db->get();
-        
-        return $query->row();
-    }
-    
+ 
+ 
     
     /**
      * This function is used to update the user information
@@ -235,10 +300,10 @@ class User_model extends CI_Model
     {
         $this->db->where('userId', $userId);
         $this->db->update('tbl_users', $userInfo);
-        
         return TRUE;
     }
     
+
     
     
     /**
@@ -378,7 +443,7 @@ class User_model extends CI_Model
      */
     function getUserInfoWithRole($userId)
     {
-        $this->db->select('BaseTbl.userId, BaseTbl.isDeleted ,  BaseTbl.email, BaseTbl.name, BaseTbl.nom , BaseTbl.prenom , BaseTbl.mobile, BaseTbl.roleId, Roles.role, BaseTbl.birthday, BaseTbl.gouvernorat, BaseTbl.delegation, BaseTbl.facebook, BaseTbl.instagram, BaseTbl.linkedin , BaseTbl.ClubID , BaseTbl.adresse , Clubs.name as ClubName  ,  Clubs.clubID ,   BaseTbl.avatar ,  BaseTbl.cellule , BaseTbl.cin , BaseTbl.SA , BaseTbl.sexe , BaseTbl.createdDtm , par.name parrain ');
+        $this->db->select('BaseTbl.userId, BaseTbl.about, BaseTbl.isDeleted ,  BaseTbl.email, BaseTbl.name, BaseTbl.nom , BaseTbl.prenom , BaseTbl.mobile, BaseTbl.roleId, Roles.role, BaseTbl.birthday , BaseTbl.adresse , BaseTbl.gouvernorat, BaseTbl.delegation, BaseTbl.facebook, BaseTbl.instagram, BaseTbl.linkedin , BaseTbl.ClubID , BaseTbl.adresse , Clubs.name as ClubName  ,  Clubs.clubID , Clubs.is_Actif ,   BaseTbl.avatar ,  BaseTbl.cellule , BaseTbl.cin , BaseTbl.SA , BaseTbl.sexe , BaseTbl.createdDtm , par.name parrain , Clubs.SenJun ');
         $this->db->from('tbl_users as BaseTbl');
         $this->db->join('tbl_roles as Roles','Roles.roleId = BaseTbl.roleId');
         $this->db->join('tbl_club as Clubs', 'Clubs.clubID = BaseTbl.ClubID', 'LEFT');
@@ -388,6 +453,43 @@ class User_model extends CI_Model
         $query = $this->db->get();
         
         return $query->row();
+    }
+
+
+
+
+        /**
+     * This function is used to add new user to system
+     * @return number $insert_id : This is last inserted id
+     */
+    function addVisiteUser($userInfo)
+    {
+
+        $this->db->trans_start();
+        $this->db->insert('tbl_users_visit', $userInfo);
+        
+        $insert_id = $this->db->insert_id();
+        
+        $this->db->trans_complete();
+        
+        return $insert_id;
+    }
+
+
+    /**
+     * This function is used to check whether email id is already exist or not
+     * @param {string} $email : This is email id
+     * @param {number} $userId : This is user id
+     * @return {mixed} $result : This is searched result
+     */
+    function visitListingByUser($userId)
+    {
+        $this->db->select("*");
+        $this->db->from("tbl_users_visit");
+        $this->db->where("userId", $userId);
+        $this->db->group_by("createdBy");   
+        $query = $this->db->get();
+         return $query->result();
     }
 
 

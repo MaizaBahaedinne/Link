@@ -120,9 +120,13 @@ class Login_model extends CI_Model
      */
     function lastLogin($loginInfo)
     {
+
         $this->db->trans_start();
         $this->db->insert('tbl_last_login', $loginInfo);
+        $insert_id = $this->db->insert_id();
         $this->db->trans_complete();
+        
+        return $insert_id;
     }
 
     /**
@@ -141,6 +145,18 @@ class Login_model extends CI_Model
         return $query->row();
     }
 
+        /**
+     * This function is used to update the user information
+     * @param array $userInfo : This is users updated information
+     * @param number $userId : This is user id
+     */
+    function updateLogin($userInfo, $id)
+    {
+        $this->db->where('id', $id);
+        $this->db->update('tbl_last_login', $userInfo);
+        return TRUE;
+    }
+    
 
 
 
@@ -149,16 +165,16 @@ class Login_model extends CI_Model
      * @param number $userId : This is user id
      * @return number $result : This is query result
      */
-    function lastLogins()
+    function lastLogins($userId)
     {
-        $this->db->select('Max(BaseTbl.id) , Users.userId ,Users.avatar , Users.name  , BaseTbl.platform , Max(BaseTbl.createdDtm)  createdDtm ');
+        $this->db->select('BaseTbl.id , Users.userId ,Users.avatar , Users.name  , BaseTbl.platform , Max(BaseTbl.lastActDTM)  lastActDTM ');
         $this->db->from('tbl_last_login as BaseTbl ');
         $this->db->join('tbl_users as Users', 'Users.userId = BaseTbl.userId','left');
-        $this->db->where(' BaseTbl.createdDtm >= ADDTIME(NOW() , - 50000)  ');
+        $this->db->where(' BaseTbl.lastActDTM >= ADDTIME(NOW() , - 12000)  ');
+        $this->db->where(' BaseTbl.userid !=  ',$userId);
         $this->db->group_by('BaseTbl.userId');
-        $this->db->order_by('BaseTbl.createdDtm', 'DESC');
+        $this->db->order_by('BaseTbl.lastActDTM', 'DESC');
         $query = $this->db->get();
-
         return $query->result();  
     }
 

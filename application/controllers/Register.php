@@ -1,5 +1,8 @@
 <?php if(!defined('BASEPATH')) exit('No direct script access allowed');
 
+
+require APPPATH . '/libraries/BaseController.php';
+
 /**
  * Class : Login (LoginController)
  * Login class to control to authenticate user credentials and starts user's session.
@@ -7,7 +10,7 @@
  * @version : 1.1
  * @since : 15 November 2016
  */
-class Register extends CI_Controller
+class Register extends BaseController
 {
     /**
      * This is default constructor of the class
@@ -35,26 +38,18 @@ class Register extends CI_Controller
 
     
  
-     /**
-     * Index Page for this controller.
-     */
-    public function reglement()
-    {       
-
-
-
-         $this->load->view('reglement');
-    }
+ 
 
 
   function registerNewUser()
     {
-                
+                $cin = strtoupper ($this->input->post('cin'));
                 $fname = strtoupper ($this->input->post('fname'));
                 $lname = $this->input->post('lname');
                 $name =  strtoupper ($fname).' '.$lname ;
                 $email = $this->input->post('email');
                 $mobile = $this->security->xss_clean($this->input->post('mobile'));
+                $password = $this->security->xss_clean($this->input->post('password'));
 
 
 
@@ -68,12 +63,13 @@ class Register extends CI_Controller
                  'cin'=>$cin,
                  'email'=>$email,
                  'password'=>getHashedPassword($password),
-                 'roleId'=>'11',
+                 'roleId'=>'5',
                  'clubID'=>$this->input->get('var2') ,
                  'name'=> $name,
                  'nom'=> $fname,
                  'prenom'=> $lname,
                  'mobile'=>$mobile,
+                 'affectedYear'=>2020,
                  'createdBy'=> $this->input->get('var1'),
                  'createdDtm'=>date('Y-m-d H:i:s'),
                  'birthday' =>date($birth) ,
@@ -95,7 +91,7 @@ class Register extends CI_Controller
                 
                 if($result > 0  )
                 {
-                    $this->session->set_flashdata('success', 'votre dossier est en cours de traitement');
+                    $this->session->set_flashdata('success', 'Merci de se connecter');
                 }
                 else
                 {
@@ -143,9 +139,15 @@ class Register extends CI_Controller
                     $content  = $this->load->view('email/resetPassword' , $data ) ; 
 
 
-                    $this->send_mail( $email  , 'Mot de passe' , $data , $content ) ;
+                 /*   $this->send_mail(
+                                $result->email , 
+                        "Mot de passe oublie !" , 
+                        Null , 
+                        "Bonjour ".$result->name.",<br> le lien pour changer votre mot de passe est : <br> <br> <b><a href ='".base_url()."Register/Passechange/".$result->userId."?userID=".$result->userId."&tokenId=".date('Y-m-d H:i:s') ."'>Modifier votre mot de passe</a></b> <br> <br>" ) ;
 
-                    $this->session->set_flashdata('success', 'on a envoyé un mail à '.$email);
+                    $this->session->set_flashdata('success', 'on a envoyé un mail à '.$email); */
+
+                    $this->session->set_flashdata('error', 'Service temporairement en maintenance');
                     redirect('/login') ; 
                     
                 }
@@ -162,9 +164,9 @@ class Register extends CI_Controller
      */
     public function Passechange($userId)
     {   
-         $data['ActuRecords'] = $this->actualite_model->actuListing();
-
-         $this->load->view('register/changePassword' , $data );
+         
+         $data['user'] = $this->user_model->getUserInfo($userId) ;
+//         $this->load->view('register/changePassword',$data   );
     }
 
 

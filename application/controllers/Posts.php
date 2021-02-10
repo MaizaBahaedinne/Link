@@ -21,7 +21,7 @@ class Posts extends BaseController {
     }
     
 
-    public function Acceuil()
+    public function index()
     {
          $data  ['userId'] = $this->vendorId ; 
          $data['ActuRecords'] = $this->actualite_model->actuListing();
@@ -43,6 +43,12 @@ class Posts extends BaseController {
          $this->global['pageTitle'] = 'Acceuil' ;
          $this->loadViews("Acceuil", $this->global, $data, NULL);   
     }
+
+
+      public function Acceuil()
+      {
+        $this->index() ;
+      }
 
 
 
@@ -134,7 +140,8 @@ class Posts extends BaseController {
            'isDeleted' => 1 ,
        );
         $result = $this->posts_model->deletePost($postInfo,$postId);
-        return $result ; 
+        
+        redirect('Posts/Acceuil') ;
     }
 
 

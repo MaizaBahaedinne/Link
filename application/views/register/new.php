@@ -94,24 +94,25 @@
              $var1 = $this->input->get('var1');
              $var2 = $this->input->get('var2');
              $var3 = $this->input->get('var3');
+             $date = $this->input->get('var4');
             ?>
           <!--begin::Form-->
+          <?php if ( (time()-(60*60*24)) <= strtotime($date) ) { ?>
             <form  role="form" class="we-form" runat="server" action="<?php echo base_url() ?>Register/registerNewUser?var1=<?php echo $var1 ?>&var2=<?php echo $var2 ?>&var3=<?php echo $var3 ?>"     method="post" enctype="multipart/form-data"  >
       
            
             
 
             <?php if ($var1!=Null &&   $var2 != Null  &&  $var3 == 1  ) { ?> 
-
-            
-       
                 
-              <input  type="text" placeholder="cin" name="cin" maxlength="8" minlength="8" required>
+              <input  type="text" placeholder="cin" name="cin"  value="" 
+              <?php if($club->SenJun != 4 ){ ?>maxlength="8" minlength="8" required <?php } ?> >
               <input  type="text" placeholder="Nom" name="fname" required>
               <input   type="text" placeholder="Prenom" name="lname" required> 
               <input   type="date" placeholder="Date de naissance" name="birth" placeholder="sexe" required>
               <input  type="email" placeholder="Email" name="email"  required>
               <input  type="text" pattern="[0-9]{2}\d{6}" placeholder="mobile" name="mobile" required>
+              <input type="password" name="password" minlength="8" placeholder="Mot de passe" required>
               <input type="checkbox"><label>j'accepte  <a href="<?php echo base_url(); ?>Register/reglement" class="kt-link kt-login__link kt-font-bold">le reglement</a> </label> 
               <br>
              <?php } ?>
@@ -130,6 +131,9 @@
 
 
           </form>
+          <?php } else  { ?>
+            <h1>Code d'inscription expiré </h1>
+          <?php } ?>
 
 
                                

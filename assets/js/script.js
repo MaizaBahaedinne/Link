@@ -4,6 +4,16 @@ $(window).load(function(){
     $('.wavy-wraper').addClass('hidden');
 });
 
+
+   
+
+
+
+function fbConn() {
+	$('#facebookPageGroup').show() ;
+ 			$('#facebookAuth').hide() ; 
+}
+
 jQuery(document).ready(function($) {
 	
 	"use strict";
@@ -42,10 +52,12 @@ jQuery(document).ready(function($) {
 	$(".postoverlay").not(".new-postbox").click(function() {
 	    $(".postoverlay").fadeOut(500);
 	});
+	/*
 	$("[type = submit]").click(function () {
 	    var post = $("textarea").val();
 	    $("<p class='post'>" + post + "</p>").appendTo("section");
-	});	
+	});
+	*/	
 	
 // top menu list	
 	$('.main-menu > span').on('click', function () {
@@ -208,22 +220,32 @@ $('.audio-call, .video-call').on('click', function () {
 		  if(!animated){
 
 		  	$.ajax({
-		        url: "Like/" + this.id ,
+		        url: "Posts/Like/" + this.id ,
 		        type: "post"
+		    	}).done(function(){
+						$(this).addClass('happy').removeClass('broken');
+						animated = true;
+						counter++;
+						$(this).children('span').text(counter);
+		    		
 		    	});
 
-			$(this).addClass('happy').removeClass('broken');
-			animated = true;
-			counter++;
-			$(this).children('span').text(counter);
+
 		  }
 		  else {
+		  	/*
 			$(this).removeClass('happy').addClass('broken');
 			animated = false; 
 			 counter--;
 			$(this).children('span').text(counter);
+			*/
 		  }
 		});	
+
+
+
+
+	
 	
 // search fadein out at navlist area	
 	$('.search-data').on('click', function () {
@@ -1126,7 +1148,7 @@ if ($.isFunction($.fn.mmenu)) {
 //----- count down timer		
 	if ($.isFunction($.fn.downCount)) {
 		$('.countdown').downCount({
-			date: '10/25/2020 12:00:00',
+			date: '11/15/2020 19:00:00',
 			offset: +10
 		});
 	}
@@ -1231,6 +1253,10 @@ jQuery(".post-comt-box textarea").on("keydown", function(event) {
 		$( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
 		  " - $" + $( "#slider-range" ).slider( "values", 1 ) );
 	  } );
+
+
+
+
 		
 	
 });//document ready end
@@ -1249,6 +1275,8 @@ jQuery(".post-comt-box textarea").on("keydown", function(event) {
 		}
 	};
 })();
+
+      
 
 
 	

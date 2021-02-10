@@ -8,7 +8,7 @@
                 <a href="<?php echo base_url()?>" title=""><img src="<?php echo base_url() ?>assets/images/logo2.svg" width="150" alt=""></a>
               </div>  
               <p>
-                The trio took this simple idea and built it into the world’s leading students network platform.
+                Le trio a pris cette simple idée et l'a intégrée dans la plate-forme du premier réseau estudiantin en Tunisie.
               </p>
             </div>
             <ul class="location">
@@ -27,20 +27,20 @@
           <div class="widget">
             <div class="widget-title"><h4>follow</h4></div>
             <ul class="list-style">
-              <li><i class="fa fa-facebook-square"></i> <a href="https://www.facebook.com/Tunivisionsfoundation/" title="">facebook</a></li>
-              <li><i class="fa fa-twitter-square"></i><a href="hhttps://twitter.com/TnvFoundation" title="">twitter</a></li>
-              <li><i class="fa fa-instagram"></i><a href="https://www.instagram.com/tunivisions_foundation/" title="">instagram</a></li>
-              <li><i class="fa fa-google-plus-square"></i> <a href="https://plus.google.com/discover" title="">Google+</a></li>
+              <li><i class="fab fa-facebook"></i> <a href="https://www.facebook.com/Tunivisionsfoundation/" title="">facebook</a></li>
+              <li><i class="fab fa-twitter"></i><a href="hhttps://twitter.com/TnvFoundation" title="">twitter</a></li>
+              <li><i class="fab fa-instagram"></i><a href="https://www.instagram.com/tunivisions_foundation/" title="">instagram</a></li>
+              <li><i class="fab fa-google-plus"></i> <a href="https://plus.google.com/discover" title="">Google+</a></li>
               
             </ul>
           </div>
         </div>
         <div class="col-lg-2 col-md-4 col-sm-6">
           <div class="widget">
-            <div class="widget-title"><h4>Navigate</h4></div>
+            <div class="widget-title"><h4>Naviguer</h4></div>
             <ul class="list-style">
               <!--
-              <li><a href="about.html" title="">about us</a></li>
+              <li>developé par </li>
               <li><a href="contact.html" title="">contact us</a></li>
               <li><a href="terms.html" title="">terms &amp; Conditions</a></li>
               <li><a href="#" title="">RSS syndication</a></li>
@@ -51,27 +51,38 @@
         </div>
         <div class="col-lg-2 col-md-4 col-sm-6">
           <div class="widget">
-            <div class="widget-title"><h4>useful links</h4></div>
+            <div class="widget-title"><h4>Liens utiles</h4></div>
             <ul class="list-style">
-              <!--
-              <li><a href="#" title="">leasing</a></li>
-              <li><a href="#" title="">submit route</a></li>
-              <li><a href="#" title="">how does it work?</a></li>
-              <li><a href="#" title="">agent listings</a></li>
-              <li><a href="#" title="">view All</a></li>
+             
+              <li><a href="<?php echo base_url() ?>project" title="">Projets</a></li>
+              <li><a href="<?php echo base_url() ?>Club/clubInfo/<?php echo $clubID?>" title=""><?php if ($userC->clubID > 5 ) {echo "club ";}  echo 'Tunivisions '.$userC->ClubName ; ?></a></li>
+              <li><a href="<?php echo base_url() ?>Club" title="">Clubs</a></li>
+
             </ul>
-            -->
+            
           </div>
         </div>
         <div class="col-lg-2 col-md-4 col-sm-6">
           <div class="widget">
-            <div class="widget-title"><h4>download apps</h4></div>
+            <div class="widget-title"><h4>Equipe</h4></div>
             <ul class="colla-apps">
-              <!--
-              <li><a href="https://play.google.com/store?hl=en" title=""><i class="fa fa-android"></i>android</a></li>
-              <li><a href="https://www.apple.com/lae/ios/app-store/" title=""><i class="ti-apple"></i>iPhone</a></li>
-              <li><a href="https://www.microsoft.com/store/apps" title=""><i class="fa fa-windows"></i>Windows</a></li>
-              -->
+              
+              <li>
+                <a href="https://tunivisions.link/User/ProfileShow/2"><img src="<?php echo base_url()?>uploads/avatar/xavatar__MAIZA,P20Bahaedinne_IMG_1257.jpg.pagespeed.ic.ZCoZ3Eb2B1.webp" class="alligator-profile-likes"> 
+                  <div >Bahaedinne Maiza <br><small>Manager</small> <div>
+                </a>
+              </li>
+              <li>
+                <a href="https://tunivisions.link/User/ProfileShow/4320">
+                  <img src="<?php echo base_url()?>uploads/avatar/FB_IMG_1581494137538.jpg27338373" class="alligator-profile-likes"> 
+                  <div  >Ayman Karray <br><small>Collaborateur Dévelopement Web </small> <div>
+                </a>
+              </li>
+              <li>
+                <a href="https://tunivisions.link/User/ProfileShow/4875"><img src="<?php echo base_url()?>uploads/avatar/inbound4907866068062005621.jpg27847992" class="alligator-profile-likes"> 
+                  <div  >Imen Abassi <br><small>Collaboratrice Dévelopement Mobile </small> <div>
+                </a>
+              </li>
             </ul>
           </div>
         </div>
@@ -93,8 +104,18 @@
 
 
 <div class="side-panel">
+    <h4 class="panel-title">Options</h4>
+
+ 
+  <div class="setting-row">
+        <a data-toggle="modal" data-target="#qrscanner" > Scanner QR</a>
+
+  </div>
+  <div class="setting-row">
+         <a  onclick="getLocation()" >Activer la localisation</a>
+  </div>
   <!--
-    <h4 class="panel-title">General Setting</h4>
+    
     <form method="post">
       <div class="setting-row">
         <span>use night mode</span>
@@ -250,43 +271,66 @@
 </script>
 
 
+
       <div class="modal fade" id="TuniFan">
         <div class="modal-dialog modal-sm">
           <div class="modal-content">
 
             <!-- Modal Header -->
             <div class="modal-header">
-              <h4 class="modal-title">Invitez un tuniFan</h4>
+              <h4 class="modal-title">Invitez des nouveaux membres</h4>
               <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
 
             <!-- Modal body -->
             <div class="modal-body">
-
-              <div id="qrcode" style="align-content: center ; vertical-align: center"></div>
+              <p style="text-align: center;" >merci de scaner ce QR-code avec une application mobile<br> <b>Android / iOS / HarmonyOs</b>.</p>
+              <div id="qrcode" style="text-align: center;"></div>
               <script type="text/javascript">
                   var qrcode = new QRCode(document.getElementById("qrcode"), {
                     width : 350,
                     height : 350
                   });
 
-                  function makeCode () {    
+                  function makeCode1 () {    
 
                     qrcode.makeCode("<?php echo base_url() ;?>Register?var1=<?php echo $uid ?>&var4=<?php echo  Date('Y-m-d') ?>&var2=<?php echo $clubID ?>&var3=1");
                   }
 
-                  makeCode();
+
+
+                  makeCode1();
 
                   $("#text").
                     on("blur", function () {
-                      makeCode();
+                      makeCode1();
                     }).
                     on("keydown", function (e) {
                       if (e.keyCode == 13) {
-                        makeCode();
+                        makeCode1();
                       }
                     });
+
+
+                   
                 </script>
+
+
+                <br>
+                <div class="row">
+                  <div class="col-md-2">
+                    <a class="btn btn-primary" href="fb-messenger://share/?link=<?php echo base_url() ;?>Register?var1=<?php echo $uid ?>%26var4=<?php echo  Date('Y-m-d') ?>%26var2=<?php echo $clubID ?>%26var3=1" target="_blank" ><i class="fab fa-facebook-messenger"></i></a>
+                  </div>
+                  <div class="col-md-2">
+                    <a class="btn btn-success" href="whatsapp://send?text=<?php echo base_url() ;?>Register?var1=<?php echo $uid ?>%26var4=<?php echo  Date('Y-m-d') ?>%26var2=<?php echo $clubID ?>%26var3=1" target="_blank" ><i class="fab fa-whatsapp"></i></a>
+                  </div>  
+                </div>
+                <hr>
+                <p style="text-align: center;">ce code reste valable jusqu'à<br> <b style="color: red"><?php echo date('d/m/Y')?> 23:59:00</b></p>
+
+
+              
+   
 
 
 
@@ -299,6 +343,175 @@
           </div>
         </div>
     </div><!-- fade Modal -->
+
+ <div class="modal fade" id="qrscanner">
+        <div class="modal-dialog modal-sm">
+          <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title">Scanner QR Code</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+              <div style="width: auto;" id="readerqr"></div>
+              <div style="width: auto; display: none ; " id="readerValid"  >
+                <h3 style="text-align: center;" >Bravo</h3>
+                <p id="readerTxt" style="text-align: center;">Votre participation a été valider avec succées</p>
+              </div>
+              <script type="text/javascript">
+  
+                function onScanSuccess(qrCodeMessage) {
+                  
+                  $.ajax( "<?php echo base_url() ?>"+qrCodeMessage+"/<?php echo $uid ?>" )
+                        .done(function(data) {
+                          
+                          alert( data );
+                          alert( "On va actuliser cette page" );
+                          location.reload();
+                        })
+                        .fail(function() {
+                          alert( "error" );
+                        });
+
+                               
+
+              }
+
+                function onScanError(errorMessage) {
+                    // handle on error condition, with error message
+                }
+
+                var html5QrcodeScanner = new Html5QrcodeScanner(
+                    "readerqr", { fps: 10, qrbox: 250 });
+                html5QrcodeScanner.render(onScanSuccess, onScanError);
+
+          </script>
+
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Fermer</button>
+            </div>
+          </div>
+        </div>
+    </div><!-- fade Modal -->
+
+
+
+
+
+  <script>
+    tinymce.init({
+      selector: '#TinyMCE',
+      plugins: 'advlist autolink lists link image charmap print preview hr anchor pagebreak',
+      toolbar_mode: 'floating',
+    });
+  </script>
+
+
+    
+
+  
+
+  <script>
+  var x = document.getElementById("demo");
+
+  function getLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(showPosition, showError);
+    } else { 
+      x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+  }
+
+  function showPosition(position) {
+    x.innerHTML = "Latitude: " + position.coords.latitude + 
+    "<br>Longitude: " + position.coords.longitude;
+  }
+
+  function showError(error) {
+    switch(error.code) {
+      case error.PERMISSION_DENIED:
+          alert("l'activation de service de géolocalisation est obligatoir") ;
+          window.location.replace("<?php echo base_url() ?>logout")
+        break;
+      case error.POSITION_UNAVAILABLE:
+        x.innerHTML = "Location information is unavailable."
+        break;
+      case error.TIMEOUT:
+        x.innerHTML = "The request to get user location timed out."
+        break;
+      case error.UNKNOWN_ERROR:
+        x.innerHTML = "An unknown error occurred."
+        break;
+    }
+  }
+  </script>
+
+
+       <script type="text/javascript">
+         window.addEventListener("load", function(event) {
+          getLocation();
+            console.log("Toutes les ressources sont chargées !");
+
+          });
+     </script>   
+
+
+
+     <div class="modal fade" id="AlumniGO">
+        <div class="modal-dialog ">
+          <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title">Formulaire d'integration des nouveaux Alumni </h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+             
+              <form class="c-form" method="post" action="<?php echo base_url()?>User/goAlumni" >
+              <label> Choisir une unité : </label>
+              <select class="form-control"  name="cellule" required>
+                   <option value="" ></option>
+                   <option value="Unité developement T-Link" >Unité developement T-Link </option>
+                   <option value="Unité developement site web" >Unité developement site web </option>
+                   <option value="Unité developement strategique" >Unité developement strategique </option>
+                   <option value="Unité création de contenu" >Unité création de contenu </option>
+                   <option value="Unité communication" >Unité communication </option>
+                   <option value="Unité reglementation et proccess" >Unité reglementation et proccess </option>
+                   <option value="Unité juridique" >Unité juridique </option>
+                   <option value="Unité accadémique" >Unité accadémique </option>
+                   <option value="Unité des partenariats" >Unité des partenariats </option>
+                   <option value="Unité des relations internationale" >Unité des relations internationale </option>
+                   <option value="Unité we are campers" >Unité we are campers </option>
+                   <option value="Unité we are carthage" >Unité we are carthage </option>
+                  <option value="Unité incubateur" >Unité incubateur </option>
+                  <option value="Unité Fund raising" >Unité Fund raising </option>
+                </select>
+                <hr>
+                <span><input type="checkbox" name="" required > &nbsp;Je suis <?php echo $name ?> je quitte mon club et je rejoins l'Alumni Chapter </span>
+                <br><br>
+                <input type="submit" value="valider">
+              </form>
+
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Fermer</button>
+            </div>
+          </div>
+        </div>
+    </div><!-- fade Modal -->
+
+
 
 
 </html>

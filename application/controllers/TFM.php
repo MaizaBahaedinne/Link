@@ -14,298 +14,192 @@ class TFM extends BaseController {
         $this->load->model('Tfm_part_model');
         $this->load->model('club_model');
         $this->load->model('tfm_model');
+        $this->load->model('project_model');
         $this->isLoggedIn();   
     }
     
 
 		public function index()
-		        {
-		        		 
-		                $searchText='' ;
-		                $data['tfmRecords'] = $this->tfm_model->TFMListing();
+		        {	 
+		            $searchText='' ;
+		            $data['tfmRecords'] = $this->tfm_model->TFMListing();
 
-		                foreach ($data['tfmRecords'] as $a ) {
-
-		                	 $a->tfm = $this->tfm_model->TFMPId($this->vendorId,$a->tfmId);
-		                }
-		                
-
-		                $this->global['pageTitle'] = 'TFM';
-		             	$this->global['active'] = 'TFM';
-		                $this->loadViews("TFM/list", $this->global, $data, NULL);   
+		            foreach ($data['tfmRecords'] as $a ) 
+		            	{
+		            	 	$a->tfm = $this->tfm_model->TFMPId($this->vendorId,$a->tfmId);
+		            	}
+		            $this->global['pageTitle'] = 'TFM';
+		         	$this->global['active'] = 'TFM';
+		            $this->loadViews("TFM/list", $this->global, $data, NULL);   
 		        }
 
 
 		public function partant()
 		        {		
-			        	$data['auto'] =  $this->club_model->getClubInfo($this->clubID) ;
-			        	$data['pres'] =  $this->user_model->getUserInfoWithRole($this->vendorId) ;
-		                $searchText='' ;
-		                $data['tfmRecords'] = $this->tfm_model->TFMListing();
-		                $this->global['pageTitle'] = 'CodeInsect : club  Listing';
-		             	$this->global['active'] = 'TFM';
-		                $this->loadViews("TFM/new", $this->global, $data, NULL);   
+		        	$data['auto'] =  $this->club_model->getClubInfo($this->clubID) ;
+		        	$data['pres'] =  $this->user_model->getUserInfoWithRole($this->vendorId) ;
+	                $searchText='' ;
+	                $data['tfmRecords'] = $this->tfm_model->TFMListing();
+	                $this->global['pageTitle'] = 'CodeInsect : club  Listing';
+	             	$this->global['active'] = 'TFM';
+	                $this->loadViews("TFM/new", $this->global, $data, NULL);   
 		        }
 
 
 
-		    public function PaimentByClub($clubID)
-			{		
-							$data['userId']  = $this->vendorId; 
-		                $data['userRecords'] = $this->Tfm_part_model->TFMPartListinByclubToP($clubID);
-		                 $data['userRecordsT1'] = $this->Tfm_part_model->TFMPartListinByclubT1($clubID);
-		                 $data['userRecordsT2'] = $this->Tfm_part_model->TFMPartListinByclubT2($clubID);
-		                $this->global['pageTitle'] = 'CodeInsect : club  Listing';
-		             	$this->global['active'] = 'TFM';
-		                $this->loadViews("TFM/PaimentByClub", $this->global, $data, NULL);   
+		    public function PaimentByClub($clubID,$projectId)
+				{		
+					$data['clubID'] = $clubID; 
+					$data['projectId'] = $projectId; 
+					
+	                $data['userRecordsT1'] = $this->Tfm_part_model->TFMPartListinByclubT1($clubID,$projectId);
+	                $data['userRecordsT2'] = $this->Tfm_part_model->TFMPartListinByclubT2($clubID,$projectId);
+	                $data['userRecordsC'] = $this->Tfm_part_model->TFMPartListinByclubC($clubID,$projectId);
+
+	                $this->global['pageTitle'] = 'Paiement';
+	             	$this->global['active'] = 'TFM';
+	                $this->loadViews("TFM/PaimentByClub", $this->global, $data, NULL);   
 		        }
 
-		 public function partantF()
+		 public function partantF($ProjectId)
 		        {	
-
-		        	  $searchText = $this->security->xss_clean($this->input->post('searchText'));
-            $data['searchText'] = $searchText;
-            $data['userID'] = $this->vendorId;
-            $this->load->library('pagination');
-
-		        	$data['count'] = count($this->Tfm_part_model->TFMPartListing());
-				 	$data['partParsexeH'] = $this->Tfm_part_model->TFMPartConfirmedBySexeHListing();
-					$data['partParsexeF'] = $this->Tfm_part_model->TFMPartConfirmedBySexeFListing();
-		                $searchText='' ;
-		                $data['userId'] = $this->vendorId ;
-		                $data['userRecords'] = $this->Tfm_part_model->TFMClubPartListing();
-		                $this->global['pageTitle'] = 'CodeInsect : club  Listing';
-		             	$this->global['active'] = 'TFMP';
-		                $this->loadViews("TFM/clubPaiement", $this->global, $data, NULL);   
-		        }
-
-
-		 public function TFMClubPartListing()
-		        {	
-
-		        	  $searchText = $this->security->xss_clean($this->input->post('searchText'));
-            $data['searchText'] = $searchText;
-            $data['userID'] = $this->vendorId;
-            $this->load->library('pagination');
-
-		        	$data['count'] = count($this->Tfm_part_model->TFMClubPartListing());
-		                $searchText='' ;
-		                $data['userId'] = $this->vendorId ;
-		                $data['userRecords'] = $this->Tfm_part_model->TFMClubPartListing();
-		                $this->global['pageTitle'] = 'CodeInsect : club  Listing';
-		             	$this->global['active'] = 'TFMP';
-		                $this->loadViews("TFM/listpf", $this->global, $data, NULL);   
+	            	$data['projectId'] = $ProjectId ;  
+	                $data['clubRecords'] = $this->Tfm_part_model->TFMClubPartListing($ProjectId);
+	                $this->global['pageTitle'] = ' club  Listing';
+	             	$this->global['active'] = 'TFMP';
+	                $this->loadViews("TFM/clubPaiement", $this->global, $data, NULL);   
 		        }
 
 
 
 
-		 public function partantByClub()
+		 public function partantByClub($clubId,$projectId)
 		        {	
+		        	$data["projet"] = $this->project_model->getProjectInfo($projectId);
+			       $data['userRecords'] = $this->Tfm_part_model->TFMPartListinByclub($clubId,$projectId);
+			      
+	                $this->global['pageTitle'] = 'Liste des Participants';
+	             	$this->global['active'] = 'TFMP';
+	                $this->loadViews("TFM/listpf", $this->global, $data, NULL);   
 
-		        	  $searchText = $this->security->xss_clean($this->input->post('searchText'));
-            $data['searchText'] = $searchText;
-            
-            $this->load->library('pagination');
-
-		        	$data['count'] = count($this->Tfm_part_model->TFMPartListinByclub($this->clubID));
-		                $searchText='' ;
-		                $data['userRecords'] = $this->Tfm_part_model->TFMPartListinByclub($this->clubID);
-		                $this->global['pageTitle'] = 'CodeInsect : club  Listing';
-		             	$this->global['active'] = 'TFMC';
-		             	$data['userId'] = $this->vendorId ;
-		                $this->loadViews("TFM/listpf", $this->global, $data, NULL);   
 		        }    
 
 
-		public function TFMCountByClubV()
-		   {	
-
-		        	  $searchText = $this->security->xss_clean($this->input->post('searchText'));
-            $data['searchText'] = $searchText;
-            
-            $this->load->library('pagination');
-
-		        	$data['count'] = count($this->Tfm_part_model->TFMCountByClub());
-		                $searchText='' ;
-		                $data['userRecords'] = $this->Tfm_part_model->TFMCountByClub();
-		                $this->global['pageTitle'] = 'CodeInsect : club  Listing';
-		             	$this->global['active'] = 'TFMC';
-		                $this->loadViews("TFM/countByClub", $this->global, $data, NULL);   
-		        }    
 
 		        
 
 
-		public function partanTfm (){
-
-				//club
-		/*		if($this->role == 1 || $this->SA==1  ){
-				$date = $this->input->post('dateFonde');
-				$email = $this->input->post('email');
-				$facebook = $this->input->post('facebook');
-
-				$clubInfo = array(
-		          'facebook'=>$email,
-		          'email'=>$facebook,
-		          'birthday'=>$date ,
-
-		        );
-
-				$resultC = $this->club_model->editclub($clubInfo, $this->clubID) ; 
-				}
-
-				
-		
+		public function partanTfm ($TFMId){
 				$moto = $this->input->post('bus');
-				$sys = $this->input->post('sys');
-		*/	
-
 				$partanTfm = array(
-		          'tfmId'=>'7',
+		          'tfmId'=>$TFMId ,
 		          'dateInscrip'=>date('Y-m-d H:i:s'),
 		          'userId'=>$this->vendorId ,
 		          'statut'=>2 ,
-		          'moto'=> 1 ,
-		          'sysMobile'=> 'Android' ,
-		          'remb'=> 0 ,
+		          'moto'=> $moto 
 		        );
 
 		         $result = $this->tfm_model->addNewPartTFM($partanTfm) ;
 
 
 				
-		if ( $result){	
-		   			redirect('TFM') ; 		
+		if ($result){	
+		   			redirect('/Project/projectDetails/'.$TFMId) ; 		
 		   }
 		
 		}
 
 
-		public function partanTfmPaiement1 (){
+		public function partanTfmPaiement1 ($clubId,$projectId){
 
-				 foreach ( $this->input->post('participant') as $r)
+				$part = $this->input->post('participant') ;
+
+
+			
+				foreach ( $part as $r)
 				{
 					$partanTfm = array(  	  
-											  'p_tranch1' => '80', 
-									          'dateP_tranch1'=>date('Y-m-d H:i:s'),
-									          'recepteurTranche1'=>$this->vendorId ,
-									     );
+									  'p_tranch1' => '100', 
+							          'dateP_tranch1'=>date('Y-m-d H:i:s'),
+							          'recepteurTranche1'=>$this->vendorId 
+								     	);
 					$result = $this->tfm_model->editTFMPart($partanTfm, $r) ;
 				}
+			
 
 
+
+			redirect('/TFM/PaimentByClub/'.$clubId.'/'.$projectId) ;
 
 		
 		}
 
 
-				public function partanTfmPaiement2 (){
 
+				public function partanTfmPaiement2 ($clubId,$projectId){
 
-					foreach ( $this->input->post('participant') as $r)
+				$part = $this->input->post('participant') ;
+
+				
+				 foreach ( $part as $r)
+				
 				{
-								 $partanTfm = array(  	  'p_tranch2' => '70', 
-									          'dateP_tranch2'=>date('Y-m-d H:i:s'),
-									          'recepteurTranche2'=>$this->vendorId ,
-									          'statut'=> 1 
-									     );
-					$result = $this->tfm_model->editTFMPart($partanTfm, $r) ;	
+					$partanTfm = array(  	  
+									  'p_tranch2' => '60', 
+							          'dateP_tranch2'=>date('Y-m-d H:i:s'),
+							          'recepteurTranche2'=>$this->vendorId ,
+							          'statut'=> 1 
+								     	);
+					$result = $this->tfm_model->editTFMPart($partanTfm, $r) ;
+
+					
 				}
+				
+
+
+			redirect('/TFM/PaimentByClub/'.$clubId.'/'.$projectId) ;
+
+		
+		}
+
+
+		
 
 
 					
-		}
-
-
-		public function stats (){
-					 
-		        	  $searchText = $this->security->xss_clean($this->input->post('searchText'));
-            $data['searchText'] = $searchText;
-            
-            $this->load->library('pagination');
-						$data['partParReg'] = $this->Tfm_part_model->TFMPartConfirmedByCityListing();
-						$data['partParclub'] = $this->Tfm_part_model->TFMPartConfirmedByClubListing();
-
-						$data['partParsexeH'] = $this->Tfm_part_model->TFMPartConfirmedBySexeHListing();
-						$data['partParsexeF'] = $this->Tfm_part_model->TFMPartConfirmedBySexeFListing();
-
-						$data['countINS'] = $this->Tfm_part_model->TFMPartListing();
-
-					
-
 		
-						$data['countTotal'] = count($this->Tfm_part_model->TFMPartListing());
-		                $this->global['pageTitle'] = 'CodeInsect : club  Listing';
-		             	$this->global['active'] = 'TFMC';
-		                $this->loadViews("TFM/stat", $this->global, $data, NULL);   
-		
-		}
 
+public function ChoixAtelier ($TFMId,$projet){
+				$formation = $this->input->post('formation');
 
-		public function TFMMyBuss (){
-					 
-		        	  $searchText = $this->security->xss_clean($this->input->post('searchText'));
-            $data['searchText'] = $searchText;
-            
-            $this->load->library('pagination');
-						$data['userRecords'] = $this->Tfm_part_model->TFMMyBuss();
-		                $this->global['pageTitle'] = 'CodeInsect : club  Listing';
-		             	$this->global['active'] = 'TFMC';
-		                $this->loadViews("TFM/bus", $this->global, $data, NULL);   
+				$atelier = $this->tfm_model->AtelierById($formation) ;
+
+				$partanTfm = array(
+		          'formationId'=>$formation 
+		        );
+
+		        $result = $this->tfm_model->editTFMPart($partanTfm, $TFMId) ;
+				
+
+				$atelierL = array(
+		          'capacite' =>  $atelier->capacite - 1 
+		        );
+
+				$result = $this->tfm_model->editAtelier($atelierL, $formation) ;
+				
+		if ($result){	
+		   			redirect('/Project/projectDetails/'.$projet) ; 		
+		   }
 		
 		}
+	
 
-		public function BusPartList ($id){
-					 
-		        	  $searchText = $this->security->xss_clean($this->input->post('searchText'));
-           			 $data['searchText'] = $searchText;
-            
-            		$this->load->library('pagination');
-						$data['userRecords'] = $this->Tfm_part_model->BusPartList($id);
-		                $this->global['pageTitle'] = 'CodeInsect : club  Listing';
-		             	$this->global['active'] = 'TFMC';
-		                $this->loadViews("TFM/busPart", $this->global, $data, NULL);   
+
+			
+
+
 		
-		}
 
-	public function BareCode (){
-					 
-		        	  $searchText = $this->security->xss_clean($this->input->post('searchText'));
-           			 $data['searchText'] = $searchText;
-            
-            $this->load->library('pagination');
-
-		        	$data['count'] = count($this->Tfm_part_model->TFMPartListing());
-		                $searchText='' ;
-		                $data['userId'] = $this->vendorId ;
-		                $data['userRecords'] = $this->Tfm_part_model->TFMPartListing();
-		                $this->global['pageTitle'] = 'CodeInsect : club  Listing';
-		             	$this->global['active'] = 'TFMP';
-		                $this->load->view("TFM/codeABare",$data,false);   
-		
-		}
-
-		public function remboursement ($r)
-		{
-
-
-				$partanTfm = array( 'remb'=> $this->input->post('r1')
-									     );
-					$result = $this->tfm_model->editTFMPart($partanTfm, $r) ;	
-
-				redirect('TFM')		 ;
-		}
-
-
-		public function point ($r)
-		{
-				$partanTfm = array( 'pointDepart'=> $this->input->post('pointDepart')
-									     );
-				$result = $this->tfm_model->editTFMPart($partanTfm, $r) ;	
-
-				redirect('TFM')		 ;
-		}
 		
 
 }

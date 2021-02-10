@@ -32,7 +32,11 @@ class User extends BaseController
         $this->load->model('login_model');
         $this->load->model('posts_model') ; 
         $this->load->model('user_cariere_model') ;
-        $this->load->model('user_diplome_model') ;  
+        $this->load->model('user_diplome_model') ;
+
+
+        $this->load->model('scoring_model') ;
+        $this->load->model('task_model') ;  
         
         $this->isLoggedIn();   
     }
@@ -46,28 +50,20 @@ class User extends BaseController
      */
     public function index()
     {
-        $this->global['pageTitle'] = 'Dashboard';
+        
 
         $data['MyTFM'] = $this->Tfm_part_model->TFMMyBus($this->vendorId);
-        
-             
         $data["tunimateurs"] = count($this->user_model->userListing($this->vendorId))  ; 
         $data["tunimateursApp"] = count($this->user_model->userListingApprouveF());
         $data["tunimateursAppJ"] = count($this->user_model->userListingApprouveFJ());
         $data["tunimateursAppA"] = count($this->user_model->userListingApprouveFA());
-      
         $data["clubscountS"] = count($this->club_model->clubListingS() )  ;
         $data["clubscountJ"] = count($this->club_model->clubListingJ() )  ;
-     
         $data['ActuRecords'] = $this->actualite_model->actuListing();
         $data['MyclubID'] = $this->clubID;
         $data["membersCount"] = count($this->user_model->userListingByclub($this->vendorId,$this->clubID)) ;
 
-       
-
-         
         $this->global['active'] = 'dashboard';
-    
         $this->loadViews("dashboard", $this->global, $data , NULL);
     }
     
@@ -76,64 +72,32 @@ class User extends BaseController
      */
     function userListing()
     {
-      
-            $searchText = $this->security->xss_clean($this->input->post('searchText'));
-            $data['searchText'] = $searchText;
-            
-            $this->load->library('pagination');
-            
-             $count = $this->user_model->userListing($this->vendorId);
-             $data['count'] = count($count)  ; 
-             $data['userRecords'] = $this->user_model->userListing($this->vendorId);
-            
-            $this->global['pageTitle'] = 'CodeInsect : User Listing';
-            $this->global['active'] = 'users';
 
+            $data['userRecords'] = $this->user_model->userListingTypeAll(3)  ;
+            $this->global['pageTitle'] = 'Users';
+            $this->global['active'] = 'users';
             $this->loadViews("users", $this->global, $data, NULL);
-        
     }
 
 
-
-
-    function userListing2()
+    /**
+     * This function is used to load the user list
+     */
+    function userBlockListing()
     {
-
-          
-            $searchText = $this->security->xss_clean($this->input->post('searchText'));
-            $data['searchText'] = $searchText;
-            
-            $this->load->library('pagination');
-            
-            $count = $this->user_model->userListingApprouve($searchText,$this->vendorId);
-            $data['count'] = count($count)  ; 
-            $data['userRecords'] = $this->user_model->userListingApprouve($searchText,$this->vendorId);
-            $this->global['active'] = 'members';
-            $this->global['pageTitle'] = 'CodeInsect : User Listing';
-            
-            $this->loadViews("Tunimateurs/list", $this->global, $data, NULL);
-        
+            $data['userRecords'] = $this->user_model->userListingBlock();
+            $this->global['pageTitle'] = 'Blocage';
+            $this->global['active'] = 'Blocage';
+            $this->loadViews("Tunimateurs/blocage", $this->global, $data, NULL);
     }
 
 
 
 
 
-    function userByClubListingToApprove()
-    {
-        
-            $searchText = $this->security->xss_clean($this->input->post('searchText'));
-            $data['searchText'] = $searchText;
-            $this->load->library('pagination');
-            $count = $this->user_model->userListingByclubToApprouve($this->vendorId,$this->clubID);
-            $data['count'] = count($count)  ; 
-            $data['userRecords'] = $this->user_model->userListingByclubToApprouve($this->vendorId,$this->clubID);
-            $this->global['pageTitle'] = 'CodeInsect : User Listing';
-            $this->global['active'] = 'users';
-            $this->loadViews("club/approuve", $this->global, $data, NULL);
-        
 
-    }
+
+   
     
 
     /**
@@ -290,22 +254,72 @@ class User extends BaseController
      */
     function editOld($userId)
     {
+            
+            $data["userInfo"] = $this->user_model->getUserInfoWithRole($userId);
+            $data['clubs']  = $this->club_model->clubListing($this->SA, $this->clubID);
+            $this->global['pageTitle'] = 'Modification';
+            $this->loadViews("Tunimateurs/edit", $this->global, $data, NULL);   
+    }
+    
 
-            if($this->SA != 1 || $this->vendorId != $userId  )
-            {
-                redirect('userListing');
-            }
+     /**
+     * This function is used to edit the user information
+     */
+    function editUserAdmin($userId)
+    {
+     $cin = $this->input->post('cin');
+                $nom = strtoupper ($this->input->post('nom'));
+                $prenom = $this->input->post('prenom');
+                $name =  $nom.' '.$prenom ;
+                $birthday = $this->input->post('birthday');
+                $facebook = $this->input->post('facebook');
+                $instagram = $this->input->post('instagram');
+                $linkedin = $this->input->post('linkedin');
+                $adresse =$this->input->post('adresse');
+                $delegation = $this->input->post('delegation');
+                $gouvernorat = $this->input->post('gouvernorat');
+                $sexe = $this->input->post('sexe') ; 
+                $cellule = $this->input->post('cellule');  
+                $clubId = $this->input->post('clubID');         
             
-            $data['roles'] = $this->user_model->getUserRoles();
-            $data['userInfo'] = $this->user_model->getUserInfoWithRole($userId);
-            
-            $this->global['pageTitle'] = 'CodeInsect : Edit User';
-            
-            $this->loadViews("editOld", $this->global, $data, NULL);
+                $userInfo = array(
+                                      
+                                      'name'=>$name,
+                                      'prenom'=>$prenom,
+                                      'nom'=>$nom,
+                                      'adresse' => $adresse,
+                                      'birthday'=>$birthday,
+                                      'facebook'=>$facebook,
+                                      'instagram'=>$instagram,
+                                      'linkedin'=>$linkedin,
+                                      'cin'=>$cin,
+                                      'sexe'=>$sexe,
+                                      'clubID' => $clubId  , 
+                                      'gouvernorat'=>$gouvernorat,
+                                      'delegation'=>$delegation,
+                                      'cellule'=>$cellule ,
+                                      'updatedBy'=>$this->vendorId,
+                                      'updatedDtm'=>date('Y-m-d H:i:s'), 
+                                       );
+                
+                $result = $this->user_model->editUser($userInfo, $userId);
+                
+                if($result == true)
+                {
+                    $this->session->set_flashdata('success', 'User updated successfully');
+                }
+                else
+                {
+                    $this->session->set_flashdata('error', 'User updation failed');
+                }
+                
+                redirect('User/editOld/'.$userId);
+      
         
     }
     
-    
+
+
     /**
      * This function is used to edit the user information
      */
@@ -334,11 +348,18 @@ class User extends BaseController
             }
             else
             {
-                $name = ucwords(strtolower($this->security->xss_clean($this->input->post('fname'))));
-                $email = strtolower($this->security->xss_clean($this->input->post('email')));
-                $password = $this->input->post('password');
-                $roleId = $this->input->post('role');
-                $mobile = $this->security->xss_clean($this->input->post('mobile'));
+                $cin = $this->input->post('cin');
+                $nom = strtoupper ($this->input->post('nom'));
+                $prenom = $this->input->post('prenom');
+                $name =  $nom.' '.$prenom ;
+                $birthday = $this->input->post('birthday');
+                $facebook = $this->input->post('facebook');
+                $instagram = $this->input->post('instagram');
+                $linkedin = $this->input->post('linkedin');
+                $adresse =$this->input->post('adresse');
+                $delegation = $this->input->post('delegation');
+                $gouvernorat = $this->input->post('gouvernorat');
+                $sexe = $this->input->post('sexe');
                 
                 $userInfo = array();
                 
@@ -370,18 +391,33 @@ class User extends BaseController
         }
     }
 
+  public function goAlumni()
+    { 
+      $cellule = $this->input->post('cellule');
+      $userInfo = array(
+                        'cellule'=>$cellule,
+                        'roleId'=>5 ,
+                        'clubID' => 2
+                         ) ;
 
+       $result = $this->user_model->editUser($userInfo, $this->vendorId);
+                  if($result == true){
+                    $this->session->set_flashdata('success', 'Votre profile a été mise à jour <br> merci de se connecter !');
+                    redirect("/logout") ; 
+       }
+    
+    }
 
 
     /**
      * This function is used to edit the user information
      */
-    function MAJUser()
+    public function MAJUser()
     { 
                 $cin = $this->input->post('cin');
                 $nom = strtoupper ($this->input->post('nom'));
                 $prenom = $this->input->post('prenom');
-                $name =  strtoupper ($nom).' '.$prenom ;
+                $name =  $nom.' '.$prenom ;
                 $birthday = $this->input->post('birthday');
                 $facebook = $this->input->post('facebook');
                 $instagram = $this->input->post('instagram');
@@ -389,18 +425,16 @@ class User extends BaseController
                 $adresse =$this->input->post('adresse');
                 $delegation = $this->input->post('delegation');
                 $gouvernorat = $this->input->post('gouvernorat');
+                $sexe = $this->input->post('sexe');
+
+                $file_name = 'avatar__'.$name.'_'.$_FILES['fileT']['name'];
                 $cellule = $this->input->post('cellule');
-
-                $file_name = 'avatar_'.$cin.'_'.$_FILES['file']['name'];
-                $file_tmp = $_FILES['file']['tmp_name'];
+                $file_tmp = $_FILES['fileT']['tmp_name'];
                 $file_destination = 'uploads/avatar/' . $file_name;
-
-                   
-                    $userInfo = array(
+                $userInfo = array(
                                       'avatar' => $file_name ,
-                                      'email'=>$email,
                                       'name'=>$name,
-                                      'prenom'=>$lname,
+                                      'prenom'=>$prenom,
                                       'nom'=>$nom,
                                       'adresse' => $adresse,
                                       'birthday'=>$birthday,
@@ -408,28 +442,88 @@ class User extends BaseController
                                       'instagram'=>$instagram,
                                       'linkedin'=>$linkedin,
                                       'cin'=>$cin,
+                                      'sexe'=>$sexe,
+                                      'gouvernorat'=>$gouvernorat,
+                                      'delegation'=>$delegation,
                                       'cellule'=>$cellule,
                                       'isDeleted'=> 0,
                                       'updatedBy'=>$this->vendorId,
                                       'updatedDtm'=>date('Y-m-d H:i:s'));
 
                 
-                if(move_uploaded_file($_FILES["file"]["tmp_name"], $file_destination) )
-                {
+                  if(move_uploaded_file($file_tmp, $file_destination))
+                  {
                   $result = $this->user_model->editUser($userInfo, $this->vendorId);
                   if($result == true){
-                    $this->session->set_flashdata('success', 'Votre profile a été mise à jour');
+                    $this->session->set_flashdata('success', 'Votre profile a été mise à jour <br> merci de se connecter !');
+                    redirect("/logout") ; 
                   }
-                }
+                
                 else
                 {
                     $this->session->set_flashdata('error', 'Erreur de mise à jour');
+                    redirect("/logout") ;
+                }
                 }
 
                 
-                redirect('/');
+              
             
         
+    }
+
+
+     public function AvatarEdit($userId)
+    { 
+
+      $userInfo = $this->user_model->getUserInfoWithRole($userId);
+                $file_name = 'avatar__'.$userInfo->name.'_'.$_FILES['fileT']['name'];
+                $cellule = $this->input->post('cellule');
+                $file_tmp = $_FILES['fileT']['tmp_name'];
+                $file_destination = 'uploads/avatar/' . $file_name;
+                $userInfo = array('avatar' => $file_name );
+                
+                if(move_uploaded_file($file_tmp, $file_destination))
+                {
+                  $result = $this->user_model->editUser($userInfo, $this->vendorId);
+                  redirect("/logout") ;
+                }
+
+                
+              
+            
+        
+    }
+
+
+
+    /**
+     * This function is used to edit the user information
+     */
+    public function  InfoPersoEdit($userId)
+    { 
+                $about = $this->input->post('about');
+                $birthday = $this->input->post('birthday');
+                $adresse =$this->input->post('adresse');
+                $delegation = $this->input->post('delegation');
+                $gouvernorat = $this->input->post('gouvernorat');
+                $sexe = $this->input->post('sexe');
+                
+
+                $userInfo = array(
+                                  'about' => $about,
+                                  'adresse' => $adresse,
+                                  'birthday'=>$birthday,
+                                  'sexe'=>$sexe,
+                                  'gouvernorat'=>$gouvernorat,
+                                  'delegation'=>$delegation,
+                                  'updatedBy'=>$this->vendorId,
+                                  'updatedDtm'=>date('Y-m-d H:i:s')
+                                    );
+
+        $result = $this->user_model->editUser($userInfo, $userId );
+        redirect('/User/ProfileShow/'.$userId);  
+                        
     }
 
 
@@ -446,45 +540,9 @@ class User extends BaseController
             redirect('/userListing');            
     }
 
-    /**
-     * This function is used to delete the user using userId
-     * @return boolean $result : TRUE / FALSE
-     */
-    function actifUser($userId)
-    {
-            $userInfo = array('isDeleted'=>0,'updatedBy'=>$this->vendorId, 'updatedDtm'=>date('Y-m-d H:i:s'));
-             $user = $this->user_model->getUserInfo($userId) ;   
+    
 
-            if( $this->user_model->deleteUser($userId, $userInfo) ) { $this->send_mail('bienvenue au T.link','',$user->email,$user->name) ; }  
-
-          redirect('/userListing');
-            
-    }
-
-    /**
-     * This function is used to delete the user using userId
-     * @return boolean $result : TRUE / FALSE
-     */
-    function actifMember()
-    {
-
-        $actifs = $this->input->post('actifs');
-      
-
-        foreach ($actifs as $a ) {
-            if($a != Null &&   $this->input->post('Cellule_'.$a) != ''){
-            $userInfo = array('isDeleted'=>0,
-                              'updatedBy'=>$this->vendorId,
-                               'updatedDtm'=>date('Y-m-d H:i:s'),
-                               'cellule'=>  $this->input->post('Cellule_'.$a)
-                             );
-                        $user = $this->user_model->getUserInfo($a) ;
-            $this->user_model->deleteUser($user->userId, $userInfo);
-             }
-                  
-          }
-          redirect('/User/userByClubListing')  ;
-    }
+   
 
 
 
@@ -515,52 +573,6 @@ class User extends BaseController
           redirect('/User/userByClubListing')  ;
     }
 
-
-
-    public function send_mail($title,$mailContent,$addresse,$name)
-            {
-                // Load PHPMailer library
-                    $this->load->library('phpmailer_lib');
-                    
-                    // PHPMailer object
-                    $mail = $this->phpmailer_lib->load();
-                    
-                    // SMTP configuration
-                    $mail->isSMTP();
-                    $mail->Host     = 'tunivisions.link';
-                    $mail->SMTPAuth = true;
-                    $mail->Username = 'no-reply@tunivisions.link';
-                    $mail->Password = 'Tunivisions-Link-2019';
-                    $mail->SMTPSecure = 'tls';
-                    $mail->Port     = 587;
-                    
-                    $mail->setFrom('no-reply@tunivisions.link', 'Tunivisions Link');
-                    $mail->addReplyTo('no-reply@tunivisions.link', 'Tunivisions Link');
-                    
-                    // Add a recipient
-                
-                    $mail->addAddress($to);
-                    
-                    
-                    // Email subject
-                    $mail->Subject = $title ;
-                    
-                    // Set email format to HTML
-                    $mail->isHTML(true);
-                    
-                    // Email body content
-                    $data['name'] =  $name ; 
-                    $mail->Body = $this->load->view("mail/bienvenue" , $data );;
-                    
-                    // Send email
-                    if(!$mail->send()){
-                        echo 'Message could not be sent.';
-                        echo 'Mailer Error: ' . $mail->ErrorInfo;
-                    }else{
-                        echo 'Message has been sent';
-                    }
-                       
-            }
 
             
     /**
@@ -729,16 +741,7 @@ class User extends BaseController
         return $return;
     }
 
-    /**
-     * This function is used to check whether email already exist or not
-     * @param {string} $email : This is users email
-     */
-    function usersConnected()
-    {   
-            header('Content-Type: application/json');
-            echo json_encode( $this->login_model->lastLogins() , JSON_PRETTY_PRINT);
-         
-    }
+
 
 
 
@@ -751,26 +754,48 @@ class User extends BaseController
     {
         $data["userInfo"] = $this->user_model->getUserInfoWithRole($userId);
         $data["ExpTuns"] = $this->user_cariere_model->carrierListing($userId);
-        $data["Diplomes"] = $this->user_diplome_model->diplomeListing($userId); 
-        $data["Skills"] = $this->user_diplome_model->diplomeListing($userId); 
+        $data["Diplomes"] = $this->user_diplome_model->diplomeListing($userId);
+        $data["ExperienceP"] = $this->user_cariere_model->carrierProListing($userId) ;
+        $data["Langues"] = $this->user_cariere_model->langListing($userId) ;
+        $data["skills"] = $this->user_cariere_model->hardListing($userId) ;    
+
+        $data["scores"] = $this->scoring_model->ScoreByUser($userId,'project'); 
+
+        $data["tasks"] = $this->task_model->taskListingByUser($userId);
+        $data["eff"] = $this->task_model->taskListingByUserValid($userId);
+
+        $data["participations"] = $this->scoring_model->ScoreByUserByPart($userId) ;    
+        $data["formations"] = $this->scoring_model->ScoreByUserByType($userId,"Formation");
+        $data["conferences"] = $this->scoring_model->ScoreByUserByType($userId,"Conférence");
+        $data["missions"]   = null ;
+        $data["visit"] = $this->user_model->visitListingByUser($userId) ;
 
 
-        $data['postRecords'] =  $this->posts_model->postsListingbyUser($userId);
 
-   
-        
-            foreach ($data['postRecords'] as $key ) {                
-                        $key->commentsRecords              = $this->posts_model->CommentsListing($key->postId);
-                        $key->likeRecords             = $this->posts_model->likesListing($key->postId);
-                         $key->likeCheck          = $this->posts_model->likeCheck($key->postId,$this->vendorId);
-                  }
+        if( $this->vendorId != $userId && $userId != 0 )
+        {
+         $visitInfo = array(
+                            'userId'=>$userId, 
+                            'createdBy'=>$this->vendorId,
+                            'createdDTM'=>date('Y-m-d H:i:s')
+                          );
+          $this->user_model->addVisiteUser($visitInfo) ; 
+        }
 
-
-        
+       
         
         $this->global['pageTitle'] = $data["userInfo"]->name;
         $this->loadViews("Tunimateurs/profile", $this->global, $data, NULL);
     }
+  
+
+    function facebook()
+      {
+            $this->global['pageTitle'] = "facebook";
+          $this->loadViews("register/facebook", $this->global, NULL);
+      }
+
+    
 
 
 }

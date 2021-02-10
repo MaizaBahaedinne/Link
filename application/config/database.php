@@ -76,8 +76,8 @@ $query_builder = TRUE;
 $db['default'] = array(
 	'dsn'	=> '',
 	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '',
+	'username' => 'koussay',
+	'password' => 'Tunivisions-link-2019',
 	'database' => 'TlinkDB',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
@@ -94,3 +94,6 @@ $db['default'] = array(
 	'failover' => array(),
 	'save_queries' => TRUE
 );
+
+$db['default']['char_set'] = 'utf8mb4';
+$db['default']['dbcollat'] = 'utf8mb4_unicode_ci';

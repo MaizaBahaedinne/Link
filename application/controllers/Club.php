@@ -12,32 +12,25 @@ class Club extends BaseController {
 			        $this->load->model('user_model');
 			        $this->load->model('notification_model');
 			        $this->load->model('club_model');
-					$this->load->model('project_model');					
+					$this->load->model('project_model');
+					$this->load->model('Score_club_model');
+					$this->load->model('scoring_model');					
         			$this->isLoggedIn();   
     }
     
 
 		public function index()
 		        {
-		                $clubs = $this->club_model->clubListing($this->SA);
+		                $clubs = $this->club_model->clubListing($this->SA, $this->clubID);
 		            
 		                foreach ($clubs as $key ) {
-
-
-		                	$key->P 	=  	$this->user_model->getMemberByRoleAndCelulle($key->clubID , 1 , '' ) ;
-							$key->VPAF  = 	$this->user_model->getMemberByRoleAndCelulle($key->clubID , 3 , 'Administration et finance' ) ;
-							$key->AAF 	=  	$this->user_model->getMemberByRoleAndCelulle($key->clubID , 6 , 'Administration et finance' ) ;
-							$key->VPRH 	=  	$this->user_model->getMemberByRoleAndCelulle($key->clubID , 3 , 'Ressource Humaine' ) ;
-							$key->ARH 	=  	$this->user_model->getMemberByRoleAndCelulle($key->clubID , 6 , 'Ressource Humaine' ) ;
-							$key->VPM 	=  	$this->user_model->getMemberByRoleAndCelulle($key->clubID , 3 , 'Marketing' ) ;
-							$key->AM 	=  	$this->user_model->getMemberByRoleAndCelulle($key->clubID , 6 , 'Marketing' ) ;
-							$key->VPE 	=  	$this->user_model->getMemberByRoleAndCelulle($key->clubID , 3 , 'Evenementiel' ) ;
-							$key->AE 	=  	$this->user_model->getMemberByRoleAndCelulle($key->clubID , 6 , 'Evenementiel' ) ;
+		                	$key->P = $this->user_model->getMemberByRoleAndCelulle($key->clubID , 1 , Null ) ;
 							$key->members = count($this->user_model->userListingByclub($key->clubID));
 		                }
 
-						
 		                $data["clubs"] =  $clubs ;
+
+
 
  		                $this->global['pageTitle'] = 'Clubs';
 		             	$this->global['active'] = 'Clubs';
@@ -46,19 +39,47 @@ class Club extends BaseController {
 		        }
 
 
+		        
 
-			public function clubInfo($clubId)
+
+		public function clubInfo($clubId)
 		        {
 			        $data["clubInfo"] = $this->club_model->getClubInfo($clubId);
-
 			        $data["projectRecords"] = $this->project_model->projectListingByClub($clubId);
+
+			        foreach ($data["projectRecords"] as $proj ) 
+			        {
+			        	$proj->score = $this->Score_club_model->scoreByProject ($proj->projectId) ;
+			        	$proj->part = $this->scoring_model->PresenceByProject($proj->projectId); 
+			        }
 			        $data['cl'] = $clubId;
 			        $data['members'] = $this->user_model->userListingByclub($clubId);
-			 		$count = $this->user_model->userListing($this->vendorId);
-			   
+			        $data["scores"]  = $this->Score_club_model->scoreListingByClub($clubId) ;
+		            $data["score"]  = $this->Score_club_model->scoreByClub($clubId) ; 
+		            $data['RateMember'] =  $this->scoring_model->RankByUsersClub($clubId) ;
 			    	$this->global['pageTitle'] = 'Mon club';   
 			    	$this->global['clubN'] = $clubId;    
 			       $this->loadViews("club/myClub", $this->global, $data, NULL);
+		        }
+
+
+		public function myTeam()
+		        {
+			        $data["clubInfo"] = $this->club_model->getClubInfo($this->clubID);
+			        $data["projectRecords"] = $this->project_model->projectListingByClub($this->clubID);
+			        foreach ($data["projectRecords"] as $proj ) 
+			        {
+			        	$proj->score = $this->Score_club_model->scoreByProject($proj->projectId) ;
+			        }
+			        $data['cl'] = $this->clubID;
+
+			        $data['members'] = $this->user_model->getMembersByCellule ($this->clubID ,$this->cellule);
+			        $data["scores"]  = $this->Score_club_model->scoreListingByClub($this->clubID) ;
+		            $data["score"]  = $this->Score_club_model->scoreByClub($this->clubID) ; 
+
+			    	$this->global['pageTitle'] = 'Mon club';   
+			    	$this->global['clubN'] = $this->clubID;    
+			       $this->loadViews("club/myTeam", $this->global, $data, NULL);
 		        }
 
 
@@ -67,20 +88,18 @@ class Club extends BaseController {
 		        public function editClub($clubId)
 		        {
 					$this->load->model('user_model');
-
 					$data["projectRecords"] = $this->project_model->projectListingByClub($clubId);
-                    $data["members"] = $this->user_model->userListingByclub($this->vendorId,$clubId);
+                    $data["members"] = $this->user_model->userListingByclubAll($clubId);
 			        $data["clubInfo"] = $this->club_model->getClubInfo($clubId);
-
 			       	$this->global['pageTitle'] = 'Clubs';
 			        $this->loadViews("club/edit", $this->global, $data, NULL);
 		        }
 
-				        /**
-				     * This function is used to delete the user using userId
-				     * @return boolean $result : TRUE / FALSE
-				     */
-				    function edit($clubId)
+			        /**
+			     * This function is used to delete the user using userId
+			     * @return boolean $result : TRUE / FALSE
+			     */
+			    function edit($clubId)
 				    {
 
 				        $name = $this->input->post('name');
@@ -89,10 +108,8 @@ class Club extends BaseController {
 				        $email = $this->input->post('email');
 				        $facebook = $this->input->post('facebook');
 				        $is_Actif = $this->input->post('is_Actif');
-				      
 
-				            
-				            $clubInfo = array('name'=> $name ,
+				        $clubInfo = array('name'=> $name ,
 				                              'city'=>$city,
 				                               'birthday'=>$birthday,
 				                               'email'=>  $email  ,
@@ -112,6 +129,88 @@ class Club extends BaseController {
 				          
 				          redirect('/Club/editClub/'.$clubId)  ;
 				    }
+
+
+				   function passation($oldPosteroleId , $clubId , $cellule , $NewPosteID) {
+
+				   	$OldP = $this->user_model->getMemberByRoleAndCelulle($clubId,$oldPosteroleId,$cellule) ;
+			        $OldPU = array('roleId'=> 5 , 'ClubID'=> 2 , 'cellule'=> '' ) ;
+			        $NewP = $this->user_model->getUserInfo($NewPosteID) ;
+			        $NewPU = array('roleId'=> $oldPosteroleId , 'cellule'=> $cellule ) ;
+			        if( !(empty($OldP)) )
+			        {
+			        	echo("Poste : ".$NewP->userId ." => ".$OldP->userId) ;
+			        	if($OldP->userId != $NewP->userId )
+			        	{
+			        		$this->user_model->editUser($OldPU , $OldP->userId);
+			       			$this->user_model->editUser($NewPU , $NewP->userId);
+			       			$this->session->set_flashdata('success', 'Le bureau à été mise à jour enregistrée ');
+			        	}
+			        	else 
+				        {  
+			        		$this->user_model->editUser( $NewPU , $NewP->userId); 
+			        		$this->session->set_flashdata('success', 'Le bureau à été mise à jour enregistrée ');
+				        }			        	
+			        }
+			        else 
+			        {  
+		        		$this->user_model->editUser( $NewPU , $NewP->userId); 
+		        		$this->session->set_flashdata('success', 'Le bureau à été mise à jour enregistrée ');
+			        }
+				   }
+
+			/**
+		     * This function is used to delete the user using userId
+		     * @return boolean $result : TRUE / FALSE
+		     */
+		    function editBureau($clubId)
+			    {
+
+			        $P = $this->input->post('P')  ;
+			        $VPM = $this->input->post('VPM')  ;
+			        $VPE = $this->input->post('VPE')  ;
+			        $VPAF = $this->input->post('VPAF')  ;
+			        $VPRH = $this->input->post('VPRH')  ;
+			        $AM = $this->input->post('AM')  ;
+			        $AE = $this->input->post('AE')  ;
+			        $AAF = $this->input->post('AAF')  ;
+			        $ARH = $this->input->post('ARH')  ;
+			        
+			      	if($P != Null ){
+			      	$this->passation(1,$clubId,'',$P) ; 
+			      	}
+
+					if($VPM != Null ){
+			      	$this->passation(3,$clubId,'Marketing',$VPM) ; }
+			      	if($VPE != Null ){
+			      	$this->passation(3,$clubId,'Evenementiel',$VPE) ; }
+			      	if($VPAF != Null  ){
+			      	$this->passation(3,$clubId,'Administration et finance',$VPAF) ;} 
+			      	 if($VPRH != Null  ){
+			      	$this->passation(3,$clubId,'Ressource Humaine',$VPRH) ; }
+
+			        if($AM != Null  ){
+			      	$this->passation(6,$clubId,'Marketing',$AM) ; }
+			      	 if($AE != Null  ){
+			      	$this->passation(6,$clubId,'Evenementiel',$AE) ;} 
+			      	 if($AAF != Null  ){
+			      	$this->passation(6,$clubId,'Administration et finance',$AAF) ; }
+			      	 if($ARH != Null  ){
+			      	$this->passation(6,$clubId,'Ressource Humaine',$ARH) ; }
+
+			        
+
+
+
+
+
+			       
+			      
+
+
+
+			         redirect('/Club/editClub/'.$clubId)  ;
+			    }
 
 
 

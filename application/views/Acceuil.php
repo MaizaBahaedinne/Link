@@ -5,149 +5,86 @@
 
 <div class="col-lg-12">
 <div class="row merged20" id="page-contents">
+
+
               <!-- sidebar -->
               <div class="col-lg-3">
                 <aside class="sidebar static right">
-                  <div class="widget">
-                    <h4 class="widget-title">Mon Club</h4> 
-                    <div class="your-page">
-                      <figure>
-                        <a href="#" title><img alt="author" src="<?php echo base_url()?>assets/images/resources/profile.png"></a>
-                      </figure>
-                      <div class="page-meta">
-                        <a href="#" title="" class="underline"><?php if ($clubInfo->clubID > 5 ) {echo "club Tunivisions ";}  echo $clubInfo->name ; ?></a>
-                        <span><i class="ti-comment"></i><a href="insight.html" title="">Messages <em>9</em></a></span>
-                        <span><i class="ti-bell"></i><a href="insight.html" title="">Notifications <em>2</em></a></span>
-                      </div>
-                      <ul class="page-publishes">
-                        <li>
-                          <span> <a href="<?php echo base_url()?>Club/clubInfo/<?php echo $clubInfo->clubID ?>">  <i class="ti-pencil-alt"></i>Projets</a></span>
-                        </li>
-                        <li>
-                          <span> 
-                             <a  data-toggle="modal" data-target="#tuniFan">
-                                <i class="fa fa-user-plus"></i>Invite
-                            </a>
-                          </span>
-                        </li>
-                      </ul>
+                  <!--
 
+                  <div class="advertisment-box">
+                              <h4 class="">publicité</h4>
+                              <figure>
+                                 <a  title="Advertisment" href="https://www.tunivisions.link/Project/projectDetails/1278" >
+                                  <img src="https://www.tunivisions.link/uploads/projet/Projet_Khamem%20O%20Campy%20v1_135560374_187471226456281_1259933645889064745_o.jpg" alt=""></a>
+                              </figure>
+                  </div>
+                -->
 
-              
+<!--
+                  <div class="advertisment-box">
+                              <h4 class="">publicité</h4>
+                              <figure>
+                                 
+                                 <a  title="Advertisment" data-toggle="modal" data-target="#AlumniGO" ><img src="<?php echo base_url() ;?>/assets/images/resources/anigif2.gif"  ></a>
+                              </figure>
+                  </div>
+                   
 
-
-
-                      <!--
-                      <div class="page-likes">
-                        <ul class="nav nav-tabs likes-btn">
-                          <li class="nav-item"><a class="active" href="#link1" data-toggle="tab" data-ripple="">likes</a></li>
-                           <li class="nav-item"><a class="" href="#link2" data-toggle="tab" data-ripple="">views</a></li>
-                        </ul>
-                        
-                        <div class="tab-content">
-                          <div class="tab-pane active fade show" id="link1">
-                          <span><i class="ti-heart"></i>884</span>
-                            <a href="#" title="weekly-likes">35 new likes this week</a>
-                            <div class="users-thumb-list">
-                            <a href="#" title="" data-toggle="tooltip" data-original-title="Anderw">
-                              <img src="images/resources/userlist-1.jpg" alt="">  
-                            </a>
-                            <a href="#" title="" data-toggle="tooltip" data-original-title="frank">
-                              <img src="images/resources/userlist-2.jpg" alt="">  
-                            </a>
-                            <a href="#" title="" data-toggle="tooltip" data-original-title="Sara">
-                              <img src="images/resources/userlist-3.jpg" alt="">  
-                            </a>
-                            <a href="#" title="" data-toggle="tooltip" data-original-title="Amy">
-                              <img src="images/resources/userlist-4.jpg" alt="">  
-                            </a>
-                            <a href="#" title="" data-toggle="tooltip" data-original-title="Ema">
-                              <img src="images/resources/userlist-5.jpg" alt="">  
-                            </a>
-                            <a href="#" title="" data-toggle="tooltip" data-original-title="Sophie">
-                              <img src="images/resources/userlist-6.jpg" alt="">  
-                            </a>
-                            <a href="#" title="" data-toggle="tooltip" data-original-title="Maria">
-                              <img src="images/resources/userlist-7.jpg" alt="">  
-                            </a>  
-                            </div>
-                          </div>
-                          <div class="tab-pane fade" id="link2">
-                            <span><i class="fa fa-eye"></i>440</span>
-                            <a href="#" title="weekly-likes">440 new views this week</a>
-                            <div class="users-thumb-list">
-                            <a href="#" title="" data-toggle="tooltip" data-original-title="Anderw">
-                              <img src="images/resources/userlist-1.jpg" alt="">  
-                            </a>
-                            <a href="#" title="" data-toggle="tooltip" data-original-title="frank">
-                              <img src="images/resources/userlist-2.jpg" alt="">  
-                            </a>
-                            <a href="#" title="" data-toggle="tooltip" data-original-title="Sara">
-                              <img src="images/resources/userlist-3.jpg" alt="">  
-                            </a>
-                            <a href="#" title="" data-toggle="tooltip" data-original-title="Amy">
-                              <img src="images/resources/userlist-4.jpg" alt="">  
-                            </a>
-                            <a href="#" title="" data-toggle="tooltip" data-original-title="Ema">
-                              <img src="images/resources/userlist-5.jpg" alt="">  
-                            </a>
-                            <a href="#" title="" data-toggle="tooltip" data-original-title="Sophie">
-                              <img src="images/resources/userlist-6.jpg" alt="">  
-                            </a>
-                            <a href="#" title="" data-toggle="tooltip" data-original-title="Maria">
-                              <img src="images/resources/userlist-7.jpg" alt="">  
-                            </a>  
-                            </div>
-                          </div>  
-                        </div>
-
-                      </div>-->
-                    </div>
-                  </div><!-- page like widget -->
-                  <!-- explore events -->
-                  
+-->
                    <div class="widget">
-                    <h4 class="widget-title">Ma calendar</h4>
-                    
+                    <h4 class="widget-title">Ma calendarier</h4>
                     <div class="full-calendar">
-                                <div id="yourId" class="jalendar mid">
-                                  <?php foreach ($taches as $tache ) { 
+                      <div id="yourId" class="jalendar mid">
+                        <?php foreach ($taches as $tache ) { 
+                          $date= date_create($tache->deadline); 
+                          $dateF =date_format($date,'d-m-Y');
+                          $timeF =date_format($date,'H:i'); 
+                           ?> 
+                          <div 
+                            class="added-event"
+                            data-type="task"
+                            data-date="<?php echo  $dateF ?>" 
+                            data-time="<?php echo  $timeF ?>"
+                            data-link="<?php echo base_url() ?>task/tasksListing/<?php echo  $tache->projectId ?>" 
+                            data-title="Tache : <?php echo  $tache->titre ?>"
+                              >
+                            
+                          </div>
+                      
+                        <?php }?>
 
-                                    $date= date_create($tache->deadline); 
-                                    $dateF =date_format($date,'d-m-Y');
-                                    $timeF =date_format($date,'H:i'); 
-                                     ?> 
+                        <?php foreach ($Projets as $Projet ) { 
 
-                                    <div class="added-event"
-                                    data-date="<?php echo  $dateF ?>" 
-                                    data-time="<?php echo  $timeF ?>"
-                                    data-link="" 
-                                    data-title="Tache : <?php echo  $tache->titre ?>">
-                                      
-                                    </div>
-                                
-                                  <?php }?>
+                          $date= date_create($Projet->startDate); 
+                          $dateF =date_format($date,'d-m-Y');   
+                          $timeF =date_format($date,'H:i');   
+                           ?> 
 
-                                  <?php foreach ($Projets as $Projet ) { 
+                          <div class="added-event"
+                          data-type="event"
+                          data-date="<?php echo  $dateF ?>" 
+                          data-time="<?php echo  $timeF ?>"
+                          data-link="<?php echo base_url() ?>Project/projectDetails/<?php echo  $Projet->projectId ?>" 
+                          data-title="<?php echo  $Projet->type ?> : <?php echo  $Projet->titre ?>">
+                            
+                          </div>
+                      
+                        <?php }?>
 
-                                    $date= date_create($Projet->startDate); 
-                                    $dateF =date_format($date,'d-m-Y');   
-                                    $timeF =date_format($date,'H:i');   
-                                     ?> 
-
-                                    <div class="added-event"
-                                    data-date="<?php echo  $dateF ?>" 
-                                    data-time="<?php echo  $timeF ?>"
-                                    data-link="" 
-                                    data-title="<?php echo  $Projet->type ?> : <?php echo  $Projet->titre ?>">
-                                      
-                                    </div>
-                                
-                                  <?php }?>
-
-                                </div>
-                              </div>
+                      </div>
+                    </div>
                   </div><!-- calendar -->
+                  <!--
+                  <div class="advertisment-box">
+                              <h4 class="">publicité</h4>
+                              <figure>
+                                 
+                                 <a  title="Advertisment" data-toggle="modal" data-target="#AlumniGO" ><img src="<?php echo base_url() ;?>/assets/images/resources/anigif.gif"  ></a>
+                              </figure>
+                  </div>
+                  -->
+                 
                  
                   
                   <!-- recent links -->
@@ -160,21 +97,22 @@
                   <form method="post" action="<?php echo base_url() ?>Posts/addNewP" enctype="multipart/form-data" >
                   <div class="new-postbox">
                     <figure>
-                      <img src="<?php echo base_url() ?>uploads/avatar/<?php echo $avatar ?>"  class="alligator-profile" alt="">
+                      <img src="<?php echo base_url() ?>uploads/avatar/<?php echo $avatar ?>"  class="alligator-profile-header" alt="">
                     </figure>
                     <div class="newpst-input">
                       
-                        <textarea rows="4" name="postText" placeholder="Partagez ce que vous pensez?"></textarea>
+                        <textarea rows="2" name="postText" placeholder="Partagez ce que vous pensez?"  required></textarea>
                       
                     </div>
                     <div class="attachments">
                       <ul>
+                        <!--
                         <li>
                           <span class="add-loc">
                             <i class="fa fa-map-marker"></i>
                           </span>
                         </li>
-
+                        -->
                         <li  >
                           <a id="imageclick" >
                             <i class="fa fa-image"></i>
@@ -198,8 +136,11 @@
                       </ul>
                       <div style="display: none" id="FileDown" >
                         <br>
-                      <input type="file" name="fileT"   class="dropify-fr"                                     data-max-file-size="200K"                                      
-                      id="input-file-events"
+                      <input type="file" 
+                              name="fileT"   
+                              class="dropify-fr"  
+                              data-max-file-size="500K"                                      
+                              
                        >
 
                     </div>
@@ -226,6 +167,14 @@
                   </div>  
                 </form>
                 </div><!-- add post new box -->
+                <!--
+                <div class="advertisment-box">
+                              <h4 class="">publicité</h4>
+                              <figure>
+                                 <a href="<?php echo base_url() ?>Project/projectDetails/1269" ><img src="<?php echo base_url() ;?>/uploads/projet/Projet_TUM 2020_TUM2020.jpg"  ></a>
+                              </figure>
+                  </div>
+                -->
                 <!-- top stories -->
                 <div class="loadMore">
                   <!-- album post -->
@@ -233,21 +182,137 @@
                   <!-- love post -->
                   <!-- without image -->
                   <!-- map location post -->
+                  <!--
+                  <div class="central-meta item" style="display: inline-block;">
+                    <div class="user-post">
+                      <div class="friend-info">
+                        <figure>
+                          <img src="https://scontent.ftun3-1.fna.fbcdn.net/v/t1.0-1/p200x200/131101472_102744248384664_1283307394407895766_o.jpg?_nc_cat=100&ccb=2&_nc_sid=7206a8&_nc_ohc=DLXURn6w-GkAX-pQj02&_nc_ht=scontent.ftun3-1.fna&tp=6&oh=54e63ffb55bd0dd1398e7907f8175142&oe=5FFBB02E" alt="">
+                        </figure>
+                        <div class="friend-name">
+                          <div class="more">
+                            <div class="more-post-optns"><i class="ti-more-alt"></i>
+                              <ul>
+                                
+                              </ul>
+                            </div>
+                          </div>
+                          <ins><a href="time-line.html" title="">MrGo Tunivisions</a></ins>
+                          <span>Alert <i class="fa fa-globe"></i></span>
+                          
+                        </div>
+                        <div class="post-meta">
+                          <figure>
+                            <img src="https://127.0.0.1/Link3/uploads/post/Post___paiement%20correction.jpg" alt="">
+                            <ul class="like-dislike">
+                             
+                            </ul>
+                          </figure> 
+                          <div class="description">
+                            <a href="#" class="learnmore" data-ripple="">Learn More</a>
+                            <p>
+                              Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc.
 
+                            </p>
+                          </div>
+                          <div class="we-video-info">
+                            
+                        
+                          </div>
+                        </div>
+                        <div class="coment-area" style="">
+                          <ul class="we-comet">
+                            <li>
+                              <div class="comet-avatar">
+                                <img src="images/resources/nearly3.jpg" alt="">
+                              </div>
+                              <div class="we-comment">
+                                <h5><a href="time-line.html" title="">Jason borne</a></h5>
+                                <p>we are working for the dance and sing songs. this video is very awesome for the youngster. please vote this video and like our channel</p>
+                                <div class="inline-itms">
+                                  <span>1 year ago</span>
+                                  <a class="we-reply" href="#" title="Reply"><i class="fa fa-reply"></i></a>
+                                  <a href="#" title=""><i class="fa fa-heart"></i><span>20</span></a>
+                                </div>
+                              </div>
+
+                            </li>
+                            <li>
+                              <div class="comet-avatar">
+                                <img src="images/resources/comet-4.jpg" alt="">
+                              </div>
+                              <div class="we-comment">
+                                <h5><a href="time-line.html" title="">Sophia</a></h5>
+                                <p>we are working for the dance and sing songs. this video is very awesome for the youngster.
+                                  <i class="em em-smiley"></i>
+                                </p>
+                                <div class="inline-itms">
+                                  <span>1 year ago</span>
+                                  <a class="we-reply" href="#" title="Reply"><i class="fa fa-reply"></i></a>
+                                  <a href="#" title=""><i class="fa fa-heart"></i><span>20</span></a>
+                                </div>
+                              </div>
+                            </li>
+                            <li>
+                              <a href="#" title="" class="showmore underline">more comments+</a>
+                            </li>
+                            <li class="post-comment">
+                              <div class="comet-avatar">
+                                <img src="images/resources/nearly1.jpg" alt="">
+                              </div>
+                              <div class="post-comt-box">
+                                <form method="post">
+                                  <textarea placeholder="Post your comment"></textarea>
+                                  <div class="add-smiles">
+                                    <div class="uploadimage">
+                                      <i class="fa fa-image"></i>
+                                      <label class="fileContainer">
+                                        <input type="file">
+                                      </label>
+                                    </div>
+                                    <span class="em em-expressionless" title="add icon"></span>
+                                    <div class="smiles-bunch">
+                                      <i class="em em---1"></i>
+                                      <i class="em em-smiley"></i>
+                                      <i class="em em-anguished"></i>
+                                      <i class="em em-laughing"></i>
+                                      <i class="em em-angry"></i>
+                                      <i class="em em-astonished"></i>
+                                      <i class="em em-blush"></i>
+                                      <i class="em em-disappointed"></i>
+                                      <i class="em em-worried"></i>
+                                      <i class="em em-kissing_heart"></i>
+                                      <i class="em em-rage"></i>
+                                      <i class="em em-stuck_out_tongue"></i>
+                                    </div>
+                                  </div>
+
+                                  <button type="submit"></button>
+                                </form> 
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                    -->
                   <?php foreach ($postRecords as $post ) { ?>
                                   
                   <div class="central-meta item" style="display: inline-block;">
                     <div class="user-post">
                       <div class="friend-info">
                         <figure>
-                          <img src="<?php echo base_url() ?>uploads/avatar/<?php echo $post->avatar ?>" class="alligator-profile" alt="">
+                          <img src="<?php echo base_url() ?>uploads/avatar/<?php echo $post->avatar ?>" class="alligator-profile-header" alt="">
                         </figure>
                         <div class="friend-name">
                           <div class="more">
                             <div class="more-post-optns"><i class="ti-more-alt"></i>
                               <ul>
+                                <?php if ($uid == $post->userId || $SA == 1  ) { ?>
                                 <li><i class="fa fa-pencil-square-o"></i>Modifier le message</li>
-                                <li><i class="fa fa-trash-o"></i>Supprimer le message</li>
+                                <li><a href="<?php echo base_url() ?>Posts/deletePost/<?php echo $post->postId ?>"><i class="fa fa-trash"></i>Supprimer le message</a></li>
+                                <?php } ?>
                               </ul>
                             </div>
                           </div>
@@ -268,32 +333,18 @@
                               
                               <h2><!-- Titre  --></h2>
                             </a>
+                            <!--
                             <ul class="like-dislike">
                               <li><a class="bg-purple" href="#" title="Save to Pin Post"><i class="fa fa-thumb-tack"></i></a></li>
                               <li><a class="bg-blue" href="#" title="Like Post"><i class="ti-thumb-up"></i></a></li>
                               <li><a class="bg-red" href="#" title="dislike Post"><i class="ti-thumb-down"></i></a></li>
                             </ul>
-
+                              -->
                           </figure>     
                           <?php } ?>                  
-                          <div class="description">
+                          <div class="description" >
                             <p id="Cpntent<?php $post->postId ?>" >
-                              <?php  
-                              
-                             
-                              $string = strip_tags($post->Content);
-                              if (strlen($string) > 500) {
-
-                                  // truncate string
-                                  $stringCut = substr($string, 0, 500);
-                                  $endPoint = strrpos($stringCut, ' ');
-
-                                  //if the string doesn't contain any space then it will cut without word basis.
-                                  $string = $endPoint? substr($stringCut, 0, $endPoint) : substr($stringCut, 0);
-                                  $string .= '... <a href="'.base_url().'Posts/post/'.$post->postId.'">Afficher la suite</a>';
-                              }
-                              echo $string;
-                              ?>
+                             <?php echo $post->Content ?>
                             </p>
                           </div>
                           <div class="we-video-info">
@@ -361,7 +412,7 @@
                             
                             <li class="post-comment">
                               <div class="comet-avatar">
-                                <img src="<?php echo base_url() ?>uploads/avatar/<?php echo $post->avatar ?>" class="alligator-profile" alt="">
+                                <img src="<?php echo base_url() ?>uploads/avatar/<?php echo $avatar ?>" class="alligator-profile-likes" alt="">
                               </div>
                               <div class="post-comt-box">
                                 <form method="post" action="<?php echo base_url() ?>Posts/addNewComment/<?php echo $post->postId ?>">
@@ -389,9 +440,9 @@
                                       <i class="em em-stuck_out_tongue"></i>
                                     </div>
 
-                                  <input  class="btn  " type="submit" value="" ></input>
+                                  <input  class="btn  " type="submit" value="" ><i class="fa fa-paper-plane" aria-hidden="true"></i></input>
                                   
-                                  </div>
+                                </div>
                                   
                                 </form> 
                               </div>
@@ -410,30 +461,81 @@
                 <aside class="sidebar static right">
 
 
+                  <div class="widget">
+                    <h4 class="widget-title">Mon Club</h4> 
+                    <div class="your-page">
+                      <figure>
+                        <a href="#" title><img alt="author" src="<?php echo base_url()?>assets/images/resources/profile.png"></a>
+                      </figure>
+                      <div class="page-meta">
+                        <a href="#" title="" class="underline"><?php if ($clubInfo->clubID > 5 ) {echo "club Tunivisions ";}  echo $clubInfo->name ; ?></a>
+                        
+                      </div>
+                      <?php if (($role == 1 ||  $role == 3 ||  $role == 6 ||  $role == 7  )|| $SA== 1 ) { ?>
+                      <ul class="page-publishes">
+                        <li>
+                          <span> <a href="<?php echo base_url()?>Club/clubInfo/<?php echo $clubInfo->clubID ?>">  <i class="fas fa-door-open"></i></i>Visiter</a></span>
+                        </li>
+                        <li>
+                          <span> <a href="<?php echo base_url()?>Club/clubInfo/<?php echo $clubInfo->clubID ?>"> <i class="fas fa-project-diagram"></i> </i>Projets</a></span>
+                        </li>
+                        <li>
+                          <span> 
+                             <a  data-toggle="modal" data-target="#TuniFan">
+                                <i class="fa fa-user-plus"></i>Inviter
+                            </a>
+                          </span>
+                        </li>
+                        <li>
+                          <span> <a href="<?php echo base_url()?>Club/myTeam">  <i class="fa fa-users"></i>Equipes</a></span>
+                        </li>
+                      </ul>
+                      <?php } ?>
+                      <div class="page-likes">
+                        <ul class="nav nav-tabs likes-btn">
+                          <li class="nav-item"><a class="active" href="#link1" data-toggle="tab" data-ripple="">Membres</a></li>
+                           <li class="nav-item"><a class="" href="#link2" data-toggle="tab" data-ripple="">Projets</a></li>
+                        </ul>
+                        
+                        <div class="tab-content">
+                          <div class="tab-pane active fade show" id="link1">
+                          <span><i class="ti-heart"></i><?php echo count($members)?></span>
+                           <!-- <a href="#" title="weekly-likes">35 new likes this week</a> -->
+                            <div class="users-thumb-list">
+                            
+                            <a href="#" title="" data-toggle="tooltip" data-original-title="Anderw">
+                              <img src="images/resources/userlist-1.jpg" alt="">  
+                            </a>
+                            
+                            </div>
+                          </div>
+                          <div class="tab-pane fade" id="link2">
+                            <span><i class="fa fa-eye"></i><?php echo count($Projets)?></span>
+                           <!--
+                            <a href="#" title="weekly-likes">440 new views this week</a>
+                          -->
+                            <div class="users-thumb-list">
+                            <a href="#" title="" data-toggle="tooltip" data-original-title="Anderw">
+                              <img src="images/resources/userlist-1.jpg" alt="">  
+                            </a>
+                            </div>
+                          </div>  
+                        </div>
+                      </div>
+                    </div>
+                  </div><!-- page like widget -->
                    <div class="widget stick-widget" style="">
-                    <h4 class="widget-title">Projet à venir <a title="" href="#" class="see-all">See All</a></h4>
+                    <h4 class="widget-title">Actualités <a title="" href="#" class="see-all">Lire plus</a></h4>
                     <ul class="recent-links">
+                      <?php foreach ($ActuRecords as $ac ) {?>
                       <li>
-                        <figure><img src="images/resources/recentlink-1.jpg" alt=""></figure>
+                        <figure><img src="<?php echo base_url() ?>uploads/Actu/<?php echo $ac->image ?>" alt=""></figure>
                         <div class="re-links-meta">
-                          <h6><a href="#" title="">moira's fade reaches much farther than you think.</a></h6>
-                          <span>2 weeks ago </span>
+                          <h6><a href="#" title=""><?php echo $ac->titre ?></a></h6>
+                          <span> il y a <?php echo xTimeAgo ($ac->createdDate , date('Y-m-d H:i:s') )  ?> </span>
                         </div>
                       </li>
-                      <li>
-                        <figure><img src="images/resources/recentlink-2.jpg" alt=""></figure>
-                        <div class="re-links-meta">
-                          <h6><a href="#" title="">daniel asks if we want him to do the voice of doomfist</a></h6>
-                          <span>3 months ago </span>
-                        </div>
-                      </li>
-                      <li>
-                        <figure><img src="images/resources/recentlink-3.jpg" alt=""></figure>
-                        <div class="re-links-meta">
-                          <h6><a href="#" title="">the pitnik overwatch scandals.</a></h6>
-                          <span>1 day before</span>
-                        </div>
-                      </li>
+                      <?php } ?>
                     </ul>
                   </div>
                 </aside>

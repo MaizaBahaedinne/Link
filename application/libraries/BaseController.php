@@ -17,6 +17,11 @@ class BaseController extends CI_Controller {
 	protected $clubID = '';
 	protected $global = array ();
 	protected $lastLogin = '';
+	protected $loginId = '';
+	protected $Latitude = '';
+	protected $Longitude = '';
+
+
 	
 	/**
 	 * Takes mixed data and optionally a status code, then creates the response
@@ -35,6 +40,7 @@ class BaseController extends CI_Controller {
 	 * This function used to check the user is logged in or not
 	 */
 	function isLoggedIn() {
+		$this->load->model('login_model');
 		$isLoggedIn = $this->session->userdata ( 'isLoggedIn' );
 		
 		if (! isset ( $isLoggedIn ) || $isLoggedIn != TRUE) {
@@ -51,6 +57,9 @@ class BaseController extends CI_Controller {
 			$this->isBlocked = $this->session->userdata ( 'isDeleted' );
 			$this->SA = $this->session->userdata ( 'SA' );
 			$this->HUA  =  $this->session->userdata ( 'HUA' )  ;
+			$this->loginId  =  $this->session->userdata ( 'loginId' )  ;
+			$this->Latitude  =  $this->session->userdata ( 'Latitude' )  ;
+			$this->Longitude  =  $this->session->userdata ( 'Longitude' )  ;
 
 			$this->global ['uid'] = $this->vendorId;
 			$this->global ['name'] = $this->name;
@@ -63,6 +72,18 @@ class BaseController extends CI_Controller {
 			$this->global ['isBlocked'] = $this->isBlocked;
 			$this->global ['SA'] = $this->SA;
 			$this->global ['HUA']  =  $this->HUA ;
+			$this->global ['loginId']  =  $this->loginId ;
+			$this->global ['Latitude']  =  $this->Latitude ;
+			$this->global ['Longitude']  =  $this->Longitude ;
+
+			$loginInfo = array(
+                    "lastActDTM" => date('Y-m-d H:i:s') ,
+                    'Latitude' =>  $this->Latitude ,
+                    'Longitude' => $this->Longitude  
+                     );
+
+        	$this->login_model->updateLogin($loginInfo, $this->loginId) ;
+
 		}
 	}
 
@@ -98,17 +119,14 @@ class BaseController extends CI_Controller {
 			$this->global ['HUA'] = $this->HUA;
 			$this->global ['isBlocked'] = $this->isBlocked;
 			$this->global ['SA'] = $this->SA;
-
-
-
+			$this->global ['Latitude']  =  $this->Latitude ;
+			$this->global ['Longitude']  =  $this->Longitude ;
 		}
 	}
 
 
 	public function send_mail($to, $subject  , $data , $content )
     {       
-
-
 
                  // Load PHPMailer library
                     $this->load->library('phpmailer_lib');
@@ -147,10 +165,10 @@ class BaseController extends CI_Controller {
                     
                     // Send email
                     if(!$mail->send()){
-                        echo 'Message could not be sent.';
-                        echo 'Mailer Error: ' . $mail->ErrorInfo;
+                        return 'Le message n\'a pas pu être envoyé.';
+                        
                     }else{
-                        $r =  'Message has been sent';
+                       return 'Le message a été envoyé.';
                     }
     }
 
@@ -220,32 +238,41 @@ class BaseController extends CI_Controller {
 		$this->load->model('notification_model');
 
     	$MyUser["user"] = $this->user_model->getUserInfoWithRole($this->vendorId)  ; 
+    	$user = $this->user_model->getUserInfoWithRole($this->vendorId)  ; 
 
+    	$headerInfo['userC'] = $this->user_model->getUserInfoWithRole($this->vendorId)  ;
+		
 		$headerInfo['notifRecords'] = $this->notification_model->NotificationListingHome($this->vendorId) ;
         $headerInfo['notifRecordsNumber'] = count($this->notification_model->NotificationNoSeenListing($this->vendorId)) ;     
+        
         $headerInfo['ChatRecords'] = Null ; 
-        $headerInfo['ConnrectedUser'] =  $this->login_model->lastLogins() ;
+
+        $headerInfo['ConnrectedUser'] =  $this->login_model->lastLogins($this->vendorId) ;
+
+
 
          
-        if($MyUser["user"]->isDeleted == 3 ){
-        if($this->SA == 1 ){	
-        /*
-        $this->send_mail($MyUser->email , 
-        	"Activation" , 
+        if($user->isDeleted == 3 ){ 
+        /*       
+        $this->send_mail($user->email , 
+        	"Activation compte T-Link" , 
         	Null ,  	
-        	"Bonjour ".$MyUser->name.",<br> Votre de code d'activation est : <br> <br> <b>".$MyUser->userId."-".$MyUser->clubID."/2020 </b> <br> <br>" ) ;
-        	*/
+        	"Bonjour ".$user->name.",<br> Votre de code d'activation est : <br> <br> <b>".$user->userId."-".$user->clubID."/2020 </b> <br> <br>" ) ;
+        */
         $this->load->view('includes/header', $headerInfo);
         $this->load->view('lancement', $MyUser );
         $this->load->view('includes/footer', $footerInfo);
         }
-        else {
-        	$this->load->view('soon');
-        }
-        }else {
-			 $this->load->view('includes/header', $headerInfo);
-	        $this->load->view($viewName, $pageInfo);
-	        $this->load->view('includes/footer', $footerInfo);
+        else
+         {
+         	if($user->is_Actif == 1 ){
+				$this->load->view('includes/header', $headerInfo);
+	        	$this->load->view($viewName, $pageInfo);
+	        	$this->load->view('includes/footer', $footerInfo);
+	        }else{
+	        	$this->session->set_flashdata('error', 'Votre club est suspendu');
+                redirect('logout');
+	        }
 		}
     }
 	

@@ -1,5 +1,8 @@
 <?php if(!defined('BASEPATH')) exit('No direct script access allowed');
 
+header("Access-Control-Allow-Methods: GET, OPTIONS");
+header("Access-Control-Allow-Headers: Content-Type, Content-Length, Accept-Encoding");
+
 require APPPATH . '/libraries/BaseController.php';
 
 /**
@@ -19,40 +22,63 @@ class Api extends BaseController
         parent::__construct();
         $this->load->model('user_model');
         $this->load->model('club_model');
-        $this->load->model('scores_model');
-        $this->load->model('project_model');
+        $this->load->model('posts_model') ;
+        $this->load->model('project_model') ; 
+        $this->load->model('login_model') ;
 
     }
 
-    public function Users()
+
+
+
+    public function Hierarchy ()
+        {
+                
+                $data["President"]  =   $this->user_model->getMemberByRoleAndCelulle(-1 , 1 , '' ) ;
+                $data["EM"]     =   $this->user_model->getMemberByRoleAndCelulle(-1 , 10 , '' ) ;
+                $data["CU"]     =   $this->user_model->getMemberByRoleAndCelulle(0 , 2 , '' ) ;
+                $data["CU"]->managers   =   $this->user_model->getManagers(0); 
+                $data["CH"]     =   $this->user_model->getMemberByRoleAndCelulle(1 , 2 , '' ) ;
+                $data["CH"]->managers   =   $this->user_model->getManagers(1);
+                $data["CA"]     =   $this->user_model->getMemberByRoleAndCelulle(2 , 2 , '' ) ;
+                $data["CA"]->managers   =   $this->user_model->getManagers(2);
+
+                $this->global['pageTitle'] = 'Clubs';
+                $this->global['active'] = 'Clubs';
+               $this->response($data);   
+                
+        }
+
+    public  function PostsListingAPI()
     {
-            header('Content-Type: application/json');
-            echo json_encode( $this->user_model->userListing(0), JSON_PRETTY_PRINT);
+         $data   =  $this->posts_model->postsListing();
+        
+            foreach ($data['postRecords'] as $key ) {                
+                        $key->commentsRecords              = $this->posts_model->CommentsListing($key->postId);
+                        $key->likeRecords             = $this->posts_model->likesListing($key->postId);
+                         $key->likeCheck          = $this->posts_model->likeCheck($key->postId,$this->vendorId);
+                  }
+
+         $this->global['pageTitle'] = 'Acceuil' ;
+         $this->response($data); 
     }
 
-    public function Clubs()
+    public  function ProjectListingAPI()
     {
-            header('Content-Type: application/json');
-            echo json_encode( $this->club_model->clubListing(), JSON_PRETTY_PRINT);
+         $data = $this->project_model->projectNationalListing() ;
+         $this->response($data); 
     }
 
-    public function RateClubs()
+    public  function AuthentificationAPI()
     {
-            header('Content-Type: application/json');
-            echo json_encode( $this->scores_model->RaitingClub() , JSON_PRETTY_PRINT);
-    }
 
-    public function RateMembers()
-    {
-            header('Content-Type: application/json');
-            echo json_encode( $this->scores_model->RaitingUsers() , JSON_PRETTY_PRINT);
+        $result = $this->login_model->loginMe( $this->input->get('email') , $this->input->get('password') );  
+         $this->response($result); 
     }
+  
+                         
 
-    public function Projects()
-    {
-            header('Content-Type: application/json');
-            echo json_encode( $this->project_model->projectListing() , JSON_PRETTY_PRINT);
-    } 
+
 
 
 

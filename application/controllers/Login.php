@@ -16,6 +16,7 @@ class Login extends CI_Controller
     {
         parent::__construct();
         $this->load->model('login_model');
+        $this->load->model('user_model');
     }
 
     /**
@@ -49,30 +50,52 @@ class Login extends CI_Controller
     /**
      * This function used to logged in user
      */
-    public function loginMe()
+    public function loginMe($Longitude,$Latitude)
     {
-
-
-        $this->load->library('form_validation');
-        
-        $this->form_validation->set_rules('password', 'Password', 'required|max_length[32]');
-        
-        if($this->form_validation->run() == FALSE)
-        {
-            $this->index();
-        }
-        else
-        {
+      
             $email = $this->input->post('mail');
             $password = $this->input->post('password');
             
             $result = $this->login_model->loginMe($email, $password);
             
-
+            
 
             if(!empty($result))
             {
+                
                 $lastLogin = $this->login_model->lastLoginInfo($result->userId);
+
+                $sessionArray4 = array('userId'=>$result->userId,                    
+                                        'role'=>$result->roleId,
+                                        'clubID'=>$result->ClubID,
+                                        'avatar'=>$result->avatar,
+                                        'roleText'=>$result->role,
+                                        'name'=>$result->name,
+                                        'cellule' => $result->cellule,
+                                        'lastLogin'=> $lastLogin->createdDtm,
+                                        'lastActDTM'=> $lastLogin->createdDtm,
+                                        'isDeleted' => $result->isDeleted ,
+                                        'SA' => $result->SA ,
+                                        'isLoggedIn' => TRUE ,
+                                        'Latitude' =>  $Latitude ,
+                                        'Longitude' => $Longitude  ,
+                                    );
+
+
+                 $loginInfo = array(
+                    "userId"=>$result->userId,
+                    "sessionData" => json_encode($sessionArray4), 
+                    "machineIp"=>$_SERVER['REMOTE_ADDR'], 
+                    "userAgent"=>getBrowserAgent(), 
+                    "agentString"=>$this->agent->agent_string(), 
+                    "platform"=>$this->agent->platform(),
+                    "createdDtm" => date('Y-m-d H:i:s'), 
+                    "lastActDTM" => date('Y-m-d H:i:s') ,
+                    'Latitude' =>  $Latitude ,
+                    'Longitude' => $Longitude  ,
+                     );
+
+                 $loginId = $this->login_model->lastLogin($loginInfo);
 
                 $sessionArray = array('userId'=>$result->userId,                    
                                         'role'=>$result->roleId,
@@ -82,31 +105,44 @@ class Login extends CI_Controller
                                         'name'=>$result->name,
                                         'cellule' => $result->cellule,
                                         'lastLogin'=> $lastLogin->createdDtm,
+                                        'lastActDTM'=> $lastLogin->createdDtm,
                                         'isDeleted' => $result->isDeleted ,
                                         'SA' => $result->SA ,
                                         'isLoggedIn' => TRUE ,
-                                        'Latitude' =>  $this->input->get('Latitude') ,
-                                        'Longitude' => $this->input->get('Longitude')  ,
-                                );
+                                        'Latitude' =>  $Latitude ,
+                                        'Longitude' => $Longitude  ,
+                                        'loginId' =>  $loginId 
+                                    );
 
                 $this->session->set_userdata($sessionArray);
 
-                unset($sessionArray['userId'], $sessionArray['isLoggedIn'], $sessionArray['lastLogin']);
+              
 
-                $loginInfo = array("userId"=>$result->userId,"sessionData" => json_encode($sessionArray), "machineIp"=>$_SERVER['REMOTE_ADDR'], "userAgent"=>getBrowserAgent(), "agentString"=>$this->agent->agent_string(), "platform"=>$this->agent->platform(),"createdDtm" => date('Y-m-d H:i:s') );
-
-                $this->login_model->lastLogin($loginInfo);
-                
-                redirect('Posts/Acceuil');
+                redirect('Posts');
             }
             else
             {
-                $this->session->set_flashdata('error', 'Email et mot de passe erroné ');
+                if($this->user_model->checkEmailExists($email)){
+                $this->session->set_flashdata('error', 'mot de passe erroné <a href="'.base_url().'Register/MotDePasse" >Mot de passe oublié ? </a>');
+                $data['user'] = $this->user_model->checkEmailExists($email) ; 
+                $this->session->set_flashdata('user', $data['user']);
+                    
+                   
+                }
+                else
+                {
+                     $this->session->set_flashdata('error', 'adresse e-mail introuvable');
+                }
                 
                 $this->index();
             }
-        }
+        
     }
+
+
+  
+
+   
 
     /**
      * This function used to load forgot password view
