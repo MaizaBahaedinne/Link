@@ -8,7 +8,7 @@
 
 
                         	<!-- scoring clubs -->
-                        	<div class="col-lg-6 " >
+                        	<div class="col-lg-12 " >
                         		<aside class="sidebar static right" >
                         		<div class="widget">
                         		<h4 class="widget-title">Classement des clubs</h4>
