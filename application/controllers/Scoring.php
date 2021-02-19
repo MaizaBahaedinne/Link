@@ -54,6 +54,17 @@ class Scoring extends BaseController {
         }
 
 
+        public function ClassementWeAre (){
+    
+        $this->global['pageTitle'] = 'Classement';
+        
+        
+        $this->loadViews("scoring/weare", $this->global, NULL , NULL);   
+        
+        }
+
+
+
      
 
 		

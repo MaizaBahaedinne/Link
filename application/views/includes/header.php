@@ -510,7 +510,7 @@
 					<ul class="submenu">
 						<li><a href="<?php echo base_url() ?>Scoring/Classement/3" title="">University</a></li>
 						<li><a href="" title="">High school</a></li>
-						<li><a href="" title="">We are carthage</a></li>
+						<li><a href="<?php echo base_url() ?>Scoring/ClassementWeAre" title="">We are carthage</a></li>
 					</ul>
 				</li>
 			</ul>
