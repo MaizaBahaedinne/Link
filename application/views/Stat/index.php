@@ -174,7 +174,7 @@
 						
 
 
-								<div class="col-lg-6">
+								<div class="col-lg-2">
 									<aside class="sidebar static">
 									<div class="widget">
 									<h4 class="widget-title">Projet National</h4>
