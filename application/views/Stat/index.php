@@ -21,7 +21,7 @@
 					<div class="info-section">
 						<div class="row">
 										
-							<div class="col-lg-4 col-md-6 col-sm-6">
+							<div class="col-lg-2 col-md-6 col-sm-6">
 								<div class="stat-box">
 									<i class="fa fa-user"></i>
 									<div class="anlytc-meta">
