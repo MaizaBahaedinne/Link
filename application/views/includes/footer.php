@@ -265,7 +265,7 @@
                           "1": "1 ligne sélectionnée"
             } 
           }
-        },        dom: 'Bfrtip',
+        },        
         buttons: [
             'copyHtml5',
             'excelHtml5',
