@@ -97,7 +97,7 @@
                             <span class="btn btn-sm btn-primary" > Actif</span>
                         <?php }   ?>
                         <?php if($record->isDeleted == 3) { ?>
-                            <span class="btn btn-sm btn-warning " > non Actif</span>
+                            <span class="btn btn-sm btn-warning " > N.A</span>
                         <?php } ?>
 
                         <?php  if($record->isDeleted == 2) {  ?>
