@@ -110,7 +110,7 @@ class User_model extends CI_Model
        
     
         $this->db->where('Clubs.SenJun =', $type );
-        $this->db->where('baseTbl.roleId in (1,2,3,6,7) ' );
+        $this->db-where_in('BaseTbl.roleId', ('1','2','3','6','7'));
 
         $query = $this->db->get();
         
