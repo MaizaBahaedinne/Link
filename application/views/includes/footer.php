@@ -265,7 +265,13 @@
                           "1": "1 ligne sélectionnée"
             } 
           }
-        },        buttons: ['copy', 'csv', 'excel', 'pdf', 'print'],
+        },        dom: 'Bfrtip',
+        buttons: [
+            'copyHtml5',
+            'excelHtml5',
+            'csvHtml5',
+            'pdfHtml5'
+        ]
         } );
     } );
 

@@ -8,7 +8,7 @@
               <div class="col-lg-12 col-md-12 col-sm-6">
                 <aside class="sidebar">
                    <div class="widget">
-                    <h4 class="widget-title">Liste des utilisateurs 
+                    <h4 class="widget-title">Liste des leaders 
                        
                        </h4>
 
