@@ -32,7 +32,7 @@
 
                     <tbody>
                               
-                </style>
+              
                     
                     <?php
                     if(!empty($userRecords))
