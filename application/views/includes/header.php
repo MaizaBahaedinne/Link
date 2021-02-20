@@ -26,8 +26,11 @@
 	<link rel="stylesheet" href="<?php echo base_url() ?>assets/css/calendar.css">    
 	<link rel="stylesheet" href="<?php echo base_url() ?>assets/css/all.css">
 	<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.6.5/css/buttons.dataTables.min.css">
+
 	<link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.js"></script>
+
 
 
 
