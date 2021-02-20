@@ -111,7 +111,8 @@ class User_model extends CI_Model
     
         $this->db->where('Clubs.SenJun =', $type );
         $this->db->where_in('BaseTbl.roleId', array('1','2','3','6','7'));
-
+        $this->db->where('BaseTbl.isDeleted =', 0 );
+        
         $query = $this->db->get();
         
         $result = $query->result();        
