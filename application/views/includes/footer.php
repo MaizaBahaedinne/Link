@@ -235,11 +235,7 @@
   
         $(function () {
           $('.table').DataTable(  {
-          
-        buttons: [
-            'copy', 'csv', 'excel', 'pdf', 'print'
-        ],
-    
+             
           "language": {
               "sEmptyTable":     "Aucune donnée disponible dans le tableau",
               "sInfo":           "Affichage de l'élément _START_ à _END_ sur _TOTAL_ éléments",
@@ -269,7 +265,7 @@
                           "1": "1 ligne sélectionnée"
             } 
           }
-        }
+        },        buttons: ['copy', 'csv', 'excel', 'pdf', 'print'],
         } );
     } );
 
