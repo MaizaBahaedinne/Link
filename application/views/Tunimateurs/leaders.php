@@ -71,15 +71,15 @@
                         
                        
                         <td>
-                            <A HREF="mailto:<?php echo $record->email ?>">
+                            <a HREF="mailto:<?php echo $record->email ?>">
                                 <i class="fa fa-mail"></i><?php echo $record->email ?>
-                            </A> 
-                           <br> 
-                        <?php if($SA == 1 ) { ?>
-                             <a href="tel:<?php echo $record->mobile ?>">
-                                <i class="fa fa-phone"></i> <?php echo $record->mobile ?>
-                            </a>   
-                        <?php } ?>    
+                            </a>
+                            <br> 
+                            <?php if($SA == 1 ) { ?>
+                                 <a href="tel:<?php echo $record->mobile ?>">
+                                    <i class="fa fa-phone"></i> <?php echo $record->mobile ?>
+                                </a>   
+                            <?php } ?>    
                          </td>
                          <?php } ?>   
 
