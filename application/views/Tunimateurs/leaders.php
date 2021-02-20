@@ -21,6 +21,7 @@
                        
                         <th>id</th>
                         <th>Nom et prénom</th>
+                        <th>Club</th>
                         <?php if($SA == 1  ) { ?>
                         <th>Contact</th>
                         <?php }?>
@@ -58,9 +59,7 @@
                                         <small>  
                                             <small>  
                                                 <?php echo $record->role ?> <?php echo $record->cellule ?> 
-                                                <a  href="<?php echo base_url() ?>Club/clubInfo/<?php echo $record->clubID ?>">
-                                                  <?php echo $record->ClubName ?> 
-                                                </a>    
+                                                  
                                             </small>
                                         </small>
                                                                   
@@ -68,6 +67,11 @@
                                 
                           
 
+                        </td>
+                        <td>
+                            <a  href="<?php echo base_url() ?>Club/clubInfo/<?php echo $record->clubID ?>">
+                              <?php echo $record->ClubName ?> 
+                            </a>  
                         </td>
                         
                         <?php if($SA == 1  ) { ?>
