@@ -70,7 +70,7 @@ class User extends BaseController
     /**
      * This function is used to load the user list
      */
-    function userListing($HUA)
+    function userListingLeders($HUA)
     {
 
 
