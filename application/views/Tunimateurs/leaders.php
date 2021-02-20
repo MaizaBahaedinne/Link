@@ -24,8 +24,8 @@
                         
                         <th>Contact</th>
                                                
-                        <th>Actif</th>
-                        <th>Action</th>
+                    
+                 
                         
                     </tr>
                     </thead>
@@ -102,14 +102,6 @@
                            
                         </td>
 
-                        <td>
-                            <a  href="<?php echo base_url() ?>User/ProfileShow/<?php echo $record->userId ?>" ><i class="fas fa-eye"></i></a>
-                            <?php if(($record->isDeleted == 0 && $SA == 2) || $SA== 1 ){ ?>
-                            <a  href="<?php echo base_url() ?>User/editOld/<?php echo $record->userId ?>"  ><i class="fas fa-pencil-alt"></i></a>
-                            <?php } ?>
-                            <a  ><i class="fas fa-ban"></i></a>    
-
-                        </td>
                        
 
                     </tr>
