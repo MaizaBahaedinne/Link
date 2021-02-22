@@ -281,7 +281,7 @@
 <style type="text/css">
   .acti {
     height: 450px ;
-    overflow:hidden;
+    overflow: auto;
 }
 </style>
                     <!-- Tab panes -->
