@@ -77,7 +77,7 @@ class Scoring_model extends CI_Model
             $this->db->join('tbl_task as task', 'affect.tacheId = task.tacheId', 'LEFT');
             $this->db->join('tbl_project as proj', 'proj.projectId = task.projectId', 'LEFT');
             $this->db->join('tbl_club as club', 'proj.clubId = club.clubID', 'LEFT');
-            $this->db->join('tbl_club_scores as scores', 'scores.projectId = proj.projectId', 'LEFT');
+            $this->db->join('tbl_club_scores as scores', 'scores.projectId = proj.projectId', 'RIGHT');
             $this->db->join('tbl_users as valider', 'BaseTbl.createdBy = valider.userId', 'LEFT');
 
             $this->db->where('BaseTbl.projectId = ', Null );
@@ -85,7 +85,7 @@ class Scoring_model extends CI_Model
             $this->db->where('BaseTbl.reunionID = ', Null );
             $this->db->where('BaseTbl.userId', $userId);
             $this->db->where('BaseTbl.statut = ',0 );
-             $this->db->where('scores.statut = ',0 );
+            
             $this->db->group_by('BaseTbl.affectId' );
 
 
