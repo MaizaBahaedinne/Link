@@ -30,7 +30,7 @@
 
                       data.addRows([
                         <?php foreach ($taches as $tache ) { ?>
-                        ['<?php echo $tache->tacheId?>', '<?php echo $tache->titre?>', '<?php echo $tache->type?>', new Date(2014, 9, 8), new Date(2015, 5, 21), null, 89, null] ,
+                        ['<?php echo $tache->tacheId?>', '<?php echo $tache->titre?>', 'sprot', new Date(2014, 9, 8), new Date(2015, 5, 21), null, 89, null] ,
                         <?php } ?> 
                       ]);
 
