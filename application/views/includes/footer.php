@@ -515,9 +515,13 @@
         </div>
     </div><!-- fade Modal -->
 
+    <script type="text/javascript">
+    $(window).on('load', function() {
+        $('#Social').modal('show');
+    });
+    </script>
 
-
-    <div class="modal hide fade" id="myModal">
+    <div class="modal hide fade" id="Social">
     <div class="modal-header">
         <a class="close" data-dismiss="modal">×</a>
         <h3>Mise à jour des cordonnées</h3>
