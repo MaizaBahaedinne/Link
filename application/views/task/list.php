@@ -27,12 +27,7 @@
 
                         gantt: {
                           trackHeight: 30,
-                        },
-                        labelStyle: {
-                              fontName: Roboto2,
-                              fontSize: 14,
-                              color: '#757575'
-                            }
+                        }
                       };
 
                       var chart = new google.visualization.Gantt(document.getElementById('chart_div'));
