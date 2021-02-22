@@ -274,11 +274,12 @@
 						</div>
 					</div>
 				</div>
+           <div id="chart_div" style="width: cover"></div>
 			</div>
 		</div>
 
 
-    <div id="chart_div"></div>
+
 	</section>
 
     <div class="modal fade" id="myModal">
