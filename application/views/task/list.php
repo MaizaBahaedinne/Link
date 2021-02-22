@@ -19,8 +19,8 @@
                       data.addRows([
                         <?php foreach ($taches as $tache ) {
                         $startedDate = date_create($tache->startedDate);
-                        $deadline1 =  date('d/m/Y H:i',strtotime('+0 hours',strtotime($tache->deadline)));
-                        $deadline = date_create($deadline1);
+                        $deadline1 =  date('Y-m-d H:i',strtotime('+0 hours',strtotime($tache->deadline)));
+                        $deadline = date_create(''.$deadline1);
                         ?>
                         ['T<?php echo $tache->tacheId?>', '<?php echo $tache->titre?>', 'spring',
                           new Date(<?php echo date_format($startedDate, 'Y'); ?>, <?php echo date_format($startedDate, 'm'); ?> , <?php echo date_format($startedDate, 'd'); ?>), 
