@@ -357,14 +357,10 @@
                               } ?>  >
                                <span>
                                 <b>
-                                  <?php if( $task->clubID == $userInfo->clubID ) { ?>
+                                  
                                   <a style="color: green" >
                                     <?php echo $task->points ?>&nbsp; points 
-                                  </a><?php } else { ?>
-                                  <a style="color: orange" >
-                                    <?php echo $task->points ?>&nbsp; points 
                                   </a>
-                                  <?php } ?>
 
                                </b>
                                 Tache : 
