@@ -42,7 +42,7 @@
                                     labelStyle: {
                                       fontName: 'Open Sans',
                                       fontSize: 14,
-                                      color: 'white'
+                                      color: 'black'
                                     },
                                     barCornerRadius: 2,
                                     backgroundColor: {
