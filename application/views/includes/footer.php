@@ -533,12 +533,12 @@
     
     <div class="modal-body">
       <form class="c-form" method="post" action="<?php echo base_url() ?>User/updateSocialMedia">
+       <label>Facebook</label>
+       <input type="url" name="facebook" pattern="https://www\.facebook\.com\/(.+)" placeholder="Lien profile facebook"   required>
        <label></label>
-       <input type="url" name="facebook" pattern="https://www\.facebook\.com\/(.+)"   required>
+       <input type="url" name="instagram" pattern="https://www\.instagram\.com\/(.+)" placeholder="Lien profile instagram" >
        <label></label>
-       <input type="url" name="instagram" pattern="https://www\.instagram\.com\/(.+)" >
-       <label></label>
-       <input type="url" name="linkedin" pattern="https://www\.linkedin\.com\/(.+)" >
+       <input type="url" name="linkedin" pattern="https://www\.linkedin\.com\/(.+)" placeholder="Lien profile linkedin" >
        <hr>
        <input type="submit"  class="btn btn-primary" value="Enregistrer">
        </form>
