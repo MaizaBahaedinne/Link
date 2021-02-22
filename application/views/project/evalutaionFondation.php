@@ -61,7 +61,7 @@
                             <?php echo count($record->tache) ?>
                         </td>   
                         <td>                              
-                            <?php echo $record->score ?>
+                            <?php if(!(empty(record->score))){ $s =$record->score ; echo $s->points ; }  ?>
                         </td>                     
                     </tr>
                     <?php
