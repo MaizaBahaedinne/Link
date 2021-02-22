@@ -24,13 +24,13 @@
                                     <div class="your-page" >
 				                    <table  class="table table-responsive-xl" id="tableid" style="width: 100%" >
 				                      <thead>
-				                          <th width="10%" >Rang
+				                          <th width="5%" >#
 				                          </th>
 				                          <th>
 				                            Club
 				                          </th>
-				                          <th width="10%" >
-				                            Badge
+				                          <th width="5%" >
+				                            
 				                          </th>
                                   <th width="10%" >
                                     P
