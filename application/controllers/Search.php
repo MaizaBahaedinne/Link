@@ -32,7 +32,7 @@ class Search extends BaseController {
  						$data['SearchText'] = $text;
  						
             			$searchInfo = array(
-		                 'text' =>  $text, 
+		                 'text' =>  $textS, 
 		                 'createdBy' => $this->vendorId ,
 		                 'createdDTM'=> date('Y-m-d H:i:s')
 		                );
