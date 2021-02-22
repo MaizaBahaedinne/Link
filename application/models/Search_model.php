@@ -35,11 +35,11 @@ class Search_model extends CI_Model
         $this->db->join('tbl_club as Clubs', 'Clubs.clubID = BaseTbl.ClubID', 'LEFT');
         $this->db->join('tbl_users as Paren', 'Paren.userId = BaseTbl.createdBy', 'LEFT');
        
-        foreach($search as $s => $value) {
+        foreach($search as $s ) {
             
-                $this->db->like('BaseTbl.name', '%'.$search.'%' );
+                $this->db->like('BaseTbl.name', '%'.$s.'%' );
       
-                $this->db->or_like('Clubs.name', '%'.$search.'%' );
+                $this->db->or_like('Clubs.name', '%'.$s.'%' );
             
         }
 
