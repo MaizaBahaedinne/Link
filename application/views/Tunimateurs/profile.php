@@ -73,7 +73,7 @@
                     </div>
                   </div>
                   <div class="col-lg-12 col-md-12 col-sm-12">
-                    <?php if($userInfo->roleId == 5 ) { ?>
+                    <?php if($userInfo->roleId == 5 || $userInfo->roleId == 6  || $userInfo->roleId == 3) { ?>
                     <ul class="job-progres">
                       <li><span class="main-color">
                         <?php if (count($eff) > 0 ) 
