@@ -52,7 +52,7 @@
                                   </th>
 				                       
 				                     
-				                          <th width="15%" >
+				                          <th width="10%" style="text-align: right;" >
 				                            Score
 				                          </th>
 				                          </thead>
