@@ -152,7 +152,7 @@ class Register extends BaseController
                   $newPassword = $this->generateRandomString(8) ;
 
 
-                 $usersData = array('password'=>getHashedPassword($newPassword), 'updatedBy'=>$userId,
+                 $usersData = array('password'=>getHashedPassword($newPassword), 'updatedBy'=>$result->userId,
                                 'updatedDtm'=>date('Y-m-d H:i:s'));
                 
               
