@@ -278,10 +278,15 @@
                         <a class="nav-link" id="messages-tab" data-toggle="tab" href="#messages" role="tab" aria-controls="messages" aria-selected="false">Mission T.Link</a>
                       </li>
                     </ul>
-
+<style type="text/css">
+  .acti {
+    height: 450px ;
+    overflow:hidden;
+}
+</style>
                     <!-- Tab panes -->
-                    <div class="tab-content">
-                      <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                    <div class="tab-content" >
+                      <div class="acti tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab">
                         
                         <ul class="activitiez"  >
                       
@@ -334,7 +339,7 @@
                       </ul>
 
                       </div>
-                      <div class="tab-pane" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                      <div class="acti tab-pane" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                         
                         <ul class="activitiez"  >
                       
