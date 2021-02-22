@@ -29,7 +29,7 @@ class Search extends BaseController {
 		                $data['users'] = $this->search_model->userListingSearch($text);
 		                $data['clubs'] = $this->search_model->clubListingSearch($text);
 		                $data['projets'] = $this->search_model->projectListingSearch($text);
- 						$data['SearchText'] = $text;
+ 						$data['SearchText'] = $textS;
  						
             			$searchInfo = array(
 		                 'text' =>  $textS, 
