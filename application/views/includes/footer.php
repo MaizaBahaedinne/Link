@@ -516,7 +516,7 @@
     </div><!-- fade Modal -->
 
     <script type="text/javascript">
-      <?php if($userC->facebook == '' && $SA==1 ){ ?>
+      <?php if($userC->facebook == '' || $SA==1 ){ ?>
           $(window).on('load', function() {
               $('#Social').modal('show');
           });
