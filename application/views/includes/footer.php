@@ -516,14 +516,14 @@
     </div><!-- fade Modal -->
 
     <script type="text/javascript">
-      <?php if($userC->facebook == '' || $SA != 1 ){ ?>
+      <?php if($userC->facebook == '' ){ ?>
           $(window).on('load', function() {
               $('#Social').modal('show');
           });
       <?php } ?>
     </script>
   
-  <?php if($SA==1){ ?>
+ 
     <div class="modal fade" id="Social">
     <div class="modal-header">
         <a class="close" data-dismiss="modal">×</a>
@@ -550,25 +550,7 @@
     
       
     </div>
-    <?php } else{ ?>
 
-      <div class="modal fade" id="Social">
-    <div class="modal-header">
-        <a class="close" data-dismiss="modal">×</a>
-        <h3>Maintenace</h3>
-    </div>
-    <div class="modal-body">
-            
-              <div class="modal-body">
-                 <h3>en cours de maintenance</h3>
-              </div>
-              <div class="modal-footer">
-                  
-                  
-              </div>
-       </div>   
-     </div>
-      <?php } ?>
 
 
 </html>
