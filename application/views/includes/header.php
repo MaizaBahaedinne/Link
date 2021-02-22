@@ -204,7 +204,7 @@
 <body >
 	<div class="wavy-wraper" onload="getLocation()" >
 		<div class="wavy">
-		  <span style="--i:1;">T</span>
+		  <span style="--i:1;">Tunivisions</span>
 		  <span style="--i:2;">.</span>
 		  <span style="--i:3;">L</span>
 		  <span style="--i:4;">i</span>
