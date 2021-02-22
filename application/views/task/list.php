@@ -36,7 +36,7 @@
                                     arrow: {
                                       angle: 50,
                                       width: 1,
-                                      color: 'white',
+                                      color: 'black',
                                       radius: 2
                                     },
                                     labelStyle: {
@@ -60,7 +60,7 @@
                                     },
                                     percentEnabled: true, 
                                     shadowEnabled: true,  
-                                    shadowColor: 'white',
+                                    shadowColor: 'black',
                                     shadowOffset: 2,
                                   }
                                 };
