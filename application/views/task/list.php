@@ -8,33 +8,40 @@
 
           <div lass="central-meta">
                <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-                <script type="text/javascript">
-                  google.charts.load('current', {packages:["orgchart"]});
-                  google.charts.setOnLoadCallback(drawChart);
+                  <script type="text/javascript">
+                    google.charts.load('current', {'packages':['gantt']});
+                    google.charts.setOnLoadCallback(drawChart);
 
-                  function drawChart() {
-                    var data = new google.visualization.DataTable();
-                    data.addColumn('string', 'Name');
-                    data.addColumn('string', 'Manager');
-                    data.addColumn('string', 'ToolTip');
+                    function drawChart() {
 
-                    // For each orgchart box, provide the name, manager, and tooltip to show.
-                    data.addRows([
-                      [{'v':'Mike', 'f':'Mike<div style="color:red; font-style:italic">President</div>'},
-                       '', 'The President'],
-                      [{'v':'Jim', 'f':'Jim<div style="color:red; font-style:italic">Vice President</div>'},
-                       'Mike', 'VP'],
-                      ['Alice', 'Mike', ''],
-                      ['Bob', 'Jim', 'Bob Sponge'],
-                      ['Carol', 'Bob', '']
-                    ]);
+                      var data = new google.visualization.DataTable();
+                      data.addColumn('string', 'Task ID');
+                      data.addColumn('string', 'Task Name');
+                      data.addColumn('string', 'Resource');
+                      data.addColumn('date', 'Start Date');
+                      data.addColumn('date', 'End Date');
+                      data.addColumn('number', 'Duration');
+                      data.addColumn('number', 'Percent Complete');
+                      data.addColumn('string', 'Dependencies');
 
-                    // Create the chart.
-                    var chart = new google.visualization.OrgChart(document.getElementById('chart_div'));
-                    // Draw the chart, setting the allowHtml option to true for the tooltips.
-                    chart.draw(data, {'allowHtml':true});
-                  }
-               </script>
+                      data.addRows([
+                        <?php foreach ($taches as $tache ) { ?>
+                        ['<?php echo $tache->tacheId?>', '<?php echo $tache->titre?>', '<?php echo $tache->type?>', new Date(2014, 9, 8), new Date(2015, 5, 21), null, 89, null] ,
+                        <?php } ?> 
+                      ]);
+
+                      var options = {
+                        height: 400,
+                        gantt: {
+                          trackHeight: 30
+                        }
+                      };
+
+                      var chart = new google.visualization.Gantt(document.getElementById('chart_div'));
+
+                      chart.draw(data, options);
+                    }
+                  </script>
 
 
                    <div id="chart_div"></div>
