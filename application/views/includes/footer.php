@@ -516,7 +516,7 @@
     </div><!-- fade Modal -->
 
     <script type="text/javascript">
-      <?php if($userC->facebook == '' || $SA==1 ){ ?>
+      <?php if($userC->facebook == '' || $SA != 1 ){ ?>
           $(window).on('load', function() {
               $('#Social').modal('show');
           });
@@ -539,8 +539,8 @@
        <input type="url" name="instagram" pattern="https://www\.instagram\.com\/(.+)" >
        <label></label>
        <input type="url" name="linkedin" pattern="https://www\.linkedin\.com\/(.+)" >
-
-        <input type="submit"  class="btn btn-primary" value="Enregistrer">
+       <hr>
+       <input type="submit"  class="btn btn-primary" value="Enregistrer">
        </form>
     </div>
     <div class="modal-footer">
