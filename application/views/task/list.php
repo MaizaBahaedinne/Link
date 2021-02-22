@@ -94,7 +94,7 @@
                         ?>
                         ['T<?php echo $tache->tacheId?>', '<?php echo $tache->titre?>', 'spring',
                           new Date(<?php echo date_format($startedDate, 'Y'); ?>, <?php echo date_format($startedDate, 'm'); ?> , <?php echo date_format($startedDate, 'd'); ?>), 
-                        new Date(<?php echo date_format($deadline, 'Y'); ?>, <?php echo date_format($deadline, 'm'); ?> , <?php echo date_format($deadline, 'd'); ?>),  
+                        new Date(<?php echo date_format($deadline, 'Y'); ?>, <?php echo date_format($deadline, 'm'); ?> , <?php echo ((date_format($deadline, 'd'))+1) ; ?>),  
                          null, 89, null] ,
                         <?php } ?> 
                       ]);
