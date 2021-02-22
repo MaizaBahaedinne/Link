@@ -57,8 +57,9 @@ class Task_model extends CI_Model
        $this->db->select('*');
        $this->db->from('tbl_affectation as BaseTbl');
        $this->db->join('tbl_users as user', 'user.userId = BaseTbl.userAffectatedID', 'LEFT');
+       $this->db->join('tbl_scoring as scores', 'scores.affectId = BaseTbl.affcted', 'LEFT');
        $this->db->where('BaseTbl.userAffectatedID = ', $userId);
-       $this->db->where('BaseTbl.status = ', 0 );
+       $this->db->where('scores.status = ', 0 );
        $query = $this->db->get();
        $result = $query->result();        
        return $result;
