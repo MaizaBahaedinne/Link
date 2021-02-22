@@ -71,12 +71,12 @@ class Scoring_model extends CI_Model
 
         if ($type == 'tache'){
 
-            $this->db->select('BaseTbl.scoringId  , sum(BaseTbl.points) points , BaseTbl.ValidDTM , proj.projectId , proj.titre , proj.type , club.name  , club.clubID , valider.name validBy , valider.userId validerId , scores.statut statutS  , proj.cible , task.titre  taskTitre , task.type taskType ');
+            $this->db->select('BaseTbl.scoringId  , sum(BaseTbl.points) points , BaseTbl.ValidDTM , proj.projectId , proj.titre , proj.type , valider.name validBy , valider.userId validerId , scores.statut statutS  , proj.cible , task.titre  taskTitre , task.type taskType ');
             $this->db->from('tbl_scoring as BaseTbl');
             $this->db->join('tbl_affectation as affect', 'affect.userAffectatedID = BaseTbl.affectId', 'LEFT');
             $this->db->join('tbl_task as task', 'affect.tacheId = task.tacheId', 'LEFT');
             $this->db->join('tbl_project as proj', 'proj.projectId = task.projectId', 'LEFT');
-            $this->db->join('tbl_club as club', 'proj.clubId = club.clubID', 'LEFT');
+       
             $this->db->join('tbl_club_scores as scores', 'scores.projectId = proj.projectId', 'RIGHT');
             $this->db->join('tbl_users as valider', 'BaseTbl.createdBy = valider.userId', 'LEFT');
 
