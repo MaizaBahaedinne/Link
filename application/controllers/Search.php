@@ -22,8 +22,8 @@ class Search extends BaseController {
 		        {
 						$text = $this->input->post('text');
 						preg_match_all("/([^,= ]+)=([^,= ]+)/", $text, $r); 
-						
-							$result = $r ;
+						$result = array_combine($r[1], $r[2]);
+						$result = $r ;
 					
 				
 						var_dump($result);
