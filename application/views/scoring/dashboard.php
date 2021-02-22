@@ -32,6 +32,24 @@
 				                          <th width="10%" >
 				                            Badge
 				                          </th>
+                                  <th width="10%" >
+                                    P
+                                  </th>
+                                  <th width="10%" >
+                                    F
+                                  </th>
+                                  <th width="10%" >
+                                    C
+                                  </th>
+                                  <th width="10%" >
+                                    E
+                                  </th>
+                                  <th width="10%" >
+                                    TE
+                                  </th>
+                                  <th width="10%" >
+                                    TP
+                                  </th>
 				                       
 				                     
 				                          <th width="10%" >
@@ -63,8 +81,14 @@
                                         <?php   }  ?>
                                         </td>
                                                                              
+                                        <td><?php echo $club->P ?></td>
+                                        <td><?php echo $club->F ?></td>
+                                        <td><?php echo $club->C ?></td>
+                                        <td><?php echo $club->E ?></td>
+                                        <td><?php ?></td>
+                                        <td><?php ?></td>
 
-                                        <td> <b ><?php echo $club->scores ?></b> </td>
+                                        <td> <b ><?php $s = $club->score ; echo $s->points ?></b> </td>
                                       </tr>
                                       
                                  

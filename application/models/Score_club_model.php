@@ -47,6 +47,24 @@ class Score_club_model extends CI_Model
         return $result;
     }
 
+
+
+        function scoreListingByClubbyType($clubID,$type)
+    {
+        $this->db->select('proj.titre , proj.type  , BaseTbl.points , BaseTbl.createdDTM  ');
+        $this->db->from('tbl_club_scores as BaseTbl');
+        $this->db->join('tbl_project as proj', 'proj.projectId = BaseTbl.projectId', 'LEFT');
+        $this->db->where(' proj.clubID = ', $clubID ) ;
+        $this->db->where(' proj.type = ', $type ) ;
+        $this->db->where(' proj.startDate > ','2020-09-15') ;
+        $this->db->where(' BaseTbl.statut = ','0') ;
+        $this->db->order_by('BaseTbl.createdDTM','ASC');
+        
+        $query = $this->db->get(); 
+        $result = $query->result();        
+        return $result;
+    }
+
      function scoreByClub($clubID)
     { 
         $this->db->select('sum(BaseTbl.points) points');
