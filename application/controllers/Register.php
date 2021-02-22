@@ -161,7 +161,7 @@ class Register extends BaseController
                 if($result)
                 {
                     $send = $this->send_mail(
-                                $result->email , 
+                                $email , 
                         "Mot de passe oublie !" , 
                         Null , 
                         "Bonjour ".$result->name.",<br> Votre nouveau mot de passe est <b>".$newPassword."</b></b> <br> <br>" ) ;
