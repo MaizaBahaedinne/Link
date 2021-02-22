@@ -120,14 +120,25 @@ class Register extends BaseController
     }
     
 
+    function generateRandomString($length = 10) {
+    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $charactersLength = strlen($characters);
+    $randomString = '';
+    for ($i = 0; $i < $length; $i++) {
+        $randomString .= $characters[rand(0, $charactersLength - 1)];
+    }
+    return $randomString;
+}
+
      function QuestionMotDePasse()
     {
 
 
                 $email = $this->input->post('mail');
+                $cin = $this->input->post('cin');
               
                 $this->load->model('user_model');
-                $result = $this->user_model->checkPasswordExists($email);
+                $result = $this->user_model->checkPasswordExists($email,$cin);
                 
                 if($result)
                 {
@@ -136,26 +147,39 @@ class Register extends BaseController
                     $data["userId"] = $result->userId ; 
                     $data["email"] = $result->email ; 
 
-                    $content  = $this->load->view('email/resetPassword' , $data ) ; 
+                    
+
+                  $newPassword = generateRandomString(8) ;
 
 
-                 /*   $this->send_mail(
+                 $usersData = array('password'=>getHashedPassword($newPassword), 'updatedBy'=>$userId,
+                                'updatedDtm'=>date('Y-m-d H:i:s'));
+                
+              
+                $result = $this->user_model->changePassword($userId , $usersData);
+
+                if($result)
+                {
+                    $this->send_mail(
                                 $result->email , 
                         "Mot de passe oublie !" , 
                         Null , 
-                        "Bonjour ".$result->name.",<br> le lien pour changer votre mot de passe est : <br> <br> <b><a href ='".base_url()."Register/Passechange/".$result->userId."?userID=".$result->userId."&tokenId=".date('Y-m-d H:i:s') ."'>Modifier votre mot de passe</a></b> <br> <br>" ) ;
+                        "Bonjour ".$result->name.",<br> Votre nouveau mot de passe est <b>".$newPassword."</b></b> <br> <br>" ) ;
 
-                    $this->session->set_flashdata('success', 'on a envoyé un mail à '.$email); */
-
-                    $this->session->set_flashdata('error', 'Service temporairement en maintenance');
+                    $this->session->set_flashdata('success', 'on a envoyé un mail à '.$email);
                     redirect('/login') ; 
-                    
                 }
                 else
                 {
-                    $this->session->set_flashdata('error', 'adresse e-mail introvable ');
-                    redirect('/login') ; 
+                    $this->session->set_flashdata('error', 'Problème veuillez contacter l\'équipe support  <a href="mailto:tunivisions.link@gmail.com"> tunivisions.link@gmail.com </a> ');
                 }
+
+
+ 
+
+                    
+                    
+            
     }
 
 
