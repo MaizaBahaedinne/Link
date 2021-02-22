@@ -111,7 +111,7 @@
                                     <label for="exampleInputEmail1">Email</label>
                                     <input type="email"  name="mail" placeholder="email" required>
                                     <label for="exampleInputEmail1">CIN</label>
-                                    <input type="text"  name="cin" placeholder="email" required>
+                                    <input type="text"  name="cin" placeholder="CIN" required>
                                 
 
                                     <input  type="submit"  value="Envoyer">
