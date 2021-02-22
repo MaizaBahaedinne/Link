@@ -21,7 +21,7 @@
                           $startedDate = date_create($tache->startedDate);
                           $deadline = date_create($tache->deadline);
                         ?>
-                        ['T<?php echo $tache->tacheId?>', 'Hockey Season', 'sports',
+                        ['T<?php echo $tache->tacheId?>', '<?php echo $tache->titre?>', 'spring',
                           new Date(<?php echo date_format($startedDate, 'Y'); ?>, <?php echo date_format($startedDate, 'd'); ?> , <?php echo date_format($startedDate, 'm'); ?>), 
                         new Date(<?php echo date_format($deadline, 'Y'); ?>, <?php echo date_format($deadline, 'd'); ?> , <?php echo date_format($deadline, 'm'); ?>),  
                          null, 89, null] ,
