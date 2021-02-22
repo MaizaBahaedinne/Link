@@ -21,7 +21,8 @@
                           $startedDate = date_create($tache->startedDate);
                          
                           
-                          $deadline =  strtotime($tache->deadline . "+1 days") ;
+                          $deadline1 =  strtotime($tache->deadline . "+1 days") ;
+                          $deadline =  date_create($deadline1);
                         ?>
                         ['T<?php echo $tache->tacheId?>', '<?php echo $tache->titre?>', 'spring',
                           new Date(<?php echo date_format($startedDate, 'Y'); ?>, <?php echo date_format($startedDate, 'm'); ?> , <?php echo date_format($startedDate, 'd'); ?>), 
