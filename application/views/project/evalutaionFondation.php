@@ -75,7 +75,23 @@
                                  echo '<b style="color:red" >Non cloturé</b>' ;  
                              }   
                             ?>
-                        </td>                     
+                        </td> 
+                         <td>                              
+                            <?php 
+                            if(!(empty($record->score))){ 
+                                $p =$record->score ;
+                                 if($p->statut == 1 ){
+                                    echo "<b style='color:white;background-color: orange'>En cours de validation manuelle</b>" ;
+                                  }elseif($p->statut == 2 ){
+                                    echo "<b style='color:red';background-color: black'>tentative de tricherie</b>" ;
+                                   
+                            } 
+                            else 
+                                {
+                                   
+                             }   
+                            ?>
+                        </td>                    
                     </tr>
                     <?php
                         }
