@@ -43,11 +43,14 @@ class Search_model extends CI_Model
             
         }
 
+
         $this->db->where('BaseTbl.isDeleted = ' , 0 );
       
         $query = $this->db->get();
         
-        $result = $query->result();        
+        $result = $query->result();  
+        var_dump($result) ;
+      
         return $result;
     }
 
