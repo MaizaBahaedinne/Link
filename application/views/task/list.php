@@ -6,11 +6,7 @@
 			<div class="container">
 				<div class="row" id="page-contents">
 
-          
-
-					<div class=" col-lg-12">
-
-            <div lass="central-meta">
+          <div lass="central-meta">
                <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
                   <script type="text/javascript">
                     google.charts.load('current', {'packages':['gantt']});
@@ -19,7 +15,7 @@
                     function drawChart() {
 
                       var data = new google.visualization.DataTable();
-                      data.addColumn('number', 'Task ID');
+                      data.addColumn('string', 'Task ID');
                       data.addColumn('string', 'Task Name');
                       data.addColumn('string', 'Resource');
                       data.addColumn('date', 'Start Date');
@@ -30,8 +26,8 @@
 
                       data.addRows([
                         <?php foreach ($taches as $tache ) { ?>
-                        ['<?php echo $tache->tacheId ?>', '<?php echo $tache->titre ?>', 'sprot', new Date(2014, 9, 8), new Date(2015, 5, 21), null, 89, null] ,
-                        <?php } ?> 
+                        ['T<?php echo $tache->tacheId?>', 'Hockey Season', 'sports', new Date(2014, 9, 8), new Date(2015, 5, 21), null, 89, null] ,
+                        <?php }?> 
                       ]);
 
                       var options = {
@@ -50,6 +46,10 @@
 
                    <div id="chart_div"></div>
             </div>
+
+					<div class=" col-lg-12">
+
+            
 
 						<div class="central-meta">
               <div class="row">
