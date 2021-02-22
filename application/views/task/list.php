@@ -1,33 +1,4 @@
 
-
-
-<section>
-		<div class="gap gray-bg">
-			<div class="container">
-				<div class="row" id="page-contents">
-
-          <div class=" col-lg-12">
-
-            
-            
-
-						<div class="central-meta">
-              <div class="row">
-              <div class="col-md-8">
-							<h6 class="widget-title" > Gestion des tache : <?php echo $projet->titre ?>  </h6> 
-							</div>
-              <div class="col-md-4">
-              <?php 
-               if ((($role == 1 || $role == 3 || $role == 6 || $role == 7  ) &&   $projet->ClubID == $clubID ) || $SA == 1 ){ 
-                if ( (time()-(60*60*24)) < strtotime($projet->endDate) ){ ?> 
-              <a class="align-right main-btn" data-toggle="modal" data-target="#myModal" >Ajouter une tache</a> 
-              <?php } } ?>
-              </div>
-              </div>
-							<div>
-
-
-                <div lass="central-meta">
                <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
                   <script type="text/javascript">
                     google.charts.load('current', {'packages':['gantt']});
@@ -63,6 +34,35 @@
                       chart.draw(data, options);
                     }
                   </script>
+
+<section>
+		<div class="gap gray-bg">
+			<div class="container">
+				<div class="row" id="page-contents">
+
+          <div class=" col-lg-12">
+
+            
+            
+
+						<div class="central-meta">
+              <div class="row">
+              <div class="col-md-8">
+							<h6 class="widget-title" > Gestion des tache : <?php echo $projet->titre ?>  </h6> 
+							</div>
+              <div class="col-md-4">
+              <?php 
+               if ((($role == 1 || $role == 3 || $role == 6 || $role == 7  ) &&   $projet->ClubID == $clubID ) || $SA == 1 ){ 
+                if ( (time()-(60*60*24)) < strtotime($projet->endDate) ){ ?> 
+              <a class="align-right main-btn" data-toggle="modal" data-target="#myModal" >Ajouter une tache</a> 
+              <?php } } ?>
+              </div>
+              </div>
+							<div>
+
+            <hr>
+              <div lass="central-meta">
+
 
 
                    <div id="chart_div"></div>
