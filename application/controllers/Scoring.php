@@ -29,7 +29,7 @@ class Scoring extends BaseController {
             $key->P =  count($this->project_model->projectListingByClub($clubId)) ;
             $key->F = count(scoreListingByClubbyType($key->clubId,'Formation')) ;
             $key->F += count(scoreListingByClubbyType($key->clubId,'Compétition')) ;
-            $key->C = count(count(scoreListingByClubbyType($key->clubId,'Conférence')) ; 
+            $key->C = count(scoreListingByClubbyType($key->clubId,'Conférence')) ; 
             $key->E = count(scoreListingByClubbyType($key->clubId,'Evenement')) ;
             $key->E += count(scoreListingByClubbyType($key->clubId,'Soirée')) ; 
             $key->score = $this->Score_club_model->scoreByClub($key->clubId) ; 
