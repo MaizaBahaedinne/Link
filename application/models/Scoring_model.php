@@ -63,6 +63,9 @@ class Scoring_model extends CI_Model
             $this->db->where('BaseTbl.projectId != ', Null );
             $this->db->where('BaseTbl.affectId = ', Null );
             $this->db->where('BaseTbl.reunionID = ', Null );
+            $this->db->where('BaseTbl.userId', $userId);
+            $this->db->where('BaseTbl.statut = ',0 );
+            $this->db->group_by('BaseTbl.projectId' );
         }
 
 
@@ -80,11 +83,13 @@ class Scoring_model extends CI_Model
             $this->db->where('BaseTbl.projectId = ', Null );
             $this->db->where('BaseTbl.affectId != ', Null );
             $this->db->where('BaseTbl.reunionID = ', Null );
-        }
-
             $this->db->where('BaseTbl.userId', $userId);
             $this->db->where('BaseTbl.statut = ',0 );
-            $this->db->group_by('BaseTbl.projectId' );
+            $this->db->group_by('BaseTbl.affectId' );
+        }
+
+           
+            
             $this->db->order_by('BaseTbl.ValidDTM  DESC' );
         $query = $this->db->get();
          
