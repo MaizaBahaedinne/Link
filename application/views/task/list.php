@@ -21,7 +21,12 @@
               </div>
 							<div>
 
-                <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+               
+
+
+                <hr>
+
+                 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
                   <script type="text/javascript">
                     google.charts.load('current', {'packages':['gantt']});
                     google.charts.setOnLoadCallback(drawChart);
@@ -58,9 +63,6 @@
 
 
                    <div id="chart_div"></div>
-
-
-                <hr>
 
                   <table class="table table-striped table-responsive-xl" style="width: cover">
                     <thead>
