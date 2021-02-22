@@ -86,6 +86,8 @@ class Scoring_model extends CI_Model
             $this->db->where('BaseTbl.userId', $userId);
             $this->db->where('BaseTbl.statut = ',0 );
             $this->db->group_by('BaseTbl.affectId' );
+
+
         }
 
            
@@ -93,6 +95,7 @@ class Scoring_model extends CI_Model
             $this->db->order_by('BaseTbl.ValidDTM  DESC' );
         $query = $this->db->get();
          
+        var_dump($query->result()) ; 
         return $query->result();
     } 
 
