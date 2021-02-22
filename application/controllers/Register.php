@@ -160,18 +160,23 @@ class Register extends BaseController
 
                 if($result)
                 {
-                    $this->send_mail(
+                    $send = $this->send_mail(
                                 $result->email , 
                         "Mot de passe oublie !" , 
                         Null , 
                         "Bonjour ".$result->name.",<br> Votre nouveau mot de passe est <b>".$newPassword."</b></b> <br> <br>" ) ;
 
-                    $this->session->set_flashdata('success', 'on a envoyé un mail à '.$email);
+                    if($send){
+                        $this->session->set_flashdata('success', 'on a envoyé un mail à '.$email);
+                    } else {
+                    $this->session->set_flashdata('error', 'Problème veuillez contacter l\'équipe support  <a href="mailto:tunivisions.link@gmail.com"> tunivisions.link@gmail.com </a> ');
+                    }
+
                     redirect('/login') ; 
                 }
                 else
                 {
-                    $this->session->set_flashdata('error', 'Problème veuillez contacter l\'équipe support  <a href="mailto:tunivisions.link@gmail.com"> tunivisions.link@gmail.com </a> ');
+                    $this->session->set_flashdata('error', 'Compte introuvable');
                 }
             }
         }

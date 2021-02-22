@@ -165,10 +165,10 @@ class BaseController extends CI_Controller {
                     
                     // Send email
                     if(!$mail->send()){
-                        return 'Le message n\'a pas pu être envoyé.';
+                        return false ;
                         
                     }else{
-                       return 'Le message a été envoyé.';
+                       return true ;
                     }
     }
 
