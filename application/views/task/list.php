@@ -92,10 +92,12 @@
                         $deadline1 =  date('Y-m-d H:i',strtotime('+0 hours',strtotime($tache->deadline)));
                         $deadline = date_create(''.$deadline1);
                         ?>
-                        ['T<?php echo $tache->tacheId?>', '<?php echo $tache->titre?>', 'spring',
+                        ['<?php echo $tache->tacheId?>', '<?php echo $tache->titre?>', 'spring',
                           new Date(<?php echo date_format($startedDate, 'Y'); ?>, <?php echo date_format($startedDate, 'm'); ?> , <?php echo date_format($startedDate, 'd'); ?>), 
                         new Date(<?php echo date_format($deadline, 'Y'); ?>, <?php echo date_format($deadline, 'm'); ?> , <?php echo ((date_format($deadline, 'd'))+1) ; ?>),  
-                         null, 89, null] ,
+                         null,
+                         100
+                          , null] ,
                         <?php } ?> 
                       ]);
 
