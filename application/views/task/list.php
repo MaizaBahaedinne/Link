@@ -39,10 +39,9 @@
                       data.addColumn('string', 'Dependencies');
 
                       data.addRows([
-                        <?php foreach ($taches as $tache ) { ?>
-                        ['<?php echo $tache->taskId ?>', '<?php echo $tache->titre ?>', '<?php echo $tache->type ?>',
-                         new Date(2014, 9, 8), new Date(2015, 5, 21), null, 89, null], 
-                       <?php } ?>
+                        
+                        ['Hockey', 'Hockey Season', 'sports',
+                         new Date(2014, 9, 8), new Date(2015, 5, 21), null, 89, null]
                       ]);
 
                       var options = {
