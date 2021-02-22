@@ -265,7 +265,7 @@
                 <div class="central-meta">
                   <span class="create-post">Activités récentes<a href="#" title=""></a></span>
 
-                  <ul class="nav nav-tabs">
+                  <ul= class="nav nav-tabs" id="myTab" role="tablist">
                       <li class="nav-item">
                         <a class="nav-link active" href="#Participations" data-toggle="tab"  role="tab" aria-controls="home" aria-selected="true">Participations</a>
                       </li>
