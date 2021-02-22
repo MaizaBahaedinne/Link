@@ -269,10 +269,10 @@
                     <!-- Nav tabs -->
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                       <li class="nav-item">
-                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Participations</a>
+                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"><?php echo count($scores) ?> Participations  </a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Taches</a>
+                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false"><?php echo count($tasks) ?> Taches</a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" id="messages-tab" data-toggle="tab" href="#messages" role="tab" aria-controls="messages" aria-selected="false">Mission T.Link</a>
@@ -334,7 +334,59 @@
                       </ul>
 
                       </div>
-                      <div class="tab-pane" id="profile" role="tabpanel" aria-labelledby="profile-tab">..2.</div>
+                      <div class="tab-pane" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                        
+                        <ul class="activitiez"  >
+                      
+
+                         <?php
+                         if(!(empty($tasks))){
+                         foreach ($tasks as $task){  ?>
+                         <li>
+                            <div class="activity-meta"  
+                              <?php if ($task->statutS == 1){
+                                echo "style='background-color: yellow'" ; 
+                              } ?> 
+                              <?php if ($task->statutS == 2){
+                                echo "style='background-color: red'" ; 
+                              }if ($task->type=='Privé' && $task->clubId == $userInfo->clubID ) 
+                              { echo "style='background-color: red'" ;  }?>  >
+                               <span>
+                                <b>
+                                  <?php if( $task->clubID == $userInfo->clubID ) { ?>
+                                  <a style="color: green" >
+                                    <?php echo $task->points ?>&nbsp; points 
+                                  </a><?php } else { ?>
+                                  <a style="color: orange" >
+                                    <?php echo $task->points ?>&nbsp; points 
+                                  </a>
+                                  <?php } ?>
+
+                               </b>
+                                Participation au  <?php echo $task->type ?> :  
+                                <a href="<?php echo base_url() ?>Project/projectDetails/<?php echo $task->projectId ?>" title="">
+                                  <?php echo $task->titre ?> [  <?php echo $task->cible ?> ]
+                                    
+                                </a>
+                               </span>
+                               <h6>
+                                by 
+                                <a>
+                                  <?php if ($task->clubID > 5 ) {echo "club ";}  echo 'Tunivisions '.$task->name ; ?> 
+                                    
+                                </a>
+                               </h6>
+                               <i>
+                                <?php echo xTimeAgo ($task->ValidDTM, date('Y-m-d H:i:s') )  ?> <small>valider par : <a href="<?php echo base_url() ?>User/ProfileShow/<?php echo $task->validerId ?>"><?php echo $task->validBy ?></a> #<?php echo $task->scoringId ?> </small>
+                               </i>
+                            </div>
+                         </li>
+                         <?php } }  ?> 
+
+                         
+                      </ul>
+
+                      </div>
                       <div class="tab-pane" id="messages" role="tabpanel" aria-labelledby="messages-tab">.3..</div>
 
                     </div>
