@@ -61,7 +61,16 @@
                             <?php echo count($record->tache) ?>
                         </td>   
                         <td>                              
-                            <?php if(!(empty(record->score))){ $s =$record->score ; echo $s->points ; } else { echo '<b style="color:red" >Non cloturé</b>' ;  }   ?>
+                            <?php 
+                            if(!(empty($record->score))){ 
+                                $s =$record->score ; 
+                                echo $s->points ; 
+                            } 
+                            else 
+                                {
+                                 echo '<b style="color:red" >Non cloturé</b>' ;  
+                             }   
+                            ?>
                         </td>                     
                     </tr>
                     <?php
