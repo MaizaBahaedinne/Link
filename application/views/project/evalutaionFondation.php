@@ -19,10 +19,11 @@
                     <thead>
                     <tr>
                        
-                        <th>id</th>
+                        <th>date</th>
                         <th>club</th>
                         <th>Projet</th>
                         <th>type</th>
+                        <th>cible</th>
                         <th>présence</th>
                         <th>tache</th>
                         <th>score</th>
@@ -43,7 +44,7 @@
                     <tr>
                        
                         <td>
-                            <?php echo $record->projectId ?>
+                            <?php echo $record->startDate ?>
                         </td>
                         <td>              
                             <?php echo $record->ClubName ?> 
@@ -53,6 +54,9 @@
                         </td>
                         <td>                              
                             <?php echo $record->type ?>
+                        </td>
+                         <td>                              
+                            <?php echo $record->cible ?>
                         </td>
                         <td>                              
                             <?php echo count($record->part) ?>
