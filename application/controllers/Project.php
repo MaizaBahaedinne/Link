@@ -58,6 +58,8 @@ class Project extends BaseController {
                             $key->part = $this->scoring_model->PresenceByProject($projet->projectId);
                             $key->tache = $this->task_model->taskListing($projet->projectId);
                         }
+
+                        $data['projectRecords'] =  $projet
                                                
 
                         $this->global['pageTitle'] = "Projet" ;
