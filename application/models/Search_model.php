@@ -37,10 +37,10 @@ class Search_model extends CI_Model
        
         foreach($search as $s ) {
             
-                $this->db->like('BaseTbl.name', '%'.$s.'%' );
+                $this->db->like('BaseTbl.name', $s);
       
-                $this->db->or_like('Clubs.name', '%'.$s.'%' );
-            
+                $this->db->or_like('Clubs.name', $s );
+             var_dump($s) ;
         }
 
 
@@ -49,7 +49,7 @@ class Search_model extends CI_Model
         $query = $this->db->get();
         
         $result = $query->result();  
-        var_dump($result) ;
+       
       
         return $result;
     }
