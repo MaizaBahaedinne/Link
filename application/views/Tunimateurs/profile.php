@@ -264,7 +264,17 @@
 
                 <div class="central-meta">
                   <span class="create-post">Activités récentes<a href="#" title=""></a></span>
-                      <ul class="activitiez">
+
+                  <ul class="nav nav-tabs">
+                      <li class="nav-item">
+                        <a class="nav-link active" href="#participations">Participations</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#Taches">Taches</a>
+                      </li>
+                  </ul>
+
+                      <ul class="activitiez"  href="participations" >
                       
 
                          <?php
@@ -313,6 +323,58 @@
 
                          
                       </ul>
+
+                      <ul class="activitiez"  href="Taches" >
+                         <?php
+                         if(!(empty($scores))){
+                         foreach ($scores as $score){  ?>
+                         <li>
+                            <div class="activity-meta"  
+                              <?php if ($score->statutS == 1){
+                                echo "style='background-color: yellow'" ; 
+                              } ?> 
+                              <?php if ($score->statutS == 2){
+                                echo "style='background-color: red'" ; 
+                              }if ($score->type=='Privé' && $score->clubId == $userInfo->clubID ) 
+                              { echo "style='background-color: red'" ;  }?>  >
+                               <span>
+                                <b>
+                                  <?php if( $score->clubID == $userInfo->clubID ) { ?>
+                                  <a style="color: green" >
+                                    <?php echo $score->points ?>&nbsp; points 
+                                  </a><?php } else { ?>
+                                  <a style="color: orange" >
+                                    <?php echo $score->points ?>&nbsp; points 
+                                  </a>
+                                  <?php } ?>
+
+                               </b>
+                                Participation au  <?php echo $score->type ?> :  
+                                <a href="<?php echo base_url() ?>Project/projectDetails/<?php echo $score->projectId ?>" title="">
+                                  <?php echo $score->titre ?> [  <?php echo $score->cible ?> ]
+                                    
+                                </a>
+                               </span>
+                               <h6>
+                                by 
+                                <a>
+                                  <?php if ($score->clubID > 5 ) {echo "club ";}  echo 'Tunivisions '.$score->name ; ?> 
+                                    
+                                </a>
+                               </h6>
+                               <i>
+                                <?php echo xTimeAgo ($score->ValidDTM, date('Y-m-d H:i:s') )  ?> <small>valider par : <a href="<?php echo base_url() ?>User/ProfileShow/<?php echo $score->validerId ?>"><?php echo $score->validBy ?></a> #<?php echo $score->scoringId ?> </small>
+                               </i>
+                            </div>
+                         </li>
+                         <?php } }  ?> 
+
+                         
+                      </ul>
+
+
+
+
                   </div>
                 </div>
                  
