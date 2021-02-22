@@ -34,14 +34,12 @@
                       data.addColumn('string', 'Resource');
                       data.addColumn('date', 'Start Date');
                       data.addColumn('date', 'End Date');
-                      data.addColumn('number', 'Duration');
-                      data.addColumn('number', 'Percent Complete');
-                      data.addColumn('string', 'Dependencies');
+
 
                       data.addRows([
                         <?php foreach ($taches as $tache ) { ?>
                         ['<?php echo $tache->titre ?>', '<?php echo $tache->description ?>', '<?php echo $tache->type ?>',
-                         new Date(2014, 9, 8), new Date(2015, 5, 21), null, 89, null], 
+                         new Date(2020, 9, 8), new Date(2021, 5, 21)], 
                        <?php } ?>
                       ]);
 
