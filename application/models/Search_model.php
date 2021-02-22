@@ -27,7 +27,7 @@ class Search_model extends CI_Model
      * This function is used to get the user listing count
      * @return array $result : This is result
      */
-    function userListingSearch($search)
+    function userListingSearch($Search)
     {
          $this->db->select('BaseTbl.userId, BaseTbl.gouvernorat , BaseTbl.delegation , BaseTbl.CLubID as club , BaseTbl.cin, BaseTbl.email, BaseTbl.name, BaseTbl.mobile, BaseTbl.createdDtm, Role.role , Clubs.name as ClubName ,  Clubs.clubID , Clubs.city as ClubCity ,BaseTbl.sexe ,BaseTbl.isDeleted , BaseTbl.avatar , BaseTbl.cellule , Paren.name parrain , Paren.userId p_userId , BaseTbl.facebook ');
         $this->db->from('tbl_users as BaseTbl');
@@ -35,7 +35,7 @@ class Search_model extends CI_Model
         $this->db->join('tbl_club as Clubs', 'Clubs.clubID = BaseTbl.ClubID', 'LEFT');
         $this->db->join('tbl_users as Paren', 'Paren.userId = BaseTbl.createdBy', 'LEFT');
        
-        foreach($search as $s ) {
+        foreach($Search as $s ) {
             
                 $this->db->like('BaseTbl.name', $s);
       
@@ -69,7 +69,7 @@ class Search_model extends CI_Model
         $this->db->from('tbl_club as BaseTbl');
         $this->db->where('BaseTbl.clubID > ', 5 ) ;
         $this->db->where('BaseTbl.clubID != ', -1 ) ; 
-        foreach($search as $s ) {
+        foreach($Search as $s ) {
             
                 $this->db->like('BaseTbl.name', $s);
       
@@ -89,7 +89,7 @@ class Search_model extends CI_Model
         $this->db->from('tbl_project as BaseTbl');
         $this->db->join('tbl_club as Clubs', 'Clubs.clubID = BaseTbl.ClubID', 'LEFT');
        
-        foreach($search as $s ) {
+        foreach($Search as $s ) {
             
                 $this->db->like('BaseTbl.titre', $s);
       
