@@ -26,7 +26,7 @@ class Scoring extends BaseController {
 
         $clubs = $this->club_model->clubListingCount($SenJun) ;
         foreach ($clubs as $key ) {
-            $key->P =  count($this->project_model->projectListingByClub($key->clubID)) ;
+            $key->P =  count($this->score_club_model->scoreListingByClubbyType($key->clubID)) ;
             $key->F = count($this->score_club_model->scoreListingByClubbyType($key->clubID,'Formation')) ;
             $key->F += count($this->score_club_model->scoreListingByClubbyType($key->clubID,'Compétition')) ;
             $key->C = count($this->score_club_model->scoreListingByClubbyType($key->clubID,'Conférence')) ; 

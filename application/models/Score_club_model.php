@@ -49,13 +49,15 @@ class Score_club_model extends CI_Model
 
 
 
-        function scoreListingByClubbyType($clubID,$type)
+        function scoreListingByClubbyType($clubID,$type = '')
     {
         $this->db->select('proj.titre , proj.type  , BaseTbl.points , BaseTbl.createdDTM  ');
         $this->db->from('tbl_club_scores as BaseTbl');
         $this->db->join('tbl_project as proj', 'proj.projectId = BaseTbl.projectId', 'LEFT');
         $this->db->where(' proj.clubID = ', $clubID ) ;
+        if($type != ''){
         $this->db->where(' proj.type = ', $type ) ;
+        }
         $this->db->where(' proj.startDate > ','2020-09-15') ;
         $this->db->where(' BaseTbl.statut = ','0') ;
         $this->db->order_by('BaseTbl.createdDTM','ASC');
