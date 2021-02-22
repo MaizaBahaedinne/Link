@@ -267,14 +267,15 @@
 
                   <ul class="nav nav-tabs">
                       <li class="nav-item">
-                        <a class="nav-link active" href="#participations">Participations</a>
+                        <a class="nav-link active" href="#Participations" data-toggle="tab"  role="tab" aria-controls="home" aria-selected="true">Participations</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="#Taches">Taches</a>
+                        <a class="nav-link" href="#Taches" ata-toggle="tab" role="tab" aria-controls="profile" aria-selected="false">Taches</a>
                       </li>
                   </ul>
 
-                      <ul class="activitiez"  href="participations" >
+                  <div class="tab-pane " id="Participations" role="tabpanel" aria-labelledby="Participations">
+                      <ul class="activitiez"  >
                       
 
                          <?php
@@ -323,8 +324,9 @@
 
                          
                       </ul>
-
-                      <ul class="activitiez"  href="Taches" >
+                    </div>
+                      <div class="tab-pane " id="Taches" role="tabpanel" aria-labelledby="Taches">
+                      <ul class="activitiez"  >
                          <?php
                          if(!(empty($scores))){
                          foreach ($scores as $score){  ?>
@@ -371,7 +373,7 @@
 
                          
                       </ul>
-
+                    </div>
 
 
 
