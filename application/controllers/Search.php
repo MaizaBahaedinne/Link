@@ -20,10 +20,8 @@ class Search extends BaseController {
 
 	public function index()
 		        {
-						$text = $this->input->post('text');
-						preg_match_all("/([^,= ]+)=([^,= ]+)/", $text, $r); 
-						$result = array_combine($r[1], $r[2]);
-						$result = $r ;
+						$textS = $this->input->post('text');
+						$text = explode(" ", $textS);
 					
 				
 						var_dump($result);
