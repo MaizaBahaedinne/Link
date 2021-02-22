@@ -219,6 +219,16 @@
 									</aside>
 								</div>
 
+								<div class="col-lg-2">
+									<aside class="sidebar static">
+									<div class="widget">
+									
+									
+									</div>
+								
+									</aside>
+								</div>
+
 
 							</div>
 
