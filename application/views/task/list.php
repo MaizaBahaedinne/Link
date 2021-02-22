@@ -20,9 +20,9 @@
                         <?php foreach ($taches as $tache ) {
                           $startedDate = date_create($tache->startedDate);
                          
-                          
-                          $deadline1 =  strtotime($tache->deadline . "+1 days") ;
-                          $deadline =  date_create($deadline1);
+                          $deadline1 =  date_create($tache->deadline1);
+                          $deadline =  strtotime($deadline1 . "+1 days") ;
+
                         ?>
                         ['T<?php echo $tache->tacheId?>', '<?php echo $tache->titre?>', 'spring',
                           new Date(<?php echo date_format($startedDate, 'Y'); ?>, <?php echo date_format($startedDate, 'm'); ?> , <?php echo date_format($startedDate, 'd'); ?>), 
