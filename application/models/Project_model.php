@@ -38,7 +38,7 @@ class Project_model extends CI_Model
        
 
         $this->db->order_by('BaseTbl.startDate','ASC');
-        $this->db->where('2020-09-15 < BaseTbl.endDate ') ;
+        $this->db->where('BaseTbl.endDate >','2020-09-15' ) ;
 
         $query = $this->db->get();
         
