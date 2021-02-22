@@ -29,13 +29,41 @@
                         <?php } ?> 
                       ]);
 
-                      var options = {
-                        height: 400,
-
-                        gantt: {
-                          trackHeight: 30,
-                        }
-                      };
+                     var options = {
+                                  height: 400,
+                                  gantt: {
+                                    criticalPathEnabled: false, // Critical path arrows will be the same as other arrows.
+                                    arrow: {
+                                      angle: 50,
+                                      width: 1,
+                                      color: 'white',
+                                      radius: 2
+                                    },
+                                    labelStyle: {
+                                      fontName: 'Open Sans',
+                                      fontSize: 14,
+                                      color: 'white'
+                                    },
+                                    barCornerRadius: 2,
+                                    backgroundColor: {
+                                      fill: 'transparent',
+                                    },
+                                    innerGridHorizLine: {
+                                      stroke: '#ddd',
+                                      strokeWidth: 0,
+                                    },
+                                    innerGridTrack: {
+                                      fill: 'transparent'
+                                    },
+                                    innerGridDarkTrack: {
+                                      fill: 'transparent'
+                                    },
+                                    percentEnabled: true, 
+                                    shadowEnabled: true,  
+                                    shadowColor: 'white',
+                                    shadowOffset: 2,
+                                  }
+                                };
 
                       var chart = new google.visualization.Gantt(document.getElementById('chart_div'));
 
