@@ -17855,7 +17855,8 @@ nav .main-btn{margin-left: 20px;}
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  
+  background: #34465d ;
+  opacity:0.75;
 	width: 100%;
   position: fixed;
 	z-index: 9999999;
