@@ -494,10 +494,8 @@
                    <option value="Unité accadémique" >Unité accadémique </option>
                    <option value="Unité des partenariats" >Unité des partenariats </option>
                    <option value="Unité des relations internationale" >Unité des relations internationale </option>
-                   <option value="Unité we are campers" >Unité we are campers </option>
-                   <option value="Unité we are carthage" >Unité we are carthage </option>
-                  <option value="Unité incubateur" >Unité incubateur </option>
-                  <option value="Unité Fund raising" >Unité Fund raising </option>
+                   <option value="Unité incubateur" >Unité incubateur </option>
+                   <option value="Unité Fund raising" >Unité Fund raising </option>
                 </select>
                 <hr>
                 <span><input type="checkbox" name="" required > &nbsp;Je suis <?php echo $name ?> je quitte mon club et je rejoins l'Alumni Chapter </span>
