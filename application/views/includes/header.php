@@ -202,8 +202,8 @@
  !-->
 </head>
 <body >
-	<div class="wavy-wraper" onload="getLocation()" style="backdrop-filter: blur(2px);" >
-		<div class="wavy">
+	<div class="wavy-wraper" onload="getLocation()" style="backdrop-filter: blur(6px);" >
+		<div class="wavy" style=" background: #34465d ; ">
 		  <span style="--i:1;">Tunivisions</span>
 		  <span style="--i:2;">.</span>
 		  <span style="--i:3;">L</span>
