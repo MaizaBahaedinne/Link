@@ -40,12 +40,12 @@ class Search_model extends CI_Model
                 $this->db->like('BaseTbl.name', $s);
       
                 $this->db->or_like('Clubs.name', $s );
-             var_dump($s) ;
+   
         }
 
 
         $this->db->where('BaseTbl.isDeleted = ' , 0 );
-      
+        $this->db->limit(5) ;
         $query = $this->db->get();
         
         $result = $query->result();  
@@ -68,8 +68,13 @@ class Search_model extends CI_Model
         $this->db->from('tbl_club as BaseTbl');
         $this->db->where('BaseTbl.clubID > ', 5 ) ;
         $this->db->where('BaseTbl.clubID != ', -1 ) ; 
-        $this->db->where('BaseTbl.name Like ', '%'.$Search.'%' ) ; 
-
+        foreach($search as $s ) {
+            
+                $this->db->like('BaseTbl.name', $s);
+      
+              
+         
+        }
         $this->db->limit(5) ; 
 
         $query = $this->db->get();
@@ -83,9 +88,13 @@ class Search_model extends CI_Model
         $this->db->from('tbl_project as BaseTbl');
         $this->db->join('tbl_club as Clubs', 'Clubs.clubID = BaseTbl.ClubID', 'LEFT');
        
-       $this->db->where('BaseTbl.titre Like ', '%'.$Search.'%' ) ; 
-       $this->db->or_where('Clubs.name Like ', '%'.$Search.'%' ) ;
-
+        foreach($search as $s ) {
+            
+                $this->db->like('BaseTbl.titre', $s);
+      
+               $this->db->or_like('Clubs.name', $s );
+         
+        }
         $this->db->order_by('BaseTbl.startDate','DESC');
        $this->db->limit(5) ;
 
