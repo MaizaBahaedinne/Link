@@ -17,8 +17,24 @@
                       data.addColumn('string', 'Dependencies');
 
                       data.addRows([
-                        <?php foreach ($taches as $tache ) { ?>
-                        ['T<?php echo $tache->tacheId?>', 'Hockey Season', 'sports', new Date(2014, 9, 8), new Date(2015, 5, 21), null, 89, null] ,
+                        <?php foreach ($taches as $tache ) { 
+
+                          <?php
+
+                              $startedDate = date_create($tache->startedDate);
+                              echo date_format($startedDate, 'Y-m-d H:i:s');
+                              $deadline = date_create($tache->deadline);
+                              echo date_format($deadline, 'Y-m-d H:i:s');
+
+                         ?>
+                        ['T<?php echo $tache->tacheId?>', 'Hockey Season', 'sports', 
+
+                        new Date(<?php echo date_format($startedDate, 'Y'); ?>, <?php echo date_format($startedDate, 'm'); ?> , <?php echo date_format($startedDate, 'd'); ?>), 
+                        new Date(<?php echo date_format($deadline, 'Y'); ?>, <?php echo date_format($deadline, 'm'); ?> , <?php echo date_format($deadline, 'd'); ?>), 
+                        null, 
+                        89, 
+                        null
+                        ] ,
                         <?php }?> 
                       ]);
 
