@@ -156,7 +156,7 @@ class Register extends BaseController
                                 'updatedDtm'=>date('Y-m-d H:i:s'));
                 
               
-                $result = $this->user_model->changePassword($userId , $usersData);
+                $result = $this->user_model->changePassword($result->userId , $usersData);
 
                 if($result)
                 {
