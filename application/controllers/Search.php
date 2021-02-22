@@ -21,7 +21,13 @@ class Search extends BaseController {
 	public function index()
 		        {
 						$text = $this->input->post('text');
-		              
+						preg_match_all("/([^,= ]+)=([^,= ]+)/", $text, $r); 
+						
+							$result = $r ;
+					
+						$result
+						var_dump($result);
+
 		                $data['users'] = $this->search_model->userListingSearch($text);
 		                $data['clubs'] = $this->search_model->clubListingSearch($text);
 		                $data['projets'] = $this->search_model->projectListingSearch($text);
