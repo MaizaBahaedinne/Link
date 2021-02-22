@@ -85,8 +85,8 @@
                                         <td><?php echo $club->F ?></td>
                                         <td><?php echo $club->C ?></td>
                                         <td><?php echo $club->E ?></td>
-                                        <td><?php ?></td>
-                                        <td><?php ?></td>
+                                        <td><?php $s = $club->score ; echo $s->affP ?></td>
+                                        <td><?php $s = $club->score ; echo $s->tauxParticipation ?></td>
 
                                         <td> <b ><?php $s = $club->score ; echo $s->points ?></b> </td>
                                       </tr>

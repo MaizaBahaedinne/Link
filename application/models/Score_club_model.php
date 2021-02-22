@@ -69,7 +69,7 @@ class Score_club_model extends CI_Model
 
      function scoreByClub($clubID)
     { 
-        $this->db->select('sum(BaseTbl.points) points');
+        $this->db->select('sum(BaseTbl.points) points , avg(BaseTbl.tauxParticipation) tauxParticipation , avg(BaseTbl.affP) affP  ');
         $this->db->from('tbl_club_scores as BaseTbl');
         $this->db->join('tbl_project as proj', 'proj.projectId = BaseTbl.projectId', 'LEFT');
         $this->db->where(' proj.clubID = ', $clubID ) ;
