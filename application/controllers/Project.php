@@ -56,7 +56,7 @@ class Project extends BaseController {
                         foreach ($data["projet"] as $key ) {
                             $key->score = $this->score_club_model->scoreByProject($data["projet"]->projectId);
                             $key->part = $this->scoring_model->PresenceByProject($data["projet"]->projectId);
-                            $key->tache = $this->tache_model->taskListing($data["projet"]->projectId);
+                            $key->tache = $this->task_model->taskListing($data["projet"]->projectId);
                         }
                                                
 
