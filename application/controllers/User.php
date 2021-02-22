@@ -761,7 +761,8 @@ class User extends BaseController
         $data["Langues"] = $this->user_cariere_model->langListing($userId) ;
         $data["skills"] = $this->user_cariere_model->hardListing($userId) ;    
 
-        $data["scores"] = $this->scoring_model->ScoreByUser($userId,'project'); 
+        $data["PartScore"] = $this->scoring_model->ScoreByUser($userId,'project'); 
+        $data["TaskScore"] = $this->scoring_model->ScoreByUser($userId,'tache'); 
 
         $data["tasks"] = $this->task_model->taskListingByUser($userId);
         $data["eff"] = $this->task_model->taskListingByUserValid($userId);

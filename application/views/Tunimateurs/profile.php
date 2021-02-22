@@ -287,8 +287,8 @@
                       
 
                          <?php
-                         if(!(empty($scores))){
-                         foreach ($scores as $score){  ?>
+                         if(!(empty($PartScore))){
+                         foreach ($PartScore as $score){  ?>
                          <li>
                             <div class="activity-meta"  
                               <?php if ($score->statutS == 1){
@@ -340,8 +340,8 @@
                       
 
                          <?php
-                         if(!(empty($tasks))){
-                         foreach ($tasks as $task){  ?>
+                         if(!(empty($taskScore))){
+                         foreach ($taskScore as $task){  ?>
                          <li>
                             <div class="activity-meta"  
                               <?php if ($task->statutS == 1){
@@ -365,7 +365,7 @@
                                </b>
                                 Participation au  <?php echo $task->type ?> :  
                                 <a href="<?php echo base_url() ?>Project/projectDetails/<?php echo $task->projectId ?>" title="">
-                                  <?php echo $task->titre ?> [  <?php echo $task->cible ?> ]
+                                  <?php echo $task->titre ?> [  <?php echo $task->type ?> ]
                                     
                                 </a>
                                </span>

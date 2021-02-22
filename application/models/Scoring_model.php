@@ -49,27 +49,43 @@ class Scoring_model extends CI_Model
 
      function ScoreByUser($userId,$type) 
      {
-        $this->db->select('BaseTbl.scoringId  , sum(BaseTbl.points) points , BaseTbl.ValidDTM , proj.projectId , proj.titre , proj.type , club.name  , club.clubID , valider.name validBy , valider.userId validerId , scores.statut statutS  , proj.cible ');
-        $this->db->from('tbl_scoring as BaseTbl');
-        $this->db->join('tbl_project as proj', 'proj.projectId = BaseTbl.projectId', 'LEFT');
-        $this->db->join('tbl_club as club', 'proj.clubId = club.clubID', 'LEFT');
-        $this->db->join('tbl_club_scores as scores', 'scores.projectId = proj.projectId', 'RIGHT');
 
+
+        if ($type = 'project'){
+            $this->db->select('BaseTbl.scoringId  , sum(BaseTbl.points) points , BaseTbl.ValidDTM , proj.projectId , proj.titre , proj.type , club.name  , club.clubID , valider.name validBy , valider.userId validerId , scores.statut statutS  , proj.cible ');
+            $this->db->from('tbl_scoring as BaseTbl');
+            $this->db->join('tbl_project as proj', 'proj.projectId = BaseTbl.projectId', 'LEFT');
+            $this->db->join('tbl_club as club', 'proj.clubId = club.clubID', 'LEFT');
+            $this->db->join('tbl_club_scores as scores', 'scores.projectId = proj.projectId', 'RIGHT');
+            $this->db->join('tbl_users as valider', 'BaseTbl.createdBy = valider.userId', 'LEFT');
         
        
-
-        $this->db->join('tbl_users as valider', 'BaseTbl.createdBy = valider.userId', 'LEFT');
-        
-        if ($type = 'project'){
-        $this->db->where('BaseTbl.projectId != ', Null );
-        $this->db->where('BaseTbl.affectId = ', Null );
-        $this->db->where('BaseTbl.reunionID = ', Null );
+            $this->db->where('BaseTbl.projectId != ', Null );
+            $this->db->where('BaseTbl.affectId = ', Null );
+            $this->db->where('BaseTbl.reunionID = ', Null );
         }
 
-        $this->db->where('BaseTbl.userId', $userId);
-        $this->db->where('BaseTbl.statut = ',0 );
-        $this->db->group_by('BaseTbl.projectId' );
-        $this->db->order_by('BaseTbl.ValidDTM  DESC' );
+
+        if ($type = 'tache'){
+
+            $this->db->select('BaseTbl.scoringId  , sum(BaseTbl.points) points , BaseTbl.ValidDTM , proj.projectId , proj.titre , proj.type , club.name  , club.clubID , valider.name validBy , valider.userId validerId , scores.statut statutS  , proj.cible , task.titre , task.type ');
+            $this->db->from('tbl_scoring as BaseTbl');
+            $this->db->join('tbl_affection as affect', 'affect.userAffectatedID = BaseTbl.affectId', 'LEFT');
+            $this->db->join('tbl_tasks as task', 'affect.tacheId = task.tacheId', 'LEFT');
+            $this->db->join('tbl_project as proj', 'proj.projectId = task.projectId', 'LEFT');
+            $this->db->join('tbl_club as club', 'proj.clubId = club.clubID', 'LEFT');
+            $this->db->join('tbl_club_scores as scores', 'scores.projectId = proj.projectId', 'RIGHT');
+            $this->db->join('tbl_users as valider', 'BaseTbl.createdBy = valider.userId', 'LEFT');
+
+            $this->db->where('BaseTbl.projectId = ', Null );
+            $this->db->where('BaseTbl.affectId != ', Null );
+            $this->db->where('BaseTbl.reunionID = ', Null );
+        }
+
+            $this->db->where('BaseTbl.userId', $userId);
+            $this->db->where('BaseTbl.statut = ',0 );
+            $this->db->group_by('BaseTbl.projectId' );
+            $this->db->order_by('BaseTbl.ValidDTM  DESC' );
         $query = $this->db->get();
          
         return $query->result();
