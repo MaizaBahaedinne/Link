@@ -18,7 +18,7 @@ class Club_model extends CI_Model
         if($type !=  0)
         {
             $this->db->where('BaseTbl.SenJun = ', $type ) ;
-            $this->db->where('BaseTbl.is_Actif = ', 0 ) ;      
+            $this->db->where('BaseTbl.is_Actif = ', 1) ;      
         }
         $query = $this->db->get();
         
