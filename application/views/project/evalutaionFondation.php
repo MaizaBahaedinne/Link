@@ -27,6 +27,7 @@
                         <th>présence</th>
                         <th>tache</th>
                         <th>score</th>
+                        <th>statut</th>
                         
                     </tr>
                     </thead>
