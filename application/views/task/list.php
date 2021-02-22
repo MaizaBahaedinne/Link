@@ -26,14 +26,13 @@
                         height: 400,
 
                         gantt: {
-                          
                           trackHeight: 30,
-                          labelStyle: {
+                        },
+                        labelStyle: {
                               fontName: Roboto2,
                               fontSize: 14,
                               color: '#757575'
-                            },
-                        }
+                            }
                       };
 
                       var chart = new google.visualization.Gantt(document.getElementById('chart_div'));
