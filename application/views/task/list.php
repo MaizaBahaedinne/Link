@@ -21,48 +21,9 @@
               </div>
 							<div>
 
-               
 
 
                 <hr>
-
-                 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-                  <script type="text/javascript">
-                    google.charts.load('current', {'packages':['gantt']});
-                    google.charts.setOnLoadCallback(drawChart);
-
-                    function drawChart() {
-
-                      var data = new google.visualization.DataTable();
-                      data.addColumn('string', 'Task ID');
-                      data.addColumn('string', 'Task Name');
-                      data.addColumn('string', 'Resource');
-                      data.addColumn('date', 'Start Date');
-                      data.addColumn('date', 'End Date');
-
-
-                      data.addRows([
-                        <?php foreach ($taches as $tache ) { ?>
-                        ['<?php echo $tache->titre ?>', '<?php echo $tache->description ?>', '<?php echo $tache->type ?>',
-                         new Date(2020, 9, 8), new Date(2021, 5, 21)], 
-                       <?php } ?>
-                      ]);
-
-                      var options = {
-                        height: 400,
-                        gantt: {
-                          trackHeight: 30
-                        }
-                      };
-
-                      var chart = new google.visualization.Gantt(document.getElementById('chart_div'));
-
-                      chart.draw(data, options);
-                    }
-                  </script>
-
-
-                   <div id="chart_div"></div>
 
                   <table class="table table-striped table-responsive-xl" style="width: cover">
                     <thead>
@@ -219,7 +180,54 @@
                       
                     </tbody>
                    
-                  </table>       
+                  </table>  
+
+
+
+
+
+
+                <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                  <script type="text/javascript">
+                    google.charts.load('current', {'packages':['gantt']});
+                    google.charts.setOnLoadCallback(drawChart);
+
+                    function drawChart() {
+
+                      var data = new google.visualization.DataTable();
+                      data.addColumn('string', 'Task ID');
+                      data.addColumn('string', 'Task Name');
+                      data.addColumn('string', 'Resource');
+                      data.addColumn('date', 'Start Date');
+                      data.addColumn('date', 'End Date');
+                      data.addColumn('number', 'Duration');
+                      data.addColumn('number', 'Percent Complete');
+                      data.addColumn('string', 'Dependencies');
+
+                      data.addRows([
+                        <?php foreach ($taches as $tache ) { ?>
+                        ['<?php echo $tache->titre ?>', '<?php echo $tache->description ?>', '<?php echo $tache->type ?>',
+                         new Date(2014, 9, 8), new Date(2015, 5, 21), null, 89, null], 
+                       <?php } ?>
+                      ]);
+
+                      var options = {
+                        height: 400,
+                        gantt: {
+                          trackHeight: 30
+                        }
+                      };
+
+                      var chart = new google.visualization.Gantt(document.getElementById('chart_div'));
+
+                      chart.draw(data, options);
+                    }
+                  </script>
+
+
+                   <div id="chart_div"></div>
+
+                        
               </div>
 						</div>
 					</div>
