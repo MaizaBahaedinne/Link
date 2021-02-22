@@ -59,7 +59,7 @@ class Project extends BaseController {
                             $key->tache = $this->task_model->taskListing($projet->projectId);
                         }
 
-                        $data['projectRecords'] =  $projet
+                        $data['projectRecords'] =  $projet ;
                                                
 
                         $this->global['pageTitle'] = "Projet" ;
