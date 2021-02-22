@@ -45,7 +45,7 @@
 												<?php } ?>
 												
 											</div><!-- searched peoples -->
-											<div class="central-meta item">
+											<div class="central-meta item" id="clubs">
 												<span class="create-post">Clubs<a title="" href="#">See All</a></span>
 												
 												<?php foreach ($clubs as $club ) { ?>
