@@ -21,7 +21,7 @@
 					<div class="info-section">
 						<div class="row">
 										
-							<div class="col-lg-2 col-md-6 col-sm-6">
+							<div class="col-lg-4 col-md-6 col-sm-6">
 								<div class="stat-box">
 									<i class="fa fa-user"></i>
 									<div class="anlytc-meta">
@@ -72,7 +72,7 @@
 				</div>
 
 
-				<div class="col-lg-4">
+				<div class="col-lg-3">
 								<aside class="sidebar static">
 									<div class="widget">
 									<h4 class="widget-title">Membres Alumni</h4>
@@ -118,7 +118,7 @@
 								</aside>
 							</div>
 
-							<div class="col-lg-4">
+							<div class="col-lg-3">
 								<aside class="sidebar static">
 									<div class="widget">
 									<h4 class="widget-title">Unité Alumni</h4>
@@ -174,7 +174,7 @@
 						
 
 
-								<div class="col-lg-2">
+						<div class="col-lg-3">
 									<aside class="sidebar static">
 									<div class="widget">
 									<h4 class="widget-title">Projet National</h4>
