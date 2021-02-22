@@ -48,6 +48,21 @@ class Project extends BaseController {
                         $this->global['pageTitle'] = "Projet" ;
 		                $this->loadViews("project/view", $this->global, $data, NULL);   
 		        }
+
+        public function projectStats()
+                {
+                        
+                        $data["projet"] = $this->project_model->projectAllListing();
+                        foreach ($data["projet"] as $key ) {
+                            $key->score = $this->score_club_model->scoreByProject($data["projet"]->projectId);
+                            $key->part = $this->scoring_model->PresenceByProject($data["projet"]->projectId);
+                            $key->tache = $this->tache_model->taskListing($data["projet"]->projectId);
+                        }
+                                               
+
+                        $this->global['pageTitle'] = "Projet" ;
+                        $this->loadViews("project/evalutaionFondation", $this->global, $data, NULL);   
+                }
 				
 		public function addNew()
 			    {
