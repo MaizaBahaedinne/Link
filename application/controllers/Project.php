@@ -52,11 +52,11 @@ class Project extends BaseController {
         public function projectStats()
                 {
                         
-                        $data["projet"] = $this->project_model->projectAllListing();
+                        $projet = $this->project_model->projectAllListing();
                         foreach ($data["projet"] as $key ) {
-                            $key->score = $this->score_club_model->scoreByProject($data["projet"]->projectId);
-                            $key->part = $this->scoring_model->PresenceByProject($data["projet"]->projectId);
-                            $key->tache = $this->task_model->taskListing($data["projet"]->projectId);
+                            $key->score = $this->score_club_model->scoreByProject($projet->projectId);
+                            $key->part = $this->scoring_model->PresenceByProject($projet->projectId);
+                            $key->tache = $this->task_model->taskListing($projet->projectId);
                         }
                                                
 
