@@ -535,9 +535,9 @@
       <form class="c-form" method="post" action="<?php echo base_url() ?>User/updateSocialMedia">
        <label>Facebook</label>
        <input type="url" name="facebook" pattern="https://www\.facebook\.com\/(.+)" placeholder="Lien profile facebook"   required>
-       <label></label>
+       <label>Instagram</label>
        <input type="url" name="instagram" pattern="https://www\.instagram\.com\/(.+)" placeholder="Lien profile instagram" >
-       <label></label>
+       <label>Linkedin</label>
        <input type="url" name="linkedin" pattern="https://www\.linkedin\.com\/(.+)" placeholder="Lien profile linkedin" >
        <hr>
        <input type="submit"  class="btn btn-primary" value="Enregistrer">
