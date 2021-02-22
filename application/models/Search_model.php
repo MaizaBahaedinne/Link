@@ -36,11 +36,11 @@ class Search_model extends CI_Model
         $this->db->join('tbl_users as Paren', 'Paren.userId = BaseTbl.createdBy', 'LEFT');
        
         foreach($search as $s => $value) {
-            if($key == 0) {
+            
                 $this->db->like('BaseTbl.name', '%'.$search.'%' );
-            } else {
+      
                 $this->db->or_like('Clubs.name', '%'.$search.'%' );
-            }
+            
         }
 
         $this->db->where('BaseTbl.isDeleted = ' , 0 );

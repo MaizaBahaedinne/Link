@@ -24,7 +24,7 @@ class Search extends BaseController {
 						$text = explode(" ", $textS);
 					
 				
-						var_dump($result);
+				
 
 		                $data['users'] = $this->search_model->userListingSearch($text);
 		                $data['clubs'] = $this->search_model->clubListingSearch($text);
