@@ -527,20 +527,24 @@
         <h3>Mise à jour des cordonnées</h3>
     </div>
     
-    <form class="c-form" method="post" action="<?php echo base_url() ?>User/updateSocialMedia">
+    
     <div class="modal-body">
+      <form class="c-form" method="post" action="<?php echo base_url() ?>User/updateSocialMedia">
        <label></label>
-       <input type="url" name="facebook" required>
+       <input type="url" name="facebook" pattern="https://www\.facebook\.com\/(.+)"   required>
        <label></label>
-       <input type="url" name="instagram">
+       <input type="url" name="instagram" pattern="https://www\.instagram\.com\/(.+)" >
        <label></label>
-       <input type="url" name="linkedin">
+       <input type="url" name="linkedin" pattern="https://www\.linkedin\.com\/(.+)" >
+       
+        <input type="submit"  class="btn btn-primary" value="Enregistrer">
+       </form>
     </div>
     <div class="modal-footer">
         
-        <input type="submit"  class="btn btn-primary" value="Enregistrer">
+       
     </div>
-    </form>
+    
       
     </div>
     <?php } else{ ?>
