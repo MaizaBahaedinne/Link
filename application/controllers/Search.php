@@ -25,7 +25,7 @@ class Search extends BaseController {
 						
 							$result = $r ;
 					
-						$result
+				
 						var_dump($result);
 
 		                $data['users'] = $this->search_model->userListingSearch($text);
