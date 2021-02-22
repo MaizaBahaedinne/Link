@@ -28,9 +28,9 @@
 												
 												<?php foreach ($users as $user ) { ?>
 												<div class="pit-friends">
-													<figure><a href="#" title=""><img class="alligator-profile-search" src="<?php echo base_url()?>uploads/avatar/<?php echo $user->avatar?>" alt=""></a></figure>
+													<figure><a href="<?php echo base_url() ?>User/ProfileShow/<?php echo $user->userId ?>" title=""><img class="alligator-profile-search" src="<?php echo base_url()?>uploads/avatar/<?php echo $user->avatar?>" alt=""></a></figure>
 													<div class="pit-frnz-meta">
-														<a href="#" title=""><?php echo $user->name ?> <?php if($user->isDeleted==0) {?><i class="fa fa-check-circle" 
+														<a href="<?php echo base_url() ?>User/ProfileShow/<?php echo $user->userId ?>" title=""><?php echo $user->name ?> <?php if($user->isDeleted==0) {?><i class="fa fa-check-circle" 
 															style="background-color:#1fa67; " ></i><?php } ?></a>
 														<i><?php echo $user->role.' '.$user->cellule ; ?></i>
 														<br>
@@ -50,9 +50,9 @@
 												
 												<?php foreach ($clubs as $club ) { ?>
 												<div class="pit-groups">
-													<figure><a href="#" title=""><img src="images/resources/jackgroup3.jpg" alt=""></a></figure>
+													<figure><a href="<?php echo base_url() ?>Club/clubInfo/<?php echo $club->clubID ?>" title=""><img src="images/resources/jackgroup3.jpg" alt=""></a></figure>
 													<div class="pit-groups-meta">
-														<a href="#" title=""><?php if ($club->clubID > 5 ) {echo "club ";}  echo 'Tunivisions '.$club->name ; ?></a>
+														<a href="<?php echo base_url() ?>Club/clubInfo/<?php echo $club->clubID ?>"title=""><?php if ($club->clubID > 5 ) {echo "club ";}  echo 'Tunivisions '.$club->name ; ?></a>
 														<i>Group · 4.2K members · 510 posts a day</i>
 														<ul class="add-remove-frnd">
 															<li class="add-tofrndlist">
