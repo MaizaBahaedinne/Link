@@ -363,16 +363,16 @@
                                   <?php } ?>
 
                                </b>
-                                Participation au  <?php echo $task->type ?> :  
-                                <a href="<?php echo base_url() ?>Project/projectDetails/<?php echo $task->projectId ?>" title="">
-                                  <?php echo $task->titre ?> [  <?php echo $task->type ?> ]
+                                Tache : 
+                                <a  title="">
+                                  <?php echo $task->taskTitre ?> [  <?php echo $task->taskType ?> ]
                                     
                                 </a>
                                </span>
                                <h6>
                                 by 
                                 <a>
-                                  <?php if ($task->clubID > 5 ) {echo "club ";}  echo 'Tunivisions '.$task->name ; ?> 
+                                  
                                     
                                 </a>
                                </h6>
