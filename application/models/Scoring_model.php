@@ -71,7 +71,7 @@ class Scoring_model extends CI_Model
             $this->db->select('BaseTbl.scoringId  , sum(BaseTbl.points) points , BaseTbl.ValidDTM , proj.projectId , proj.titre , proj.type , club.name  , club.clubID , valider.name validBy , valider.userId validerId , scores.statut statutS  , proj.cible , task.titre , task.type ');
             $this->db->from('tbl_scoring as BaseTbl');
             $this->db->join('tbl_affectation as affect', 'affect.userAffectatedID = BaseTbl.affectId', 'LEFT');
-            $this->db->join('tbl_tasks as task', 'affect.tacheId = task.tacheId', 'LEFT');
+            $this->db->join('tbl_task as task', 'affect.tacheId = task.tacheId', 'LEFT');
             $this->db->join('tbl_project as proj', 'proj.projectId = task.projectId', 'LEFT');
             $this->db->join('tbl_club as club', 'proj.clubId = club.clubID', 'LEFT');
             $this->db->join('tbl_club_scores as scores', 'scores.projectId = proj.projectId', 'RIGHT');
