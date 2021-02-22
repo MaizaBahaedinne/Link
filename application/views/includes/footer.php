@@ -526,7 +526,7 @@
         <a class="close" data-dismiss="modal">×</a>
         <h3>Mise à jour des cordonnées</h3>
     </div>
-    <?php if(SA==1){ ?>
+    <?php if($SA==1){ ?>
     <form class="c-form" method="post" action="<?php echo base_url() ?>User/updateSocialMedia">
     <div class="modal-body">
        <label></label>
