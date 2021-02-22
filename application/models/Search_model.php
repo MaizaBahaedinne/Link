@@ -46,6 +46,7 @@ class Search_model extends CI_Model
 
         $this->db->where('BaseTbl.isDeleted = ' , 0 );
         $this->db->limit(5) ;
+        $this->db->order_by('BaseTbl.name','DESC');
         $query = $this->db->get();
         
         $result = $query->result();  
