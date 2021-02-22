@@ -516,11 +516,14 @@
     </div><!-- fade Modal -->
 
     <script type="text/javascript">
-    $(window).on('load', function() {
-        $('#Social').modal('show');
-    });
+      <?php if($userC->facebook == '' ){ ?>
+          $(window).on('load', function() {
+              $('#Social').modal('show');
+          });
+      <?php } ?>
     </script>
-<?php if($SA==1){ ?>
+  
+  <?php if($SA==1){ ?>
     <div class="modal fade" id="Social">
     <div class="modal-header">
         <a class="close" data-dismiss="modal">×</a>
@@ -536,7 +539,7 @@
        <input type="url" name="instagram" pattern="https://www\.instagram\.com\/(.+)" >
        <label></label>
        <input type="url" name="linkedin" pattern="https://www\.linkedin\.com\/(.+)" >
-       
+
         <input type="submit"  class="btn btn-primary" value="Enregistrer">
        </form>
     </div>
@@ -552,7 +555,7 @@
       <div class="modal fade" id="Social">
     <div class="modal-header">
         <a class="close" data-dismiss="modal">×</a>
-        <h3>Mise à jour des cordonnées</h3>
+        <h3>Maintenace</h3>
     </div>
     <div class="modal-body">
             

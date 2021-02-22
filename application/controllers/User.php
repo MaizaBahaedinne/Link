@@ -529,6 +529,29 @@ class User extends BaseController
     }
 
 
+ /**
+     * This function is used to edit the user information
+     */
+    public function  updateSocialMedia()
+    { 
+                $facebook = $this->input->post('facebook');
+                $instagram = $this->input->post('instagram');
+                $linkedin =$this->input->post('linkedin');
+                
+                
+
+                $userInfo = array(
+                                  'facebook' => $facebook,
+                                  'instagram' => $instagram,
+                                  'linkedin'=>$linkedin,
+                                  'updatedBy'=>$this->vendorId,
+                                  'updatedDtm'=>date('Y-m-d H:i:s')
+                                    );
+
+        $result = $this->user_model->editUser($userInfo, $this->vendorId );
+        redirect('/');  
+                        
+    }
 
     /**
      * This function is used to delete the user using userId
