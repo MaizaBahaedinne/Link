@@ -97,12 +97,11 @@
 							<div>
 
             <hr>
-              <div lass="central-meta">
+             
 
 
-
-                   <div id="chart_div"></div>
-            </div>
+                   
+         
                
 
 
@@ -277,6 +276,9 @@
 				</div>
 			</div>
 		</div>
+
+
+    <div id="chart_div"></div>
 	</section>
 
     <div class="modal fade" id="myModal">
