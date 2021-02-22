@@ -521,7 +521,7 @@
     });
     </script>
 
-    <div class="modal hide fade" id="Social">
+    <div class="modal fade" id="Social">
     <div class="modal-header">
         <a class="close" data-dismiss="modal">×</a>
         <h3>Mise à jour des cordonnées</h3>
@@ -541,18 +541,18 @@
         <input type="submit"  class="btn btn-primary" value="Enregistrer">
     </div>
     </form>
-  <?php } else{ ?>
-        <form class="c-form" method="post" action="<?php echo base_url() ?>User/updateSocialMedia">
-          <div class="modal-body">
-             <h3>en cours de maintenance</h3>
-          </div>
-          <div class="modal-footer">
-              
-              
-          </div>
-        </form>
-  <?php } ?>
-</div>
+      <?php } else{ ?>
+            <form class="c-form" method="post" action="<?php echo base_url() ?>User/updateSocialMedia">
+              <div class="modal-body">
+                 <h3>en cours de maintenance</h3>
+              </div>
+              <div class="modal-footer">
+                  
+                  
+              </div>
+            </form>
+      <?php } ?>
+    </div>
 
 
 </html>
