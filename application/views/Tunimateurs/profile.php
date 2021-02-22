@@ -354,8 +354,7 @@
                               } ?> 
                               <?php if ($task->statutS == 2){
                                 echo "style='background-color: red'" ; 
-                              }if ($task->type=='Privé' && $task->clubId == $userInfo->clubID ) 
-                              { echo "style='background-color: red'" ;  }?>  >
+                              } ?>  >
                                <span>
                                 <b>
                                   <?php if( $task->clubID == $userInfo->clubID ) { ?>
@@ -374,13 +373,10 @@
                                     
                                 </a>
                                </span>
-                               <h6>
-                                by 
-                                <a>
-                                  
-                                    
-                                </a>
-                               </h6>
+                               <span>
+                                 projet : <?php echo $task->titre ?>
+                               </span>
+                               
                                <i>
                                 <?php echo xTimeAgo ($task->ValidDTM, date('Y-m-d H:i:s') )  ?> <small>valider par : <a href="<?php echo base_url() ?>User/ProfileShow/<?php echo $task->validerId ?>"><?php echo $task->validBy ?></a> #<?php echo $task->scoringId ?> </small>
                                </i>
