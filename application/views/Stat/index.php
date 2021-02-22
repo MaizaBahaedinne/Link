@@ -72,7 +72,7 @@
 				</div>
 
 
-				<div class="col-lg-3">
+				<div class="col-lg-2">
 								<aside class="sidebar static">
 									<div class="widget">
 									<h4 class="widget-title">Membres Alumni</h4>
@@ -118,7 +118,7 @@
 								</aside>
 							</div>
 
-							<div class="col-lg-3">
+							<div class="col-lg-2">
 								<aside class="sidebar static">
 									<div class="widget">
 									<h4 class="widget-title">Unité Alumni</h4>
@@ -174,7 +174,7 @@
 						
 
 
-						<div class="col-lg-3">
+						<div class="col-lg-2">
 									<aside class="sidebar static">
 									<div class="widget">
 									<h4 class="widget-title">Projet National</h4>
