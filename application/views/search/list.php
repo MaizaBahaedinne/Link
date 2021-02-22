@@ -37,7 +37,7 @@
 														<i><?php if ($user->clubID > 5 ) {echo "club ";}  echo 'Tunivisions '.$user->ClubName ; ?></i>
 														<ul class="add-remove-frnd">
 															<li class="add-tofrndlist">
-																<a title="" href="<?php echo base_url() ?>User/ProfileShow/<?php echo $user->userId ?>"><i class="fa fa-sign-in" aria-hidden="true"></i></i>Visiter</a>
+																<a title="" href="<?php echo base_url() ?>User/ProfileShow/<?php echo $user->userId ?>"><i class="fas fa-sign-in" aria-hidden="true"></i></i>Visiter</a>
 															</li>
 														</ul>
 													</div>
@@ -56,7 +56,7 @@
 														<i>Group · 4.2K members · 510 posts a day</i>
 														<ul class="add-remove-frnd">
 															<li class="add-tofrndlist">
-																<a title="Add friend" href="<?php echo base_url() ?>Club/clubInfo/<?php echo $club->clubID ?>"><i class="fa fa-sign-in" aria-hidden="true"></i> Visiter</a>
+																<a title="Add friend" href="<?php echo base_url() ?>Club/clubInfo/<?php echo $club->clubID ?>"><i class="fas fa-sign-in" aria-hidden="true"></i> Visiter</a>
 															</li>
 														</ul>
 													</div>
