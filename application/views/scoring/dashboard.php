@@ -63,7 +63,7 @@
 
                                     
                                         <td>
-                           					<?php echo   $club->club   ?>
+                           					<?php echo   $club->name   ?>
                                         </td>
                                         <td>
                                           <?php   if ($c== 1) { ?>
