@@ -84,13 +84,10 @@
                                  if($p->statut == 1 ){
                                     echo "<b style='color:white;background-color: orange'>En cours de validation manuelle</b>" ;
                                   }elseif($p->statut == 2 ){
-                                    echo "<b style='color:red';background-color: black'>tentative de tricherie</b>" ;
-                                   
-                            } 
-                            else 
-                                {
-                                   
-                             }   
+                                    echo "<b style='color:red';background-color: black'>tentative de tricherie</b>" ;    
+                            }
+                        } 
+                            
                             ?>
                         </td>                    
                     </tr>
