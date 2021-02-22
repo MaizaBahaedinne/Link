@@ -19,7 +19,7 @@
                     function drawChart() {
 
                       var data = new google.visualization.DataTable();
-                      data.addColumn('string', 'Task ID');
+                      data.addColumn('number', 'Task ID');
                       data.addColumn('string', 'Task Name');
                       data.addColumn('string', 'Resource');
                       data.addColumn('date', 'Start Date');
@@ -30,7 +30,7 @@
 
                       data.addRows([
                         <?php foreach ($taches as $tache ) { ?>
-                        ['<?php echo $tache->tacheId?>', '<?php echo $tache->titre?>', 'sprot', new Date(2014, 9, 8), new Date(2015, 5, 21), null, 89, null] ,
+                        ['<?php echo $tache->tacheId ?>', '<?php echo $tache->titre ?>', 'sprot', new Date(2014, 9, 8), new Date(2015, 5, 21), null, 89, null] ,
                         <?php } ?> 
                       ]);
 
