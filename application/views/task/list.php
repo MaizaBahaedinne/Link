@@ -18,8 +18,8 @@
 
                       data.addRows([
                         <?php foreach ($taches as $tache ) {
-                          $date = date_create($tache->startedDate);
-                          $date = date_create($tache->deadline);
+                          $startedDate = date_create($tache->startedDate);
+                          $deadline = date_create($tache->deadline);
                         ?>
                         ['T<?php echo $tache->tacheId?>', 'Hockey Season', 'sports',
                           new Date(<?php echo date_format($startedDate, 'Y'); ?>, <?php echo date_format($startedDate, 'm'); ?> , <?php echo date_format($startedDate, 'd'); ?>), 
