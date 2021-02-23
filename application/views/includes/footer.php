@@ -528,8 +528,6 @@
         <a class="close" data-dismiss="modal">×</a>
         <h3>Mise à jour des cordonnées</h3>
     </div>
-    
-    
     <div class="modal-body">
       <form class="c-form" method="post" action="<?php echo base_url() ?>User/updateSocialMedia">
        <label>Facebook</label>

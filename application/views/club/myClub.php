@@ -365,11 +365,24 @@
 
                                                           <br><br>
                                                           <b>Type de présence</b>
-                                                          <select required name="typeP" >
+                                                          <select required name="typeP" id="typeP" onchange="pe()" >
                                                             <option value="" ></option>
                                                             <option value="présentiel" >présentiel</option>
                                                             <option value="En ligne" >En ligne</option>
                                                           </select>
+
+                                                           <script type="text/javascript">
+                                                            
+                                                            function pe() {
+                                                            var x = document.getElementById("mySelect").typeP.value ;
+
+                                                            if (x == "présentiel")   
+                                                            {
+                                                              document.getElementById("record").required = false;
+                                                            }
+                                                              }
+                                                            
+                                                        </script>
 
 
                                                           
@@ -384,7 +397,7 @@
 
                                                               ?>
                                                               <input type="url" 
-                                                             name="record"    >
+                                                             name="record" id="record"   >
                                                              <small>
                                                                 Champ obligatoire pour toute lesp projets en ligne
                                                                 (Drive ou live facebook)
