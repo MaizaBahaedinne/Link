@@ -416,7 +416,7 @@
                                                               </small>
                                                             <?php }else{  ?>
                                                                 <input type="url" 
-                                                                    name="record"  required >
+                                                                    name="record" id="record"  required >
                                                                 <small>
                                                                   Champ obligatoire pour toute lesp projets en ligne
                                                                   (Drive ou live facebook)
