@@ -366,13 +366,6 @@
                                                           <br><br>
                                                           <b>Type de présence</b>
 
-
-                                                          <select required name="typeP" id="typeP" onchange="pe()" >
-                                                            <option value="" ></option>
-                                                            <option value="présentiel" >présentiel</option>
-                                                            <option value="En ligne" >En ligne</option>
-                                                          </select>
-
                                                            <div class="form-radio">
                                                               <div class="radio">
                                                                   <label>
