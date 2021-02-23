@@ -386,10 +386,10 @@
 
                                                                     if (document.getElementById("P").checked)   
                                                                     {
-                                                                      document.getElementById("record").required = false;
+                                                                      document.getElementById("record").required = true;
                                                                     }else
                                                                     {
-                                                                      document.getElementById("record").required = true;
+                                                                      document.getElementById("record").required = false;
                                                                     }
                                                                 }
                                                             
