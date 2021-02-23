@@ -35,8 +35,7 @@ class Scoring extends BaseController {
             $key->score = $this->score_club_model->scoreByClub($key->clubID) ; 
         }
 
-        usort($clubs, function ($a, $b) {return $a['score']['points'] < $b['score']['points'] ;});
-
+       
         $data['clubs'] =  $clubs ;
 
         $data["presidents"] = $this->scoring_model->ClassementMembres(1,$SenJun,Null,20) ;
