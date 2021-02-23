@@ -261,8 +261,9 @@
 				</li>
 				<li><span>Statistique</span> 
 					<ul>
-						<li><a href="" title="">Dashboard</a></li>
-						<li><a href="" title="">Sondage</a></li>
+						<li><a href="<?php echo base_url() ?>Club/clubInfo/-1" title="">Dashboard</a></li>
+						<?php if($SA == 1 || $SA == 2 ){ ?><li><a href="" title="">University</a></li><?php } ?>
+						<?php if($SA == 1 || $SA == 2 ){ ?><li><a href="" title="">High School</a></li><?php } ?>
 					</ul>
 				</li>
 			</ul>
