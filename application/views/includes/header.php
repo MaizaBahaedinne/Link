@@ -433,7 +433,8 @@
 				<li><a class="" href="#" title=""><i class="fa fa-line-chart"></i> Statistique</a>
 					<ul>
 						<li><a href="<?php echo base_url() ?>Statistique" title="">Dashboard</a></li>
-						<li><a href="" title="">Sondage</a></li>
+						<?php if($SA == 1 || $SA == 2 ){ ?><li><a href="" title="">University</a></li><?php } ?>
+						<?php if($SA == 1 || $SA == 2 ){ ?><li><a href="" title="">High School</a></li><?php } ?>
 					</ul>
 				</li>
 
