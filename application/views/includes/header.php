@@ -239,7 +239,7 @@
 						<img class="alligator-profile-mobile"  src="<?php echo base_url() ?>uploads/avatar/<?php echo $avatar ?>"  alt="">
 						<h6><?php echo $name ?></h6>
 						<p><?php echo $role_text ?> <?php echo $cellule ?> </p>
-						<p><b>Tuni-ID</b> : <?php echo $uid ?>-<?php echo $clubID ?> </p>
+						<p><b>Tuni-ID</b> : <?php echo $uid ?> </p>
 					</a>
 					<i><a href="<?php echo base_url() ?>logout" title="" class="btn btn-danger btn-sm"><i class="ti-power-off"></i> Se deconnecter</a></i>
 				</li>
