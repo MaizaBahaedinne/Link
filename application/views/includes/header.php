@@ -261,9 +261,16 @@
 				</li>
 				<li><span>Statistique</span> 
 					<ul>
-						<li><a href="<?php echo base_url() ?>Club/clubInfo/-1" title="">Dashboard</a></li>
-						<?php if($SA == 1 || $SA == 2 ){ ?><li><a href="" title="">University</a></li><?php } ?>
-						<?php if($SA == 1 || $SA == 2 ){ ?><li><a href="" title="">High School</a></li><?php } ?>
+						<li><a href="<?php echo base_url() ?>Statistique" title="">Dashboard</a></li>
+						<?php if($SA == 1 || $SA == 2 ){ ?><li><a href="<?php echo base_url() ?>Project/projectStats/3" title="">University</a></li><?php } ?>
+						<?php if($SA == 1 || $SA == 2 ){ ?><li><a href="<?php echo base_url() ?>Project/projectStats/4" title="">High School</a></li><?php } ?>
+					</ul>
+				</li>
+				<li><span>Classement</span>
+					<ul>
+						<li><a href="<?php echo base_url() ?>Scoring/Classement/3" title="">University</a></li>
+						<li><a href="<?php echo base_url() ?>Scoring/Classement/4" title="">High school</a></li>
+						<li><a href="<?php echo base_url() ?>Scoring/ClassementWeAre" title="">We are carthage</a></li>
 					</ul>
 				</li>
 			</ul>
@@ -427,14 +434,20 @@
 					<ul>
 						<li><a href="<?php echo base_url() ?>Project" title="">Calendrier</a></li>
 						<li><a href="<?php echo base_url() ?>Club/clubInfo/2" title="">Nos projet</a></li>
-						<li><a href="<?php echo base_url() ?>Task/Mytasks" title="">Mes Taches</a></li>
 					</ul>
 				</li>
 				<li><a class="" href="#" title=""><i class="fa fa-line-chart"></i> Statistique</a>
 					<ul>
 						<li><a href="<?php echo base_url() ?>Statistique" title="">Dashboard</a></li>
-						<?php if($SA == 1 || $SA == 2 ){ ?><li><a href="" title="">University</a></li><?php } ?>
-						<?php if($SA == 1 || $SA == 2 ){ ?><li><a href="" title="">High School</a></li><?php } ?>
+						<?php if($SA == 1 || $SA == 2 ){ ?><li><a href="<?php echo base_url() ?>Project/projectStats/3" title="">University</a></li><?php } ?>
+						<?php if($SA == 1 || $SA == 2 ){ ?><li><a href="<?php echo base_url() ?>Project/projectStats/4" >High School</a></li><?php } ?>
+					</ul>
+				</li>
+				<li><a class="" href="#" title=""><<i class="fa fa-line-chart"></i>Classement</a>
+					<ul>
+						<li><a href="<?php echo base_url() ?>Scoring/Classement/3" title="">University</a></li>
+						<li><a href="<?php echo base_url() ?>Scoring/Classement/4" title="">High school</a></li>
+						<li><a href="<?php echo base_url() ?>Scoring/ClassementWeAre" title="">We are carthage</a></li>
 					</ul>
 				</li>
 
@@ -521,13 +534,14 @@
 				<li class="menu-item-has-children"><a class="" href="#" title=""><i class="fa fa-line-chart"></i>Statistique</a>
 					<ul class="submenu">
 						<li><a href="<?php echo base_url() ?>Statistique" title="">Dashboard</a></li>
-						<li><a href="" title="">Sondage</a></li>
+						<?php if($SA == 1 || $SA == 2 ){ ?><li><a href="<?php echo base_url() ?>Project/projectStats/3" title="">University</a></li><?php } ?>
+						<?php if($SA == 1 || $SA == 2 ){ ?><li><a href="<?php echo base_url() ?>Project/projectStats/4" >High School</a></li><?php } ?>
 					</ul>
 				</li>
 				<li class="menu-item-has-children"><a class="" href="#" title=""><i class="fa fa-line-chart"></i>Classement</a>
 					<ul class="submenu">
 						<li><a href="<?php echo base_url() ?>Scoring/Classement/3" title="">University</a></li>
-						<li><a href="" title="">High school</a></li>
+						<li><a href="<?php echo base_url() ?>Scoring/Classement/4" title="">High school</a></li>
 						<li><a href="<?php echo base_url() ?>Scoring/ClassementWeAre" title="">We are carthage</a></li>
 					</ul>
 				</li>
