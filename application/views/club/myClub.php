@@ -365,22 +365,41 @@
 
                                                           <br><br>
                                                           <b>Type de présence</b>
+
+
                                                           <select required name="typeP" id="typeP" onchange="pe()" >
                                                             <option value="" ></option>
                                                             <option value="présentiel" >présentiel</option>
                                                             <option value="En ligne" >En ligne</option>
                                                           </select>
 
+                                                           <div class="form-radio">
+                                                              <div class="radio">
+                                                                  <label>
+                                                                      <input type="radio" name="typeP" id="E" value="présentiel" onchange="pe()" required><i class="check-box"></i>présentiel
+                                                                  </label>
+                                                              </div>
+                                                              <div class="radio">
+                                                                  <label>
+                                                                      <input type="radio" name="typeP" id="P" value="En ligne" onchange="pe()"  ><i class="check-box"></i>En ligne
+                                                                  </label>
+                                                              </div>
+                                                          </div>
+
                                                            <script type="text/javascript">
                                                             
                                                             function pe() {
-                                                            var x = document.getElementById("mySelect").typeP.value ;
+                                                                    
 
-                                                            if (x == "présentiel")   
-                                                            {
-                                                              document.getElementById("record").required = false;
-                                                            }
-                                                              }
+                                                                    if (document.getElementById("P").checked)   
+                                                                    {
+                                                                      document.getElementById("record").required = false;
+                                                                    }else
+                                                                    {
+                                                                      document.getElementById("record").required = true;
+                                                                    }
+                                                                }
+                                                            
                                                             
                                                         </script>
 
