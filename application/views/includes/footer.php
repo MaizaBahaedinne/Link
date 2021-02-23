@@ -487,6 +487,7 @@
                    <option value="Unité developement T-Link" >Unité developement T-Link </option>
                    <option value="Unité developement site web" >Unité developement site web </option>
                    <option value="Unité developement strategique" >Unité developement strategique </option>
+                   <option value="Unité statistique" >Unité statistique </option>
                    <option value="Unité création de contenu" >Unité création de contenu </option>
                    <option value="Unité communication" >Unité communication </option>
                    <option value="Unité reglementation et proccess" >Unité reglementation et proccess </option>

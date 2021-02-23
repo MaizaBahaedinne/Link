@@ -203,7 +203,7 @@
                                              <option value="Evenmentiel" >Evenmentiel </option>
                                              <option value="Administration et finance" >Administration et finance </option>
                                          </select>
-                                     <?php } else { ?>
+                                     <?php } elseif($user->clubID == 2 ) { ?>
                                         <select class="form-control"  name="cellule" required>
                                          <option value="" ></option>
                                          <option value="Unité developement T-Link" >Unité developement T-Link </option>
@@ -216,11 +216,10 @@
                                          <option value="Unité accadémique" >Unité accadémique </option>
                                          <option value="Unité des partenariats" >Unité des partenariats </option>
                                          <option value="Unité des relations internationale" >Unité des relations internationale </option>
-                                         <option value="Unité we are campers" >Unité we are campers </option>
-                                         <option value="Unité we are carthage" >Unité we are carthage </option>
                                          <option value="Unité incubateur" >Unité incubateur </option>
                                          <option value="Unité Fund raising" >Unité Fund raising </option>
                                          <option value="Unité statistique" >Unité statistique </option>
+
                                      </select>
                                      <?php } }  ?>
 
