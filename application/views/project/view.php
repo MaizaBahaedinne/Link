@@ -752,6 +752,7 @@
                                         <option value="Nabeul">Nabeul</option>
                                         <option value="Sfax">Sfax</option>
                                         <option value="Sousse">Sousse</option>
+                                        <option value="Autre">Autre</option>
                                      </select>
 
                     <label>Tu appartient à une equipe WE ARE CARTHAGE ?</label>
