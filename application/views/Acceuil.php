@@ -5,7 +5,7 @@
 
 <div class="col-lg-12">
 <div class="row merged20" id="page-contents">
-
+                  <!--
                   <div class="advertisment-box">
                               <h4 class="">publicité</h4>
                               <figure>
@@ -14,7 +14,7 @@
                               </figure>
                   </div>
 
-
+                  -->
               <!-- sidebar -->
               <div class="col-lg-3">
                 <aside class="sidebar static right">
