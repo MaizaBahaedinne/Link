@@ -92,13 +92,15 @@ class TFM extends BaseController {
 		public function partanTfm ($TFMId){
 				$moto = $this->input->post('bus');
 				$point = $this->input->post('point');
+				$weare = $this->input->post('weare');
 				$partanTfm = array(
 		          'tfmId'=>$TFMId ,
 		          'dateInscrip'=>date('Y-m-d H:i:s'),
 		          'userId'=>$this->vendorId ,
 		          'statut'=>2 ,
 		          'moto'=> $moto , 
-		          'pointDepart'=>$point 
+		          'pointDepart'=>$point , 
+		          'weare' =>$weare 
 		        );
 
 		         $result = $this->tfm_model->addNewPartTFM($partanTfm) ;

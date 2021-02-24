@@ -754,6 +754,13 @@
                                         <option value="Sousse">Sousse</option>
                                      </select>
 
+                    <label>Tu appartient à une equipe WE ARE CARTHAGE ?</label>
+                                     <select  name="weare"  required>
+                                        <option value=""></option>
+                                        <option value="Oui"></option>
+                                        <option value="Non"></option>
+                                     </select>
+
                   <div>
                     <div class="checkbox">
                       <label>
