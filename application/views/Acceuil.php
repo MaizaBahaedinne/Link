@@ -5,7 +5,7 @@
 
 <div class="col-lg-12">
 <div class="row merged20" id="page-contents">
-                  <!--
+                  
                   <div class="advertisment-box">
                               <h4 class="">publicité</h4>
                               <figure>
@@ -14,21 +14,11 @@
                               </figure>
                   </div>
 
-                  -->
+               
               <!-- sidebar -->
               <div class="col-lg-3">
                 <aside class="sidebar static right">
-                  <!--
-
-                  <div class="advertisment-box">
-                              <h4 class="">publicité</h4>
-                              <figure>
-                                 <a  title="Advertisment" href="https://www.tunivisions.link/Project/projectDetails/1278" >
-                                  <img src="https://www.tunivisions.link/uploads/projet/Projet_Khamem%20O%20Campy%20v1_135560374_187471226456281_1259933645889064745_o.jpg" alt=""></a>
-                              </figure>
-                  </div>
-                -->
-
+                 
 <!--
                   <div class="advertisment-box">
                               <h4 class="">publicité</h4>
