@@ -62,7 +62,7 @@
 
 
                                           
-                                         <?php if (  $SA == 1 || (($projet->projectId == 2499 && $userC->SenJun == 3 )||( $projet->projectId =='' && $HUA =='' ) ) ){ 
+                                         <?php if (  $SA == 1 || (($projet->projectId == 2499 && $userC->SenJun == 3 )||( $projet->projectId == 2500 && $userC->clubID == 2 ) ) ){ 
                                             if( empty($partProject) ){
                                             ?>
                                             <li >
