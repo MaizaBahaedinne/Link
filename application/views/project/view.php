@@ -737,6 +737,23 @@
                     <option value="1" >Non</option>
                   </select>
 
+                  <label>Point de départ</label>
+                                     <select  name="point"  required>
+                                        <option value=""></option>
+                                        <option value="Ariana">Grand Tunis</option>
+                                        <option value="Béja">Béja</option>
+                                        <option value="Bizerte">Bizerte</option>
+                                        <option value="Gabes">Gabès</option>
+                                        <option value="Jendouba">Jendouba</option>
+                                        <option value="Kairouan">Kairouan</option>
+                                        <option value="Kef">Kef</option>
+                                        <option value="Mahdia">Mahdia</option>
+                                        <option value="Monastir">Monastir</option>
+                                        <option value="Nabeul">Nabeul</option>
+                                        <option value="Sfax">Sfax</option>
+                                        <option value="Sousse">Sousse</option>
+                                     </select>
+
                   <div>
                     <div class="checkbox">
                       <label>
