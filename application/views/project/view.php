@@ -97,7 +97,7 @@
                                       <br>
 
                                       <br>
-                                      ⚠️ Si votre region ne figure pas dans la liste ci dessus, les présidents concernés devront collecter les frais des participants et les enverront via mandat minute au nom de Ahmed Ben Ghanem et merci de scanner le rendu et l'envoyer par mail<br>
+                                      ⚠️ Si votre region ne figure pas dans la liste ci dessus, les présidents concernés devront collecter les frais des participants et les enverront via mandat minute au nom de Bechir Khlifi et merci de scanner le rendu et l'envoyer par mail<br>
                                       <b>tunivisionsfoundation@gmail.com</b><br>
                                       <br>
                                       ⚠️ Pour le bon déroulement du paiement, les présidents des clubs seront nos vis à vis financière.
