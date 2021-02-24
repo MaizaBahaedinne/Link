@@ -630,7 +630,7 @@
 
 
          <div class="modal fade" id="participationProjet">
-        <div class="modal-dialog modal-sm ">
+        <div class="modal-dialog modal-lg ">
           <div class="modal-content">
 
             <!-- Modal Header -->
@@ -645,13 +645,13 @@
               <div id="Regelement">
               <form class="c-form" action="<?php echo base_url() ?>TFM/partanTfm/<?php echo $projet->projectId ?>" method="post" >
             
-                <h5>REGLEMENTS &laquo; TUNIVISIONS UNIVERSITY MEETING &raquo;</h5>
+                <h5>REGLEMENTS &laquo; <?php echo $projet->titre ?> &raquo;</h5>
                 <hr>
                 <div style="border-color: red ; border-style: groove; border-width:1px ; border-color: #757a95 ; ">
                   <div style="margin: 25px ">
                    
                    <p>Chers participants,</p>
-                    <p style="margin-left: 20px;">❖ Afin d&rsquo;assurer un bon d&eacute;roulement de notre s&eacute;minaire &laquo; Tunivisions University Meeting &raquo; comportant 1200 participants, nous avons proc&eacute;d&eacute; &agrave; la mise en place de ce r&egrave;glement qui a pour but de favoriser toutes les conditions qui m&egrave;nent &agrave; la bonne conduite de ce s&eacute;minaire.</p>
+                    <p style="margin-left: 20px;">❖ Afin d&rsquo;assurer un bon d&eacute;roulement de notre s&eacute;minaire &laquo; <?php echo $projet->titre ?> &raquo; comportant 1200 participants, nous avons proc&eacute;d&eacute; &agrave; la mise en place de ce r&egrave;glement qui a pour but de favoriser toutes les conditions qui m&egrave;nent &agrave; la bonne conduite de ce s&eacute;minaire.</p>
                     <p style="margin-left: 20px;">❖ Nous vous invitons &agrave; prendre conscience du pr&eacute;sent r&egrave;glement qui impose le respect des lieux, des normes de s&eacute;curit&eacute;, des relations entre les Tunimateurs.</p>
                     <p style="margin-left: 20px;">❖ Les articles du pr&eacute;sent r&egrave;glement s&rsquo;appliquent &agrave; chaque participant et doivent &ecirc;tre lus et approuv&eacute;s.</p>
                     <h3>ARTICLE 1 : ORGANISATION ET PROTOCOLE SANITAIRE</h3>
