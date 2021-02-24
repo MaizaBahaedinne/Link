@@ -78,7 +78,7 @@ class User extends BaseController
 
             $data['userRecords'] = $this->user_model->userListingLeders($HUA)  ;
             
-            $this->global['pageTitle'] = 'Leaders';
+            $this->global['pageTitle'] = 'users';
            
             $this->loadViews("users", $this->global, $data, NULL);
     }
