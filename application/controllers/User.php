@@ -67,6 +67,22 @@ class User extends BaseController
         $this->loadViews("dashboard", $this->global, $data , NULL);
     }
     
+
+
+/**
+     * This function is used to load the user list
+     */
+    function userListing($HUA)
+    {
+
+
+            $data['userRecords'] = $this->user_model->userListingLeders($HUA)  ;
+            
+            $this->global['pageTitle'] = 'Leaders';
+           
+            $this->loadViews("users", $this->global, $data, NULL);
+    }
+
     /**
      * This function is used to load the user list
      */
