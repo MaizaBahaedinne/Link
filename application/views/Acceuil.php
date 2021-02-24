@@ -6,13 +6,7 @@
 <div class="col-lg-12">
 <div class="row merged20" id="page-contents">
                   
-                  <div class="advertisment-box">
-                              <h4 class="">publicité</h4>
-                              <figure>
-                                 
-                                 <a  href="https://tunivisions.link/Project/projectDetails/2499" title="Advertisment"  ><img src="https://tunivisions.link/uploads/projet/xProjet_TUM,P202021_154466687_435636880995820_2271702379345649587_n_1_.jpeg.pagespeed.ic.aFo9CGvsb9.webp"  ></a>
-                              </figure>
-                  </div>
+                  
 
                
               <!-- sidebar -->
@@ -295,6 +289,14 @@
                     </div>
                   </div>
                     -->
+
+                    <div class="advertisment-box">
+                              <h4 class="">publicité</h4>
+                              <figure>
+                                 
+                                 <a  href="https://tunivisions.link/Project/projectDetails/2499" title="Advertisment"  ><img src="https://tunivisions.link/uploads/projet/xProjet_TUM,P202021_154466687_435636880995820_2271702379345649587_n_1_.jpeg.pagespeed.ic.aFo9CGvsb9.webp"  ></a>
+                              </figure>
+                  </div>
                   <?php foreach ($postRecords as $post ) { ?>
                                   
                   <div class="central-meta item" style="display: inline-block;">
