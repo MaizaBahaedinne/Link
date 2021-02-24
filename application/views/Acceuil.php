@@ -10,7 +10,7 @@
                               <h4 class="">publicité</h4>
                               <figure>
                                  
-                                 <a  title="Advertisment"  ><img src="<?php echo base_url() ;?>/assets/images/resources/tum2021.gif"  ></a>
+                                 <a  href="https://tunivisions.link/Project/projectDetails/2499" title="Advertisment"  ><img src="https://tunivisions.link/uploads/projet/Projet_TUM,P202021_154466687_435636880995820_2271702379345649587_n_1_.jpeg"  ></a>
                               </figure>
                   </div>
 

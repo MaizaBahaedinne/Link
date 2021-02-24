@@ -94,7 +94,7 @@
 
                                       Les présidents peuvent contacter directement nos représentants dans ces régions :<br>
 
-                                      ✅ Tunis : Azza Abouda : 56749190<br>
+                                      <br>
 
                                       <br>
                                       ⚠️ Si votre region ne figure pas dans la liste ci dessus, les présidents concernés devront collecter les frais des participants et les enverront via mandat minute au nom de Ahmed Ben Ghanem et merci de scanner le rendu et l'envoyer par mail<br>
