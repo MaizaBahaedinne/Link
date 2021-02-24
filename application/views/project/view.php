@@ -62,7 +62,7 @@
 
 
                                           
-                                         <?php if (  $SA == 1 ){ 
+                                         <?php if (  $SA == 1 || (($projectId =='' && $HUA =='' )||( $projectId =='' && $HUA =='' ) ) ){ 
                                             if( empty($partProject) ){
                                             ?>
                                             <li >
@@ -88,17 +88,14 @@
                                     <div class="btn btn-block btn-danger">
 
                                       <b>Votre participation est en cours de validation !</b>  <br>
-                                      Le paiement sera effectué en deux tranches : 160 dt.<br> <br><b>Deadline de paiement : Jeudi 17/12/2020</b><br>
-                                       100 DT : Mardi 15<br>
-                                       60 DT : Jeudi 17 Décembre <br><br>
+                                      Le paiement sera effectué en deux tranches : 160 dt.<br> <br>
+                                       100 DT : Mardi 07 MARS<br>
+                                       60 DT : Jeudi 14 MARS <br><br>
 
                                       Les présidents peuvent contacter directement nos représentants dans ces régions :<br>
 
-                                      ✅ GABES : Azza Abouda : 56749190<br>
-                                      ✅ SFAX : Nour Jallouli : 44343676<br>
-                                      ✅ TUNIS : Malek Chennoufi : 54623069<br>
-                                      ✅ NABEUL : Yasmine Gharbi : 27792844<br>
-                                      ✅ SOUSSE - MONASTIR : Enis Hachicha : 99630965<br>
+                                      ✅ Tunis : Azza Abouda : 56749190<br>
+
                                       <br>
                                       ⚠️ Si votre region ne figure pas dans la liste ci dessus, les présidents concernés devront collecter les frais des participants et les enverront via mandat minute au nom de Ahmed Ben Ghanem et merci de scanner le rendu et l'envoyer par mail<br>
                                       <b>tunivisionsfoundation@gmail.com</b><br>

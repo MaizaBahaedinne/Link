@@ -6,6 +6,14 @@
 <div class="col-lg-12">
 <div class="row merged20" id="page-contents">
 
+                  <div class="advertisment-box">
+                              <h4 class="">publicité</h4>
+                              <figure>
+                                 
+                                 <a  title="Advertisment"  ><img src="<?php echo base_url() ;?>/assets/images/resources/tum2021.gif"  ></a>
+                              </figure>
+                  </div>
+
 
               <!-- sidebar -->
               <div class="col-lg-3">
