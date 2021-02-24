@@ -166,7 +166,7 @@
                                      <br>
 
                                     <label>Statut</label>
-                                    <?php if($SA == 1){ ?>  
+                                    <?php if($SA == 1 || $SA == 2){ ?>  
                                     <select class="form-control" name="statut" 
                                      required>
                                         <option value="0" <?php if($userInfo->isDeleted == 0 ){ ?> selected <?php } ?> >Actif</option>
@@ -174,9 +174,7 @@
                                         <option value="2" <?php if($userInfo->isDeleted == 2 ){ ?> selected <?php } ?>>Bloqué</option> 
                                     </select>
                                     <?php  } ?>
-                                    <?php if($SA == 2){ ?>  
-                                        <input type="" value="<?php  ?>" name="" readonly>
-                                    <?php  } ?>
+
 
                                         <hr>
                                         <div class="row">
