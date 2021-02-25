@@ -19,7 +19,7 @@
                               <figure>
                                  
                                  <a  title="Advertisment" >
-                                  <img src="<?php echo base_url() ;?>/assets/images/resources/phoenix2021.jpg" 
+                                  <img src="<?php echo base_url() ;?>/assets/images/resources/phoenix2021.jpeg" 
                                    href="https://tunivisions.link/Project/projectDetails/2500" title="Advertisment"  > </a>
                               </figure>
                   </div>
