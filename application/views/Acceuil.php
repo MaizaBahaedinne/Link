@@ -17,8 +17,8 @@
                           object-fit: cover;
                           border-radius : 100% ;
                           object-position: 50% 50%;
-                          width: 400px;
-                          height: 400px;
+                          width: 800px;
+                          height: 300px;
                       }
                  </style>
 
