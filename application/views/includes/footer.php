@@ -288,7 +288,7 @@
 
             <!-- Modal body -->
             <div class="modal-body">
-             <?php if($userC->SenJun == 3 ){  ?>
+             <?php if($userC->SenJun == 3 || $SA == 1 ){  ?>
                  
                  <h4 style="text-align: center;" >Les inscriptions sont clôturées</h4>
                  <p style="text-align: center;" >Si vous avez besoin de prolonger la date .<br>merci de la demande par un email : <a href="mailto:tunivisions.link@gmail.com">tunivisions.link@gmail.com</a> avec la date prévu et le Tuni-ID du président de club  </p>
