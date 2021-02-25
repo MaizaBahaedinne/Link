@@ -12,23 +12,15 @@
               <!-- sidebar -->
               <div class="col-lg-3">
                 <aside class="sidebar static right">
-                 <style type="text/css">
-                   .alligator-pbanner {
-                          object-fit: cover;
-                          border-radius : 100% ;
-                          object-position: 50% 50%;
-                          width: 800px;
-                          height: 300px;
-                      }
-                 </style>
+                 
 
                   <div class="advertisment-box">
                               <h4 class="">publicité</h4>
                               <figure>
                                  
                                  <a  title="Advertisment" >
-                                  <img src="https://tunivisions.link/uploads/projet/xProjet_Phoenix,P202021_logo-fond-mars-final2.jpeg.pagespeed.ic.smokavYD8I.webp" 
-                                  class="alligator-pbanner"  ></a>
+                                  <img src="<?php echo base_url() ;?>/assets/images/resources/phoenix2021.jpeg" 
+                                   href="https://tunivisions.link/Project/projectDetails/2500" title="Advertisment"  > ></a>
                               </figure>
                   </div>
                    
