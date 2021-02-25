@@ -12,18 +12,28 @@
               <!-- sidebar -->
               <div class="col-lg-3">
                 <aside class="sidebar static right">
-                 
-<!--
+                 <style type="text/css">
+                   .alligator-pbanner {
+                          object-fit: cover;
+                          border-radius : 100% ;
+                          object-position: 50% 50%;
+                          width: 400px;
+                          height: 400px;
+                      }
+                 </style>
+
                   <div class="advertisment-box">
                               <h4 class="">publicité</h4>
                               <figure>
                                  
-                                 <a  title="Advertisment" data-toggle="modal" data-target="#AlumniGO" ><img src="<?php echo base_url() ;?>/assets/images/resources/anigif2.gif"  ></a>
+                                 <a  title="Advertisment" >
+                                  <img src="https://tunivisions.link/uploads/projet/xProjet_Phoenix,P202021_logo-fond-mars-final2.jpeg.pagespeed.ic.smokavYD8I.webp" 
+                                  class="alligator-pbanner"  ></a>
                               </figure>
                   </div>
                    
 
--->
+
                    <div class="widget">
                     <h4 class="widget-title">Ma calendarier</h4>
                     <div class="full-calendar">
