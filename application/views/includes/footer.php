@@ -292,7 +292,7 @@
                  
                  <h4 style="text-align: center;" >Les inscriptions sont clôturées</h4>
                  <p style="text-align: center;" >Si vous avez besoin de prolonger la date .<br>merci de la demande par un email : <a href="mailto:tunivisions.link@gmail.com">tunivisions.link@gmail.com</a> avec la date prévu et le Tuni-ID du président de club  </p>
-              <?php } else { ?>
+              <?php } elseif($userC->SenJun != 3 || $SA == 1 ) { ?>
               <p style="text-align: center;" >merci de scaner ce QR-code avec une application mobile<br> <b>Android / iOS / HarmonyOs</b>.</p>
               <div id="qrcode" style="text-align: center;"></div>
               
