@@ -273,6 +273,21 @@
 						<li><a href="<?php echo base_url() ?>Scoring/ClassementWeAre" title="">We are carthage</a></li>
 					</ul>
 				</li>
+				<?php if($SA == 1 || $SA == 2 ){ ?>
+				<li><span>Utilisateurs</span>
+					<ul>
+						<li><a href="<?php echo base_url() ?>Scoring/Classement/3" title="">University</a></li>
+						<li><a href="<?php echo base_url() ?>Scoring/Classement/3" title="">High School</a></li>
+						<li><span>Leaders</span>
+							<ul>
+								<li><a href="<?php echo base_url() ?>Scoring/Classement/3" title="">Foundation</a></li>
+								<li><a href="<?php echo base_url() ?>Scoring/Classement/3" title="">University</a></li>
+								<li><a href="<?php echo base_url() ?>Scoring/Classement/3" title="">High School</a></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<?php } ?>
 			</ul>
 		</nav>
 
@@ -450,6 +465,21 @@
 						<li><a href="<?php echo base_url() ?>Scoring/ClassementWeAre" title="">We are carthage</a></li>
 					</ul>
 				</li>
+				<?php if($SA == 1 || $SA == 2 ){ ?>
+				<li><span>Utilisateurs</span>
+					<ul>
+						<li><a href="<?php echo base_url() ?>userListing/3" title="">University</a></li>
+						<li><a href="<?php echo base_url() ?>serListing/4" title="">High School</a></li>
+						<li><span>Leaders</span>
+							<ul>
+								<li><a href="<?php echo base_url() ?>User/userListingLeders/2" title="">Foundation</a></li>
+								<li><a href="<?php echo base_url() ?>User/userListingLeders/3" title="">University</a></li>
+								<li><a href="<?php echo base_url() ?>User/userListingLeders/4" title="">High School</a></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<?php } ?>
 
 			</ul>
 			
@@ -545,6 +575,21 @@
 						<li><a href="<?php echo base_url() ?>Scoring/ClassementWeAre" title="">We are carthage</a></li>
 					</ul>
 				</li>
+				<?php if($SA == 1 || $SA == 2 ){ ?>
+				<li class="menu-item-has-children"><a class="" href="#" title=""><i class="fa fa-users"></i>Utilisateurs</a>
+					<ul>
+						<li><a href="<?php echo base_url() ?>userListing/3" title="">University</a></li>
+						<li><a href="<?php echo base_url() ?>serListing/4" title="">High School</a></li>
+						<li class="menu-item-has-children"><span>Leaders</span>
+							<ul>
+								<li><a href="<?php echo base_url() ?>User/userListingLeders/2" title="">Foundation</a></li>
+								<li><a href="<?php echo base_url() ?>User/userListingLeders/3" title="">University</a></li>
+								<li><a href="<?php echo base_url() ?>User/userListingLeders/4" title="">High School</a></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<?php } ?>
 			</ul>
 			<div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 0px;"><div class="ps-scrollbar-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps-scrollbar-y-rail" style="top: 0px; right: 0px;"><div class="ps-scrollbar-y" tabindex="0" style="top: 0px; height: 0px;"></div></div></ul>
 		</div>

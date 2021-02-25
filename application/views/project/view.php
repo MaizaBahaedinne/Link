@@ -6,7 +6,7 @@
                         <div class="row merged20" id="page-contents">
                             <div class="user-profile">
                                 <figure>
-                                   <img src="<?php echo base_url() ?>uploads/projet/<?php echo $projet->banner ?>" class="alligator-projects-banner" alt="">
+                                   <img src="<?php echo base_url() ?>uploads/projet/<?php echo $projet->banner ?>" class="alligator-projects-banner " alt="">
                                 </figure>
                                 <div class="profile-section">
                                     <br>
