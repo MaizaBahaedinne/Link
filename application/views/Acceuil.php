@@ -18,9 +18,9 @@
                               <h4 class="">publicité</h4>
                               <figure>
                                  
-                                 <a  title="Advertisment" >
+                                 <a  title="Advertisment" href="https://tunivisions.link/Project/projectDetails/2500" title="Advertisment" >
                                   <img src="<?php echo base_url() ;?>/assets/images/resources/phoenix2021.jpeg" 
-                                   href="https://tunivisions.link/Project/projectDetails/2500" title="Advertisment"  > </a>
+                                     > </a>
                               </figure>
                   </div>
                    
