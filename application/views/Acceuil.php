@@ -481,9 +481,9 @@
                         <li>
                           <span> <a href="<?php echo base_url()?>Club/clubInfo/<?php echo $clubInfo->clubID ?>"> <i class="fas fa-project-diagram"></i> </i>Projets</a></span>
                         </li>
-                        <li>
+                        <li >
                           <span> 
-                             <a  data-toggle="modal" data-target="#TuniFan">
+                             <a  data-toggle="modal" data-target="#TuniFan" disabled>
                                 <i class="fa fa-user-plus"></i>Inviter
                             </a>
                           </span>
