@@ -280,9 +280,9 @@
 						<li><a href="<?php echo base_url() ?>Scoring/Classement/3" title="">High School</a></li>
 						<li><span>Leaders</span>
 							<ul>
-								<li><a href="<?php echo base_url() ?>Scoring/Classement/3" title="">Foundation</a></li>
-								<li><a href="<?php echo base_url() ?>Scoring/Classement/3" title="">University</a></li>
-								<li><a href="<?php echo base_url() ?>Scoring/Classement/3" title="">High School</a></li>
+								<li><a href="<?php echo base_url() ?>User/userListingLeders/3" title="">Foundation</a></li>
+								<li><a href="<?php echo base_url() ?>User/userListingLeders/3" title="">University</a></li>
+								<li><a href="<?php echo base_url() ?>User/userListingLeders/3" title="">High School</a></li>
 							</ul>
 						</li>
 					</ul>
@@ -580,7 +580,7 @@
 					<ul>
 						<li><a href="<?php echo base_url() ?>userListing/3" title="">University</a></li>
 						<li><a href="<?php echo base_url() ?>serListing/4" title="">High School</a></li>
-						<li class="menu-item-has-children"><span>Leaders</span>
+						<li ><span>Leaders</span>
 							<ul>
 								<li><a href="<?php echo base_url() ?>User/userListingLeders/2" title="">Foundation</a></li>
 								<li><a href="<?php echo base_url() ?>User/userListingLeders/3" title="">University</a></li>
