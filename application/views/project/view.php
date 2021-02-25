@@ -89,8 +89,8 @@
 
                                       <b>Votre participation est en cours de validation !</b>  <br>
                                       Le paiement sera effectué en deux tranches : 170 dt.<br> <br>
-                                       100 DT : Mardi 01 MARS<br>
-                                       70 DT : Jeudi 08 MARS <br><br>
+                                       100 DT : Lundi 01 MARS<br>
+                                       70 DT : Lundi 08 MARS <br><br>
 
                                       Les présidents peuvent contacter directement nos représentants dans ces régions :<br>
 
