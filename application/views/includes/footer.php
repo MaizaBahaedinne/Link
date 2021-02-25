@@ -288,10 +288,13 @@
 
             <!-- Modal body -->
             <div class="modal-body">
+             <?php if($userC->SenJun == 3 ){  ?>
+                 <h4>Les inscriptions sont clôturées</h4>
+              <?php } else { ?>
               <p style="text-align: center;" >merci de scaner ce QR-code avec une application mobile<br> <b>Android / iOS / HarmonyOs</b>.</p>
               <div id="qrcode" style="text-align: center;"></div>
               
-              <!--
+              
               <script type="text/javascript">
                   var qrcode = new QRCode(document.getElementById("qrcode"), {
                     width : 350,
@@ -333,10 +336,9 @@
                 </div>
                 <hr>
                 <p style="text-align: center;">ce code reste valable jusqu'à<br> <b style="color: red"><?php echo date('d/m/Y')?> 23:59:00</b></p>
-                -->
+                
 
-                <h4>Les inscriptions sont clôturées</h4>
-
+              <?php } ?>              
               
    
 
