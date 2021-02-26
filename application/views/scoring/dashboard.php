@@ -75,7 +75,7 @@
 
                                     
                                         <td>
-                           					<?php echo   $club->name   ?>
+                           					<?php echo   $club->club   ?>
                                         </td>
                                         <td>
                                           <?php   if ($c== 1) { ?>
