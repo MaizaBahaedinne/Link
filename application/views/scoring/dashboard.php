@@ -68,6 +68,7 @@
 				                            Score
 				                          </th>
 				                          </thead>
+                                  <tbody>
                                     <?php  if(!empty($clubs)){ $c=1 ;   foreach ($clubs as $club ) { ?>
                                       <tr>
 
@@ -100,11 +101,12 @@
                                         <td><?php $s = $club->score ; echo round($s->affP) ?>%</td>
                                         <td ><?php $s = $club->score ; echo round($s->tauxParticipation) ?>%</td>
 
-                                        <td style="text-align: center;" > <b ><?php  echo $club->scores  ?></b> </td>
+                                        <td style="text-align: center;" > <b> <?php  echo $club->scores  ?> </b> </td>
                                       </tr>
                                       
                                  
                                     <?php $c= $c + 1 ;  }   }else { echo "Il y a pas de données";} ?>
+                                  </tbody>
 				                </table>
                         </div>
 					            </div>
@@ -522,7 +524,7 @@
                               <div class="col-lg-3 " >
                                   <aside class="sidebar static right" >
                                   <div class="widget">
-                                  <h4 class="widget-title">TOP 3 VP RH</h4>
+                                  <h4 class="widget-title">TOP 3 Assitant RH</h4>
                                    <style type="text/css">
                                           .pro-turtle {
                                               object-fit: cover;
