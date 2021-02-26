@@ -40,7 +40,7 @@ class Club_model extends CI_Model
         $this->db->join('tbl_club_scores as Score', 'proj.projectId = Score.projectId', 'Right');
         
         $this->db->where(' proj.startDate > ','2020-09-15') ;
-        $this->db->where(' BaseTbl.statut = ','0') ;
+        $this->db->where(' Score.statut = ','0') ;
 
         if($type !=  0)
         {
