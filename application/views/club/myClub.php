@@ -369,28 +369,28 @@
                                                            <div class="form-radio">
                                                               <div class="radio">
                                                                   <label>
-                                                                      <input type="radio" name="typeP" id="P" value="Présentiel" onchange="pe()" required><i class="check-box"></i>présentiel
+                                                                      <input type="radio" name="typeP" id="P<?php echo $projet->projectId;?>" value="Présentiel" onchange="pe<?php echo $projet->projectId;?>()" required><i class="check-box"></i>présentiel
                                                                   </label>
                                                               </div>
                                                               <div class="radio">
                                                                   <label>
-                                                                      <input type="radio" name="typeP" id="E" value="En ligne" onchange="pe()"  ><i class="check-box"></i>En ligne
+                                                                      <input type="radio" name="typeP" id="E<?php echo $projet->projectId;?>" value="En ligne" onchange="pe<?php echo $projet->projectId;?>()"  ><i class="check-box"></i>En ligne
                                                                   </label>
                                                               </div>
                                                           </div>
 
                                                            <script type="text/javascript">
                                                             
-                                                            function pe() {
+                                                            function pe<?php echo $projet->projectId;?>() {
                                                                     
 
-                                                                    if (document.getElementById("P").checked)   
+                                                                    if (document.getElementById("P<?php echo $projet->projectId;?>").checked)   
                                                                     {
-                                                                      document.getElementById("record").required = true;
+                                                                      document.getElementById("record<?php echo $projet->projectId;?>").required = true;
                                                                     }
-                                                                    else if (document.getElementById("E").checked)
+                                                                    else if (document.getElementById("E<?php echo $projet->projectId;?>").checked)
                                                                     {
-                                                                      document.getElementById("record").required = false;
+                                                                      document.getElementById("record<?php echo $projet->projectId;?>").required = false;
                                                                     }
                                                                 }
                                                             
@@ -410,14 +410,14 @@
 
                                                               ?>
                                                               <input type="url" 
-                                                             name="record" id="record"   >
+                                                             name="record" id="record<?php echo $projet->projectId;?>"   >
                                                              <small>
                                                                 Champ obligatoire pour toute les projets en ligne
                                                                 (Drive ou live facebook)
                                                               </small>
                                                             <?php }else{  ?>
                                                                 <input type="url" 
-                                                                    name="record" id="record"  required >
+                                                                    name="record" id="record<?php echo $projet->projectId;?>"  required >
                                                                 <small>
                                                                   Champ obligatoire pour toute les projets en ligne
                                                                   (Drive ou live facebook)
