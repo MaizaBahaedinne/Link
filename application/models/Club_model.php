@@ -37,7 +37,7 @@ class Club_model extends CI_Model
         $this->db->select('BaseTbl.clubID , BaseTbl.name , BaseTbl.birthday , BaseTbl.city ,BaseTbl.email , BaseTbl.is_Actif , sum(Score.points) points ');
         $this->db->from('tbl_club as BaseTbl');
         $this->db->join('tbl_project as proj', 'BaseTbl.clubId = BaseTbl.clubID', 'Right');
-        $this->db->join('tbl_club_scores as Score', 'proj.projectId = Score.projectId', 'Right');
+        $this->db->join('tbl_club_scores as Score', 'proj.projectId = Score.projectId', 'Left');
         
         $this->db->where(' proj.startDate > ','2020-09-15') ;
         $this->db->where(' Score.statut = ','0') ;
@@ -47,8 +47,10 @@ class Club_model extends CI_Model
             $this->db->where('BaseTbl.SenJun = ', $type ) ;
                 
         }
+
         $this->db->group_by('BaseTbl.clubID' );
         $this->db->order_by('points  DESC' );
+        
         $query = $this->db->get();
         
         return $query->result();
