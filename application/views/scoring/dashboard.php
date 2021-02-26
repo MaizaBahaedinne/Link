@@ -100,7 +100,7 @@
                                         <td><?php $s = $club->score ; echo round($s->affP) ?>%</td>
                                         <td ><?php $s = $club->score ; echo round($s->tauxParticipation) ?>%</td>
 
-                                        <td style="text-align: center;" > <b ><?php  $club->points  ?></b> </td>
+                                        <td style="text-align: center;" > <b ><?php  echo $club->points  ?></b> </td>
                                       </tr>
                                       
                                  
