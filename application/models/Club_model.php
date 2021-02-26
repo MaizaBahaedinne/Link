@@ -34,7 +34,7 @@ class Club_model extends CI_Model
      */
     function clubListingScore($type)
     {
-        $this->db->select('BaseTbl.clubID , BaseTbl.name , BaseTbl.birthday , BaseTbl.city ,BaseTbl.email , BaseTbl.is_Actif , (Score.points) points ');
+        $this->db->select('BaseTbl.clubID , BaseTbl.name , BaseTbl.birthday , BaseTbl.city ,BaseTbl.email , BaseTbl.is_Actif , sum(Score.points) points ');
         $this->db->from('tbl_club as BaseTbl');
         $this->db->join('tbl_project as proj', 'BaseTbl.clubId = BaseTbl.clubID', 'Right');
         $this->db->join('tbl_club_scores as Score', 'proj.projectId = Score.projectId', 'Right');
