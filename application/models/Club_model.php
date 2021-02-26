@@ -47,6 +47,8 @@ class Club_model extends CI_Model
             $this->db->where('BaseTbl.SenJun = ', $type ) ;
                 
         }
+        $this->db->group_by('BaseTbl.clubID' );
+        $this->db->order_by('points  DESC' );
         $query = $this->db->get();
         
         return $query->result();
