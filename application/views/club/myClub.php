@@ -384,11 +384,11 @@
                                                             function pe<?php echo $projet->projectId;?>() {
                                                                     
 
-                                                                    if (document.getElementById("P<?php echo $projet->projectId;?>").checked)   
+                                                                    if (document.getElementById("E<?php echo $projet->projectId;?>").checked)   
                                                                     {
                                                                       document.getElementById("record<?php echo $projet->projectId;?>").required = true;
                                                                     }
-                                                                    else if (document.getElementById("E<?php echo $projet->projectId;?>").checked)
+                                                                    else if (document.getElementById("P<?php echo $projet->projectId;?>").checked)
                                                                     {
                                                                       document.getElementById("record<?php echo $projet->projectId;?>").required = false;
                                                                     }
