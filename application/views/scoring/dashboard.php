@@ -21,6 +21,18 @@
                                             height: 40px;
                                         }
                                     </style> 
+                                    <style type="text/css">
+                                            table.tableizer-table {
+                                                font-size: 14px;
+                                                border: 1px solid #CCC; 
+                                                font-family: Arial, Helvetica, sans-serif;
+                                            } 
+                                            .tableizer-table th {
+                                                background-color: #104E8B; 
+                                                color: #FFF;
+                                                font-weight: bold;
+                                            }
+                                        </style>
                                     <div class="your-page" >
 				                    <table  class="table table-responsive-xl" id="tableid" style="width: 100%" >
 				                      <thead>
@@ -86,9 +98,9 @@
                                         <td><?php echo $club->C ?></td>
                                         <td><?php echo $club->E ?></td>
                                         <td><?php $s = $club->score ; echo round($s->affP) ?>%</td>
-                                        <td><?php $s = $club->score ; echo round($s->tauxParticipation) ?>%</td>
+                                        <td ><?php $s = $club->score ; echo round($s->tauxParticipation) ?>%</td>
 
-                                        <td> <b ><?php $s = $club->score ; echo $s->points ?></b> </td>
+                                        <td style="text-align: center;" > <b ><?php $s = $club->score ; echo $s->points ?></b> </td>
                                       </tr>
                                       
                                  
