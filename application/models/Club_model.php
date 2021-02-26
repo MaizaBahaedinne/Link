@@ -36,7 +36,7 @@ class Club_model extends CI_Model
     {
         $this->db->select('BaseTbl.clubID , BaseTbl.name , BaseTbl.birthday , BaseTbl.city ,BaseTbl.email , BaseTbl.is_Actif , sum(Score.points) points ');
         $this->db->from('tbl_club as BaseTbl');
-        $this->db->join('tbl_project as proj', 'BaseTbl.clubId = BaseTbl.clubID', 'Right');
+        $this->db->join('tbl_project as proj', 'BaseTbl.clubId = BaseTbl.clubID', 'Left');
         $this->db->join('tbl_club_scores as Score', 'proj.projectId = Score.projectId', 'Left');
         
         $this->db->where(' proj.startDate > ','2020-09-15') ;
