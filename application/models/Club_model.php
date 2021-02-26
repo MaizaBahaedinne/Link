@@ -24,7 +24,33 @@ class Club_model extends CI_Model
         
         return $query->result();
     }
-    
+ 
+
+
+      /**
+     * This function is used to get the user listing count
+     * @param string $searchText : This is optional search text
+     * @return number $count : This is row count
+     */
+    function clubListingScore($type)
+    {
+        $this->db->select('BaseTbl.clubID , BaseTbl.name , BaseTbl.birthday , BaseTbl.city ,BaseTbl.email , BaseTbl.is_Actif , (Score.points) points ');
+        $this->db->from('tbl_club as BaseTbl');
+        $this->db->join('tbl_project as proj', 'BaseTbl.clubId = BaseTbl.clubID', 'Right');
+        $this->db->join('tbl_club_scores as Score', 'proj.projectId = Score.projectId', 'Right');
+        
+        $this->db->where(' proj.startDate > ','2020-09-15') ;
+        $this->db->where(' BaseTbl.statut = ','0') ;
+
+        if($type !=  0)
+        {
+            $this->db->where('BaseTbl.SenJun = ', $type ) ;
+                
+        }
+        $query = $this->db->get();
+        
+        return $query->result();
+    }   
 
 
      /**
