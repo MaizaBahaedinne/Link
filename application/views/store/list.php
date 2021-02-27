@@ -24,7 +24,6 @@
 <div class="row merged20" id="page-contents">
 
 
-  Mes Reservations
 
    <!-- sidebar -->
               <div class="col-lg-12">
@@ -58,7 +57,8 @@
                 </aside>
               </div><!-- sidebar -->
 
-              <hr></hr>
+   </div>
+   <div class="row merged20" id="page-contents">
                                     
                      <?php
                                                 $this->load->helper('form');
@@ -163,7 +163,8 @@
                 </aside>
               </div><!-- sidebar -->
 
-<hr></hr>
+</div>
+<div class="row merged20" id="page-contents">
               <div class="col-lg-12">
                 <aside class="sidebar static right">
                    
