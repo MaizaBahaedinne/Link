@@ -19,7 +19,7 @@ class Store extends BaseController {
             $this->isLoggedIn();   
         }    
 
-    public index()
+    public function index()
         {
             $this->loadViews("store/list", NULL, NULL, NULL);   
         }    
