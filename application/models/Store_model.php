@@ -12,6 +12,23 @@ class Store_model extends CI_Model
         
 
 
+        /**
+     * This function is used to get the user listing count
+     * @param string $searchText : This is optional search text
+     * @return number $count : This is row count
+     */
+    function reservationListingByUser($userId)
+    {
+        $this->db->select('*');
+        $this->db->from('tbl_store as BaseTbl');
+        $this->db->where('BaseTbl.userId = ', $userId ) ;
+          
+        $query = $this->db->get();
+        
+        return $query->result();
+    }
+
+
 
         /**
      * This function is used to add new user to system

@@ -22,6 +22,41 @@
 <div class="col-lg-12">
   <form class="c-form"  method="post" action="<?php echo base_url() ?>Store/addNewReservation">  
 <div class="row merged20" id="page-contents">
+
+
+  Mes Reservations
+
+   <!-- sidebar -->
+              <div class="col-lg-4">
+                <aside class="sidebar static right">
+                   <div class="widget">
+                    <h4 class="widget-title">Mes Reservations</h4>
+                    <div class="your-page">
+                      <table>
+                        <thead>
+                          <th>ID</th>
+                          <th>Produit</th>
+                          <th>Quantité</th>
+                          <th>Taille</th>
+                          <th>Staut</th>
+                        </thead>
+                        <tbody>
+                        <?php foreach ($ReservationRecords as $res ) { ?>
+                          <tr>
+                            <td><?php echo $res->storeId ?></td>
+                            <td><?php echo $res->produit ?></td>
+                            <td><?php echo $res->nombre ?></td>
+                            <td><?php echo $res->taille ?></td>
+                            <td></td>
+                          </tr>
+                        <?php } ?>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div><!-- calendar -->
+                  <!-- recent links -->
+                </aside>
+              </div><!-- sidebar -->
                                     
                      <?php
                                                 $this->load->helper('form');
