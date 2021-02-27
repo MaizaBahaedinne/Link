@@ -20,7 +20,7 @@
         <div class="row">
 
 <div class="col-lg-12">
-  <form class="c-form" >  
+  <form class="c-form"  method="post" accept="<?php echo base_url() ?>Store/addNewReservation">  
 <div class="row merged20" id="page-contents">
                                     
                      <?php
