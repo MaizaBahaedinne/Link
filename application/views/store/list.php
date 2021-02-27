@@ -1,4 +1,20 @@
 <section>
+    <div class="page-header">
+      <div class="header-inner">
+        <h2>Store</h2>
+        <form method="post">
+          <!--<input type="text" placeholder="Ask Question">
+          <button type="submit"><i class="fa fa-search"></i></button>-->
+        </form>
+        <p>
+          
+        </p>
+      </div>
+      <figure><img src="<?php echo base_url() ;?>assets/images/store.jpg" alt=""></figure>
+    </div>
+  </section>
+
+<section>
     <div class="gap2 gray-bg">
       <div class="container">
         <div class="row">
@@ -6,8 +22,28 @@
 <div class="col-lg-12">
   <form class="c-form" >  
 <div class="row merged20" id="page-contents">
-                  
-                  
+                                    
+                     <?php
+                                                $this->load->helper('form');
+                                        $error = $this->session->flashdata('error');
+                                        if($error)
+                                        {
+                                            ?>
+                                            <div class="alert alert-danger alert-dismissable">
+                                                
+                                                <?php echo $error; ?>                    
+                                            </div>
+                                        <?php }
+                                        $success = $this->session->flashdata('success');
+                                        if($success)
+                                        {
+                                            ?>
+                                            <div class="alert alert-success alert-dismissable">
+                                                
+                                                <?php echo $success; ?>                    
+                                            </div>
+                                      <?php } ?>
+                              <?php $this->load->helper("form"); ?>          
 
              
               <!-- sidebar -->

@@ -29,6 +29,71 @@ class Store extends BaseController {
 
 
 
+    public function addNewReservation()
+        {
+          $PR = $this->input->post('PR');
+          $PGOR = $this->input->post('PGOR');
+          $PGOB = $this->input->post('PGOB');
+
+          $NPR = $this->input->post('NPR');
+          $NPGOR = $this->input->post('NPGOR');
+          $NPGOB = $this->input->post('NPGOB');
+
+          $TPR = $this->input->post('TPR');
+          $TPGOR = $this->input->post('TPGOR');
+          $TPGOB = $this->input->post('TPGOB');
+
+          if($PR > 0){
+          $reservationInfo = array(        
+           'produit' => "Capuche  Rouge" ,
+           'nombre' => $NPR ,
+           'taille' => $TPR ,
+           'createdDate'=> date('Y-m-d H:i:s') ,
+           'par'=>$this->vendorId
+            );         
+
+            $result = $this->store_model->addNewReservation($reservationInfo);
+          }
+
+
+         if($PGOR > 0){
+          $reservationInfo = array(        
+           'produit' => "Chaab El Go Rouge" ,
+           'nombre' => $NPGOR ,
+           'taille' => $TPGOR ,
+           'createdDate'=> date('Y-m-d H:i:s') ,
+           'par'=>$this->vendorId
+            );         
+
+           $result = $this->store_model->addNewReservation($reservationInfo);
+          }
+
+
+          if($PGOB > 0){
+          $reservationInfo = array(        
+           'produit' => "Chaab El Go Bleu" ,
+           'nombre' => $NPGOB ,
+           'taille' => $TPGOB ,
+           'createdDate'=> date('Y-m-d H:i:s') ,
+           'par'=>$this->vendorId
+            );         
+
+           $result = $this->store_model->addNewReservation($reservationInfo);
+          }
+
+         if($result)
+                {
+                    $this->session->set_flashdata('success', 'Votre Reservation est en cours de validation par notre equipe ');
+                    redirect('/login') ; 
+                }
+                else
+                {
+                    $this->session->set_flashdata('error', 'Problème de reservation ! ');
+                }
+                    
+         redirect('');
+
+        }
      
 
 		
