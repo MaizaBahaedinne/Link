@@ -21,7 +21,7 @@
                       </div>
                         <br> 
                         <label>Quantité</label>
-                        <input type="number" name="" >
+                        <input type="number" name=""  min="0" required>
                         <label>Taille</label>
                         <select >
                           <option value="S">S</option>
@@ -45,7 +45,7 @@
                       </div>
                         <br> 
                         <label>Quantité</label>
-                        <input type="number" name="" >
+                        <input type="number" name="" min="0" required>
                         <label>Taille</label>
                         <select >
                           <option value="S">S</option>
@@ -69,7 +69,7 @@
                       </div>
                         <br> 
                         <label>Quantité</label>
-                        <input type="number" name="" >
+                        <input type="number" name="" min="0" required>
                         <label>Taille</label>
                         <select >
                           <option value="S">S</option>
