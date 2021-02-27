@@ -21,7 +21,7 @@ class Store extends BaseController {
 
     public function index()
         {
-            $this->loadViews("store/list", NULL, NULL, NULL);   
+            $this->loadViews("store/list", $this->global = something;, NULL, NULL);   
         }    
 
 
