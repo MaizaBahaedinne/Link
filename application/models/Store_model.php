@@ -21,7 +21,7 @@ class Store_model extends CI_Model
     {
         $this->db->select('*');
         $this->db->from('tbl_store as BaseTbl');
-        $this->db->where('BaseTbl.userId = ', $userId ) ;
+        $this->db->where('BaseTbl.par = ', $userId ) ;
           
         $query = $this->db->get();
         
