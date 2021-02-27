@@ -94,6 +94,8 @@
                        <small><small>Ce produit sera réservé au nom de votre club</small></small>
                       </div>
                         <br> 
+                        <label>Prix</label>
+                        <input type="text" value="40 DT" readonly>
                         <label>Quantité</label>
                         <input type="number"   min="0" name="PR" value="0" required>
                         <label>Taille</label>
@@ -114,12 +116,14 @@
               <div class="col-lg-4">
                 <aside class="sidebar static right">
                    <div class="widget">
-                    <h4 class="widget-title">Sweat à capuche "Chaab El GO" rouge</h4>
+                    <h4 class="widget-title">Sweat "Chaab El GO" rouge</h4>
                     <div class="your-page">
                       <div>
                        <img src="<?php echo base_url() ;?>assets/images/resources/store/gor.jpg" >
                       </div>
                         <br> 
+                        <label>Prix</label>
+                        <input type="text" value="35 DT" readonly>
                         <label>Quantité</label>
                         <input type="number" min="0" name="PGOR" value="0" required>
                         <label>Taille</label>
@@ -140,12 +144,14 @@
               <div class="col-lg-4">
                 <aside class="sidebar static right">
                    <div class="widget">
-                    <h4 class="widget-title">Sweat à capuche "Chaab El GO" bleu</h4>
+                    <h4 class="widget-title">Sweat "Chaab El GO" bleu</h4>
                     <div class="your-page">
                       <div>
                        <img src="<?php echo base_url() ;?>assets/images/resources/store/gob.jpg" >
                       </div>
                         <br> 
+                        <label>Prix</label>
+                        <input type="text" value="35 DT" readonly>
                         <label>Quantité</label>
                         <input type="number" name="PGOB" min="0"  value="0" required>
                         <label>Taille</label>
