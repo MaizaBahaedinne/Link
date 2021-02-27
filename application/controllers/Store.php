@@ -20,7 +20,7 @@ class Store extends BaseController {
     public function index()
         {
 
-            $data['ReservationRecords'] = $this->store_model->reservationListingByUser($userId)
+            $data['ReservationRecords'] = $this->store_model->reservationListingByUser($this->vendorId) ;
 
             $this->global['pageTitle'] = 'Store ';
                           $this->global['active'] = 'Projets';
