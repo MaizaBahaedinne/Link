@@ -57,6 +57,8 @@
                   <!-- recent links -->
                 </aside>
               </div><!-- sidebar -->
+
+              <hr></hr>
                                     
                      <?php
                                                 $this->load->helper('form');
@@ -161,7 +163,7 @@
                 </aside>
               </div><!-- sidebar -->
 
-
+<hr></hr>
               <div class="col-lg-12">
                 <aside class="sidebar static right">
                    
