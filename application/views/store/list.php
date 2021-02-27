@@ -27,12 +27,12 @@
   Mes Reservations
 
    <!-- sidebar -->
-              <div class="col-lg-4">
+              <div class="col-lg-12">
                 <aside class="sidebar static right">
                    <div class="widget">
                     <h4 class="widget-title">Mes Reservations</h4>
                     <div class="your-page">
-                      <table>
+                      <table class="table table-striped table-responsive-xl">
                         <thead>
                           <th>ID</th>
                           <th>Produit</th>
