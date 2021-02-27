@@ -10,7 +10,7 @@
           
         </p>
       </div>
-      <figure><img src="<?php echo base_url() ;?>assets/images/resources/store.jpg" alt=""></figure>
+      <figure><img src="<?php echo base_url() ;?>assets/images/resources/store.jpg" class="alligator-projects " alt=""></figure>
     </div>
   </section>
 
