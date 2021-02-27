@@ -11,10 +11,8 @@ class Store extends BaseController {
         {
             parent::__construct();
             $this->load->model('user_model');
-            $this->load->model('club_model'); 
-            $this->load->model('project_model');   
-            $this->load->model('scoring_model');   
-            $this->load->model('score_club_model');  
+            $this->load->model('store_model'); 
+ 
             
             $this->isLoggedIn();   
         }    
@@ -40,7 +38,7 @@ class Store extends BaseController {
           $TPGOB = $this->input->post('TPGOB');
 
           if($PR > 0){
-          $reservationInfo = array(        
+          $reservationInfo1 = array(        
            'produit' => "Capuche  Rouge" ,
            'nombre' => $PR ,
            'taille' => $TPR ,
@@ -48,12 +46,12 @@ class Store extends BaseController {
            'par'=>$this->vendorId
             );         
 
-            $result = $this->store_model->addNewReservation($reservationInfo);
+            $result = $this->store_model->addNewReservation($reservationInfo1);
           }
 
 
          if($PGOR > 0){
-          $reservationInfo = array(        
+          $reservationInfo2 = array(        
            'produit' => "Chaab El Go Rouge" ,
            'nombre' => $PGOR ,
            'taille' => $TPGOR ,
@@ -61,12 +59,12 @@ class Store extends BaseController {
            'par'=>$this->vendorId
             );         
 
-           $result = $this->store_model->addNewReservation($reservationInfo);
+           $result = $this->store_model->addNewReservation($reservationInfo2);
           }
 
 
           if($PGOB > 0){
-          $reservationInfo = array(        
+          $reservationInfo3 = array(        
            'produit' => "Chaab El Go Bleu" ,
            'nombre' => $PGOB ,
            'taille' => $TPGOB ,
@@ -74,7 +72,7 @@ class Store extends BaseController {
            'par'=>$this->vendorId
             );         
 
-           $result = $this->store_model->addNewReservation($reservationInfo);
+           $result = $this->store_model->addNewReservation($reservationInfo3);
           }
 
          if($result)
@@ -87,7 +85,7 @@ class Store extends BaseController {
                     $this->session->set_flashdata('error', 'Problème de reservation ! ');
                 }
                     
-         redirect('');
+         redirect('Store');
 
         }
      
