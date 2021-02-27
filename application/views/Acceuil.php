@@ -25,6 +25,16 @@
                   </div>
                    
 
+                    <div class="advertisment-box">
+                              <h4 class="">publicité</h4>
+                              <figure>
+                                 
+                                 <a  title="Advertisment" href="https://tunivisions.link/Store" title="Advertisment" >
+                                  <img src="<?php echo base_url() ;?>/assets/images/resources/store/pub.gif" 
+                                     > </a>
+                              </figure>
+                  </div>
+
 
                    <div class="widget">
                     <h4 class="widget-title">Ma calendarier</h4>
