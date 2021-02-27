@@ -57,7 +57,7 @@
                       </div>
                         <br> 
                         <label>Quantité</label>
-                        <input type="number" name=""  min="0" name="PR" value="0" required>
+                        <input type="number"   min="0" name="PR" value="0" required>
                         <label>Taille</label>
                         <select name="TPR">
                           <option value=""></option>
@@ -82,7 +82,7 @@
                       </div>
                         <br> 
                         <label>Quantité</label>
-                        <input type="number" name="" min="0" name="PGOR" value="0" required>
+                        <input type="number" min="0" name="PGOR" value="0" required>
                         <label>Taille</label>
                         <select name="TPGOR" >
                           <option value=""></option>
