@@ -35,10 +35,6 @@ class Store extends BaseController {
           $PGOR = $this->input->post('PGOR');
           $PGOB = $this->input->post('PGOB');
 
-          $NPR = $this->input->post('NPR');
-          $NPGOR = $this->input->post('NPGOR');
-          $NPGOB = $this->input->post('NPGOB');
-
           $TPR = $this->input->post('TPR');
           $TPGOR = $this->input->post('TPGOR');
           $TPGOB = $this->input->post('TPGOB');
@@ -46,7 +42,7 @@ class Store extends BaseController {
           if($PR > 0){
           $reservationInfo = array(        
            'produit' => "Capuche  Rouge" ,
-           'nombre' => $NPR ,
+           'nombre' => $PR ,
            'taille' => $TPR ,
            'createdDate'=> date('Y-m-d H:i:s') ,
            'par'=>$this->vendorId
@@ -59,7 +55,7 @@ class Store extends BaseController {
          if($PGOR > 0){
           $reservationInfo = array(        
            'produit' => "Chaab El Go Rouge" ,
-           'nombre' => $NPGOR ,
+           'nombre' => $PGOR ,
            'taille' => $TPGOR ,
            'createdDate'=> date('Y-m-d H:i:s') ,
            'par'=>$this->vendorId
@@ -72,7 +68,7 @@ class Store extends BaseController {
           if($PGOB > 0){
           $reservationInfo = array(        
            'produit' => "Chaab El Go Bleu" ,
-           'nombre' => $NPGOB ,
+           'nombre' => $PGOB ,
            'taille' => $TPGOB ,
            'createdDate'=> date('Y-m-d H:i:s') ,
            'par'=>$this->vendorId

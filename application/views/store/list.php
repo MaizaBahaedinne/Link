@@ -10,7 +10,7 @@
           
         </p>
       </div>
-      <figure><img src="<?php echo base_url() ;?>assets/images/store.jpg" alt=""></figure>
+      <figure><img src="<?php echo base_url() ;?>assets/images/resources/store.jpg" alt=""></figure>
     </div>
   </section>
 
@@ -53,13 +53,13 @@
                     <h4 class="widget-title">Sweat à capuche rouge</h4>
                     <div class="your-page">
                       <div>
-                       <img src="" >
+                       <img src="<?php echo base_url() ;?>assets/images/resources/store/pr.jpg" >
                       </div>
                         <br> 
                         <label>Quantité</label>
-                        <input type="number" name=""  min="0" required>
+                        <input type="number" name=""  min="0" name="PR" required>
                         <label>Taille</label>
-                        <select >
+                        <select name="TPR">
                           <option value=""></option>
                           <option value="S">S</option>
                           <option value="L">L</option>
@@ -78,13 +78,13 @@
                     <h4 class="widget-title">Sweat à capuche "Chaab El GO" rouge</h4>
                     <div class="your-page">
                       <div>
-                       <img src="" >
+                       <img src="<?php echo base_url() ;?>assets/images/resources/store/gor.jpg" >
                       </div>
                         <br> 
                         <label>Quantité</label>
-                        <input type="number" name="" min="0" required>
+                        <input type="number" name="" min="0" name="PGOR" required>
                         <label>Taille</label>
-                        <select >
+                        <select name="TPGOR" >
                           <option value=""></option>
                           <option value="S">S</option>
                           <option value="L">L</option>
@@ -103,13 +103,13 @@
                     <h4 class="widget-title">Sweat à capuche "Chaab El GO" bleu</h4>
                     <div class="your-page">
                       <div>
-                       <img src="" >
+                       <img src="<?php echo base_url() ;?>assets/images/resources/store/gob.jpg" >
                       </div>
                         <br> 
                         <label>Quantité</label>
-                        <input type="number" name="" min="0" required>
+                        <input type="number" name="PGOB" min="0" required>
                         <label>Taille</label>
-                        <select >
+                        <select name="TPGOB">
                           <option value=""></option>
                           <option value="S">S</option>
                           <option value="L">L</option>
