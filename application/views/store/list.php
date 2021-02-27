@@ -24,6 +24,7 @@
                         <input type="number" name=""  min="0" required>
                         <label>Taille</label>
                         <select >
+                          <option value=""></option>
                           <option value="S">S</option>
                           <option value="L">L</option>
                           <option value="XL">XL</option>
@@ -48,6 +49,7 @@
                         <input type="number" name="" min="0" required>
                         <label>Taille</label>
                         <select >
+                          <option value=""></option>
                           <option value="S">S</option>
                           <option value="L">L</option>
                           <option value="XL">XL</option>
@@ -72,6 +74,7 @@
                         <input type="number" name="" min="0" required>
                         <label>Taille</label>
                         <select >
+                          <option value=""></option>
                           <option value="S">S</option>
                           <option value="L">L</option>
                           <option value="XL">XL</option>
