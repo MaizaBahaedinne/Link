@@ -21,6 +21,8 @@ class Store extends BaseController {
 
     public function index()
         {
+            $this->global['pageTitle'] = 'Store ';
+                          $this->global['active'] = 'Projets';
             $this->loadViews("store/list", $this->global , NULL, NULL);   
         }    
 
