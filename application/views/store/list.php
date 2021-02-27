@@ -1,7 +1,7 @@
 <section>
     <div class="page-header">
       <div class="header-inner">
-        <h2>Store</h2>
+        <h2>Tunivisions Store</h2>
         <form method="post">
           <!--<input type="text" placeholder="Ask Question">
           <button type="submit"><i class="fa fa-search"></i></button>-->
@@ -57,7 +57,7 @@
                       </div>
                         <br> 
                         <label>Quantité</label>
-                        <input type="number" name=""  min="0" name="PR" required>
+                        <input type="number" name=""  min="0" name="PR" value="0" required>
                         <label>Taille</label>
                         <select name="TPR">
                           <option value=""></option>
@@ -82,7 +82,7 @@
                       </div>
                         <br> 
                         <label>Quantité</label>
-                        <input type="number" name="" min="0" name="PGOR" required>
+                        <input type="number" name="" min="0" name="PGOR" value="0" required>
                         <label>Taille</label>
                         <select name="TPGOR" >
                           <option value=""></option>
@@ -107,7 +107,7 @@
                       </div>
                         <br> 
                         <label>Quantité</label>
-                        <input type="number" name="PGOB" min="0" required>
+                        <input type="number" name="PGOB" min="0"  value="0" required>
                         <label>Taille</label>
                         <select name="TPGOB">
                           <option value=""></option>
