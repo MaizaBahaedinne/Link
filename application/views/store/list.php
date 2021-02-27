@@ -120,6 +120,7 @@
                     <div class="your-page">
                       <div>
                        <img src="<?php echo base_url() ;?>assets/images/resources/store/gor.jpg" >
+                       <small><small>&nbsp;</small></small>
                       </div>
                         <br> 
                         <label>Prix</label>
@@ -148,6 +149,7 @@
                     <div class="your-page">
                       <div>
                        <img src="<?php echo base_url() ;?>assets/images/resources/store/gob.jpg" >
+                       <small><small>&nbsp;</small></small>
                       </div>
                         <br> 
                         <label>Prix</label>
