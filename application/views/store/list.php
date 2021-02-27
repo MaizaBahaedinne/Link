@@ -54,6 +54,7 @@
                     <div class="your-page">
                       <div>
                        <img src="<?php echo base_url() ;?>assets/images/resources/store/pr.jpg" >
+                       <small><small>Ce produit sera réservé au nom de votre club</small></small>
                       </div>
                         <br> 
                         <label>Quantité</label>
