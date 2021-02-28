@@ -470,6 +470,18 @@
                 </div>
              </div><!-- centerl meta -->
              <div class="col-lg-3">
+
+
+               <div class="advertisment-box">
+                              <h4 class="">publicité</h4>
+                              <figure>
+                                 
+                                 <a  title="Advertisment"  title="Advertisment" >
+                                  <img src="<?php echo base_url() ;?>/assets/images/resources/OFF/bannerjpg" 
+                                     > </a>
+                              </figure>
+                  </div>
+
                 <aside class="sidebar static right">
 
 
