@@ -17,7 +17,7 @@ class Store_model extends CI_Model
      */
     function reservationListing()
     {
-        $this->db->select('BaseTbl.storeId , BaseTbl.produit , BaseTbl.taille , BaseTbl.nombre , Users.name , Users.mobile , Clubs.name clubName ');
+        $this->db->select('BaseTbl.storeId , BaseTbl.produit , BaseTbl.taille , BaseTbl.nombre , Users.name , Users.mobile , Clubs.name clubName , BaseTbl.statut ');
         $this->db->from('tbl_store as BaseTbl');
          $this->db->join('tbl_users as Users', 'Users.userId = BaseTbl.par', 'LEFT');
          $this->db->join('tbl_club as Clubs', 'Clubs.clubID = Users.ClubID', 'LEFT');
