@@ -36,18 +36,18 @@
                             <td><?php echo $res->produit ?></td>
                             <td><?php echo $res->nombre ?></td>
                             <td><?php echo $res->taille ?></td>
-                            <td><?php echo $res->name ?>
+                            <td><b><?php echo $res->name ?></b>
                             <br><a href="tel:<?php echo $res->mobile ?>"><?php echo $res->mobile ?></a>
                             <br>Club : <?php echo $res->clubName ?> </td>
                             <td> 
-                              <?php if($record->isDeleted == 0) { ?>
+                              <?php if($res->statut == 0) { ?>
                             <span class="btn btn-sm btn-primary" >Livrée</span>
                         <?php }   ?>
-                        <?php if($record->isDeleted == 1) { ?>
+                        <?php if($res->statut == 1) { ?>
                             <span class="btn btn-sm btn-warning " >Livraison</span>
                         <?php } ?>
 
-                        <?php  if($record->isDeleted == 2) {  ?>
+                        <?php  if($res->statut== 2) {  ?>
                             <span class="btn btn-sm btn-danger"  >Production</span>
                         <?php } ?></td>
                           </tr>
