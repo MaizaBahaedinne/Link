@@ -10,7 +10,23 @@
 class Store_model extends CI_Model
 {
         
-
+        /**
+     * This function is used to get the user listing count
+     * @param string $searchText : This is optional search text
+     * @return number $count : This is row count
+     */
+    function reservationListing()
+    {
+        $this->db->select('BaseTbl.storeId , BaseTbl.produit , BaseTbl.taille , BaseTbl.nombre , Users.name , Users.mobile , Clubs.name clubName ');
+        $this->db->from('tbl_store as BaseTbl');
+         $this->db->join('tbl_users as Users', 'Users.userId = BaseTbl.par', 'LEFT');
+         $this->db->join('tbl_club as Clubs', 'Clubs.clubID = Users.ClubID', 'LEFT');
+     
+          
+        $query = $this->db->get();
+        
+        return $query->result();
+    }
 
         /**
      * This function is used to get the user listing count
@@ -19,8 +35,10 @@ class Store_model extends CI_Model
      */
     function reservationListingByUser($userId)
     {
-        $this->db->select('*');
+        $this->db->select('BaseTbl.storeId , BaseTbl.produit , BaseTbl.taille , BaseTbl.nombre , Users.name , Users.mobile , Clubs.name clubName ');
         $this->db->from('tbl_store as BaseTbl');
+         $this->db->join('tbl_users as Users', 'Users.userId = BaseTbl.par', 'LEFT');
+         $this->db->join('tbl_club as Clubs', 'Clubs.clubID = Users.ClubID', 'LEFT');
         $this->db->where('BaseTbl.par = ', $userId ) ;
           
         $query = $this->db->get();

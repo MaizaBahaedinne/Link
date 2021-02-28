@@ -28,6 +28,17 @@ class Store extends BaseController {
         }    
 
 
+    public function dashboard()
+        {
+
+            $data['ReservationRecords'] = $this->store_model->reservationListing() ;
+
+            $this->global['pageTitle'] = 'Store ';
+                          $this->global['active'] = 'Projets';
+            $this->loadViews("store/dashboard", $this->global ,  $data, NULL);   
+        }    
+
+
 
 
     public function addNewReservation()
@@ -81,14 +92,14 @@ class Store extends BaseController {
          if($result)
                 {
                     $this->session->set_flashdata('success', 'Votre Reservation est en cours de validation par notre equipe ');
-                    redirect('/login') ; 
+                    redirect('/Store');
                 }
                 else
                 {
                     $this->session->set_flashdata('error', 'Problème de reservation ! ');
                 }
                     
-         redirect('Store');
+         
 
         }
      
