@@ -298,7 +298,7 @@
                               <h4 class="">publicité</h4>
                               <figure>
                                  
-                                 <?php (if $userC != 2) {  ?>
+                                 <?php if ($userC != 2) {  ?>
                                  <a  href="https://tunivisions.link/Project/projectDetails/2499" title="Advertisment"  >
                                  <?php  }else  {  ?>
                                   <a  href="https://tunivisions.link/Project/projectDetails/2500" title="Advertisment"  >
