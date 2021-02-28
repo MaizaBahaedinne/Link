@@ -475,7 +475,7 @@
                               <figure>
                                  
                                  <a  title="Advertisment"  title="Advertisment" >
-                                  <img src="<?php echo base_url() ;?>/assets/images/resources/OFF/bannerjpg" 
+                                  <img src="<?php echo base_url() ;?>/assets/images/resources/OFF/banner.jpg" 
                                      > </a>
                               </figure>
                   </div>
