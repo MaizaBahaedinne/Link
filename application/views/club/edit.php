@@ -92,7 +92,7 @@
                           <?php foreach ($members as $key ) {?>
                             <option value="<?php echo  $key->userId ?>" 
                             <?php if($key->roleId == 1 ){ ?> selected <?php } ?> > 
-                              <?php echo  $key->name ?> 
+                              <?php echo  $key->userId ?> - <?php echo  $key->name ?> 
                             </option>
                           <?php } ?>
                         </select>
@@ -105,7 +105,7 @@
                                 <?php foreach ($members as $key ) {?>
                                   <option value="<?php echo  $key->userId ?>" 
                                   <?php if($key->roleId == 3 && $key->cellule == "Ressource Humaine" ){ ?> selected <?php } ?> > 
-                                    <?php echo  $key->name ?> 
+                                    <?php echo  $key->userId ?> - <?php echo  $key->name ?> 
                                   </option>
                                 <?php } ?>
                               </select>
@@ -117,7 +117,7 @@
                                 <?php foreach ($members as $key ) {?>
                                   <option value="<?php echo  $key->userId ?>" 
                                   <?php if($key->roleId == 3 && $key->cellule == "Marketing" ){ ?> selected <?php } ?> > 
-                                    <?php echo  $key->name ?> 
+                                    <?php echo  $key->userId ?> - <?php echo  $key->name ?> 
                                   </option>
                                 <?php } ?>
                               </select>
@@ -129,7 +129,7 @@
                                   <option value="" ></option>
                                   <option value="<?php echo  $key->userId ?>" 
                                   <?php if($key->roleId == 3 && $key->cellule == "Administration et finance" ){ ?> selected <?php } ?> > 
-                                    <?php echo  $key->name ?> 
+                                    <?php echo  $key->userId ?> - <?php echo  $key->name ?> 
                                   </option>
                                 <?php } ?>
                               </select>
@@ -141,7 +141,7 @@
                                 <?php foreach ($members as $key ) {?>
                                   <option value="<?php echo  $key->userId ?>" 
                                   <?php if($key->roleId == 3 && $key->cellule == "Evenementiel" ){ ?> selected <?php } ?> > 
-                                    <?php echo  $key->name ?> 
+                                    <?php echo  $key->userId ?> - <?php echo  $key->name ?> 
                                   </option>
                                 <?php } ?>
                               </select>
@@ -158,7 +158,7 @@
                                 <?php foreach ($members as $key ) {?>
                                   <option value="<?php echo  $key->userId ?>" 
                                   <?php if($key->roleId == 6 && $key->cellule == "Ressource Humaine" ){ ?> selected <?php } ?> > 
-                                    <?php echo  $key->name ?> 
+                                    <?php echo  $key->userId ?> - <?php echo  $key->name ?> 
                                   </option>
                                 <?php } ?>
                               </select>
@@ -170,7 +170,7 @@
                                 <?php foreach ($members as $key ) {?>
                                   <option value="<?php echo  $key->userId ?>" 
                                   <?php if($key->roleId == 6 && $key->cellule == "Marketing" ){ ?> selected <?php } ?> > 
-                                    <?php echo  $key->name ?> 
+                                    <?php echo  $key->userId ?> - <?php echo  $key->name ?> 
                                   </option>
                                 <?php } ?>
                               </select>
@@ -182,7 +182,7 @@
                                   <option value="" ></option>
                                   <option value="<?php echo  $key->userId ?>" 
                                   <?php if($key->roleId == 6 && $key->cellule == "Administration et finance" ){ ?> selected <?php } ?> > 
-                                    <?php echo  $key->name ?> 
+                                    <?php echo  $key->userId ?> - <?php echo  $key->name ?> 
                                   </option>
                                 <?php } ?>
                               </select>
@@ -194,7 +194,7 @@
                                 <?php foreach ($members as $key ) {?>
                                   <option value="<?php echo  $key->userId ?>" 
                                   <?php if($key->roleId == 6 && $key->cellule == "Evenementiel" ){ ?> selected <?php } ?> > 
-                                    <?php echo  $key->name ?> 
+                                    <?php echo  $key->userId ?> - <?php echo  $key->name ?> 
                                   </option>
                                 <?php } ?>
                               </select>
