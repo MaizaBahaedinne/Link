@@ -51,6 +51,7 @@ class Tfm_part_model extends CI_Model
         {
             $this->db->where('BaseTbl.statut =', $statut  );
         }
+        $this->db->group_by('BaseTbl.userId ' );
  
         $query = $this->db->get();
         $result = $query->result();        
