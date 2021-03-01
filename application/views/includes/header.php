@@ -602,13 +602,13 @@
 					<ul>
 						<li><a href="<?php echo base_url() ?>userListing/3" title="">University</a></li>
 						<li><a href="<?php echo base_url() ?>serListing/4" title="">High School</a></li>
-						<li ><span></span>
-							<ul>
+						
+							
 								<li><a href="<?php echo base_url() ?>User/userListingLeders/2" title="">Leaders Foundation</a></li>
 								<li><a href="<?php echo base_url() ?>User/userListingLeders/3" title="">Leaders University</a></li>
 								<li><a href="<?php echo base_url() ?>User/userListingLeders/4" title="">Leaders High School</a></li>
-							</ul>
-						</li>
+						
+						
 					</ul>
 				</li>
 				<?php } ?>
