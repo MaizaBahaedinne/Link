@@ -171,10 +171,11 @@
                                               <?php if( (($role == 1 || $role == 2  || $role == 3  || $SA == 1 || $role == 2  ) && $projet->ClubID == $clubID ) || $SA == 1  ){
                                                if( strtotime('+24 hours',strtotime($projet->endDate))  < strtotime("now")  && strtotime('+24 hours',strtotime($projet->endDate)) >  strtotime("15-09-2020")  ) { ?>
                                                   
-                                                  <?php if ( $SA == 1 || strtotime('+24 hours',strtotime($projet->endDate)) >  strtotime("13-02-2021")  ){ ?>
+                                                  <?php if (strtotime('+24 hours',strtotime($projet->endDate)) >  strtotime("13-02-2021")  ){ ?>
                                                     <a class="btn main-btn" data-toggle="modal" data-target="#ProjectScore<?php echo $projet->projectId ?>" >Collecter les points</a>
                                                   <?php } else { ?>
                                                       <b style="background-color: red;color: white">Dépassé</b> 
+                                                   <?php if ($SA ==1) {  ?><a class="btn main-btn" data-toggle="modal" data-target="#ProjectScore<?php echo $projet->projectId ?>" >Collecter les points</a> <?php }  ?>  
                                                   <?php } ?>
 
                                               <?php } } ?>
