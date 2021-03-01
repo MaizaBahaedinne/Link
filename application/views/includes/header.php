@@ -288,6 +288,14 @@
 					</ul>
 				</li>
 				<?php } ?>
+				<li>Store</a>
+					<ul>
+						<li><a href="<?php echo base_url() ?>Store" title="Store">Store</a></li>
+						<?php if($SA == 1 || $userC->userId == 3837  ) { ?>
+						<li><a href="<?php echo base_url() ?>Store/dashboard" title="Dashboard">dashboard</a></li>
+						<?php } ?>
+					</ul>
+				</li>
 			</ul>
 		</nav>
 
@@ -480,6 +488,15 @@
 					</ul>
 				</li>
 				<?php } ?>
+
+				<li>Store</a>
+					<ul>
+						<li><a href="<?php echo base_url() ?>Store" title="Store">Store</a></li>
+						<?php if($SA == 1 || $userC->userId == 3837  ) { ?>
+						<li><a href="<?php echo base_url() ?>Store/dashboard" title="Dashboard">dashboard</a></li>
+						<?php } ?>
+					</ul>
+				</li>
 
 			</ul>
 			
