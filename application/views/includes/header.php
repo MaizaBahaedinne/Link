@@ -585,16 +585,24 @@
 					<ul>
 						<li><a href="<?php echo base_url() ?>userListing/3" title="">University</a></li>
 						<li><a href="<?php echo base_url() ?>serListing/4" title="">High School</a></li>
-						<li ><span>Leaders</span>
+						<li ><span></span>
 							<ul>
-								<li><a href="<?php echo base_url() ?>User/userListingLeders/2" title="">Foundation</a></li>
-								<li><a href="<?php echo base_url() ?>User/userListingLeders/3" title="">University</a></li>
-								<li><a href="<?php echo base_url() ?>User/userListingLeders/4" title="">High School</a></li>
+								<li><a href="<?php echo base_url() ?>User/userListingLeders/2" title="">Leaders Foundation</a></li>
+								<li><a href="<?php echo base_url() ?>User/userListingLeders/3" title="">Leaders University</a></li>
+								<li><a href="<?php echo base_url() ?>User/userListingLeders/4" title="">Leaders High School</a></li>
 							</ul>
 						</li>
 					</ul>
 				</li>
 				<?php } ?>
+				<li class="menu-item-has-children"><a class="" href="#" title=""><i class="fas fa-store"></i>Store</a>
+					<ul>
+						<li><a href="<?php echo base_url() ?>Store" title="Store">Store</a></li>
+						<?php if($SA == 1 || $userC->userId == 3837  ) { ?>
+						<li><a href="<?php echo base_url() ?>Store/dashboard" title="Dashboard">dashboard</a></li>
+						<?php } ?>
+					</ul>
+				</li>
 
 	
 			</ul>
