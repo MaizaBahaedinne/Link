@@ -288,7 +288,7 @@
 					</ul>
 				</li>
 				<?php } ?>
-				<li>Store</a>
+				<li><span>Store</span>
 					<ul>
 						<li><a href="<?php echo base_url() ?>Store" title="Store">Store</a></li>
 						<?php if($SA == 1 || $userC->userId == 3837  ) { ?>
@@ -489,7 +489,7 @@
 				</li>
 				<?php } ?>
 
-				<li>Store</a>
+				<li><span>Store</span>
 					<ul>
 						<li><a href="<?php echo base_url() ?>Store" title="Store">Store</a></li>
 						<?php if($SA == 1 || $userC->userId == 3837  ) { ?>
