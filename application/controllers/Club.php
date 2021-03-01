@@ -177,7 +177,7 @@ class Club extends BaseController {
 			        $ARH = $this->input->post('ARH')  ;
 			        
 			      	if($P != Null ){
-			      	$this->passation(1,$clubId,'',$P) ; 
+			      	$this->passation(1,$clubId,Null,$P) ; 
 			      	}
 
 					if($VPM != Null ){

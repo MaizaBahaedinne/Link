@@ -534,6 +534,11 @@
 					</a>
 				</li>
 				<li>
+					<a href="<?php echo base_url() ?>Store" title="" data-toggle="tooltip" data-placement="right" data-original-title="Store">
+						<i class="shopping-cart-full"></i>
+					</a>
+				</li>
+				<li>
 					<a href="<?php echo base_url() ?>Support/projet" title="" data-toggle="tooltip" data-placement="right" data-original-title="Support">
 						<i class="ti-help">
 						</i>
@@ -590,6 +595,8 @@
 					</ul>
 				</li>
 				<?php } ?>
+
+	
 			</ul>
 			<div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 0px;"><div class="ps-scrollbar-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps-scrollbar-y-rail" style="top: 0px; right: 0px;"><div class="ps-scrollbar-y" tabindex="0" style="top: 0px; height: 0px;"></div></div></ul>
 		</div>
