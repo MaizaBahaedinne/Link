@@ -89,7 +89,8 @@ class TFM extends BaseController {
 		        
 
 
-		public function partanTfm ($TFMId){
+		public function partanTfm ($TFMId)
+		{
 				$moto = $this->input->post('bus');
 				$point = $this->input->post('point');
 				$weare = $this->input->post('weare');
@@ -102,73 +103,72 @@ class TFM extends BaseController {
 		          'pointDepart'=>$point , 
 		          'weare' =>$weare 
 		        );
-
-		         $result = $this->tfm_model->addNewPartTFM($partanTfm) ;
-
-
-				
-		if ($result){	
-		   			redirect('/Project/projectDetails/'.$TFMId) ; 		
-		   }
-		
+		    $result = $this->tfm_model->addNewPartTFM($partanTfm) ;
+			if ($result)
+				{	
+			   		redirect('/Project/projectDetails/'.$TFMId) ; 		
+			    }
 		}
 
 
-		public function partanTfmPaiement1 ($clubId,$projectId){
+		public function partanTfmPaiement1 ($clubId,$projectId)
+			{
+					$part = $this->input->post('participant') ;
+					foreach ( $part as $r)
+					{
+						$partanTfm = array(  	  
+										  'p_tranch1' => '90', 
+								          'dateP_tranch1'=>date('Y-m-d H:i:s'),
+								          'recepteurTranche1'=>$this->vendorId 
+									     	);
+						$result = $this->tfm_model->editTFMPart($partanTfm, $r) ;
+					}
+				redirect('/TFM/PaimentByClub/'.$clubId.'/'.$projectId) ;		
+			}
 
-				$part = $this->input->post('participant') ;
-
-
-			
-				foreach ( $part as $r)
-				{
-					$partanTfm = array(  	  
-									  'p_tranch1' => '100', 
-							          'dateP_tranch1'=>date('Y-m-d H:i:s'),
-							          'recepteurTranche1'=>$this->vendorId 
-								     	);
-					$result = $this->tfm_model->editTFMPart($partanTfm, $r) ;
-				}
-			
-
-
-
-			redirect('/TFM/PaimentByClub/'.$clubId.'/'.$projectId) ;
-
-		
-		}
-
-
-
-				public function partanTfmPaiement2 ($clubId,$projectId){
-
-				$part = $this->input->post('participant') ;
-
-				
-				 foreach ( $part as $r)
-				
-				{
-					$partanTfm = array(  	  
-									  'p_tranch2' => '60', 
-							          'dateP_tranch2'=>date('Y-m-d H:i:s'),
-							          'recepteurTranche2'=>$this->vendorId ,
-							          'statut'=> 1 
-								     	);
-					$result = $this->tfm_model->editTFMPart($partanTfm, $r) ;
-
-					
-				}
-				
+		public function partanTfmPaiement2 ($clubId,$projectId)
+			{
+					$part = $this->input->post('participant') ;
+					 foreach ( $part as $r)
+					{
+						$partanTfm = array(  	  
+										  'p_tranch2' => '80', 
+								          'dateP_tranch2'=>date('Y-m-d H:i:s'),
+								          'recepteurTranche2'=>$this->vendorId ,
+								          'statut'=> 1 
+									     	);
+						$result = $this->tfm_model->editTFMPart($partanTfm, $r) ;
+					}
+				redirect('/TFM/PaimentByClub/'.$clubId.'/'.$projectId) ;
+			}
 
 
-			redirect('/TFM/PaimentByClub/'.$clubId.'/'.$projectId) ;
-
-		
-		}
-
-
+		public function prepartanTfmPaiement1 ($clubId,$projectId)
+			{
+					$part = $this->input->post('participant') ;
+					foreach ( $part as $r)
+						{
+							$partanTfm = array(  	  
+											  'pre1' =>$this->vendorId , 
+										     );
+							$result = $this->tfm_model->editTFMPart($partanTfm, $r) ;
+						}
+				redirect('/TFM/PaimentByClub/'.$clubId.'/'.$projectId) ;
+			}
 		
 
+		public function prepartanTfmPaiement2 ($clubId,$projectId)
+			{
+					$part = $this->input->post('participant') ;
+					foreach ( $part as $r)
+						{
+							$partanTfm = array(  	  
+											  'pre2' =>$this->vendorId , 
+										     );
+							$result = $this->tfm_model->editTFMPart($partanTfm, $r) ;
+						}
+				redirect('/TFM/PaimentByClub/'.$clubId.'/'.$projectId) ;
+			}
 
 					
 		
