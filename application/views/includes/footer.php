@@ -325,10 +325,10 @@
 
                 <br>
                 <div class="row">
-                  <div class="col-md-2">
+                  <div class="col-md-6">
                     <a class="btn btn-primary" href="fb-messenger://share/?link=<?php echo base_url() ;?>Register?var1=<?php echo $uid ?>%26var4=<?php echo  Date('Y-m-d') ?>%26var2=<?php echo $clubID ?>%26var3=1" target="_blank" ><i class="fab fa-facebook-messenger"></i>Envoyer avec Messenger</a>
                   </div>
-                  <div class="col-md-2">
+                  <div class="col-md-6">
                     <a class="btn btn-success" href="whatsapp://send?text=<?php echo base_url() ;?>Register?var1=<?php echo $uid ?>%26var4=<?php echo  Date('Y-m-d') ?>%26var2=<?php echo $clubID ?>%26var3=1" target="_blank" ><i class="fab fa-whatsapp"></i>Envoyer avec Whatsapp</a>
                   </div>  
                 </div>
