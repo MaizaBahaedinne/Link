@@ -288,11 +288,13 @@
 
             <!-- Modal body -->
             <div class="modal-body">
+             <!--
              <?php if($userC->SenJun == 3 || $SA == 1 ){  ?>
                  
                  <h4 style="text-align: center;" >Les inscriptions sont clôturées</h4>
                  <p style="text-align: center;" >Si vous avez besoin de prolonger la date .<br>merci de la demande par un email : <a href="mailto:tunivisions.link@gmail.com"><b>tunivisions.link@gmail.com</b></a> avec <b>la date prévue et le Tuni-ID du président de club</b>  </p>
               <?php } if($userC->SenJun != 3  ) { ?>
+              -->
               <p style="text-align: center;" >merci de scaner ce QR-code avec une application mobile<br> <b>Android / iOS / HarmonyOs</b>.</p>
               <div id="qrcode" style="text-align: center;"></div>
               
@@ -339,9 +341,9 @@
                 <hr>
                 <p style="text-align: center;">ce code reste valable jusqu'à<br> <b style="color: red"><?php echo date('d/m/Y')?> 23:59:00</b></p>
                 
-
+              <!--
               <?php } ?>              
-              
+              -->
    
 
 
