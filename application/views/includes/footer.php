@@ -288,13 +288,7 @@
 
             <!-- Modal body -->
             <div class="modal-body">
-             <!--
-             <?php if($userC->SenJun == 3 || $SA == 1 ){  ?>
-                 
-                 <h4 style="text-align: center;" >Les inscriptions sont clôturées</h4>
-                 <p style="text-align: center;" >Si vous avez besoin de prolonger la date .<br>merci de la demande par un email : <a href="mailto:tunivisions.link@gmail.com"><b>tunivisions.link@gmail.com</b></a> avec <b>la date prévue et le Tuni-ID du président de club</b>  </p>
-              <?php } if($userC->SenJun != 3  ) { ?>
-              -->
+
               <p style="text-align: center;" >merci de scaner ce QR-code avec une application mobile<br> <b>Android / iOS / HarmonyOs</b>.</p>
               <div id="qrcode" style="text-align: center;"></div>
               
@@ -332,16 +326,22 @@
                 <br>
                 <div class="row">
                   <div class="col-md-2">
-                    <a class="btn btn-primary" href="fb-messenger://share/?link=<?php echo base_url() ;?>Register?var1=<?php echo $uid ?>%26var4=<?php echo  Date('Y-m-d') ?>%26var2=<?php echo $clubID ?>%26var3=1" target="_blank" ><i class="fab fa-facebook-messenger"></i></a>
+                    <a class="btn btn-primary" href="fb-messenger://share/?link=<?php echo base_url() ;?>Register?var1=<?php echo $uid ?>%26var4=<?php echo  Date('Y-m-d') ?>%26var2=<?php echo $clubID ?>%26var3=1" target="_blank" ><i class="fab fa-facebook-messenger"></i>Envoyer avec Messenger</a>
                   </div>
                   <div class="col-md-2">
-                    <a class="btn btn-success" href="whatsapp://send?text=<?php echo base_url() ;?>Register?var1=<?php echo $uid ?>%26var4=<?php echo  Date('Y-m-d') ?>%26var2=<?php echo $clubID ?>%26var3=1" target="_blank" ><i class="fab fa-whatsapp"></i></a>
+                    <a class="btn btn-success" href="whatsapp://send?text=<?php echo base_url() ;?>Register?var1=<?php echo $uid ?>%26var4=<?php echo  Date('Y-m-d') ?>%26var2=<?php echo $clubID ?>%26var3=1" target="_blank" ><i class="fab fa-whatsapp"></i>Envoyer avec Whatsapp</a>
                   </div>  
                 </div>
                 <hr>
                 <p style="text-align: center;">ce code reste valable jusqu'à<br> <b style="color: red"><?php echo date('d/m/Y')?> 23:59:00</b></p>
                 
-              <!--
+                <!--
+             <?php if($userC->SenJun == 3 || $SA == 1 ){  ?>
+                 
+                 <h4 style="text-align: center;" >Les inscriptions sont clôturées</h4>
+                 <p style="text-align: center;" >Si vous avez besoin de prolonger la date .<br>merci de la demande par un email : <a href="mailto:tunivisions.link@gmail.com"><b>tunivisions.link@gmail.com</b></a> avec <b>la date prévue et le Tuni-ID du président de club</b>  </p>
+              <?php } if($userC->SenJun != 3  ) { ?>
+              
               <?php } ?>              
               -->
    
