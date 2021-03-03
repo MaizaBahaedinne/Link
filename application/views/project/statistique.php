@@ -372,23 +372,7 @@
 									                                  }?>
 									                                  
 									                              </tbody>
-									                              <tfoot>
-									                              	<tr>
-									                                      <td>
-									                                          <b>Totale</b>
-
-									                                      </td>
-									                                      <td>
-									                                          <b><?php echo $somme1 ?></b>
-									                                      </td>
-									                                     <td>
-									                                          <b><?php echo $somme2 ?></b>
-									                                      </td>
-									                                      <td>
-									                                          <b><?php echo $sommeT ?></b>
-									                                      </td>									                                  	
-									                                  </tr>
-									                              </tfoot>
+									                              
 
 									                          </table>
 												<span>les chiffre sont trés confidentiels merci de ne pas faire des capture d'écran </span>

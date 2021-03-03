@@ -300,7 +300,7 @@ class Tfm_part_model extends CI_Model
         $this->db->select(' pointDepart , count(pointDepart) ');
         $this->db->from('tbl_tfm_part as BaseTbl');
         $this->db->where('BaseTbl.tfmId =  ',$projectId );
-        $this->db->where('statut = ','0' );
+        $this->db->where('statut = ','2' );
         $this->db->group_by('BaseTbl.pointDepart ') ; 
 
         $query = $this->db->get();
