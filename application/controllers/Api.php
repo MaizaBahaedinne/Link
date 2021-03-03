@@ -71,7 +71,7 @@ class Api extends BaseController
 
     public  function AuthentificationAPI()
     {
-
+        
         $result = $this->login_model->loginMe( $this->input->get('email') , $this->input->get('password') );  
          $this->response($result); 
     }
