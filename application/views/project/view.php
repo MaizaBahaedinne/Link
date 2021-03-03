@@ -93,14 +93,16 @@
                                        80 DT : Jeudi 11 MARS <br><br>
 
                                       Les présidents peuvent contacter directement nos représentants dans ces régions :<br>
-
+                                        Grand Tunis Syrine Ksouri
                                       <br>
 
                                       <br>
                                       ⚠️ Si votre region ne figure pas dans la liste ci dessus, les présidents concernés devront collecter les frais des participants et les enverront via mandat minute au nom de Bechir Khlifi et merci de scanner le rendu et l'envoyer par mail<br>
                                       <b>tunivisionsfoundation@gmail.com</b><br>
                                       <br>
-                                      ⚠️ Pour le bon déroulement du paiement, les présidents des clubs seront nos vis à vis financière.
+                                      ⚠️ Pour le bon déroulement du paiement des clubs, les présidents des clubs seront nos vis à vis financière.
+                                      <br>
+                                      ⚠️ Pour le bon déroulement du paiement des alumnis, koussay Maiza  est le seul vis à vis financière.
                                       <br>
                                       ⚠️ Veuillez noter qu'en cas d'annulation de la participation d'un Tunimateur, les deux tranches sont non remboursable.
                                     </div>
