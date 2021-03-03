@@ -118,7 +118,7 @@
                                       
 
                                       <?php } else { ?>
-
+                                        <!--
                                         <form class="c-form" method="post" action="<?php echo base_url() ?>TFM/ChoixAtelier/<?php echo $partProject->id ?>/<?php echo $projet->projectId ?>" >
                                         <h5>Choix de formation :</h5>
                                       <select name="formation" >
@@ -134,7 +134,7 @@
                                       <hr>
                                       <input type="submit" class="btn btn-block btn-primary" name="">
                                     </form> 
-
+                                      -->
                                       <?php  } ?>
 
                                     
