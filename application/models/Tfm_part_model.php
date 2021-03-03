@@ -285,6 +285,29 @@ class Tfm_part_model extends CI_Model
         return $result;
     }
 
+
+
+
+         /**
+     * This function is used to get the user listing count
+     * @param string $searchText : This is optional search text
+     * @param number $page : This is pagination offset
+     * @param number $segment : This is pagination limit
+     * @return array $result : This is result
+     */
+    function PointDeDepart($projectId)
+    {
+        $this->db->select(' pointDepart , count(pointDepart) ');
+        $this->db->from('tbl_tfm_part as BaseTbl');
+        $this->db->where('BaseTbl.tfmId =  ',$projectId );
+        $this->db->where('statut = ','0' );
+        $this->db->group_by('BaseTbl.pointDepart ') ; 
+
+        $query = $this->db->get();
+        $result = $query->result();        
+        return $result;
+    }
+
     /**
      * This function is used to get the user listing count
      * @param string $searchText : This is optional search text
@@ -483,26 +506,18 @@ class Tfm_part_model extends CI_Model
         $this->db->join('tbl_roles as Role', 'Role.roleId = Users.roleId','left');
         $this->db->join('tbl_users as Usersr2', 'Usersr2.userId = BaseTbl.recepteurTranche2', 'LEFT');
         $this->db->join('tbl_users as Usersr1', 'Usersr1.userId = BaseTbl.recepteurTranche1', 'LEFT');
-        
         $this->db->where('BaseTbl.tfmId =  ',$projectId );
-
-        $this->db->where(' BaseTbl.recepteurTranche1 = BaseTbl.recepteurTranche2 ');
-
-    
+        $this->db->where(' BaseTbl.recepteurTranche1 = BaseTbl.recepteurTranche2 ');    
         $this->db->group_by('Usersr1.name ') ; 
-        
-
-
-     
-
-     
-
-
 
         $query = $this->db->get();
         $result = $query->result();        
         return $result;
     }
+
+
+
+   
 
 
 }

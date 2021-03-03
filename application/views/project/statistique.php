@@ -337,6 +337,67 @@
 						
 
 
+						<div class="col-lg-6 col-md-6 col-sm-6" >
+									<aside class="sidebar ">
+									<div class="widget">
+		                                        <h4 class="widget-title">Point de départ (<?php echo count($PointDepart) ?>)</h4>
+		                                        <div class="your-page">
+		                                        	<table class="table table-striped table-responsive-xl" style="width: cover" >
+									                     <thead>
+									                                  <th>
+									                                      Point de départ
+									                                  </th>
+									                                  <th>
+									                                      nombre
+									                                  </th>
+									                                 
+									                              </thead>
+									                              <tbody>
+									                                  <?php
+									                                  	
+									                                   foreach ($PointDepart as $reg ) {
+									                                  ?>
+									                                  <tr>
+									                                      <td>
+									                                          <?php echo $reg->pointDepart ?> 
+
+									                                      </td>
+									                                      <td>
+									                                          <?php echo $reg->nombre ?> 
+
+									                                      </td>
+
+									                                  </tr>
+									                                  <?php
+									                                  }?>
+									                                  
+									                              </tbody>
+									                              <tfoot>
+									                              	<tr>
+									                                      <td>
+									                                          <b>Totale</b>
+
+									                                      </td>
+									                                      <td>
+									                                          <b><?php echo $somme1 ?></b>
+									                                      </td>
+									                                     <td>
+									                                          <b><?php echo $somme2 ?></b>
+									                                      </td>
+									                                      <td>
+									                                          <b><?php echo $sommeT ?></b>
+									                                      </td>									                                  	
+									                                  </tr>
+									                              </tfoot>
+
+									                          </table>
+												<span>les chiffre sont trés confidentiels merci de ne pas faire des capture d'écran </span>
+											</div>
+										</div>
+									</aside>
+									</div>
+
+
 
                        
                     </div>
