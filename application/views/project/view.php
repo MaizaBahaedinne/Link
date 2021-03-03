@@ -120,20 +120,20 @@
                                       <?php } else { ?>
                                         <!--
                                         <form class="c-form" method="post" action="<?php echo base_url() ?>TFM/ChoixAtelier/<?php echo $partProject->id ?>/<?php echo $projet->projectId ?>" >
-                                        <h5>Choix de formation :</h5>
-                                      <select name="formation" >
-                                      <?php foreach ($ateliers as $atelier ) {?>
-                                       <option value="<?php echo $atelier->atelierId ?>" > 
-                                         <?php echo $atelier->nom ?> <?php echo $atelier->time ?>
-                                       </option>
-                                      <?php  
-                                       }  
-                                      ?>
-                                      </select>
-                                      <br>
-                                      <hr>
-                                      <input type="submit" class="btn btn-block btn-primary" name="">
-                                    </form> 
+                                            <h5>Choix de formation :</h5>
+                                          <select name="formation" >
+                                          <?php foreach ($ateliers as $atelier ) {?>
+                                           <option value="<?php echo $atelier->atelierId ?>" > 
+                                             <?php echo $atelier->nom ?> <?php echo $atelier->time ?>
+                                           </option>
+                                          <?php  
+                                           }  
+                                          ?>
+                                          </select>
+                                          <br>
+                                          <hr>
+                                          <input type="submit" class="btn btn-block btn-primary" name="">
+                                        </form> 
                                       -->
                                       <?php  } ?>
 
@@ -742,7 +742,7 @@
                   <label>Point de départ</label>
                                      <select  name="point"  required>
                                         <option value=""></option>
-                                        <option value="Ariana">Grand Tunis</option>
+                                        <option value="Grand Tunis">Grand Tunis</option>
                                         <option value="Béja">Béja</option>
                                         <option value="Bizerte">Bizerte</option>
                                         <option value="Gabes">Gabès</option>
