@@ -53,7 +53,7 @@ class Tfm_part_model extends CI_Model
             $this->db->where('BaseTbl.p_tranch2 =', 80 );
             $this->db->where('BaseTbl.p_tranch1 =', 90  );
         }
-        elsif($statut == 1 )
+        elseif($statut == 1 )
         {
             $this->db->where('BaseTbl.statut =', $statut  );
         }
