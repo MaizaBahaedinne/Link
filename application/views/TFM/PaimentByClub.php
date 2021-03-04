@@ -14,7 +14,7 @@
 						<div class="row">
 							<div class="card col-md-4">
 								<div class="card">
-								<?php if( $userC->clubID == 1 || $SA == 1 || $uid == 164 || $ui == 237 ){ ?>
+								<?php if( $userC->clubID == 1 || $SA == 1 || $uid == 164 || $uid == 237 ){ ?>
 								<form action="<?php echo base_url() ?>TFM/partanTfmPaiement1/<?php echo $clubID ?>/<?php echo $projectId ?>" method="post">
 								<?php } if($userC->roleId == 1  ) {  ?>
 								<form action="<?php echo base_url() ?>TFM/prepartanTfmPaiement1/<?php echo $clubID ?>/<?php echo $projectId ?>" method="post">
@@ -27,7 +27,7 @@
 										<?php foreach ($userRecordsT1 as $record ) { ?>
 											<div class="form-check form-check-flat form-check-primary">
 												<label class="form-check-label">
-													<?php if( $userC->clubID == 1 || $SA == 1 || $uid == 164 || $ui == 237  )   { ?>
+													<?php if( $userC->clubID == 1 || $SA == 1 || $uid == 164 || $uid == 237  )   { ?>
 													<input class="form-check-input" type="checkbox" name="participant[]" value="<?php echo $record->id ; ?>" >
 													<?php } ?> <?php echo ' '.$record->name ;  ?><small><small> #<?php echo ' '.$record->id ;  ?></small></small>
 												</label>
@@ -46,7 +46,7 @@
 							<div class="card col-md-4">
 								<div class="card">
 
-								<?php if($userC->clubID == 1 || $SA == 1 || $uid == 164  || $ui == 237 ){ ?>
+								<?php if($userC->clubID == 1 || $SA == 1 || $uid == 164  || $uid == 237 ){ ?>
 								<form action="<?php echo base_url() ?>TFM/partanTfmPaiement2/<?php echo $clubID ?>/<?php echo $projectId ?>" method="post">
 								<?php } if($userC->roleId == 1  ) {  ?>
 								<form action="<?php echo base_url() ?>TFM/prepartanTfmPaiement2/<?php echo $clubID ?>/<?php echo $projectId ?>" method="post">
@@ -59,7 +59,7 @@
 										<?php foreach ($userRecordsT2 as $record ) { ?>
 											<div class="form-check form-check-flat form-check-primary">
 												<label class="form-check-label">
-													<?php if( $userC->clubID == 1 || $SA == 1 || $uid == 164 || $ui == 237  ){ ?>
+													<?php if( $userC->clubID == 1 || $SA == 1 || $uid == 164 || $uid == 237  ){ ?>
 													<input class="form-check-input" type="checkbox" name="participant[]" value="<?php echo $record->id ; ?>" >
 													<?php } ?> <?php echo ' '.$record->name ;  ?><small><small> #<?php echo ' '.$record->id ;  ?></small></small>
 												</label>
