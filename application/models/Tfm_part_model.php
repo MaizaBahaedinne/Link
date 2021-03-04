@@ -47,12 +47,17 @@ class Tfm_part_model extends CI_Model
         $this->db->join('tbl_club as Clubs', 'Clubs.clubID = Users.ClubID', 'LEFT');
         $this->db->join('tbl_roles as Role', 'Role.roleId = Users.roleId','left');
         $this->db->where('BaseTbl.tfmId =',$projetId );
-        if($statut != '' )
+        if($statut != 2 )
         {
             $this->db->where('BaseTbl.statut =', $statut  );
             $this->db->where('BaseTbl.p_tranch2 =', 80 );
             $this->db->where('BaseTbl.p_tranch1 =', 90  );
         }
+        elsif($statut == 1 )
+        {
+            $this->db->where('BaseTbl.statut =', $statut  );
+        }
+
         $this->db->group_by('BaseTbl.userId ' );
  
         $query = $this->db->get();
