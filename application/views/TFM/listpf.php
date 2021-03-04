@@ -16,12 +16,12 @@
                     <thead>
                     <tr>
                        
-                        <th>ID</th>
+                        <th width="10%">ID</th>
                         <th>Nom et prénom</th>
                         <th>Club</th>
-                        <th></th>
-                        <th></th>
-                        <th>statut</th>
+                        <th width="10%">T1</th>
+                        <th width="10%" >T2</th>
+                        <th width="10%" >statut</th>
                         
                     </tr>
                     </thead>
