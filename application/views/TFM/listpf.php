@@ -19,6 +19,8 @@
                         <th>ID</th>
                         <th>Nom et prénom</th>
                         <th>Club</th>
+                        <th></th>
+                        <th></th>
                         <th>statut</th>
                         
                     </tr>
@@ -46,7 +48,9 @@
 
                         <td> 
                               <?php echo $record->ClubName ?>
-                        </td> 
+                        </td>
+                        <td> <?php if ($record->p_tranch1 > 0 ) { ?> <i class="fa fa-check" aria-hidden="true"></i> <?php }  ?> </td>
+                        <td> <?php if ($record->p_tranch2 > 0 ) { ?> <i class="fa fa-check" aria-hidden="true"></i> <?php }  ?> </td>
  
                         <td> 
                             <?php if ($record->statut == 2 ) { ?>

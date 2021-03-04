@@ -35,6 +35,7 @@
                                             <td>
                                               <?php echo $record->partant ?> 
                                             </td> 
+                                            
                                             <td> 
                                                   <?php if ( $clubID == 0 || $role == 10 ||  $uid == 2 || $SA == 1 || $SA == 2   ) { ?>
                                                         <a href="<?php echo base_url() ?>TFM/PaimentByClub/<?php echo $record->clubID ?>/<?php echo $projectId ?>" class="btn btn-sm btn-primary" >Paiement</a>
