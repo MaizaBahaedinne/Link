@@ -50,6 +50,8 @@ class Tfm_part_model extends CI_Model
         if($statut != '' )
         {
             $this->db->where('BaseTbl.statut =', $statut  );
+            $this->db->where('BaseTbl.p_tranch2 =', 80 );
+            $this->db->where('BaseTbl.p_tranch1 =', 90  );
         }
         $this->db->group_by('BaseTbl.userId ' );
  
@@ -80,8 +82,8 @@ class Tfm_part_model extends CI_Model
         if($statut != '' )
         {
             $this->db->where('BaseTbl.statut =', $statut  );
-            $this->db->where('BaseTbl.p_tranch2 =', 0  );
-            $this->db->where('BaseTbl.p_tranch1 =', 100  );
+            $this->db->where('BaseTbl.p_tranch2 =', 80 );
+            $this->db->where('BaseTbl.p_tranch1 =', 90  );
 
         }
  
