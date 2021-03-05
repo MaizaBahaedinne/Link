@@ -65,7 +65,7 @@ class Api extends BaseController
 
     public  function ProjectListingAPI()
     {
-         $data = json_encode($this->project_model->projectNationalListing()) ;
+         $data = $this->project_model->projectNationalListing() ;
          $this->response($data); 
     }
 
