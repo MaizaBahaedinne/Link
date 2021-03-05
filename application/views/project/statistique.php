@@ -101,7 +101,7 @@
 														  data: {
 														    labels: [<?php foreach ($countRythme as $key ) {
 														      	 $date = 	date_create($key->dateInscrip);
-														         echo 	"'".date_format($date, 'Y-m-d H')."h'," ;
+														         echo 	"'".date_format($date, 'Y-m-d')."'," ;
 														      }?>],
 														    datasets: [{
 														      label: '# d\'inscription',
