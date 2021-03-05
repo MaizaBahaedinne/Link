@@ -112,8 +112,8 @@ class Tfm_part_model extends CI_Model
         $this->db->select(' count(BaseTbl.id) nbr , DATE(BaseTbl.dateInscrip) dateInscrip ');
         $this->db->from('tbl_tfm_part as BaseTbl');
         $this->db->where('BaseTbl.tfmId =',$projetId );
-        $this->db->group_by(' dateInscrip  ');
-        $this->db->order_by('  dateInscrip    ');
+        $this->db->group_by(' BaseTbl.dateInscrip  ');
+        $this->db->order_by('  BaseTbl.dateInscrip    ');
  
         $query = $this->db->get();
         $result = $query->result();        
