@@ -21,6 +21,7 @@
                         <th>Club</th>
                         <th width="10%">T1</th>
                         <th width="10%" >T2</th>
+                        <th>Point de départ</th>
                         <th width="10%" >statut</th>
                         
                     </tr>
@@ -51,7 +52,9 @@
                         </td>
                         <td> <?php if ($record->p_tranch1 > 0 ) { ?> <i class="fa fa-check" aria-hidden="true"></i> <?php }  ?> </td>
                         <td> <?php if ($record->p_tranch2 > 0 ) { ?> <i class="fa fa-check" aria-hidden="true"></i> <?php }  ?> </td>
- 
+                        <td> 
+                            <?php echo $record->pointDepart ?>                        
+                        </td>   
                         <td> 
                             <?php if ($record->statut == 2 ) { ?>
                                 <span class="btn btn-warning btn-sm">en attente</span>

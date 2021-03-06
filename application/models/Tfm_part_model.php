@@ -136,7 +136,7 @@ class Tfm_part_model extends CI_Model
     {   
 
         if($ProjectId != 2500){
-        $this->db->select(' count(Users.userId) partant ,BaseTbl.id , Users.name , Clubs.name ClubName , Clubs.clubID , Role.role , Users.cellule , Users.gouvernorat , BaseTbl.p_tranch1 , BaseTbl.p_tranch2 , BaseTbl.moto , BaseTbl.sysMobile , BaseTbl.statut , Usersr1.name as recp1 , BaseTbl.dateP_tranch1 as dateTranche1 , Usersr2.name as recp2 , BaseTbl.dateP_tranch2 as dateTranche2 ');
+        $this->db->select(' count(Users.userId) partant ,BaseTbl.id , Users.name , Clubs.name ClubName , Clubs.clubID , Role.role , Users.cellule , Users.gouvernorat , BaseTbl.p_tranch1 , BaseTbl.p_tranch2 , BaseTbl.moto , BaseTbl.sysMobile , BaseTbl.statut , Usersr1.name as recp1 , BaseTbl.dateP_tranch1 as dateTranche1 , Usersr2.name as recp2 , BaseTbl.dateP_tranch2 as dateTranche2 , BaseTbl.pointDepart ');
         }else{
             $this->db->select(' count(Users.userId) partant ,BaseTbl.id , Users.name , Users.cellule ClubName , Clubs.clubID , Role.role , Users.gouvernorat , BaseTbl.p_tranch1 , BaseTbl.p_tranch2 , BaseTbl.moto , BaseTbl.sysMobile , BaseTbl.statut , Usersr1.name as recp1 , BaseTbl.dateP_tranch1 as dateTranche1 , Usersr2.name as recp2 , BaseTbl.dateP_tranch2 as dateTranche2 ');
         }
@@ -179,7 +179,7 @@ class Tfm_part_model extends CI_Model
      */
     function TFMPartListinByclub($clubId,$projectId)
     {
-        $this->db->select(' BaseTbl.id , Users.name , Clubs.name ClubName , Role.role , Users.cellule , Users.gouvernorat , BaseTbl.p_tranch1 , BaseTbl.p_tranch2 , BaseTbl.moto , BaseTbl.sysMobile , BaseTbl.statut , Usersr1.name as recp1 , BaseTbl.dateP_tranch1 as dateTranche1 , Usersr2.name as recp2 , BaseTbl.dateP_tranch2 as dateTranche2, BaseTbl.remb ');
+        $this->db->select(' BaseTbl.id , Users.name , Clubs.name ClubName , Role.role , Users.cellule , Users.gouvernorat , BaseTbl.p_tranch1 , BaseTbl.p_tranch2 , BaseTbl.moto , BaseTbl.sysMobile , BaseTbl.statut , Usersr1.name as recp1 , BaseTbl.dateP_tranch1 as dateTranche1 , Usersr2.name as recp2 , BaseTbl.dateP_tranch2 as dateTranche2, BaseTbl.remb  , BaseTbl.pointDepart ');
         $this->db->from('tbl_tfm_part as BaseTbl');
         $this->db->join('tbl_users as Users', 'Users.userId = BaseTbl.userId', 'LEFT');
         $this->db->join('tbl_club as Clubs', 'Clubs.clubID = Users.ClubID', 'LEFT');
