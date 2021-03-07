@@ -381,7 +381,7 @@ $config['encryption_key'] = 'asjkrue*$djasfl134213';
 */
 $config['sess_driver'] = 'database';
 $config['sess_save_path'] = 'ci_sessions';
-$config['sess_expiration'] = 0;
+$config['sess_expiration'] = 604800;
 
 
 /*
@@ -450,7 +450,7 @@ $config['global_xss_filtering'] = FALSE;
 $config['csrf_protection'] = FALSE;
 $config['csrf_token_name'] = 'csrf_test_name';
 $config['csrf_cookie_name'] = 'csrf_cookie_name';
-$config['csrf_expire'] = 7200;
+$config['csrf_expire'] = 604800;
 $config['csrf_regenerate'] = TRUE;
 $config['csrf_exclude_uris'] = array();
 
