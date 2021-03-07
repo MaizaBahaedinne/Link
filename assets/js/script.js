@@ -222,7 +222,9 @@ $('.audio-call, .video-call').on('click', function () {
 		  	$.ajax({
 		        url: "Posts/Like/" + this.id ,
 		        type: "post"
-		    	}).done(function(){
+		    	}).done(
+		    	function()
+		    	{
 						$(this).addClass('happy').removeClass('broken');
 						animated = true;
 						counter++;
@@ -233,12 +235,12 @@ $('.audio-call, .video-call').on('click', function () {
 
 		  }
 		  else {
-		  	/*
+		  	
 			$(this).removeClass('happy').addClass('broken');
 			animated = false; 
 			 counter--;
 			$(this).children('span').text(counter);
-			*/
+			
 		  }
 		});	
 
