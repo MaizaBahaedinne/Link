@@ -50,7 +50,7 @@
                                               <?php echo $record->T2 ?> 
                                             </td>
                                             <td>
-                                              <?php echo round($record->partant/$record->T2)*100 ?>%
+                                              <?php if($record->T2>0 ){ echo round($record->partant/$record->T2)*100 ;} else{ echo '0' ;} ?>% 
                                             </td>  
                                             
                                             <td> 
