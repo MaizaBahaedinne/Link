@@ -221,9 +221,9 @@ $('.audio-call, .video-call').on('click', function () {
 
 
 		  	$(this).addClass('happy').removeClass('broken');
-						animated = true;
-						counter++;
-						$(this).children('span').text(counter);
+			animated = true;
+			counter++;
+			$(this).children('span').text(counter);
 
 		  	$.ajax({
 		        url: "Posts/Like/" + this.id ,
@@ -231,7 +231,7 @@ $('.audio-call, .video-call').on('click', function () {
 		    	}).done(
 		    	function()
 		    	{
-		    		
+
 		    	});
 
 

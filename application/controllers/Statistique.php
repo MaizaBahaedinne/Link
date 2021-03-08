@@ -39,8 +39,8 @@ class Statistique extends BaseController {
     public function ProjectStatistique ($ProjectId){
                    
         $data["projet"] = $this->project_model->getProjectInfo($ProjectId);
-        $data['partParReg'] = $this->Tfm_part_model->TFMPartByCityListing($ProjectId,2);
-        $data['partParclub'] = $this->Tfm_part_model->TFMPartByClubListing($ProjectId,2);
+        $data['partParReg'] = $this->Tfm_part_model->TFMPartByCityListing($ProjectId,1);
+        $data['partParclub'] = $this->Tfm_part_model->TFMPartByClubListing($ProjectId,1);
         $data['partParsexeH'] = $this->Tfm_part_model->TFMPartConfirmedBySexeHListing($ProjectId);
         $data['partParsexeF'] = $this->Tfm_part_model->TFMPartConfirmedBySexeFListing($ProjectId);
         $data['countRythme'] = $this->Tfm_part_model->TFMPartRythme($ProjectId);
