@@ -20,9 +20,9 @@
                                             <th width="10%">region</th>
                                             <th width="20%">Nombre des participants</th>
                                             <th width="10%">Tranche 1</th>
-                                            <th width="10%">Validé 1 (%)</th>
+                                            <th >Validé 1 (%)</th>
                                             <th width="10%">Tranche 2</th>
-                                            <th width="10%">Validé 2 (%)</th>
+                                            <th >Validé 2 (%)</th>
                                             <th width="10%">paiement </th>
                                         </tr>
                                         </thead>
