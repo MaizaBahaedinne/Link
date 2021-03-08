@@ -67,8 +67,8 @@ class TFM extends BaseController {
 	                $data['clubRecords'] = $this->Tfm_part_model->TFMClubPartListing($ProjectId);
 
 	                foreach ($data['clubRecords'] as $club  ) {
-	                	$club->T1 = count($this->Tfm_part_model->TFMPartListinByclubT1($club->clubID,$ProjectId)) ; 
-	                	$club->T2 = count($this->Tfm_part_model->TFMPartListinByclubT2($club->clubID,$ProjectId)) ; 
+	                	$club->T1 = count($this->Tfm_part_model->TFMPartListinByclubT2($club->clubID,$ProjectId)) ; 
+	                	$club->T2 = count($this->Tfm_part_model->TFMPartListinByclubC($club->clubID,$ProjectId)) ; 
 
 	                }
 

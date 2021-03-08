@@ -45,7 +45,7 @@
                                             <td>
                                               <?php echo round($record->T2/$record->partant) ?> 
                                             </td> 
-                                            <td  <?php if( $record->T1 == 0 ){ echo "style='backgroundcolor:red;color:white'" ; } ?>  >
+                                            <td  <?php if( $record->T1 == 0 ){ echo "style='color:red'" ; } ?>  >
                                               <?php echo $record->T1 ?> 
                                             </td> 
                                             <td>
