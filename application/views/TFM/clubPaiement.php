@@ -42,15 +42,16 @@
                                             <td>
                                               <?php echo $record->partant ?> 
                                             </td> 
-                                            <td>
-                                              <?php echo round($record->T2/$record->partant)*100 ?>%
-                                            </td> 
+                                            
                                             <td  <?php if( $record->T1 == 0 ){ echo "style='color:red'" ; } ?>  >
                                               <?php echo $record->T1 ?> 
                                             </td> 
                                             <td>
                                               <?php echo $record->T2 ?> 
-                                            </td> 
+                                            </td>
+                                            <td>
+                                              <?php echo round($record->T2/$record->partant)*100 ?>%
+                                            </td>  
                                             
                                             <td> 
                                                   <?php if ( $clubID == 0 || $role == 10 ||  $uid == 2 || $SA == 1 || $SA == 2   ) { ?>
