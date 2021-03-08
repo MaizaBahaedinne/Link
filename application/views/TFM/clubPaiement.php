@@ -18,6 +18,8 @@
                                         <tr>
                                             <th>Club</th>
                                             <th>Nombre des participants</th>
+                                            <th>Tranche 1</th>
+                                            <th>Tranche 2</th>
                                             <th>paiement </th>
                                         </tr>
                                         </thead>
@@ -34,6 +36,12 @@
                                             </td>
                                             <td>
                                               <?php echo $record->partant ?> 
+                                            </td> 
+                                            <td  <?php if($record->T1 == 0 ){echo "style='backgroundcolor:red;color:white'" } ?>  >
+                                              <?php echo $record->T1 ?> 
+                                            </td> 
+                                            <td>
+                                              <?php echo $record->T2 ?> 
                                             </td> 
                                             
                                             <td> 

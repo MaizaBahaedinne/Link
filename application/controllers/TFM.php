@@ -65,6 +65,13 @@ class TFM extends BaseController {
 		        {	
 	            	$data['projectId'] = $ProjectId ;  
 	                $data['clubRecords'] = $this->Tfm_part_model->TFMClubPartListing($ProjectId);
+
+	                foreach ($data['clubRecords'] as $club  ) {
+	                	$club->T1 = count($this->Tfm_part_model->TFMPartListinByclubT2($club->clubID,$ProjectId)) ; 
+	                	$club->T2 = count($this->Tfm_part_model->TFMPartListinByclubC($club->clubID,$ProjectId)) ; 
+
+	                }
+
 	                $this->global['pageTitle'] = ' club  Listing';
 	             	$this->global['active'] = 'TFMP';
 	                $this->loadViews("TFM/clubPaiement", $this->global, $data, NULL);   
