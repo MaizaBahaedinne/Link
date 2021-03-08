@@ -44,7 +44,7 @@
                                               <?php echo $record->partant ?> 
                                             </td> 
                                             
-                                            <td  <?php if( $record->T1 == 0 ){ echo "style='color:red'" ; } ?>  >
+                                            <td  <?php if( $record->T1 == 0 &&  $record->T2 == 0 ){ echo "style='color:red'" ; } ?>  >
                                               <b><?php echo $record->T1 ?></b> 
                                             </td> 
                                             <td>
@@ -53,7 +53,7 @@
                                             <td>
                                               <b><?php echo $record->T2 ?></b>
                                             </td>
-                                            <td>
+                                            <td <?php if( $record->T2 == 0 ){ echo "style='color:red'" ; } ?>  >
                                               <?php if($record->T2>0 ){ echo round(($record->T2*100)/$record->partant) ;} else{ echo '0' ;} ?>% 
                                             </td>  
                                             
