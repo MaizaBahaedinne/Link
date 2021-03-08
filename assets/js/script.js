@@ -219,16 +219,18 @@ $('.audio-call, .video-call').on('click', function () {
 		$('.heart').click(function(){
 		  if(!animated){
 
+
+		  	$(this).addClass('happy').removeClass('broken');
+						animated = true;
+						counter++;
+						$(this).children('span').text(counter);
+
 		  	$.ajax({
 		        url: "Posts/Like/" + this.id ,
 		        type: "post"
 		    	}).done(
 		    	function()
 		    	{
-						$(this).addClass('happy').removeClass('broken');
-						animated = true;
-						counter++;
-						$(this).children('span').text(counter);
 		    		
 		    	});
 
