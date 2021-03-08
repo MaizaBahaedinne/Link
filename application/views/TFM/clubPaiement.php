@@ -48,13 +48,13 @@
                                               <?php echo $record->T1 ?> 
                                             </td> 
                                             <td>
-                                              <?php if($record->T1>0 ){ echo round($record->partant/$record->T1) ;} else{ echo '0' ;} ?>% 
+                                              <?php if($record->T1>0 ){ echo round(($record->T1*100)/$record->partant) ;} else{ echo '0' ;} ?>% 
                                             </td>  
                                             <td>
                                               <?php echo $record->T2 ?> 
                                             </td>
                                             <td>
-                                              <?php if($record->T2>0 ){ echo round($record->partant/$record->T2) ;} else{ echo '0' ;} ?>% 
+                                              <?php if($record->T2>0 ){ echo round(($record->T2*100)/$record->partant) ;} else{ echo '0' ;} ?>% 
                                             </td>  
                                             
                                             <td> 
