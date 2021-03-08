@@ -17,10 +17,12 @@
                                         <thead>
                                         <tr>
                                             <th>Club</th>
-                                            <th>Nombre des participants</th>
-                                            <th>Tranche 1</th>
-                                            <th>Tranche 2</th>
-                                            <th>paiement </th>
+                                            <th width="10%">region</th>
+                                            <th width="10%">Nombre des participants</th>
+                                            <th width="5%">Tranche 1</th>
+                                            <th width="5%">Tranche 2</th>
+                                            <th width="10%">Validé</th>
+                                            <th width="10%">paiement </th>
                                         </tr>
                                         </thead>
                                         <tbody>                    
@@ -35,7 +37,13 @@
                                                 <?php echo $record->ClubName ?>          
                                             </td>
                                             <td>
+                                                <?php echo $record->city ?>          
+                                            </td>
+                                            <td>
                                               <?php echo $record->partant ?> 
+                                            </td> 
+                                            <td>
+                                              <?php echo round($record->T2/$record->partant) ?> 
                                             </td> 
                                             <td  <?php if($record->T1 == 0 ){echo "style='backgroundcolor:red;color:white'" } ?>  >
                                               <?php echo $record->T1 ?> 
