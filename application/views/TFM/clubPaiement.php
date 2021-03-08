@@ -20,8 +20,9 @@
                                             <th width="10%">region</th>
                                             <th width="20%">Nombre des participants</th>
                                             <th width="10%">Tranche 1</th>
+                                            <th width="10%">Validé 1 (%)</th>
                                             <th width="10%">Tranche 2</th>
-                                            <th width="10%">Validé (%)</th>
+                                            <th width="10%">Validé 2 (%)</th>
                                             <th width="10%">paiement </th>
                                         </tr>
                                         </thead>
@@ -46,6 +47,9 @@
                                             <td  <?php if( $record->T1 == 0 ){ echo "style='color:red'" ; } ?>  >
                                               <?php echo $record->T1 ?> 
                                             </td> 
+                                            <td>
+                                              <?php if($record->T1>0 ){ echo round($record->partant/$record->T1) ;} else{ echo '0' ;} ?>% 
+                                            </td>  
                                             <td>
                                               <?php echo $record->T2 ?> 
                                             </td>
