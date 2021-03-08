@@ -19,9 +19,9 @@
                                             <th>Club</th>
                                             <th width="10%">region</th>
                                             <th width="25%">Nombre des participants</th>
-                                            <th width="5%">Tranche 1</th>
-                                            <th width="5%">Tranche 2</th>
-                                            <th width="10%">Validé (%)</th>
+                                            <th width="10%">Tranche 1</th>
+                                            <th width="10%">Tranche 2</th>
+                                            <th width="25%">Validé (%)</th>
                                             <th width="10%">paiement </th>
                                         </tr>
                                         </thead>
