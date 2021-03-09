@@ -34,7 +34,7 @@
                                             }
                                         </style>
                                     <div class="your-page" >
-				                    <table  class="table table-responsive tableizer-table" id="tableid" style="width: 100%" >
+				                    <table  class="table table-responsive tableizer-table" id="tableid"  >
 				                      <thead>
 				                          <th width="5%" >#
 				                          </th>
