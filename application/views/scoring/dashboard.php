@@ -44,7 +44,7 @@
 				                          <th width="5%" >
 				                            
 				                          </th>
-                                  <th  >
+                                  <th  width="5%">
                                     P
                                   </th>
                                   <th width="10%" >
@@ -64,8 +64,8 @@
                                   </th>
 				                       
 				                     
-				                          <th width="10%" style="text-align: right;" >
-				                            Score
+				                          <th width="15%" style="text-align: right;" >
+				                            <b>Score</b>
 				                          </th>
 				                          </thead>
                                   <tbody>
