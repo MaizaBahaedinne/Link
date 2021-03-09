@@ -44,7 +44,7 @@
 				                          <th width="5%" >
 				                            
 				                          </th>
-                                  <th width="10%" >
+                                  <th  >
                                     P
                                   </th>
                                   <th width="10%" >
