@@ -14,7 +14,7 @@ class User_model extends CI_Model
      * This function is used to get the user listing count
      * @return array $result : This is result
      */
-    function userListing($type)
+    function userListing($type = '')
     {
          $this->db->select('BaseTbl.userId, BaseTbl.gouvernorat , BaseTbl.delegation , BaseTbl.CLubID as club , BaseTbl.cin, BaseTbl.email, BaseTbl.name, BaseTbl.mobile, BaseTbl.createdDtm, Role.role , Clubs.name as ClubName ,  Clubs.clubID , Clubs.city as ClubCity ,BaseTbl.sexe ,BaseTbl.isDeleted , BaseTbl.avatar , BaseTbl.cellule , Paren.name parrain , Paren.userId p_userId , BaseTbl.facebook ');
         $this->db->from('tbl_users as BaseTbl');
@@ -22,8 +22,9 @@ class User_model extends CI_Model
         $this->db->join('tbl_club as Clubs', 'Clubs.clubID = BaseTbl.ClubID', 'LEFT');
          $this->db->join('tbl_users as Paren', 'Paren.userId = BaseTbl.createdBy', 'LEFT');
        
-
+         if($type != "") {
         $this->db->where('Clubs.SenJun =', $type );
+        }
 
         $this->db->order_by('BaseTbl.userId', 'DESC');
         $query = $this->db->get();

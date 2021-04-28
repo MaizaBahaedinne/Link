@@ -30,7 +30,7 @@ class Project_model extends CI_Model
     }
 
 
-    function projectAllListing()
+    function projectAllListing($endDate = "") 
     {
          $this->db->select('BaseTbl.projectId , BaseTbl.startDate , BaseTbl.endDate , BaseTbl.titre , BaseTbl.type , BaseTbl.cible , Clubs.name as ClubName , Clubs.ClubID  ,  BaseTbl.prix , BaseTbl.capacite , BaseTbl.description descP ,  BaseTbl.local ,BaseTbl.banner , BaseTbl.eventFB ');
         $this->db->from('tbl_project as BaseTbl');
@@ -38,7 +38,9 @@ class Project_model extends CI_Model
        
 
         $this->db->order_by('BaseTbl.startDate','ASC');
+        if($endDate ){
         $this->db->where('BaseTbl.endDate >','2020-09-15' ) ;
+        }
 
         $query = $this->db->get();
         
