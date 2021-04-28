@@ -25,6 +25,11 @@ class Api extends BaseController
         $this->load->model('posts_model') ;
         $this->load->model('project_model') ; 
         $this->load->model('login_model') ;
+        $this->load->model('Score_club_model') ;
+        $this->load->model('scoring_model') ;
+
+        
+        
 
     }
 
@@ -49,30 +54,54 @@ class Api extends BaseController
                 
         }
 
-    public  function PostsListingAPI()
-    {
-         $data   =  $this->posts_model->postsListing();
-        
-            foreach ($data['postRecords'] as $key ) {                
-                        $key->commentsRecords              = $this->posts_model->CommentsListing($key->postId);
-                        $key->likeRecords             = $this->posts_model->likesListing($key->postId);
-                         $key->likeCheck          = $this->posts_model->likeCheck($key->postId,$this->vendorId);
-                  }
-
-         $this->global['pageTitle'] = 'Acceuil' ;
-         $this->response($data); 
-    }
+   
 
     public  function ProjectListingAPI()
     {
-         $data = $this->project_model->projectListing() ;
+         $data = $this->project_model->projectAllListing() ;
          $this->response($data); 
     }
 
-    public  function AuthentificationAPI()
+            public  function usersListingAPI()
+    {
+         $data = $this->user_model->userListing() ;
+         $this->response($data); 
+    }
+
+        public  function clubListingAPI($SenJun)
+    {
+         $data = $this->club_model->clubListing(0,$SenJun) ;
+         $this->response($data); 
+    }
+
+
+    public  function clubAPI($clubId)
+        {   
+                    $data["clubInfo"] = $this->club_model->getClubInfo($clubId);
+                    $data["projectRecords"] = $this->project_model->projectListingByClub($clubId);
+                    $data['members'] = $this->user_model->userListingByclub($clubId);
+                    $this->response($data); 
+    }
+
+
+    public  function clubInfoAPI($clubId)
+        {   
+                    $data = $this->club_model->getClubInfo($clubId);
+                    $this->response($data); 
+    }
+
+     public  function userAPI($userId)
+        {   
+                    $data = $this->user_model->getUserInfoWithRole($userId) ;
+                    
+   
+                    $this->response($data); 
+    }
+
+    public  function AuthentificationAPI($email,$password)
     {
         
-        $result = $this->login_model->loginMe( $this->input->get('email') , $this->input->get('password') );  
+        $result = $this->login_model->loginMe($email,$password);  
          $this->response($result); 
     }
   
